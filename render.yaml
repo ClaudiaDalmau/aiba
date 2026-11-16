@@ -3,7 +3,7 @@
 # which serverless platforms like Vercel can't do. The web app talks to it over HTTPS with a shared secret.
 services:
   - type: web
-    name: bks-wa-gateway
+    name: aiba-wa-gateway
     runtime: docker
     dockerContext: ./apps/wa-gateway
     dockerfilePath: ./apps/wa-gateway/Dockerfile
@@ -17,7 +17,7 @@ services:
       - key: APP_ENCRYPTION_KEY
         sync: false          # paste the same value as the web app
       - key: WEB_URL
-        sync: false          # your web app URL, e.g. https://bks.vercel.app
+        sync: false          # your web app URL, e.g. https://aiba.vercel.app
       - key: WA_GATEWAY_SECRET
         generateValue: true  # copy it into Admin → WhatsApp → Gateway secret
       - key: HOST

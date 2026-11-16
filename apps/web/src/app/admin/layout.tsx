@@ -6,7 +6,7 @@ import { Avatar, Badge, Logo } from "@/components/ui";
 import { requireAdmin } from "@/lib/auth";
 import { ROLE_INFO, type PlatformRole } from "@/lib/platform-rbac";
 
-export const metadata = { title: { default: "Platform admin", template: "%s · Admin · BKS" } };
+export const metadata = { title: { default: "Platform admin", template: "%s · Admin · AIBA" } };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const admin = await requireAdmin();

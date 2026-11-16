@@ -1,4 +1,4 @@
-# BKS Business (owner mobile app)
+# AIBA Business (owner mobile app)
 
 Expo / React Native app for business owners and their team: today's schedule, calendar, customer inbox,
 the NanoClaw assistant (approvals, permissions, voice, knowledge) and business settings. It talks to the
@@ -71,5 +71,5 @@ assistant status but not approvals, permissions or catalog settings (the API enf
 
 ## Building for the stores
 
-`npx eas-cli@latest build --platform ios|android` with bundle id / package `app.bks.business`
+`npx eas-cli@latest build --platform ios|android` with bundle id / package `app.aiba.business`
 (change in `app.json` before the first store build).

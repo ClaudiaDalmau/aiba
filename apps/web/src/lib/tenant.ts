@@ -10,7 +10,7 @@ import { forbidden, notFound } from "./errors";
 import { platformCan } from "./platform-rbac";
 import { can, type BusinessRole, type Permission } from "./rbac";
 
-export const ACTIVE_BUSINESS_COOKIE = "bks_biz";
+export const ACTIVE_BUSINESS_COOKIE = "aiba_biz";
 
 /**
  * A tenant context: the one business a request acts on, and the caller's role in it.

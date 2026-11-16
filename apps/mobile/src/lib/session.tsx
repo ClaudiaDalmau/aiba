@@ -6,8 +6,8 @@ import { POLL_INTERVAL_MS } from "./config";
 import { registerForPush } from "./push";
 import type { BusinessSummary, Counts, Me, User } from "./types";
 
-const TOKEN_KEY = "bks.token";
-const BUSINESS_KEY = "bks.business";
+const TOKEN_KEY = "aiba.token";
+const BUSINESS_KEY = "aiba.business";
 
 type SessionState = {
   ready: boolean;

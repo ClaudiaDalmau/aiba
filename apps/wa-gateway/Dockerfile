@@ -1,4 +1,4 @@
-# BKS WhatsApp gateway: one long-running process holding every business's linked-device session.
+# AIBA WhatsApp gateway: one long-running process holding every business's linked-device session.
 FROM node:22-bookworm-slim
 WORKDIR /app
 ENV NODE_ENV=production

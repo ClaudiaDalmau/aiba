@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "BKS Business",
-    "slug": "bks-business",
+    "name": "AIBA Business",
+    "slug": "aiba-business",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "app.bks.business"
+      "bundleIdentifier": "app.aiba.business"
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +18,7 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "app.bks.business"
+      "package": "app.aiba.business"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -34,7 +34,7 @@
         }
       ]
     ],
-    "scheme": "bksbusiness",
+    "scheme": "aibabusiness",
     "extra": {},
     "experiments": {
       "typedRoutes": true

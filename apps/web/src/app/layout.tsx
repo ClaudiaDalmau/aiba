@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const display = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-display" });
 
 export const metadata: Metadata = {
-  title: { default: "BKS: book local services, answered by AI", template: "%s · BKS" },
+  title: { default: "AIBA: book local services, answered by AI", template: "%s · AIBA" },
   description: "Discover and book local service businesses. Every business has its own AI assistant on WhatsApp and Telegram.",
 };
 

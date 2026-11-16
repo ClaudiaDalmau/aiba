@@ -60,7 +60,7 @@ export default function More() {
           />
         </RowList>
         <T v="caption" faint style={{ textAlign: "center", marginTop: space.md }}>
-          BKS Business · {API_URL}
+          AIBA Business · {API_URL}
         </T>
       </Section>
     </Screen>

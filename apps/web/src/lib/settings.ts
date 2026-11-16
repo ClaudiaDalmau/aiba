@@ -54,7 +54,7 @@ export const SETTINGS = [
 
   // WhatsApp (linked devices through the gateway)
   { key: "whatsapp.enabled", group: "whatsapp", label: "WhatsApp linking available to businesses", kind: "boolean", default: true },
-  { key: "whatsapp.gatewayUrl", group: "whatsapp", label: "Gateway URL", help: "Where the WhatsApp gateway runs, e.g. https://bks-wa-gateway.onrender.com (or http://wa-gateway:3300 inside Docker).", kind: "string", env: "WA_GATEWAY_URL", default: "" },
+  { key: "whatsapp.gatewayUrl", group: "whatsapp", label: "Gateway URL", help: "Where the WhatsApp gateway runs, e.g. https://aiba-wa-gateway.onrender.com (or http://wa-gateway:3300 inside Docker).", kind: "string", env: "WA_GATEWAY_URL", default: "" },
   { key: "whatsapp.gatewaySecret", group: "whatsapp", label: "Gateway secret", help: "The WA_GATEWAY_SECRET value configured on the gateway.", kind: "secret", env: "WA_GATEWAY_SECRET", default: null },
   { key: "whatsapp.staleMinutes", group: "whatsapp", label: "Don't auto-answer messages delivered later than (minutes)", help: "Messages that arrive late after a reconnect are stored without an agent reply.", kind: "number", env: "WA_STALE_MINUTES", default: 120, min: 5, max: 10080 },
 

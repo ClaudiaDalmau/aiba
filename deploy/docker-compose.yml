@@ -2,20 +2,20 @@
 #   cp .env.example .env   # fill it in
 #   docker compose up -d --build
 # See DEPLOY.md.
-name: bks
+name: aiba
 
 services:
   db:
     image: postgres:17-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_USER: bks
+      POSTGRES_USER: aiba
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
-      POSTGRES_DB: bks
+      POSTGRES_DB: aiba
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U bks"]
+      test: ["CMD-SHELL", "pg_isready -U aiba"]
       interval: 5s
       retries: 20
 
@@ -26,7 +26,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgres://bks:${POSTGRES_PASSWORD}@db:5432/bks
+      DATABASE_URL: postgres://aiba:${POSTGRES_PASSWORD}@db:5432/aiba
       APP_ENCRYPTION_KEY: ${APP_ENCRYPTION_KEY:?set APP_ENCRYPTION_KEY in .env}
       CRON_SECRET: ${CRON_SECRET:?set CRON_SECRET in .env}
       WA_GATEWAY_URL: http://wa-gateway:3300
@@ -47,7 +47,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgres://bks:${POSTGRES_PASSWORD}@db:5432/bks
+      DATABASE_URL: postgres://aiba:${POSTGRES_PASSWORD}@db:5432/aiba
       APP_ENCRYPTION_KEY: ${APP_ENCRYPTION_KEY}
       WA_GATEWAY_SECRET: ${WA_GATEWAY_SECRET}
       WEB_URL: http://web:3000

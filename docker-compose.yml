@@ -2,19 +2,19 @@
 services:
   db:
     image: postgres:17-alpine
-    container_name: bks-db
+    container_name: aiba-db
     environment:
-      POSTGRES_USER: bks
-      POSTGRES_PASSWORD: bks
-      POSTGRES_DB: bks
+      POSTGRES_USER: aiba
+      POSTGRES_PASSWORD: aiba
+      POSTGRES_DB: aiba
     ports:
       - "127.0.0.1:5436:5432"
     volumes:
-      - bks-pg:/var/lib/postgresql/data
+      - aiba-pg:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U bks"]
+      test: ["CMD-SHELL", "pg_isready -U aiba"]
       interval: 2s
       retries: 20
     restart: unless-stopped
 volumes:
-  bks-pg:
+  aiba-pg:

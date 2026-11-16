@@ -153,7 +153,7 @@ async function business(
 /**
  * Insert demo businesses, owners and community content into an EMPTY database.
  * `admin`: an existing platform admin to author community posts; when omitted, the demo admin
- * admin@bks.example (password demo-password) is created, which is fine locally but not on a public site.
+ * admin@aiba.example (password demo-password) is created, which is fine locally but not on a public site.
  */
 export async function seedDemo(opts: { admin?: schema.User } = {}) {
   const [{ count }] = (await db.execute(sql`select count(*)::int as count from businesses`)).rows as { count: number }[];
@@ -161,7 +161,7 @@ export async function seedDemo(opts: { admin?: schema.User } = {}) {
     console.log("Database already has businesses; skipping demo data.");
     return false;
   }
-  const admin = opts.admin ?? (await user("admin@bks.example", "Platform Admin", true));
+  const admin = opts.admin ?? (await user("admin@aiba.example", "Platform Admin", true));
   const maya = await user("owner@atelier.example", "Maya Laurent");
   const tom = await user("owner@ironhouse.example", "Tom Reyes");
   const ana = await user("owner@lumen.example", "Ana Costa");
@@ -289,7 +289,7 @@ export async function seedDemo(opts: { admin?: schema.User } = {}) {
   await db.insert(schema.forumPosts).values({ id: newId("pst"), threadId: t2, authorUserId: ana.id, body: "Same experience at the spa. We also added our deposit policy to the knowledge base so the agent explains it up front." });
 
   console.log(`Seeded. Sign in with any of these (password: ${PASSWORD}):
-  admin@bks.example         platform admin
+  admin@aiba.example         platform admin
   owner@atelier.example     Atelier Nord (VIP)
   owner@ironhouse.example   Ironhouse Barbers (Standard)
   owner@lumen.example       Lumen Spa (VIP)`);

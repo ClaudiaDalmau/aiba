@@ -71,7 +71,7 @@ export async function onboard(_prev: ActionState, f: FormData): Promise<ActionSt
       if (agent) await db.update(schema.agents).set({ persona: { ...agent.persona, tone: tone.data } }).where(eq(schema.agents.id, agent.id));
     }
     const { cookies } = await import("next/headers");
-    (await cookies()).set("bks_biz", business.id, { path: "/", sameSite: "lax", httpOnly: true });
+    (await cookies()).set("aiba_biz", business.id, { path: "/", sameSite: "lax", httpOnly: true });
   });
   if (res?.error) return res;
   redirect("/app?welcome=1");

@@ -4,7 +4,7 @@ import { businessesToRestore } from "./db.js";
 import { logoutSession, sendText, sendTyping, sessionStatus, startSession, stopSession } from "./sessions.js";
 
 /**
- * BKS WhatsApp gateway: holds one linked-device session (Baileys) per business.
+ * AIBA WhatsApp gateway: holds one linked-device session (Baileys) per business.
  * Internal API, called only by the web app with Authorization: Bearer $WA_GATEWAY_SECRET.
  *   GET  /health
  *   GET  /sessions

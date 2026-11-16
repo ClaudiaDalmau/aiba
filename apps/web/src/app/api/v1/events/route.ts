@@ -17,7 +17,7 @@ export async function GET(req: Request) {
   try {
     const user = await userFromRequest(req);
     const url = new URL(req.url);
-    const t = await resolveTenant(user, req.headers.get("x-business-id") ?? url.searchParams.get("businessId") ?? /(?:^|;\s*)bks_biz=([^;]+)/.exec(req.headers.get("cookie") ?? "")?.[1]);
+    const t = await resolveTenant(user, req.headers.get("x-business-id") ?? url.searchParams.get("businessId") ?? /(?:^|;\s*)aiba_biz=([^;]+)/.exec(req.headers.get("cookie") ?? "")?.[1]);
     businessId = t.business.id;
   } catch {
     return problem(401, "unauthorized", "Sign in required");

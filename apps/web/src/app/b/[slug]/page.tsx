@@ -55,7 +55,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
           <img src={b.coverUrl} alt="" className="size-full object-cover" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-        <div className="absolute top-4 left-4"><Link href="/" className="rounded-full bg-black/40 px-3 py-1.5 text-[12px] font-medium text-white backdrop-blur">← BKS</Link></div>
+        <div className="absolute top-4 left-4"><Link href="/" className="rounded-full bg-black/40 px-3 py-1.5 text-[12px] font-medium text-white backdrop-blur">← AIBA</Link></div>
       </div>
       <div className="mx-auto -mt-16 max-w-5xl px-4 pb-24 sm:px-6">
         <div className="relative grid gap-6 lg:grid-cols-[1fr_340px]">

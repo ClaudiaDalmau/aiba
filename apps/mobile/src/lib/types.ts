@@ -1,4 +1,4 @@
-// Response shapes of the BKS web API (/api/v1). Dates arrive as ISO strings over JSON.
+// Response shapes of the AIBA web API (/api/v1). Dates arrive as ISO strings over JSON.
 
 export type Role = "owner" | "manager" | "staff";
 export type Tier = "standard" | "vip";

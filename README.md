@@ -1,8 +1,8 @@
-# BKS
+# AIBA
 
 An AI-native, multi-tenant booking platform for service businesses. Every business gets a branded booking page, a management workspace, an owner mobile app, and its own isolated **NanoClaw** AI agent that serves customers on WhatsApp, Telegram and web chat.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsumsumai%2Fbks%2Ftree%2Fmain%2Fapps%2Fweb&project-name=bks&repository-name=bks-web&env=APP_ENCRYPTION_KEY%2CCRON_SECRET%2CADMIN_EMAIL%2CADMIN_PASSWORD&envDescription=APP_ENCRYPTION_KEY%20and%20CRON_SECRET%3A%20any%20long%20random%20strings%20%2832%2B%20letters%20and%20digits%29.%20ADMIN_EMAIL%20%2F%20ADMIN_PASSWORD%3A%20your%20first%20administrator%20account%20%288%2B%20characters%29.&envLink=https%3A%2F%2Fgithub.com%2Fsumsumai%2Fbks%2Fblob%2Fmain%2FDEPLOY.md%23one-click-on-vercel&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22neon%22%2C%22productSlug%22%3A%22neon%22%2C%22protocol%22%3A%22storage%22%7D%5D)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FClaudiaDalmau%2Faiba%2Ftree%2Fmain%2Fapps%2Fweb&project-name=aiba&repository-name=aiba-web&env=APP_ENCRYPTION_KEY%2CCRON_SECRET%2CADMIN_EMAIL%2CADMIN_PASSWORD&envDescription=APP_ENCRYPTION_KEY%20and%20CRON_SECRET%3A%20any%20long%20random%20strings%20%2832%2B%20letters%20and%20digits%29.%20ADMIN_EMAIL%20%2F%20ADMIN_PASSWORD%3A%20your%20first%20administrator%20account%20%288%2B%20characters%29.&envLink=https%3A%2F%2Fgithub.com%2FClaudiaDalmau%2Faiba%2Fblob%2Fmain%2FDEPLOY.md%23one-click-on-vercel&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22neon%22%2C%22productSlug%22%3A%22neon%22%2C%22protocol%22%3A%22storage%22%7D%5D)
 
 **Deploying?** See [DEPLOY.md](DEPLOY.md): one click on Vercel (web app + Neon database; optional WhatsApp gateway on Render), or one server with Docker Compose. It also explains how the database works.
 
@@ -30,7 +30,7 @@ npm test                             # core guarantees, against an in-memory dat
 cd apps/wa-gateway && cp .env.example .env && npm install && npm start   # 127.0.0.1:3300
 ```
 
-Demo logins (password `demo-password`): `owner@atelier.example` (VIP salon), `owner@ironhouse.example` (Standard barber), `owner@lumen.example` (VIP spa), `admin@bks.example` (platform admin).
+Demo logins (password `demo-password`): `owner@atelier.example` (VIP salon), `owner@ironhouse.example` (Standard barber), `owner@lumen.example` (VIP spa), `admin@aiba.example` (platform admin).
 
 The agent runs **live on Claude** when `ANTHROPIC_API_KEY` is set (model via `AGENT_MODEL`, default `claude-opus-5-5`; `AGENT_EFFORT` default `medium`). Without a key it runs in **offline mode**: a rule-based responder on the same data, tools and audit trail, so every flow is demoable.
 
@@ -46,7 +46,7 @@ Postgres     Drizzle ORM; migrations in apps/web/drizzle
 Claude       NanoClaw agent runtime (apps/web/src/lib/agent)
 ```
 
-**Multi-tenancy.** Every tenant table carries `business_id`. Requests resolve a `Tenant` (business + role) once: from the session and `bks_biz` cookie on the web, or from `X-Business-Id` on the API. Every query filters by that id; ids from request bodies or the model are never trusted for scoping. Cross-tenant access answers 404.
+**Multi-tenancy.** Every tenant table carries `business_id`. Requests resolve a `Tenant` (business + role) once: from the session and `aiba_biz` cookie on the web, or from `X-Business-Id` on the API. Every query filters by that id; ids from request bodies or the model are never trusted for scoping. Cross-tenant access answers 404.
 
 **RBAC.** Platform role `admin`; business roles `owner` / `manager` / `staff` mapped to permissions in `src/lib/rbac.ts` (`business.manage`, `catalog.manage`, `bookings.manage`, `agent.manage`, `agent.approve`, `inbox.reply`, …). API routes declare their permission in `tenantRoute(permission, …)`; server actions use `tenantFor(permission)`.
 

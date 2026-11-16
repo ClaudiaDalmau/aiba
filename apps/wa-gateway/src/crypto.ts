@@ -5,7 +5,7 @@ function key(): Buffer {
   const raw = process.env.APP_ENCRYPTION_KEY;
   if (!raw) {
     if (process.env.NODE_ENV === "production") throw new Error("APP_ENCRYPTION_KEY is required in production");
-    return createHash("sha256").update("bks-dev-only-key").digest();
+    return createHash("sha256").update("aiba-dev-only-key").digest();
   }
   return createHash("sha256").update(raw).digest();
 }

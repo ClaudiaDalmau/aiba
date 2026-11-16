@@ -9,7 +9,7 @@ import { newId } from "./ids";
 import { forbidden, unauthorized } from "./errors";
 import { isPlatformRole, platformCan, type PlatformPermission, type PlatformRole } from "./platform-rbac";
 
-export const SESSION_COOKIE = "bks_session";
+export const SESSION_COOKIE = "aiba_session";
 const WEB_TTL_DAYS = 30;
 const MOBILE_TTL_DAYS = 90;
 
@@ -18,7 +18,7 @@ export type SessionUser = Pick<schema.User, "id" | "email" | "name" | "platformR
   impersonatorId?: string | null;
 };
 
-export const ADMIN_RETURN_COOKIE = "bks_admin_return";
+export const ADMIN_RETURN_COOKIE = "aiba_admin_return";
 
 export async function createSession(userId: string, kind: "web" | "mobile", opts: { impersonatorId?: string; ttlHours?: number } = {}) {
   const token = randomToken();
@@ -86,7 +86,7 @@ export async function userFromRequest(req: Request): Promise<SessionUser> {
   const bearer = auth?.toLowerCase().startsWith("bearer ") ? auth.slice(7).trim() : null;
   let token = bearer;
   if (!token) {
-    const m = /(?:^|;\s*)bks_session=([^;]+)/.exec(req.headers.get("cookie") ?? "");
+    const m = /(?:^|;\s*)aiba_session=([^;]+)/.exec(req.headers.get("cookie") ?? "");
     token = m ? decodeURIComponent(m[1]) : null;
   }
   const u = await userFromToken(token);

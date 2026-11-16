@@ -14,7 +14,7 @@ import { newId } from "./ids";
 
 process.env.AGENT_OFFLINE = "1";
 process.env.TELEGRAM_BOT_TOKEN = "123:test";
-process.env.TELEGRAM_BOT_USERNAME = "bks_test_bot";
+process.env.TELEGRAM_BOT_USERNAME = "aiba_test_bot";
 process.env.WA_GATEWAY_URL = "http://gateway.test";
 process.env.WA_GATEWAY_SECRET = "s3cret";
 
@@ -46,7 +46,7 @@ describe("shared Telegram bot", () => {
     const b = await biz("Spa Beta");
     const chA = await enableTelegram(a.business, a.owner.id);
     await enableTelegram(b.business, b.owner.id);
-    assert.equal(chA.publicHandle, `https://t.me/bks_test_bot?start=${a.business.slug}`);
+    assert.equal(chA.publicHandle, `https://t.me/aiba_test_bot?start=${a.business.slug}`);
 
     const chat = 4242;
     await handleTelegramUpdate(tgMessage(chat, `/start ${a.business.slug}`));

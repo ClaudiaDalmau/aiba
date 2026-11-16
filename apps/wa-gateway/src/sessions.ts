@@ -110,7 +110,7 @@ export async function startSession(businessId: string, opts: { pairingPhone?: st
   const sock = makeWASocket({
     auth: { creds: state.creds, keys: makeCacheableSignalKeyStore(state.keys, logger) },
     logger,
-    browser: Browsers.macOS("BKS Assistant"),
+    browser: Browsers.macOS("AIBA Assistant"),
     // Keep the owner's phone getting notifications: we never present as "online".
     markOnlineOnConnect: false,
     syncFullHistory: false,

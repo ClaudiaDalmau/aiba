@@ -7,7 +7,7 @@ import { cx } from "../ui";
 type Msg = { id: string; role: string; content: string };
 
 function sessionId(slug: string) {
-  const key = `bks-chat-${slug}`;
+  const key = `aiba-chat-${slug}`;
   try {
     const existing = localStorage.getItem(key);
     if (existing) return existing;

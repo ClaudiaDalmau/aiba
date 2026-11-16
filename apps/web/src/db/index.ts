@@ -38,7 +38,7 @@ function create(): DB {
   return drizzlePglite(client, { schema }) as unknown as DB;
 }
 
-const g = globalThis as unknown as { __bksDb?: DB };
-export const db: DB = g.__bksDb ?? (g.__bksDb = create());
+const g = globalThis as unknown as { __aibaDb?: DB };
+export const db: DB = g.__aibaDb ?? (g.__aibaDb = create());
 
 export { schema };

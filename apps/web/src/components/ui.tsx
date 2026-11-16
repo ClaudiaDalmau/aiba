@@ -172,7 +172,7 @@ export function Logo({ className }: { className?: string }) {
       <span className="grid size-7 place-items-center rounded-lg bg-accent text-accent-fg">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round"><path d="M4 7h9a3 3 0 0 1 0 6H4zM4 13h11a3 3 0 0 1 0 6H4zM4 4v18" /></svg>
       </span>
-      <span className="text-[17px]">BKS</span>
+      <span className="text-[17px]">AIBA</span>
     </span>
   );
 }

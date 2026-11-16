@@ -1,4 +1,4 @@
-# BKS web app (marketplace, workspace, admin, API). Runs migrations on start.
+# AIBA web app (marketplace, workspace, admin, API). Runs migrations on start.
 FROM node:22-bookworm-slim AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./

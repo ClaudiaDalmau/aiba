@@ -38,7 +38,7 @@ export function PublicFooter() {
           <Link href="/discover" className="hover:text-fg">Discover</Link>
           <Link href="/signup" className="hover:text-fg">For businesses</Link>
           <Link href="/privacy" className="hover:text-fg">Privacy</Link>
-          <span>© {new Date().getFullYear()} BKS</span>
+          <span>© {new Date().getFullYear()} AIBA</span>
         </div>
       </div>
     </footer>
