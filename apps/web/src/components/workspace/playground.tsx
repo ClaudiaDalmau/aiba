@@ -11,6 +11,7 @@ type Act = { id: string; tool: string; status: string; summary: string };
 const SUGGESTIONS = ["What do you offer and how much?", "Can I book something tomorrow afternoon?", "Where can I park?", "I want a refund for my last visit"];
 
 export function Playground({ agentName, live }: { agentName: string; live: boolean }) {
+  const t = useT();
   const [session, setSession] = useState(() => Math.random().toString(36).slice(2, 12));
   const [messages, setMessages] = useState<Msg[]>([]);
   const [actions, setActions] = useState<Act[]>([]);
@@ -29,7 +30,7 @@ export function Playground({ agentName, live }: { agentName: string; live: boole
         setMessages(r.messages);
         setActions(r.actions);
       } catch {
-        setMessages((m) => [...m, { id: `err${Date.now()}`, role: "system", content: "The agent could not answer. Check the server logs." }]);
+        setMessages((m) => [...m, { id: `err${Date.now()}`, role: "system", content: t("The agent could not answer. Check the server logs.") }]);
       }
       requestAnimationFrame(() => scroller.current?.scrollTo({ top: 1e6, behavior: "smooth" }));
     });
@@ -38,21 +39,21 @@ export function Playground({ agentName, live }: { agentName: string; live: boole
   return (
     <div className="flex h-[560px] flex-col">
       <div className="flex items-center justify-between border-b border-border px-4 py-2.5 text-[13px]">
-        <span className="flex items-center gap-2 font-medium"><span className="size-2 rounded-full bg-ok" /> Test as a customer</span>
+        <span className="flex items-center gap-2 font-medium"><span className="size-2 rounded-full bg-ok" /> {t("Test as a customer")}</span>
         <span className="flex items-center gap-2">
-          {!live && <Badge tone="warn">Offline mode</Badge>}
-          <button className="text-muted hover:text-fg" onClick={() => { setSession(Math.random().toString(36).slice(2, 12)); setMessages([]); setActions([]); }}>Reset</button>
+          {!live && <Badge tone="warn">{t("Offline mode")}</Badge>}
+          <button className="text-muted hover:text-fg" onClick={() => { setSession(Math.random().toString(36).slice(2, 12)); setMessages([]); setActions([]); }}>{t("Reset")}</button>
         </span>
       </div>
       <div ref={scroller} className="min-h-0 flex-1 space-y-2.5 overflow-y-auto bg-subtle/40 p-4">
         {messages.length === 0 && (
           <div className="pt-6 text-center">
             <div className="mx-auto mb-3 grid size-10 place-items-center rounded-full bg-ai/10 text-ai"><Icon name="sparkles" /></div>
-            <div className="text-[14px] font-medium">Chat with {agentName}</div>
-            <p className="mx-auto mt-1 max-w-xs text-[13px] text-muted">Real tools, real availability. Test bookings appear in your calendar and can be cancelled there.</p>
+            <div className="text-[14px] font-medium">{t("Chat with {name}", { name: agentName })}</div>
+            <p className="mx-auto mt-1 max-w-xs text-[13px] text-muted">{t("Real tools, real availability. Test bookings appear in your calendar and can be cancelled there.")}</p>
             <div className="mt-4 flex flex-wrap justify-center gap-2">
               {SUGGESTIONS.map((s) => (
-                <button key={s} onClick={() => send(s)} className="rounded-full border border-border bg-surface px-3 py-1 text-[12px] hover:bg-subtle">{s}</button>
+                <button key={s} onClick={() => send(t(s))} className="rounded-full border border-border bg-surface px-3 py-1 text-[12px] hover:bg-subtle">{t(s)}</button>
               ))}
             </div>
           </div>
@@ -83,8 +84,8 @@ export function Playground({ agentName, live }: { agentName: string; live: boole
         </div>
       )}
       <form onSubmit={(e) => { e.preventDefault(); send(text); }} className="flex gap-2 border-t border-border p-3">
-        <input value={text} onChange={(e) => setText(e.target.value)} placeholder="Message your agent…" className="h-10 flex-1 rounded-[10px] border border-border bg-surface px-3 text-[14px] outline-none focus:border-fg/40" />
-        <Button type="submit" disabled={pending || !text.trim()} icon="send" aria-label="Send" />
+        <input value={text} onChange={(e) => setText(e.target.value)} placeholder={t("Message your agent…")} className="h-10 flex-1 rounded-[10px] border border-border bg-surface px-3 text-[14px] outline-none focus:border-fg/40" />
+        <Button type="submit" disabled={pending || !text.trim()} icon="send" aria-label={t("Send")} />
       </form>
     </div>
   );

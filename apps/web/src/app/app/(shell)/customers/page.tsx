@@ -7,9 +7,9 @@ import { formatDate, formatMoney } from "@/lib/time";
 export const metadata = { title: "Customers" };
 
 export default async function CustomersPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
-  const t = await currentTenant();
+  const tenant = await currentTenant();
   const { q } = await searchParams;
-  const customers = await listCustomers(t.business.id, q);
+  const customers = await listCustomers(tenant.business.id, q);
   return (
     <>
       <PageHeader title="Customers" description="Everyone who booked or messaged you. Your customer data stays yours and is never shared with other businesses." />
@@ -28,8 +28,8 @@ export default async function CustomersPage({ searchParams }: { searchParams: Pr
                   <td className="px-5 py-3"><Link href={`/app/customers/${c.id}`} className="flex items-center gap-2.5 font-medium"><Avatar name={c.name} size={28} />{c.name}</Link></td>
                   <td className="px-5 py-3 text-muted">{[c.phone, c.email].filter(Boolean).join(" · ") || (c.telegramChatId ? "Telegram" : "—")}</td>
                   <td className="px-5 py-3 text-right tabular-nums">{c.bookings}</td>
-                  <td className="px-5 py-3 text-right tabular-nums">{formatMoney(c.spentCents, t.business.currency)}</td>
-                  <td className="px-5 py-3 text-muted">{c.lastVisit ? formatDate(new Date(c.lastVisit), t.business.timezone) : "—"}</td>
+                  <td className="px-5 py-3 text-right tabular-nums">{formatMoney(c.spentCents, tenant.business.currency)}</td>
+                  <td className="px-5 py-3 text-muted">{c.lastVisit ? formatDate(new Date(c.lastVisit), tenant.business.timezone) : "—"}</td>
                 </tr>
               ))}
             </tbody>

@@ -9,9 +9,9 @@ import { formatDateTime, formatTime } from "@/lib/time";
 
 export default async function Thread({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const t = await currentTenant();
-  const c = await getConversation(t.business.id, id);
-  const tz = t.business.timezone;
+  const tenant = await currentTenant();
+  const c = await getConversation(tenant.business.id, id);
+  const tz = tenant.business.timezone;
   type Item = { at: Date; kind: "msg"; m: (typeof c.messages)[number] } | { at: Date; kind: "act"; a: (typeof c.actions)[number] };
   const items: Item[] = [...c.messages.map((m) => ({ at: m.createdAt, kind: "msg" as const, m })), ...c.actions.map((a) => ({ at: a.createdAt, kind: "act" as const, a }))].sort((x, y) => x.at.getTime() - y.at.getTime());
   const name = c.customer?.name ?? (c.externalThreadId.startsWith("test:") ? "Playground test" : "Web visitor");

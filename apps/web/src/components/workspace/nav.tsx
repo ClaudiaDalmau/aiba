@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useT } from "@/i18n/client";
 import { usePathname } from "next/navigation";
 import { Icon, type IconName } from "../icons";
 import { cx } from "../ui";
@@ -40,10 +41,11 @@ export function Nav({ items, onNavigate }: { items: NavItem[]; onNavigate?: () =
 }
 
 export function MobileNav({ items, children }: { items: NavItem[]; children: React.ReactNode }) {
+  const t = useT();
   return (
     <details className="group lg:hidden">
       <summary className="flex cursor-pointer list-none items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-[14px]">
-        <Icon name="menu" size={17} /> Menu
+        <Icon name="menu" size={17} /> {t("Menu")}
       </summary>
       <div className="fixed inset-0 top-14 z-40 overflow-y-auto bg-bg p-4">
         {children}

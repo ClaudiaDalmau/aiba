@@ -8,9 +8,9 @@ import { currentTenant, requirePermission } from "@/lib/tenant";
 export const metadata = { title: "Settings" };
 
 export default async function SettingsPage() {
-  const t = await currentTenant();
-  requirePermission(t, "business.manage");
-  const b = t.business;
+  const tenant = await currentTenant();
+  requirePermission(tenant, "business.manage");
+  const b = tenant.business;
   const p = b.policy;
   return (
     <>

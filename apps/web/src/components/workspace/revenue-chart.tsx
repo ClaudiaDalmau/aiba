@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useT } from "@/i18n/client";
 
 type Day = { day: string; revenueCents: number; bookings: number };
 
@@ -9,20 +10,21 @@ type Day = { day: string; revenueCents: number; bookings: number };
  * so "booked" vs "earned" never depends on color alone. Per-bar hover tooltip, recessive baseline.
  */
 export function RevenueChart({ days, currency, today }: { days: Day[]; currency: string; today: string }) {
+  const t = useT();
   const [hover, setHover] = useState<number | null>(null);
   const max = Math.max(1, ...days.map((d) => d.revenueCents));
-  const fmt = (c: number) => new Intl.NumberFormat("en-GB", { style: "currency", currency, maximumFractionDigits: 0 }).format(c / 100);
+  const fmt = (c: number) => new Intl.NumberFormat("es-ES", { style: "currency", currency, maximumFractionDigits: 0 }).format(c / 100);
   const W = 720;
   const H = 160;
   const gap = 2;
   const bw = days.length ? W / days.length - gap : 0;
   const h = hover !== null ? days[hover] : null;
 
-  if (!days.length) return <div className="grid h-40 place-items-center text-[13px] text-muted">No bookings yet in this period.</div>;
+  if (!days.length) return <div className="grid h-40 place-items-center text-[13px] text-muted">{t("No bookings yet in this period.")}</div>;
 
   return (
     <div className="relative">
-      <svg viewBox={`0 0 ${W} ${H + 20}`} className="h-auto w-full" role="img" aria-label="Daily revenue">
+      <svg viewBox={`0 0 ${W} ${H + 20}`} className="h-auto w-full" role="img" aria-label={t("Daily revenue")}>
         <defs>
           <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <rect width="6" height="6" fill="var(--ai)" opacity="0.18" />
@@ -56,9 +58,9 @@ export function RevenueChart({ days, currency, today }: { days: Day[]; currency:
         </div>
       )}
       <div className="mt-2 flex items-center gap-4 text-[12px] text-muted">
-        <span className="flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-ai" /> Earned</span>
+        <span className="flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-ai" /> {t("Earned")}</span>
         <span className="flex items-center gap-1.5">
-          <svg width="10" height="10"><rect width="10" height="10" rx="2" fill="url(#hatch)" /></svg> Booked ahead
+          <svg width="10" height="10"><rect width="10" height="10" rx="2" fill="url(#hatch)" /></svg> {t("Booked ahead")}
         </span>
       </div>
     </div>

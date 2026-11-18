@@ -57,11 +57,11 @@ function StaffFields({ s }: { s?: St }) {
 }
 
 export default async function TeamPage() {
-  const t = await currentTenant();
-  requirePermission(t, "catalog.manage");
-  const staff = await listStaff(t.business.id);
-  const off = await db.select().from(schema.timeOff).where(and(eq(schema.timeOff.businessId, t.business.id), gt(schema.timeOff.endsAt, new Date()))).orderBy(schema.timeOff.startsAt);
-  const tz = t.business.timezone;
+  const tenant = await currentTenant();
+  requirePermission(tenant, "catalog.manage");
+  const staff = await listStaff(tenant.business.id);
+  const off = await db.select().from(schema.timeOff).where(and(eq(schema.timeOff.businessId, tenant.business.id), gt(schema.timeOff.endsAt, new Date()))).orderBy(schema.timeOff.startsAt);
+  const tz = tenant.business.timezone;
   return (
     <>
       <PageHeader eyebrow="Business" title="Team & hours" description={`Working hours drive availability everywhere: booking page, agent and owner app. Times are in ${tz}.`} />

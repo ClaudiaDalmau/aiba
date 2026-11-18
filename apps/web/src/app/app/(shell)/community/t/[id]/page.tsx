@@ -21,11 +21,11 @@ function ReportButton({ threadId, postId }: { threadId: string; postId?: string 
 }
 
 export default async function ThreadPage({ params }: { params: Promise<{ id: string }> }) {
-  const t = await currentTenant();
-  if (!(await canAccessCommunity(t))) return <LockedCommunity />;
+  const tenant = await currentTenant();
+  if (!(await canAccessCommunity(tenant))) return <LockedCommunity />;
   const { id } = await params;
-  const thread = await getThread(id, { includeHidden: isCommunityModerator(t.user) });
-  const isAdmin = isCommunityModerator(t.user);
+  const thread = await getThread(id, { includeHidden: isCommunityModerator(tenant.user) });
+  const isAdmin = isCommunityModerator(tenant.user);
   return (
     <div className="mx-auto max-w-3xl">
       <Link href={`/app/community/c/${thread.category.slug}`} className="mb-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg">
@@ -66,7 +66,7 @@ export default async function ThreadPage({ params }: { params: Promise<{ id: str
             <input type="hidden" name="threadId" value={thread.id} />
             <Textarea name="body" required placeholder="Share your experience…" maxLength={20000} />
             <div className="flex items-center justify-between gap-3">
-              <span className="text-[12px] text-faint">Posting as {t.user.name} · {t.business.name}</span>
+              <span className="text-[12px] text-faint">Posting as {tenant.user.name} · {tenant.business.name}</span>
               <SubmitButton icon="send">Reply</SubmitButton>
             </div>
           </form>

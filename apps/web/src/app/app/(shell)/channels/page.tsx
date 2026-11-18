@@ -15,14 +15,14 @@ import { currentTenant, requirePermission } from "@/lib/tenant";
 export const metadata = { title: "Channels" };
 
 export default async function ChannelsPage() {
-  const t = await currentTenant();
-  requirePermission(t, "agent.manage");
-  const rows = await db.select().from(schema.channels).where(eq(schema.channels.businessId, t.business.id));
+  const tenant = await currentTenant();
+  requirePermission(tenant, "agent.manage");
+  const rows = await db.select().from(schema.channels).where(eq(schema.channels.businessId, tenant.business.id));
   const tg = rows.find((c) => c.kind === "telegram");
   const wa = rows.find((c) => c.kind === "whatsapp");
   const tgOn = tg?.status === "connected";
   const waOn = wa?.status === "connected";
-  const ent = await entitlementsOf(t.business);
+  const ent = await entitlementsOf(tenant.business);
   const tgAvailable = ent.telegram && (await telegramAvailable());
   const waAvailable = ent.whatsapp && (await whatsappAvailable());
 
@@ -61,7 +61,7 @@ export default async function ChannelsPage() {
         <Card className="p-6">
           <Head channel="telegram" title="Telegram" on={tgOn} detail={tgOn ? `via ${tg?.displayName}` : "Through our Telegram assistant"} />
           <p className="mt-3 text-[14px] text-muted">
-            Every business on the platform shares one Telegram assistant. Your personal link opens it directly on <span className="font-medium text-fg">{t.business.name}</span>, with your agent, your knowledge and your bookings. Customers can switch between businesses with /switch.
+            Every business on the platform shares one Telegram assistant. Your personal link opens it directly on <span className="font-medium text-fg">{tenant.business.name}</span>, with your agent, your knowledge and your bookings. Customers can switch between businesses with /switch.
           </p>
           {tgOn && tg?.publicHandle ? (
             <>
@@ -91,7 +91,7 @@ export default async function ChannelsPage() {
         <Card className="p-6 lg:col-span-2">
           <Head channel="web" title="Booking page chat" on detail="Always on" />
           <p className="mt-3 text-[14px] text-muted">Visitors to your booking page can chat with your agent directly. Your WhatsApp and Telegram buttons appear there too once connected.</p>
-          <LinkButton href={`/b/${t.business.slug}`} target="_blank" variant="secondary" className="mt-4" icon="external">Open booking page</LinkButton>
+          <LinkButton href={`/b/${tenant.business.slug}`} target="_blank" variant="secondary" className="mt-4" icon="external">Open booking page</LinkButton>
         </Card>
       </div>
     </>

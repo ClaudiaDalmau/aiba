@@ -6,12 +6,12 @@ import { canAccessCommunity, getCategoryBySlug, listThreads, isCommunityModerato
 import { currentTenant } from "@/lib/tenant";
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
-  const t = await currentTenant();
-  if (!(await canAccessCommunity(t))) return <LockedCommunity />;
+  const tenant = await currentTenant();
+  if (!(await canAccessCommunity(tenant))) return <LockedCommunity />;
   const { slug } = await params;
   const category = await getCategoryBySlug(slug);
   const threads = await listThreads(category.id);
-  const canPost = !category.adminOnlyPosting || isCommunityModerator(t.user);
+  const canPost = !category.adminOnlyPosting || isCommunityModerator(tenant.user);
   return (
     <>
       <Link href="/app/community" className="mb-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg"><Icon name="chevronLeft" size={14} /> Community</Link>

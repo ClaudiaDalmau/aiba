@@ -7,9 +7,9 @@ import { formatTime, zonedParts, todayIn, formatDate } from "@/lib/time";
 export const metadata = { title: "Inbox" };
 
 export default async function InboxLayout({ children }: { children: React.ReactNode }) {
-  const t = await currentTenant();
-  const convs = await listConversations(t.business.id, { limit: 100 });
-  const tz = t.business.timezone;
+  const tenant = await currentTenant();
+  const convs = await listConversations(tenant.business.id, { limit: 100 });
+  const tz = tenant.business.timezone;
   const today = todayIn(tz);
   return (
     <div className="-my-6 grid h-[calc(100dvh-3.5rem)] overflow-hidden rounded-card border border-border bg-surface shadow-card lg:-my-4 lg:h-[calc(100dvh-5rem)] lg:grid-cols-[320px_1fr]">

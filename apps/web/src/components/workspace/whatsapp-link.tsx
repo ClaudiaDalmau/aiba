@@ -14,6 +14,7 @@ type LinkState = Awaited<ReturnType<typeof whatsAppLinkState>>;
  * can't scan your own screen) the owner enters their number and types the 8-character code in WhatsApp.
  */
 export function WhatsAppLink({ initial }: { initial: LinkState }) {
+  const t = useT();
   const router = useRouter();
   const [state, setState] = useState<LinkState>(initial);
   const [method, setMethod] = useState<"qr" | "code">("qr");
@@ -54,21 +55,21 @@ export function WhatsAppLink({ initial }: { initial: LinkState }) {
       <div className="rounded-xl border border-border bg-subtle/50 p-5">
         {code ? (
           <div className="text-center">
-            <div className="text-[13px] text-muted">Enter this code on +{state?.pairing?.phone}</div>
+            <div className="text-[13px] text-muted">{t("Enter this code on +{phone}", { phone: state?.pairing?.phone ?? "" })}</div>
             <div className="mt-2 font-mono text-[32px] font-semibold tracking-[0.25em]">{code.slice(0, 4)}-{code.slice(4)}</div>
           </div>
         ) : svg ? (
           <div className="mx-auto w-56 rounded-xl bg-white p-3" dangerouslySetInnerHTML={{ __html: svg }} />
         ) : (
-          <div className="mx-auto grid size-56 place-items-center rounded-xl bg-surface text-[13px] text-muted">Preparing…</div>
+          <div className="mx-auto grid size-56 place-items-center rounded-xl bg-surface text-[13px] text-muted">{t("Preparing…")}</div>
         )}
         <ol className="mt-5 space-y-1.5 text-[13px] text-muted">
-          <li>1. Open <span className="font-medium text-fg">WhatsApp Business</span> on your phone</li>
-          <li>2. Go to <span className="font-medium text-fg">Settings → Linked devices → Link a device</span></li>
-          <li>3. {code ? <>Tap <span className="font-medium text-fg">Link with phone number instead</span> and enter the code</> : "Point your phone at this QR code"}</li>
+          <li>{t("1. Open")} <span className="font-medium text-fg">{t("WhatsApp Business")}</span> {t("on your phone")}</li>
+          <li>{t("2. Go to")} <span className="font-medium text-fg">{t("Settings → Linked devices → Link a device")}</span></li>
+          <li>3. {code ? <>{t("Tap")} <span className="font-medium text-fg">{t("Link with phone number instead")}</span> {t("and enter the code")}</> : t("Point your phone at this QR code")}</li>
         </ol>
         <div className="mt-4 flex items-center gap-2 text-[12px] text-faint">
-          <span className="size-1.5 animate-pulse-dot rounded-full bg-ai" /> Waiting for your phone…
+          <span className="size-1.5 animate-pulse-dot rounded-full bg-ai" /> {t("Waiting for your phone…")}
         </div>
       </div>
     );
@@ -79,16 +80,16 @@ export function WhatsAppLink({ initial }: { initial: LinkState }) {
       <div className="flex rounded-[10px] border border-border bg-surface p-0.5 text-[13px]">
         {(["qr", "code"] as const).map((m) => (
           <button key={m} type="button" onClick={() => setMethod(m)} className={cx("flex-1 rounded-lg px-3 py-1.5", method === m ? "bg-subtle font-medium" : "text-muted")}>
-            {m === "qr" ? "Scan a QR code" : "Use a code (on your phone)"}
+            {m === "qr" ? t("Scan a QR code") : t("Use a code (on your phone)")}
           </button>
         ))}
       </div>
-      {method === "code" && <Input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder="Your WhatsApp Business number, e.g. +33 6 12 34 56 78" />}
+      {method === "code" && <Input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" placeholder={t("Your WhatsApp Business number, e.g. +33 6 12 34 56 78")} />}
       <Button type="button" onClick={begin} disabled={pending || (method === "code" && phone.replace(/\D/g, "").length < 8)} icon="whatsapp">
-        {pending ? "Starting…" : "Link WhatsApp Business"}
+        {pending ? "Starting…" : t("Link WhatsApp Business")}
       </Button>
       {(error || state?.lastError) && <p className="rounded-lg bg-bad/10 px-3 py-2 text-[13px] text-bad">{error ?? state?.lastError}</p>}
-      <p className="flex gap-1.5 text-[12px] text-faint"><Icon name="shield" size={13} className="mt-0.5 shrink-0" /> Linked like WhatsApp Web: your phone stays the main device and you can unlink anytime from WhatsApp.</p>
+      <p className="flex gap-1.5 text-[12px] text-faint"><Icon name="shield" size={13} className="mt-0.5 shrink-0" /> {t("Linked like WhatsApp Web: your phone stays the main device and you can unlink anytime from WhatsApp.")}</p>
     </div>
   );
 }

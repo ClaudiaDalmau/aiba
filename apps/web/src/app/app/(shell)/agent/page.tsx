@@ -16,9 +16,9 @@ import { currentTenant, requirePermission } from "@/lib/tenant";
 export const metadata = { title: "Agent" };
 
 export default async function AgentPage() {
-  const t = await currentTenant();
-  requirePermission(t, "agent.manage");
-  const [agent, m, channels] = await Promise.all([getAgent(t.business.id), businessMetrics(t.business.id, 30), db.select().from(schema.channels).where(eq(schema.channels.businessId, t.business.id))]);
+  const tenant = await currentTenant();
+  requirePermission(tenant, "agent.manage");
+  const [agent, m, channels] = await Promise.all([getAgent(tenant.business.id), businessMetrics(tenant.business.id, 30), db.select().from(schema.channels).where(eq(schema.channels.businessId, tenant.business.id))]);
   if (!agent) return <p>Agent not provisioned. Contact support.</p>;
   const p = agent.persona;
   const live = await isLiveMode();

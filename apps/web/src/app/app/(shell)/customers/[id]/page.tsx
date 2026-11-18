@@ -12,16 +12,16 @@ import { formatDateTime, formatMoney } from "@/lib/time";
 
 export default async function CustomerPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const t = await currentTenant();
-  const [c] = await db.select().from(schema.customers).where(and(eq(schema.customers.id, id), eq(schema.customers.businessId, t.business.id)));
+  const tenant = await currentTenant();
+  const [c] = await db.select().from(schema.customers).where(and(eq(schema.customers.id, id), eq(schema.customers.businessId, tenant.business.id)));
   if (!c) notFound();
   const [bookings, memories, convs] = await Promise.all([
-    listBookings(t.business.id, { customerId: id }),
-    db.select().from(schema.customerMemories).where(and(eq(schema.customerMemories.businessId, t.business.id), eq(schema.customerMemories.customerId, id))),
-    db.select().from(schema.conversations).where(and(eq(schema.conversations.businessId, t.business.id), eq(schema.conversations.customerId, id))),
+    listBookings(tenant.business.id, { customerId: id }),
+    db.select().from(schema.customerMemories).where(and(eq(schema.customerMemories.businessId, tenant.business.id), eq(schema.customerMemories.customerId, id))),
+    db.select().from(schema.conversations).where(and(eq(schema.conversations.businessId, tenant.business.id), eq(schema.conversations.customerId, id))),
   ]);
-  const tz = t.business.timezone;
-  const manage = can(t.role, "customers.manage");
+  const tz = tenant.business.timezone;
+  const manage = can(tenant.role, "customers.manage");
   return (
     <>
       <PageHeader
@@ -37,7 +37,7 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
               <li key={b.id} className="flex items-center gap-3 px-5 py-3 text-[14px]">
                 <div className="flex-1">
                   <div className="font-medium">{b.service.name} <span className="font-normal text-muted">with {b.staff.name}</span></div>
-                  <div className="text-[13px] text-muted">{formatDateTime(b.startsAt, tz)} · {formatMoney(b.priceCents, t.business.currency)} · via {b.source}</div>
+                  <div className="text-[13px] text-muted">{formatDateTime(b.startsAt, tz)} · {formatMoney(b.priceCents, tenant.business.currency)} · via {b.source}</div>
                 </div>
                 <Badge tone={BOOKING_TONE[b.status]}>{BOOKING_LABEL[b.status]}</Badge>
               </li>

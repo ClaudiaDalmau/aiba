@@ -8,7 +8,10 @@ import { getBookingRow, listBookings, listCustomers, listServices, listStaff, ty
 import { currentTenant } from "@/lib/tenant";
 import { addDays, formatMoney, formatTime, minutesToHHMM, todayIn, weekdayOf, zonedParts, zonedToUtc } from "@/lib/time";
 
-export const metadata = { title: "Bookings" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("Bookings") };
+}
 
 const START_HOUR = 7;
 const END_HOUR = 21;
@@ -17,20 +20,21 @@ const PX_PER_MIN = 1.1;
 type SP = { date?: string; view?: "day" | "week"; new?: string; focus?: string; staff?: string };
 
 export default async function BookingsPage({ searchParams }: { searchParams: Promise<SP> }) {
+  const t = await getT();
   const sp = await searchParams;
-  const t = await currentTenant();
-  const tz = t.business.timezone;
+  const tenant = await currentTenant();
+  const tz = tenant.business.timezone;
   const view = sp.view === "day" ? "day" : "week";
   const anchor = sp.date && /^\d{4}-\d{2}-\d{2}$/.test(sp.date) ? sp.date : todayIn(tz);
   const start = view === "week" ? addDays(anchor, -((weekdayOf(anchor) + 6) % 7)) : anchor;
   const days = Array.from({ length: view === "week" ? 7 : 1 }, (_, i) => addDays(start, i));
   const [bookings, staff, services, pending] = await Promise.all([
-    listBookings(t.business.id, { from: zonedToUtc(days[0], 0, tz), to: zonedToUtc(addDays(days[days.length - 1], 1), 0, tz), status: ["pending", "confirmed", "completed", "no_show"] }),
-    listStaff(t.business.id),
-    listServices(t.business.id, false),
-    listBookings(t.business.id, { from: new Date(), status: ["pending"] }),
+    listBookings(tenant.business.id, { from: zonedToUtc(days[0], 0, tz), to: zonedToUtc(addDays(days[days.length - 1], 1), 0, tz), status: ["pending", "confirmed", "completed", "no_show"] }),
+    listStaff(tenant.business.id),
+    listServices(tenant.business.id, false),
+    listBookings(tenant.business.id, { from: new Date(), status: ["pending"] }),
   ]);
-  const focus = sp.focus ? await getBookingRow(t.business.id, sp.focus).catch(() => null) : null;
+  const focus = sp.focus ? await getBookingRow(tenant.business.id, sp.focus).catch(() => null) : null;
   const q = (p: Partial<SP>) => {
     const u = new URLSearchParams({ view, date: anchor, ...(sp.staff ? { staff: sp.staff } : {}), ...Object.fromEntries(Object.entries(p).filter(([, v]) => v !== undefined)) } as Record<string, string>);
     return `/app/bookings?${u}`;
@@ -43,26 +47,26 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
   return (
     <>
       <PageHeader
-        title="Bookings"
+        title={t("Bookings")}
         description={rangeLabel}
         actions={
           <>
             <div className="flex rounded-[10px] border border-border bg-surface p-0.5 shadow-card">
               {(["day", "week"] as const).map((v) => (
-                <Link key={v} href={q({ view: v })} className={cx("rounded-lg px-3 py-1.5 text-[13px] capitalize", view === v ? "bg-subtle font-medium" : "text-muted")}>{v}</Link>
+                <Link key={v} href={q({ view: v })} className={cx("rounded-lg px-3 py-1.5 text-[13px] capitalize", view === v ? "bg-subtle font-medium" : "text-muted")}>{v === "day" ? t("day") : t("week")}</Link>
               ))}
             </div>
-            <LinkButton href={q({ date: addDays(anchor, view === "week" ? -7 : -1) })} variant="secondary" aria-label="Previous"><Icon name="chevronLeft" /></LinkButton>
-            <LinkButton href={q({ date: today })} variant="secondary">Today</LinkButton>
-            <LinkButton href={q({ date: addDays(anchor, view === "week" ? 7 : 1) })} variant="secondary" aria-label="Next"><Icon name="chevronRight" /></LinkButton>
-            <LinkButton href={q({ new: "1" })} icon="plus">New booking</LinkButton>
+            <LinkButton href={q({ date: addDays(anchor, view === "week" ? -7 : -1) })} variant="secondary" aria-label={t("Previous")}><Icon name="chevronLeft" /></LinkButton>
+            <LinkButton href={q({ date: today })} variant="secondary">{t("Today")}</LinkButton>
+            <LinkButton href={q({ date: addDays(anchor, view === "week" ? 7 : 1) })} variant="secondary" aria-label={t("Next")}><Icon name="chevronRight" /></LinkButton>
+            <LinkButton href={q({ new: "1" })} icon="plus">{t("New booking")}</LinkButton>
           </>
         }
       />
 
       {pending.length > 0 && (
         <Card className="mb-4 border-warn/30 p-4">
-          <div className="mb-2 flex items-center gap-2 text-[14px] font-semibold"><Icon name="clock" size={16} className="text-warn" /> {pending.length} booking request{pending.length > 1 ? "s" : ""} to confirm</div>
+          <div className="mb-2 flex items-center gap-2 text-[14px] font-semibold"><Icon name="clock" size={16} className="text-warn" /> {t(pending.length > 1 ? "{n} booking requests to confirm" : "{n} booking request to confirm", { n: pending.length })}</div>
           <div className="flex flex-wrap gap-2">
             {pending.slice(0, 6).map((b) => (
               <Link key={b.id} href={q({ focus: b.id, date: zonedParts(b.startsAt, tz).date })} className="rounded-lg border border-border bg-surface px-3 py-1.5 text-[13px] hover:bg-subtle">
@@ -74,7 +78,7 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
       )}
 
       <div className="mb-3 flex flex-wrap items-center gap-2 text-[13px]">
-        <Link href={q({ staff: undefined }).replace(/&?staff=[^&]*/, "")} className={cx("rounded-full border px-3 py-1", !sp.staff ? "border-fg bg-fg text-bg" : "border-border text-muted")}>Everyone</Link>
+        <Link href={q({ staff: undefined }).replace(/&?staff=[^&]*/, "")} className={cx("rounded-full border px-3 py-1", !sp.staff ? "border-fg bg-fg text-bg" : "border-border text-muted")}>{t("Everyone")}</Link>
         {staff.filter((s) => s.active).map((s) => (
           <Link key={s.id} href={q({ staff: s.id })} className={cx("flex items-center gap-1.5 rounded-full border px-3 py-1", sp.staff === s.id ? "border-fg bg-fg text-bg" : "border-border text-muted")}>
             <span className="size-2 rounded-full" style={{ background: s.color }} /> {s.name}
@@ -111,14 +115,14 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
         </div>
       </Card>
 
-      {sp.new && <NewBookingDrawer close={q({ new: undefined }).replace(/&?new=1/, "")} services={services} staff={staff} customers={await listCustomers(t.business.id)} date={anchor} />}
-      {focus && <BookingDrawer b={focus} tz={tz} currency={t.business.currency} close={q({}).replace(/&?focus=[^&]*/, "")} staff={staff} />}
+      {sp.new && <NewBookingDrawer close={q({ new: undefined }).replace(/&?new=1/, "")} services={services} staff={staff} customers={await listCustomers(tenant.business.id)} date={anchor} />}
+      {focus && <BookingDrawer b={focus} tz={tz} currency={tenant.business.currency} close={q({}).replace(/&?focus=[^&]*/, "")} staff={staff} />}
     </>
   );
 }
 
 function fmtDay(date: string, tz: string, long = false) {
-  return new Intl.DateTimeFormat("en-GB", { timeZone: "UTC", weekday: long ? "long" : "short", day: "numeric", month: long ? "long" : "short" }).format(new Date(`${date}T12:00:00Z`));
+  return new Intl.DateTimeFormat("es-ES", { timeZone: "UTC", weekday: long ? "long" : "short", day: "numeric", month: long ? "long" : "short" }).format(new Date(`${date}T12:00:00Z`));
 }
 
 function Block({ b, tz, href }: { b: BookingRow; tz: string; href: string }) {
@@ -138,10 +142,11 @@ function Block({ b, tz, href }: { b: BookingRow; tz: string; href: string }) {
   );
 }
 
-function Drawer({ title, close, children }: { title: string; close: string; children: React.ReactNode }) {
+async function Drawer({ title, close, children }: { title: string; close: string; children: React.ReactNode }) {
+  const t = await getT();
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
-      <Link href={close} scroll={false} className="absolute inset-0 bg-black/20 backdrop-blur-[1px]" aria-label="Close" />
+      <Link href={close} scroll={false} className="absolute inset-0 bg-black/20 backdrop-blur-[1px]" aria-label={t("Close")} />
       <div className="animate-fade-up relative h-full w-full max-w-md overflow-y-auto border-l border-border bg-surface p-6 shadow-pop">
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-[18px] font-semibold">{title}</h2>
@@ -153,56 +158,57 @@ function Drawer({ title, close, children }: { title: string; close: string; chil
   );
 }
 
-function BookingDrawer({ b, tz, currency, close, staff }: { b: Awaited<ReturnType<typeof getBookingRow>>; tz: string; currency: string; close: string; staff: { id: string; name: string }[] }) {
+async function BookingDrawer({ b, tz, currency, close, staff }: { b: Awaited<ReturnType<typeof getBookingRow>>; tz: string; currency: string; close: string; staff: { id: string; name: string }[] }) {
+  const t = await getT();
   const live = b.status === "pending" || b.status === "confirmed";
   const { date, minute } = zonedParts(b.startsAt, tz);
   return (
     <Drawer title={b.customer.name} close={close}>
       <div className="flex items-center gap-2">
-        <Badge tone={BOOKING_TONE[b.status]}>{BOOKING_LABEL[b.status]}</Badge>
-        <Badge>{b.source === "agent" || b.source === "whatsapp" || b.source === "telegram" ? `via agent (${b.source})` : `via ${b.source}`}</Badge>
+        <Badge tone={BOOKING_TONE[b.status]}>{t(BOOKING_LABEL[b.status])}</Badge>
+        <Badge>{b.source === "agent" || b.source === "whatsapp" || b.source === "telegram" ? t("via agent ({source})", { source: b.source }) : t("via {source}", { source: t(b.source) })}</Badge>
       </div>
       <dl className="mt-5 space-y-3 text-[14px]">
-        <Row k="Service" v={`${b.service.name} · ${b.service.durationMinutes} min`} />
-        <Row k="When" v={`${fmtDay(date, tz, true)}, ${formatTime(b.startsAt, tz)}`} />
-        <Row k="With" v={b.staff.name} />
-        <Row k="Price" v={formatMoney(b.priceCents, currency)} />
-        <Row k="Contact" v={[b.customer.phone, b.customer.email].filter(Boolean).join(" · ") || "—"} />
-        {b.notes && <Row k="Notes" v={b.notes} />}
-        {b.cancelReason && <Row k="Cancel reason" v={b.cancelReason} />}
+        <Row k={t("Service")} v={`${b.service.name} · ${b.service.durationMinutes} min`} />
+        <Row k={t("When")} v={`${fmtDay(date, tz, true)}, ${formatTime(b.startsAt, tz)}`} />
+        <Row k={t("With")} v={b.staff.name} />
+        <Row k={t("Price")} v={formatMoney(b.priceCents, currency)} />
+        <Row k={t("Contact")} v={[b.customer.phone, b.customer.email].filter(Boolean).join(" · ") || "—"} />
+        {b.notes && <Row k={t("Notes")} v={b.notes} />}
+        {b.cancelReason && <Row k={t("Cancel reason")} v={b.cancelReason} />}
       </dl>
-      <Link href={`/app/customers/${b.customer.id}`} className="mt-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg">Customer profile <Icon name="arrowRight" size={14} /></Link>
+      <Link href={`/app/customers/${b.customer.id}`} className="mt-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg">{t("Customer profile")} <Icon name="arrowRight" size={14} /></Link>
 
       {live && (
         <>
           <form action={bookingAction} className="mt-6 flex flex-wrap gap-2">
             <input type="hidden" name="bookingId" value={b.id} />
-            {b.status === "pending" && <Button name="action" value="confirm" icon="check">Confirm</Button>}
-            {b.startsAt < new Date() && <Button name="action" value="complete" variant="secondary">Mark completed</Button>}
-            {b.startsAt < new Date() && <Button name="action" value="no_show" variant="secondary">No-show</Button>}
+            {b.status === "pending" && <Button name="action" value="confirm" icon="check">{t("Confirm")}</Button>}
+            {b.startsAt < new Date() && <Button name="action" value="complete" variant="secondary">{t("Mark completed")}</Button>}
+            {b.startsAt < new Date() && <Button name="action" value="no_show" variant="secondary">{t("No-show")}</Button>}
           </form>
 
           <div className="mt-6 border-t border-border pt-5">
-            <div className="mb-3 text-[14px] font-semibold">Reschedule</div>
+            <div className="mb-3 text-[14px] font-semibold">{t("Reschedule")}</div>
             <ActionForm action={rescheduleAction} className="space-y-3">
               <input type="hidden" name="bookingId" value={b.id} />
               <div className="grid grid-cols-2 gap-3">
-                <Field label="Date"><Input type="date" name="date" defaultValue={date} required /></Field>
-                <Field label="Time"><Input type="time" name="time" step={300} defaultValue={minutesToHHMM(minute)} required /></Field>
+                <Field label={t("Date")}><Input type="date" name="date" defaultValue={date} required /></Field>
+                <Field label={t("Time")}><Input type="time" name="time" step={300} defaultValue={minutesToHHMM(minute)} required /></Field>
               </div>
-              <Field label="With">
+              <Field label={t("With")}>
                 <Select name="staffId" defaultValue={b.staff.id}>{staff.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}</Select>
               </Field>
-              <Toggle name="override" label="Allow outside opening hours" description="Overlaps are still blocked." />
-              <SubmitButton variant="secondary">Move booking</SubmitButton>
+              <Toggle name="override" label={t("Allow outside opening hours")} description={t("Overlaps are still blocked.")} />
+              <SubmitButton variant="secondary">{t("Move booking")}</SubmitButton>
             </ActionForm>
           </div>
 
           <form action={bookingAction} className="mt-6 space-y-3 border-t border-border pt-5">
             <input type="hidden" name="bookingId" value={b.id} />
             <input type="hidden" name="action" value="cancel" />
-            <Field label="Cancel booking"><Input name="reason" placeholder="Reason (shared with the customer)" /></Field>
-            <ConfirmSubmit message="Cancel this booking? The customer will be notified." icon="x">Cancel booking</ConfirmSubmit>
+            <Field label={t("Cancel booking")}><Input name="reason" placeholder={t("Reason (shared with the customer)")} /></Field>
+            <ConfirmSubmit message={t("Cancel this booking? The customer will be notified.")} icon="x">{t("Cancel booking")}</ConfirmSubmit>
           </form>
         </>
       )}
@@ -214,34 +220,35 @@ const Row = ({ k, v }: { k: string; v: string }) => (
   <div className="flex gap-4"><dt className="w-28 shrink-0 text-muted">{k}</dt><dd className="min-w-0 break-words">{v}</dd></div>
 );
 
-function NewBookingDrawer({ close, services, staff, customers, date }: { close: string; services: { id: string; name: string; durationMinutes: number }[]; staff: { id: string; name: string; active: boolean }[]; customers: { id: string; name: string; phone: string | null }[]; date: string }) {
+async function NewBookingDrawer({ close, services, staff, customers, date }: { close: string; services: { id: string; name: string; durationMinutes: number }[]; staff: { id: string; name: string; active: boolean }[]; customers: { id: string; name: string; phone: string | null }[]; date: string }) {
+  const t = await getT();
   return (
-    <Drawer title="New booking" close={close}>
+    <Drawer title={t("New booking")} close={close}>
       {!services.length ? (
-        <p className="text-muted">Add a service first. <Link className="underline" href="/app/services">Services</Link></p>
+        <p className="text-muted">{t("Add a service first.")} <Link className="underline" href="/app/services">{t("Services")}</Link></p>
       ) : (
         <ActionForm action={createBookingAction} className="space-y-4" resetOnSuccess>
-          <Field label="Service">
+          <Field label={t("Service")}>
             <Select name="serviceId" required>{services.map((s) => <option key={s.id} value={s.id}>{s.name} · {s.durationMinutes} min</option>)}</Select>
           </Field>
-          <Field label="With">
-            <Select name="staffId" defaultValue=""><option value="">First available</option>{staff.filter((s) => s.active).map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}</Select>
+          <Field label={t("With")}>
+            <Select name="staffId" defaultValue=""><option value="">{t("First available")}</option>{staff.filter((s) => s.active).map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}</Select>
           </Field>
           <div className="grid grid-cols-2 gap-3">
-            <Field label="Date"><Input type="date" name="date" defaultValue={date} required /></Field>
-            <Field label="Time"><Input type="time" name="time" step={300} defaultValue="10:00" required /></Field>
+            <Field label={t("Date")}><Input type="date" name="date" defaultValue={date} required /></Field>
+            <Field label={t("Time")}><Input type="time" name="time" step={300} defaultValue="10:00" required /></Field>
           </div>
-          <Field label="Existing customer" hint="or fill in below">
-            <Select name="customerId" defaultValue=""><option value="">New customer</option>{customers.map((c) => <option key={c.id} value={c.id}>{c.name}{c.phone ? ` · ${c.phone}` : ""}</option>)}</Select>
+          <Field label={t("Existing customer")} hint={t("or fill in below")}>
+            <Select name="customerId" defaultValue=""><option value="">{t("New customer")}</option>{customers.map((c) => <option key={c.id} value={c.id}>{c.name}{c.phone ? ` · ${c.phone}` : ""}</option>)}</Select>
           </Field>
           <div className="grid grid-cols-2 gap-3">
-            <Field label="Name"><Input name="name" /></Field>
-            <Field label="Phone"><Input name="phone" type="tel" /></Field>
+            <Field label={t("Name")}><Input name="name" /></Field>
+            <Field label={t("Phone")}><Input name="phone" type="tel" /></Field>
           </div>
-          <Field label="Email"><Input name="email" type="email" /></Field>
-          <Field label="Notes"><Textarea name="notes" rows={2} /></Field>
-          <Toggle name="override" label="Walk-in / override hours" description="Book outside published slots. Overlaps are still blocked." />
-          <SubmitButton className="w-full">Create booking</SubmitButton>
+          <Field label={t("Email")}><Input name="email" type="email" /></Field>
+          <Field label={t("Notes")}><Textarea name="notes" rows={2} /></Field>
+          <Toggle name="override" label={t("Walk-in / override hours")} description={t("Book outside published slots. Overlaps are still blocked.")} />
+          <SubmitButton className="w-full">{t("Create booking")}</SubmitButton>
         </ActionForm>
       )}
     </Drawer>

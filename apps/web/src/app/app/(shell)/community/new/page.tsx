@@ -10,10 +10,10 @@ import { currentTenant } from "@/lib/tenant";
 export const metadata = { title: "New discussion" };
 
 export default async function NewThreadPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
-  const t = await currentTenant();
-  if (!(await canAccessCommunity(t))) return <LockedCommunity />;
+  const tenant = await currentTenant();
+  if (!(await canAccessCommunity(tenant))) return <LockedCommunity />;
   const { category } = await searchParams;
-  const isAdmin = isCommunityModerator(t.user);
+  const isAdmin = isCommunityModerator(tenant.user);
   const categories = (await listCategories()).filter((c) => !c.adminOnlyPosting || isAdmin);
   const selected = categories.find((c) => c.slug === category)?.id ?? categories[0]?.id;
   return (

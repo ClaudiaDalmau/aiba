@@ -10,9 +10,9 @@ export const metadata = { title: "Knowledge" };
 const KIND = { faq: "FAQ", policy: "Policy", document: "Document", note: "Note" } as const;
 
 export default async function KnowledgePage() {
-  const t = await currentTenant();
-  requirePermission(t, "agent.manage");
-  const items = await listKnowledge(t.business.id);
+  const tenant = await currentTenant();
+  requirePermission(tenant, "agent.manage");
+  const items = await listKnowledge(tenant.business.id);
   return (
     <>
       <PageHeader eyebrow="NanoClaw agent" title="Knowledge" description="Everything your agent can cite beyond your services, team, hours and policies (which it learns automatically). Keep entries short and factual." />

@@ -15,10 +15,10 @@ const STATUS_TONE: Record<string, Tone> = { active: "ok", trialing: "ai", past_d
 const STATUS_LABEL: Record<string, string> = { active: "Active", trialing: "Trial", past_due: "Past due", canceled: "Canceled" };
 
 export default async function BillingPage({ searchParams }: { searchParams: Promise<{ checkout?: string }> }) {
-  const t = await currentTenant();
-  requirePermission(t, "business.manage");
+  const tenant = await currentTenant();
+  requirePermission(tenant, "business.manage");
   const { checkout } = await searchParams;
-  const b = t.business;
+  const b = tenant.business;
 
   const [sub] = await db.select().from(schema.subscriptions).where(eq(schema.subscriptions.businessId, b.id));
   const monthStart = new Date(Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), 1));

@@ -38,9 +38,9 @@ function ServiceFields({ s, staff }: { s?: Svc; staff: St[] }) {
 }
 
 export default async function ServicesPage() {
-  const t = await currentTenant();
-  requirePermission(t, "catalog.manage");
-  const [services, staff] = await Promise.all([listServices(t.business.id), listStaff(t.business.id)]);
+  const tenant = await currentTenant();
+  requirePermission(tenant, "catalog.manage");
+  const [services, staff] = await Promise.all([listServices(tenant.business.id), listStaff(tenant.business.id)]);
   return (
     <>
       <PageHeader eyebrow="Business" title="Services" description="What customers can book. Your agent quotes these prices and durations exactly." />
@@ -66,7 +66,7 @@ export default async function ServicesPage() {
                         <div className="truncate text-[13px] text-muted">{s.description || "No description"}</div>
                       </div>
                       <div className="text-right text-[14px] tabular-nums">
-                        <div className="font-semibold">{formatMoney(s.priceCents, t.business.currency)}</div>
+                        <div className="font-semibold">{formatMoney(s.priceCents, tenant.business.currency)}</div>
                         <div className="text-[12px] text-muted">{s.durationMinutes} min{s.bufferMinutes ? ` + ${s.bufferMinutes}` : ""}</div>
                       </div>
                     </summary>

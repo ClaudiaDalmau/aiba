@@ -11,11 +11,11 @@ export const metadata = { title: "Approvals" };
 const TONE = { executed: "ok", approved: "ok", pending_approval: "warn", rejected: "bad", failed: "bad", expired: "neutral" } as const;
 
 export default async function Approvals({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
-  const t = await currentTenant();
-  requirePermission(t, "agent.approve");
+  const tenant = await currentTenant();
+  requirePermission(tenant, "agent.approve");
   const { tab } = await searchParams;
   const history = tab === "log";
-  const actions = await listActions(t.business.id, { status: history ? undefined : "pending_approval", limit: 200 });
+  const actions = await listActions(tenant.business.id, { status: history ? undefined : "pending_approval", limit: 200 });
   return (
     <>
       <PageHeader title="Approvals & activity" description="Actions your agent wants to take that need your OK, and a full audit trail of everything it did." />
@@ -37,7 +37,7 @@ export default async function Approvals({ searchParams }: { searchParams: Promis
                   </div>
                   <div className="mt-0.5 flex flex-wrap items-center gap-1.5 text-[13px] text-muted">
                     {a.channel && <ChannelIcon channel={a.channel} size={12} />}
-                    {a.customerName ?? "Unknown customer"} · {formatDateTime(a.createdAt, t.business.timezone)} · <code className="text-[12px]">{a.tool}</code>
+                    {a.customerName ?? "Unknown customer"} · {formatDateTime(a.createdAt, tenant.business.timezone)} · <code className="text-[12px]">{a.tool}</code>
                     {a.conversationId && <Link href={`/app/inbox/${a.conversationId}`} className="underline-offset-2 hover:underline">conversation</Link>}
                   </div>
                   {a.status === "failed" && a.output != null && <div className="mt-1 text-[12px] text-bad">{String((a.output as { error?: string }).error ?? "")}</div>}

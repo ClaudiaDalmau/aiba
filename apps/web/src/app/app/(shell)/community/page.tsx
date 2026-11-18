@@ -8,8 +8,8 @@ import { currentTenant } from "@/lib/tenant";
 export const metadata = { title: "VIP community" };
 
 export default async function CommunityPage() {
-  const t = await currentTenant();
-  if (!(await canAccessCommunity(t))) {
+  const tenant = await currentTenant();
+  if (!(await canAccessCommunity(tenant))) {
     return (
       <>
         <PageHeader eyebrow="Community" title="VIP community" />

@@ -56,17 +56,17 @@ export function todayIn(tz: string): string {
   return zonedParts(new Date(), tz).date;
 }
 
-export function formatTime(instant: Date, tz: string, locale = "en-GB") {
+export function formatTime(instant: Date, tz: string, locale = "es-ES") {
   return new Intl.DateTimeFormat(locale, { timeZone: tz, hour: "2-digit", minute: "2-digit" }).format(instant);
 }
 
-export function formatDate(instant: Date, tz: string, locale = "en-GB", opts?: Intl.DateTimeFormatOptions) {
+export function formatDate(instant: Date, tz: string, locale = "es-ES", opts?: Intl.DateTimeFormatOptions) {
   return new Intl.DateTimeFormat(locale, { timeZone: tz, weekday: "short", day: "numeric", month: "short", ...opts }).format(
     instant,
   );
 }
 
-export function formatDateTime(instant: Date, tz: string, locale = "en-GB") {
+export function formatDateTime(instant: Date, tz: string, locale = "es-ES") {
   return `${formatDate(instant, tz, locale)}, ${formatTime(instant, tz, locale)}`;
 }
 
@@ -76,7 +76,7 @@ export function hhmmToMinutes(s: string): number {
   return h * 60 + (m || 0);
 }
 
-export function formatMoney(cents: number, currency: string, locale = "en-GB") {
+export function formatMoney(cents: number, currency: string, locale = "es-ES") {
   return new Intl.NumberFormat(locale, { style: "currency", currency, maximumFractionDigits: cents % 100 ? 2 : 0 }).format(
     cents / 100,
   );
