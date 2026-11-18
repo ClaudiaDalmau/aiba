@@ -31,7 +31,7 @@ export async function generateMetadata({
   // Reuse the "hero" translations if available; fall back to sensible defaults.
   let title = SITE_NAME;
   let description =
-    "Reservas automáticas con IA + Telegram para profesionales independientes.";
+    "AI booking assistant on WhatsApp & Telegram for independent professionals.";
   try {
     const t = await getTranslations({ locale, namespace: "meta" });
     title = t("home.title");

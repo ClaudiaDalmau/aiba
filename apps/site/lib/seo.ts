@@ -135,12 +135,12 @@ export function softwareApplicationJsonLd() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "iOS, Android, Web",
     description:
-      "SaaS de reservas automatizadas con IA + Telegram para profesionales independientes. Panel web, app mobile, chatbot 24/7, depósitos, recordatorios y valoraciones.",
+      "AI booking SaaS on WhatsApp & Telegram for independent professionals: web dashboard, mobile app, 24/7 chatbot, deposits, reminders and reviews.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "EUR",
-      description: "Plan Free disponible; planes Pro y Premium con funciones avanzadas",
+      description: "14-day free trial on every plan: Basic, Pro and Premium",
     },
     // NOTE (iter31 follow-up): removed the hardcoded aggregateRating.
     // Google penalises fake ratings and issues a manual action if it detects
@@ -255,9 +255,9 @@ export function pricingProductJsonLd(opts: {
     "@context": "https://schema.org",
     "@type": "Product",
     "@id": `${canonicalUrl}#product`,
-    name: `${SITE_NAME} — SaaS de reservas`,
+    name: `${SITE_NAME} — AI booking SaaS`,
     description:
-      "Planes flexibles desde 39€/mes para gestionar reservas automáticas con IA. Basic, Pro y Premium.",
+      "Flexible plans from €39/month for AI-powered automatic bookings. Basic, Pro and Premium.",
     brand: { "@type": "Brand", name: SITE_NAME },
     offers: opts.plans.map((p) => ({
       "@type": "Offer",

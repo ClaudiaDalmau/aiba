@@ -9,7 +9,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "AIBA — Reservas con IA para profesionales independientes";
+export const alt = "AIBA — AI booking assistant for independent professionals";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -66,7 +66,7 @@ export default async function OpengraphImage() {
             fontWeight: 500,
           }}
         >
-          Reservas automáticas con IA + Telegram para profesionales independientes
+          AI booking assistant on WhatsApp & Telegram for independent professionals
         </div>
         <div
           style={{
@@ -80,9 +80,9 @@ export default async function OpengraphImage() {
         >
           <span>🤖 Chatbot 24/7</span>
           <span>·</span>
-          <span>💳 Depósito</span>
+          <span>💳 Deposits</span>
           <span>·</span>
-          <span>🌐 7 idiomas</span>
+          <span>🌐 7 languages</span>
         </div>
       </div>
     ),

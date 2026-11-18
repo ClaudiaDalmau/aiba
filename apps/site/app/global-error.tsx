@@ -15,18 +15,18 @@ export default function GlobalError({
   return (
     <html>
       <body style={{ fontFamily: "system-ui, sans-serif", padding: 32, maxWidth: 640, margin: "0 auto" }}>
-        <h1 style={{ fontSize: 24, marginBottom: 12 }}>Algo ha fallado</h1>
+        <h1 style={{ fontSize: 24, marginBottom: 12 }}>Something went wrong</h1>
         <p style={{ color: "#666", marginBottom: 20 }}>
-          Ha ocurrido un error inesperado. El equipo técnico ha sido notificado.
+          An unexpected error occurred. Our team has been notified.
         </p>
         <button
           onClick={() => reset()}
           style={{
-            padding: "10px 20px", background: "#4F7942", color: "#fff",
+            padding: "10px 20px", background: "#7c3aed", color: "#fff",
             border: 0, borderRadius: 8, fontWeight: 700, cursor: "pointer",
           }}
         >
-          Reintentar
+          Try again
         </button>
       </body>
     </html>

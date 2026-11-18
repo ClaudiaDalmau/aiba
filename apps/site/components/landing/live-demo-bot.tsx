@@ -1,65 +1,157 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "next-intl";
 import { Send, Bot, User, Zap } from "lucide-react";
 
 type Msg = { role: "bot" | "client"; text: string; ts: number };
 
-type Lang = "es" | "ca" | "en";
+type Lang = "es" | "en" | "fr" | "de" | "it" | "pt-BR" | "ru";
 
-const SEED_BY_LANG: Record<Lang, Msg[]> = {
-  es: [{ role: "bot", ts: 0, text: "¡Hola! Soy la asistente virtual de Estudio Isabel. ¿Quieres reservar un corte, tinte o servicio combo?" }],
-  ca: [{ role: "bot", ts: 0, text: "Hola! Sóc l'assistent virtual de l'Estudi Isabel. Vols reservar un tall, un tint o un servei combo?" }],
-  en: [{ role: "bot", ts: 0, text: "Hi! I'm Isabel's virtual assistant. Would you like to book a haircut, color, or combo service?" }],
+type Copy = {
+  seed: string;
+  hints: string[];
+  title: string;
+  status: string;
+  badge: string;
+  placeholder: string;
+  slots: string;
+  confirm: (slot: string) => string;
+  price: string;
+  fallback: string;
 };
 
-const HINTS_BY_LANG: Record<Lang, string[]> = {
-  es: ["quiero un corte", "esta semana", "el jueves a las 4", "cuánto cuesta?"],
-  ca: ["vull un tall", "aquesta setmana", "dijous a les 4", "quant costa?"],
-  en: ["I want a haircut", "this week", "thursday 4pm", "how much?"],
-};
-
-const LABELS: Record<Lang, { title: string; status: string; badge: string; placeholder: string; error: string }> = {
+/**
+ * Demo guionizada (sin backend): muestra el flujo real de AIBA
+ * — servicio → huecos → reserva + señal — en el idioma de la web.
+ */
+const COPY: Record<Lang, Copy> = {
   es: {
+    seed: "¡Hola! Soy la asistente virtual de Estudio Isabel. ¿Quieres reservar un corte, tinte o servicio combo?",
+    hints: ["quiero un corte", "esta semana", "el jueves a las 4", "¿cuánto cuesta?"],
     title: "Estudio Isabel · Demo en vivo",
     status: "en línea · responde en <1 seg",
     badge: "Demo",
-    placeholder: "Escribe algo… ('quiero un corte', 'esta semana')",
-    error: "Uy, ha habido un pequeño error. Prueba de nuevo 💚",
-  },
-  ca: {
-    title: "Estudi Isabel · Demo en directe",
-    status: "en línia · respon en <1 seg",
-    badge: "Demo",
-    placeholder: "Escriu alguna cosa… ('vull un tall', 'aquesta setmana')",
-    error: "Ep, ha passat alguna cosa. Prova un altre cop 💚",
+    placeholder: "Escribe algo… («quiero un corte», «esta semana»)",
+    slots: "¡Genial! Esta semana tengo libre el jueves a las 16:00, el viernes a las 10:30 o el sábado a las 12:00. ¿Cuál te va mejor?",
+    confirm: (s) => `Perfecto, te reservo ${s} ✓ Para confirmar la cita, paga la señal de 10 € aquí: aiba.app/pagar · 1 h antes te enviaré un código de 6 dígitos.`,
+    price: "Corte 25 € (45 min) · Tinte 40 € (1 h 30) · Combo corte + tinte 60 € (2 h). ¿Te busco un hueco?",
+    fallback: "Puedo ayudarte con cortes, tintes y combos, decirte precios o buscarte hueco. ¿Qué te apetece?",
   },
   en: {
+    seed: "Hi! I'm the virtual assistant at Estudio Isabel. Would you like to book a haircut, colour or combo?",
+    hints: ["I want a haircut", "this week", "Thursday at 4pm", "how much?"],
     title: "Estudio Isabel · Live demo",
     status: "online · replies in <1 sec",
     badge: "Demo",
     placeholder: "Type something… ('I want a haircut', 'this week')",
-    error: "Oops, something went wrong. Try again 💚",
+    slots: "Great! This week I have Thursday at 4:00 pm, Friday at 10:30 am or Saturday at 12:00. Which suits you best?",
+    confirm: (s) => `Perfect, you're booked for ${s} ✓ To confirm, pay the €10 deposit here: aiba.app/pay · I'll send you a 6-digit code 1 h before.`,
+    price: "Haircut €25 (45 min) · Colour €40 (1 h 30) · Haircut + colour combo €60 (2 h). Shall I find you a slot?",
+    fallback: "I can help with haircuts, colour and combos, tell you prices or find you a slot. What would you like?",
+  },
+  fr: {
+    seed: "Bonjour ! Je suis l'assistante virtuelle d'Estudio Isabel. Vous souhaitez réserver une coupe, une couleur ou une formule combo ?",
+    hints: ["je veux une coupe", "cette semaine", "jeudi à 16h", "combien ça coûte ?"],
+    title: "Estudio Isabel · Démo en direct",
+    status: "en ligne · répond en <1 s",
+    badge: "Démo",
+    placeholder: "Écrivez quelque chose… (« je veux une coupe », « cette semaine »)",
+    slots: "Super ! Cette semaine j'ai jeudi à 16h00, vendredi à 10h30 ou samedi à 12h00. Qu'est-ce qui vous convient le mieux ?",
+    confirm: (s) => `Parfait, c'est réservé pour ${s} ✓ Pour confirmer, payez l'acompte de 10 € ici : aiba.app/payer · Je vous enverrai un code à 6 chiffres 1 h avant.`,
+    price: "Coupe 25 € (45 min) · Couleur 40 € (1 h 30) · Combo coupe + couleur 60 € (2 h). Je vous cherche un créneau ?",
+    fallback: "Je peux vous aider pour les coupes, couleurs et combos, vous donner les prix ou trouver un créneau. Que souhaitez-vous ?",
+  },
+  de: {
+    seed: "Hallo! Ich bin die virtuelle Assistentin von Estudio Isabel. Möchtest du einen Haarschnitt, eine Färbung oder ein Kombi-Paket buchen?",
+    hints: ["ich möchte einen Haarschnitt", "diese Woche", "Donnerstag um 16 Uhr", "was kostet das?"],
+    title: "Estudio Isabel · Live-Demo",
+    status: "online · antwortet in <1 Sek.",
+    badge: "Demo",
+    placeholder: "Schreib etwas… („Haarschnitt“, „diese Woche“)",
+    slots: "Super! Diese Woche habe ich Donnerstag um 16:00, Freitag um 10:30 oder Samstag um 12:00 frei. Was passt dir am besten?",
+    confirm: (s) => `Perfekt, ich habe dich für ${s} eingetragen ✓ Zur Bestätigung zahle die Anzahlung von 10 € hier: aiba.app/zahlen · 1 Std. vorher schicke ich dir einen 6-stelligen Code.`,
+    price: "Haarschnitt 25 € (45 Min.) · Färbung 40 € (1 Std. 30) · Kombi Schnitt + Färbung 60 € (2 Std.). Soll ich dir einen Termin suchen?",
+    fallback: "Ich helfe dir bei Haarschnitt, Färbung und Kombis, nenne dir Preise oder suche dir einen Termin. Was möchtest du?",
+  },
+  it: {
+    seed: "Ciao! Sono l'assistente virtuale di Estudio Isabel. Vuoi prenotare un taglio, un colore o un servizio combo?",
+    hints: ["vorrei un taglio", "questa settimana", "giovedì alle 16", "quanto costa?"],
+    title: "Estudio Isabel · Demo dal vivo",
+    status: "online · risponde in <1 sec",
+    badge: "Demo",
+    placeholder: "Scrivi qualcosa… («vorrei un taglio», «questa settimana»)",
+    slots: "Perfetto! Questa settimana ho giovedì alle 16:00, venerdì alle 10:30 o sabato alle 12:00. Quale preferisci?",
+    confirm: (s) => `Fatto, ti ho prenotato ${s} ✓ Per confermare paga l'acconto di 10 € qui: aiba.app/paga · 1 h prima ti mando un codice di 6 cifre.`,
+    price: "Taglio 25 € (45 min) · Colore 40 € (1 h 30) · Combo taglio + colore 60 € (2 h). Ti cerco un orario?",
+    fallback: "Posso aiutarti con tagli, colore e combo, dirti i prezzi o trovarti un orario. Cosa ti serve?",
+  },
+  "pt-BR": {
+    seed: "Oi! Sou a assistente virtual do Estudio Isabel. Quer reservar um corte, coloração ou um combo?",
+    hints: ["quero um corte", "esta semana", "quinta às 16h", "quanto custa?"],
+    title: "Estudio Isabel · Demo ao vivo",
+    status: "online · responde em <1 seg",
+    badge: "Demo",
+    placeholder: "Escreva algo… (\"quero um corte\", \"esta semana\")",
+    slots: "Ótimo! Esta semana tenho quinta às 16:00, sexta às 10:30 ou sábado às 12:00. Qual fica melhor para você?",
+    confirm: (s) => `Perfeito, reservei ${s} para você ✓ Para confirmar, pague o sinal de €10 aqui: aiba.app/pagar · 1 h antes envio um código de 6 dígitos.`,
+    price: "Corte €25 (45 min) · Coloração €40 (1 h 30) · Combo corte + coloração €60 (2 h). Quer que eu procure um horário?",
+    fallback: "Posso ajudar com cortes, coloração e combos, informar preços ou encontrar um horário. O que você prefere?",
+  },
+  ru: {
+    seed: "Здравствуйте! Я виртуальный ассистент Estudio Isabel. Хотите записаться на стрижку, окрашивание или комплекс?",
+    hints: ["хочу стрижку", "на этой неделе", "в четверг в 16:00", "сколько стоит?"],
+    title: "Estudio Isabel · Живая демо",
+    status: "онлайн · отвечает за <1 сек",
+    badge: "Демо",
+    placeholder: "Напишите что-нибудь… («хочу стрижку», «на этой неделе»)",
+    slots: "Отлично! На этой неделе свободно: четверг 16:00, пятница 10:30 или суббота 12:00. Что вам удобнее?",
+    confirm: (s) => `Готово, записала вас на ${s} ✓ Для подтверждения внесите предоплату 10 € здесь: aiba.app/pay · За 1 ч до визита пришлю 6-значный код.`,
+    price: "Стрижка 25 € (45 мин) · Окрашивание 40 € (1 ч 30) · Стрижка + окрашивание 60 € (2 ч). Подобрать вам время?",
+    fallback: "Я помогу со стрижкой, окрашиванием и комплексами, подскажу цены или подберу время. Что вас интересует?",
   },
 };
 
+const SLOT_LABELS: Record<Lang, [RegExp, string][]> = {
+  es: [[/jue|4|16/i, "el jueves a las 16:00"], [/vie|10/i, "el viernes a las 10:30"], [/s[áa]b|12/i, "el sábado a las 12:00"]],
+  en: [[/thu|4|16/i, "Thursday at 4:00 pm"], [/fri|10/i, "Friday at 10:30 am"], [/sat|12/i, "Saturday at 12:00"]],
+  fr: [[/jeu|16|4/i, "jeudi à 16h00"], [/ven|10/i, "vendredi à 10h30"], [/sam|12/i, "samedi à 12h00"]],
+  de: [[/don|16|4/i, "Donnerstag um 16:00"], [/fre|10/i, "Freitag um 10:30"], [/sam|12/i, "Samstag um 12:00"]],
+  it: [[/gio|16|4/i, "giovedì alle 16:00"], [/ven|10/i, "venerdì alle 10:30"], [/sab|12/i, "sabato alle 12:00"]],
+  "pt-BR": [[/qui|16|4/i, "quinta às 16:00"], [/sex|10/i, "sexta às 10:30"], [/s[áa]b|12/i, "sábado às 12:00"]],
+  ru: [[/чет|16|4/i, "четверг 16:00"], [/пят|10/i, "пятницу 10:30"], [/суб|12/i, "субботу 12:00"]],
+};
+
+const PRICE_RE = /cu[áa]nto|precio|cuesta|how much|price|cost|combien|prix|co[ûu]te|kostet|preis|quanto|costa|prezz|pre[çc]o|custa|сколько|цен|стоит/i;
+
+function reply(lang: Lang, text: string, offered: boolean): { text: string; offered: boolean } {
+  const c = COPY[lang];
+  if (PRICE_RE.test(text)) return { text: c.price, offered };
+  if (offered || /\d/.test(text)) {
+    const hit = SLOT_LABELS[lang].find(([re]) => re.test(text));
+    if (hit) return { text: c.confirm(hit[1]), offered: false };
+  }
+  if (text.trim().length >= 2) return { text: c.slots, offered: true };
+  return { text: c.fallback, offered };
+}
+
 export default function LiveDemoBot() {
-  const [lang, setLang] = useState<Lang>("es");
-  const [msgs, setMsgs] = useState<Msg[]>(SEED_BY_LANG.es);
+  const locale = useLocale();
+  const lang: Lang = (Object.keys(COPY) as Lang[]).includes(locale as Lang) ? (locale as Lang) : "en";
+  const [msgs, setMsgs] = useState<Msg[]>([{ role: "bot", ts: 0, text: COPY[lang].seed }]);
   const [input, setInput] = useState("");
   const [thinking, setThinking] = useState(false);
-  const [sessionId] = useState(
-    () => `demo_${Math.random().toString(36).slice(2, 10)}${Date.now()}`
-  );
+  const [offered, setOffered] = useState(false);
   const listRef = useRef<HTMLDivElement | null>(null);
 
-  // Reset conversation when the language changes
   useEffect(() => {
-    setMsgs(SEED_BY_LANG[lang]);
+    setMsgs([{ role: "bot", ts: 0, text: COPY[lang].seed }]);
+    setOffered(false);
     setInput("");
   }, [lang]);
 
   useEffect(() => {
-    listRef.current?.scrollTo({ top: 99999, behavior: "smooth" });
+    const el = listRef.current;
+    if (el && msgs.length > 1) el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
   }, [msgs, thinking]);
 
   async function send(text?: string) {
@@ -68,24 +160,15 @@ export default function LiveDemoBot() {
     setInput("");
     setMsgs((m) => [...m, { role: "client", text: payload, ts: Date.now() }]);
     setThinking(true);
-    try {
-      const r = await fetch("/api/backend/public/demo-chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: payload, session_id: sessionId, lang }),
-      });
-      const data = await r.json();
-      await new Promise((res) => setTimeout(res, data.typing_ms || 800));
-      setMsgs((m) => [...m, { role: "bot", text: data.reply, ts: Date.now() }]);
-    } catch {
-      setMsgs((m) => [...m, { role: "bot", text: LABELS[lang].error, ts: Date.now() }]);
-    } finally {
-      setThinking(false);
-    }
+    const r = reply(lang, payload, offered);
+    await new Promise((res) => setTimeout(res, 700 + Math.min(900, r.text.length * 6)));
+    setOffered(r.offered);
+    setMsgs((m) => [...m, { role: "bot", text: r.text, ts: Date.now() }]);
+    setThinking(false);
   }
 
-  const L = LABELS[lang];
-  const HINTS = HINTS_BY_LANG[lang];
+  const L = COPY[lang];
+  const HINTS = L.hints;
 
   return (
     <div className="rounded-2xl border border-violet-200 dark:border-violet-900/40 bg-gradient-to-br from-white via-violet-50/30 to-white dark:from-neutral-900 dark:via-violet-950/20 dark:to-neutral-900 shadow-lg overflow-hidden">
@@ -100,23 +183,6 @@ export default function LiveDemoBot() {
             <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-pulse" />
             {L.status}
           </p>
-        </div>
-        {/* Iter68 — language switcher */}
-        <div className="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-full p-0.5">
-          {(["es", "ca", "en"] as Lang[]).map((l) => (
-            <button
-              key={l}
-              onClick={() => setLang(l)}
-              className={`px-2 py-0.5 text-[10px] font-semibold rounded-full transition-colors ${
-                l === lang
-                  ? "bg-violet-600 text-white"
-                  : "text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200"
-              }`}
-              aria-label={`Idioma ${l.toUpperCase()}`}
-            >
-              {l.toUpperCase()}
-            </button>
-          ))}
         </div>
         <span className="inline-flex items-center gap-1 text-[10px] font-medium text-violet-600 dark:text-violet-400 bg-violet-100 dark:bg-violet-500/20 px-2 py-1 rounded-full">
           <Zap className="h-3 w-3" /> {L.badge}

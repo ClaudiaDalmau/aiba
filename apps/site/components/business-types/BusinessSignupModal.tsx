@@ -112,9 +112,6 @@ export default function BusinessSignupModal({ open, onClose, caseKey, caseTitle,
             <div className="w-14 h-14 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="h-7 w-7 text-emerald-600 dark:text-emerald-400" />
             </div>
-            <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-              ¡Listo!
-            </h3>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">{labels.signupSuccess}</p>
             <button
               type="button"
