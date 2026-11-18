@@ -54,7 +54,7 @@ export default async function SystemStatus() {
             {checks.map((c) => (
               <div key={c.label} className="flex items-center justify-between gap-3 px-5 py-3">
                 <div><div className="font-medium">{c.label}</div><div className="text-[13px] text-muted">{c.detail}</div></div>
-                <Badge tone={c.ok ? "ok" : "warn"}>{c.ok ? "OK" : "Check"}</Badge>
+                <Badge tone={c.ok ? "ok" : "warn"}>{c.ok ? "OK" : t("Pending")}</Badge>
               </div>
             ))}
           </div>
