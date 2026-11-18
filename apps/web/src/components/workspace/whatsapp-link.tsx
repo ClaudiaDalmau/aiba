@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/client";
 import { useRouter } from "next/navigation";
 import QRCode from "qrcode";
 import { useEffect, useState, useTransition } from "react";

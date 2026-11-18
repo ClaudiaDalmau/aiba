@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import { eq } from "drizzle-orm";
 import { disconnectChannelAction, enableTelegramAction } from "@/actions/workspace";
 import { ConfirmSubmit, SubmitButton } from "@/components/client";

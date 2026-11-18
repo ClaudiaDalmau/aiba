@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { conversationAction, decideAction_, replyAction } from "@/actions/workspace";
 import { SubmitButton } from "@/components/client";

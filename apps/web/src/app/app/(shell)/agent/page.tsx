@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { saveAgent, savePermissions, toggleAgent } from "@/actions/workspace";
 import { SubmitButton, Toggle } from "@/components/client";

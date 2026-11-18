@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { Avatar, Badge, ChannelIcon, cx, Empty } from "@/components/ui";
 import { listConversations } from "@/lib/queries";

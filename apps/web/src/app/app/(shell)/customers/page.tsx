@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { Avatar, Card, Empty, Input, PageHeader } from "@/components/ui";
 import { listCustomers } from "@/lib/queries";

@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import { saveSettings } from "@/actions/workspace";
 import { SubmitButton, Toggle } from "@/components/client";
 import { Card, CardHeader, Field, Input, LinkButton, PageHeader, Select, Textarea } from "@/components/ui";

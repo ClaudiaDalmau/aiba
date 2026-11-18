@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/client";
 import { useRef, useState, useTransition } from "react";
 import { playgroundSend } from "@/actions/workspace";
 import { Icon } from "../icons";

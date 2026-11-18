@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { bookingAction, createBookingAction, rescheduleAction } from "@/actions/workspace";
 import { ConfirmSubmit, SubmitButton, Toggle } from "@/components/client";

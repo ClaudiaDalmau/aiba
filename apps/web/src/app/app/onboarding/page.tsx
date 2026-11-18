@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import { redirect } from "next/navigation";
 import { onboard } from "@/actions/workspace";
 import { SubmitButton } from "@/components/client";

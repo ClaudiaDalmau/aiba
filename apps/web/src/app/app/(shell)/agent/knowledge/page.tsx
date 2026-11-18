@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import { deleteKnowledge, saveKnowledge, uploadKnowledge } from "@/actions/workspace";
 import { ConfirmSubmit, SubmitButton } from "@/components/client";
 import { Badge, Card, CardHeader, Empty, Field, Input, PageHeader, Select, Textarea } from "@/components/ui";

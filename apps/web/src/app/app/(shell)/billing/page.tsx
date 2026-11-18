@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import { eq, sql } from "drizzle-orm";
 import { changePlan } from "@/actions/billing";
 import { SubmitButton } from "@/components/client";

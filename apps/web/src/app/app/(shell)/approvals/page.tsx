@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { decideAction_ } from "@/actions/workspace";
 import { Badge, Button, Card, ChannelIcon, cx, Empty, Input, PageHeader } from "@/components/ui";
