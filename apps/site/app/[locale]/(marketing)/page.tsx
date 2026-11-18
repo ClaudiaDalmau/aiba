@@ -250,7 +250,7 @@ export default async function HomePage({
 
       {/* ───────── DEMO EN VIVO ───────── */}
       <section className="bg-white dark:bg-neutral-950 px-6 py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 [&>*]:min-w-0">
           <Reveal>
             <p className="text-[15px] font-semibold text-violet-600 dark:text-violet-400">{t("home.demo.label")}</p>
             <h2 className="mt-3 text-[clamp(32px,3.6vw,48px)] font-bold leading-[1.05] tracking-[-0.035em] text-neutral-900 dark:text-white">

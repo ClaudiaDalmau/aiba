@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, usePathname } from "@/i18n/navigation";
 
 type Item = { href: string; label: string };
@@ -22,6 +23,8 @@ export default function MobileNav({
   menuLabel: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const pathname = usePathname();
 
   // Cierra al cambiar de página y bloquea el scroll del fondo mientras está abierto.
@@ -57,9 +60,10 @@ export default function MobileNav({
         />
       </button>
 
+      {mounted && createPortal(
       <div
         id="aiba-mobile-menu"
-        className={`fixed inset-x-0 top-14 bottom-0 z-40 bg-[#050507]/95 backdrop-blur-xl transition-all duration-300 ${
+        className={`fixed inset-x-0 top-14 bottom-0 z-[60] lg:hidden bg-[#050507]/95 backdrop-blur-xl transition-all duration-300 ${
           open ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"
         }`}
       >
@@ -103,6 +107,7 @@ export default function MobileNav({
           </div>
         </nav>
       </div>
+      , document.body)}
     </div>
   );
 }
