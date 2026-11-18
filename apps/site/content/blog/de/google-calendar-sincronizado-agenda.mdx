@@ -1,0 +1,140 @@
+---
+title: "Google Calendar mit deiner Buchungsapp synchronisieren: Leitfaden 2026"
+description: "So synchronisierst du deinen Google Calendar bidirektional mit deiner Buchungsapp: OAuth-Setup, Datenschutz, automatisch vs. manuell erstellte Termine und häufige Fehler."
+date: "2026-08-04"
+category: "Automatisierung"
+tags: ["google-calendar", "sincronizacion", "oauth", "agenda"]
+author: "AIBA"
+cover: "/blog/covers/google-calendar-sincronizado-agenda.jpg"
+---
+
+Mit zwei getrennten Kalendern zu leben – deinem persönlichen Google Calendar und deiner Buchungsapp – ist eine endlose Quelle für Doppelbuchungen und Terminwirrwarr. Eine bidirektionale Synchronisierung **löst das Problem ein für alle Mal**. Hier zeige ich dir, wie du es richtig machst.
+
+## Was bedeutet „bidirektionale Synchronisierung"?
+
+**Unidirektional** (App → Google Calendar):
+- Wenn ein Kunde über deine App bucht, wird der Termin in deinem Google Calendar erstellt.
+- Wenn du die Buchung stornierst, wird der Termin gelöscht.
+- **Aber** wenn du in Google Calendar Zeit blockierst (z. B. Arzttermin), bekommt deine App davon **nichts mit** und zeigt diese Zeit weiterhin als verfügbar an.
+
+**Bidirektional** (App ↔ Google Calendar):
+- Alles wie oben +
+- **Wenn du Zeit blockierst** in Google Calendar (Familienessen, Zahnarzt, Elternabend), markiert die App **diese Stunden automatisch als nicht verfügbar**.
+
+Die bidirektionale Variante eliminiert Fehler wirklich. Die unidirektionale ist nur ein Pflaster.
+
+## Die echten Vorteile
+
+Wenn alles eingerichtet ist:
+
+- **Du siehst deinen ganzen Tag** in einem einzigen Kalender (privat + beruflich)
+- **Buchungen und Blockierungen werden kombiniert**, ohne dass du eingreifen musst
+- **Native Google-Benachrichtigungen** erinnern dich an bevorstehende Termine
+- **Synchronisierung mit deinem Handy, Apple Watch, Auto, Alexa** ...
+- **Wenn du mit deinem Partner oder Geschäftspartner arbeitest**, sehen beide dieselben Verfügbarkeiten
+
+## So richtest du es ein (Schritt für Schritt)
+
+### 1. Zugriff per OAuth autorisieren
+
+Deine Buchungsapp bittet dich, Google Calendar zu verbinden. Der Ablauf:
+
+1. In deiner App tippst du auf „Google Calendar verbinden"
+2. Ein Google-Fenster öffnet sich und bittet um deine Genehmigung
+3. **Überprüfe die angeforderten Berechtigungen**: Es sollte nur `calendar.events` (Termine erstellen/bearbeiten) sein, NICHT `calendar` (das wäre Vollzugriff).
+4. Du stimmst zu
+5. Deine App erhält ein **verschlüsseltes Refresh-Token** und kann deinen Kalender jetzt lesen und beschreiben
+
+<Callout tone="info">
+Das Refresh-Token wird nie auf dem Bildschirm angezeigt oder weitergegeben. Die App speichert es verschlüsselt in ihrer Datenbank und verwendet es jedes Mal, wenn sie auf deinen Kalender zugreifen muss.
+</Callout>
+
+### 2. Wähle, welchen Kalender du synchronisieren möchtest
+
+Standardmäßig wird dein **Hauptkalender** („primary") verwendet. Wenn du lieber trennst:
+
+- Erstelle in Google Calendar einen neuen Kalender namens „Arbeit"
+- Richte deine App so ein, dass sie diesen verwendet
+- Dein persönlicher Kalender bleibt unberührt
+
+### 3. Datenschutz der Termine konfigurieren
+
+**Für allgemeine Branchen** (Friseur, Therapeutin, Coach):
+- Titel des Termins: „Haarschnitt · Maria Müller"
+- Beschreibung: Telefonnummer der Kundin, interne Referenz
+
+**Für sensible Bereiche** (Datenschutz besonders wichtig):
+- Titel des Termins: „Termin — 60 Min." (generisch)
+- Beschreibung: nur interne Referenz, kein sichtbarer Name
+- Sichtbarkeit: „Privat"
+
+Mit dieser Einstellung sieht man in der Gesamtansicht deines Google Calendars nur einen neutralen Block. Niemand, der an deinem Computer vorbeiläuft, sieht Namen oder sensible Daten.
+
+## Häufige Fehler, die dir passieren werden (und wie du sie vermeidest)
+
+### Fehler 1: Doppelte Termine
+
+Das passiert, wenn die App einen Termin erstellt und ihn **zusätzlich** als belegten Block importiert (weil sie ihren eigenen Termin als externen Eintrag interpretiert). Die technische Lösung: Die App muss **ihre Termine mit einer internen Eigenschaft markieren** (`managed_by: "app"`), damit sie bei der Rücksynchronisierung ignoriert werden.
+
+### Fehler 2: Abgelaufenes Refresh-Token
+
+Wenn Google ungewöhnliche Aktivitäten erkennt, widerruft es das Refresh-Token. Deine App sollte:
+- **Das Ablaufen erkennen**
+- **Dich benachrichtigen**, damit du die Verbindung erneuerst
+- **Nicht stillschweigend versagen**, indem sie einfach aufhört, Termine zu erstellen
+
+### Fehler 3: Sync-Schleifen
+
+App erstellt Termin → Google meldet Änderung → App liest und erstellt einen weiteren Termin → Endlosschleife.
+
+Die App muss **ihre eigenen Änderungen herausfiltern**, damit sie nicht wie externe Änderungen verarbeitet werden.
+
+### Fehler 4: Gemischte Zeitzonen
+
+Wenn du reist oder dein Kunde in einer anderen Zeitzone ist, müssen Termine intern in UTC gespeichert und auf jedem Gerät in der richtigen Zeitzone angezeigt werden. Ein Fehler hier, und Termine erscheinen im Kalender deines Kunden 2 Stunden früher.
+
+## So testest du, ob alles richtig funktioniert
+
+Test 1: **Buchung über die App erstellen**
+- Gehe zu deinem Google Calendar → Der Termin muss im richtigen Zeitfenster mit dem konfigurierten Titel und der Beschreibung erscheinen.
+
+Test 2: **Zeit in Google Calendar blockieren**
+- Füge in Google Calendar einen Termin „Arzt" von 10:00 bis 11:00 Uhr hinzu
+- Rufe deine App auf und prüfe die Verfügbarkeit → Dieses Zeitfenster sollte als blockiert angezeigt werden
+
+Test 3: **Buchung über die App stornieren**
+- Storniere einen Termin
+- Gehe zu Google Calendar → Der Termin muss verschwunden sein
+
+Test 4: **Externen Termin in Google Calendar löschen**
+- Lösche den Termin „Arzt", den du in Test 2 erstellt hast
+- Gehe zu deiner App → Das Zeitfenster muss wieder als verfügbar angezeigt werden
+
+Wenn alle 4 Tests bestanden werden, funktioniert deine bidirektionale Synchronisierung einwandfrei.
+
+## Wann du besser NICHT synchronisieren solltest
+
+Situationen, in denen du die Synchronisierung vielleicht lieber **deaktivierst**:
+
+- **Du arbeitest mit mehreren B2B-Kunden**, die auch deinen geteilten Kalender sehen (Google Meet). Sie würden deine privaten Termine sehen.
+- **Du teilst dein Google-Konto** mit der Familie und möchtest nicht, dass sie Details sehen.
+- **Du arbeitest in einem rechtlichen oder beruflichen Umfeld**, in dem du Kundendaten nicht auf Servern außerhalb der EU verarbeiten darfst (obwohl Google ein DPA hat, das dies abdeckt).
+
+In diesen Fällen ist ein **separater Kalender** vielleicht besser. Oder nutze ein **sekundäres Google-Konto**, das ausschließlich für die Arbeit gedacht ist.
+
+## So trennst du die Verbindung (falls du es irgendwann brauchst)
+
+Du solltest die Verbindung jederzeit mit einem Klick trennen können:
+
+1. In deiner App → „Google Calendar trennen"
+2. Die App widerruft das Token über die Google API
+3. Die bereits in Google erstellten Termine **bleiben erhalten** (sie gehören dir)
+4. Zukünftige Termine werden nicht mehr synchronisiert
+
+Nach dem Trennen kannst du die bisherigen Termine bei Bedarf manuell löschen (Google Calendar erlaubt das auch in großen Mengen).
+
+## Fazit
+
+Deinen Google Calendar mit deiner Buchungsapp zu synchronisieren ist eine **einmalige, kleine Maßnahme**, die dir monatlich Stunden spart und den größten operativen Fehler von Selbstständigen eliminiert: die Doppelbuchung. Richtig eingerichtet – mit dem passenden Datenschutz für deine Branche – ist das ein **klarer Gewinn ohne Nachteile**.
+
+Wenn deine App keine bidirektionale Synchronisierung anbietet, ist das ein deutliches Zeichen, nach einer besseren App Ausschau zu halten.

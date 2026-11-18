@@ -1,0 +1,140 @@
+---
+title: "Google Calendar synchronisé avec votre agenda de réservations : guide 2026"
+description: "Comment synchroniser Google Calendar en mode bidirectionnel avec votre app de réservations : configuration OAuth, confidentialité, événements générés vs manuels et erreurs courantes."
+date: "2026-08-04"
+category: "Automatisation"
+tags: ["google-calendar", "sincronizacion", "oauth", "agenda"]
+author: "AIBA"
+cover: "/blog/covers/google-calendar-sincronizado-agenda.jpg"
+---
+
+Jongler avec deux agendas distincts — votre Google Calendar personnel et votre app de réservations — est une source inépuisable de doubles réservations et de ratés organisationnels. Les synchroniser en mode bidirectionnel **élimine le problème une bonne fois pour toutes**. Voici comment bien s'y prendre.
+
+## Ce que signifie « synchronisation bidirectionnelle »
+
+**Unidirectionnelle** (app → Google Calendar) :
+- Quand un client réserve dans votre app, l'événement est créé dans votre Google Calendar.
+- Quand vous annulez la réservation, l'événement est supprimé.
+- **Mais** si vous bloquez du temps dans Google Calendar (ex. médecin), votre app n'en sait rien et continue d'afficher cette plage comme disponible.
+
+**Bidirectionnelle** (app ↔ Google Calendar) :
+- Tout ce qui précède +
+- **Lorsque vous bloquez du temps** dans Google Calendar (repas en famille, dentiste, école des enfants), l'app **marque automatiquement ces heures comme indisponibles**.
+
+La bidirectionnelle est celle qui élimine vraiment les erreurs. La unidirectionnelle n'est qu'un pansement.
+
+## Les bénéfices concrets
+
+Une fois la synchronisation en place :
+
+- **Vous voyez votre journée complète** dans un seul calendrier (personnel + professionnel)
+- **Réservations et blocages se combinent** sans que vous ayez à intervenir
+- **Les notifications natives de Google** vous rappellent vos prochains rendez-vous
+- **Synchronisation avec votre téléphone, Apple Watch, voiture, Alexa**...
+- **Si vous travaillez avec votre conjoint(e) ou associé(e)**, vous voyez tous les deux les mêmes disponibilités
+
+## Comment le configurer (étape par étape)
+
+### 1. Autorisez l'accès via OAuth
+
+Votre app de réservations vous demandera de connecter Google Calendar. Voici le processus :
+
+1. Dans votre app, appuyez sur « Connecter Google Calendar »
+2. Une fenêtre Google s'ouvre pour vous demander votre autorisation
+3. **Vérifiez les autorisations demandées** : elles devraient se limiter à `calendar.events` (créer/modifier des événements), et NON à `calendar` (qui correspond à un accès total).
+4. Vous acceptez
+5. Votre app reçoit un **refresh token chiffré** et peut désormais lire et écrire dans votre calendrier
+
+<Callout tone="info">
+Le refresh token n'est jamais affiché à l'écran ni partagé. L'app le stocke de manière chiffrée dans sa base de données et l'utilise chaque fois qu'elle a besoin d'accéder à votre calendrier.
+</Callout>
+
+### 2. Choisissez quel calendrier synchroniser
+
+Par défaut, c'est votre calendrier **principal** (« primary ») qui est utilisé. Mais si vous préférez compartimenter :
+
+- Créez un nouveau calendrier dans Google Calendar intitulé « Travail »
+- Configurez votre app pour utiliser celui-ci
+- Votre calendrier personnel reste intact
+
+### 3. Configurez la confidentialité des événements
+
+**Pour les activités généralistes** (coiffeur, thérapeute, coach) :
+- Titre de l'événement : « Coupe de cheveux · Marie Dupont »
+- Description : téléphone du client, référence interne
+
+**Pour les activités sensibles** (confidentialité critique) :
+- Titre de l'événement : « Rendez-vous — 60 min » (générique)
+- Description : référence interne uniquement, sans nom visible
+- Visibilité : « Privé »
+
+Avec cette configuration, la vue générale de votre Google Calendar n'affiche qu'un bloc neutre. Personne qui passe devant votre écran ne peut voir des noms ou des informations compromettantes.
+
+## Les erreurs courantes que vous allez rencontrer (et comment les éviter)
+
+### Erreur 1 : Événements en double
+
+Cela arrive quand l'app crée un événement et l'importe **également** comme plage occupée (en interprétant son propre événement). Solution technique : l'app doit **marquer ses événements avec une propriété interne** (`managed_by: "app"`) pour les ignorer lors de la synchronisation inverse.
+
+### Erreur 2 : Refresh token expiré
+
+Si Google détecte une activité inhabituelle, il révoque le refresh token. Votre app doit :
+- **Détecter l'expiration**
+- **Vous notifier** pour reconnecter
+- **Ne pas échouer silencieusement** en cessant de créer des événements
+
+### Erreur 3 : Boucles de synchronisation
+
+L'app crée un événement → Google signale le changement → L'app le lit et crée un autre événement → Boucle infinie.
+
+L'app doit **filtrer ses propres modifications** pour éviter de les traiter comme si elles venaient de l'extérieur.
+
+### Erreur 4 : Fuseaux horaires mélangés
+
+Si vous voyagez ou si votre client se trouve dans un autre fuseau horaire, les événements doivent être conservés en UTC en interne et affichés dans le bon fuseau sur chaque appareil. Une erreur ici et les rendez-vous apparaissent 2h trop tôt dans le calendrier du client.
+
+## Comment vérifier que tout fonctionne bien
+
+Test 1 : **Créez une réservation depuis l'app**
+- Allez dans votre Google Calendar → l'événement doit apparaître dans le bon créneau avec le titre et la description configurés.
+
+Test 2 : **Bloquez du temps dans Google Calendar**
+- Dans Google Calendar, ajoutez un événement « Médecin » de 10h00 à 11h00
+- Allez dans votre app et consultez les disponibilités → ce créneau doit apparaître comme bloqué
+
+Test 3 : **Annulez une réservation depuis l'app**
+- Annulez un rendez-vous
+- Allez dans Google Calendar → l'événement doit avoir disparu
+
+Test 4 : **Supprimez un événement externe dans Google Calendar**
+- Supprimez l'événement « Médecin » créé lors du Test 2
+- Allez dans votre app → le créneau doit redevenir disponible
+
+Si les 4 tests sont concluants, votre synchronisation bidirectionnelle fonctionne parfaitement.
+
+## Quand il vaut mieux ne PAS synchroniser
+
+Cas où vous pourriez préférer **ne pas** activer la synchronisation :
+
+- **Vous travaillez avec plusieurs clients B2B** qui ont également accès à votre calendrier partagé (Google Meet). Ils verraient vos rendez-vous privés.
+- **Vous partagez votre compte Google** avec votre famille et ne souhaitez pas qu'elle voie les détails.
+- **Vous êtes dans un contexte juridique ou professionnel** où vous ne pouvez pas traiter les données clients sur des serveurs hors UE (même si Google dispose d'un DPA qui couvre ce cas).
+
+Dans ces situations, un **agenda séparé** peut être préférable. Ou utilisez un **compte Google secondaire** dédié exclusivement à votre activité professionnelle.
+
+## Comment déconnecter (si vous en avez un jour besoin)
+
+Vous devez toujours pouvoir dissocier les deux en un clic :
+
+1. Dans votre app → « Déconnecter Google Calendar »
+2. L'app révoque le token via l'API Google
+3. Les événements déjà créés dans Google **restent en place** (ils vous appartiennent)
+4. Les prochains événements ne seront plus synchronisés
+
+Après la déconnexion, vous pouvez supprimer manuellement les événements passés si vous le souhaitez (Google Calendar le permet en masse).
+
+## Conclusion
+
+Synchroniser votre Google Calendar avec votre app de réservations, c'est une **petite action unique** qui vous fait gagner des heures chaque mois et élimine la principale erreur opérationnelle du professionnel indépendant : la double réservation. Bien configuré (avec le niveau de confidentialité adapté à votre activité), c'est un **gain net** sans contrepartie.
+
+Si votre app ne propose pas de synchronisation bidirectionnelle, c'est un signal pour en chercher une meilleure.

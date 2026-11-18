@@ -1,0 +1,140 @@
+---
+title: "Google Calendar synced with your booking schedule: 2026 guide"
+description: "How to set up two-way sync between Google Calendar and your booking app: OAuth setup, privacy, auto-generated vs manual events, and common errors."
+date: "2026-08-04"
+category: "Automation"
+tags: ["google-calendar", "sincronizacion", "oauth", "agenda"]
+author: "AIBA"
+cover: "/blog/covers/google-calendar-sincronizado-agenda.jpg"
+---
+
+Running two separate calendars — your personal Google Calendar and your booking app — is an endless source of double bookings and scheduling chaos. Setting up two-way sync **eliminates the problem for good**. Here's how to do it right.
+
+## What "two-way sync" actually means
+
+**One-way** (app → Google Calendar):
+- When a client books through your app, the event is created in your Google Calendar.
+- When you cancel the booking, the event is deleted.
+- **But** if you block off time in Google Calendar (e.g. a doctor's appointment), your app has NO idea and keeps showing that slot as available.
+
+**Two-way** (app ↔ Google Calendar):
+- Everything above, plus:
+- **When you block off time** in Google Calendar (a family lunch, the dentist, the school run), your app **automatically marks those hours as unavailable**.
+
+Two-way sync is what actually prevents mistakes. One-way is just a band-aid.
+
+## The real benefits
+
+Once it's set up:
+
+- **You see your full day** in a single calendar (personal + work)
+- **Bookings and blocks combine** without you lifting a finger
+- **Native Google notifications** remind you of upcoming appointments
+- **Syncs across your phone, Apple Watch, car, Alexa**...
+- **If you work with a partner or colleague**, you both see the same availability
+
+## How to set it up (step by step)
+
+### 1. Grant access via OAuth
+
+Your booking app will ask you to connect Google Calendar. The flow:
+
+1. In your app, tap "Connect Google Calendar"
+2. A Google screen opens asking for authorization
+3. **Review the permissions** being requested: it should only be `calendar.events` (create/edit events), NOT `calendar` (which grants full access).
+4. Accept
+5. Your app receives an **encrypted refresh token** and can now read/write to your calendar
+
+<Callout tone="info">
+The refresh token is never displayed on screen or shared. The app stores it encrypted in its database and uses it whenever it needs to access your calendar.
+</Callout>
+
+### 2. Choose which calendar to sync
+
+By default, your **primary** calendar is used. But if you'd prefer to keep things separate:
+
+- Create a new calendar in Google Calendar called "Work"
+- Configure your app to use that one instead
+- Your personal calendar stays completely untouched
+
+### 3. Set up event privacy
+
+**For general professionals** (hairdressers, therapists, coaches):
+- Event title: "Haircut · Maria González"
+- Description: client phone number, internal reference
+
+**For sensitive fields** (where privacy is critical):
+- Event title: "Appointment — 60 min" (generic)
+- Description: internal reference only, no visible name
+- Visibility: "Private"
+
+With this setup, the general view of your Google Calendar just shows a neutral block. Anyone who glances at your screen won't see any names or sensitive information.
+
+## Common errors you'll run into (and how to avoid them)
+
+### Error 1: Duplicate events
+
+This happens when the app creates an event and **also** imports it as a busy block (treating its own event as external). The fix: the app must **tag its own events with an internal property** (`managed_by: "app"`) so they're ignored during the reverse sync.
+
+### Error 2: Expired refresh token
+
+If Google detects unusual activity, it revokes the refresh token. Your app should:
+- **Detect the expiry**
+- **Notify you** so you can reconnect
+- **Not fail silently** — it shouldn't just stop creating events without warning
+
+### Error 3: Sync loops
+
+App creates event → Google notifies change → App reads it and creates another event → Infinite loop.
+
+The app must **filter out its own changes** so they're not processed as if they came from an external source.
+
+### Error 4: Mixed time zones
+
+If you travel or your client is in a different time zone, events must be stored internally in UTC and displayed in the correct timezone on each device. Get this wrong and appointments show up 2 hours early on your client's calendar.
+
+## How to test that everything's working
+
+Test 1: **Create a booking in the app**
+- Open your Google Calendar → the event should appear in the right slot with the title and description you configured.
+
+Test 2: **Block time in Google Calendar**
+- Add an event called "Doctor" from 10:00 to 11:00 in Google Calendar
+- Open your app and check availability → that slot should show as blocked
+
+Test 3: **Cancel a booking in the app**
+- Cancel an appointment
+- Open Google Calendar → the event should be gone
+
+Test 4: **Delete an external event in Google Calendar**
+- Delete the "Doctor" event you created in Test 2
+- Open your app → that slot should be available again
+
+If all 4 tests pass, your two-way sync is working correctly.
+
+## When you might NOT want to sync
+
+Situations where you may prefer to **skip** the sync:
+
+- **You work with multiple B2B clients** who also have access to your shared calendar (Google Meet). They'd see your private appointments.
+- **You share your Google account** with family and don't want them seeing client details.
+- **You're in a legal or regulated environment** where you can't process client data on servers outside the EU (though Google does have a DPA that covers this).
+
+In those cases, a **separate calendar** may be a better fit. Or use a **secondary Google account** dedicated exclusively to work.
+
+## How to disconnect (if you ever need to)
+
+You should always be able to unlink with a single click:
+
+1. In your app → "Disconnect Google Calendar"
+2. The app revokes the token via the Google API
+3. Events already created in Google **remain** (they're yours)
+4. Future events will no longer sync
+
+After disconnecting, you can manually delete historical events if you prefer — Google Calendar lets you do this in bulk.
+
+## Conclusion
+
+Syncing your Google Calendar with your booking app is a **one-time, five-minute setup** that saves you hours every month and eliminates the biggest operational mistake independent professionals make: the double booking. Done right — with the right privacy settings for your field — it's a **clear win with no real downsides**.
+
+If your app doesn't offer two-way sync, that's a sign it's time to find a better one.

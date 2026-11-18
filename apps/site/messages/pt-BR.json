@@ -1,0 +1,861 @@
+{
+  "header": {
+    "brand": {
+      "main": "AI Booking",
+      "sub": "Assistant"
+    },
+    "nav": {
+      "howItWorks": "Como funciona",
+      "businessTypes": "Tipos de negócio",
+      "pricing": "Preços",
+      "faq": "FAQ",
+      "contact": "Contato"
+    },
+    "cta": {
+      "login": "Entrar",
+      "goToDashboard": "Ir para o dashboard",
+      "startFree": "Começar grátis"
+    }
+  },
+  "footer": {
+    "tagline": "Reservas automáticas com IA para profissionais autônomos.",
+    "sections": {
+      "product": "PRODUTO",
+      "company": "EMPRESA",
+      "legal": "LEGAL"
+    },
+    "product": {
+      "howItWorks": "Como funciona",
+      "businessTypes": "Tipos de negócio",
+      "pricing": "Preços",
+      "faq": "FAQ"
+    },
+    "company": {
+      "about": "Sobre nós",
+      "contact": "Contato"
+    },
+    "legal": {
+      "terms": "Termos",
+      "privacy": "Privacidade",
+      "legalNotice": "Aviso legal",
+      "cookies": "Cookies"
+    },
+    "copyright": "© 2026 Claudia Dalmau · Todos os direitos reservados",
+    "madeIn": "Feito na Espanha 🇪🇸"
+  },
+  "home": {
+    "hero": {
+      "badge": "Nova era das reservas · Movido a IA",
+      "titleStart": "Gerencie seus atendimentos com ",
+      "titleHighlight": "inteligência artificial 24/7",
+      "subtitle": "O bot conversa com seus clientes no WhatsApp ou Telegram, gerencia reservas, cobra depósitos e libera seu tempo. Sem ligações. Sem agenda manual.",
+      "ctaPrimary": "Começar grátis",
+      "ctaSecondary": "Ver como funciona"
+    },
+    "stats": {
+      "attention247Number": "24/7",
+      "attention247Label": "Atendimento automático",
+      "timeNumber": "0 min",
+      "timeLabel": "Tempo manual por reserva",
+      "secureNumber": "100%",
+      "secureLabel": "Seguro e privado"
+    },
+    "autopilot": {
+      "label": "Piloto automático",
+      "titleStart": "Enquanto você trabalha ou descansa, ",
+      "titleHighlight": "sua agenda continua trabalhando por você.",
+      "subtitle": "Esteja com um cliente, curtindo um dia de folga ou simplesmente desconectado(a), o bot continua captando reservas, cobrando depósitos e preenchendo sua semana.",
+      "emphasis": "Seu tempo volta a ser seu.",
+      "pillar1Title": "Reservas enquanto você dorme",
+      "pillar1Desc": "Quase metade das consultas de reserva acontecem fora do horário comercial. Com o AIBA você captura todas, mesmo dormindo.",
+      "pillar2Title": "Renda mesmo desconectado(a)",
+      "pillar2Desc": "Sua agenda da próxima semana enche enquanto você descansa hoje. Sem perder nenhuma oportunidade por não responder a tempo.",
+      "pillar3Title": "Zero minutos gerenciando WhatsApp",
+      "pillar3Desc": "O tempo que você gastava respondendo mensagens agora é seu. Dedique-o ao trabalho, à família ou a nada. Sua decisão.",
+      "quoteStart": "Continue conquistando clientes mesmo desconectado(a). ",
+      "quoteHighlight": "Seu negócio funciona no seu ritmo."
+    },
+    "process": {
+      "label": "O processo",
+      "title": "Da primeira pergunta ao pagamento. Sem intervir.",
+      "step1Title": "O cliente contata o bot",
+      "step1Desc": "Compartilhe seu link exclusivo do WhatsApp ou Telegram. O bot apresenta serviços e responde dúvidas 24/7.",
+      "step2Title": "Escolhe horário e paga depósito",
+      "step2Desc": "O bot mostra horários livres em tempo real. Ao escolher, um link seguro de depósito é gerado.",
+      "step3Title": "Lembrete com código",
+      "step3Desc": "1 hora antes do atendimento o bot envia um código de 6 dígitos. Sem confirmação, o horário é liberado.",
+      "step4Title": "Cobrança final automática",
+      "step4Desc": "Quando o cliente chega, valide o código e o sistema cobra o restante automaticamente.",
+      "seeFullProcess": "Ver o processo completo"
+    },
+    "features": {
+      "label": "Funcionalidades",
+      "title": "Tudo o que você precisa. Nada de excesso.",
+      "aiTitle": "IA conversacional",
+      "aiDesc": "GPT-4o entende nuances, lida com objeções e aprende seus serviços.",
+      "paymentsTitle": "Pagamentos integrados",
+      "paymentsDesc": "Depósitos, cobranças finais e reembolsos automáticos. Sem caixa nem dinheiro.",
+      "dashboardTitle": "Dashboard analítico",
+      "dashboardDesc": "Receitas, taxa de comparecimento, clientes recorrentes e previsões em tempo real.",
+      "ratingsTitle": "Avaliações mútuas",
+      "ratingsDesc": "Sistema colaborativo cliente-profissional para proteger seu tempo.",
+      "agendaTitle": "Agenda inteligente",
+      "agendaDesc": "Buffers automáticos, prevenção de sobreposições e sincronização com o calendário.",
+      "privacyTitle": "Privacidade total",
+      "privacyDesc": "Servidores na UE, criptografia ponta-a-ponta, conformidade total com LGPD/GDPR."
+    },
+    "cases": {
+      "label": "Tipos de negócio",
+      "title": "Um assistente. Muitos profissionais.",
+      "subtitle": "Saúde, beleza, esporte, formação, jurídico, eventos, hotelaria e muito mais.",
+      "seeAll": "Ver todos os setores em detalhe",
+      "case": {
+        "health": {
+          "title": "Saúde privada",
+          "desc": "Psicólogos(as), fisioterapeutas, nutricionistas, dentistas, medicina estética."
+        },
+        "beauty": {
+          "title": "Beleza",
+          "desc": "Salões, nail studios, tatuadores(as), depilação a laser, micropigmentação."
+        },
+        "sports": {
+          "title": "Esporte & fitness",
+          "desc": "Personal trainers, yoga, pilates, natação, artes marciais."
+        },
+        "education": {
+          "title": "Formação privada",
+          "desc": "Professores(as) particulares, academias pequenas, idiomas, música, autoescolas."
+        },
+        "legal": {
+          "title": "Jurídico & consultoria",
+          "desc": "Advogados(as), contadores(as), consultores(as), cartórios privados."
+        },
+        "events": {
+          "title": "Eventos",
+          "desc": "Fotografia, vídeo, DJs, maquiadores(as), wedding planners."
+        },
+        "hospitality": {
+          "title": "Hotelaria & turismo",
+          "desc": "Restaurantes, hotéis, apartamentos turísticos, pousadas rurais."
+        },
+        "pets": {
+          "title": "Cuidados com pets",
+          "desc": "Banho e tosa, adestramento, veterinária particular."
+        },
+        "home": {
+          "title": "Serviços em domicílio",
+          "desc": "Limpeza, reformas, interiores, personal shopping."
+        },
+        "other": {
+          "title": "Outros profissionais",
+          "desc": "Seu negócio não se encaixa? Nos adaptamos com discrição e respeito."
+        }
+      }
+    },
+    "pricingPreview": {
+      "label": "Preços",
+      "title": "Planos para cada etapa.",
+      "subtitle": "A partir de R$ 249/mês. Sem fidelidade.",
+      "seeAll": "Ver todos os planos",
+      "planBasic": {
+        "name": "Basic",
+        "price": "€49",
+        "period": "/mês",
+        "desc": "Perfeito para começar"
+      },
+      "planPro": {
+        "name": "Pro",
+        "price": "€99",
+        "period": "/mês",
+        "desc": "Mais escolhido",
+        "badge": "Mais popular"
+      },
+      "planPremium": {
+        "name": "Premium",
+        "price": "€299",
+        "period": "/mês",
+        "desc": "Multi-profissional"
+      }
+    },
+    "questions": {
+      "title": "Alguma pergunta?",
+      "subtitle": "Nos escreva e respondemos em menos de 24h úteis.",
+      "cta": "Contato por email"
+    },
+    "finalCta": {
+      "title": "Comece grátis. Cobre sem sustos.",
+      "subtitle": "14 dias grátis. Sem cartão. Configure em 5 minutos.",
+      "ctaPrimary": "Criar conta grátis",
+      "ctaSecondary": "Ver preços",
+      "check1": "Sem fidelidade",
+      "check2": "Cancele quando quiser",
+      "check3": "Suporte multilíngue"
+    },
+    "testimonials": {
+      "badge": "O que dizem os early adopters",
+      "title": "Profissionais que já estão usando",
+      "subtitle": "Depoimentos dos Founding Members. Junte-se agora à primeira onda.",
+      "foundingMember": "Founding",
+      "betaNote": "* Os primeiros 20 membros recebem 6 meses grátis + 30% de desconto vitalício.",
+      "t1": {
+        "quote": "Em 3 dias eliminei os cancelamentos de última hora. O depósito é mágico.",
+        "name": "Ana M.",
+        "role": "Cabeleireira · Madri"
+      },
+      "t2": {
+        "quote": "Antes usava WhatsApp + Google Calendar e perdia horas. Agora tudo automático.",
+        "name": "Diego R.",
+        "role": "Coach de negócios · Barcelona"
+      },
+      "t3": {
+        "quote": "Meus clientes agendam a qualquer hora sem me ligar. Recuperei minhas noites e fins de semana inteiros.",
+        "name": "Carla S.",
+        "role": "Personal trainer · Valência"
+      },
+      "t4": {
+        "quote": "A IA responde 24/7 em espanhol e catalão. Faço reservas enquanto durmo. Literalmente.",
+        "name": "Marc T.",
+        "role": "Terapeuta · Barcelona"
+      }
+    },
+    "comparison": {
+      "badge": "Comparação objetiva",
+      "title": "Como nos comparamos com as outras opções?",
+      "subtitle": "Tabela honesta com as plataformas mais populares em 2026.",
+      "featureHeader": "Funcionalidade",
+      "us": "Nós",
+      "gcal": "Google Cal.",
+      "legend": {
+        "yes": "Incluído",
+        "partial": "Parcial / com addon",
+        "no": "Não disponível"
+      },
+      "disclaimer": "* Comparação baseada em informações públicas das plataformas em junho de 2026.",
+      "rows": {
+        "aiBot": "Bot IA multi-idioma (24/7)",
+        "reminders": "Lembretes automáticos (WhatsApp/Telegram)",
+        "deposit": "Depósito anti no-show",
+        "clientDatabase": "Base de dados de clientes",
+        "sharedBlacklist": "Blacklist compartilhada entre profissionais",
+        "multiLang": "Painel disponível em 7 idiomas",
+        "gdpr": "GDPR nativo (servidores UE)",
+        "flatFee": "Tarifa fixa, sem comissão por reserva",
+        "regulatedTier": "Vertical privado regulamentado (apenas convite)"
+      }
+    },
+    "faqInline": {
+      "badge": "Perguntas frequentes",
+      "title": "O que nos perguntam",
+      "subtitle": "Respostas rápidas às dúvidas mais comuns. Para mais detalhes, veja a FAQ completa.",
+      "seeAll": "Ver todas as perguntas",
+      "items": {
+        "q1": {
+          "q": "Preciso saber programar?",
+          "a": "Não. Você configura sua agenda e serviços em 5 minutos pelo painel. Tudo funciona sem código."
+        },
+        "q2": {
+          "q": "Como meus clientes acham o bot?",
+          "a": "No cadastro geramos seus links únicos de WhatsApp e Telegram. Você os coloca no Instagram, site ou mensagens automáticas."
+        },
+        "q3": {
+          "q": "E os no-shows?",
+          "a": "O depósito não é reembolsável: fica como compensação. A maioria dos nossos usuários reduz no-shows em mais de 60% no primeiro mês."
+        },
+        "q4": {
+          "q": "É compatível com meu setor?",
+          "a": "Sim. Funciona com beleza, estética, coaching, fisioterapia, personal trainers, terapia, fotografia e muito mais. Configura serviços e preços personalizados."
+        },
+        "q5": {
+          "q": "Quando posso começar?",
+          "a": "A plataforma está em beta fechada. Entre na lista de espera e receba acesso prioritário nas próximas semanas."
+        },
+        "q6": {
+          "q": "É compatível com LGPD/GDPR?",
+          "a": "Sim. Servidores na UE, criptografia em trânsito e em repouso, exclusão de dados sob demanda e política de retenção transparente. LGPD + GDPR nativos."
+        }
+      }
+    },
+    "waitlist": {
+      "badge": "Acesso antecipado",
+      "title": "Entre na lista de espera",
+      "subtitle": "Seja um dos primeiros a testar a plataforma no lançamento. Os 20 primeiros membros recebem 6 meses grátis + 30% de desconto vitalício.",
+      "counter": "profissionais já inscritos",
+      "emailPlaceholder": "voce@email.com",
+      "professionPlaceholder": "Qual sua profissão? (opcional)",
+      "submit": "Entrar na lista",
+      "submitting": "Enviando...",
+      "successTitle": "Você está dentro!",
+      "successDesc": "Vamos te avisar por email no lançamento. Prepare seus melhores serviços.",
+      "positionLabel": "Sua posição",
+      "successToast": "Bem-vindo à lista de espera",
+      "alreadyRegistered": "Este email já está na lista",
+      "errorInvalidEmail": "Insira um email válido",
+      "errorRateLimit": "Muitas inscrições. Tente novamente em 1 hora.",
+      "errorGeneric": "Algo deu errado. Tente novamente.",
+      "errorNetwork": "Sem conexão. Verifique sua rede.",
+      "privacyNote": "Ao se inscrever você aceita nossa política de privacidade. Não enviamos spam. Você pode se descadastrar a qualquer momento.",
+      "professions": {
+        "beauty": "💅 Beleza / Estética",
+        "wellness": "🧘 Bem-estar / Massagens",
+        "fitness": "🏋️ Fitness / Treino",
+        "coaching": "🎓 Coaching / Consultoria",
+        "health": "🩺 Saúde / Fisioterapia",
+        "education": "📚 Educação / Aulas",
+        "creative": "🎨 Criativos / Fotografia",
+        "professional": "⚖️ Serviços profissionais",
+        "home": "🏠 Serviços em casa",
+        "pets": "🐾 Pets",
+        "events": "🎉 Eventos",
+        "hospitality": "🍽️ Restaurantes",
+        "other": "🧩 Outros profissionais"
+      }
+    }
+  },
+  "languageSwitcher": {
+    "label": "Idioma",
+    "current": "Português"
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog · AIBA",
+      "desc": "Guias, casos de sucesso e dicas para gerenciar sua agenda de horários e crescer como profissional autônomo."
+    },
+    "kicker": "Blog",
+    "title": "Guias, casos e dicas para profissionais",
+    "subtitle": "Tudo o que você precisa para reduzir faltas, cobrar sinais e crescer seu negócio de agendamentos.",
+    "empty": "Ainda não há posts neste idioma.",
+    "read_more": "Ler",
+    "reading_time": "{minutes} min de leitura",
+    "related": "Continue lendo",
+    "crumb_home": "Início",
+    "cta_title": "Comece grátis por 14 dias",
+    "cta_desc": "AIBA automatiza suas reservas, cobra sinais e reduz cancelamentos. Sem cartão.",
+    "cta_button": "Ver planos",
+    "search_placeholder": "Buscar posts…",
+    "no_results": "Nenhum resultado para sua busca.",
+    "filter_by_category": "Categorias",
+    "clear_filters": "Limpar filtros",
+    "filter_by_tag": "Tags",
+    "results_count": "[N] posts",
+    "filter_all": "Todos"
+  },
+  "pricing": {
+    "meta": {
+      "title": "Preços · AIBA",
+      "desc": "Planos flexíveis a partir de €49/mês. Basic para agenda, Pro com pagamento online, Premium com IA avançada. 14 dias grátis."
+    },
+    "badge": "Preços claros, sem surpresas",
+    "title": "Escolha o plano que combina com você.",
+    "subtitle": "14 dias grátis em todos os planos. Sem cartão no cadastro. Cancele quando quiser.",
+    "perMonth": "/mês",
+    "trialNote": "14 dias grátis · sem cartão",
+    "smallPrint": "Plano anual com 2 meses grátis · Preços sem imposto · Cancele quando quiser",
+    "highlightBadge": "Mais escolhido",
+    "plans": {
+      "basic": {
+        "name": "Basic",
+        "tagline": "Só agenda, comece sem custos online.",
+        "cta": "Começar Basic"
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Pagamentos online + lembretes inteligentes.",
+        "cta": "Começar Pro"
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "IA avançada, resumos e taxa reduzida.",
+        "cta": "Começar Premium"
+      }
+    },
+    "tableTitle": "Compare todos os detalhes",
+    "rows": {
+      "bookings": {
+        "label": "Reservas mensais",
+        "basic": "Até 100",
+        "pro": "Ilimitadas",
+        "premium": "Ilimitadas"
+      },
+      "bot": {
+        "label": "Bot IA (WhatsApp + Telegram)"
+      },
+      "agenda": {
+        "label": "Agenda multi-serviço + extras"
+      },
+      "verify": {
+        "label": "Verificação em 3 passos"
+      },
+      "deposits": {
+        "label": "Cobrança online de depósitos"
+      },
+      "commission": {
+        "label": "Taxa AI Pay",
+        "basic": "2.0%",
+        "pro": "1.5%",
+        "premium": "1.0%"
+      },
+      "reminders": {
+        "label": "Lembretes personalizados",
+        "basic": "Padrão",
+        "pro": "Configuráveis",
+        "premium": "Configuráveis"
+      },
+      "push": {
+        "label": "Push notifications avançadas",
+        "basic": "Básicas",
+        "pro": "Completas",
+        "premium": "+ alertas VIP"
+      },
+      "daily": {
+        "label": "Resumo diário das 8h"
+      },
+      "analytics": {
+        "label": "Analytics avançados",
+        "basic": "Básicos",
+        "pro": "Completos",
+        "premium": "+ Briefings IA diários"
+      },
+      "extras": {
+        "label": "Extras/add-ons por serviço",
+        "basic": "Máx 3",
+        "pro": "Ilimitados",
+        "premium": "Ilimitados"
+      },
+      "support": {
+        "label": "Suporte",
+        "basic": "Email",
+        "pro": "Email + chat",
+        "premium": "Prioritário + WhatsApp"
+      }
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "q1": "Posso mudar de plano?",
+      "a1": "Sim, você pode subir ou descer de plano quando quiser. É calculado pro rata automaticamente.",
+      "q2": "Como funcionam os 14 dias grátis?",
+      "a2": "Cadastro sem cartão, teste todas as funcionalidades. No dia 15 você decide: paga ou cancela — sem cobrança.",
+      "q3": "O que é AI Pay?",
+      "a3": "É uma pequena comissão por reserva paga online: **2% no Basic, 1,5% no Pro, 1% no Premium**. Financia o sistema anti-fraude e as melhorias de IA. Você não paga nada se o cliente pagar presencialmente.",
+      "q4": "Preciso de conhecimento técnico?",
+      "a4": "Nenhum. Configure sua agenda em 5 minutos e o bot conversa com seus clientes no WhatsApp ou Telegram. Nada para instalar."
+    }
+  },
+  "businessTypes": {
+    "meta": {
+      "title": "Tipos de negócio · AIBA",
+      "desc": "Saúde, beleza, esporte, formação, jurídico, eventos, hotelaria, pets, serviços em domicílio e mais."
+    },
+    "badge": "Tipos de negócio",
+    "title": "Um assistente. Muitos perfis profissionais.",
+    "subtitle": "Nos adaptamos à natureza do seu serviço, não o contrário. Não importa se você trabalha sozinho(a) ou em equipe, no local ou em domicílio.",
+    "ctaTitle": "Nenhuma categoria combina com você?",
+    "ctaSubtitle": "Nos escreva. Adaptamos o bot ao seu jeito de trabalhar, com a discrição e o respeito que você merece.",
+    "ctaPrimary": "Testar 14 dias grátis",
+    "ctaSecondary": "Contato",
+    "cases": {
+      "health": {
+        "subtitle": "Psicólogos(as), fisioterapeutas, nutricionistas, dentistas privados, medicina estética",
+        "b1": "Reservas 24/7 sem gerenciar WhatsApp entre consultas",
+        "b2": "Depósito automático reduz drasticamente os no-shows",
+        "b3": "Histórico confidencial por paciente com notas criptografadas",
+        "b4": "Lembretes personalizados por tipo de tratamento"
+      },
+      "beauty": {
+        "subtitle": "Salões, nail studios, tatuadores(as), depilação a laser, micropigmentação",
+        "b1": "Alta frequência de atendimentos sem horas ao telefone",
+        "b2": "Clientes recorrentes com histórico e preferências salvos",
+        "b3": "Reservas por serviço com durações e preços distintos",
+        "b4": "Depósito para sessões longas ou materiais caros"
+      },
+      "sports": {
+        "subtitle": "Personal trainers, yoga, pilates, natação, artes marciais",
+        "b1": "Gestão de packs, bônus e sessões recorrentes",
+        "b2": "Lembretes motivacionais antes de cada aula",
+        "b3": "Reservas em grupo ou individuais conforme o serviço",
+        "b4": "Analytics de fidelização e taxa de renovação"
+      },
+      "education": {
+        "subtitle": "Professores(as) particulares, academias pequenas, idiomas, música, autoescolas",
+        "b1": "Depósito prévio elimina cancelamentos de última hora",
+        "b2": "Reservas recorrentes por trimestres ou pacotes de aulas",
+        "b3": "Múltiplos(as) alunos(as) e horários num só painel",
+        "b4": "Lembretes automáticos com material ou tarefa da aula"
+      },
+      "legal": {
+        "subtitle": "Advogados(as), contadores(as), consultores(as), cartórios privados",
+        "b1": "Agenda muito controlada com blocos de tempo protegidos",
+        "b2": "Depósito prévio para consultas de alto valor",
+        "b3": "Histórico confidencial com criptografia ponta-a-ponta",
+        "b4": "Faturamento automático ao final da consulta"
+      },
+      "events": {
+        "subtitle": "Fotógrafos(as), videomakers, DJs, maquiadores(as), wedding planners",
+        "b1": "Reservas únicas com depósito alto (30-50% do serviço)",
+        "b2": "Bloqueio automático de dias inteiros na agenda",
+        "b3": "Cobranças escalonadas: reserva + intermediária + final",
+        "b4": "Histórico de eventos com notas e contatos por cliente"
+      },
+      "hospitality": {
+        "subtitle": "Restaurantes, hotéis, apartamentos turísticos, pousadas rurais",
+        "b1": "Reservas de mesa ou quarto 24/7 sem ligações ou emails",
+        "b2": "Depósito automático para grupos, eventos e estadias longas",
+        "b3": "Lembretes com horário de entrada reduzem no-shows",
+        "b4": "Multi-espaço: mesas, quartos ou apartamentos num só painel"
+      },
+      "pets": {
+        "subtitle": "Banho e tosa, adestramento, veterinária particular, creches",
+        "b1": "Reservas com dados do animal (raça, idade, tratamento)",
+        "b2": "Lembretes automáticos de vacinas e check-ups periódicos",
+        "b3": "Histórico completo por pet com fotos antes/depois",
+        "b4": "Programa de fidelização para clientes recorrentes"
+      },
+      "home": {
+        "subtitle": "Limpeza, reformas (visitas técnicas), interiores, personal shopping",
+        "b1": "Reservas com endereço, estacionamento e notas de acesso",
+        "b2": "Gestão de rotas para otimizar deslocamentos",
+        "b3": "Depósito prévio para orçamentos e visitas técnicas",
+        "b4": "Lembretes ao cliente com horário estimado de chegada"
+      },
+      "other": {
+        "subtitle": "Seu serviço não se encaixa nas categorias acima?",
+        "b1": "Configuração 100% adaptável ao seu jeito de trabalhar",
+        "b2": "Adicione extras, condições e políticas próprias",
+        "b3": "Sem categorias forçadas: você define como trabalhar",
+        "b4": ""
+      }
+    },
+    "form": {
+      "signupTitle": "Comece agora",
+      "signupSubtitle": "Preencha o formulário e ativaremos seu teste de 30 dias.",
+      "signupNamePh": "Seu nome",
+      "signupBusinessPh": "Nome do negócio",
+      "signupEmailPh": "E-mail profissional",
+      "signupPhonePh": "Telefone (opcional)",
+      "signupWebsitePh": "Site (opcional)",
+      "signupCta": "Começar teste grátis",
+      "signupSuccess": "Você está na lista prioritária. Confira seu e-mail para completar o cadastro.",
+      "accessTitle": "Solicitar acesso privado",
+      "accessSubtitle": "Este segmento requer verificação. Revisamos cada solicitação em até 24 h e enviamos um código privado por e-mail.",
+      "accessProfPh": "Nome profissional / artístico",
+      "accessPhonePh": "Telefone de contato",
+      "accessEmailPh": "E-mail de contato",
+      "accessWebsitePh": "Seu site (https://…)",
+      "accessPortalPh": "Link do seu anúncio em um portal (https://…)",
+      "accessCta": "Solicitar acesso",
+      "accessSuccess": "Recebemos sua solicitação. Entraremos em contato por e-mail em até 24 h com seu código privado.",
+      "close": "Fechar",
+      "fieldRequired": "Preencha os campos obrigatórios.",
+      "emailInvalid": "Este e-mail não parece válido.",
+      "urlHint": "Precisamos verificar sua atividade profissional. Adicione seu site ou o link de pelo menos um anúncio ativo.",
+      "accessKicker": "Acesso com verificação",
+      "portalsLabel": "Anúncios em portais",
+      "addPortal": "Adicionar outro portal",
+      "accessSuccessTitle": "Solicitação recebida",
+      "removeAriaLabel": "Remover"
+    }
+  },
+  "howItWorks": {
+    "meta": {
+      "title": "Como funciona · AIBA",
+      "desc": "5 passos, zero intervenção manual: cliente contata o bot, escolhe horário, paga depósito, recebe lembrete e confirma no atendimento."
+    },
+    "badge": "Como funciona",
+    "title": "Da primeira pergunta ao pagamento. Sem intervir.",
+    "subtitle": "Um fluxo de 5 passos totalmente automatizado. A IA gerencia, cobra e verifica. Você só faz seu trabalho.",
+    "exampleLabel": "Exemplo real",
+    "ctaTitle": "Pronto(a) para parar de gerenciar a agenda na mão?",
+    "ctaSubtitle": "Configure seu bot em 5 minutos. 14 dias grátis em qualquer plano.",
+    "ctaPrimary": "Começar grátis",
+    "ctaSecondary": "Falar com a gente",
+    "s1": {
+      "title": "1. O cliente contata o bot",
+      "desc": "Compartilhe seu link único do WhatsApp ou Telegram. O bot cumprimenta, apresenta serviços com preços e responde 24/7 com IA GPT-4o.",
+      "example": "Cliente: «Oi, quero reservar uma massagem» → Bot: «Claro! Disponíveis: Massagem relaxante 60min · R$ 145, Massagem esportiva 60min · R$ 175. Qual encaixa?»"
+    },
+    "s2": {
+      "title": "2. Escolhe data, hora e paga depósito",
+      "desc": "O bot mostra horários livres em tempo real. Ao escolher, gera automaticamente um link seguro de depósito (20-50%, você decide).",
+      "example": "Bot: «Perfeito. Horários quinta: 10:00, 12:30, 17:00. Depósito R$ 45 → https://pay.aib.app/xyz»"
+    },
+    "s3": {
+      "title": "3. Lembrete com código de verificação",
+      "desc": "1 hora antes o bot envia um lembrete automático com código de 6 dígitos. Sem confirmação, o horário é liberado.",
+      "example": "Bot: «⏰ Lembrete: massagem relaxante hoje às 17:00. Seu código: 384762. Responda SIM para confirmar.»"
+    },
+    "s4": {
+      "title": "4. Cobrança final automática",
+      "desc": "Quando o cliente chega, digita o código no dashboard. O sistema cobra o restante automaticamente com o método salvo.",
+      "example": "Você: código 384762 → ✅ Cobrado R$ 90 (resto do serviço) de María González · Recibo por email"
+    },
+    "s5": {
+      "title": "5. Avaliação mútua e proteção da comunidade",
+      "desc": "Depois do atendimento, ambos se avaliam (1-5 estrelas). Clientes com histórico confiável ganham prioridade; no-shows repetidos são marcados discretamente na base comunitária.",
+      "example": "Você: ⭐⭐⭐⭐⭐ «Pontual e respeitoso» → Cliente: ⭐⭐⭐⭐⭐ «Excelente serviço»"
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Perguntas frequentes · AIBA",
+      "desc": "Tudo o que você precisa saber sobre o AIBA."
+    },
+    "badge": "FAQ",
+    "title": "Perguntas frequentes",
+    "subtitleStart": "As dúvidas mais frequentes. Se a sua não está aqui, escreva para ",
+    "subtitleEnd": ".",
+    "ctaTitle": "Ainda com dúvidas?",
+    "ctaSubtitle": "Escreva-nos e respondemos em menos de 24h úteis.",
+    "ctaContact": "Contato",
+    "ctaTry": "Testar grátis",
+    "items": {
+      "q1": "Preciso saber programar ou ter conhecimento técnico?",
+      "a1": "Não, de forma alguma. Você configura sua agenda e serviços em 5 minutos no dashboard web. O bot conversa com seus clientes no WhatsApp ou Telegram sem você escrever uma linha de código. Se sabe usar o Instagram, sabe usar o AIBA.",
+      "q2": "Como meu cliente descobre o bot?",
+      "a2": "Ao se cadastrar geramos seu link único do WhatsApp Business e do Telegram (@My_AI_Booking_Assistant_Bot com seu identificador). Compartilhe na sua bio do Instagram, TikTok, cartão de visita, ou onde quiser. Qualquer pessoa que clique começa a falar com o SEU bot personalizado.",
+      "q3": "O que acontece se um cliente não aparece (no-show)?",
+      "a3": "O depósito não é reembolsado: fica como compensação pelo horário bloqueado. Além disso, o cliente recebe uma avaliação negativa automática, reduzindo sua credibilidade para futuras reservas.",
+      "q4": "Com quanto tempo o cliente pode cancelar sem perder o depósito?",
+      "a4": "Você decide ao configurar sua conta. Padrão: com mais de 1 hora de antecedência, reembolso integral. Com menos de 1 hora, perde o depósito. Você pode ajustar para 24h, 48h ou o que fizer sentido no seu setor.",
+      "q5": "Meus dados e os dos meus clientes estão seguros?",
+      "a5": "Sim. Criptografamos todos os dados em trânsito (TLS 1.3) e em repouso (AES-256). Servidores na UE, conformidade total com LGPD/GDPR. Nunca vendemos nem compartilhamos dados. Você pode exportar ou apagar toda sua informação a qualquer momento.",
+      "q6": "Posso gerenciar vários serviços com preços diferentes?",
+      "a6": "Sim, e também extras. Você pode criar quantos serviços quiser (ou até 100/mês no plano Basic), com preços, durações e depósitos independentes. Também pode adicionar extras opcionais.",
+      "q7": "Como a comunidade de profissionais é protegida?",
+      "a7": "Existe um sistema de verificação colaborativa privado e opcional. Quando um cliente dá no-show ou falta com respeito, fica no seu histórico e, com sua autorização, num banco de dados anônimo consultável por outros profissionais verificados.",
+      "q8": "Existe fidelidade ou posso cancelar quando quiser?",
+      "a8": "Sem fidelidade. Sem cláusulas escondidas. Cancele pelo próprio dashboard num clique e sua conta continua ativa até o fim do ciclo pago. Seus dados ficam exportáveis por 30 dias antes de serem apagados definitivamente."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Sobre nós · AIBA",
+      "desc": "Nascemos em Barcelona em 2026 para eliminar o tempo perdido gerenciando a agenda. Privacidade, comunidade e simplicidade são nossos valores."
+    },
+    "badge": "Nossa história",
+    "titleStart": "Nascemos para ",
+    "titleHighlight": "devolver seu tempo.",
+    "intro": "AIBA é um projeto espanhol independente, criado em Barcelona em 2026 por e para profissionais autônomos(as) que perdiam horas por dia respondendo WhatsApp, anotando reservas em papel e correndo atrás de pagamentos.",
+    "missionTitle": "Nossa missão",
+    "mission": "Eliminar completamente o tempo perdido gerenciando a agenda, para que profissionais independentes possam dedicar cada minuto ao que realmente importa: seu trabalho, seus clientes e sua vida fora do negócio.",
+    "originTitle": "De onde viemos",
+    "origin1": "Tudo começou vendo amigas — massagistas, coaches, fotógrafas, personal trainers — perderem horas toda semana em tarefas repetitivas: responder «tem horário quinta?», lembrar por WhatsApp «não esquece amanhã», correr atrás de pagamentos, lidar com cancelamentos de última hora.",
+    "origin2": "Havia ferramentas, sim. Mas nenhuma pensada para trabalhar sozinho(a), nem respeitava os diferentes ofícios ou a privacidade dos clientes. Assim nasceu o AIBA: um bot com IA de verdade, feito na Espanha, com foco em discrição e respeito.",
+    "stat1": "Nascemos em",
+    "stat1Label": "2026",
+    "stat2": "Feito em Barcelona",
+    "stat2Label": "🇪🇸",
+    "stat3": "100% compliance",
+    "stat3Label": "LGPD/GDPR",
+    "valuesLabel": "Nossos valores",
+    "valuesTitle": "Três coisas nas quais não cedemos.",
+    "v1Title": "🔒 Privacidade acima de tudo",
+    "v1Desc": "Servidores na UE, criptografia ponta-a-ponta, conformidade total com LGPD/GDPR. Seus dados e os dos seus clientes nunca são vendidos ou compartilhados. Ponto.",
+    "v2Title": "🤝 Comunidade e proteção mútua",
+    "v2Desc": "Acreditamos que profissionais independentes se cuidam melhor quando trabalham em rede. Nosso sistema de verificação colaborativa nasce dessa ideia.",
+    "v3Title": "✨ Simplicidade radical",
+    "v3Desc": "Não adicionamos funcionalidades só porque ficam bonitas no marketing. Cada botão, mensagem e notificação tem um propósito claro: economizar seu tempo.",
+    "ctaTitle": "Feito com carinho na Espanha.",
+    "ctaSubtitle": "Se nossa filosofia te agrada, teste a ferramenta por 14 dias. Sem cartão nem compromisso.",
+    "ctaBtn": "Criar minha conta grátis"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contato · AIBA",
+      "desc": "Dúvidas sobre o produto? Precisa de uma demo? Estamos do outro lado."
+    },
+    "badge": "Contato",
+    "title": "Vamos conversar.",
+    "subtitle": "Dúvidas sobre o produto, precisa de uma demo ou quer propor uma colaboração? Estamos do outro lado.",
+    "sidebarEmailTitle": "Email",
+    "sidebarEmailDesc": "Respondemos em < 24h úteis",
+    "sidebarBotTitle": "Teste o bot",
+    "sidebarBotDesc": "Converse diretamente com nosso assistente no Telegram para ver como ele trabalha.",
+    "sidebarTip": "💡 Dica: se você já tem conta, escreva do email cadastrado para acelerar o suporte.",
+    "formSubjects": {
+      "demo": "Solicitar uma demo",
+      "pricing": "Perguntas sobre preços",
+      "support": "Suporte técnico",
+      "press": "Imprensa / colaborações",
+      "other": "Outro"
+    },
+    "labelName": "Nome",
+    "labelEmail": "Email",
+    "labelSubject": "Assunto",
+    "labelMessage": "Mensagem",
+    "placeholderName": "Maria Garcia",
+    "placeholderEmail": "voce@email.com",
+    "placeholderMessage": "Conte-nos como podemos ajudar...",
+    "sendBtn": "Enviar mensagem",
+    "successTitle": "Abrindo seu cliente de email…",
+    "successBody": "Se não abrir, escreva manualmente para ",
+    "legalNoteStart": "Ao enviar, seu cliente de email abrirá com a mensagem pré-formatada. Consulte nossa ",
+    "legalNoteLink": "Política de Privacidade",
+    "legalNoteEnd": ".",
+    "finalCtaTitle": "Prefere testar antes de escrever?",
+    "finalCtaSubtitle": "Crie sua conta grátis e descubra o AIBA em 5 minutos.",
+    "finalCtaBtn": "Começar grátis"
+  },
+  "accessRequest": {
+    "badge": "Solicitação de acesso",
+    "title": "Solicite um código de acesso",
+    "subtitle": "Trabalhamos com profissionais de setores que exigem máxima discrição. Conte-nos brevemente sobre você e enviaremos um código de acesso.",
+    "features": {
+      "privacy": {
+        "title": "Confidencial",
+        "body": "Somente nossa equipe vê sua solicitação. Nunca compartilhada."
+      },
+      "verify": {
+        "title": "Revisão rápida",
+        "body": "Respondemos em até 48 h úteis por email."
+      },
+      "code": {
+        "title": "Código único",
+        "body": "Você receberá um código de uso único para concluir o cadastro."
+      }
+    },
+    "form": {
+      "fullName": "Nome completo ou nome profissional",
+      "fullNamePh": "Maria G. / MG Studio",
+      "email": "Email de contato",
+      "activity": "Sua atividade",
+      "activityPh": "Coach, terapeuta, etc.",
+      "message": "Mensagem (opcional)",
+      "messagePh": "Conte brevemente como você usará o app…",
+      "referral": "Como nos conheceu? (opcional)",
+      "referralPh": "Google, colega, redes sociais…",
+      "sending": "Enviando…",
+      "submit": "Enviar solicitação",
+      "legal": "Ao enviar você aceita nossa política de privacidade. Não compartilharemos seus dados."
+    },
+    "success": {
+      "title": "Solicitação enviada",
+      "body": "Obrigado. Revisaremos sua solicitação e responderemos por email em até 48 h úteis.",
+      "backHome": "Voltar ao início"
+    },
+    "errors": {
+      "required": "Preencha os campos obrigatórios (nome, email e atividade).",
+      "rateLimit": "Muitas solicitações. Tente novamente em 24 h.",
+      "generic": "Não foi possível enviar a solicitação. Tente novamente.",
+      "network": "Erro de rede. Verifique sua conexão de internet."
+    },
+    "meta": {
+      "title": "Solicitar acesso · AIBA",
+      "desc": "Solicite um código de acesso para setores privados."
+    }
+  },
+  "publicBooking": {
+    "chooseService": "1. Escolha o serviço",
+    "chooseDay": "2. Escolha o dia",
+    "chooseTime": "3. Escolha o horário",
+    "yourDetails": "4. Seus dados",
+    "fullName": "Nome completo *",
+    "fullNamePh": "Ex. Maria Silva",
+    "phone": "Telefone *",
+    "phonePh": "+55 11 90000-0000",
+    "email": "E-mail",
+    "optional": "(opcional)",
+    "emailPh": "voce@email.com",
+    "notes": "Notas para o profissional",
+    "notesPh": "Alergias, preferências…",
+    "bookBtn": "Reservar",
+    "depositLabel": "de depósito",
+    "loadingSlots": "Carregando horários…",
+    "noSlots": "Sem horários nesse dia. Tente outra data.",
+    "noServices": "Este profissional ainda não publicou serviços. Volte mais tarde.",
+    "errorBook": "Erro ao reservar",
+    "bookedOk": "Reserva criada! Agora complete o depósito.",
+    "policyTerms": "Ao reservar você aceita o depósito não reembolsável em caso de no-show. Todos os pagamentos são processados com segurança.",
+    "successTitle": "Quase lá!",
+    "successHold": "Seu horário está reservado por 15 minutos.",
+    "successStep1": "Abra nosso bot do Telegram (link abaixo)",
+    "successStep2": "Confirme o pagamento do depósito",
+    "successStep3": "Você receberá confirmação e lembretes automaticamente",
+    "successCta": "Continuar no Telegram",
+    "verifyCode": "Código de verificação (guarde):",
+    "footerBy": "Reservas gerenciadas por",
+    "footerTail": ". Seu depósito é confirmado pelo nosso bot do Telegram (seguro, sem app extra).",
+    "notFound": "Profissional não encontrado",
+    "portalTitle": "Minha reserva",
+    "portalService": "Serviço",
+    "portalDate": "Data",
+    "portalDuration": "Duração",
+    "portalName": "Reservado para",
+    "portalTotal": "Total",
+    "portalDeposit": "Depósito",
+    "pendingCta": "Completar no Telegram",
+    "pendingMsg": "Complete o depósito para confirmar sua reserva.",
+    "confirmedMsg": "Sua reserva está confirmada. Você receberá um lembrete automático no dia anterior.",
+    "cancelBtn": "Cancelar minha reserva",
+    "cancelConfirm": "Cancelar esta reserva?",
+    "cancelReasonLabel": "Motivo",
+    "cancelReasonPh": "Prefiro outro dia, imprevisto…",
+    "backBtn": "Voltar",
+    "confirmCancelBtn": "Confirmar cancelamento",
+    "cancelledOk": "Reserva cancelada. O profissional foi avisado.",
+    "cancelError": "Não foi possível cancelar",
+    "outOfPolicy": "Cancelamentos são aceitos até {hours}h antes da consulta. Para exceções, contate o profissional.",
+    "portalHelp": "Problemas para gerenciar sua reserva? Contate o profissional diretamente.",
+    "statusPending": "Depósito pendente",
+    "statusConfirmed": "Confirmada",
+    "statusReminded": "Lembrete enviado",
+    "statusCancelled": "Cancelada",
+    "statusCancelledByPro": "Cancelada pelo pro",
+    "statusCompleted": "Concluída",
+    "statusNoShow": "Não compareceu",
+    "statusRefunded": "Reembolsada",
+    "rescheduleBtn": "Reagendar minha reserva",
+    "rescheduleTitle": "Escolha uma nova data",
+    "reschedule_ok": "Reserva reagendada. O profissional foi avisado.",
+    "reschedule_error": "Não foi possível reagendar",
+    "new_datetime": "Nova data e hora",
+    "confirmReschedule": "Confirmar alteração",
+    "weeklyHoursTitle": "Horário semanal",
+    "weeklyHoursClosed": "Fechado",
+    "weekdays": [
+      "Seg",
+      "Ter",
+      "Qua",
+      "Qui",
+      "Sex",
+      "Sáb",
+      "Dom"
+    ],
+    "quickBookTitle": "Próximos horários",
+    "quickBookNoService": "Escolha um serviço para ver horários.",
+    "quickBookEmpty": "Sem horários nas próximas 2 semanas.",
+    "quickBookToday": "Hoje",
+    "quickBookTomorrow": "Amanhã",
+    "filterAll": "Todos",
+    "filterAM": "Manhã",
+    "filterPM": "Tarde",
+    "urgencyFewLeft": "Só restam {n}!",
+    "urgencyLastOne": "Último!",
+    "stickyBook": "Reservar agora",
+    "reviewsTitle": "Avaliações dos clientes",
+    "reviewsEmpty": "Seja o primeiro a deixar uma avaliação",
+    "reviewsAvg": "{avg}/5 · {count} avaliações",
+    "reviewsBy": "por",
+    "waitlistTitle": "Sem vagas nesse dia?",
+    "waitlistDesc": "Entre na lista de espera e avisamos se abrir vaga.",
+    "waitlistBtn": "Me avise",
+    "waitlistJoined": "Você está na lista!",
+    "waitlistJoinedPos": "Você é o #{n} na fila",
+    "waitlistErr": "Não foi possível entrar na lista",
+    "reviewsAxisCleanliness": "Limpeza",
+    "reviewsAxisHygiene": "Higiene",
+    "reviewsAxisAttitude": "Atitude"
+  },
+  "analytics": {
+    "landingAnalytics": "Landing público",
+    "views": "Visualizações",
+    "conversionPct": "Conversão",
+    "ctaClicks": "Cliques CTA",
+    "slotClicks": "Cliques em horários",
+    "formOpens": "Formulários abertos"
+  },
+  "meta": {
+    "home": {
+      "title": "AIBA · Agendamentos automáticos com IA",
+      "description": "SaaS para profissionais autônomos: chatbot IA 24/7, gestão de agendamentos, depósitos e avaliações bidirecionais. 7 idiomas."
+    }
+  }
+}
