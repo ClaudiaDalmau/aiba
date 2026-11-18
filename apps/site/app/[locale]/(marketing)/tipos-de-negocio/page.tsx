@@ -21,6 +21,7 @@ const CASE_KEYS = [
   { key: "hospitality", emoji: "🏨" },
   { key: "pets", emoji: "🐾" },
   { key: "home", emoji: "🏠" },
+  { key: "other", emoji: "☔" },
 ];
 
 export default async function BusinessTypesPage({ params }: { params: Promise<{ locale: string }> }) {

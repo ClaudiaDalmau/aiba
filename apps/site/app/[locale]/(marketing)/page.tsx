@@ -50,6 +50,7 @@ export default async function HomePage({
     { emoji: "🏨", key: "hospitality" },
     { emoji: "🐾", key: "pets" },
     { emoji: "🏠", key: "home" },
+    { emoji: "☔", key: "other" },
   ];
 
   const AUTOPILOT_PILLARS = [
