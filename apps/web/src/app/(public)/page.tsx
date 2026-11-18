@@ -1,5 +1,6 @@
 import { getT } from "@/i18n/server";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Icon, type IconName } from "@/components/icons";
 import { BusinessCard } from "@/components/public/business-card";
 import { Button, Card, LinkButton } from "@/components/ui";
@@ -7,6 +8,8 @@ import { formatPlanPrice, listPlans } from "@/lib/plans";
 import { CATEGORIES, searchBusinesses } from "@/lib/businesses";
 
 export default async function Home() {
+  // La portada pública de AIBA es la web de marketing (apps/site); la app solo la muestra si no está configurada.
+  if (process.env.NEXT_PUBLIC_SITE_URL) redirect(process.env.NEXT_PUBLIC_SITE_URL);
   const t = await getT();
   const [featured, plans] = await Promise.all([searchBusinesses({ limit: 6 }), listPlans({ publicOnly: true })]);
   return (
