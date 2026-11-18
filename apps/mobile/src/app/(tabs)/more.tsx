@@ -4,6 +4,7 @@ import { Avatar, Button, Card, Pill, Row, RowList, Screen, Section, T } from "..
 import { API_URL } from "../../lib/config";
 import { useSession } from "../../lib/session";
 import { space } from "../../lib/theme";
+import { tierLabel } from "../../lib/types";
 
 export default function More() {
   const { user, business, businesses, counts, signOut } = useSession();
@@ -21,7 +22,7 @@ export default function More() {
             {user?.email} · {business.role}
           </T>
         </View>
-        <Pill label={business.tier === "vip" ? "VIP" : "Standard"} tone={business.tier === "vip" ? "warning" : "neutral"} />
+        <Pill label={tierLabel(business.tier)} tone={business.tier === "standard" ? "neutral" : "warning"} />
       </Card>
       {businesses.length > 1 ? <Button title="Switch business" variant="secondary" onPress={() => router.push("/switch-business")} /> : null}
 

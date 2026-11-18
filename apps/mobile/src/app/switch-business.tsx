@@ -1,6 +1,7 @@
 import { router } from "expo-router";
 import { Avatar, Pill, Row, RowList, Screen, T } from "../components/ui";
 import { useSession } from "../lib/session";
+import { tierLabel } from "../lib/types";
 
 export default function SwitchBusiness() {
   const { businesses, business, selectBusiness } = useSession();
@@ -13,7 +14,7 @@ export default function SwitchBusiness() {
             key={b.id}
             left={<Avatar name={b.name} color={b.brandColor} />}
             title={b.name}
-            subtitle={`${b.role}${b.tier === "vip" ? " · VIP" : ""}`}
+            subtitle={`${b.role} · ${tierLabel(b.tier)}`}
             right={b.id === business?.id ? <Pill label="Current" tone="positive" /> : undefined}
             chevron={false}
             onPress={async () => {

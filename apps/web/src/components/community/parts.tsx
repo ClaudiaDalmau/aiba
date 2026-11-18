@@ -50,7 +50,7 @@ export function LockedCommunity() {
             Verified VIP owners swap what actually works: pricing, no-show tactics, agent instructions, hiring. Moderated by the platform team, with exclusive content and early access to new NanoClaw features.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            <LinkButton href="/app/billing" variant="ai" icon="crown">Upgrade to VIP</LinkButton>
+            <LinkButton href="/app/billing" variant="ai" icon="crown">Upgrade to Pro</LinkButton>
             <LinkButton href="/app/billing" variant="secondary">Compare plans</LinkButton>
           </div>
         </div>

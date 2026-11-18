@@ -9,7 +9,8 @@
       "businessTypes": "Branchen",
       "pricing": "Preise",
       "faq": "FAQ",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "menu": "Menü"
     },
     "cta": {
       "login": "Anmelden",

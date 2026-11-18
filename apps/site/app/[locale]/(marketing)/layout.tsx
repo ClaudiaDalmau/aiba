@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { hasSession } from "@/lib/session";
 import LanguageSwitcher from "@/components/language-switcher";
+import MobileNav from "@/components/mobile-nav";
 import { ManageCookiesLink } from "@/components/cookie-consent/manage-cookies-link";
 import {
   organizationJsonLd,
@@ -90,6 +91,21 @@ export default async function MarketingLayout({
                 </Link>
               </>
             )}
+            <MobileNav
+              items={[
+                { href: "/como-funciona", label: tHeader("nav.howItWorks") },
+                { href: "/tipos-de-negocio", label: tHeader("nav.businessTypes") },
+                { href: "/precios", label: tHeader("nav.pricing") },
+                { href: "/faq", label: tHeader("nav.faq") },
+                { href: "/blog", label: "Blog" },
+                { href: "/contacto", label: tHeader("nav.contact") },
+              ]}
+              menuLabel={tHeader("nav.menu")}
+              loginLabel={tHeader("cta.login")}
+              ctaLabel={isLoggedIn ? tHeader("cta.goToDashboard") : tHeader("cta.startFree")}
+              ctaHref={isLoggedIn ? "/dashboard" : "/register"}
+              showLogin={!isLoggedIn}
+            />
           </div>
         </div>
       </header>

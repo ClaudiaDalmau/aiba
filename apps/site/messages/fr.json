@@ -9,7 +9,8 @@
       "businessTypes": "Types d'activité",
       "pricing": "Tarifs",
       "faq": "FAQ",
-      "contact": "Contact"
+      "contact": "Contact",
+      "menu": "Menu"
     },
     "cta": {
       "login": "Se connecter",

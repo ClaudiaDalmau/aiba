@@ -1,7 +1,12 @@
 // Response shapes of the AIBA web API (/api/v1). Dates arrive as ISO strings over JSON.
 
 export type Role = "owner" | "manager" | "staff";
-export type Tier = "standard" | "vip";
+export type Tier = "standard" | "vip" | "premium" | (string & {});
+
+/** Display name of a plan id (ids are stable: standard = Basic, vip = Pro, premium = Premium). */
+export function tierLabel(tier: Tier): string {
+  return tier === "premium" ? "Premium" : tier === "vip" ? "Pro" : tier === "standard" ? "Basic" : tier;
+}
 
 export type User = { id: string; email: string; name: string; platformRole: "admin" | null };
 

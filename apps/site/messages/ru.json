@@ -9,7 +9,8 @@
       "businessTypes": "Виды бизнеса",
       "pricing": "Цены",
       "faq": "FAQ",
-      "contact": "Контакты"
+      "contact": "Контакты",
+      "menu": "Меню"
     },
     "cta": {
       "login": "Войти",
