@@ -5,6 +5,7 @@ import { getService, getSlots } from "./availability";
 import { messageCustomer } from "./conversations";
 import { randomToken } from "./crypto";
 import { badRequest, conflict, forbidden, notFound } from "./errors";
+import { emailBusinessNewBooking, emailCustomerAboutBooking } from "./email";
 import { audit, notifyBusiness, type Actor } from "./events";
 import { newId } from "./ids";
 import { formatDateTime, zonedParts } from "./time";
@@ -133,6 +134,9 @@ export async function createBooking(business: schema.Business, input: CreateBook
     body: `${customer.name} · ${when} with ${st.name}`,
     href: `/app/bookings?focus=${booking.id}`,
   });
+  // Best-effort emails (no-op until Resend is configured).
+  await emailCustomerAboutBooking(booking.id, status === "pending" ? "requested" : "confirmed").catch(() => false);
+  if (actor.type !== "user") await emailBusinessNewBooking(booking.id).catch(() => false);
   return { booking, customer, service, staff: st };
 }
 
@@ -165,6 +169,7 @@ export async function cancelBooking(business: schema.Business, bookingId: string
     .where(eq(schema.bookings.id, b.id))
     .returning();
   await audit(business.id, actor, "booking.cancelled", b.id, { reason });
+  await emailCustomerAboutBooking(b.id, "cancelled", { reason: reason || undefined }).catch(() => false);
   const [c] = await db.select().from(schema.customers).where(eq(schema.customers.id, b.customerId));
   if (actor.type !== "user") {
     await notifyBusiness(business.id, {
@@ -217,6 +222,7 @@ export async function rescheduleBooking(
     throw e;
   }
   await audit(business.id, actor, "booking.rescheduled", b.id, { from: b.startsAt.toISOString(), to: startsAt.toISOString() });
+  await emailCustomerAboutBooking(b.id, "rescheduled").catch(() => false);
   const when = formatDateTime(startsAt, business.timezone);
   if (actor.type !== "user") {
     await notifyBusiness(business.id, { kind: "booking.rescheduled", title: "Booking moved", body: `${service.name} → ${when}`, href: `/app/bookings?focus=${b.id}` });
@@ -242,6 +248,7 @@ export async function setBookingStatus(
   if (status === "confirmed" && b.status === "pending") {
     const service = await getService(business.id, b.serviceId);
     await messageCustomer(business.id, b.customerId, `Good news: your ${service.name} at ${business.name} on ${formatDateTime(b.startsAt, business.timezone)} is confirmed.`);
+    await emailCustomerAboutBooking(b.id, "confirmed").catch(() => false);
   }
   return updated;
 }

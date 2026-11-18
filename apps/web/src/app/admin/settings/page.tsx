@@ -14,6 +14,7 @@ const GROUPS = [
   { id: "ai", title: "AI agents", description: "Model access and behaviour for every business's NanoClaw agent." },
   { id: "billing", title: "Billing (Stripe)", description: "Without a Stripe key, plan changes apply immediately in test mode. Prices are set per plan in Plans & pricing." },
   { id: "reminders", title: "Reminders", description: "Automatic appointment reminders sent by each business's agent." },
+  { id: "email", title: "Email", description: "Booking emails to customers and businesses, and website lead alerts, sent through Resend." },
 ] as const;
 
 export default async function AdminSettings() {

@@ -35,6 +35,7 @@ export default async function SystemStatus() {
     { label: t("Telegram bot"), ok: tg, detail: tg ? `@${s["telegram.botUsername"]}` : t("Not connected") },
     { label: t("WhatsApp gateway"), ok: gw === true, detail: gw === null ? t("Not configured") : gw ? t("Reachable") : t("Unreachable") },
     { label: "Stripe", ok: stripe, detail: stripe ? t("Live payments") : t("Test mode") },
+    { label: t("Email (Resend)"), ok: Boolean(s["email.enabled"] && s["email.resendApiKey"]), detail: s["email.resendApiKey"] ? (s["email.enabled"] ? String(s["email.from"]) : t("Configured but switched off in Settings")) : t("Not configured") },
     { label: t("Public URL"), ok: base.startsWith("https://"), detail: base || t("Not set") },
   ];
   const urls = [

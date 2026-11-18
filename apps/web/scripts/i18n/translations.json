@@ -284,7 +284,8 @@
 "de": "E-Mail",
 "it": "Email",
 "pt-BR": "E-mail",
-"ru": "Эл. почта"
+"ru": "Эл. почта",
+"es": "Email"
 },
 "Password": {
 "fr": "Mot de passe",
@@ -1257,7 +1258,8 @@
 "de": "Notizen",
 "it": "Note",
 "pt-BR": "Notas",
-"ru": "Заметки"
+"ru": "Заметки",
+"es": "Notas"
 },
 "Cancel reason": {
 "fr": "Motif d'annulation",
@@ -7631,5 +7633,325 @@
 "it": "Le prenotazioni sono conservate finché l'attività ne ha bisogno per la contabilità; quelle dei clienti cancellati restano solo in forma anonima.",
 "pt-BR": "Os registros de reservas são mantidos enquanto o negócio precisar deles para a contabilidade; os de clientes apagados ficam apenas anonimizados.",
 "ru": "Записи хранятся, пока они нужны бизнесу для учёта; записи удалённых клиентов хранятся только в обезличенном виде."
+},
+"Your booking is confirmed": {
+"es": "Tu reserva está confirmada",
+"fr": "Votre réservation est confirmée",
+"de": "Deine Buchung ist bestätigt",
+"it": "La tua prenotazione è confermata",
+"pt-BR": "Sua reserva está confirmada",
+"ru": "Ваша запись подтверждена"
+},
+"We've received your booking request": {
+"es": "Hemos recibido tu solicitud de reserva",
+"fr": "Nous avons bien reçu votre demande de réservation",
+"de": "Wir haben deine Buchungsanfrage erhalten",
+"it": "Abbiamo ricevuto la tua richiesta di prenotazione",
+"pt-BR": "Recebemos seu pedido de reserva",
+"ru": "Мы получили ваш запрос на запись"
+},
+"Your booking has been moved": {
+"es": "Tu reserva se ha cambiado de hora",
+"fr": "Votre réservation a été déplacée",
+"de": "Deine Buchung wurde verschoben",
+"it": "La tua prenotazione è stata spostata",
+"pt-BR": "Sua reserva foi remarcada",
+"ru": "Ваша запись перенесена"
+},
+"Your booking has been cancelled": {
+"es": "Tu reserva se ha cancelado",
+"fr": "Votre réservation a été annulée",
+"de": "Deine Buchung wurde storniert",
+"it": "La tua prenotazione è stata annullata",
+"pt-BR": "Sua reserva foi cancelada",
+"ru": "Ваша запись отменена"
+},
+"Reminder of your appointment": {
+"es": "Recordatorio de tu cita",
+"fr": "Rappel de votre rendez-vous",
+"de": "Erinnerung an deinen Termin",
+"it": "Promemoria del tuo appuntamento",
+"pt-BR": "Lembrete do seu horário",
+"ru": "Напоминание о записи"
+},
+"Hi {name},": {
+"es": "Hola, {name}:",
+"fr": "Bonjour {name},",
+"de": "Hallo {name},",
+"it": "Ciao {name},",
+"pt-BR": "Olá, {name},",
+"ru": "Здравствуйте, {name}!"
+},
+"{business} will confirm your request shortly.": {
+"es": "{business} confirmará tu solicitud en breve.",
+"fr": "{business} confirmera votre demande sous peu.",
+"de": "{business} bestätigt deine Anfrage in Kürze.",
+"it": "{business} confermerà la tua richiesta a breve.",
+"pt-BR": "{business} vai confirmar seu pedido em breve.",
+"ru": "{business} скоро подтвердит ваш запрос."
+},
+"Your appointment at {business} has been cancelled.": {
+"es": "Tu cita en {business} se ha cancelado.",
+"fr": "Votre rendez-vous chez {business} a été annulé.",
+"de": "Dein Termin bei {business} wurde storniert.",
+"it": "Il tuo appuntamento da {business} è stato annullato.",
+"pt-BR": "Seu horário em {business} foi cancelado.",
+"ru": "Ваша запись в {business} отменена."
+},
+"Here are the details of your appointment at {business}.": {
+"es": "Estos son los detalles de tu cita en {business}.",
+"fr": "Voici les détails de votre rendez-vous chez {business}.",
+"de": "Hier sind die Details zu deinem Termin bei {business}.",
+"it": "Ecco i dettagli del tuo appuntamento da {business}.",
+"pt-BR": "Aqui estão os detalhes do seu horário em {business}.",
+"ru": "Детали вашей записи в {business}."
+},
+"Book again": {
+"es": "Reservar de nuevo",
+"fr": "Réserver à nouveau",
+"de": "Erneut buchen",
+"it": "Prenota di nuovo",
+"pt-BR": "Reservar de novo",
+"ru": "Записаться снова"
+},
+"Sent by {business} with AIBA": {
+"es": "Enviado por {business} con AIBA",
+"fr": "Envoyé par {business} avec AIBA",
+"de": "Gesendet von {business} mit AIBA",
+"it": "Inviato da {business} con AIBA",
+"pt-BR": "Enviado por {business} com a AIBA",
+"ru": "Отправлено {business} через AIBA"
+},
+"New booking request: {service}": {
+"es": "Nueva solicitud de reserva: {service}",
+"fr": "Nouvelle demande de réservation : {service}",
+"de": "Neue Buchungsanfrage: {service}",
+"it": "Nuova richiesta di prenotazione: {service}",
+"pt-BR": "Novo pedido de reserva: {service}",
+"ru": "Новый запрос на запись: {service}"
+},
+"New booking: {service}": {
+"es": "Nueva reserva: {service}",
+"fr": "Nouvelle réservation : {service}",
+"de": "Neue Buchung: {service}",
+"it": "Nuova prenotazione: {service}",
+"pt-BR": "Nova reserva: {service}",
+"ru": "Новая запись: {service}"
+},
+"Confirm or decline it from your workspace.": {
+"es": "Confírmala o recházala desde tu espacio de trabajo.",
+"fr": "Confirmez-la ou refusez-la depuis votre espace de travail.",
+"de": "Bestätige oder lehne sie in deinem Arbeitsbereich ab.",
+"it": "Confermala o rifiutala dalla tua area di lavoro.",
+"pt-BR": "Confirme ou recuse pelo seu espaço de trabalho.",
+"ru": "Подтвердите или отклоните её в рабочем пространстве."
+},
+"Open in AIBA": {
+"es": "Abrir en AIBA",
+"fr": "Ouvrir dans AIBA",
+"de": "In AIBA öffnen",
+"it": "Apri in AIBA",
+"pt-BR": "Abrir na AIBA",
+"ru": "Открыть в AIBA"
+},
+"Website leads": {
+"es": "Leads de la web",
+"fr": "Contacts du site",
+"de": "Website-Leads",
+"it": "Lead dal sito",
+"pt-BR": "Leads do site",
+"ru": "Заявки с сайта"
+},
+"Waitlist sign-ups and access requests sent from the public website.": {
+"es": "Altas en la lista de espera y solicitudes de acceso enviadas desde la web pública.",
+"fr": "Inscriptions à la liste d'attente et demandes d'accès envoyées depuis le site public.",
+"de": "Wartelisten-Anmeldungen und Zugangsanfragen von der öffentlichen Website.",
+"it": "Iscrizioni alla lista d'attesa e richieste di accesso inviate dal sito pubblico.",
+"pt-BR": "Cadastros na lista de espera e pedidos de acesso enviados pelo site público.",
+"ru": "Записи в лист ожидания и запросы доступа с публичного сайта."
+},
+"Waitlist": {
+"es": "Lista de espera",
+"fr": "Liste d'attente",
+"de": "Warteliste",
+"it": "Lista d'attesa",
+"pt-BR": "Lista de espera",
+"ru": "Лист ожидания"
+},
+"Access requests": {
+"es": "Solicitudes de acceso",
+"fr": "Demandes d'accès",
+"de": "Zugangsanfragen",
+"it": "Richieste di accesso",
+"pt-BR": "Pedidos de acesso",
+"ru": "Запросы доступа"
+},
+"Access request": {
+"es": "Solicitud de acceso",
+"fr": "Demande d'accès",
+"de": "Zugangsanfrage",
+"it": "Richiesta di accesso",
+"pt-BR": "Pedido de acesso",
+"ru": "Запрос доступа"
+},
+"New": {
+"es": "Nuevo",
+"fr": "Nouveau",
+"de": "Neu",
+"it": "Nuovo",
+"pt-BR": "Novo",
+"ru": "Новый"
+},
+"Contacted": {
+"es": "Contactado",
+"fr": "Contacté",
+"de": "Kontaktiert",
+"it": "Contattato",
+"pt-BR": "Contatado",
+"ru": "Связались"
+},
+"Approved": {
+"es": "Aprobado",
+"fr": "Approuvé",
+"de": "Genehmigt",
+"it": "Approvato",
+"pt-BR": "Aprovado",
+"ru": "Одобрен"
+},
+"Rejected": {
+"es": "Rechazado",
+"fr": "Refusé",
+"de": "Abgelehnt",
+"it": "Rifiutato",
+"pt-BR": "Recusado",
+"ru": "Отклонён"
+},
+"Any status": {
+"es": "Cualquier estado",
+"fr": "Tous les statuts",
+"de": "Jeder Status",
+"it": "Qualsiasi stato",
+"pt-BR": "Qualquer status",
+"ru": "Любой статус"
+},
+"Source": {
+"es": "Origen",
+"fr": "Origine",
+"de": "Quelle",
+"it": "Origine",
+"pt-BR": "Origem",
+"ru": "Источник"
+},
+"No leads yet": {
+"es": "Aún no hay leads",
+"fr": "Pas encore de contacts",
+"de": "Noch keine Leads",
+"it": "Ancora nessun lead",
+"pt-BR": "Nenhum lead ainda",
+"ru": "Заявок пока нет"
+},
+"Lead not found": {
+"es": "Lead no encontrado",
+"fr": "Contact introuvable",
+"de": "Lead nicht gefunden",
+"it": "Lead non trovato",
+"pt-BR": "Lead não encontrado",
+"ru": "Заявка не найдена"
+},
+"Booking emails to customers and businesses, and website lead alerts, sent through Resend.": {
+"es": "Emails de reservas a clientes y negocios, y avisos de leads de la web, enviados con Resend.",
+"fr": "E-mails de réservation aux clients et établissements, et alertes de contacts du site, envoyés via Resend.",
+"de": "Buchungs-E-Mails an Kunden und Geschäfte sowie Lead-Hinweise der Website, versendet über Resend.",
+"it": "Email di prenotazione a clienti e attività e avvisi dei lead del sito, inviati tramite Resend.",
+"pt-BR": "E-mails de reservas para clientes e negócios e alertas de leads do site, enviados pelo Resend.",
+"ru": "Письма о записях клиентам и бизнесам и уведомления о заявках с сайта через Resend."
+},
+"Email (Resend)": {
+"es": "Email (Resend)",
+"fr": "E-mail (Resend)",
+"de": "E-Mail (Resend)",
+"it": "Email (Resend)",
+"pt-BR": "E-mail (Resend)",
+"ru": "Почта (Resend)"
+},
+"Send reminders by email": {
+"es": "Enviar recordatorios por email",
+"fr": "Envoyer les rappels par e-mail",
+"de": "Erinnerungen per E-Mail senden",
+"it": "Invia promemoria via email",
+"pt-BR": "Enviar lembretes por e-mail",
+"ru": "Отправлять напоминания по почте"
+},
+"To customers who left an email address. Requires email to be configured.": {
+"es": "A los clientes que dejaron su email. Requiere tener el email configurado.",
+"fr": "Aux clients qui ont laissé leur e-mail. Nécessite que l'e-mail soit configuré.",
+"de": "An Kunden mit hinterlegter E-Mail. E-Mail muss eingerichtet sein.",
+"it": "Ai clienti che hanno lasciato l'email. Richiede l'email configurata.",
+"pt-BR": "Para clientes que deixaram e-mail. Requer o e-mail configurado.",
+"ru": "Клиентам, оставившим почту. Нужно настроить отправку почты."
+},
+"Send emails": {
+"es": "Enviar emails",
+"fr": "Envoyer des e-mails",
+"de": "E-Mails senden",
+"it": "Invia email",
+"pt-BR": "Enviar e-mails",
+"ru": "Отправлять письма"
+},
+"Booking confirmations, changes and reminders to customers, plus alerts to the platform team.": {
+"es": "Confirmaciones, cambios y recordatorios de reservas a clientes, y avisos al equipo de la plataforma.",
+"fr": "Confirmations, modifications et rappels de réservation aux clients, plus alertes à l'équipe de la plateforme.",
+"de": "Buchungsbestätigungen, Änderungen und Erinnerungen an Kunden sowie Hinweise an das Plattform-Team.",
+"it": "Conferme, modifiche e promemoria delle prenotazioni ai clienti, più avvisi al team della piattaforma.",
+"pt-BR": "Confirmações, alterações e lembretes de reservas para clientes, além de alertas para a equipe da plataforma.",
+"ru": "Подтверждения, изменения и напоминания о записях клиентам, а также уведомления команде платформы."
+},
+"Resend API key": {
+"es": "Clave API de Resend",
+"fr": "Clé API Resend",
+"de": "Resend-API-Schlüssel",
+"it": "Chiave API Resend",
+"pt-BR": "Chave de API do Resend",
+"ru": "API-ключ Resend"
+},
+"From resend.com → API Keys. Without it no emails are sent.": {
+"es": "En resend.com → API Keys. Sin ella no se envía ningún email.",
+"fr": "Sur resend.com → API Keys. Sans elle, aucun e-mail n'est envoyé.",
+"de": "Unter resend.com → API Keys. Ohne ihn werden keine E-Mails gesendet.",
+"it": "Da resend.com → API Keys. Senza, non viene inviata nessuna email.",
+"pt-BR": "Em resend.com → API Keys. Sem ela, nenhum e-mail é enviado.",
+"ru": "На resend.com → API Keys. Без ключа письма не отправляются."
+},
+"Sender": {
+"es": "Remitente",
+"fr": "Expéditeur",
+"de": "Absender",
+"it": "Mittente",
+"pt-BR": "Remetente",
+"ru": "Отправитель"
+},
+"A verified sender in Resend, e.g. AIBA <hola@aiba.app>. Until your domain is verified use onboarding@resend.dev (only delivers to your own address).": {
+"es": "Un remitente verificado en Resend, p. ej. AIBA <hola@aiba.app>. Hasta verificar tu dominio usa onboarding@resend.dev (solo entrega a tu propia dirección).",
+"fr": "Un expéditeur vérifié dans Resend, ex. AIBA <hola@aiba.app>. Tant que votre domaine n'est pas vérifié, utilisez onboarding@resend.dev (ne livre qu'à votre propre adresse).",
+"de": "Ein in Resend verifizierter Absender, z. B. AIBA <hola@aiba.app>. Bis deine Domain verifiziert ist, nutze onboarding@resend.dev (stellt nur an deine eigene Adresse zu).",
+"it": "Un mittente verificato su Resend, es. AIBA <hola@aiba.app>. Finché il dominio non è verificato usa onboarding@resend.dev (consegna solo al tuo indirizzo).",
+"pt-BR": "Um remetente verificado no Resend, ex.: AIBA <hola@aiba.app>. Até verificar seu domínio, use onboarding@resend.dev (só entrega no seu próprio endereço).",
+"ru": "Подтверждённый отправитель в Resend, напр. AIBA <hola@aiba.app>. Пока домен не подтверждён, используйте onboarding@resend.dev (доставляет только на ваш адрес)."
+},
+"Platform team inbox": {
+"es": "Bandeja del equipo de la plataforma",
+"fr": "Boîte de l'équipe de la plateforme",
+"de": "Postfach des Plattform-Teams",
+"it": "Casella del team della piattaforma",
+"pt-BR": "Caixa da equipe da plataforma",
+"ru": "Почта команды платформы"
+},
+"Receives new waitlist sign-ups and access requests from the website. Blank = support email.": {
+"es": "Recibe las altas en la lista de espera y las solicitudes de acceso de la web. Vacío = email de soporte.",
+"fr": "Reçoit les inscriptions à la liste d'attente et les demandes d'accès du site. Vide = e-mail du support.",
+"de": "Erhält Wartelisten-Anmeldungen und Zugangsanfragen der Website. Leer = Support-E-Mail.",
+"it": "Riceve le iscrizioni alla lista d'attesa e le richieste di accesso dal sito. Vuoto = email di supporto.",
+"pt-BR": "Recebe os cadastros na lista de espera e os pedidos de acesso do site. Vazio = e-mail de suporte.",
+"ru": "Получает записи в лист ожидания и запросы доступа с сайта. Пусто = почта поддержки."
 }
 }

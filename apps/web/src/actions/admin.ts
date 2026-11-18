@@ -194,3 +194,16 @@ export async function adminPostAnnouncement(form: FormData) {
   revalidatePath("/admin/community");
   revalidatePath("/app/community", "layout");
 }
+
+// ---------------------------------------------------------------- Website leads
+
+export async function updateLead(f: FormData) {
+  const me = await assertPlatform("businesses.manage");
+  const id = String(f.get("id") ?? "");
+  const status = z.enum(["new", "contacted", "approved", "rejected"]).parse(f.get("status"));
+  const notes = String(f.get("notes") ?? "").slice(0, 2000);
+  const [lead] = await db.update(schema.leads).set({ status, notes }).where(eq(schema.leads.id, id)).returning();
+  if (!lead) throw notFound("Lead");
+  await audit(null, { type: "user", id: me.id }, "admin.lead.updated", id, { status });
+  revalidatePath("/admin/leads");
+}

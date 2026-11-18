@@ -2,6 +2,7 @@ import "server-only";
 import { and, eq, gt, isNull, lt } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { messageCustomer } from "./conversations";
+import { emailCustomerAboutBooking } from "./email";
 import { getSettings } from "./settings";
 import { formatDateTime } from "./time";
 
@@ -45,7 +46,8 @@ export async function sendDueReminders(lookaheadSlackHours = 2) {
       `Reminder: ${service} at ${business.name}, ${formatDateTime(booking.startsAt, business.timezone)}. Need to change it? ${link}`,
       { channels: settings["reminders.whatsapp"] ? undefined : ["telegram", "web"] },
     );
-    if (ok) sent++;
+    const mailed = settings["reminders.email"] ? await emailCustomerAboutBooking(booking.id, "reminder").catch(() => false) : false;
+    if (ok || mailed) sent++;
   }
   return { due: due.length, sent };
 }

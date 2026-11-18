@@ -694,7 +694,31 @@ export const forumReports = pgTable("forum_reports", {
   createdAt: createdAt(),
 });
 
+/** Sign-ups and access requests coming from the public website (waitlist, business types, Sensible). */
+export const leads = pgTable(
+  "leads",
+  {
+    id: id(),
+    kind: text("kind", { enum: ["waitlist", "access_request"] }).notNull(),
+    email: text("email").notNull(),
+    name: text("name").notNull().default(""),
+    businessName: text("business_name").notNull().default(""),
+    category: text("category").notNull().default(""),
+    phone: text("phone").notNull().default(""),
+    website: text("website").notNull().default(""),
+    links: jsonb("links").$type<string[]>().notNull().default([]),
+    message: text("message").notNull().default(""),
+    locale: text("locale").notNull().default(""),
+    source: text("source").notNull().default(""),
+    status: text("status", { enum: ["new", "contacted", "approved", "rejected"] }).notNull().default("new"),
+    notes: text("notes").notNull().default(""),
+    createdAt: createdAt(),
+  },
+  (t) => [index("leads_kind_idx").on(t.kind, t.createdAt), uniqueIndex("leads_kind_email_uq").on(t.kind, t.email)],
+);
+
 export type Business = typeof businesses.$inferSelect;
+export type Lead = typeof leads.$inferSelect;
 export type Plan = typeof plans.$inferSelect;
 export type Service = typeof services.$inferSelect;
 export type Staff = typeof staff.$inferSelect;
