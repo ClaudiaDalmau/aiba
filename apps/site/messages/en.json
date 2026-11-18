@@ -155,24 +155,24 @@
     "pricingPreview": {
       "label": "Pricing",
       "title": "Plans for every stage.",
-      "subtitle": "From €49/month. No lock-in.",
+      "subtitle": "From €39/month. No lock-in.",
       "seeAll": "See full plans",
       "planBasic": {
         "name": "Basic",
-        "price": "€49",
+        "price": "€39",
         "period": "/mo",
         "desc": "Perfect to start"
       },
       "planPro": {
         "name": "Pro",
-        "price": "€99",
+        "price": "€79",
         "period": "/mo",
         "desc": "Most chosen",
         "badge": "Most popular"
       },
       "planPremium": {
         "name": "Premium",
-        "price": "€299",
+        "price": "€149",
         "period": "/mo",
         "desc": "Multi-professional"
       }
@@ -309,6 +309,34 @@
         "hospitality": "🍽️ Hospitality",
         "other": "☔ Other professionals"
       }
+    },
+    "mock": {
+      "chatName": "Lúa Studio",
+      "online": "AI assistant · online",
+      "m1": "Hi, do you have a slot on Saturday for a massage?",
+      "m2": "Hi! On Saturday I have 10:00 or 12:30. Relaxing massage 60 min · €45. Which do you prefer?",
+      "m3": "10:00, perfect",
+      "m4": "Booked ✓ To confirm, pay the €15 deposit:",
+      "pay": "Pay deposit · €15",
+      "c1Label": "New booking",
+      "c1Title": "Saturday · 10:00",
+      "c1Sub": "Marta G. · Relaxing massage",
+      "c2Label": "Deposit received",
+      "c2Title": "€15.00",
+      "c2Sub": "Appointment confirmed",
+      "c3Label": "Reminder sent",
+      "c3Title": "Code 384 762",
+      "c3Sub": "1 h before the appointment",
+      "stepLabel": "Step {n}",
+      "finalAmount": "+ €30.00"
+    },
+    "demo": {
+      "label": "Live demo",
+      "title": "Chat with the AI as if you were your client",
+      "subtitle": "Type anything and watch the assistant understand the service, suggest slots and close the booking. Nothing to install.",
+      "b1": "Understands variations (\"a quick trim\", \"full colour\", \"mani and pedi\")",
+      "b2": "Suggests slots based on your real schedule",
+      "b3": "Takes the deposit and sends automatic reminders"
     }
   },
   "languageSwitcher": {
@@ -342,7 +370,7 @@
   "pricing": {
     "meta": {
       "title": "Pricing · AIBA",
-      "desc": "Flexible plans from €49/month. Basic for schedule, Pro with online payments, Premium with advanced AI. 14-day free trial."
+      "desc": "Flexible plans from €39/month. Basic for schedule, Pro with online payments, Premium with advanced AI. 14-day free trial."
     },
     "badge": "Clear pricing, no surprises",
     "title": "Choose the plan that fits you.",

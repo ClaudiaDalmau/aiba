@@ -155,24 +155,24 @@
     "pricingPreview": {
       "label": "Precios",
       "title": "Planes para cada etapa.",
-      "subtitle": "Desde 49€/mes. Sin permanencia.",
+      "subtitle": "Desde 39€/mes. Sin permanencia.",
       "seeAll": "Ver planes completos",
       "planBasic": {
         "name": "Basic",
-        "price": "49€",
+        "price": "39€",
         "period": "/mes",
         "desc": "Perfecto para empezar"
       },
       "planPro": {
         "name": "Pro",
-        "price": "99€",
+        "price": "79€",
         "period": "/mes",
         "desc": "El más elegido",
         "badge": "Más popular"
       },
       "planPremium": {
         "name": "Premium",
-        "price": "299€",
+        "price": "149€",
         "period": "/mes",
         "desc": "Multi-profesional"
       }
@@ -309,6 +309,34 @@
         "hospitality": "🍽️ Hostelería",
         "other": "☔ Otros profesionales"
       }
+    },
+    "mock": {
+      "chatName": "Estudio Lúa",
+      "online": "Asistente IA · en línea",
+      "m1": "Hola, ¿tienes hueco el sábado para un masaje?",
+      "m2": "¡Hola! El sábado tengo a las 10:00 o a las 12:30. Masaje relajante 60 min · 45 €. ¿Cuál prefieres?",
+      "m3": "A las 10, perfecto",
+      "m4": "Reservado ✓ Para confirmar, paga la señal de 15 €:",
+      "pay": "Pagar señal · 15 €",
+      "c1Label": "Nueva reserva",
+      "c1Title": "Sábado · 10:00",
+      "c1Sub": "Marta G. · Masaje relajante",
+      "c2Label": "Señal cobrada",
+      "c2Title": "15,00 €",
+      "c2Sub": "Cita confirmada",
+      "c3Label": "Recordatorio enviado",
+      "c3Title": "Código 384 762",
+      "c3Sub": "1 h antes de la cita",
+      "stepLabel": "Paso {n}",
+      "finalAmount": "+ 30,00 €"
+    },
+    "demo": {
+      "label": "Prueba en vivo",
+      "title": "Chatea con la IA como si fueras tu cliente",
+      "subtitle": "Escribe cualquier cosa y verás cómo la asistente entiende el servicio, sugiere huecos y cierra la reserva. Sin instalar nada.",
+      "b1": "Entiende variaciones («un cortecito», «tinte completo», «manicura y pedicura»)",
+      "b2": "Propone huecos según tu horario real",
+      "b3": "Cobra el anticipo y envía recordatorios automáticos"
     }
   },
   "languageSwitcher": {
@@ -342,7 +370,7 @@
   "pricing": {
     "meta": {
       "title": "Precios · AIBA",
-      "desc": "Planes flexibles desde 49€/mes. Basic para agenda, Pro con cobro online, Premium con IA avanzada. 14 días de prueba gratis."
+      "desc": "Planes flexibles desde 39€/mes. Basic para agenda, Pro con cobro online, Premium con IA avanzada. 14 días de prueba gratis."
     },
     "badge": "Precios claros, sin sorpresas",
     "title": "Elige el plan que se adapta a ti.",

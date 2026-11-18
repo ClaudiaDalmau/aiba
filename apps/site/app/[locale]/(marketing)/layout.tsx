@@ -50,27 +50,27 @@ export default async function MarketingLayout({
         dangerouslySetInnerHTML={{ __html: toJsonLdScript(softwareApplicationJsonLd()) }}
       />
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/80 dark:bg-neutral-900/80 backdrop-blur border-b border-neutral-200 dark:border-neutral-800">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+      <header className="sticky top-0 z-40 bg-[#050507]/75 backdrop-blur-xl backdrop-saturate-150 border-b border-white/[0.08]">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center" aria-label="AIBA">
-            <AibaLogo size={32} />
+            <AibaLogo size={28} tone="light" />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="/como-funciona" className="text-neutral-600 dark:text-neutral-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors">{tHeader("nav.howItWorks")}</Link>
-            <Link href="/tipos-de-negocio" className="text-neutral-600 dark:text-neutral-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors">{tHeader("nav.businessTypes")}</Link>
-            <Link href="/precios" className="text-neutral-600 dark:text-neutral-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors">{tHeader("nav.pricing")}</Link>
-            <Link href="/faq" className="text-neutral-600 dark:text-neutral-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors">{tHeader("nav.faq")}</Link>
-            <Link href="/blog" className="text-neutral-600 dark:text-neutral-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors">Blog</Link>
-            <Link href="/contacto" className="text-neutral-600 dark:text-neutral-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors">{tHeader("nav.contact")}</Link>
+          <nav className="hidden md:flex items-center gap-7 text-[13px]">
+            <Link href="/como-funciona" className="text-neutral-300 hover:text-white transition-colors">{tHeader("nav.howItWorks")}</Link>
+            <Link href="/tipos-de-negocio" className="text-neutral-300 hover:text-white transition-colors">{tHeader("nav.businessTypes")}</Link>
+            <Link href="/precios" className="text-neutral-300 hover:text-white transition-colors">{tHeader("nav.pricing")}</Link>
+            <Link href="/faq" className="text-neutral-300 hover:text-white transition-colors">{tHeader("nav.faq")}</Link>
+            <Link href="/blog" className="text-neutral-300 hover:text-white transition-colors">Blog</Link>
+            <Link href="/contacto" className="text-neutral-300 hover:text-white transition-colors">{tHeader("nav.contact")}</Link>
           </nav>
 
           <div className="flex items-center gap-1 sm:gap-2">
-            <LanguageSwitcher />
+            <LanguageSwitcher variant="dark" />
             {isLoggedIn ? (
               <Link
                 href="/dashboard"
-                className="px-3 sm:px-4 py-2 rounded-md bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold transition-colors"
+                className="px-3.5 py-1.5 rounded-full bg-white hover:bg-neutral-200 text-[#050507] text-[13px] font-semibold transition-colors"
               >
                 {tHeader("cta.goToDashboard")}
               </Link>
@@ -78,13 +78,13 @@ export default async function MarketingLayout({
               <>
                 <Link
                   href="/login"
-                  className="hidden sm:inline text-sm text-neutral-700 dark:text-neutral-300 hover:text-violet-700 dark:hover:text-violet-300 px-3 py-2 transition-colors"
+                  className="hidden sm:inline text-[13px] text-neutral-300 hover:text-white px-3 py-2 transition-colors"
                 >
                   {tHeader("cta.login")}
                 </Link>
                 <Link
                   href="/register"
-                  className="px-3 sm:px-4 py-2 rounded-md bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold transition-colors shadow-sm"
+                  className="px-3.5 py-1.5 rounded-full bg-white hover:bg-neutral-200 text-[#050507] text-[13px] font-semibold transition-colors"
                 >
                   {tHeader("cta.startFree")}
                 </Link>

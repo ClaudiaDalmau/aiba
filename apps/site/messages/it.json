@@ -155,24 +155,24 @@
     "pricingPreview": {
       "label": "Prezzi",
       "title": "Piani per ogni fase.",
-      "subtitle": "Da 49€/mese. Senza vincoli.",
+      "subtitle": "Da 39€/mese. Senza vincoli.",
       "seeAll": "Vedi tutti i piani",
       "planBasic": {
         "name": "Basic",
-        "price": "49€",
+        "price": "39€",
         "period": "/mese",
         "desc": "Perfetto per iniziare"
       },
       "planPro": {
         "name": "Pro",
-        "price": "99€",
+        "price": "79€",
         "period": "/mese",
         "desc": "Il più scelto",
         "badge": "Più popolare"
       },
       "planPremium": {
         "name": "Premium",
-        "price": "299€",
+        "price": "149€",
         "period": "/mese",
         "desc": "Multi-professionale"
       }
@@ -309,6 +309,34 @@
         "hospitality": "🍽️ Ristorazione",
         "other": "☔ Altri professionisti"
       }
+    },
+    "mock": {
+      "chatName": "Studio Lúa",
+      "online": "Assistente IA · online",
+      "m1": "Ciao, hai un posto sabato per un massaggio?",
+      "m2": "Ciao! Sabato ho le 10:00 o le 12:30. Massaggio rilassante 60 min · 45 €. Quale preferisci?",
+      "m3": "Alle 10, perfetto",
+      "m4": "Prenotato ✓ Per confermare, paga l'acconto di 15 €:",
+      "pay": "Paga acconto · 15 €",
+      "c1Label": "Nuova prenotazione",
+      "c1Title": "Sabato · 10:00",
+      "c1Sub": "Marta G. · Massaggio rilassante",
+      "c2Label": "Acconto incassato",
+      "c2Title": "15,00 €",
+      "c2Sub": "Appuntamento confermato",
+      "c3Label": "Promemoria inviato",
+      "c3Title": "Codice 384 762",
+      "c3Sub": "1 h prima dell'appuntamento",
+      "stepLabel": "Passo {n}",
+      "finalAmount": "+ 30,00 €"
+    },
+    "demo": {
+      "label": "Demo dal vivo",
+      "title": "Chatta con l'IA come se fossi una tua cliente",
+      "subtitle": "Scrivi qualsiasi cosa e guarda l'assistente capire il servizio, proporre orari e chiudere la prenotazione. Niente da installare.",
+      "b1": "Capisce le varianti («una spuntatina», «colore completo», «manicure e pedicure»)",
+      "b2": "Propone orari in base alla tua agenda reale",
+      "b3": "Incassa l'acconto e invia promemoria automatici"
     }
   },
   "languageSwitcher": {
@@ -342,7 +370,7 @@
   "pricing": {
     "meta": {
       "title": "Prezzi · AIBA",
-      "desc": "Piani flessibili da 49€/mese. Basic per l'agenda, Pro con pagamenti online, Premium con IA avanzata. 14 giorni di prova gratis."
+      "desc": "Piani flessibili da 39€/mese. Basic per l'agenda, Pro con pagamenti online, Premium con IA avanzata. 14 giorni di prova gratis."
     },
     "badge": "Prezzi chiari, senza sorprese",
     "title": "Scegli il piano che fa per te.",

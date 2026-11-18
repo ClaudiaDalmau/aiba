@@ -20,7 +20,7 @@ function Flag({ code, className = "" }: { code: string; className?: string }) {
   );
 }
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ variant = "default" }: { variant?: "default" | "dark" }) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -42,7 +42,7 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+        className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-sm transition-colors ${variant === "dark" ? "text-neutral-200 hover:bg-white/10" : "text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"}`}
         aria-haspopup="listbox"
         aria-expanded={open}
       >

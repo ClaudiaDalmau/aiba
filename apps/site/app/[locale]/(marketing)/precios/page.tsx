@@ -21,7 +21,7 @@ export async function generateMetadata({
 
 type PlanKey = "basic" | "pro" | "premium";
 const PLAN_KEYS: PlanKey[] = ["basic", "pro", "premium"];
-const PRICES: Record<PlanKey, number> = { basic: 49, pro: 99, premium: 299 };
+const PRICES: Record<PlanKey, number> = { basic: 39, pro: 79, premium: 149 };
 const HIGHLIGHT_KEY: PlanKey = "pro";
 const SITE_NAME_LABEL = "AIBA";
 

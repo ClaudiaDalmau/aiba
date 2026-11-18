@@ -155,24 +155,24 @@
     "pricingPreview": {
       "label": "Preise",
       "title": "Pläne für jede Phase.",
-      "subtitle": "Ab 49 €/Monat. Ohne Bindung.",
+      "subtitle": "Ab 39 €/Monat. Ohne Bindung.",
       "seeAll": "Alle Pläne ansehen",
       "planBasic": {
         "name": "Basic",
-        "price": "49 €",
+        "price": "39 €",
         "period": "/Monat",
         "desc": "Perfekt zum Start"
       },
       "planPro": {
         "name": "Pro",
-        "price": "99 €",
+        "price": "79 €",
         "period": "/Monat",
         "desc": "Am beliebtesten",
         "badge": "Am beliebtesten"
       },
       "planPremium": {
         "name": "Premium",
-        "price": "299 €",
+        "price": "149 €",
         "period": "/Monat",
         "desc": "Multi-Profi"
       }
@@ -309,6 +309,34 @@
         "hospitality": "🍽️ Gastronomie",
         "other": "☔ Andere Berufe"
       }
+    },
+    "mock": {
+      "chatName": "Studio Lúa",
+      "online": "KI-Assistentin · online",
+      "m1": "Hallo, hast du am Samstag einen Termin für eine Massage frei?",
+      "m2": "Hallo! Am Samstag habe ich 10:00 oder 12:30 frei. Entspannungsmassage 60 Min · 45 €. Was passt dir?",
+      "m3": "10 Uhr, perfekt",
+      "m4": "Gebucht ✓ Zur Bestätigung zahle bitte die Anzahlung von 15 €:",
+      "pay": "Anzahlung zahlen · 15 €",
+      "c1Label": "Neue Buchung",
+      "c1Title": "Samstag · 10:00",
+      "c1Sub": "Marta G. · Entspannungsmassage",
+      "c2Label": "Anzahlung erhalten",
+      "c2Title": "15,00 €",
+      "c2Sub": "Termin bestätigt",
+      "c3Label": "Erinnerung gesendet",
+      "c3Title": "Code 384 762",
+      "c3Sub": "1 Std. vor dem Termin",
+      "stepLabel": "Schritt {n}",
+      "finalAmount": "+ 30,00 €"
+    },
+    "demo": {
+      "label": "Live-Demo",
+      "title": "Chatte mit der KI, als wärst du deine Kundin",
+      "subtitle": "Schreib irgendetwas und sieh zu, wie die Assistentin den Service versteht, Termine vorschlägt und die Buchung abschließt. Nichts zu installieren.",
+      "b1": "Versteht Varianten („nur Spitzen schneiden“, „komplett färben“, „Maniküre und Pediküre“)",
+      "b2": "Schlägt Termine nach deinem echten Kalender vor",
+      "b3": "Kassiert die Anzahlung und verschickt automatische Erinnerungen"
     }
   },
   "languageSwitcher": {
@@ -342,7 +370,7 @@
   "pricing": {
     "meta": {
       "title": "Preise · AIBA",
-      "desc": "Flexible Pläne ab 49€/Monat. Basic für Kalender, Pro mit Online-Zahlung, Premium mit fortgeschrittener KI. 14 Tage kostenlos testen."
+      "desc": "Flexible Pläne ab 39€/Monat. Basic für Kalender, Pro mit Online-Zahlung, Premium mit fortgeschrittener KI. 14 Tage kostenlos testen."
     },
     "badge": "Klare Preise, keine Überraschungen",
     "title": "Wähle den passenden Plan.",

@@ -129,3 +129,46 @@
     @apply font-sans;
   }
 }
+/* ── AIBA rediseño: animaciones de la portada ───────────────────────── */
+.aiba-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.aiba-reveal[data-shown] {
+  opacity: 1;
+  transform: none;
+}
+.aiba-grad-text {
+  background: linear-gradient(90deg, #a78bfa 0%, #e879f9 45%, #7dd3fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@keyframes aiba-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.aiba-float { animation: aiba-float 6s ease-in-out infinite; }
+.aiba-float-slow { animation: aiba-float 8s ease-in-out infinite; }
+@keyframes aiba-msg-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.aiba-msg { opacity: 0; animation: aiba-msg-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes aiba-glow {
+  0%, 100% { opacity: 0.85; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.06); }
+}
+.aiba-glow { animation: aiba-glow 9s ease-in-out infinite; }
+.aiba-scroll-x { scrollbar-width: none; scroll-snap-type: x mandatory; }
+.aiba-scroll-x::-webkit-scrollbar { display: none; }
+.aiba-scroll-x > * { scroll-snap-align: start; }
+.aiba-sector img { transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+.aiba-sector:hover img { transform: scale(1.06); }
+@media (prefers-reduced-motion: reduce) {
+  .aiba-reveal { opacity: 1; transform: none; transition: none; }
+  .aiba-float, .aiba-float-slow, .aiba-glow { animation: none; }
+  .aiba-msg { opacity: 1; animation: none; }
+  .aiba-sector img { transition: none; }
+}

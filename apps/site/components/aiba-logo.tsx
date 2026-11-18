@@ -12,16 +12,16 @@ export function AibaMark({ size = 32, className }: { size?: number; className?: 
   );
 }
 
-export function AibaLogo({ size = 32, className }: { size?: number; className?: string }) {
+export function AibaLogo({ size = 32, className, tone = "auto" }: { size?: number; className?: string; tone?: "auto" | "light" }) {
   const fs = Math.round(size * 0.72);
   return (
     <span className={`inline-flex items-center gap-2 ${className ?? ""}`}>
       <AibaMark size={size} />
-      <span aria-hidden className="inline-flex items-baseline font-extrabold tracking-[-0.03em] leading-none text-neutral-900 dark:text-neutral-100" style={{ fontSize: fs }}>
+      <span aria-hidden className={`inline-flex items-baseline font-extrabold tracking-[-0.03em] leading-none ${tone === "light" ? "text-white" : "text-neutral-900 dark:text-neutral-100"}`} style={{ fontSize: fs }}>
         a
         <span className="relative inline-block">
           ı
-          <svg width={Math.round(fs * 0.36)} height={Math.round(fs * 0.36)} viewBox="0 0 24 24" aria-hidden className="absolute left-1/2 -translate-x-1/2 text-violet-600 dark:text-violet-400" style={{ top: -Math.round(fs * 0.08) }}>
+          <svg width={Math.round(fs * 0.36)} height={Math.round(fs * 0.36)} viewBox="0 0 24 24" aria-hidden className={`absolute left-1/2 -translate-x-1/2 ${tone === "light" ? "text-violet-400" : "text-violet-600 dark:text-violet-400"}`} style={{ top: -Math.round(fs * 0.08) }}>
             <path d={AIBA_STAR} fill="currentColor" />
           </svg>
         </span>

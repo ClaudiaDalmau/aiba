@@ -155,24 +155,24 @@
     "pricingPreview": {
       "label": "Preços",
       "title": "Planos para cada etapa.",
-      "subtitle": "A partir de R$ 249/mês. Sem fidelidade.",
+      "subtitle": "A partir de €39/mês. Sem fidelidade.",
       "seeAll": "Ver todos os planos",
       "planBasic": {
         "name": "Basic",
-        "price": "€49",
+        "price": "€39",
         "period": "/mês",
         "desc": "Perfeito para começar"
       },
       "planPro": {
         "name": "Pro",
-        "price": "€99",
+        "price": "€79",
         "period": "/mês",
         "desc": "Mais escolhido",
         "badge": "Mais popular"
       },
       "planPremium": {
         "name": "Premium",
-        "price": "€299",
+        "price": "€149",
         "period": "/mês",
         "desc": "Multi-profissional"
       }
@@ -309,6 +309,34 @@
         "hospitality": "🍽️ Restaurantes",
         "other": "☔ Outros profissionais"
       }
+    },
+    "mock": {
+      "chatName": "Estúdio Lúa",
+      "online": "Assistente IA · online",
+      "m1": "Oi, tem horário no sábado para uma massagem?",
+      "m2": "Oi! No sábado tenho às 10:00 ou às 12:30. Massagem relaxante 60 min · €45. Qual você prefere?",
+      "m3": "Às 10, perfeito",
+      "m4": "Reservado ✓ Para confirmar, pague o sinal de €15:",
+      "pay": "Pagar sinal · €15",
+      "c1Label": "Nova reserva",
+      "c1Title": "Sábado · 10:00",
+      "c1Sub": "Marta G. · Massagem relaxante",
+      "c2Label": "Sinal recebido",
+      "c2Title": "€15,00",
+      "c2Sub": "Horário confirmado",
+      "c3Label": "Lembrete enviado",
+      "c3Title": "Código 384 762",
+      "c3Sub": "1 h antes do horário",
+      "stepLabel": "Passo {n}",
+      "finalAmount": "+ €30,00"
+    },
+    "demo": {
+      "label": "Demo ao vivo",
+      "title": "Converse com a IA como se fosse seu cliente",
+      "subtitle": "Escreva qualquer coisa e veja a assistente entender o serviço, sugerir horários e fechar a reserva. Nada para instalar.",
+      "b1": "Entende variações (\"só aparar\", \"coloração completa\", \"mão e pé\")",
+      "b2": "Sugere horários conforme sua agenda real",
+      "b3": "Cobra o sinal e envia lembretes automáticos"
     }
   },
   "languageSwitcher": {
@@ -342,7 +370,7 @@
   "pricing": {
     "meta": {
       "title": "Preços · AIBA",
-      "desc": "Planos flexíveis a partir de €49/mês. Basic para agenda, Pro com pagamento online, Premium com IA avançada. 14 dias grátis."
+      "desc": "Planos flexíveis a partir de €39/mês. Basic para agenda, Pro com pagamento online, Premium com IA avançada. 14 dias grátis."
     },
     "badge": "Preços claros, sem surpresas",
     "title": "Escolha o plano que combina com você.",

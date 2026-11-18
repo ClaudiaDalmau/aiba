@@ -155,24 +155,24 @@
     "pricingPreview": {
       "label": "Tarifs",
       "title": "Des plans pour chaque étape.",
-      "subtitle": "À partir de 49€/mois. Sans engagement.",
+      "subtitle": "À partir de 39€/mois. Sans engagement.",
       "seeAll": "Voir tous les plans",
       "planBasic": {
         "name": "Basic",
-        "price": "49€",
+        "price": "39€",
         "period": "/mois",
         "desc": "Parfait pour commencer"
       },
       "planPro": {
         "name": "Pro",
-        "price": "99€",
+        "price": "79€",
         "period": "/mois",
         "desc": "Le plus choisi",
         "badge": "Le plus populaire"
       },
       "planPremium": {
         "name": "Premium",
-        "price": "299€",
+        "price": "149€",
         "period": "/mois",
         "desc": "Multi-professionnel"
       }
@@ -309,6 +309,34 @@
         "hospitality": "🍽️ Hôtellerie / Resto",
         "other": "☔ Autres professionnels"
       }
+    },
+    "mock": {
+      "chatName": "Studio Lúa",
+      "online": "Assistante IA · en ligne",
+      "m1": "Bonjour, avez-vous un créneau samedi pour un massage ?",
+      "m2": "Bonjour ! Samedi j'ai 10h00 ou 12h30. Massage relaxant 60 min · 45 €. Lequel préférez-vous ?",
+      "m3": "10h, parfait",
+      "m4": "Réservé ✓ Pour confirmer, payez l'acompte de 15 € :",
+      "pay": "Payer l'acompte · 15 €",
+      "c1Label": "Nouvelle réservation",
+      "c1Title": "Samedi · 10:00",
+      "c1Sub": "Marta G. · Massage relaxant",
+      "c2Label": "Acompte encaissé",
+      "c2Title": "15,00 €",
+      "c2Sub": "Rendez-vous confirmé",
+      "c3Label": "Rappel envoyé",
+      "c3Title": "Code 384 762",
+      "c3Sub": "1 h avant le rendez-vous",
+      "stepLabel": "Étape {n}",
+      "finalAmount": "+ 30,00 €"
+    },
+    "demo": {
+      "label": "Démo en direct",
+      "title": "Discutez avec l'IA comme si vous étiez votre client",
+      "subtitle": "Écrivez n'importe quoi et voyez l'assistante comprendre le service, proposer des créneaux et conclure la réservation. Rien à installer.",
+      "b1": "Comprend les variantes (« une petite coupe », « couleur complète », « manucure et pédicure »)",
+      "b2": "Propose des créneaux selon votre vrai planning",
+      "b3": "Encaisse l'acompte et envoie des rappels automatiques"
     }
   },
   "languageSwitcher": {
@@ -342,7 +370,7 @@
   "pricing": {
     "meta": {
       "title": "Tarifs · AIBA",
-      "desc": "Formules flexibles à partir de 49€/mois. Basic pour l'agenda, Pro avec paiement en ligne, Premium avec IA avancée. 14 jours d'essai gratuit."
+      "desc": "Formules flexibles à partir de 39€/mois. Basic pour l'agenda, Pro avec paiement en ligne, Premium avec IA avancée. 14 jours d'essai gratuit."
     },
     "badge": "Tarifs clairs, sans surprises",
     "title": "Choisissez la formule qui vous convient.",

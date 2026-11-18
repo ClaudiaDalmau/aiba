@@ -257,7 +257,7 @@ export function pricingProductJsonLd(opts: {
     "@id": `${canonicalUrl}#product`,
     name: `${SITE_NAME} — SaaS de reservas`,
     description:
-      "Planes flexibles desde 49€/mes para gestionar reservas automáticas con IA. Basic, Pro y Premium.",
+      "Planes flexibles desde 39€/mes para gestionar reservas automáticas con IA. Basic, Pro y Premium.",
     brand: { "@type": "Brand", name: SITE_NAME },
     offers: opts.plans.map((p) => ({
       "@type": "Offer",
