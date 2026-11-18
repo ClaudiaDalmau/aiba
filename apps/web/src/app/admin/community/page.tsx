@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import {
   adminDeleteCategory,
@@ -13,7 +14,10 @@ import { Badge, Card, CardHeader, Empty, Field, Input, PageHeader, Select, Texta
 import { requirePlatform } from "@/lib/auth";
 import { listCategories, listOpenReports, recentThreadsForModeration } from "@/lib/community";
 
-export const metadata = { title: "Community" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("Community") };
+}
 
 function Flag({ id, field, value, on, off }: { id: string; field: "hidden" | "pinned" | "locked"; value: boolean; on: string; off: string }) {
   return (
@@ -27,16 +31,17 @@ function Flag({ id, field, value, on, off }: { id: string; field: "hidden" | "pi
 }
 
 export default async function AdminCommunity() {
+  const t = await getT();
   await requirePlatform("community.moderate");
   const [categories, reports, threads] = await Promise.all([listCategories(), listOpenReports(), recentThreadsForModeration(50)]);
   const announceCat = categories.find((c) => c.adminOnlyPosting) ?? categories[0];
 
   return (
     <>
-      <PageHeader eyebrow="Platform" title="Community moderation" description="VIP forum: categories, reports, threads and announcements." actions={<Link href="/app/community" className="inline-flex h-10 items-center rounded-[10px] border border-border bg-surface px-4 text-[14px] hover:bg-subtle">Open forum</Link>} />
+      <PageHeader eyebrow={t("Platform")} title={t("Community moderation")} description={t("VIP forum: categories, reports, threads and announcements.")} actions={<Link href="/app/community" className="inline-flex h-10 items-center rounded-[10px] border border-border bg-surface px-4 text-[14px] hover:bg-subtle">{t("Open forum")}</Link>} />
 
       <Card>
-        <CardHeader title="Open reports" description={`${reports.length} waiting`} />
+        <CardHeader title={t("Open reports")} description={`${reports.length} waiting`} />
         {reports.length ? (
           <div className="divide-y divide-border">
             {reports.map(({ report: r, reporter, postBody, postHidden, threadTitle, threadHidden, threadIdOfPost }) => {
@@ -50,26 +55,26 @@ export default async function AdminCommunity() {
                       {threadId && <Link href={`/app/community/t/${threadId}`} className="text-muted underline-offset-4 hover:underline">view</Link>}
                     </div>
                     <div className="mt-1.5 line-clamp-3 text-[14px]">{r.postId ? postBody : threadTitle}</div>
-                    <div className="mt-1 text-[13px] text-faint">Reason: {r.reason}</div>
+                    <div className="mt-1 text-[13px] text-faint">{t("Reason:")} {r.reason}</div>
                   </div>
                   <div className="flex shrink-0 gap-2">
                     {r.postId ? (
                       <form action={adminModeratePost}>
                         <input type="hidden" name="id" value={r.postId} />
                         <input type="hidden" name="hidden" value={String(!postHidden)} />
-                        <SubmitButton size="sm" variant="danger">{postHidden ? "Unhide post" : "Hide post"}</SubmitButton>
+                        <SubmitButton size="sm" variant="danger">{postHidden ? t("Unhide post") : t("Hide post")}</SubmitButton>
                       </form>
                     ) : r.threadId ? (
                       <form action={adminModerateThread}>
                         <input type="hidden" name="id" value={r.threadId} />
                         <input type="hidden" name="field" value="hidden" />
                         <input type="hidden" name="value" value={String(!threadHidden)} />
-                        <SubmitButton size="sm" variant="danger">{threadHidden ? "Unhide thread" : "Hide thread"}</SubmitButton>
+                        <SubmitButton size="sm" variant="danger">{threadHidden ? t("Unhide thread") : t("Hide thread")}</SubmitButton>
                       </form>
                     ) : null}
                     <form action={adminResolveReport}>
                       <input type="hidden" name="id" value={r.id} />
-                      <SubmitButton size="sm" variant="secondary">Dismiss</SubmitButton>
+                      <SubmitButton size="sm" variant="secondary">{t("Dismiss")}</SubmitButton>
                     </form>
                   </div>
                 </div>
@@ -77,78 +82,78 @@ export default async function AdminCommunity() {
             })}
           </div>
         ) : (
-          <Empty icon="checkCircle" title="Nothing to review">Reports from members land here.</Empty>
+          <Empty icon="checkCircle" title={t("Nothing to review")}>{t("Reports from members land here.")}</Empty>
         )}
       </Card>
 
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         <Card>
-          <CardHeader title="Post an announcement" description="Pinned announcements appear at the top of the category." />
+          <CardHeader title={t("Post an announcement")} description={t("Pinned announcements appear at the top of the category.")} />
           {announceCat ? (
             <form action={adminPostAnnouncement} className="space-y-4 p-5">
-              <Field label="Category">
+              <Field label={t("Category")}>
                 <Select name="categoryId" defaultValue={announceCat.id}>
                   {categories.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
                 </Select>
               </Field>
-              <Field label="Title"><Input name="title" required minLength={3} maxLength={160} /></Field>
-              <Field label="Message"><Textarea name="body" required className="min-h-32" /></Field>
+              <Field label={t("Title")}><Input name="title" required minLength={3} maxLength={160} /></Field>
+              <Field label={t("Message")}><Textarea name="body" required className="min-h-32" /></Field>
               <div className="flex flex-wrap gap-5 text-[14px]">
-                <label className="flex items-center gap-2"><input type="checkbox" name="pinned" defaultChecked className="size-4 accent-current" /> Pin</label>
-                <label className="flex items-center gap-2"><input type="checkbox" name="notify" defaultChecked className="size-4 accent-current" /> Notify all VIP businesses</label>
+                <label className="flex items-center gap-2"><input type="checkbox" name="pinned" defaultChecked className="size-4 accent-current" /> {t("Pin")}</label>
+                <label className="flex items-center gap-2"><input type="checkbox" name="notify" defaultChecked className="size-4 accent-current" /> {t("Notify all VIP businesses")}</label>
               </div>
-              <SubmitButton icon="send">Publish announcement</SubmitButton>
+              <SubmitButton icon="send">{t("Publish announcement")}</SubmitButton>
             </form>
           ) : (
-            <Empty icon="chat" title="Create a category first" />
+            <Empty icon="chat" title={t("Create a category first")} />
           )}
         </Card>
 
         <Card>
-          <CardHeader title="Categories" />
+          <CardHeader title={t("Categories")} />
           <div className="divide-y divide-border">
             {categories.map((c) => (
               <details key={c.id} className="group px-5 py-3">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
                   <div className="min-w-0">
-                    <div className="flex items-center gap-2 font-medium">{c.name}{c.adminOnlyPosting && <Badge tone="solid">Admin posts only</Badge>}</div>
+                    <div className="flex items-center gap-2 font-medium">{c.name}{c.adminOnlyPosting && <Badge tone="solid">{t("Admin posts only")}</Badge>}</div>
                     <div className="text-[12px] text-faint">/{c.slug} · {c.threads} threads · order {c.sortOrder}</div>
                   </div>
-                  <span className="text-[13px] text-muted group-open:hidden">Edit</span>
+                  <span className="text-[13px] text-muted group-open:hidden">{t("Edit")}</span>
                 </summary>
                 <form action={adminSaveCategory} className="mt-3 grid gap-3 sm:grid-cols-2">
                   <input type="hidden" name="id" value={c.id} />
-                  <Field label="Name"><Input name="name" defaultValue={c.name} required /></Field>
-                  <Field label="Slug"><Input name="slug" defaultValue={c.slug} /></Field>
-                  <Field label="Description" className="sm:col-span-2"><Input name="description" defaultValue={c.description} /></Field>
-                  <Field label="Sort order"><Input name="sortOrder" type="number" min={0} defaultValue={c.sortOrder} /></Field>
-                  <label className="flex items-end gap-2 pb-2 text-[14px]"><input type="checkbox" name="adminOnlyPosting" defaultChecked={c.adminOnlyPosting} className="size-4" /> Only admins can post</label>
+                  <Field label={t("Name")}><Input name="name" defaultValue={c.name} required /></Field>
+                  <Field label={t("Slug")}><Input name="slug" defaultValue={c.slug} /></Field>
+                  <Field label={t("Description")} className="sm:col-span-2"><Input name="description" defaultValue={c.description} /></Field>
+                  <Field label={t("Sort order")}><Input name="sortOrder" type="number" min={0} defaultValue={c.sortOrder} /></Field>
+                  <label className="flex items-end gap-2 pb-2 text-[14px]"><input type="checkbox" name="adminOnlyPosting" defaultChecked={c.adminOnlyPosting} className="size-4" /> {t("Only admins can post")}</label>
                   <div className="flex gap-2 sm:col-span-2">
-                    <SubmitButton size="sm">Save</SubmitButton>
+                    <SubmitButton size="sm">{t("Save")}</SubmitButton>
                   </div>
                 </form>
                 <form action={adminDeleteCategory} className="mt-2">
                   <input type="hidden" name="id" value={c.id} />
-                  <ConfirmSubmit message={`Delete “${c.name}” and all of its ${c.threads} threads? This can't be undone.`} icon="trash">Delete category</ConfirmSubmit>
+                  <ConfirmSubmit message={t("Delete “{name}” and all of its {n} threads? This can't be undone.", { name: c.name, n: c.threads })} icon="trash">{t("Delete category")}</ConfirmSubmit>
                 </form>
               </details>
             ))}
           </div>
           <form action={adminSaveCategory} className="grid gap-3 border-t border-border p-5 sm:grid-cols-2">
-            <div className="text-[13px] font-medium sm:col-span-2">New category</div>
-            <Field label="Name"><Input name="name" required /></Field>
-            <Field label="Slug" hint="optional"><Input name="slug" /></Field>
-            <Field label="Description" className="sm:col-span-2"><Input name="description" /></Field>
-            <Field label="Sort order"><Input name="sortOrder" type="number" min={0} defaultValue={categories.length} /></Field>
-            <label className="flex items-end gap-2 pb-2 text-[14px]"><input type="checkbox" name="adminOnlyPosting" className="size-4" /> Only admins can post</label>
-            <div className="sm:col-span-2"><SubmitButton size="sm" icon="plus">Add category</SubmitButton></div>
+            <div className="text-[13px] font-medium sm:col-span-2">{t("New category")}</div>
+            <Field label={t("Name")}><Input name="name" required /></Field>
+            <Field label={t("Slug")} hint={t("optional")}><Input name="slug" /></Field>
+            <Field label={t("Description")} className="sm:col-span-2"><Input name="description" /></Field>
+            <Field label={t("Sort order")}><Input name="sortOrder" type="number" min={0} defaultValue={categories.length} /></Field>
+            <label className="flex items-end gap-2 pb-2 text-[14px]"><input type="checkbox" name="adminOnlyPosting" className="size-4" /> {t("Only admins can post")}</label>
+            <div className="sm:col-span-2"><SubmitButton size="sm" icon="plus">{t("Add category")}</SubmitButton></div>
           </form>
         </Card>
       </div>
 
       <Card className="mt-6">
-        <CardHeader title="Recent threads" />
-        <Table head={["Thread", "Category", "Author", "Activity", "Flags", ""]}>
+        <CardHeader title={t("Recent threads")} />
+        <Table head={[t("Thread"), t("Category"), t("Author"), t("Activity"), t("Flags"), ""]}>
           {threads.map((th) => (
             <tr key={th.id} className="hover:bg-subtle/50">
               <Td><Link href={`/app/community/t/${th.id}`} className="font-medium hover:underline">{th.title}</Link></Td>
@@ -157,9 +162,9 @@ export default async function AdminCommunity() {
               <Td className="whitespace-nowrap text-muted">{fmtDate(th.lastActivityAt)}</Td>
               <Td>
                 <div className="flex flex-wrap gap-1">
-                  {th.pinned && <Badge tone="ai">Pinned</Badge>}
-                  {th.locked && <Badge>Locked</Badge>}
-                  {th.hidden && <Badge tone="bad">Hidden</Badge>}
+                  {th.pinned && <Badge tone="ai">{t("Pinned")}</Badge>}
+                  {th.locked && <Badge>{t("Locked")}</Badge>}
+                  {th.hidden && <Badge tone="bad">{t("Hidden")}</Badge>}
                 </div>
               </Td>
               <Td>

@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { createThread } from "@/actions/community";
 import { SubmitButton } from "@/components/client";
@@ -7,9 +8,13 @@ import { Card, Field, Input, PageHeader, Select, Textarea } from "@/components/u
 import { canAccessCommunity, listCategories, isCommunityModerator } from "@/lib/community";
 import { currentTenant } from "@/lib/tenant";
 
-export const metadata = { title: "New discussion" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("New discussion") };
+}
 
 export default async function NewThreadPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
+  const t = await getT();
   const tenant = await currentTenant();
   if (!(await canAccessCommunity(tenant))) return <LockedCommunity />;
   const { category } = await searchParams;
@@ -18,19 +23,19 @@ export default async function NewThreadPage({ searchParams }: { searchParams: Pr
   const selected = categories.find((c) => c.slug === category)?.id ?? categories[0]?.id;
   return (
     <div className="mx-auto max-w-3xl">
-      <Link href="/app/community" className="mb-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg"><Icon name="chevronLeft" size={14} /> Community</Link>
-      <PageHeader title="Start a discussion" description="Visible only to verified VIP businesses and the platform team." />
+      <Link href="/app/community" className="mb-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg"><Icon name="chevronLeft" size={14} /> {t("Community")}</Link>
+      <PageHeader title={t("Start a discussion")} description={t("Visible only to verified VIP businesses and the platform team.")} />
       <Card className="p-6">
         <form action={createThread} className="space-y-5">
-          <Field label="Category">
+          <Field label={t("Category")}>
             <Select name="categoryId" defaultValue={selected} required>
               {categories.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
             </Select>
           </Field>
-          <Field label="Title"><Input name="title" required minLength={3} maxLength={160} placeholder="What do you want to discuss?" /></Field>
-          <Field label="Details"><Textarea name="body" required className="min-h-48" placeholder="Context, what you tried, what you'd like to learn…" /></Field>
+          <Field label={t("Title")}><Input name="title" required minLength={3} maxLength={160} placeholder={t("What do you want to discuss?")} /></Field>
+          <Field label={t("Details")}><Textarea name="body" required className="min-h-48" placeholder={t("Context, what you tried, what you'd like to learn…")} /></Field>
           <div className="flex justify-end gap-2">
-            <SubmitButton icon="send">Post discussion</SubmitButton>
+            <SubmitButton icon="send">{t("Post discussion")}</SubmitButton>
           </div>
         </form>
       </Card>

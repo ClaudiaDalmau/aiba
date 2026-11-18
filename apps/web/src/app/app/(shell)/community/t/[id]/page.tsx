@@ -1,3 +1,4 @@
+import { getT, tSync } from "@/i18n/server";
 import Link from "next/link";
 import { replyToThread, reportContent } from "@/actions/community";
 import { SubmitButton } from "@/components/client";
@@ -8,19 +9,21 @@ import { canAccessCommunity, getThread, isCommunityModerator } from "@/lib/commu
 import { currentTenant } from "@/lib/tenant";
 
 function ReportButton({ threadId, postId }: { threadId: string; postId?: string }) {
+  const t = tSync();
   return (
     <form action={reportContent}>
       <input type="hidden" name="threadId" value={threadId} />
       {postId && <input type="hidden" name="postId" value={postId} />}
       <input type="hidden" name="reason" value="Reported by a member" />
-      <button className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[12px] text-faint hover:bg-subtle hover:text-fg" title="Report to moderators">
-        <Icon name="flag" size={13} /> Report
+      <button className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[12px] text-faint hover:bg-subtle hover:text-fg" title={t("Report to moderators")}>
+        <Icon name="flag" size={13} /> {t("Report")}
       </button>
     </form>
   );
 }
 
 export default async function ThreadPage({ params }: { params: Promise<{ id: string }> }) {
+  const t = await getT();
   const tenant = await currentTenant();
   if (!(await canAccessCommunity(tenant))) return <LockedCommunity />;
   const { id } = await params;
@@ -32,8 +35,8 @@ export default async function ThreadPage({ params }: { params: Promise<{ id: str
         <Icon name="chevronLeft" size={14} /> {thread.category.name}
       </Link>
       <div className="mb-5 flex flex-wrap items-center gap-2">
-        {thread.pinned && <Badge tone="ai" icon="pin">Pinned</Badge>}
-        {thread.locked && <Badge icon="lock">Locked</Badge>}
+        {thread.pinned && <Badge tone="ai" icon="pin">{t("Pinned")}</Badge>}
+        {thread.locked && <Badge icon="lock">{t("Locked")}</Badge>}
       </div>
       <h1 className="text-[28px] font-semibold leading-tight tracking-tight">{thread.title}</h1>
 
@@ -60,14 +63,14 @@ export default async function ThreadPage({ params }: { params: Promise<{ id: str
 
       <Card className="mt-6 p-5">
         {thread.locked && !isAdmin ? (
-          <div className="flex items-center gap-2 text-[14px] text-muted"><Icon name="lock" size={16} /> This discussion is locked by a moderator.</div>
+          <div className="flex items-center gap-2 text-[14px] text-muted"><Icon name="lock" size={16} /> {t("This discussion is locked by a moderator.")}</div>
         ) : (
           <form action={replyToThread} className="space-y-3">
             <input type="hidden" name="threadId" value={thread.id} />
-            <Textarea name="body" required placeholder="Share your experience…" maxLength={20000} />
+            <Textarea name="body" required placeholder={t("Share your experience…")} maxLength={20000} />
             <div className="flex items-center justify-between gap-3">
-              <span className="text-[12px] text-faint">Posting as {tenant.user.name} · {tenant.business.name}</span>
-              <SubmitButton icon="send">Reply</SubmitButton>
+              <span className="text-[12px] text-faint">{t("Posting as")} {tenant.user.name} · {tenant.business.name}</span>
+              <SubmitButton icon="send">{t("Reply")}</SubmitButton>
             </div>
           </form>
         )}

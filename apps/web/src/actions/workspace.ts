@@ -1,4 +1,5 @@
 "use server";
+import { getT } from "@/i18n/server";
 
 import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
@@ -32,15 +33,16 @@ const cents = (f: FormData, k: string) => Math.round(Number(String(f.get(k) ?? "
 
 /** Wrap a mutation so domain errors come back as form state instead of crashing the page. */
 async function attempt(fn: () => Promise<string | void>): Promise<ActionState> {
+  const t = await getT();
   try {
     const message = await fn();
-    return { ok: true, message: message || undefined };
+    return { ok: true, message: message ? t(message) : undefined };
   } catch (e) {
-    if (e instanceof AppError) return { error: e.message };
+    if (e instanceof AppError) return { error: t(e.message) };
     if (e instanceof z.ZodError) return { error: e.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; ") };
     if (e && typeof e === "object" && "digest" in e) throw e; // redirect / notFound
     console.error(e);
-    return { error: "Something went wrong. Please try again." };
+    return { error: t("Something went wrong. Please try again.") };
   }
 }
 

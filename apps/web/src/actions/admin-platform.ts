@@ -1,4 +1,5 @@
 "use server";
+import { getT } from "@/i18n/server";
 
 import { and, count, eq, ne, sql } from "drizzle-orm";
 import { cookies } from "next/headers";
@@ -24,14 +25,15 @@ const s = (f: FormData, k: string) => String(f.get(k) ?? "").trim();
 const on = (f: FormData, k: string) => f.get(k) === "on" || f.get(k) === "true";
 
 async function attempt(fn: () => Promise<string | void>): Promise<ActionState> {
+  const t = await getT();
   try {
     const message = await fn();
-    return { ok: true, message: message || "Saved" };
+    return { ok: true, message: t(message || "Saved") };
   } catch (e) {
     if (e && typeof e === "object" && "digest" in e) throw e; // redirect()
-    if (e instanceof AppError) return { error: e.message };
+    if (e instanceof AppError) return { error: t(e.message) };
     if (e instanceof z.ZodError) return { error: e.issues.map((i) => `${i.path.join(".") || "value"}: ${i.message}`).join("; ") };
-    return { error: e instanceof Error ? e.message : "Something went wrong" };
+    return { error: e instanceof Error ? t(e.message) : t("Something went wrong") };
   }
 }
 

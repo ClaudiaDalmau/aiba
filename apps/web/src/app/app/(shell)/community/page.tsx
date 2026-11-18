@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { LockedCommunity, relative } from "@/components/community/parts";
@@ -5,14 +6,18 @@ import { Badge, Card, LinkButton, PageHeader } from "@/components/ui";
 import { canAccessCommunity, listCategories } from "@/lib/community";
 import { currentTenant } from "@/lib/tenant";
 
-export const metadata = { title: "VIP community" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("VIP community") };
+}
 
 export default async function CommunityPage() {
+  const t = await getT();
   const tenant = await currentTenant();
   if (!(await canAccessCommunity(tenant))) {
     return (
       <>
-        <PageHeader eyebrow="Community" title="VIP community" />
+        <PageHeader eyebrow={t("Community")} title={t("VIP community")} />
         <LockedCommunity />
       </>
     );
@@ -21,10 +26,10 @@ export default async function CommunityPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Community"
-        title="VIP community"
-        description="A private, moderated space for verified VIP businesses."
-        actions={<LinkButton href="/app/community/new" icon="plus">New discussion</LinkButton>}
+        eyebrow={t("Community")}
+        title={t("VIP community")}
+        description={t("A private, moderated space for verified VIP businesses.")}
+        actions={<LinkButton href="/app/community/new" icon="plus">{t("New discussion")}</LinkButton>}
       />
       <Card className="divide-y divide-border">
         {categories.map((c) => (
@@ -35,18 +40,18 @@ export default async function CommunityPage() {
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 font-medium">
                 {c.name}
-                {c.adminOnlyPosting && <Badge tone="solid">Official</Badge>}
+                {c.adminOnlyPosting && <Badge tone="solid">{t("Official")}</Badge>}
               </div>
               <div className="truncate text-[13px] text-muted">{c.description}</div>
             </div>
             <div className="hidden text-right text-[13px] sm:block">
               <div className="tabular-nums">{c.threads} {c.threads === 1 ? "discussion" : "discussions"}</div>
-              <div className="text-faint">{c.lastActivity ? `Active ${relative(c.lastActivity)}` : "No activity yet"}</div>
+              <div className="text-faint">{c.lastActivity ? `Active ${relative(c.lastActivity)}` : t("No activity yet")}</div>
             </div>
             <Icon name="chevronRight" size={16} className="text-faint" />
           </Link>
         ))}
-        {!categories.length && <div className="px-5 py-10 text-center text-muted">No categories yet.</div>}
+        {!categories.length && <div className="px-5 py-10 text-center text-muted">{t("No categories yet.")}</div>}
       </Card>
     </>
   );

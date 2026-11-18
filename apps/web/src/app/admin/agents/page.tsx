@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { sql } from "drizzle-orm";
 import { Table, Td, fmtDate } from "@/components/admin/table";
@@ -5,7 +6,10 @@ import { Badge, Card, PageHeader } from "@/components/ui";
 import { db } from "@/db";
 import { requirePlatform } from "@/lib/auth";
 
-export const metadata = { title: "Agents" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("Agents") };
+}
 
 type Row = {
   id: string; name: string; status: string; model: string; runtime_ref: string; provisioned_at: string | null;
@@ -14,6 +18,7 @@ type Row = {
 };
 
 export default async function AdminAgents() {
+  const t = await getT();
   await requirePlatform("businesses.view");
   const rows = (
     await db.execute(sql`
@@ -28,9 +33,9 @@ export default async function AdminAgents() {
   ).rows as Row[];
   return (
     <>
-      <PageHeader eyebrow="Platform" title="NanoClaw agents" description="One isolated agent per business. Runtime ids are opaque namespace references." />
+      <PageHeader eyebrow={t("Platform")} title={t("NanoClaw agents")} description={t("One isolated agent per business. Runtime ids are opaque namespace references.")} />
       <Card>
-        <Table head={["Business", "Agent", "Status", "Model", "Runtime", "Turns 30d", "Pending", "Last error"]}>
+        <Table head={[t("Business"), t("Agent"), t("Status"), t("Model"), t("Runtime"), t("Turns 30d"), t("Pending"), t("Last error")]}>
           {rows.map((a) => (
             <tr key={a.id} className="hover:bg-subtle/50">
               <Td><Link href={`/admin/businesses/${a.business_id}`} className="font-medium hover:underline">{a.business_name}</Link></Td>

@@ -1,4 +1,5 @@
 "use server";
+import { getT } from "@/i18n/server";
 
 import { sql } from "drizzle-orm";
 import { cookies } from "next/headers";
@@ -28,15 +29,16 @@ async function limit(bucket: string, n: number) {
 const safeNext = (next: unknown) => (typeof next === "string" && next.startsWith("/") && !next.startsWith("//") ? next : null);
 
 export async function login(_prev: FormState, form: FormData): Promise<FormState> {
+  const t = await getT();
   try {
     await limit("login", 10);
   } catch {
-    return { error: "Too many attempts. Wait a minute and try again." };
+    return { error: t("Too many attempts. Wait a minute and try again.") };
   }
   const email = String(form.get("email") ?? "").trim().toLowerCase();
   const password = String(form.get("password") ?? "");
   const [user] = await db.select().from(schema.users).where(sql`lower(${schema.users.email}) = ${email}`);
-  if (!user || user.disabled || !(await verifyPassword(password, user.passwordHash))) return { error: "Email or password is incorrect." };
+  if (!user || user.disabled || !(await verifyPassword(password, user.passwordHash))) return { error: t("Email or password is incorrect.") };
   const { token, expiresAt } = await createSession(user.id, "web");
   await setSessionCookie(token, expiresAt);
   redirect(safeNext(form.get("next")) ?? (isPlatformRole(user.platformRole) ? "/admin" : "/app"));
@@ -45,17 +47,18 @@ export async function login(_prev: FormState, form: FormData): Promise<FormState
 const Signup = z.object({ name: z.string().trim().min(1, "Required").max(80), email: z.email("Enter a valid email"), password: z.string().min(8, "At least 8 characters") });
 
 export async function signup(_prev: FormState, form: FormData): Promise<FormState> {
+  const t = await getT();
   try {
     await limit("signup", 5);
   } catch {
-    return { error: "Too many attempts. Wait a minute and try again." };
+    return { error: t("Too many attempts. Wait a minute and try again.") };
   }
-  if (!(await getSetting("general.signupsOpen"))) return { error: "New sign-ups are closed right now. Contact us to get an account." };
+  if (!(await getSetting("general.signupsOpen"))) return { error: t("New sign-ups are closed right now. Contact us to get an account.") };
   const parsed = Signup.safeParse(Object.fromEntries(form));
-  if (!parsed.success) return { fieldErrors: z.flattenError(parsed.error).fieldErrors };
+  if (!parsed.success) return { fieldErrors: Object.fromEntries(Object.entries(z.flattenError(parsed.error).fieldErrors).map(([k, v]) => [k, (v as string[] | undefined)?.map((m) => t(m))])) };
   const { name, email, password } = parsed.data;
   const [exists] = await db.select({ id: schema.users.id }).from(schema.users).where(sql`lower(${schema.users.email}) = ${email.toLowerCase()}`);
-  if (exists) return { fieldErrors: { email: ["An account with this email already exists"] } };
+  if (exists) return { fieldErrors: { email: [t("An account with this email already exists")] } };
   const [user] = await db.insert(schema.users).values({ id: newId("usr"), email: email.toLowerCase(), name, passwordHash: await hashPassword(password) }).returning();
   const { token, expiresAt } = await createSession(user.id, "web");
   await setSessionCookie(token, expiresAt);

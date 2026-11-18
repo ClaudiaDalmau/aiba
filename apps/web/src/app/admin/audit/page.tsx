@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { and, desc, eq, like, type SQL } from "drizzle-orm";
 import { Table, Td, fmtDate } from "@/components/admin/table";
@@ -5,9 +6,13 @@ import { Badge, Card, Empty, Input, PageHeader } from "@/components/ui";
 import { db, schema } from "@/db";
 import { requirePlatform } from "@/lib/auth";
 
-export const metadata = { title: "Audit log" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("Audit log") };
+}
 
 export default async function AdminAudit({ searchParams }: { searchParams: Promise<{ business?: string; action?: string }> }) {
+  const t = await getT();
   await requirePlatform("audit.view");
   const { business = "", action = "" } = await searchParams;
   const where: SQL[] = [];
@@ -22,15 +27,15 @@ export default async function AdminAudit({ searchParams }: { searchParams: Promi
     .limit(200);
   return (
     <>
-      <PageHeader eyebrow="Platform" title="Audit log" description="Latest 200 entries. Every agent action, owner change and admin action is recorded." />
+      <PageHeader eyebrow={t("Platform")} title={t("Audit log")} description={t("Latest 200 entries. Every agent action, owner change and admin action is recorded.")} />
       <form className="mb-4 flex flex-wrap gap-2">
-        <Input name="business" defaultValue={business} placeholder="Business id (biz_…)" className="max-w-xs" />
-        <Input name="action" defaultValue={action} placeholder="Action prefix (e.g. admin., booking.)" className="max-w-xs" />
-        <button className="h-10 rounded-[10px] border border-border bg-surface px-4 text-[14px] hover:bg-subtle">Filter</button>
-        {(business || action) && <Link href="/admin/audit" className="inline-flex h-10 items-center px-2 text-[14px] text-muted hover:text-fg">Clear</Link>}
+        <Input name="business" defaultValue={business} placeholder={t("Business id (biz_…)")} className="max-w-xs" />
+        <Input name="action" defaultValue={action} placeholder={t("Action prefix (e.g. admin., booking.)")} className="max-w-xs" />
+        <button className="h-10 rounded-[10px] border border-border bg-surface px-4 text-[14px] hover:bg-subtle">{t("Filter")}</button>
+        {(business || action) && <Link href="/admin/audit" className="inline-flex h-10 items-center px-2 text-[14px] text-muted hover:text-fg">{t("Clear")}</Link>}
       </form>
       <Card>
-        <Table head={["When", "Business", "Actor", "Action", "Target", "Data"]} empty={!rows.length && <Empty icon="shield" title="No entries" />}>
+        <Table head={[t("When"), t("Business"), t("Actor"), t("Action"), t("Target"), t("Data")]} empty={!rows.length && <Empty icon="shield" title={t("No entries")} />}>
           {rows.map(({ entry: a, businessName }) => (
             <tr key={a.id} className="align-top hover:bg-subtle/50">
               <Td className="whitespace-nowrap text-muted">{fmtDate(a.createdAt)}</Td>

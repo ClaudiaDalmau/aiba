@@ -11,6 +11,10 @@ export function setRequestLocale(locale: Locale) {
   store().locale = locale;
 }
 
+export function requestLocale(): Locale {
+  return store().locale;
+}
+
 export function requestIntlLocale(): string {
   return INTL_LOCALE[store().locale];
 }

@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import { and, desc, eq } from "drizzle-orm";
 import Link from "next/link";
 import { whatsappSessionAction } from "@/actions/admin-platform";
@@ -10,9 +11,13 @@ import { requirePlatform } from "@/lib/auth";
 import { gatewayConfigured, waHealth } from "@/lib/channels/whatsapp";
 import { describeSettings } from "@/lib/settings";
 
-export const metadata = { title: "WhatsApp" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("WhatsApp") };
+}
 
 export default async function AdminWhatsApp() {
+  const t = await getT();
   await requirePlatform("channels.manage");
   const [rows, settings, health] = await Promise.all([
     db
@@ -29,26 +34,26 @@ export default async function AdminWhatsApp() {
 
   return (
     <>
-      <PageHeader eyebrow="Channels" title="WhatsApp" description="Each business links its own WhatsApp Business app as a linked device. Sessions run in the WhatsApp gateway (one instance)." />
+      <PageHeader eyebrow={t("Channels")} title={t("WhatsApp")} description={t("Each business links its own WhatsApp Business app as a linked device. Sessions run in the WhatsApp gateway (one instance).")} />
       <div className="mb-6 grid gap-4 sm:grid-cols-3">
-        <Stat label="Linked numbers" value={linked} icon="whatsapp" />
-        <Stat label="Live sessions in gateway" value={health && !("error" in health) ? health.sessions.filter((s) => s.status === "open").length : "—"} icon="bolt" />
-        <Stat label="Gateway" value={!health ? "Not connected" : "error" in health ? "Unreachable" : "Online"} icon="plug" />
+        <Stat label={t("Linked numbers")} value={linked} icon="whatsapp" />
+        <Stat label={t("Live sessions in gateway")} value={health && !("error" in health) ? health.sessions.filter((s) => s.status === "open").length : "—"} icon="bolt" />
+        <Stat label={t("Gateway")} value={!health ? t("Not connected") : "error" in health ? "Unreachable" : "Online"} icon="plug" />
       </div>
       {!health && (
         <p className="mb-6 rounded-card bg-subtle px-4 py-3 text-[14px] text-muted">
-          No WhatsApp gateway connected yet. The gateway is a small always-on service (it can't run on serverless hosting). Deploy it with one click on Render (see DEPLOY.md → WhatsApp gateway), then paste its URL and secret in Settings on the right.
+          {t("No WhatsApp gateway connected yet. The gateway is a small always-on service (it can't run on serverless hosting). Deploy it with one click on Render (see DEPLOY.md → WhatsApp gateway), then paste its URL and secret in Settings on the right.")}
         </p>
       )}
-      {health && "error" in health && <p className="mb-6 rounded-card bg-bad/10 px-4 py-3 text-[14px] text-bad">Gateway unreachable: {health.error}. Check that the gateway is running and that the URL and secret in Settings (right) match it.</p>}
+      {health && "error" in health && <p className="mb-6 rounded-card bg-bad/10 px-4 py-3 text-[14px] text-bad">{t("Gateway unreachable:")} {health.error}. Check that the gateway is running and that the URL and secret in Settings (right) match it.</p>}
 
       <div className="grid gap-6 lg:grid-cols-3">
         <Card className="lg:col-span-2">
-          <CardHeader title="Business numbers" />
+          <CardHeader title={t("Business numbers")} />
           {rows.length === 0 ? (
-            <Empty icon="whatsapp" title="No business has linked WhatsApp yet" />
+            <Empty icon="whatsapp" title={t("No business has linked WhatsApp yet")} />
           ) : (
-            <Table head={["Business", "Number", "Status", "Gateway", "Updated", ""]}>
+            <Table head={[t("Business"), t("Number"), t("Status"), t("Gateway"), t("Updated"), ""]}>
               {rows.map(({ channel: c, business: b }) => {
                 const gw = sessions.get(b.id);
                 return (
@@ -67,12 +72,12 @@ export default async function AdminWhatsApp() {
                           <form action={whatsappSessionAction}>
                             <input type="hidden" name="businessId" value={b.id} />
                             <input type="hidden" name="action" value="restart" />
-                            <SubmitButton size="sm" variant="ghost">Restart</SubmitButton>
+                            <SubmitButton size="sm" variant="ghost">{t("Restart")}</SubmitButton>
                           </form>
                           <form action={whatsappSessionAction}>
                             <input type="hidden" name="businessId" value={b.id} />
                             <input type="hidden" name="action" value="unlink" />
-                            <ConfirmSubmit variant="ghost" message={`Unlink ${b.name}'s WhatsApp? Their assistant stops answering there until they link again.`}>Unlink</ConfirmSubmit>
+                            <ConfirmSubmit variant="ghost" message={t("Unlink {name}'s WhatsApp? Their assistant stops answering there until they link again.", { name: b.name })}>{t("Unlink")}</ConfirmSubmit>
                           </form>
                         </div>
                       )}
@@ -84,7 +89,7 @@ export default async function AdminWhatsApp() {
           )}
         </Card>
         <Card className="h-fit">
-          <CardHeader title="Settings" />
+          <CardHeader title={t("Settings")} />
           <div className="p-5">
             <SettingsForm rows={settings.filter((r) => r.group === "whatsapp" || r.key === "reminders.whatsapp")} />
           </div>

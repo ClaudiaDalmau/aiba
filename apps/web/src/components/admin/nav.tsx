@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useT } from "@/i18n/client";
 import type { PlatformPermission } from "@/lib/platform-rbac";
 import { Icon, type IconName } from "../icons";
 import { cx } from "../ui";
@@ -26,6 +27,7 @@ const ITEMS: Item[] = [
 
 export function AdminNav({ permissions }: { permissions: PlatformPermission[] }) {
   const path = usePathname();
+  const t = useT();
   const items = ITEMS.filter((i) => permissions.includes(i.perm));
   let last: string | undefined;
   return (
@@ -36,7 +38,7 @@ export function AdminNav({ permissions }: { permissions: PlatformPermission[] })
         last = it.section ?? last;
         return (
           <div key={it.href} className="shrink-0 lg:shrink">
-            {header && <div className="mt-4 mb-1 hidden px-3 text-[11px] font-medium uppercase tracking-wider text-faint lg:block">{header}</div>}
+            {header && <div className="mt-4 mb-1 hidden px-3 text-[11px] font-medium uppercase tracking-wider text-faint lg:block">{t(header)}</div>}
             <Link
               href={it.href}
               className={cx(
@@ -45,7 +47,7 @@ export function AdminNav({ permissions }: { permissions: PlatformPermission[] })
               )}
             >
               <Icon name={it.icon} size={17} className={active ? "text-fg" : "text-faint"} />
-              {it.label}
+              {t(it.label)}
             </Link>
           </div>
         );

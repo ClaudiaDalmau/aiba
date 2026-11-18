@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { desc, eq } from "drizzle-orm";
 import { Table, Td, fmtDate } from "@/components/admin/table";
@@ -7,12 +8,16 @@ import { requirePlatform } from "@/lib/auth";
 import { listPlans } from "@/lib/plans";
 import { formatMoney } from "@/lib/time";
 
-export const metadata = { title: "Payments" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("Payments") };
+}
 
 const SUB_TONE: Record<string, Tone> = { active: "ok", trialing: "ai", past_due: "warn", canceled: "bad" };
 const PAY_TONE: Record<string, Tone> = { paid: "ok", pending: "warn", unpaid: "neutral", refunded: "bad" };
 
 export default async function AdminPayments() {
+  const t = await getT();
   await requirePlatform("billing.view");
   const planNames = new Map((await listPlans()).map((p) => [p.id, p]));
   const [subs, payments] = await Promise.all([
@@ -30,10 +35,10 @@ export default async function AdminPayments() {
   ]);
   return (
     <>
-      <PageHeader eyebrow="Platform" title="Payments" description="Subscriptions and online booking payments." />
+      <PageHeader eyebrow={t("Platform")} title={t("Payments")} description={t("Subscriptions and online booking payments.")} />
       <Card>
-        <CardHeader title="Subscriptions" description={`${subs.length} businesses`} />
-        <Table head={["Business", "Tier", "Status", "Provider", "Period end", "Updated"]}>
+        <CardHeader title={t("Subscriptions")} description={`${subs.length} businesses`} />
+        <Table head={[t("Business"), t("Tier"), t("Status"), t("Provider"), t("Period end"), t("Updated")]}>
           {subs.map(({ sub, businessName }) => (
             <tr key={sub.businessId} className="hover:bg-subtle/50">
               <Td><Link href={`/admin/businesses/${sub.businessId}`} className="font-medium hover:underline">{businessName}</Link></Td>
@@ -47,8 +52,8 @@ export default async function AdminPayments() {
         </Table>
       </Card>
       <Card className="mt-6">
-        <CardHeader title="Booking payments" />
-        <Table head={["When", "Business", "Amount", "Status", "Provider", "Booking"]} empty={!payments.length && <Empty icon="card" title="No online payments yet">Booking payments appear here once a business requires payment at booking.</Empty>}>
+        <CardHeader title={t("Booking payments")} />
+        <Table head={[t("When"), t("Business"), t("Amount"), t("Status"), t("Provider"), t("Booking")]} empty={!payments.length && <Empty icon="card" title={t("No online payments yet")}>{t("Booking payments appear here once a business requires payment at booking.")}</Empty>}>
           {payments.map(({ payment: p, businessName }) => (
             <tr key={p.id}>
               <Td className="whitespace-nowrap text-muted">{fmtDate(p.createdAt)}</Td>

@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { LockedCommunity, relative } from "@/components/community/parts";
@@ -6,6 +7,7 @@ import { canAccessCommunity, getCategoryBySlug, listThreads, isCommunityModerato
 import { currentTenant } from "@/lib/tenant";
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const t = await getT();
   const tenant = await currentTenant();
   if (!(await canAccessCommunity(tenant))) return <LockedCommunity />;
   const { slug } = await params;
@@ -14,19 +16,19 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const canPost = !category.adminOnlyPosting || isCommunityModerator(tenant.user);
   return (
     <>
-      <Link href="/app/community" className="mb-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg"><Icon name="chevronLeft" size={14} /> Community</Link>
+      <Link href="/app/community" className="mb-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg"><Icon name="chevronLeft" size={14} /> {t("Community")}</Link>
       <PageHeader
         title={category.name}
         description={category.description}
-        actions={canPost ? <LinkButton href={`/app/community/new?category=${category.slug}`} icon="plus">New discussion</LinkButton> : undefined}
+        actions={canPost ? <LinkButton href={`/app/community/new?category=${category.slug}`} icon="plus">{t("New discussion")}</LinkButton> : undefined}
       />
       <Card className="divide-y divide-border">
         {threads.map((th) => (
           <Link key={th.id} href={`/app/community/t/${th.id}`} className="flex items-start gap-4 px-5 py-4 transition hover:bg-subtle/60">
             <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-2">
-                {th.pinned && <Badge tone="ai" icon="pin">Pinned</Badge>}
-                {th.locked && <Badge icon="lock">Locked</Badge>}
+                {th.pinned && <Badge tone="ai" icon="pin">{t("Pinned")}</Badge>}
+                {th.locked && <Badge icon="lock">{t("Locked")}</Badge>}
                 <span className="font-medium">{th.title}</span>
               </div>
               <div className="mt-1 line-clamp-1 text-[14px] text-muted">{th.body}</div>
@@ -37,7 +39,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             <div className="flex shrink-0 items-center gap-1 text-[13px] text-muted tabular-nums"><Icon name="chat" size={14} /> {th.replies}</div>
           </Link>
         ))}
-        {!threads.length && <Empty icon="chat" title="No discussions yet">Start the first one.</Empty>}
+        {!threads.length && <Empty icon="chat" title={t("No discussions yet")}>{t("Start the first one.")}</Empty>}
       </Card>
     </>
   );

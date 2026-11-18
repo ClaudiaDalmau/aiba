@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { sql } from "drizzle-orm";
 import { Table, Td } from "@/components/admin/table";
@@ -6,11 +7,15 @@ import { db } from "@/db";
 import { requirePlatform } from "@/lib/auth";
 import { listPlans } from "@/lib/plans";
 
-export const metadata = { title: "Businesses" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("Businesses") };
+}
 
 type Row = { id: string; name: string; slug: string; tier: string; published: boolean; suspended: boolean; owner_email: string | null; bookings_30d: number; agent_status: string | null; city: string };
 
 export default async function AdminBusinesses({ searchParams }: { searchParams: Promise<{ q?: string; tier?: string }> }) {
+  const t = await getT();
   await requirePlatform("businesses.view");
   const planNames = new Map((await listPlans()).map((p) => [p.id, p]));
   const { q = "", tier = "" } = await searchParams;
@@ -31,17 +36,17 @@ export default async function AdminBusinesses({ searchParams }: { searchParams: 
 
   return (
     <>
-      <PageHeader eyebrow="Platform" title="Businesses" description={`${rows.length} shown`} />
+      <PageHeader eyebrow={t("Platform")} title={t("Businesses")} description={`${rows.length} shown`} />
       <form className="mb-4 flex flex-wrap gap-2">
-        <Input name="q" defaultValue={q} placeholder="Search name, slug or owner email…" className="max-w-sm" />
+        <Input name="q" defaultValue={q} placeholder={t("Search name, slug or owner email…")} className="max-w-sm" />
         <select name="tier" defaultValue={tier} className="h-10 rounded-[10px] border border-border bg-surface px-3 text-[14px]">
-          <option value="">All plans</option>
+          <option value="">{t("All plans")}</option>
           {[...planNames.values()].map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
         </select>
-        <button className="h-10 rounded-[10px] border border-border bg-surface px-4 text-[14px] hover:bg-subtle">Filter</button>
+        <button className="h-10 rounded-[10px] border border-border bg-surface px-4 text-[14px] hover:bg-subtle">{t("Filter")}</button>
       </form>
       <Card>
-        <Table head={["Business", "Owner", "Tier", "Status", "Bookings 30d", "Agent"]} empty={!rows.length && <Empty icon="building" title="No businesses match" />}>
+        <Table head={[t("Business"), t("Owner"), t("Tier"), t("Status"), t("Bookings 30d"), t("Agent")]} empty={!rows.length && <Empty icon="building" title={t("No businesses match")} />}>
           {rows.map((b) => (
             <tr key={b.id} className="hover:bg-subtle/50">
               <Td>
@@ -52,7 +57,7 @@ export default async function AdminBusinesses({ searchParams }: { searchParams: 
               <Td><Badge tone={planNames.get(b.tier)?.entitlements.community ? "ai" : "neutral"}>{planNames.get(b.tier)?.name ?? b.tier}</Badge></Td>
               <Td>
                 <div className="flex flex-wrap gap-1">
-                  {b.suspended ? <Badge tone="bad">Suspended</Badge> : b.published ? <Badge tone="ok">Published</Badge> : <Badge tone="warn">Unpublished</Badge>}
+                  {b.suspended ? <Badge tone="bad">{t("Suspended")}</Badge> : b.published ? <Badge tone="ok">{t("Published")}</Badge> : <Badge tone="warn">{t("Unpublished")}</Badge>}
                 </div>
               </Td>
               <Td className="tabular-nums">{Number(b.bookings_30d)}</Td>

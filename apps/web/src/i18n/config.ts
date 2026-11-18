@@ -1,9 +1,17 @@
 /** Idiomas de la interfaz de AIBA. Los textos fuente del código están en inglés y sirven de clave. */
-export const LOCALES = ["es", "en"] as const;
+export const LOCALES = ["en", "es", "fr", "de", "it", "pt-BR", "ru"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "en";
 export const LOCALE_COOKIE = "aiba_locale";
-export const LOCALE_NAMES: Record<Locale, string> = { es: "Español", en: "English" };
+export const LOCALE_NAMES: Record<Locale, string> = {
+  en: "English",
+  es: "Español",
+  fr: "Français",
+  de: "Deutsch",
+  it: "Italiano",
+  "pt-BR": "Português (Brasil)",
+  ru: "Русский",
+};
 
 export function isLocale(v: unknown): v is Locale {
   return typeof v === "string" && (LOCALES as readonly string[]).includes(v);
@@ -19,7 +27,10 @@ export function matchAcceptLanguage(header: string | null | undefined): Locale {
       return { lang: tag.toLowerCase().split("-")[0], q: q ? Number(q) : 1 };
     })
     .sort((a, b) => b.q - a.q);
-  for (const { lang } of tags) if (isLocale(lang)) return lang;
+  for (const { lang } of tags) {
+    if (lang === "pt") return "pt-BR";
+    if (isLocale(lang)) return lang;
+  }
   return DEFAULT_LOCALE;
 }
 
@@ -36,4 +47,12 @@ export function translate(dict: Dictionary, source: string, vars?: Vars): string
 export type T = (source: string, vars?: Vars) => string;
 
 /** Formato regional para fechas, horas y números según el idioma. */
-export const INTL_LOCALE: Record<Locale, string> = { es: "es-ES", en: "en-GB" };
+export const INTL_LOCALE: Record<Locale, string> = {
+  en: "en-GB",
+  es: "es-ES",
+  fr: "fr-FR",
+  de: "de-DE",
+  it: "it-IT",
+  "pt-BR": "pt-BR",
+  ru: "ru-RU",
+};
