@@ -127,7 +127,7 @@ export async function emailCustomerAboutBooking(bookingId: string, kind: Booking
     cta: kind === "cancelled" ? { label: t("Book again"), href: `${settings["general.appUrl"]}/b/${business.slug}` } : { label: t("Manage booking"), href: manage },
     footer: t("Sent by {business} with AIBA", { business: business.name }),
   });
-  return sendEmail({ to: customer.email, subject: `${titles[kind]} · ${business.name}`, html, text, replyTo: business.email || undefined });
+  return sendEmail({ to: customer.email ?? "", subject: `${titles[kind]} · ${business.name}`, html, text, replyTo: business.email || undefined });
 }
 
 /** Tell the business by email about a new booking (in addition to push and in-app notifications). */
@@ -164,7 +164,7 @@ export async function emailBusinessNewBooking(bookingId: string) {
 /** Alert the platform team about a new lead from the public website. */
 export async function emailTeamNewLead(lead: schema.Lead) {
   const s = await getSettings();
-  const to = s["email.teamInbox"] || s["general.supportEmail"];
+  const to = s["email.teamInbox"] || s["general.supportEmail"] || "";
   if (!to) return false;
   const kind = lead.kind === "access_request" ? "Access request (Sensible)" : "Waitlist sign-up";
   const { html, text } = layout({
