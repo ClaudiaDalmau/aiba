@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { Avatar, Badge, ChannelIcon, cx, Empty } from "@/components/ui";
@@ -33,7 +34,7 @@ export default async function InboxLayout({ children }: { children: React.ReactN
                   <div className="flex items-center gap-1.5">
                     <span className="truncate text-[14px] font-medium">{c.customer?.name ?? (c.externalThreadId.startsWith("test:") ? t("Playground test") : t("Web visitor"))}</span>
                     <ChannelIcon channel={c.channel} size={12} />
-                    <span className="ml-auto shrink-0 text-[11px] text-faint">{zonedParts(c.lastMessageAt, tz).date === today ? formatTime(c.lastMessageAt, tz) : formatDate(c.lastMessageAt, tz, "es-ES", { weekday: undefined })}</span>
+                    <span className="ml-auto shrink-0 text-[11px] text-faint">{zonedParts(c.lastMessageAt, tz).date === today ? formatTime(c.lastMessageAt, tz) : formatDate(c.lastMessageAt, tz, requestIntlLocale(), { weekday: undefined })}</span>
                   </div>
                   <div className="mt-0.5 flex items-center gap-1.5">
                     <span className="truncate text-[13px] text-muted">{c.lastRole === "agent" ? "✦ " : c.lastRole === "owner" ? `${t("You")}: ` : ""}{c.lastMessage}</span>

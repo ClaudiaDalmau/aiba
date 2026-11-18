@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 import { Icon } from "../icons";
 import { Avatar, Badge, Card, LinkButton } from "../ui";
 
@@ -23,7 +24,7 @@ export function relative(d: Date) {
   if (s < 3600) return `${Math.floor(s / 60)}m ago`;
   if (s < 86400) return `${Math.floor(s / 3600)}h ago`;
   if (s < 86400 * 7) return `${Math.floor(s / 86400)}d ago`;
-  return new Date(d).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
+  return new Date(d).toLocaleDateString(requestIntlLocale(), { day: "numeric", month: "short", year: "numeric" });
 }
 
 /** Prose with paragraphs; bodies are plain text (no HTML is rendered). */

@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 import { getT } from "@/i18n/server";
 import { eq, sql } from "drizzle-orm";
 import { changePlan } from "@/actions/billing";
@@ -73,18 +74,18 @@ export default async function BillingPage({ searchParams }: { searchParams: Prom
           </div>
           <div className="mt-3 space-y-1.5 text-[14px]">
             <div className="flex justify-between"><span className="text-muted">{t("Status")}</span>{sub ? <Badge tone={STATUS_TONE[sub.status]}>{t(STATUS_LABEL[sub.status])}</Badge> : <span>—</span>}</div>
-            <div className="flex justify-between"><span className="text-muted">{sub?.status === "trialing" ? t("Trial ends") : t("Renews")}</span><span>{sub?.currentPeriodEnd ? formatDate(sub.currentPeriodEnd, b.timezone, "es-ES", { year: "numeric" }) : "—"}</span></div>
+            <div className="flex justify-between"><span className="text-muted">{sub?.status === "trialing" ? t("Trial ends") : t("Renews")}</span><span>{sub?.currentPeriodEnd ? formatDate(sub.currentPeriodEnd, b.timezone, requestIntlLocale(), { year: "numeric" }) : "—"}</span></div>
             <div className="flex justify-between"><span className="text-muted">{t("Billing")}</span><span className="capitalize">{sub?.provider === "stripe" ? t("Card (Stripe)") : t("Test mode")}</span></div>
             <div className="flex justify-between"><span className="text-muted">{t("Price")}</span><span>{current ? `${formatPlanPrice(current).amount}/${t(formatPlanPrice(current).per)}` : "—"}</span></div>
           </div>
         </Card>
 
         <Card className="lg:col-span-2">
-          <CardHeader title={t("Usage this month")} description={t("Since {date}", { date: formatDate(monthStart, b.timezone, "es-ES", { weekday: undefined }) })} />
+          <CardHeader title={t("Usage this month")} description={t("Since {date}", { date: formatDate(monthStart, b.timezone, requestIntlLocale(), { weekday: undefined }) })} />
           <div className="p-5">
             <div className="flex items-baseline justify-between text-[14px]">
               <span className="font-medium">{t("Assistant conversations")}</span>
-              <span className="tabular-nums text-muted">{convs.toLocaleString("es-ES")} / {quota === null ? "unlimited" : quota.toLocaleString("es-ES")}</span>
+              <span className="tabular-nums text-muted">{convs.toLocaleString(requestIntlLocale())} / {quota === null ? "unlimited" : quota.toLocaleString(requestIntlLocale())}</span>
             </div>
             {quota !== null && (
               <div className="mt-2 h-2 overflow-hidden rounded-full bg-subtle">
@@ -92,11 +93,11 @@ export default async function BillingPage({ searchParams }: { searchParams: Prom
               </div>
             )}
             {quota !== null && convs >= quota && <p className="mt-2 text-[13px] text-bad">{t("Limit reached: new conversations wait for you in the inbox until next month or an upgrade.")}</p>}
-            <div className="mt-3 text-[13px] text-muted">{t("Team members: {n}", { n: `${staffCount}${ent.maxStaff !== null ? ` / ${ent.maxStaff}` : ""}` })} · {t("{n} assistant replies", { n: Number(usage.turns ?? 0).toLocaleString("es-ES") })}</div>
+            <div className="mt-3 text-[13px] text-muted">{t("Team members: {n}", { n: `${staffCount}${ent.maxStaff !== null ? ` / ${ent.maxStaff}` : ""}` })} · {t("{n} assistant replies", { n: Number(usage.turns ?? 0).toLocaleString(requestIntlLocale()) })}</div>
             <div className="mt-5 grid grid-cols-3 gap-4 text-[14px]">
-              <div><div className="text-muted">{t("Messages received")}</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.messages_in ?? 0).toLocaleString("es-ES")}</div></div>
-              <div><div className="text-muted">{t("Messages sent")}</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.messages_out ?? 0).toLocaleString("es-ES")}</div></div>
-              <div><div className="text-muted">{t("Model tokens")}</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.tokens ?? 0).toLocaleString("es-ES")}</div></div>
+              <div><div className="text-muted">{t("Messages received")}</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.messages_in ?? 0).toLocaleString(requestIntlLocale())}</div></div>
+              <div><div className="text-muted">{t("Messages sent")}</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.messages_out ?? 0).toLocaleString(requestIntlLocale())}</div></div>
+              <div><div className="text-muted">{t("Model tokens")}</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.tokens ?? 0).toLocaleString(requestIntlLocale())}</div></div>
             </div>
           </div>
         </Card>

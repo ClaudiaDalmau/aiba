@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { decideAction_ } from "@/actions/workspace";
@@ -33,7 +34,7 @@ export default async function Overview({ searchParams }: { searchParams: Promise
   // Fill gaps so the chart has one bar per day (30 back, 14 ahead).
   const byDay = new Map(m.daily.map((d) => [d.day, d]));
   const days = Array.from({ length: 44 }, (_, i) => addDays(today, i - 29)).map((day) => byDay.get(day) ?? { day, bookings: 0, revenueCents: 0 });
-  const hour = Number(new Intl.DateTimeFormat("es-ES", { timeZone: tz, hour: "numeric", hourCycle: "h23" }).format(new Date()));
+  const hour = Number(new Intl.DateTimeFormat(requestIntlLocale(), { timeZone: tz, hour: "numeric", hourCycle: "h23" }).format(new Date()));
   const greeting = hour < 12 ? t("Good morning") : hour < 18 ? t("Good afternoon") : t("Good evening");
 
   return (
@@ -55,7 +56,7 @@ export default async function Overview({ searchParams }: { searchParams: Promise
       )}
 
       <PageHeader
-        eyebrow={new Intl.DateTimeFormat("es-ES", { timeZone: tz, weekday: "long", day: "numeric", month: "long" }).format(new Date())}
+        eyebrow={new Intl.DateTimeFormat(requestIntlLocale(), { timeZone: tz, weekday: "long", day: "numeric", month: "long" }).format(new Date())}
         title={`${greeting}, ${tenant.user.name.split(" ")[0]}`}
         description={todays.length ? t("You have {n} appointments today.", { n: todays.filter((b) => b.status !== "cancelled").length }) : t("No appointments today.")}
         actions={

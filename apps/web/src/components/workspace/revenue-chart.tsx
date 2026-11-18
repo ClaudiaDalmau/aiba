@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useT } from "@/i18n/client";
+import { useIntlLocale, useT } from "@/i18n/client";
 
 type Day = { day: string; revenueCents: number; bookings: number };
 
@@ -11,9 +11,10 @@ type Day = { day: string; revenueCents: number; bookings: number };
  */
 export function RevenueChart({ days, currency, today }: { days: Day[]; currency: string; today: string }) {
   const t = useT();
+  const intl = useIntlLocale();
   const [hover, setHover] = useState<number | null>(null);
   const max = Math.max(1, ...days.map((d) => d.revenueCents));
-  const fmt = (c: number) => new Intl.NumberFormat("es-ES", { style: "currency", currency, maximumFractionDigits: 0 }).format(c / 100);
+  const fmt = (c: number) => new Intl.NumberFormat(intl, { style: "currency", currency, maximumFractionDigits: 0 }).format(c / 100);
   const W = 720;
   const H = 160;
   const gap = 2;
@@ -50,7 +51,7 @@ export function RevenueChart({ days, currency, today }: { days: Day[]; currency:
           className="pointer-events-none absolute -top-2 z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-border bg-surface px-3 py-2 text-[12px] shadow-pop"
           style={{ left: `${((hover + 0.5) / days.length) * 100}%` }}
         >
-          <div className="font-medium">{new Date(`${h.day}T12:00:00Z`).toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short" })}</div>
+          <div className="font-medium">{new Date(`${h.day}T12:00:00Z`).toLocaleDateString(intl, { weekday: "short", day: "numeric", month: "short" })}</div>
           <div className="tabular-nums text-muted">
             {fmt(h.revenueCents)} · {h.bookings} booking{h.bookings === 1 ? "" : "s"}
             {h.day > today ? " (booked)" : ""}

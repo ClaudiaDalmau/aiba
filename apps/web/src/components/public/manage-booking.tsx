@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useT } from "@/i18n/client";
+import { useIntlLocale, useT } from "@/i18n/client";
 import { Button, cx, Input } from "../ui";
 
 type Props = { token: string; slug: string; serviceId: string; timezone: string; today: string; canChange: boolean; brand: string };
 
 export function ManageBooking({ token, slug, serviceId, timezone, today, canChange, brand }: Props) {
   const t = useT();
+  const intl = useIntlLocale();
   const [mode, setMode] = useState<"idle" | "reschedule" | "cancel" | "done">("idle");
   const [date, setDate] = useState(today);
   const [slots, setSlots] = useState<{ startsAt: string; time: string }[] | null>(null);
@@ -48,7 +49,7 @@ export function ManageBooking({ token, slug, serviceId, timezone, today, canChan
           <Input type="date" value={date} min={today} onChange={(e) => setDate(e.target.value)} />
           <div className="grid grid-cols-4 gap-2">
             {slots === null ? <span className="col-span-4 text-[13px] text-muted">{t("Loading…")}</span> : slots.length === 0 ? <span className="col-span-4 text-[13px] text-muted">{t("No openings that day.")}</span> : slots.map((s) => (
-              <button key={s.startsAt} disabled={busy} onClick={() => post({ action: "reschedule", startsAt: s.startsAt }, t("Moved to {when}", { when: new Intl.DateTimeFormat("es-ES", { timeZone: timezone, weekday: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(s.startsAt)) }))} className={cx("h-10 rounded-lg border border-border text-[14px] font-medium hover:text-white")} onMouseEnter={(e) => (e.currentTarget.style.background = brand)} onMouseLeave={(e) => (e.currentTarget.style.background = "")}>
+              <button key={s.startsAt} disabled={busy} onClick={() => post({ action: "reschedule", startsAt: s.startsAt }, t("Moved to {when}", { when: new Intl.DateTimeFormat(intl, { timeZone: timezone, weekday: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(s.startsAt)) }))} className={cx("h-10 rounded-lg border border-border text-[14px] font-medium hover:text-white")} onMouseEnter={(e) => (e.currentTarget.style.background = brand)} onMouseLeave={(e) => (e.currentTarget.style.background = "")}>
                 {s.time}
               </button>
             ))}

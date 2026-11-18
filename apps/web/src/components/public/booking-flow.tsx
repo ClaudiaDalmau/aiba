@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useT } from "@/i18n/client";
+import { useIntlLocale, useT } from "@/i18n/client";
 import { Icon } from "../icons";
 import { Avatar, Button, cx, Field, Input, Textarea } from "../ui";
 
@@ -16,6 +16,7 @@ const addDays = (d: string, n: number) => {
 
 export function BookingFlow({ slug, services, staff, currency, timezone, today, brand, autoConfirm, initialServiceId }: { slug: string; services: Service[]; staff: Staff[]; currency: string; timezone: string; today: string; brand: string; autoConfirm: boolean; initialServiceId?: string }) {
   const t = useT();
+  const intl = useIntlLocale();
   const [serviceId, setServiceId] = useState<string | null>(initialServiceId ?? null);
   const [staffId, setStaffId] = useState<string>("");
   const [date, setDate] = useState(today);
@@ -27,7 +28,7 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
 
   const service = services.find((s) => s.id === serviceId) ?? null;
   const eligible = useMemo(() => (service ? (service.staffIds.length ? staff.filter((s) => service.staffIds.includes(s.id)) : staff) : []), [service, staff]);
-  const money = (c: number) => new Intl.NumberFormat("es-ES", { style: "currency", currency, maximumFractionDigits: c % 100 ? 2 : 0 }).format(c / 100);
+  const money = (c: number) => new Intl.NumberFormat(intl, { style: "currency", currency, maximumFractionDigits: c % 100 ? 2 : 0 }).format(c / 100);
   const days = Array.from({ length: 14 }, (_, i) => addDays(today, i));
 
   useEffect(() => {
@@ -73,7 +74,7 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
     setDone(j.booking);
   }
 
-  const fmtWhen = (iso: string) => new Intl.DateTimeFormat("es-ES", { timeZone: timezone, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
+  const fmtWhen = (iso: string) => new Intl.DateTimeFormat(intl, { timeZone: timezone, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
 
   if (done) {
     const end = new Date(new Date(done.startsAt).getTime() + (service?.durationMinutes ?? 60) * 60000);
@@ -129,7 +130,7 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
               const dt = new Date(`${d}T12:00:00Z`);
               return (
                 <button key={d} onClick={() => setDate(d)} className={cx("flex w-14 shrink-0 flex-col items-center rounded-xl border py-2 transition", date === d ? "border-transparent text-white" : "border-border bg-surface hover:border-fg/30")} style={date === d ? { background: brand } : undefined}>
-                  <span className="text-[11px] uppercase opacity-70">{dt.toLocaleDateString("es-ES", { weekday: "short", timeZone: "UTC" })}</span>
+                  <span className="text-[11px] uppercase opacity-70">{dt.toLocaleDateString(intl, { weekday: "short", timeZone: "UTC" })}</span>
                   <span className="text-[17px] font-semibold">{dt.getUTCDate()}</span>
                 </button>
               );

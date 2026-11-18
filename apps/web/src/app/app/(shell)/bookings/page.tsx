@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { bookingAction, createBookingAction, rescheduleAction } from "@/actions/workspace";
@@ -123,7 +124,7 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
 }
 
 function fmtDay(date: string, tz: string, long = false) {
-  return new Intl.DateTimeFormat("es-ES", { timeZone: "UTC", weekday: long ? "long" : "short", day: "numeric", month: long ? "long" : "short" }).format(new Date(`${date}T12:00:00Z`));
+  return new Intl.DateTimeFormat(requestIntlLocale(), { timeZone: "UTC", weekday: long ? "long" : "short", day: "numeric", month: long ? "long" : "short" }).format(new Date(`${date}T12:00:00Z`));
 }
 
 function Block({ b, tz, href }: { b: BookingRow; tz: string; href: string }) {

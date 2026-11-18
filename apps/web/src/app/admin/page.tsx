@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 import Link from "next/link";
 import { desc, eq } from "drizzle-orm";
 import { Table, Td, eur, fmtDate } from "@/components/admin/table";
@@ -39,7 +40,7 @@ export default async function AdminOverview({ searchParams }: { searchParams: Pr
   ]);
   // platformMetrics builds its object dynamically; read it as a plain record of numbers.
   const m = metrics as Record<string, number>;
-  const n = (v: number) => v.toLocaleString("es-ES");
+  const n = (v: number) => v.toLocaleString(requestIntlLocale());
   return (
     <>
       {denied}

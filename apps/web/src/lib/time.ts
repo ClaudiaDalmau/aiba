@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 // Timezone helpers without a date library. Availability is defined in the business's local time
 // (weekday + minutes from midnight); bookings are stored as UTC instants.
 
@@ -56,17 +57,17 @@ export function todayIn(tz: string): string {
   return zonedParts(new Date(), tz).date;
 }
 
-export function formatTime(instant: Date, tz: string, locale = "es-ES") {
+export function formatTime(instant: Date, tz: string, locale = requestIntlLocale()) {
   return new Intl.DateTimeFormat(locale, { timeZone: tz, hour: "2-digit", minute: "2-digit" }).format(instant);
 }
 
-export function formatDate(instant: Date, tz: string, locale = "es-ES", opts?: Intl.DateTimeFormatOptions) {
+export function formatDate(instant: Date, tz: string, locale = requestIntlLocale(), opts?: Intl.DateTimeFormatOptions) {
   return new Intl.DateTimeFormat(locale, { timeZone: tz, weekday: "short", day: "numeric", month: "short", ...opts }).format(
     instant,
   );
 }
 
-export function formatDateTime(instant: Date, tz: string, locale = "es-ES") {
+export function formatDateTime(instant: Date, tz: string, locale = requestIntlLocale()) {
   return `${formatDate(instant, tz, locale)}, ${formatTime(instant, tz, locale)}`;
 }
 
@@ -76,7 +77,7 @@ export function hhmmToMinutes(s: string): number {
   return h * 60 + (m || 0);
 }
 
-export function formatMoney(cents: number, currency: string, locale = "es-ES") {
+export function formatMoney(cents: number, currency: string, locale = requestIntlLocale()) {
   return new Intl.NumberFormat(locale, { style: "currency", currency, maximumFractionDigits: cents % 100 ? 2 : 0 }).format(
     cents / 100,
   );

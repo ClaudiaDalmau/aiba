@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, type ReactNode } from "react";
-import { DEFAULT_LOCALE, translate, type Dictionary, type Locale, type T } from "./config";
+import { DEFAULT_LOCALE, INTL_LOCALE, translate, type Dictionary, type Locale, type T } from "./config";
 
 const I18nContext = createContext<{ locale: Locale; dict: Dictionary }>({ locale: DEFAULT_LOCALE, dict: {} });
 
@@ -17,4 +17,9 @@ export function useT(): T {
 
 export function useLocale(): Locale {
   return useContext(I18nContext).locale;
+}
+
+/** Formato regional (fechas, números) del idioma activo. */
+export function useIntlLocale(): string {
+  return INTL_LOCALE[useContext(I18nContext).locale];
 }

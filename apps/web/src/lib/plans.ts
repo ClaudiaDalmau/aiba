@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 import "server-only";
 import { and, asc, count, eq, gte, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
@@ -35,7 +36,7 @@ export async function entitlementsOf(business: Pick<schema.Business, "tier">) {
 }
 
 export function formatPlanPrice(p: Pick<schema.Plan, "priceCents" | "currency" | "interval">) {
-  const amount = new Intl.NumberFormat("es-ES", { style: "currency", currency: p.currency, maximumFractionDigits: p.priceCents % 100 ? 2 : 0 }).format(p.priceCents / 100);
+  const amount = new Intl.NumberFormat(requestIntlLocale(), { style: "currency", currency: p.currency, maximumFractionDigits: p.priceCents % 100 ? 2 : 0 }).format(p.priceCents / 100);
   return { amount, per: p.interval === "year" ? "year" : "month" };
 }
 

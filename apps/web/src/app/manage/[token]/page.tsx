@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -32,7 +33,7 @@ export default async function ManagePage({ params }: { params: Promise<{ token: 
           </div>
           <h1 className="mt-4 text-[24px] font-semibold tracking-tight">{service.name}</h1>
           <p className="mt-1 text-muted">
-            {new Intl.DateTimeFormat("es-ES", { timeZone: tz, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(b.startsAt)}
+            {new Intl.DateTimeFormat(requestIntlLocale(), { timeZone: tz, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(b.startsAt)}
             <br />with {staff.name} · {formatMoney(b.priceCents, business.currency)}
           </p>
           {live && !canChange && <p className="mt-6 rounded-lg bg-subtle px-3 py-2 text-[13px] text-muted">{t("Changes are possible up to {h}h before. Please contact {name}.", { h: business.policy.cancellationWindowHours, name: business.phone ? `${business.name} (${business.phone})` : business.name })}</p>}

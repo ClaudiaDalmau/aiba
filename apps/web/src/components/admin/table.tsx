@@ -1,3 +1,4 @@
+import { requestIntlLocale } from "@/i18n/request-locale";
 import type { ReactNode } from "react";
 import { cx } from "../ui";
 
@@ -25,6 +26,6 @@ export function Td({ children, className, mono }: { children?: ReactNode; classN
 }
 
 export const fmtDate = (d: Date | string | null | undefined) =>
-  d ? new Date(d).toLocaleString("es-ES", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : "—";
+  d ? new Date(d).toLocaleString(requestIntlLocale(), { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : "—";
 
-export const eur = (cents: number) => new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(cents / 100);
+export const eur = (cents: number) => new Intl.NumberFormat(requestIntlLocale(), { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(cents / 100);
