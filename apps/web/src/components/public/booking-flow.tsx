@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useT } from "@/i18n/client";
 import { Icon } from "../icons";
 import { Avatar, Button, cx, Field, Input, Textarea } from "../ui";
 
@@ -14,6 +15,7 @@ const addDays = (d: string, n: number) => {
 };
 
 export function BookingFlow({ slug, services, staff, currency, timezone, today, brand, autoConfirm, initialServiceId }: { slug: string; services: Service[]; staff: Staff[]; currency: string; timezone: string; today: string; brand: string; autoConfirm: boolean; initialServiceId?: string }) {
+  const t = useT();
   const [serviceId, setServiceId] = useState<string | null>(initialServiceId ?? null);
   const [staffId, setStaffId] = useState<string>("");
   const [date, setDate] = useState(today);
@@ -64,7 +66,7 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
     const j = await res.json();
     setSubmitting(false);
     if (!res.ok) {
-      setError(j.errors ? Object.values(j.errors).flat().join(" ") : j.detail ?? "Booking failed");
+      setError(j.errors ? Object.values(j.errors).flat().join(" ") : j.detail ?? t("Booking failed"));
       if (j.code === "slot_taken" || j.code === "slot_unavailable") setDate((d) => d); // refresh slots
       return;
     }
@@ -79,14 +81,14 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
     return (
       <div className="animate-fade-up py-6 text-center">
         <div className="mx-auto grid size-14 place-items-center rounded-full text-white" style={{ background: brand }}><Icon name="check" size={26} /></div>
-        <h3 className="mt-4 text-[22px] font-semibold">{done.status === "pending" ? "Request sent" : "You're booked"}</h3>
+        <h3 className="mt-4 text-[22px] font-semibold">{done.status === "pending" ? t("Request sent") : t("You're booked")}</h3>
         <p className="mt-1 text-muted">{done.service} with {done.staff}<br />{fmtWhen(done.startsAt)}</p>
-        {done.status === "pending" && <p className="mt-2 text-[14px] text-warn">The team will confirm shortly.</p>}
+        {done.status === "pending" && <p className="mt-2 text-[14px] text-warn">{t("The team will confirm shortly.")}</p>}
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <a href={`data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`} download="booking.ics" className="rounded-[10px] border border-border px-4 py-2 text-[14px] hover:bg-subtle">Add to calendar</a>
-          <a href={`/manage/${done.manageToken}`} className="rounded-[10px] border border-border px-4 py-2 text-[14px] hover:bg-subtle">Manage booking</a>
+          <a href={`data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`} download="booking.ics" className="rounded-[10px] border border-border px-4 py-2 text-[14px] hover:bg-subtle">{t("Add to calendar")}</a>
+          <a href={`/manage/${done.manageToken}`} className="rounded-[10px] border border-border px-4 py-2 text-[14px] hover:bg-subtle">{t("Manage booking")}</a>
         </div>
-        <p className="mt-4 text-[12px] text-faint">Save the manage link: it lets you reschedule or cancel.</p>
+        <p className="mt-4 text-[12px] text-faint">{t("Save the manage link: it lets you reschedule or cancel.")}</p>
       </div>
     );
   }
@@ -94,7 +96,7 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
   return (
     <div className="space-y-8">
       <section>
-        <StepTitle n={1} title="Choose a service" />
+        <StepTitle n={1} title={t("Choose a service")} />
         <div className="space-y-2">
           {services.map((s) => (
             <button key={s.id} onClick={() => { setServiceId(s.id); setStaffId(""); }} className={cx("flex w-full items-start gap-4 rounded-xl border p-4 text-left transition", serviceId === s.id ? "border-fg bg-subtle ring-2 ring-fg/10" : "border-border bg-surface hover:border-fg/30")}>
@@ -111,10 +113,10 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
 
       {service && (
         <section className="animate-fade-up">
-          <StepTitle n={2} title="Pick a time" />
+          <StepTitle n={2} title={t("Pick a time")} />
           {eligible.length > 1 && (
             <div className="scrollbar-none mb-4 flex gap-2 overflow-x-auto">
-              <button onClick={() => setStaffId("")} className={cx("shrink-0 rounded-full border px-3 py-1.5 text-[13px]", !staffId ? "border-fg bg-fg text-bg" : "border-border")}>Anyone</button>
+              <button onClick={() => setStaffId("")} className={cx("shrink-0 rounded-full border px-3 py-1.5 text-[13px]", !staffId ? "border-fg bg-fg text-bg" : "border-border")}>{t("Anyone")}</button>
               {eligible.map((s) => (
                 <button key={s.id} onClick={() => setStaffId(s.id)} className={cx("flex shrink-0 items-center gap-1.5 rounded-full border py-1 pr-3 pl-1 text-[13px]", staffId === s.id ? "border-fg bg-fg text-bg" : "border-border")}>
                   <Avatar name={s.name} color={s.color} size={22} /> {s.name}
@@ -137,7 +139,7 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
             {slots === null ? (
               <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">{Array.from({ length: 12 }, (_, i) => <div key={i} className="h-10 animate-pulse rounded-lg bg-subtle" />)}</div>
             ) : slots.length === 0 ? (
-              <p className="py-6 text-center text-[14px] text-muted">No openings this day. Try another date.</p>
+              <p className="py-6 text-center text-[14px] text-muted">{t("No openings this day. Try another date.")}</p>
             ) : (
               <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">
                 {slots.map((s) => (
@@ -153,23 +155,23 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
 
       {service && slot && (
         <section className="animate-fade-up">
-          <StepTitle n={3} title="Your details" />
+          <StepTitle n={3} title={t("Your details")} />
           <div className="mb-4 rounded-xl bg-subtle p-4 text-[14px]">
             <div className="font-medium">{service.name} · {money(service.priceCents)}</div>
             <div className="text-muted">{fmtWhen(slot.startsAt)}{staffId ? ` with ${staff.find((s) => s.id === staffId)?.name}` : ""}</div>
           </div>
           <form action={submit} className="space-y-3">
             <div className="grid gap-3 sm:grid-cols-2">
-              <Field label="Full name"><Input name="name" required autoComplete="name" /></Field>
-              <Field label="Phone" hint="for reminders"><Input name="phone" type="tel" autoComplete="tel" /></Field>
+              <Field label={t("Full name")}><Input name="name" required autoComplete="name" /></Field>
+              <Field label={t("Phone")} hint={t("for reminders")}><Input name="phone" type="tel" autoComplete="tel" /></Field>
             </div>
-            <Field label="Email"><Input name="email" type="email" required autoComplete="email" /></Field>
-            <Field label="Notes" hint="optional"><Textarea name="notes" rows={2} /></Field>
-            <label className="flex gap-2 text-[13px] text-muted"><input type="checkbox" name="consent" required className="mt-0.5" /> I agree that this business processes my details to manage my booking (see <a href="/privacy" className="underline" target="_blank">privacy notice</a>).</label>
-            <label className="flex gap-2 text-[13px] text-muted"><input type="checkbox" name="marketing" className="mt-0.5" /> Send me occasional offers from this business.</label>
+            <Field label={t("Email")}><Input name="email" type="email" required autoComplete="email" /></Field>
+            <Field label={t("Notes")} hint={t("optional")}><Textarea name="notes" rows={2} /></Field>
+            <label className="flex gap-2 text-[13px] text-muted"><input type="checkbox" name="consent" required className="mt-0.5" /> {t("I agree that this business processes my details to manage my booking (see")} <a href="/privacy" className="underline" target="_blank">{t("privacy notice")}</a>).</label>
+            <label className="flex gap-2 text-[13px] text-muted"><input type="checkbox" name="marketing" className="mt-0.5" /> {t("Send me occasional offers from this business.")}</label>
             {error && <p className="rounded-lg bg-bad/10 px-3 py-2 text-[13px] text-bad">{error}</p>}
             <Button type="submit" size="lg" className="w-full !text-white" style={{ background: brand }} disabled={submitting}>
-              {submitting ? "Booking…" : autoConfirm ? "Confirm booking" : "Request booking"}
+              {submitting ? "Booking…" : autoConfirm ? t("Confirm booking") : t("Request booking")}
             </Button>
           </form>
         </section>

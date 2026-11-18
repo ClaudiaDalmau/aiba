@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useT } from "@/i18n/client";
 import { Icon } from "../icons";
 import { cx } from "../ui";
 
@@ -21,6 +22,7 @@ function sessionId(slug: string) {
 
 /** Booking-page chat with the business's agent. Polls while open so human replies show up too. */
 export function ChatWidget({ slug, businessName, agentName, brand }: { slug: string; businessName: string; agentName: string; brand: string }) {
+  const t = useT();
   const [open, setOpen] = useState(false);
   const [sid, setSid] = useState<string | null>(null);
   const [messages, setMessages] = useState<Msg[]>([]);
@@ -49,7 +51,7 @@ export function ChatWidget({ slug, businessName, agentName, brand }: { slug: str
       const r = await fetch(`/api/v1/public/businesses/${slug}/chat`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ sessionId: sid, text: v }) });
       const j = await r.json();
       if (j.messages) setMessages(j.messages);
-      else setMessages((m) => [...m, { id: `e${Date.now()}`, role: "agent", content: j.detail ?? "Sorry, something went wrong." }]);
+      else setMessages((m) => [...m, { id: `e${Date.now()}`, role: "agent", content: j.detail ?? t("Sorry, something went wrong.") }]);
     } finally {
       setBusy(false);
     }
@@ -65,14 +67,14 @@ export function ChatWidget({ slug, businessName, agentName, brand }: { slug: str
               <div className="text-[14px] font-semibold">{agentName}</div>
               <div className="text-[12px] opacity-80">{businessName} · replies instantly</div>
             </div>
-            <button onClick={() => setOpen(false)} aria-label="Close"><Icon name="x" /></button>
+            <button onClick={() => setOpen(false)} aria-label={t("Close")}><Icon name="x" /></button>
           </div>
           <div ref={scroller} className="min-h-0 flex-1 space-y-2 overflow-y-auto bg-subtle/40 p-4">
-            {messages.length === 0 && <p className="py-6 text-center text-[13px] text-muted">Ask about services, prices, availability, or book directly here.</p>}
+            {messages.length === 0 && <p className="py-6 text-center text-[13px] text-muted">{t("Ask about services, prices, availability, or book directly here.")}</p>}
             {messages.map((m) => (
               <div key={m.id} className={cx("flex", m.role === "customer" ? "justify-end" : "justify-start")}>
                 <div className={cx("max-w-[82%] whitespace-pre-wrap rounded-2xl px-3.5 py-2 text-[14px]", m.role === "customer" ? "rounded-br-md text-white" : "rounded-bl-md bg-surface shadow-card ring-1 ring-border")} style={m.role === "customer" ? { background: brand } : undefined}>
-                  {m.role === "owner" && <div className="mb-0.5 text-[11px] font-medium text-muted">Team</div>}
+                  {m.role === "owner" && <div className="mb-0.5 text-[11px] font-medium text-muted">{t("Team")}</div>}
                   {linkify(m.content)}
                 </div>
               </div>
@@ -80,14 +82,14 @@ export function ChatWidget({ slug, businessName, agentName, brand }: { slug: str
             {busy && <div className="flex gap-1 px-1 py-2">{[0, 1, 2].map((i) => <span key={i} className="size-1.5 animate-pulse-dot rounded-full bg-faint" style={{ animationDelay: `${i * 0.2}s` }} />)}</div>}
           </div>
           <form onSubmit={send} className="flex gap-2 border-t border-border p-2.5">
-            <input value={text} onChange={(e) => setText(e.target.value)} placeholder="Write a message…" className="h-10 flex-1 rounded-full border border-border bg-surface px-4 text-[14px] outline-none" />
-            <button className="grid size-10 place-items-center rounded-full text-white disabled:opacity-50" style={{ background: brand }} disabled={busy || !text.trim()} aria-label="Send"><Icon name="send" size={16} /></button>
+            <input value={text} onChange={(e) => setText(e.target.value)} placeholder={t("Write a message…")} className="h-10 flex-1 rounded-full border border-border bg-surface px-4 text-[14px] outline-none" />
+            <button className="grid size-10 place-items-center rounded-full text-white disabled:opacity-50" style={{ background: brand }} disabled={busy || !text.trim()} aria-label={t("Send")}><Icon name="send" size={16} /></button>
           </form>
-          <div className="pb-2 text-center text-[10px] text-faint">AI assistant · may make mistakes · a human can take over</div>
+          <div className="pb-2 text-center text-[10px] text-faint">{t("AI assistant · may make mistakes · a human can take over")}</div>
         </div>
       )}
       <button onClick={() => setOpen((o) => !o)} className="fixed right-4 bottom-4 z-50 flex h-12 items-center gap-2 rounded-full px-5 font-medium text-white shadow-pop transition hover:scale-[1.02]" style={{ background: brand }}>
-        <Icon name={open ? "x" : "chat"} size={18} /> {open ? "Close" : "Ask us anything"}
+        <Icon name={open ? "x" : "chat"} size={18} /> {open ? t("Close") : t("Ask us anything")}
       </button>
     </>
   );

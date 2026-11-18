@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BusinessPage({ params, searchParams }: Props) {
+  const t = await getT();
   const { slug } = await params;
   const { service } = await searchParams;
   const business = await load(slug);
@@ -48,7 +50,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
 
   return (
     <div className="min-h-dvh" style={{ ["--brand" as string]: b.brandColor }}>
-      {!business.published && <div className="bg-warn px-4 py-1.5 text-center text-[13px] font-medium text-white">Preview: this page is not published yet</div>}
+      {!business.published && <div className="bg-warn px-4 py-1.5 text-center text-[13px] font-medium text-white">{t("Preview: this page is not published yet")}</div>}
       <div className="relative h-56 sm:h-72" style={{ background: b.brandColor }}>
         {b.coverUrl && (
           // eslint-disable-next-line @next/next/no-img-element
@@ -86,8 +88,8 @@ export default async function BusinessPage({ params, searchParams }: Props) {
             </Card>
             {(wa || tg) && agent?.status === "active" && (
               <Card className="p-5">
-                <div className="mb-1 text-[13px] font-semibold uppercase tracking-wider text-faint">Message us</div>
-                <p className="mb-3 text-[13px] text-muted">Our assistant answers instantly and can book for you.</p>
+                <div className="mb-1 text-[13px] font-semibold uppercase tracking-wider text-faint">{t("Message us")}</div>
+                <p className="mb-3 text-[13px] text-muted">{t("Our assistant answers instantly and can book for you.")}</p>
                 <div className="flex flex-col gap-2">
                   {wa && <a href={`https://wa.me/${wa.publicHandle}`} target="_blank" rel="noreferrer" className="flex h-10 items-center justify-center gap-2 rounded-[10px] bg-[#16a34a] text-[14px] font-medium text-white hover:opacity-90"><Icon name="whatsapp" size={17} /> WhatsApp</a>}
                   {tg && <a href={tg.publicHandle!} target="_blank" rel="noreferrer" className="flex h-10 items-center justify-center gap-2 rounded-[10px] bg-[#0284c7] text-[14px] font-medium text-white hover:opacity-90"><Icon name="telegram" size={17} /> Telegram</a>}
@@ -96,7 +98,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
             )}
             {staff.length > 0 && (
               <Card className="p-5">
-                <div className="mb-3 text-[13px] font-semibold uppercase tracking-wider text-faint">Team</div>
+                <div className="mb-3 text-[13px] font-semibold uppercase tracking-wider text-faint">{t("Team")}</div>
                 <ul className="space-y-3">
                   {staff.map((s) => (
                     <li key={s.id} className="flex gap-3">
@@ -108,8 +110,8 @@ export default async function BusinessPage({ params, searchParams }: Props) {
               </Card>
             )}
             <Card className="p-5 text-[13px] text-muted">
-              <div className="mb-1 font-semibold text-fg">Booking policy</div>
-              Free cancellation up to {b.policy.cancellationWindowHours}h before. {b.policy.policyText}
+              <div className="mb-1 font-semibold text-fg">{t("Booking policy")}</div>
+              {t("Free cancellation up to {h}h before.", { h: b.policy.cancellationWindowHours })} {b.policy.policyText}
             </Card>
             <div className="flex justify-center pt-2 opacity-60"><Link href="/"><Logo className="scale-90" /></Link></div>
           </aside>
