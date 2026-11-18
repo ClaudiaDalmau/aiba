@@ -1,5 +1,6 @@
 import "server-only";
 import { z, ZodError } from "zod";
+import { getT } from "@/i18n/server";
 import { AppError } from "./errors";
 import { userFromRequest, type SessionUser } from "./auth";
 import { tenantFromRequest, type Tenant } from "./tenant";
@@ -13,8 +14,16 @@ export function problem(status: number, code: string, detail: string, extra?: un
   return Response.json({ type: "about:blank", status, code, detail, ...(extra ? { errors: extra } : {}) }, { status, headers: { "content-type": "application/problem+json" } });
 }
 
-function toResponse(e: unknown) {
-  if (e instanceof AppError) return problem(e.status, e.code, e.message, e.details);
+async function toResponse(e: unknown) {
+  if (e instanceof AppError) {
+    let msg = e.message;
+    try {
+      msg = (await getT())(e.message);
+    } catch {
+      /* outside a request */
+    }
+    return problem(e.status, e.code, msg, e.details);
+  }
   if (e instanceof ZodError) return problem(422, "validation_failed", "Some fields are invalid", z.flattenError(e).fieldErrors);
   if (e instanceof SyntaxError) return problem(400, "bad_json", "Request body is not valid JSON");
   console.error("[api]", e);
@@ -29,7 +38,7 @@ export function publicRoute(fn: (req: Request, params: Params) => Promise<unknow
     try {
       return out(await fn(req, await ctx.params));
     } catch (e) {
-      return toResponse(e);
+      return await toResponse(e);
     }
   };
 }
@@ -41,7 +50,7 @@ export function userRoute(fn: (req: Request, user: SessionUser, params: Params) 
       const user = await userFromRequest(req);
       return out(await fn(req, user, await ctx.params));
     } catch (e) {
-      return toResponse(e);
+      return await toResponse(e);
     }
   };
 }
@@ -54,7 +63,7 @@ export function tenantRoute(permission: Permission, fn: (req: Request, t: Tenant
       const t = await tenantFromRequest(req, user, permission);
       return out(await fn(req, t, await ctx.params));
     } catch (e) {
-      return toResponse(e);
+      return await toResponse(e);
     }
   };
 }

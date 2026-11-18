@@ -77,7 +77,7 @@ export function translatorFor(locale: string): { t: T; locale: Locale; intl: str
   return { t: (s, v) => translate(dict, s, v), locale: l, intl: INTL_LOCALE[l] };
 }
 
-export type BookingEmailKind = "confirmed" | "requested" | "rescheduled" | "cancelled" | "reminder";
+export type BookingEmailKind = "confirmed" | "requested" | "rescheduled" | "cancelled" | "reminder" | "review";
 
 /** Email the customer about their booking, in the business's language, if they left an address. */
 export async function emailCustomerAboutBooking(bookingId: string, kind: BookingEmailKind, extra: { reason?: string } = {}) {
@@ -103,10 +103,13 @@ export async function emailCustomerAboutBooking(bookingId: string, kind: Booking
     rescheduled: t("Your booking has been moved"),
     cancelled: t("Your booking has been cancelled"),
     reminder: t("Reminder of your appointment"),
+    review: t("How was your visit?"),
   };
   const lines = [
     t("Hi {name},", { name: first }),
-    kind === "requested"
+    kind === "review"
+      ? t("Thanks for visiting {business}. Would you rate your experience? It takes 30 seconds and helps others choose.", { business: business.name })
+      : kind === "requested"
       ? t("{business} will confirm your request shortly.", { business: business.name })
       : kind === "cancelled"
         ? t("Your appointment at {business} has been cancelled.", { business: business.name })
@@ -115,7 +118,7 @@ export async function emailCustomerAboutBooking(bookingId: string, kind: Booking
     `${t("When")}: ${when}`,
     `${t("With")}: ${staff.name}`,
     ...(extra.reason ? [`${t("Reason")}: ${extra.reason}`] : []),
-    ...(kind !== "cancelled" && business.policy.cancellationWindowHours
+    ...(kind !== "cancelled" && kind !== "review" && business.policy.cancellationWindowHours
       ? [t("Free cancellation up to {h}h before.", { h: business.policy.cancellationWindowHours })]
       : []),
   ];
@@ -124,7 +127,12 @@ export async function emailCustomerAboutBooking(bookingId: string, kind: Booking
     color: business.brandColor,
     title: titles[kind],
     lines,
-    cta: kind === "cancelled" ? { label: t("Book again"), href: `${settings["general.appUrl"]}/b/${business.slug}` } : { label: t("Manage booking"), href: manage },
+    cta:
+      kind === "cancelled"
+        ? { label: t("Book again"), href: `${settings["general.appUrl"]}/b/${business.slug}` }
+        : kind === "review"
+          ? { label: t("Leave a review"), href: `${manage}#review` }
+          : { label: t("Manage booking"), href: manage },
     footer: t("Sent by {business} with AIBA", { business: business.name }),
   });
   return sendEmail({ to: customer.email ?? "", subject: `${titles[kind]} · ${business.name}`, html, text, replyTo: business.email || undefined });

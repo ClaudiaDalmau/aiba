@@ -717,7 +717,31 @@ export const leads = pgTable(
   (t) => [index("leads_kind_idx").on(t.kind, t.createdAt), uniqueIndex("leads_kind_email_uq").on(t.kind, t.email)],
 );
 
+/** Customer reviews: one per completed booking, written from the booking's manage link. */
+export const reviews = pgTable(
+  "reviews",
+  {
+    id: id(),
+    businessId: businessId(),
+    bookingId: text("booking_id")
+      .notNull()
+      .references(() => bookings.id, { onDelete: "cascade" }),
+    customerId: text("customer_id").references(() => customers.id, { onDelete: "set null" }),
+    staffId: text("staff_id").references(() => staff.id, { onDelete: "set null" }),
+    serviceId: text("service_id").references(() => services.id, { onDelete: "set null" }),
+    authorName: text("author_name").notNull().default(""),
+    rating: integer("rating").notNull(),
+    comment: text("comment").notNull().default(""),
+    reply: text("reply").notNull().default(""),
+    repliedAt: timestamp("replied_at", { withTimezone: true }),
+    hidden: boolean("hidden").notNull().default(false),
+    createdAt: createdAt(),
+  },
+  (t) => [uniqueIndex("reviews_booking_uq").on(t.bookingId), index("reviews_business_idx").on(t.businessId, t.createdAt)],
+);
+
 export type Business = typeof businesses.$inferSelect;
+export type Review = typeof reviews.$inferSelect;
 export type Lead = typeof leads.$inferSelect;
 export type Plan = typeof plans.$inferSelect;
 export type Service = typeof services.$inferSelect;

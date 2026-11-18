@@ -9,6 +9,9 @@ import { Avatar, Badge, Card, Logo } from "@/components/ui";
 import { getAgent } from "@/lib/agent/runtime";
 import { currentUser } from "@/lib/auth";
 import { publicBusiness, publicProfile } from "@/lib/public";
+import { businessRating, publicReviews } from "@/lib/reviews";
+import { Stars } from "@/components/public/review-form";
+import { requestIntlLocale } from "@/i18n/request-locale";
 import { membershipsOf } from "@/lib/tenant";
 import { todayIn } from "@/lib/time";
 import { db, schema } from "@/db";
@@ -40,10 +43,12 @@ export default async function BusinessPage({ params, searchParams }: Props) {
   const { service } = await searchParams;
   const business = await load(slug);
   if (!business) notFound();
-  const [{ business: b, services, staff, locations }, agent, channels] = await Promise.all([
+  const [{ business: b, services, staff, locations }, agent, channels, rating, reviews] = await Promise.all([
     publicProfile(business),
     getAgent(business.id),
     db.select().from(schema.channels).where(and(eq(schema.channels.businessId, business.id), eq(schema.channels.status, "connected"))),
+    businessRating(business.id),
+    publicReviews(business.id, 6),
   ]);
   const wa = channels.find((c) => c.kind === "whatsapp" && c.publicHandle);
   const tg = channels.find((c) => c.kind === "telegram" && c.publicHandle);
@@ -72,9 +77,35 @@ export default async function BusinessPage({ params, searchParams }: Props) {
               <div className="min-w-0">
                 <h1 className="flex flex-wrap items-center gap-2 text-[26px] font-semibold tracking-tight">{b.name} {b.vip && <Badge tone="ai" icon="crown">VIP</Badge>}</h1>
                 {b.tagline && <p className="text-muted">{b.tagline}</p>}
+                {rating.count > 0 && (
+                  <a href="#reviews" className="mt-1 inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-fg">
+                    <Stars value={rating.average ?? 0} /> <span className="font-medium text-fg">{rating.average?.toLocaleString(requestIntlLocale(), { minimumFractionDigits: 1 })}</span> · {t(rating.count === 1 ? "{n} review" : "{n} reviews", { n: rating.count })}
+                  </a>
+                )}
               </div>
             </div>
             <div className="mt-8"><BookingFlow slug={b.slug} services={services} staff={staff} currency={b.currency} timezone={b.timezone} today={todayIn(b.timezone)} brand={b.brandColor} autoConfirm={b.policy.autoConfirm} initialServiceId={service} /></div>
+            {reviews.length > 0 && (
+              <section id="reviews" className="mt-10 border-t border-border pt-8">
+                <div className="flex items-baseline justify-between gap-3">
+                  <h2 className="text-[19px] font-semibold tracking-tight">{t("Reviews")}</h2>
+                  <span className="flex items-center gap-1.5 text-[14px] text-muted"><Stars value={rating.average ?? 0} size={16} /> {rating.average?.toLocaleString(requestIntlLocale(), { minimumFractionDigits: 1 })} · {t(rating.count === 1 ? "{n} review" : "{n} reviews", { n: rating.count })}</span>
+                </div>
+                <ul className="mt-4 space-y-5">
+                  {reviews.map(({ review: r, service: svc, staff: who }) => (
+                    <li key={r.id} className="text-[14px]">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <Stars value={r.rating} />
+                        <span className="font-medium">{r.authorName}</span>
+                        <span className="text-faint">· {new Intl.DateTimeFormat(requestIntlLocale(), { month: "short", year: "numeric" }).format(r.createdAt)}{svc ? ` · ${svc}` : ""}{who ? ` · ${who}` : ""}</span>
+                      </div>
+                      {r.comment && <p className="mt-1 text-muted">{r.comment}</p>}
+                      {r.reply && <p className="mt-2 border-l-2 border-border pl-3 text-[13px] text-muted"><span className="font-medium text-fg">{b.name}:</span> {r.reply}</p>}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </Card>
 
           <aside className="space-y-4">

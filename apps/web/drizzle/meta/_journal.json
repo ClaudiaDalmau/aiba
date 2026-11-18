@@ -50,6 +50,13 @@
       "when": 1795030000000,
       "tag": "0006_leads",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1795031000000,
+      "tag": "0007_reviews",
+      "breakpoints": true
     }
   ]
 }

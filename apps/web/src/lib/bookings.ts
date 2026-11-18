@@ -250,6 +250,12 @@ export async function setBookingStatus(
     await messageCustomer(business.id, b.customerId, `Good news: your ${service.name} at ${business.name} on ${formatDateTime(b.startsAt, business.timezone)} is confirmed.`);
     await emailCustomerAboutBooking(b.id, "confirmed").catch(() => false);
   }
+  if (status === "completed" && b.status !== "completed") {
+    const { getSettings } = await import("./settings");
+    const link = `${(await getSettings())["general.appUrl"]}/manage/${b.manageToken}#review`;
+    await messageCustomer(business.id, b.customerId, `Thanks for visiting ${business.name}! How was it? Leave a quick review here: ${link}`).catch(() => false);
+    await emailCustomerAboutBooking(b.id, "review").catch(() => false);
+  }
   return updated;
 }
 
