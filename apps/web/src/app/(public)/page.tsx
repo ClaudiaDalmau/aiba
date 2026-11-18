@@ -81,7 +81,7 @@ export default async function Home() {
           {plans.map((p) => (
             <Card key={p.id} className={p.highlighted ? "p-7 ring-2 ring-ai/40" : "p-7"}>
               <div className="flex items-center gap-2 font-semibold">{p.name} {p.highlighted && <Icon name="crown" className="text-ai" size={16} />}</div>
-              <div className="mt-3 text-[40px] font-semibold tracking-tight">{formatPlanPrice(p).amount}<span className="text-[15px] font-normal text-muted">/{formatPlanPrice(p).per}</span></div>
+              <div className="mt-3 text-[40px] font-semibold tracking-tight">{formatPlanPrice(p).amount}<span className="text-[15px] font-normal text-muted">/{t(formatPlanPrice(p).per)}</span></div>
               <ul className="mt-5 space-y-2 text-[14px]">{p.features.map((f) => <li key={f} className="flex gap-2"><Icon name="check" size={16} className="mt-0.5 text-ok" />{f}</li>)}</ul>
               <LinkButton href="/signup" variant={p.highlighted ? "ai" : "secondary"} className="mt-6 w-full">{p.trialDays ? t("Start {days}-day trial", { days: p.trialDays }) : t("Get started")}</LinkButton>
             </Card>

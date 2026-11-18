@@ -8,13 +8,14 @@ import { currentTenant } from "@/lib/tenant";
 import { formatDateTime, formatTime } from "@/lib/time";
 
 export default async function Thread({ params }: { params: Promise<{ id: string }> }) {
+  const t = await getT();
   const { id } = await params;
   const tenant = await currentTenant();
   const c = await getConversation(tenant.business.id, id);
   const tz = tenant.business.timezone;
   type Item = { at: Date; kind: "msg"; m: (typeof c.messages)[number] } | { at: Date; kind: "act"; a: (typeof c.actions)[number] };
   const items: Item[] = [...c.messages.map((m) => ({ at: m.createdAt, kind: "msg" as const, m })), ...c.actions.map((a) => ({ at: a.createdAt, kind: "act" as const, a }))].sort((x, y) => x.at.getTime() - y.at.getTime());
-  const name = c.customer?.name ?? (c.externalThreadId.startsWith("test:") ? "Playground test" : "Web visitor");
+  const name = c.customer?.name ?? (c.externalThreadId.startsWith("test:") ? t("Playground test") : t("Web visitor"));
 
   return (
     <div className="fixed inset-0 top-14 z-40 flex flex-col bg-surface lg:static lg:z-auto lg:min-h-0 lg:flex-1">
@@ -31,17 +32,17 @@ export default async function Thread({ params }: { params: Promise<{ id: string 
         <form action={conversationAction} className="flex gap-2">
           <input type="hidden" name="conversationId" value={c.id} />
           {c.humanTakeover ? (
-            <Button name="action" value="release" variant="ai" size="sm" icon="sparkles">Hand back to agent</Button>
+            <Button name="action" value="release" variant="ai" size="sm" icon="sparkles">{t("Hand back to agent")}</Button>
           ) : (
-            <Button name="action" value="takeover" variant="secondary" size="sm" icon="hand">Take over</Button>
+            <Button name="action" value="takeover" variant="secondary" size="sm" icon="hand">{t("Take over")}</Button>
           )}
-          {c.status !== "closed" ? <Button name="action" value="close" variant="ghost" size="sm">Close</Button> : <Button name="action" value="reopen" variant="ghost" size="sm">Reopen</Button>}
+          {c.status !== "closed" ? <Button name="action" value="close" variant="ghost" size="sm">{t("Close")}</Button> : <Button name="action" value="reopen" variant="ghost" size="sm">{t("Reopen")}</Button>}
         </form>
       </header>
 
       {c.status === "escalated" && (
         <div className="flex items-center gap-2 border-b border-warn/20 bg-warn/10 px-5 py-2.5 text-[13px] text-warn">
-          <Icon name="flag" size={15} /> Escalated: {c.escalationReason ?? "the agent asked for a human"}. The agent is silent until you hand it back.
+          <Icon name="flag" size={15} /> {t("Escalated: {reason}. The agent is silent until you hand it back.", { reason: c.escalationReason ?? t("the agent asked for a human") })}
         </div>
       )}
 
@@ -55,7 +56,7 @@ export default async function Thread({ params }: { params: Promise<{ id: string 
                 <div className={cx("max-w-[75%] rounded-2xl px-3.5 py-2 text-[14px] shadow-card", it.m.role === "customer" ? "rounded-bl-md bg-surface" : it.m.role === "agent" ? "rounded-br-md bg-ai/10 ring-1 ring-ai/20" : "rounded-br-md bg-accent text-accent-fg")}>
                   <div className="whitespace-pre-wrap">{it.m.content}</div>
                   <div className={cx("mt-1 text-[11px]", it.m.role === "owner" ? "opacity-60" : "text-faint")}>
-                    {it.m.role === "agent" ? "✦ Agent · " : it.m.role === "owner" ? "You · " : ""}{formatTime(it.m.createdAt, tz)}
+                    {it.m.role === "agent" ? `✦ ${t("Agent")} · ` : it.m.role === "owner" ? `${t("You")} · ` : ""}{formatTime(it.m.createdAt, tz)}
                   </div>
                 </div>
               </div>
@@ -69,8 +70,8 @@ export default async function Thread({ params }: { params: Promise<{ id: string 
                 {it.a.status === "pending_approval" && (
                   <form action={decideAction_} className="flex gap-1">
                     <input type="hidden" name="actionId" value={it.a.id} />
-                    <button name="decision" value="approve" className="rounded bg-accent px-2 py-0.5 text-accent-fg">Approve</button>
-                    <button name="decision" value="reject" className="rounded border border-border px-2 py-0.5">Reject</button>
+                    <button name="decision" value="approve" className="rounded bg-accent px-2 py-0.5 text-accent-fg">{t("Approve")}</button>
+                    <button name="decision" value="reject" className="rounded border border-border px-2 py-0.5">{t("Reject")}</button>
                   </form>
                 )}
               </div>
@@ -80,15 +81,15 @@ export default async function Thread({ params }: { params: Promise<{ id: string 
       </div>
 
       {c.channel === "web" && c.externalThreadId.startsWith("test:") ? (
-        <div className="border-t border-border px-5 py-3 text-[13px] text-muted">Playground conversation. Continue it from the Agent page.</div>
+        <div className="border-t border-border px-5 py-3 text-[13px] text-muted">{t("Playground conversation. Continue it from the Agent page.")}</div>
       ) : (
         <form action={replyAction} className="border-t border-border p-3">
           <input type="hidden" name="conversationId" value={c.id} />
           <div className="flex items-end gap-2">
-            <Textarea name="text" rows={2} placeholder={c.humanTakeover ? "Reply to the customer…" : "Replying takes over the conversation from the agent…"} className="min-h-12 flex-1 resize-none" required />
-            <SubmitButton icon="send">Send</SubmitButton>
+            <Textarea name="text" rows={2} placeholder={c.humanTakeover ? t("Reply to the customer…") : t("Replying takes over the conversation from the agent…")} className="min-h-12 flex-1 resize-none" required />
+            <SubmitButton icon="send">{t("Send")}</SubmitButton>
           </div>
-          <div className="mt-1.5 text-[11px] text-faint">Sent via {c.channel}. Last activity {formatDateTime(c.lastMessageAt, tz)}.</div>
+          <div className="mt-1.5 text-[11px] text-faint">{t("Sent via {channel}. Last activity {when}.", { channel: c.channel, when: formatDateTime(c.lastMessageAt, tz) })}</div>
         </form>
       )}
     </div>

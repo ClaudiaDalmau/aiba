@@ -27,7 +27,7 @@ export default async function ManagePage({ params }: { params: Promise<{ token: 
           </div>
           <h1 className="mt-4 text-[24px] font-semibold tracking-tight">{service.name}</h1>
           <p className="mt-1 text-muted">
-            {new Intl.DateTimeFormat("en-GB", { timeZone: tz, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(b.startsAt)}
+            {new Intl.DateTimeFormat("es-ES", { timeZone: tz, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(b.startsAt)}
             <br />with {staff.name} · {formatMoney(b.priceCents, business.currency)}
           </p>
           {live && !canChange && <p className="mt-6 rounded-lg bg-subtle px-3 py-2 text-[13px] text-muted">Changes are possible up to {business.policy.cancellationWindowHours}h before. Please contact {business.name}{business.phone ? ` at ${business.phone}` : ""}.</p>}

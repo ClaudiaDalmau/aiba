@@ -25,7 +25,7 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
 
   const service = services.find((s) => s.id === serviceId) ?? null;
   const eligible = useMemo(() => (service ? (service.staffIds.length ? staff.filter((s) => service.staffIds.includes(s.id)) : staff) : []), [service, staff]);
-  const money = (c: number) => new Intl.NumberFormat("en-GB", { style: "currency", currency, maximumFractionDigits: c % 100 ? 2 : 0 }).format(c / 100);
+  const money = (c: number) => new Intl.NumberFormat("es-ES", { style: "currency", currency, maximumFractionDigits: c % 100 ? 2 : 0 }).format(c / 100);
   const days = Array.from({ length: 14 }, (_, i) => addDays(today, i));
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
     setDone(j.booking);
   }
 
-  const fmtWhen = (iso: string) => new Intl.DateTimeFormat("en-GB", { timeZone: timezone, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
+  const fmtWhen = (iso: string) => new Intl.DateTimeFormat("es-ES", { timeZone: timezone, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
 
   if (done) {
     const end = new Date(new Date(done.startsAt).getTime() + (service?.durationMinutes ?? 60) * 60000);
@@ -127,7 +127,7 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
               const dt = new Date(`${d}T12:00:00Z`);
               return (
                 <button key={d} onClick={() => setDate(d)} className={cx("flex w-14 shrink-0 flex-col items-center rounded-xl border py-2 transition", date === d ? "border-transparent text-white" : "border-border bg-surface hover:border-fg/30")} style={date === d ? { background: brand } : undefined}>
-                  <span className="text-[11px] uppercase opacity-70">{dt.toLocaleDateString("en-GB", { weekday: "short", timeZone: "UTC" })}</span>
+                  <span className="text-[11px] uppercase opacity-70">{dt.toLocaleDateString("es-ES", { weekday: "short", timeZone: "UTC" })}</span>
                   <span className="text-[17px] font-semibold">{dt.getUTCDate()}</span>
                 </button>
               );

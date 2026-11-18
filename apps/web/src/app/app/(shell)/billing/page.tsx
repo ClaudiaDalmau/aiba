@@ -9,12 +9,16 @@ import { activeStaffCount, conversationsThisMonth, formatPlanPrice, listPlans, p
 import { currentTenant, requirePermission } from "@/lib/tenant";
 import { formatDate } from "@/lib/time";
 
-export const metadata = { title: "Plan & billing" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("Plan & billing") };
+}
 
 const STATUS_TONE: Record<string, Tone> = { active: "ok", trialing: "ai", past_due: "warn", canceled: "bad" };
 const STATUS_LABEL: Record<string, string> = { active: "Active", trialing: "Trial", past_due: "Past due", canceled: "Canceled" };
 
 export default async function BillingPage({ searchParams }: { searchParams: Promise<{ checkout?: string }> }) {
+  const t = await getT();
   const tenant = await currentTenant();
   requirePermission(tenant, "business.manage");
   const { checkout } = await searchParams;
@@ -44,60 +48,60 @@ export default async function BillingPage({ searchParams }: { searchParams: Prom
 
   return (
     <>
-      <PageHeader title="Plan & billing" description="Your subscription, plan features and this month's usage." />
+      <PageHeader title={t("Plan & billing")} description={t("Your subscription, plan features and this month's usage.")} />
 
       {checkout === "success" && (
         <div className="mb-6 flex items-center gap-2 rounded-card border border-ok/20 bg-ok/10 px-4 py-3 text-[14px] text-ok">
-          <Icon name="checkCircle" size={17} /> Payment received. Your plan will update in a few seconds.
+          <Icon name="checkCircle" size={17} /> {t("Payment received. Your plan will update in a few seconds.")}
         </div>
       )}
-      {checkout === "cancel" && <div className="mb-6 rounded-card border border-border bg-subtle px-4 py-3 text-[14px] text-muted">Checkout was cancelled. Nothing has changed.</div>}
+      {checkout === "cancel" && <div className="mb-6 rounded-card border border-border bg-subtle px-4 py-3 text-[14px] text-muted">{t("Checkout was cancelled. Nothing has changed.")}</div>}
       {testMode && (
         <div className="mb-6 flex items-start gap-2 rounded-card border border-warn/20 bg-warn/10 px-4 py-3 text-[14px] text-warn">
           <Icon name="bolt" size={17} className="mt-0.5 shrink-0" />
-          <span>Billing is in test mode: plan changes apply immediately and nothing is charged. The platform team can connect Stripe to take real payments.</span>
+          <span>{t("Billing is in test mode: plan changes apply immediately and nothing is charged. The platform team can connect Stripe to take real payments.")}</span>
         </div>
       )}
 
       <div className="grid gap-4 lg:grid-cols-3">
         <Card className="p-5 lg:col-span-1">
-          <div className="text-[13px] text-muted">Current plan</div>
+          <div className="text-[13px] text-muted">{t("Current plan")}</div>
           <div className="mt-1 flex items-center gap-2">
             <span className="text-[24px] font-semibold tracking-tight">{current?.name ?? b.tier}</span>
             {ent.community && <Badge tone="ai" icon="crown">VIP</Badge>}
           </div>
           <div className="mt-3 space-y-1.5 text-[14px]">
-            <div className="flex justify-between"><span className="text-muted">Status</span>{sub ? <Badge tone={STATUS_TONE[sub.status]}>{STATUS_LABEL[sub.status]}</Badge> : <span>—</span>}</div>
-            <div className="flex justify-between"><span className="text-muted">{sub?.status === "trialing" ? "Trial ends" : "Renews"}</span><span>{sub?.currentPeriodEnd ? formatDate(sub.currentPeriodEnd, b.timezone, "en-GB", { year: "numeric" }) : "—"}</span></div>
-            <div className="flex justify-between"><span className="text-muted">Billing</span><span className="capitalize">{sub?.provider === "stripe" ? "Card (Stripe)" : "Test mode"}</span></div>
-            <div className="flex justify-between"><span className="text-muted">Price</span><span>{current ? `${formatPlanPrice(current).amount}/${formatPlanPrice(current).per}` : "—"}</span></div>
+            <div className="flex justify-between"><span className="text-muted">{t("Status")}</span>{sub ? <Badge tone={STATUS_TONE[sub.status]}>{t(STATUS_LABEL[sub.status])}</Badge> : <span>—</span>}</div>
+            <div className="flex justify-between"><span className="text-muted">{sub?.status === "trialing" ? t("Trial ends") : t("Renews")}</span><span>{sub?.currentPeriodEnd ? formatDate(sub.currentPeriodEnd, b.timezone, "es-ES", { year: "numeric" }) : "—"}</span></div>
+            <div className="flex justify-between"><span className="text-muted">{t("Billing")}</span><span className="capitalize">{sub?.provider === "stripe" ? t("Card (Stripe)") : t("Test mode")}</span></div>
+            <div className="flex justify-between"><span className="text-muted">{t("Price")}</span><span>{current ? `${formatPlanPrice(current).amount}/${t(formatPlanPrice(current).per)}` : "—"}</span></div>
           </div>
         </Card>
 
         <Card className="lg:col-span-2">
-          <CardHeader title="Usage this month" description={`Since ${formatDate(monthStart, b.timezone, "en-GB", { weekday: undefined })}`} />
+          <CardHeader title={t("Usage this month")} description={t("Since {date}", { date: formatDate(monthStart, b.timezone, "es-ES", { weekday: undefined }) })} />
           <div className="p-5">
             <div className="flex items-baseline justify-between text-[14px]">
-              <span className="font-medium">Assistant conversations</span>
-              <span className="tabular-nums text-muted">{convs.toLocaleString("en-GB")} / {quota === null ? "unlimited" : quota.toLocaleString("en-GB")}</span>
+              <span className="font-medium">{t("Assistant conversations")}</span>
+              <span className="tabular-nums text-muted">{convs.toLocaleString("es-ES")} / {quota === null ? "unlimited" : quota.toLocaleString("es-ES")}</span>
             </div>
             {quota !== null && (
               <div className="mt-2 h-2 overflow-hidden rounded-full bg-subtle">
                 <div className={cx("h-full rounded-full", pct >= 100 ? "bg-bad" : pct > 90 ? "bg-warn" : "bg-ai")} style={{ width: `${pct}%` }} />
               </div>
             )}
-            {quota !== null && convs >= quota && <p className="mt-2 text-[13px] text-bad">Limit reached: new conversations wait for you in the inbox until next month or an upgrade.</p>}
-            <div className="mt-3 text-[13px] text-muted">Team members: {staffCount}{ent.maxStaff !== null ? ` / ${ent.maxStaff}` : ""} · {Number(usage.turns ?? 0).toLocaleString("en-GB")} assistant replies</div>
+            {quota !== null && convs >= quota && <p className="mt-2 text-[13px] text-bad">{t("Limit reached: new conversations wait for you in the inbox until next month or an upgrade.")}</p>}
+            <div className="mt-3 text-[13px] text-muted">{t("Team members: {n}", { n: `${staffCount}${ent.maxStaff !== null ? ` / ${ent.maxStaff}` : ""}` })} · {t("{n} assistant replies", { n: Number(usage.turns ?? 0).toLocaleString("es-ES") })}</div>
             <div className="mt-5 grid grid-cols-3 gap-4 text-[14px]">
-              <div><div className="text-muted">Messages received</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.messages_in ?? 0).toLocaleString("en-GB")}</div></div>
-              <div><div className="text-muted">Messages sent</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.messages_out ?? 0).toLocaleString("en-GB")}</div></div>
-              <div><div className="text-muted">Model tokens</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.tokens ?? 0).toLocaleString("en-GB")}</div></div>
+              <div><div className="text-muted">{t("Messages received")}</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.messages_in ?? 0).toLocaleString("es-ES")}</div></div>
+              <div><div className="text-muted">{t("Messages sent")}</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.messages_out ?? 0).toLocaleString("es-ES")}</div></div>
+              <div><div className="text-muted">{t("Model tokens")}</div><div className="mt-0.5 text-[20px] font-semibold tabular-nums">{Number(usage.tokens ?? 0).toLocaleString("es-ES")}</div></div>
             </div>
           </div>
         </Card>
       </div>
 
-      <h2 className="mt-10 mb-4 text-[17px] font-semibold tracking-tight">Plans</h2>
+      <h2 className="mt-10 mb-4 text-[17px] font-semibold tracking-tight">{t("Plans")}</h2>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {shown.map((plan) => {
           const isCurrent = b.tier === plan.id;
@@ -105,8 +109,8 @@ export default async function BillingPage({ searchParams }: { searchParams: Prom
           const upgrade = current ? plan.priceCents > current.priceCents : true;
           return (
             <Card key={plan.id} className={cx("relative flex flex-col p-6", plan.highlighted && "ring-1 ring-ai/40")}>
-              {plan.highlighted && <div className="absolute -top-2.5 right-5"><Badge tone="solid" icon="crown">Most popular</Badge></div>}
-              <div className="flex items-center gap-2 text-[15px] font-semibold">{plan.name}{isCurrent && <Badge tone="ok">Current</Badge>}</div>
+              {plan.highlighted && <div className="absolute -top-2.5 right-5"><Badge tone="solid" icon="crown">{t("Most popular")}</Badge></div>}
+              <div className="flex items-center gap-2 text-[15px] font-semibold">{plan.name}{isCurrent && <Badge tone="ok">{t("Current")}</Badge>}</div>
               {plan.description && <p className="mt-1 text-[13px] text-muted">{plan.description}</p>}
               <div className="mt-2 flex items-baseline gap-1">
                 <span className="text-[36px] font-semibold tracking-tight">{price.amount}</span>
@@ -120,10 +124,10 @@ export default async function BillingPage({ searchParams }: { searchParams: Prom
               <form action={changePlan} className="mt-6">
                 <input type="hidden" name="tier" value={plan.id} />
                 {isCurrent ? (
-                  <div className="flex h-10 items-center justify-center rounded-[10px] bg-subtle text-[14px] text-muted">Your current plan</div>
+                  <div className="flex h-10 items-center justify-center rounded-[10px] bg-subtle text-[14px] text-muted">{t("Your current plan")}</div>
                 ) : !plan.active || !plan.public ? null : (
-                  <SubmitButton className="w-full" variant={plan.highlighted ? "ai" : "secondary"} pendingText="Working…">
-                    {upgrade ? `Upgrade to ${plan.name}` : `Switch to ${plan.name}`}
+                  <SubmitButton className="w-full" variant={plan.highlighted ? "ai" : "secondary"} pendingText={t("Working…")}>
+                    {upgrade ? t("Upgrade to {plan}", { plan: plan.name }) : t("Switch to {plan}", { plan: plan.name })}
                   </SubmitButton>
                 )}
               </form>

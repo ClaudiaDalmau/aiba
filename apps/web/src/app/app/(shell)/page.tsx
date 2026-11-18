@@ -32,7 +32,7 @@ export default async function Overview({ searchParams }: { searchParams: Promise
   // Fill gaps so the chart has one bar per day (30 back, 14 ahead).
   const byDay = new Map(m.daily.map((d) => [d.day, d]));
   const days = Array.from({ length: 44 }, (_, i) => addDays(today, i - 29)).map((day) => byDay.get(day) ?? { day, bookings: 0, revenueCents: 0 });
-  const hour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: tz, hour: "numeric", hourCycle: "h23" }).format(new Date()));
+  const hour = Number(new Intl.DateTimeFormat("es-ES", { timeZone: tz, hour: "numeric", hourCycle: "h23" }).format(new Date()));
   const greeting = hour < 12 ? t("Good morning") : hour < 18 ? t("Good afternoon") : t("Good evening");
 
   return (

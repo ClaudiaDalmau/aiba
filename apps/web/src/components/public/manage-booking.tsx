@@ -46,7 +46,7 @@ export function ManageBooking({ token, slug, serviceId, timezone, today, canChan
           <Input type="date" value={date} min={today} onChange={(e) => setDate(e.target.value)} />
           <div className="grid grid-cols-4 gap-2">
             {slots === null ? <span className="col-span-4 text-[13px] text-muted">Loading…</span> : slots.length === 0 ? <span className="col-span-4 text-[13px] text-muted">No openings that day.</span> : slots.map((s) => (
-              <button key={s.startsAt} disabled={busy} onClick={() => post({ action: "reschedule", startsAt: s.startsAt }, `Moved to ${new Intl.DateTimeFormat("en-GB", { timeZone: timezone, weekday: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(s.startsAt))}`)} className={cx("h-10 rounded-lg border border-border text-[14px] font-medium hover:text-white")} onMouseEnter={(e) => (e.currentTarget.style.background = brand)} onMouseLeave={(e) => (e.currentTarget.style.background = "")}>
+              <button key={s.startsAt} disabled={busy} onClick={() => post({ action: "reschedule", startsAt: s.startsAt }, `Moved to ${new Intl.DateTimeFormat("es-ES", { timeZone: timezone, weekday: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(s.startsAt))}`)} className={cx("h-10 rounded-lg border border-border text-[14px] font-medium hover:text-white")} onMouseEnter={(e) => (e.currentTarget.style.background = brand)} onMouseLeave={(e) => (e.currentTarget.style.background = "")}>
                 {s.time}
               </button>
             ))}

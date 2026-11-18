@@ -1,3 +1,4 @@
+import { getT } from "@/i18n/server";
 import { and, eq } from "drizzle-orm";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -11,6 +12,7 @@ import { currentTenant } from "@/lib/tenant";
 import { formatDateTime, formatMoney } from "@/lib/time";
 
 export default async function CustomerPage({ params }: { params: Promise<{ id: string }> }) {
+  const t = await getT();
   const { id } = await params;
   const tenant = await currentTenant();
   const [c] = await db.select().from(schema.customers).where(and(eq(schema.customers.id, id), eq(schema.customers.businessId, tenant.business.id)));
@@ -26,8 +28,8 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
     <>
       <PageHeader
         title={<span className="flex items-center gap-3"><Avatar name={c.name} size={40} />{c.name}</span>}
-        description={[c.phone, c.email].filter(Boolean).join(" · ") || "No contact details"}
-        actions={manage && <LinkButton href={`/api/v1/customers/${c.id}/export`} variant="secondary" icon="download">Export data</LinkButton>}
+        description={[c.phone, c.email].filter(Boolean).join(" · ") || t("No contact details")}
+        actions={manage && <LinkButton href={`/api/v1/customers/${c.id}/export`} variant="secondary" icon="download">{t("Export data")}</LinkButton>}
       />
       <div className="grid gap-6 lg:grid-cols-3">
         <Card className="lg:col-span-2">
@@ -46,36 +48,36 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
         </Card>
         <div className="space-y-6">
           <Card>
-            <CardHeader title="What your agent remembers" description="Facts learned in conversations" />
+            <CardHeader title={t("What your agent remembers")} description={t("Facts learned in conversations")} />
             <ul className="space-y-1.5 p-5 text-[14px]">
-              {memories.length ? memories.map((m) => <li key={m.id}>✦ {m.fact}</li>) : <li className="text-muted">Nothing yet.</li>}
+              {memories.length ? memories.map((m) => <li key={m.id}>✦ {m.fact}</li>) : <li className="text-muted">{t("Nothing yet.")}</li>}
             </ul>
           </Card>
           <Card>
-            <CardHeader title="Conversations" />
+            <CardHeader title={t("Conversations")} />
             <ul className="p-3">
               {convs.length ? convs.map((cv) => (
-                <li key={cv.id}><Link href={`/app/inbox/${cv.id}`} className="flex items-center gap-2 rounded-lg px-2 py-2 text-[14px] hover:bg-subtle"><ChannelIcon channel={cv.channel} /> {cv.channel} · {cv.status}</Link></li>
-              )) : <li className="px-2 py-2 text-[14px] text-muted">None</li>}
+                <li key={cv.id}><Link href={`/app/inbox/${cv.id}`} className="flex items-center gap-2 rounded-lg px-2 py-2 text-[14px] hover:bg-subtle"><ChannelIcon channel={cv.channel} /> {cv.channel} · {t(cv.status)}</Link></li>
+              )) : <li className="px-2 py-2 text-[14px] text-muted">{t("None")}</li>}
             </ul>
           </Card>
           {manage && (
             <Card>
-              <CardHeader title="Private notes" />
+              <CardHeader title={t("Private notes")} />
               <form action={saveCustomerNotes} className="space-y-3 p-5">
                 <input type="hidden" name="id" value={c.id} />
-                <Textarea name="notes" defaultValue={c.notes} rows={4} placeholder="Visible to your team only, not to the agent." />
-                <SubmitButton size="sm" variant="secondary">Save notes</SubmitButton>
+                <Textarea name="notes" defaultValue={c.notes} rows={4} placeholder={t("Visible to your team only, not to the agent.")} />
+                <SubmitButton size="sm" variant="secondary">{t("Save notes")}</SubmitButton>
               </form>
             </Card>
           )}
           {manage && (
             <Card className="border-bad/20 p-5">
-              <div className="font-medium">Erase personal data</div>
-              <p className="mt-1 text-[13px] text-muted">GDPR right to erasure: removes name, contact details, conversations and agent memory. Booking records are kept anonymised for your accounts.</p>
+              <div className="font-medium">{t("Erase personal data")}</div>
+              <p className="mt-1 text-[13px] text-muted">{t("GDPR right to erasure: removes name, contact details, conversations and agent memory. Booking records are kept anonymised for your accounts.")}</p>
               <form action={eraseCustomerAction} className="mt-3">
                 <input type="hidden" name="id" value={c.id} />
-                <ConfirmSubmit message="Permanently erase this customer's personal data? This cannot be undone." icon="trash">Erase customer</ConfirmSubmit>
+                <ConfirmSubmit message={t("Permanently erase this customer's personal data? This cannot be undone.")} icon="trash">{t("Erase customer")}</ConfirmSubmit>
               </form>
             </Card>
           )}

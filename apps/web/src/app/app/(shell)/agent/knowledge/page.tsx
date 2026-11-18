@@ -5,42 +5,46 @@ import { ActionForm } from "@/components/workspace/action-form";
 import { listKnowledge } from "@/lib/knowledge";
 import { currentTenant, requirePermission } from "@/lib/tenant";
 
-export const metadata = { title: "Knowledge" };
+export async function generateMetadata() {
+  const t = await getT();
+  return { title: t("Knowledge") };
+}
 
 const KIND = { faq: "FAQ", policy: "Policy", document: "Document", note: "Note" } as const;
 
 export default async function KnowledgePage() {
+  const t = await getT();
   const tenant = await currentTenant();
   requirePermission(tenant, "agent.manage");
   const items = await listKnowledge(tenant.business.id);
   return (
     <>
-      <PageHeader eyebrow="NanoClaw agent" title="Knowledge" description="Everything your agent can cite beyond your services, team, hours and policies (which it learns automatically). Keep entries short and factual." />
+      <PageHeader eyebrow={t("AI assistant")} title={t("Knowledge")} description={t("Everything your agent can cite beyond your services, team, hours and policies (which it learns automatically). Keep entries short and factual.")} />
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="space-y-6">
           <Card>
-            <CardHeader title="Add an entry" />
+            <CardHeader title={t("Add an entry")} />
             <ActionForm action={saveKnowledge} className="space-y-3 p-5" resetOnSuccess>
-              <Field label="Type">
-                <Select name="kind" defaultValue="faq"><option value="faq">FAQ</option><option value="policy">Policy</option><option value="note">Note</option><option value="document">Document</option></Select>
+              <Field label={t("Type")}>
+                <Select name="kind" defaultValue="faq"><option value="faq">{t("FAQ")}</option><option value="policy">{t("Policy")}</option><option value="note">{t("Note")}</option><option value="document">{t("Document")}</option></Select>
               </Field>
-              <Field label="Title / question"><Input name="title" required placeholder="Do you have parking?" /></Field>
-              <Field label="Answer / content"><Textarea name="content" rows={5} required /></Field>
-              <SubmitButton>Add</SubmitButton>
+              <Field label={t("Title / question")}><Input name="title" required placeholder={t("Do you have parking?")} /></Field>
+              <Field label={t("Answer / content")}><Textarea name="content" rows={5} required /></Field>
+              <SubmitButton>{t("Add")}</SubmitButton>
             </ActionForm>
           </Card>
           <Card>
-            <CardHeader title="Upload a document" description=".txt, .md, .csv, .json or .html · up to 1 MB" />
+            <CardHeader title={t("Upload a document")} description={t(".txt, .md, .csv, .json or .html · up to 1 MB")} />
             <ActionForm action={uploadKnowledge} className="space-y-3 p-5" resetOnSuccess>
               <input type="file" name="file" accept=".txt,.md,.csv,.json,.html,.htm" className="block w-full text-[13px] file:mr-3 file:rounded-lg file:border-0 file:bg-subtle file:px-3 file:py-2 file:text-[13px]" required />
-              <SubmitButton variant="secondary">Upload</SubmitButton>
+              <SubmitButton variant="secondary">{t("Upload")}</SubmitButton>
             </ActionForm>
           </Card>
         </div>
         <Card className="lg:col-span-2">
-          <CardHeader title={`${items.length} entries`} description="Short entries are always in the agent's context; long documents are searched when relevant." />
+          <CardHeader title={t("{n} entries", { n: items.length })} description={t("Short entries are always in the agent's context; long documents are searched when relevant.")} />
           {items.length === 0 ? (
-            <Empty icon="book" title="No knowledge yet">Start with your most common questions: parking, payment methods, what to bring, late policy.</Empty>
+            <Empty icon="book" title={t("No knowledge yet")}>{t("Start with your most common questions: parking, payment methods, what to bring, late policy.")}</Empty>
           ) : (
             <ul className="divide-y divide-border">
               {items.map((k) => (
@@ -59,11 +63,11 @@ export default async function KnowledgePage() {
                       <input type="hidden" name="kind" value={k.kind} />
                       <Input name="title" defaultValue={k.title} />
                       <Textarea name="content" defaultValue={k.content} rows={6} />
-                      <div className="flex gap-2"><SubmitButton size="sm">Save</SubmitButton></div>
+                      <div className="flex gap-2"><SubmitButton size="sm">{t("Save")}</SubmitButton></div>
                     </ActionForm>
                     <form action={deleteKnowledge} className="mt-2">
                       <input type="hidden" name="id" value={k.id} />
-                      <ConfirmSubmit message="Delete this entry?" variant="ghost" icon="trash">Delete</ConfirmSubmit>
+                      <ConfirmSubmit message={t("Delete this entry?")} variant="ghost" icon="trash">{t("Delete")}</ConfirmSubmit>
                     </form>
                   </details>
                 </li>

@@ -39,7 +39,7 @@ export default async function AdminOverview({ searchParams }: { searchParams: Pr
   ]);
   // platformMetrics builds its object dynamically; read it as a plain record of numbers.
   const m = metrics as Record<string, number>;
-  const n = (v: number) => v.toLocaleString("en-GB");
+  const n = (v: number) => v.toLocaleString("es-ES");
   return (
     <>
       {denied}
