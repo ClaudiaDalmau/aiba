@@ -1,4 +1,5 @@
-import { getT } from "@/i18n/server";
+import { currencies, timezones } from "@/lib/locale-data";
+import { getLocale, getT } from "@/i18n/server";
 import { saveSettings } from "@/actions/workspace";
 import { SubmitButton, Toggle } from "@/components/client";
 import { Card, CardHeader, Field, Input, LinkButton, PageHeader, Select, Textarea } from "@/components/ui";
@@ -38,8 +39,8 @@ export default async function SettingsPage() {
             <Field label={t("Phone")}><Input name="phone" defaultValue={b.phone} /></Field>
             <Field label={t("Email")}><Input name="email" type="email" defaultValue={b.email} /></Field>
             <Field label={t("Website")}><Input name="website" defaultValue={b.website} /></Field>
-            <Field label={t("Timezone")}><Input name="timezone" defaultValue={b.timezone} /></Field>
-            <Field label={t("Currency")}><Input name="currency" defaultValue={b.currency} maxLength={3} /></Field>
+            <Field label={t("Timezone")}><Select name="timezone" defaultValue={b.timezone}>{timezones().map((z) => <option key={z}>{z}</option>)}</Select></Field>
+            <Field label={t("Currency")}><Select name="currency" defaultValue={b.currency}>{currencies(await getLocale()).map((c) => <option key={c.code} value={c.code}>{c.label}</option>)}</Select></Field>
           </div>
         </Card>
         <Card>

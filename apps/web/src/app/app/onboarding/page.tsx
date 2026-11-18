@@ -1,4 +1,5 @@
-import { getT } from "@/i18n/server";
+import { currencies, timezones } from "@/lib/locale-data";
+import { getLocale, getT } from "@/i18n/server";
 import { redirect } from "next/navigation";
 import { onboard } from "@/actions/workspace";
 import { SubmitButton } from "@/components/client";
@@ -13,7 +14,6 @@ export async function generateMetadata() {
   return { title: t("Set up your business") };
 }
 
-const TIMEZONES = ["Europe/Paris", "Europe/London", "Europe/Berlin", "Europe/Madrid", "Europe/Lisbon", "Europe/Amsterdam", "Europe/Brussels", "Europe/Zurich", "America/New_York", "America/Chicago", "America/Los_Angeles", "America/Toronto", "Asia/Dubai", "Asia/Singapore", "Australia/Sydney"];
 
 export default async function Onboarding({ searchParams }: { searchParams: Promise<{ another?: string }> }) {
   const t = await getT();
@@ -38,10 +38,10 @@ export default async function Onboarding({ searchParams }: { searchParams: Promi
               </Field>
               <Field label={t("City")}><Input name="city" placeholder={t("Paris")} /></Field>
               <Field label={t("Timezone")}>
-                <Select name="timezone" defaultValue="Europe/Paris">{TIMEZONES.map((z) => <option key={z}>{z}</option>)}</Select>
+                <Select name="timezone" defaultValue="Europe/Madrid">{timezones().map((z) => <option key={z}>{z}</option>)}</Select>
               </Field>
               <Field label={t("Currency")}>
-                <Select name="currency" defaultValue="EUR">{["EUR", "GBP", "USD", "CHF", "CAD", "AUD", "AED", "SGD"].map((c) => <option key={c}>{c}</option>)}</Select>
+                <Select name="currency" defaultValue="EUR">{currencies(await getLocale()).map((c) => <option key={c.code} value={c.code}>{c.label}</option>)}</Select>
               </Field>
               <Field label={t("Phone")} hint={t("optional")}><Input name="phone" type="tel" /></Field>
               <Field label={t("Language")}>
