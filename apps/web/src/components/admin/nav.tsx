@@ -32,7 +32,7 @@ export function AdminNav({ permissions }: { permissions: PlatformPermission[] })
   const items = ITEMS.filter((i) => permissions.includes(i.perm));
   let last: string | undefined;
   return (
-    <nav className="flex gap-0.5 overflow-x-auto scrollbar-none lg:flex-col">
+    <nav className="flex gap-0.5 overflow-x-auto scrollbar-none lg:min-h-0 lg:flex-1 lg:flex-col lg:overflow-x-hidden lg:overflow-y-auto lg:pb-2">
       {items.map((it) => {
         const active = it.href === "/admin" ? path === "/admin" : path === it.href || path.startsWith(`${it.href}/`);
         const header = it.section && it.section !== last ? it.section : null;

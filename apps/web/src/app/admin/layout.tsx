@@ -22,7 +22,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <Link href="/admin" className="flex items-center gap-2"><Logo /><Badge tone="solid">{t(ROLE_INFO[admin.platformRole as PlatformRole].label)}</Badge></Link>
         </div>
         <AdminNav permissions={ROLE_INFO[admin.platformRole as PlatformRole].permissions} />
-        <div className="mt-auto hidden border-t border-border pt-4 lg:block">
+        <div className="mt-auto hidden shrink-0 border-t border-border pt-4 lg:block">
           <Link href="/app" className="mb-3 flex items-center gap-2 rounded-lg px-3 py-2 text-[13px] text-muted hover:bg-surface hover:text-fg">
             <Icon name="chevronLeft" size={15} /> {t("Back to workspace")}
           </Link>
