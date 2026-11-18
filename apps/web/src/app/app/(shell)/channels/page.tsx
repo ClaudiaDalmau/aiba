@@ -94,7 +94,7 @@ export default async function ChannelsPage() {
         </Card>
 
         <Card className="p-6 lg:col-span-2">
-          <Head channel="web" title={t("Booking page chat")} on detail=t("Always on") />
+          <Head channel="web" title={t("Booking page chat")} on detail={t("Always on")} />
           <p className="mt-3 text-[14px] text-muted">{t("Visitors to your booking page can chat with your agent directly. Your WhatsApp and Telegram buttons appear there too once connected.")}</p>
           <LinkButton href={`/b/${tenant.business.slug}`} target="_blank" variant="secondary" className="mt-4" icon="external">{t("Open booking page")}</LinkButton>
         </Card>
