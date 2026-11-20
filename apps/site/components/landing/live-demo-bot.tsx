@@ -108,6 +108,7 @@ const COPY: Record<Lang, Copy> = {
     confirm: (s) => `Готово, записала вас на ${s} ✓ Для подтверждения внесите предоплату 10 € здесь: aiba.app/pay · За 1 ч до визита пришлю 6-значный код.`,
     price: "Стрижка 25 € (45 мин) · Окрашивание 40 € (1 ч 30) · Стрижка + окрашивание 60 € (2 ч). Подобрать вам время?",
     fallback: "Я помогу со стрижкой, окрашиванием и комплексами, подскажу цены или подберу время. Что вас интересует?",
+  },
   nl: {
     seed: "Hoi! Ik ben de virtuele assistent van Estudio Isabel. Wil je een knipbeurt, kleuring of combo boeken?",
     hints: ["ik wil knippen", "deze week", "donderdag om 16 uur", "wat kost het?"],
