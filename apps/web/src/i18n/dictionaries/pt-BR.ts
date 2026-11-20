@@ -1557,7 +1557,11 @@ const ptBR: Dictionary = {
   "phone, email, a time of day… leave empty to answer only here": "telefone, email, um horário… vazio para responder só aqui",
   "register your fingerprint or face": "registre sua digital ou rosto",
   "since {date}": "desde {date}",
-  "what I never do": "o que nunca faço"
+  "what I never do": "o que nunca faço",
+  "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.": "Sua conta está vinculada a um único celular. Para trocar, fale com o suporte para verificarmos sua identidade de novo.",
+  "For your safety, this account can only be used from your mobile phone.": "Para sua segurança, esta conta só pode ser usada no celular.",
+  "Open AIBA on your phone": "Abra a AIBA no celular",
+  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Para sua segurança, perfis Sensível só são geridos no seu próprio celular, com digital ou rosto."
 };
 
 export default ptBR;

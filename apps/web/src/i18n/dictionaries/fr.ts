@@ -1557,7 +1557,11 @@ const fr: Dictionary = {
   "phone, email, a time of day… leave empty to answer only here": "téléphone, e-mail, un horaire… vide pour répondre seulement ici",
   "register your fingerprint or face": "enregistrez votre empreinte ou visage",
   "since {date}": "depuis {date}",
-  "what I never do": "ce que je ne fais jamais"
+  "what I never do": "ce que je ne fais jamais",
+  "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.": "Votre compte est lié à un seul téléphone. Pour en changer, contactez le support afin de revérifier votre identité.",
+  "For your safety, this account can only be used from your mobile phone.": "Pour votre sécurité, ce compte ne s'utilise que depuis votre téléphone.",
+  "Open AIBA on your phone": "Ouvrez AIBA sur votre téléphone",
+  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Pour votre sécurité, les profils Sensible ne se gèrent que depuis votre téléphone, avec empreinte ou visage."
 };
 
 export default fr;

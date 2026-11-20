@@ -7,6 +7,7 @@ import { AppError } from "@/lib/errors";
 import { rateLimit } from "@/lib/rate-limit";
 import { getPending, rp, setChallenge } from "@/lib/two-step";
 import { b64u, newChallenge } from "@/lib/webauthn";
+import { isMobileUA } from "@/lib/devices";
 
 const Body = z.object({ purpose: z.enum(["register", "login", "second"]) });
 
@@ -28,6 +29,8 @@ export const POST = publicRoute(async (req) => {
     }
     if (!user) throw new AppError(401, "unauthorized", "Sign in first");
     const existing = await db.select({ credentialId: schema.passkeys.credentialId }).from(schema.passkeys).where(eq(schema.passkeys.userId, user.id));
+    if (user.requirePasskey && existing.length) throw new AppError(403, "one_device", "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.");
+    if (user.requirePasskey && !isMobileUA(req.headers.get("user-agent") ?? "")) throw new AppError(403, "mobile_only", "For your safety, this account can only be used from your mobile phone.");
     await setChallenge({ challenge, kind: "register", userId: user.id });
     return Response.json({
       publicKey: {

@@ -19,6 +19,23 @@ import { currentTenant, membershipsOf } from "@/lib/tenant";
 export default async function ShellLayout({ children }: { children: React.ReactNode }) {
   const t = await getT();
   const tenant = await currentTenant();
+  // Sensible: the workspace only opens on the registered phone (anti-impersonation).
+  if (tenant.business.platform === "sensitive" && !tenant.user.impersonatorId && !isPlatformRole(tenant.user.platformRole)) {
+    const { headers } = await import("next/headers");
+    const { isMobileUA } = await import("@/lib/devices");
+    if (!isMobileUA((await headers()).get("user-agent") ?? "")) {
+      return (
+        <div className="grid min-h-dvh place-items-center p-6 text-center">
+          <div className="max-w-sm space-y-3">
+            <Logo />
+            <h1 className="text-[22px] font-semibold">{t("Open AIBA on your phone")}</h1>
+            <p className="text-muted">{t("For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.")}</p>
+            <form action={logout}><button className="text-[14px] text-muted underline">{t("Sign out")}</button></form>
+          </div>
+        </div>
+      );
+    }
+  }
   const [counts, memberships] = await Promise.all([unreadCounts(tenant.business.id), membershipsOf(tenant.user.id)]);
   const [{ plan, entitlements }] = await Promise.all([planOf(tenant.business)]);
   const vip = entitlements.community;

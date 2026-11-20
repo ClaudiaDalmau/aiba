@@ -1557,7 +1557,11 @@ const ru: Dictionary = {
   "phone, email, a time of day… leave empty to answer only here": "телефон, email, время… оставьте пустым — ответим только здесь",
   "register your fingerprint or face": "зарегистрируйте отпечаток или лицо",
   "since {date}": "с {date}",
-  "what I never do": "чего я никогда не делаю"
+  "what I never do": "чего я никогда не делаю",
+  "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.": "Аккаунт привязан к одному телефону. Чтобы сменить телефон, обратитесь в поддержку для повторной проверки личности.",
+  "For your safety, this account can only be used from your mobile phone.": "В целях безопасности аккаунтом можно пользоваться только с телефона.",
+  "Open AIBA on your phone": "Откройте AIBA на телефоне",
+  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "В целях безопасности профили Sensible управляются только с вашего телефона, по отпечатку или лицу."
 };
 
 export default ru;

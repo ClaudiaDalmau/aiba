@@ -54,3 +54,6 @@ export async function activeSessions(userId: string) {
     .where(and(eq(schema.sessions.userId, userId), sql`${schema.sessions.expiresAt} > now()`))
     .orderBy(sql`${schema.sessions.createdAt} desc`);
 }
+
+/** Phones and tablets (not desktop browsers). Used to keep Sensible accounts on the registered phone. */
+export const isMobileUA = (ua: string) => /iPhone|Android|Mobile|AIBA|Expo|okhttp/i.test(ua) && !/Windows NT|X11/i.test(ua);
