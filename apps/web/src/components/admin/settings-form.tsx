@@ -1,7 +1,7 @@
 import { tSync } from "@/i18n/server";
 import { saveSettingsAction } from "@/actions/admin-platform";
 import { SubmitButton, Toggle } from "../client";
-import { Badge, Field, Input, Select } from "../ui";
+import { Badge, Field, Input, Select, Textarea } from "../ui";
 import { ActionForm } from "../workspace/action-form";
 import type { describeSettings } from "@/lib/settings";
 
@@ -36,6 +36,8 @@ export function SettingsForm({ rows, submit }: { rows: Row[]; submit?: string })
                 <Select name={r.key} defaultValue={String(r.value ?? "")}>
                   {r.options?.map((o) => <option key={o.value} value={o.value}>{t(o.label)}</option>)}
                 </Select>
+              ) : r.kind === "text" ? (
+                <Textarea name={r.key} rows={8} spellCheck={false} className="font-mono text-[13px]" defaultValue={r.value === null ? "" : String(r.value)} />
               ) : r.kind === "secret" ? (
                 <Input name={r.key} type="password" autoComplete="off" placeholder={r.secretSet ? t("Set {hint} · leave blank to keep", { hint: r.secretHint ?? "" }) : t("Not set")} />
               ) : (

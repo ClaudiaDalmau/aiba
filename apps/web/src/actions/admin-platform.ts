@@ -56,7 +56,8 @@ export async function saveSettingsAction(_prev: ActionState, f: FormData): Promi
       else if (def.kind === "secret") {
         const v = s(f, key);
         if (v) values[key] = v;
-      } else values[key] = s(f, key);
+      } else if (def.kind === "text") values[key] = String(f.get(key) ?? "").replace(/\r\n/g, "\n").trim().slice(0, 20_000);
+      else values[key] = s(f, key);
     }
     if ("general.appUrl" in values && values["general.appUrl"]) {
       const url = String(values["general.appUrl"]).replace(/\/$/, "");

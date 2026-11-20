@@ -193,6 +193,45 @@ export async function emailTeamNewLead(lead: schema.Lead) {
   return sendEmail({ to, subject: `[AIBA] ${kind}: ${lead.name || lead.email}`, html, text, replyTo: lead.email });
 }
 
+/** Sensible manual review: tell the applicant they're on the waitlist (their language). */
+export async function emailApplicantWaitlisted(to: string, name: string, locale: string) {
+  if (!to) return false;
+  const { t } = translatorFor(locale);
+  const title = t("You're on the waitlist");
+  const { html, text } = layout({
+    brand: "AIBA",
+    title,
+    lines: [
+      name ? t("Hi {name},", { name: name.split(" ")[0] || name }) : t("Hello,"),
+      t("Thanks for your request to join AIBA. Places are limited, so for now you're on the waitlist."),
+      t("Our team reviews every request by hand. We'll write to you at this address as soon as there's an answer."),
+    ],
+    footer: t("Sent by AIBA"),
+  });
+  return sendEmail({ to, subject: `AIBA · ${title}`, html, text });
+}
+
+/** Sensible manual review: alert the platform team that someone on the review list applied. */
+export async function emailTeamReviewMatch(opts: { what: "Access request" | "New Sensible profile"; name: string; email: string; phone?: string; matched: string; href: string }) {
+  const s = await getSettings();
+  const to = s["email.teamInbox"] || s["general.supportEmail"] || "";
+  if (!to) return false;
+  const title = `⚠ Manual review · ${opts.what}: ${opts.name || opts.email}`;
+  const { html, text } = layout({
+    brand: "AIBA",
+    color: "#dc2626",
+    title,
+    lines: [
+      "This person matches your manual review list. They have been told they're on the waitlist; nothing is approved or published until you do it by hand.",
+      `Matched: ${opts.matched}`,
+      `Email: ${opts.email}`,
+      ...(opts.phone ? [`Phone: ${opts.phone}`] : []),
+    ],
+    cta: { label: "Review now", href: `${s["general.appUrl"]}${opts.href}` },
+  });
+  return sendEmail({ to, subject: `[AIBA] ${title}`, html, text, replyTo: opts.email });
+}
+
 /** «A slot opened up» for someone on the waitlist. */
 export async function emailCustomerAboutWaitlist(business: schema.Business, customer: schema.Customer, service: string, date: string, times: string, link: string) {
   if (!(await emailConfigured()) || !customer.email || customer.erasedAt) return false;

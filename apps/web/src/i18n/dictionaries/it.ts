@@ -1581,7 +1581,14 @@ const it: Dictionary = {
   "Price per million input tokens (USD)": "Prezzo per milione di token in ingresso (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Solo per stimare i costi. Copialo dalla pagina prezzi di Anthropic per il modello predefinito. 0 = non impostato.",
   "Price per million output tokens (USD)": "Prezzo per milione di token in uscita (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Solo per stimare i costi. 0 = non impostato."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Solo per stimare i costi. 0 = non impostato.",
+  "Manual review list": "Lista di revisione manuale",
+  "Manual review": "Revisione manuale",
+  "You're on the waitlist": "Sei in lista d'attesa",
+  "Hello,": "Ciao,",
+  "Thanks for your request to join AIBA. Places are limited, so for now you're on the waitlist.": "Grazie per la tua richiesta di accesso ad AIBA. I posti sono limitati, quindi per ora sei in lista d'attesa.",
+  "Our team reviews every request by hand. We'll write to you at this address as soon as there's an answer.": "Il nostro team esamina ogni richiesta a mano. Ti scriveremo a questo indirizzo appena ci sarà una risposta.",
+  "Sent by AIBA": "Inviato da AIBA",
 };
 
 export default it;

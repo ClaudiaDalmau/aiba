@@ -9,7 +9,7 @@ import { decryptJson, encryptJson } from "./crypto";
  * Secrets are encrypted at rest and never sent back to the browser (only "set" + last 4 chars).
  */
 
-type Kind = "string" | "secret" | "number" | "boolean" | "select";
+type Kind = "string" | "text" | "secret" | "number" | "boolean" | "select";
 
 export type SettingDef = {
   key: string;
@@ -76,6 +76,7 @@ export const SETTINGS = [
   { key: "email.from", group: "email", label: "Sender", help: "A verified sender in Resend, e.g. AIBA <hola@aiba.app>. Until your domain is verified use onboarding@resend.dev (only delivers to your own address).", kind: "string", env: "EMAIL_FROM", default: "AIBA <onboarding@resend.dev>" },
   { key: "sensitive.enabled", group: "sensitive", label: "Sensible platform open for sign-ups", help: "When off, only admins can create Sensible profiles.", kind: "boolean", default: false },
   { key: "sensitive.allowedCountries", group: "sensitive", label: "Allowed countries", help: "ISO codes separated by commas (e.g. ES,PT,NL,DE). Only these countries can create Sensible profiles. Blank = none.", kind: "string", default: "" },
+  { key: "sensitive.reviewList", group: "sensitive", label: "Manual review list", help: "One entry per line: email, phone, website/domain or name. A line starting with # is a label (e.g. # Emma dating) for the entries below it. When a Sensible access request or new profile matches, the person gets a «you're on the waitlist» email, the profile stays unpublished, and the team inbox gets an alert to accept or reject it by hand.", kind: "text", default: "" },
   { key: "sensitive.profilesBasic", group: "sensitive", label: "Profiles on Basic", kind: "number", default: 1, min: 1, max: 20 },
   { key: "sensitive.profilesPro", group: "sensitive", label: "Profiles on Pro", kind: "number", default: 3, min: 1, max: 20 },
   { key: "sensitive.profilesPremium", group: "sensitive", label: "Profiles on Premium", kind: "number", default: 6, min: 1, max: 50 },

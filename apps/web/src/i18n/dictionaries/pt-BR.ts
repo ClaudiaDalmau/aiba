@@ -1581,7 +1581,14 @@ const ptBR: Dictionary = {
   "Price per million input tokens (USD)": "Preço por milhão de tokens de entrada (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Só para estimar custos. Copie da página de preços da Anthropic para o modelo padrão. 0 = não definido.",
   "Price per million output tokens (USD)": "Preço por milhão de tokens de saída (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Só para estimar custos. 0 = não definido."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Só para estimar custos. 0 = não definido.",
+  "Manual review list": "Lista de revisão manual",
+  "Manual review": "Revisão manual",
+  "You're on the waitlist": "Você está na lista de espera",
+  "Hello,": "Olá,",
+  "Thanks for your request to join AIBA. Places are limited, so for now you're on the waitlist.": "Obrigado pelo seu pedido para entrar na AIBA. As vagas são limitadas, então por enquanto você está na lista de espera.",
+  "Our team reviews every request by hand. We'll write to you at this address as soon as there's an answer.": "Nossa equipe analisa cada pedido manualmente. Escreveremos para este endereço assim que houver uma resposta.",
+  "Sent by AIBA": "Enviado pela AIBA",
 };
 
 export default ptBR;

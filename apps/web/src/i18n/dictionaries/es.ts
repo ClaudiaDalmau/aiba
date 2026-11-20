@@ -1581,7 +1581,15 @@ const es: Dictionary = {
   "Price per million input tokens (USD)": "Precio por millón de tokens de entrada (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Solo para estimar costes en Consumo de IA. Cópialo de la página de precios de Anthropic para el modelo por defecto. 0 = sin definir.",
   "Price per million output tokens (USD)": "Precio por millón de tokens de salida (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Solo para estimar costes en Consumo de IA. 0 = sin definir."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Solo para estimar costes en Consumo de IA. 0 = sin definir.",
+  "Manual review list": "Lista de revisión manual",
+  "Manual review": "Revisión manual",
+  "One entry per line: email, phone, website/domain or name. A line starting with # is a label (e.g. # Emma dating) for the entries below it. When a Sensible access request or new profile matches, the person gets a «you're on the waitlist» email, the profile stays unpublished, and the team inbox gets an alert to accept or reject it by hand.": "Un dato por línea: email, teléfono, web/dominio o nombre. Una línea que empieza por # es una etiqueta (p. ej. # Emma dating) para los datos de debajo. Si una solicitud de acceso o un perfil nuevo de Sensible coincide, la persona recibe un email de «estás en lista de espera», el perfil no se publica y el buzón del equipo recibe un aviso para aceptarla o rechazarla a mano.",
+  "You're on the waitlist": "Estás en lista de espera",
+  "Hello,": "Hola:",
+  "Thanks for your request to join AIBA. Places are limited, so for now you're on the waitlist.": "Gracias por tu solicitud para unirte a AIBA. Las plazas son limitadas, así que de momento estás en lista de espera.",
+  "Our team reviews every request by hand. We'll write to you at this address as soon as there's an answer.": "Nuestro equipo revisa cada solicitud a mano. Te escribiremos a esta dirección en cuanto haya respuesta.",
+  "Sent by AIBA": "Enviado por AIBA",
 };
 
 export default es;
