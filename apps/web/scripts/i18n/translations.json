@@ -8983,5 +8983,597 @@
 "it": "Suggerimento: premi Ctrl+K (⌘K su Mac) ovunque per aprire la guida.",
 "pt-BR": "Dica: pressione Ctrl+K (⌘K no Mac) em qualquer tela para abrir a ajuda.",
 "ru": "Совет: нажмите Ctrl+K (⌘K на Mac) на любом экране, чтобы открыть справку."
+},
+"Add a valid email address.": {
+"es": "Añade un email válido.",
+"fr": "Ajoutez une adresse e-mail valide.",
+"de": "Gib eine gültige E-Mail-Adresse ein.",
+"it": "Aggiungi un'email valida.",
+"pt-BR": "Adicione um email válido.",
+"ru": "Укажите корректный email."
+},
+"Add at least one line with a description and quantity.": {
+"es": "Añade al menos una línea con descripción y cantidad.",
+"fr": "Ajoutez au moins une ligne avec description et quantité.",
+"de": "Füge mindestens eine Zeile mit Beschreibung und Menge hinzu.",
+"it": "Aggiungi almeno una riga con descrizione e quantità.",
+"pt-BR": "Adicione pelo menos uma linha com descrição e quantidade.",
+"ru": "Добавьте хотя бы одну строку с описанием и количеством."
+},
+"Add line": {
+"es": "Añadir línea",
+"fr": "Ajouter une ligne",
+"de": "Zeile hinzufügen",
+"it": "Aggiungi riga",
+"pt-BR": "Adicionar linha",
+"ru": "Добавить строку"
+},
+"Address": {
+"es": "Dirección",
+"fr": "Adresse",
+"de": "Adresse",
+"it": "Indirizzo",
+"pt-BR": "Endereço",
+"ru": "Адрес"
+},
+"Already paid": {
+"es": "Ya pagada",
+"fr": "Déjà payée",
+"de": "Bereits bezahlt",
+"it": "Già pagata",
+"pt-BR": "Já paga",
+"ru": "Уже оплачен"
+},
+"Base {base} · tax {tax}": {
+"es": "Base {base} · impuestos {tax}",
+"fr": "Base {base} · taxes {tax}",
+"de": "Netto {base} · Steuer {tax}",
+"it": "Imponibile {base} · imposte {tax}",
+"pt-BR": "Base {base} · impostos {tax}",
+"ru": "База {base} · налог {tax}"
+},
+"Billed to": {
+"es": "Cliente",
+"fr": "Facturé à",
+"de": "Rechnung an",
+"it": "Intestata a",
+"pt-BR": "Faturado para",
+"ru": "Покупатель"
+},
+"Cancel invoice": {
+"es": "Anular factura",
+"fr": "Annuler la facture",
+"de": "Rechnung stornieren",
+"it": "Annulla fattura",
+"pt-BR": "Cancelar fatura",
+"ru": "Аннулировать счёт"
+},
+"Cash, card, transfer, Bizum…": {
+"es": "Efectivo, tarjeta, transferencia, Bizum…",
+"fr": "Espèces, carte, virement…",
+"de": "Bar, Karte, Überweisung…",
+"it": "Contanti, carta, bonifico…",
+"pt-BR": "Dinheiro, cartão, transferência, Pix…",
+"ru": "Наличные, карта, перевод…"
+},
+"Country": {
+"es": "País",
+"fr": "Pays",
+"de": "Land",
+"it": "Paese",
+"pt-BR": "País",
+"ru": "Страна"
+},
+"Create invoice": {
+"es": "Crear factura",
+"fr": "Créer une facture",
+"de": "Rechnung erstellen",
+"it": "Crea fattura",
+"pt-BR": "Criar fatura",
+"ru": "Создать счёт"
+},
+"Create one with «New invoice», or from a booking or a sold pack.": {
+"es": "Crea una con «Nueva factura», o desde una reserva o un bono vendido.",
+"fr": "Créez-en une avec « Nouvelle facture », ou depuis une réservation ou un forfait vendu.",
+"de": "Erstelle eine über „Neue Rechnung“ oder aus einer Buchung bzw. einem verkauften Paket.",
+"it": "Creane una con «Nuova fattura», o da una prenotazione o un pacchetto venduto.",
+"pt-BR": "Crie uma em «Nova fatura», ou a partir de uma reserva ou pacote vendido.",
+"ru": "Создайте счёт кнопкой «Новый счёт» или из записи либо проданного абонемента."
+},
+"Customer prices usually include tax, so the suggested amount is shown before tax ({rate}%).": {
+"es": "Los precios para clientes suelen incluir impuestos, así que el importe sugerido aparece sin impuestos ({rate} %).",
+"fr": "Les prix clients incluent généralement les taxes ; le montant suggéré est donc indiqué hors taxes ({rate} %).",
+"de": "Kundenpreise enthalten meist die Steuer, daher wird der vorgeschlagene Betrag netto angezeigt ({rate} %).",
+"it": "I prezzi ai clienti di solito includono le imposte, quindi l'importo suggerito è al netto ({rate}%).",
+"pt-BR": "Os preços para clientes costumam incluir impostos, então o valor sugerido aparece sem impostos ({rate}%).",
+"ru": "Цены для клиентов обычно включают налог, поэтому предложенная сумма указана без налога ({rate}%)."
+},
+"Default tax %": {
+"es": "Impuesto por defecto %",
+"fr": "Taxe par défaut %",
+"de": "Standardsteuer %",
+"it": "Imposta predefinita %",
+"pt-BR": "Imposto padrão %",
+"ru": "Налог по умолчанию, %"
+},
+"Download {year} for my accountant (CSV)": {
+"es": "Descargar {year} para mi gestoría (CSV)",
+"fr": "Télécharger {year} pour mon comptable (CSV)",
+"de": "{year} für meine Steuerberatung herunterladen (CSV)",
+"it": "Scarica {year} per il mio commercialista (CSV)",
+"pt-BR": "Baixar {year} para meu contador (CSV)",
+"ru": "Скачать {year} для бухгалтера (CSV)"
+},
+"Email isn't configured on the platform yet.": {
+"es": "El email aún no está configurado en la plataforma.",
+"fr": "L'e-mail n'est pas encore configuré sur la plateforme.",
+"de": "E-Mail ist auf der Plattform noch nicht eingerichtet.",
+"it": "L'email non è ancora configurata sulla piattaforma.",
+"pt-BR": "O email ainda não está configurado na plataforma.",
+"ru": "Email на платформе ещё не настроен."
+},
+"Fill in your invoicing details (legal name, tax ID and address) first.": {
+"es": "Primero rellena tus datos fiscales (razón social, NIF y dirección).",
+"fr": "Renseignez d'abord vos informations de facturation (raison sociale, n° fiscal et adresse).",
+"de": "Fülle zuerst deine Rechnungsdaten aus (Name, Steuernummer und Adresse).",
+"it": "Compila prima i dati di fatturazione (ragione sociale, partita IVA e indirizzo).",
+"pt-BR": "Preencha primeiro seus dados fiscais (razão social, CPF/CNPJ e endereço).",
+"ru": "Сначала заполните реквизиты (название, ИНН и адрес)."
+},
+"Here is your invoice. Thank you!": {
+"es": "Aquí tienes tu factura. ¡Gracias!",
+"fr": "Voici votre facture. Merci !",
+"de": "Hier ist deine Rechnung. Danke!",
+"it": "Ecco la tua fattura. Grazie!",
+"pt-BR": "Aqui está sua fatura. Obrigado!",
+"ru": "Ваш счёт во вложении. Спасибо!"
+},
+"Invoice": {
+"es": "Factura",
+"fr": "Facture",
+"de": "Rechnung",
+"it": "Fattura",
+"pt-BR": "Fatura",
+"ru": "Счёт"
+},
+"Invoice cancelled": {
+"es": "Factura anulada",
+"fr": "Facture annulée",
+"de": "Rechnung storniert",
+"it": "Fattura annullata",
+"pt-BR": "Fatura cancelada",
+"ru": "Счёт аннулирован"
+},
+"Invoice footer": {
+"es": "Pie de factura",
+"fr": "Pied de facture",
+"de": "Rechnungsfußzeile",
+"it": "Piè di pagina",
+"pt-BR": "Rodapé da fatura",
+"ru": "Нижний колонтитул"
+},
+"Invoice issued": {
+"es": "Factura emitida",
+"fr": "Facture émise",
+"de": "Rechnung ausgestellt",
+"it": "Fattura emessa",
+"pt-BR": "Fatura emitida",
+"ru": "Счёт выставлен"
+},
+"Invoice sent": {
+"es": "Factura enviada",
+"fr": "Facture envoyée",
+"de": "Rechnung gesendet",
+"it": "Fattura inviata",
+"pt-BR": "Fatura enviada",
+"ru": "Счёт отправлен"
+},
+"Invoice series": {
+"es": "Serie de facturas",
+"fr": "Série de factures",
+"de": "Rechnungsserie",
+"it": "Serie fatture",
+"pt-BR": "Série de faturas",
+"ru": "Серия счетов"
+},
+"Invoice {number}": {
+"es": "Factura {number}",
+"fr": "Facture {number}",
+"de": "Rechnung {number}",
+"it": "Fattura {number}",
+"pt-BR": "Fatura {number}",
+"ru": "Счёт {number}"
+},
+"Invoices": {
+"es": "Facturas",
+"fr": "Factures",
+"de": "Rechnungen",
+"it": "Fatture",
+"pt-BR": "Faturas",
+"ru": "Счета"
+},
+"Invoicing details saved": {
+"es": "Datos fiscales guardados",
+"fr": "Informations de facturation enregistrées",
+"de": "Rechnungsdaten gespeichert",
+"it": "Dati di fatturazione salvati",
+"pt-BR": "Dados fiscais salvos",
+"ru": "Реквизиты сохранены"
+},
+"Issue invoice": {
+"es": "Emitir factura",
+"fr": "Émettre la facture",
+"de": "Rechnung ausstellen",
+"it": "Emetti fattura",
+"pt-BR": "Emitir fatura",
+"ru": "Выставить счёт"
+},
+"Issue numbered invoices for bookings and packs, print or email them, and see your totals by quarter.": {
+"es": "Emite facturas numeradas de reservas y bonos, imprímelas o envíalas por email y consulta tus totales por trimestre.",
+"fr": "Émettez des factures numérotées pour réservations et forfaits, imprimez-les ou envoyez-les et suivez vos totaux par trimestre.",
+"de": "Stelle nummerierte Rechnungen für Buchungen und Pakete aus, drucke oder maile sie und sieh deine Summen pro Quartal.",
+"it": "Emetti fatture numerate per prenotazioni e pacchetti, stampale o inviale e vedi i totali per trimestre.",
+"pt-BR": "Emita faturas numeradas de reservas e pacotes, imprima ou envie por email e veja seus totais por trimestre.",
+"ru": "Выставляйте нумерованные счета за записи и абонементы, печатайте или отправляйте их и смотрите итоги по кварталам."
+},
+"Issued by": {
+"es": "Emisor",
+"fr": "Émis par",
+"de": "Aussteller",
+"it": "Emessa da",
+"pt-BR": "Emitente",
+"ru": "Продавец"
+},
+"Issued invoices": {
+"es": "Facturas emitidas",
+"fr": "Factures émises",
+"de": "Ausgestellte Rechnungen",
+"it": "Fatture emesse",
+"pt-BR": "Faturas emitidas",
+"ru": "Выставленные счета"
+},
+"Legal name": {
+"es": "Nombre o razón social",
+"fr": "Raison sociale",
+"de": "Name / Firma",
+"it": "Ragione sociale",
+"pt-BR": "Razão social / nome",
+"ru": "Название / ФИО"
+},
+"Lines": {
+"es": "Conceptos",
+"fr": "Lignes",
+"de": "Positionen",
+"it": "Righe",
+"pt-BR": "Itens",
+"ru": "Позиции"
+},
+"Mark as paid": {
+"es": "Marcar como pagada",
+"fr": "Marquer comme payée",
+"de": "Als bezahlt markieren",
+"it": "Segna come pagata",
+"pt-BR": "Marcar como paga",
+"ru": "Отметить как оплаченный"
+},
+"Mark it as paid when you issue it.": {
+"es": "Se marca como pagada al emitirla.",
+"fr": "Elle est marquée payée à l'émission.",
+"de": "Wird beim Ausstellen als bezahlt markiert.",
+"it": "Viene segnata come pagata all'emissione.",
+"pt-BR": "Fica marcada como paga ao emitir.",
+"ru": "Отметить оплаченным при выставлении."
+},
+"Marked as paid": {
+"es": "Marcada como pagada",
+"fr": "Marquée comme payée",
+"de": "Als bezahlt markiert",
+"it": "Segnata come pagata",
+"pt-BR": "Marcada como paga",
+"ru": "Отмечен как оплаченный"
+},
+"NIF, VAT number…": {
+"es": "NIF, CIF, NIE…",
+"fr": "SIRET, n° de TVA…",
+"de": "Steuernummer, USt-IdNr.…",
+"it": "Partita IVA, codice fiscale…",
+"pt-BR": "CPF, CNPJ…",
+"ru": "ИНН…"
+},
+"Needed once before your first invoice. They are printed on every invoice.": {
+"es": "Solo una vez, antes de tu primera factura. Aparecen en todas tus facturas.",
+"fr": "Une seule fois, avant votre première facture. Elles figurent sur chaque facture.",
+"de": "Einmalig vor deiner ersten Rechnung. Sie stehen auf jeder Rechnung.",
+"it": "Una sola volta, prima della prima fattura. Compaiono su ogni fattura.",
+"pt-BR": "Só uma vez, antes da primeira fatura. Aparecem em todas as faturas.",
+"ru": "Нужно один раз перед первым счётом. Они печатаются на каждом счёте."
+},
+"New invoice": {
+"es": "Nueva factura",
+"fr": "Nouvelle facture",
+"de": "Neue Rechnung",
+"it": "Nuova fattura",
+"pt-BR": "Nova fatura",
+"ru": "Новый счёт"
+},
+"No invoices yet": {
+"es": "Aún no hay facturas",
+"fr": "Pas encore de factures",
+"de": "Noch keine Rechnungen",
+"it": "Nessuna fattura",
+"pt-BR": "Ainda não há faturas",
+"ru": "Счетов пока нет"
+},
+"Only pending invoices can be marked as paid.": {
+"es": "Solo las facturas pendientes se pueden marcar como pagadas.",
+"fr": "Seules les factures en attente peuvent être marquées payées.",
+"de": "Nur offene Rechnungen können als bezahlt markiert werden.",
+"it": "Solo le fatture in sospeso possono essere segnate come pagate.",
+"pt-BR": "Só faturas pendentes podem ser marcadas como pagas.",
+"ru": "Отметить оплаченным можно только неоплаченный счёт."
+},
+"Paid": {
+"es": "Pagada",
+"fr": "Payée",
+"de": "Bezahlt",
+"it": "Pagata",
+"pt-BR": "Paga",
+"ru": "Оплачен"
+},
+"Payment method": {
+"es": "Forma de pago",
+"fr": "Moyen de paiement",
+"de": "Zahlungsart",
+"it": "Metodo di pagamento",
+"pt-BR": "Forma de pagamento",
+"ru": "Способ оплаты"
+},
+"Pending payment": {
+"es": "Pendiente de pago",
+"fr": "En attente de paiement",
+"de": "Offen",
+"it": "Da pagare",
+"pt-BR": "Pagamento pendente",
+"ru": "Ожидает оплаты"
+},
+"Pending: {amount}": {
+"es": "Pendiente: {amount}",
+"fr": "En attente : {amount}",
+"de": "Offen: {amount}",
+"it": "Da incassare: {amount}",
+"pt-BR": "Pendente: {amount}",
+"ru": "Не оплачено: {amount}"
+},
+"Postal code": {
+"es": "Código postal",
+"fr": "Code postal",
+"de": "PLZ",
+"it": "CAP",
+"pt-BR": "CEP",
+"ru": "Индекс"
+},
+"Print / save as PDF": {
+"es": "Imprimir / guardar PDF",
+"fr": "Imprimer / enregistrer en PDF",
+"de": "Drucken / als PDF speichern",
+"it": "Stampa / salva PDF",
+"pt-BR": "Imprimir / salvar PDF",
+"ru": "Печать / сохранить PDF"
+},
+"Qty": {
+"es": "Cant.",
+"fr": "Qté",
+"de": "Menge",
+"it": "Q.tà",
+"pt-BR": "Qtd.",
+"ru": "Кол-во"
+},
+"Q{n}": {
+"es": "{n}T",
+"fr": "T{n}",
+"de": "Q{n}",
+"it": "T{n}",
+"pt-BR": "T{n}",
+"ru": "{n} кв."
+},
+"Remove line": {
+"es": "Quitar línea",
+"fr": "Supprimer la ligne",
+"de": "Zeile entfernen",
+"it": "Rimuovi riga",
+"pt-BR": "Remover linha",
+"ru": "Удалить строку"
+},
+"Save invoicing details": {
+"es": "Guardar datos fiscales",
+"fr": "Enregistrer",
+"de": "Rechnungsdaten speichern",
+"it": "Salva dati di fatturazione",
+"pt-BR": "Salvar dados fiscais",
+"ru": "Сохранить реквизиты"
+},
+"Send by email": {
+"es": "Enviar por email",
+"fr": "Envoyer par e-mail",
+"de": "Per E-Mail senden",
+"it": "Invia per email",
+"pt-BR": "Enviar por email",
+"ru": "Отправить по email"
+},
+"Send invoice": {
+"es": "Enviar factura",
+"fr": "Envoyer la facture",
+"de": "Rechnung senden",
+"it": "Invia fattura",
+"pt-BR": "Enviar fatura",
+"ru": "Отправить счёт"
+},
+"Subtotal": {
+"es": "Base imponible",
+"fr": "Sous-total HT",
+"de": "Zwischensumme (netto)",
+"it": "Imponibile",
+"pt-BR": "Subtotal",
+"ru": "Сумма без налога"
+},
+"Tax": {
+"es": "Impuesto",
+"fr": "Taxe",
+"de": "Steuer",
+"it": "Imposta",
+"pt-BR": "Imposto",
+"ru": "Налог"
+},
+"Tax %": {
+"es": "Impuesto %",
+"fr": "Taxe %",
+"de": "Steuer %",
+"it": "Imposta %",
+"pt-BR": "Imposto %",
+"ru": "Налог, %"
+},
+"Tax ID": {
+"es": "NIF",
+"fr": "N° fiscal",
+"de": "Steuernummer",
+"it": "Partita IVA",
+"pt-BR": "CPF/CNPJ",
+"ru": "ИНН"
+},
+"The invoice total must be greater than zero.": {
+"es": "El total de la factura debe ser mayor que cero.",
+"fr": "Le total doit être supérieur à zéro.",
+"de": "Der Rechnungsbetrag muss größer als null sein.",
+"it": "Il totale deve essere maggiore di zero.",
+"pt-BR": "O total da fatura deve ser maior que zero.",
+"ru": "Сумма счёта должна быть больше нуля."
+},
+"The number is assigned when you issue it. Issued invoices can't be edited, only cancelled.": {
+"es": "El número se asigna al emitirla. Las facturas emitidas no se pueden editar, solo anular.",
+"fr": "Le numéro est attribué à l'émission. Une facture émise ne peut pas être modifiée, seulement annulée.",
+"de": "Die Nummer wird beim Ausstellen vergeben. Ausgestellte Rechnungen können nicht bearbeitet, nur storniert werden.",
+"it": "Il numero viene assegnato all'emissione. Le fatture emesse non si modificano, si possono solo annullare.",
+"pt-BR": "O número é atribuído ao emitir. Faturas emitidas não podem ser editadas, só canceladas.",
+"ru": "Номер присваивается при выставлении. Выставленный счёт нельзя изменить, только аннулировать."
+},
+"The number stays used and the invoice is kept as cancelled. To correct it, cancel it and issue a new one.": {
+"es": "El número queda usado y la factura se conserva como anulada. Para corregirla, anúlala y emite una nueva.",
+"fr": "Le numéro reste utilisé et la facture est conservée comme annulée. Pour la corriger, annulez-la et émettez-en une nouvelle.",
+"de": "Die Nummer bleibt vergeben und die Rechnung wird als storniert aufbewahrt. Zum Korrigieren stornieren und neu ausstellen.",
+"it": "Il numero resta usato e la fattura viene conservata come annullata. Per correggerla, annullala ed emettine una nuova.",
+"pt-BR": "O número continua usado e a fatura fica registrada como cancelada. Para corrigir, cancele e emita uma nova.",
+"ru": "Номер остаётся занятым, счёт сохраняется как аннулированный. Чтобы исправить, аннулируйте и выставьте новый."
+},
+"This booking already has an invoice. Cancel it first to issue a new one.": {
+"es": "Esta reserva ya tiene factura. Anúlala primero para emitir otra.",
+"fr": "Cette réservation a déjà une facture. Annulez-la d'abord pour en émettre une nouvelle.",
+"de": "Diese Buchung hat schon eine Rechnung. Storniere sie zuerst, um eine neue auszustellen.",
+"it": "Questa prenotazione ha già una fattura. Annullala prima di emetterne un'altra.",
+"pt-BR": "Esta reserva já tem fatura. Cancele-a antes de emitir outra.",
+"ru": "У этой записи уже есть счёт. Сначала аннулируйте его."
+},
+"Unit price": {
+"es": "Precio unitario",
+"fr": "Prix unitaire",
+"de": "Einzelpreis",
+"it": "Prezzo unitario",
+"pt-BR": "Preço unitário",
+"ru": "Цена за ед."
+},
+"Unit price (before tax)": {
+"es": "Precio unitario (sin impuestos)",
+"fr": "Prix unitaire HT",
+"de": "Einzelpreis (netto)",
+"it": "Prezzo unitario (netto)",
+"pt-BR": "Preço unitário (sem impostos)",
+"ru": "Цена за ед. (без налога)"
+},
+"Who is the invoice for? Add the customer's name.": {
+"es": "¿A quién va la factura? Añade el nombre del cliente.",
+"fr": "À qui est destinée la facture ? Ajoutez le nom du client.",
+"de": "Für wen ist die Rechnung? Gib den Kundennamen an.",
+"it": "A chi è intestata? Aggiungi il nome del cliente.",
+"pt-BR": "Para quem é a fatura? Adicione o nome do cliente.",
+"ru": "Кому выставляется счёт? Укажите имя клиента."
+},
+"Write the reason for cancelling.": {
+"es": "Escribe el motivo de la anulación.",
+"fr": "Indiquez le motif de l'annulation.",
+"de": "Gib den Grund für die Stornierung an.",
+"it": "Scrivi il motivo dell'annullamento.",
+"pt-BR": "Escreva o motivo do cancelamento.",
+"ru": "Укажите причину аннулирования."
+},
+"Year": {
+"es": "Año",
+"fr": "Année",
+"de": "Jahr",
+"it": "Anno",
+"pt-BR": "Ano",
+"ru": "Год"
+},
+"Your invoicing details": {
+"es": "Tus datos fiscales",
+"fr": "Vos informations de facturation",
+"de": "Deine Rechnungsdaten",
+"it": "I tuoi dati di fatturazione",
+"pt-BR": "Seus dados fiscais",
+"ru": "Ваши реквизиты"
+},
+"Your name or company name": {
+"es": "Tu nombre o el de tu empresa",
+"fr": "Votre nom ou celui de votre société",
+"de": "Dein Name oder Firmenname",
+"it": "Il tuo nome o quello dell'azienda",
+"pt-BR": "Seu nome ou da empresa",
+"ru": "Ваше имя или название компании"
+},
+"e.g. 21 for VAT, 0 if exempt": {
+"es": "p. ej. 21 de IVA, 0 si estás exenta",
+"fr": "ex. 20 pour la TVA, 0 si exonéré",
+"de": "z. B. 19 für MwSt., 0 wenn befreit",
+"it": "es. 22 per l'IVA, 0 se esente",
+"pt-BR": "ex.: 0 se isento",
+"ru": "напр. 20 для НДС, 0 если освобождены"
+},
+"e.g. the legal reason if you are exempt from VAT, or your bank account for transfers": {
+"es": "p. ej. el motivo legal si estás exenta de IVA, o tu cuenta bancaria para transferencias",
+"fr": "ex. la mention légale d'exonération de TVA, ou votre IBAN pour les virements",
+"de": "z. B. der Hinweis zur Steuerbefreiung oder deine IBAN für Überweisungen",
+"it": "es. la dicitura di esenzione IVA o il tuo IBAN per i bonifici",
+"pt-BR": "ex.: o motivo legal da isenção ou seus dados bancários",
+"ru": "напр. основание освобождения от НДС или реквизиты для перевода"
+},
+"on {amount}": {
+"es": "sobre {amount}",
+"fr": "sur {amount}",
+"de": "auf {amount}",
+"it": "su {amount}",
+"pt-BR": "sobre {amount}",
+"ru": "с {amount}"
+},
+"prefix of the number": {
+"es": "prefijo del número",
+"fr": "préfixe du numéro",
+"de": "Präfix der Nummer",
+"it": "prefisso del numero",
+"pt-BR": "prefixo do número",
+"ru": "префикс номера"
+},
+"{n} invoices": {
+"es": "{n} facturas",
+"fr": "{n} factures",
+"de": "{n} Rechnungen",
+"it": "{n} fatture",
+"pt-BR": "{n} faturas",
+"ru": "счетов: {n}"
+},
+"Invoice not found": {
+"es": "Factura no encontrada",
+"fr": "Facture introuvable",
+"de": "Rechnung nicht gefunden",
+"it": "Fattura non trovata",
+"pt-BR": "Fatura não encontrada",
+"ru": "Счёт не найден"
 }
 }

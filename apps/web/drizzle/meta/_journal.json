@@ -64,6 +64,13 @@
       "when": 1795032000000,
       "tag": "0008_packs",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1795033000000,
+      "tag": "0009_invoices",
+      "breakpoints": true
     }
   ]
 }

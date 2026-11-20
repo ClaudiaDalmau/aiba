@@ -1,6 +1,7 @@
 import { getT } from "@/i18n/server";
 import { and, eq } from "drizzle-orm";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 import { notFound } from "next/navigation";
 import { eraseCustomerAction, saveCustomerNotes } from "@/actions/workspace";
 import { grantPackAction, voidPackAction } from "@/actions/packs";
@@ -64,6 +65,7 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
                     <div className="text-[13px] text-muted">{t("{used} of {total} used", { used: p.used, total: p.sessionsTotal })} · {t("until {date}", { date: formatDate(p.expiresAt, tz) })}</div>
                   </div>
                   <Badge tone={STATUS_TONE[p.status]}>{STATUS[p.status]}</Badge>
+                  {manage && p.status !== "voided" && <Link href={`/app/invoices/new?pack=${p.id}`} title={t("Create invoice")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="file" size={15} /></Link>}
                   {manage && p.status === "active" && (
                     <form action={voidPackAction}>
                       <input type="hidden" name="id" value={p.id} />

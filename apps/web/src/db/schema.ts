@@ -189,6 +189,8 @@ export const businesses = pgTable(
     logoUrl: text("logo_url"),
     coverUrl: text("cover_url"),
     policy: jsonb("policy").$type<BookingPolicy>().notNull().default(DEFAULT_POLICY),
+    /** Invoicing details (legal name, tax id, address, series, default tax). */
+    fiscal: jsonb("fiscal").$type<FiscalProfile>().notNull().default({}),
     /** Plan id (plans.id). */
     tier: text("tier").notNull().default("standard").references(() => plans.id, { onUpdate: "cascade" }),
     published: boolean("published").notNull().default(false),
@@ -789,6 +791,67 @@ export const customerPacks = pgTable(
   },
   (t) => [index("customer_packs_customer_idx").on(t.businessId, t.customerId)],
 );
+
+export type FiscalProfile = {
+  legalName?: string;
+  taxId?: string;
+  address?: string;
+  postalCode?: string;
+  city?: string;
+  country?: string;
+  series?: string;
+  /** Default tax rate in %, e.g. 21 (VAT). 0 when exempt. */
+  taxRate?: number;
+  /** Printed at the bottom, e.g. the legal reason for a VAT exemption. */
+  footer?: string;
+};
+export type InvoiceParty = { name: string; taxId?: string; address?: string; email?: string };
+export type InvoiceLine = { description: string; quantity: number; unitPriceCents: number; taxRate: number };
+
+export const invoiceCounters = pgTable(
+  "invoice_counters",
+  {
+    businessId: businessId(),
+    series: text("series").notNull(),
+    year: integer("year").notNull(),
+    seq: integer("seq").notNull().default(0),
+  },
+  (t) => [primaryKey({ columns: [t.businessId, t.series, t.year] })],
+);
+
+/** Issued invoices are immutable: only status (paid / cancelled) changes. */
+export const invoices = pgTable(
+  "invoices",
+  {
+    id: id(),
+    businessId: businessId(),
+    number: text("number").notNull(),
+    series: text("series").notNull(),
+    year: integer("year").notNull(),
+    seq: integer("seq").notNull(),
+    issuedAt: timestamp("issued_at", { withTimezone: true }).notNull().defaultNow(),
+    customerId: text("customer_id").references(() => customers.id, { onDelete: "set null" }),
+    bookingId: text("booking_id").references(() => bookings.id, { onDelete: "set null" }),
+    customerPackId: text("customer_pack_id").references(() => customerPacks.id, { onDelete: "set null" }),
+    issuer: jsonb("issuer").$type<InvoiceParty>().notNull(),
+    buyer: jsonb("buyer").$type<InvoiceParty>().notNull(),
+    lines: jsonb("lines").$type<InvoiceLine[]>().notNull(),
+    subtotalCents: integer("subtotal_cents").notNull(),
+    taxCents: integer("tax_cents").notNull(),
+    totalCents: integer("total_cents").notNull(),
+    currency: text("currency").notNull(),
+    status: text("status", { enum: ["issued", "paid", "cancelled"] }).notNull().default("issued"),
+    paidAt: timestamp("paid_at", { withTimezone: true }),
+    paymentMethod: text("payment_method").notNull().default(""),
+    cancelledAt: timestamp("cancelled_at", { withTimezone: true }),
+    cancelReason: text("cancel_reason").notNull().default(""),
+    notes: text("notes").notNull().default(""),
+    createdBy: text("created_by"),
+    createdAt: createdAt(),
+  },
+  (t) => [uniqueIndex("invoices_number_uq").on(t.businessId, t.number), index("invoices_business_idx").on(t.businessId, t.issuedAt)],
+);
+export type Invoice = typeof invoices.$inferSelect;
 
 export type Pack = typeof packs.$inferSelect;
 export type CustomerPack = typeof customerPacks.$inferSelect;

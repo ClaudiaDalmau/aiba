@@ -1,217 +1,1342 @@
 [
-{"id":"start","href":"/app","paths":["/app"],"icon":"home",
- "title":{"en":"Getting started","es":"Primeros pasos","fr":"Bien démarrer","de":"Erste Schritte","it":"Primi passi","pt-BR":"Primeiros passos","ru":"С чего начать"},
- "keywords":{"en":"start setup begin overview dashboard","es":"empezar configurar inicio resumen panel","fr":"commencer configurer accueil résumé","de":"start einrichten übersicht","it":"iniziare configurare panoramica","pt-BR":"começar configurar início resumo","ru":"начало настройка обзор"},
- "steps":{
-  "en":["Add your services with price and duration in Business → Services.","Set your working hours in Business → Team & hours.","Check your currency, time zone and booking rules in Business → Settings.","Try your assistant in Assistant → Assistant (test chat on the right).","Turn on Telegram (and WhatsApp when available) in Assistant → Channels and share your link."],
-  "es":["Añade tus servicios con precio y duración en Negocio → Servicios.","Configura tu horario en Negocio → Equipo y horarios.","Revisa moneda, zona horaria y reglas de reserva en Negocio → Ajustes.","Prueba tu asistente en Asistente → Asistente (chat de prueba a la derecha).","Activa Telegram (y WhatsApp cuando esté disponible) en Asistente → Canales y comparte tu enlace."],
-  "fr":["Ajoutez vos services avec prix et durée dans Établissement → Services.","Définissez vos horaires dans Établissement → Équipe & horaires.","Vérifiez devise, fuseau horaire et règles de réservation dans Établissement → Paramètres.","Testez votre assistant dans Assistant → Assistant (chat de test à droite).","Activez Telegram (et WhatsApp quand il sera disponible) dans Assistant → Canaux et partagez votre lien."],
-  "de":["Füge deine Leistungen mit Preis und Dauer unter Geschäft → Leistungen hinzu.","Lege deine Arbeitszeiten unter Geschäft → Team & Zeiten fest.","Prüfe Währung, Zeitzone und Buchungsregeln unter Geschäft → Einstellungen.","Teste deinen Assistenten unter Assistent → Assistent (Test-Chat rechts).","Aktiviere Telegram (und WhatsApp, sobald verfügbar) unter Assistent → Kanäle und teile deinen Link."],
-  "it":["Aggiungi i servizi con prezzo e durata in Attività → Servizi.","Imposta gli orari in Attività → Team e orari.","Controlla valuta, fuso orario e regole di prenotazione in Attività → Impostazioni.","Prova l'assistente in Assistente → Assistente (chat di prova a destra).","Attiva Telegram (e WhatsApp quando disponibile) in Assistente → Canali e condividi il tuo link."],
-  "pt-BR":["Adicione seus serviços com preço e duração em Negócio → Serviços.","Defina seus horários em Negócio → Equipe e horários.","Confira moeda, fuso horário e regras de reserva em Negócio → Configurações.","Teste seu assistente em Assistente → Assistente (chat de teste à direita).","Ative o Telegram (e o WhatsApp quando disponível) em Assistente → Canais e compartilhe seu link."],
-  "ru":["Добавьте услуги с ценой и длительностью: Бизнес → Услуги.","Задайте рабочие часы: Бизнес → Команда и часы.","Проверьте валюту, часовой пояс и правила записи: Бизнес → Настройки.","Проверьте ассистента: Ассистент → Ассистент (тестовый чат справа).","Включите Telegram (и WhatsApp, когда появится): Ассистент → Каналы, и поделитесь ссылкой."]}},
-
-{"id":"bookings","href":"/app/bookings","paths":["/app/bookings"],"icon":"calendar",
- "title":{"en":"Bookings and calendar","es":"Reservas y agenda","fr":"Réservations et agenda","de":"Buchungen und Kalender","it":"Prenotazioni e agenda","pt-BR":"Reservas e agenda","ru":"Записи и календарь"},
- "keywords":{"en":"booking appointment calendar new reschedule move cancel no-show completed walk-in","es":"reserva cita agenda calendario nueva cambiar mover cancelar no presentado completada sin cita","fr":"réservation rendez-vous agenda déplacer annuler absence terminé","de":"buchung termin kalender verschieben stornieren nicht erschienen abgeschlossen","it":"prenotazione appuntamento agenda spostare annullare assente completato","pt-BR":"reserva agendamento agenda remarcar cancelar não compareceu concluído","ru":"запись встреча календарь перенести отменить неявка завершено"},
- "steps":{
-  "en":["See the day or week and filter by team member.","«New booking»: pick a service, time and an existing or new customer.","Open a booking to reschedule, cancel (the customer is notified), mark it completed or no-show.","«Allow outside opening hours» lets you book walk-ins; overlaps are still blocked.","Marking an appointment completed sends the customer a review request."],
-  "es":["Ve el día o la semana y filtra por profesional.","«Nueva reserva»: elige servicio, hora y un cliente existente o nuevo.","Abre una reserva para cambiarla, cancelarla (se avisa al cliente), marcarla completada o como no presentado.","«Permitir fuera del horario» te deja meter citas sin hueco; los solapamientos siguen bloqueados.","Al marcar una cita como completada, el cliente recibe una petición de valoración."],
-  "fr":["Affichez le jour ou la semaine et filtrez par membre de l'équipe.","« Nouvelle réservation » : choisissez un service, un horaire et un client existant ou nouveau.","Ouvrez une réservation pour la déplacer, l'annuler (le client est prévenu), la marquer terminée ou absent.","« Autoriser hors horaires d'ouverture » permet les clients sans rendez-vous ; les chevauchements restent bloqués.","Marquer un rendez-vous terminé envoie au client une demande d'avis."],
-  "de":["Sieh dir Tag oder Woche an und filtere nach Teammitglied.","„Neue Buchung“: Leistung, Zeit und bestehenden oder neuen Kunden wählen.","Öffne eine Buchung, um sie zu verschieben, zu stornieren (Kunde wird informiert) oder als abgeschlossen/nicht erschienen zu markieren.","„Außerhalb der Öffnungszeiten erlauben“ ermöglicht Spontanbuchungen; Überschneidungen bleiben gesperrt.","Ein abgeschlossener Termin löst eine Bewertungsanfrage an den Kunden aus."],
-  "it":["Visualizza il giorno o la settimana e filtra per membro del team.","«Nuova prenotazione»: scegli servizio, orario e un cliente esistente o nuovo.","Apri una prenotazione per spostarla, annullarla (il cliente viene avvisato), segnarla completata o assente.","«Consenti fuori orario» permette clienti senza appuntamento; le sovrapposizioni restano bloccate.","Segnare un appuntamento come completato invia al cliente una richiesta di recensione."],
-  "pt-BR":["Veja o dia ou a semana e filtre por profissional.","«Nova reserva»: escolha serviço, horário e um cliente existente ou novo.","Abra uma reserva para remarcar, cancelar (o cliente é avisado), marcar como concluída ou não compareceu.","«Permitir fora do horário de funcionamento» deixa encaixar clientes; sobreposições continuam bloqueadas.","Marcar um atendimento como concluído envia ao cliente um pedido de avaliação."],
-  "ru":["Смотрите день или неделю и фильтруйте по сотруднику.","«Новая запись»: выберите услугу, время и существующего или нового клиента.","Откройте запись, чтобы перенести, отменить (клиент получит уведомление), отметить как завершённую или неявку.","«Разрешить вне рабочих часов» — для клиентов без записи; пересечения всё равно блокируются.","Завершённая запись отправляет клиенту просьбу оставить отзыв."]}},
-
-{"id":"inbox","href":"/app/inbox","paths":["/app/inbox"],"icon":"inbox",
- "title":{"en":"Inbox: conversations","es":"Bandeja de entrada: conversaciones","fr":"Boîte de réception : conversations","de":"Posteingang: Unterhaltungen","it":"Posta in arrivo: conversazioni","pt-BR":"Caixa de entrada: conversas","ru":"Входящие: переписки"},
- "keywords":{"en":"inbox messages chat conversation reply take over hand back escalated human","es":"bandeja mensajes chat conversación responder tomar el control devolver escalado humano","fr":"messages discussion répondre reprendre rendre escaladé humain","de":"nachrichten chat antworten übernehmen zurückgeben eskaliert mensch","it":"messaggi chat rispondere prendere il controllo restituire escalation umano","pt-BR":"mensagens chat conversa responder assumir devolver escalado humano","ru":"сообщения чат ответить взять на себя вернуть эскалация человек"},
- "steps":{
-  "en":["All WhatsApp, Telegram and booking-page chats arrive here.","Conversations the assistant escalated are marked «Needs you».","Writing a reply takes over: the assistant stays silent in that chat.","«Hand back to agent» lets the assistant answer again.","Your own replies teach the assistant your style (Assistant → Learn my style)."],
-  "es":["Aquí llegan todos los chats de WhatsApp, Telegram y de tu página de reservas.","Las conversaciones que el asistente te pasa aparecen como «Te necesita».","Al escribir una respuesta tomas el control: el asistente se calla en ese chat.","«Devolver al asistente» hace que vuelva a responder.","Tus propias respuestas enseñan tu estilo al asistente (Asistente → Aprender mi estilo)."],
-  "fr":["Toutes les discussions WhatsApp, Telegram et de votre page de réservation arrivent ici.","Les conversations escaladées par l'assistant sont marquées « Vous attend ».","Écrire une réponse vous donne la main : l'assistant se tait dans cette discussion.","« Rendre la main à l'assistant » lui permet de répondre à nouveau.","Vos propres réponses lui apprennent votre style (Assistant → Apprendre mon style)."],
-  "de":["Alle Chats aus WhatsApp, Telegram und deiner Buchungsseite landen hier.","Vom Assistenten eskalierte Unterhaltungen sind mit „Braucht dich“ markiert.","Wenn du antwortest, übernimmst du: Der Assistent schweigt in diesem Chat.","„An Assistent zurückgeben“ lässt ihn wieder antworten.","Deine eigenen Antworten bringen ihm deinen Stil bei (Assistent → Meinen Stil lernen)."],
-  "it":["Qui arrivano tutte le chat di WhatsApp, Telegram e della pagina di prenotazione.","Le conversazioni passate dall'assistente sono segnate «Ti aspetta».","Rispondendo prendi il controllo: l'assistente tace in quella chat.","«Ripassa all'assistente» lo fa rispondere di nuovo.","Le tue risposte gli insegnano il tuo stile (Assistente → Impara il mio stile)."],
-  "pt-BR":["Todas as conversas de WhatsApp, Telegram e da página de reservas chegam aqui.","Conversas que o assistente repassou aparecem como «Precisa de você».","Ao responder você assume: o assistente fica em silêncio nessa conversa.","«Devolver ao assistente» faz ele voltar a responder.","Suas respostas ensinam seu estilo ao assistente (Assistente → Aprender meu estilo)."],
-  "ru":["Сюда приходят все чаты из WhatsApp, Telegram и страницы записи.","Переписки, переданные ассистентом, помечены «Требует вас».","Когда вы отвечаете сами, ассистент замолкает в этом чате.","«Вернуть ассистенту» снова включает его ответы.","Ваши ответы учат ассистента вашему стилю (Ассистент → Изучить мой стиль)."]}},
-
-{"id":"approvals","href":"/app/approvals","paths":["/app/approvals"],"icon":"checkCircle",
- "title":{"en":"Approvals and activity","es":"Aprobaciones y actividad","fr":"Validations et activité","de":"Freigaben und Aktivität","it":"Approvazioni e attività","pt-BR":"Aprovações e atividade","ru":"Одобрения и активность"},
- "keywords":{"en":"approve reject permission action log audit","es":"aprobar rechazar permiso acción registro","fr":"approuver refuser autorisation action journal","de":"genehmigen ablehnen berechtigung aktion protokoll","it":"approvare rifiutare permesso azione registro","pt-BR":"aprovar rejeitar permissão ação registro","ru":"одобрить отклонить разрешение действие журнал"},
- "steps":{
-  "en":["When the assistant wants to do something that needs your OK (for example a cancellation), it waits here.","Approve or reject it; you can add a note for the customer.","The activity log lists everything the assistant did.","Choose what needs approval in Assistant → Assistant → Permissions."],
-  "es":["Cuando el asistente quiere hacer algo que necesita tu OK (por ejemplo, una cancelación), espera aquí.","Apruébalo o recházalo; puedes añadir una nota para el cliente.","El registro de actividad muestra todo lo que ha hecho el asistente.","Decide qué necesita aprobación en Asistente → Asistente → Permisos."],
-  "fr":["Quand l'assistant veut faire une action qui demande votre accord (par exemple une annulation), elle attend ici.","Approuvez ou refusez ; vous pouvez ajouter une note pour le client.","Le journal d'activité liste tout ce que l'assistant a fait.","Choisissez ce qui demande validation dans Assistant → Assistant → Autorisations."],
-  "de":["Wenn der Assistent etwas tun will, das deine Freigabe braucht (z. B. eine Stornierung), wartet es hier.","Genehmige oder lehne ab; du kannst eine Notiz für den Kunden hinzufügen.","Das Aktivitätsprotokoll zeigt alles, was der Assistent getan hat.","Was eine Freigabe braucht, legst du unter Assistent → Assistent → Berechtigungen fest."],
-  "it":["Quando l'assistente vuole fare qualcosa che richiede il tuo OK (ad esempio un annullamento), aspetta qui.","Approva o rifiuta; puoi aggiungere una nota per il cliente.","Il registro attività elenca tutto ciò che ha fatto l'assistente.","Scegli cosa richiede approvazione in Assistente → Assistente → Permessi."],
-  "pt-BR":["Quando o assistente quer fazer algo que precisa do seu OK (por exemplo, um cancelamento), espera aqui.","Aprove ou rejeite; você pode adicionar uma nota para o cliente.","O registro de atividade lista tudo o que o assistente fez.","Escolha o que precisa de aprovação em Assistente → Assistente → Permissões."],
-  "ru":["Если ассистенту нужно ваше согласие (например, на отмену), действие ждёт здесь.","Одобрите или отклоните; можно добавить заметку для клиента.","В журнале активности видно всё, что сделал ассистент.","Что требует одобрения, настраивается в Ассистент → Ассистент → Разрешения."]}},
-
-{"id":"customers","href":"/app/customers","paths":["/app/customers"],"icon":"users",
- "title":{"en":"Customers","es":"Clientes","fr":"Clients","de":"Kunden","it":"Clienti","pt-BR":"Clientes","ru":"Клиенты"},
- "keywords":{"en":"customer client profile notes memory export erase gdpr delete data","es":"cliente ficha notas memoria exportar borrar rgpd eliminar datos","fr":"client fiche notes mémoire exporter effacer rgpd données","de":"kunde profil notizen gedächtnis export löschen dsgvo daten","it":"cliente scheda note memoria esportare cancellare gdpr dati","pt-BR":"cliente ficha notas memória exportar apagar lgpd dados","ru":"клиент карточка заметки память экспорт удалить данные"},
- "steps":{
-  "en":["Everyone who booked or wrote to you, with what they spent and their last visit.","Open a customer to see their bookings, conversations and what the assistant remembers about them.","«Private notes» are only for your team; the assistant doesn't read them.","You can sell them a pack, export their data or erase it (GDPR)."],
-  "es":["Todas las personas que han reservado o te han escrito, con lo que han gastado y su última visita.","Abre un cliente para ver sus reservas, conversaciones y lo que el asistente recuerda de él.","Las «Notas privadas» son solo para tu equipo; el asistente no las lee.","Puedes venderle un bono, exportar sus datos o borrarlos (RGPD)."],
-  "fr":["Toutes les personnes qui ont réservé ou vous ont écrit, avec leurs dépenses et leur dernière visite.","Ouvrez un client pour voir ses réservations, ses conversations et ce que l'assistant retient de lui.","Les « Notes privées » sont réservées à votre équipe ; l'assistant ne les lit pas.","Vous pouvez lui vendre un forfait, exporter ses données ou les effacer (RGPD)."],
-  "de":["Alle, die gebucht oder dir geschrieben haben, mit Umsatz und letztem Besuch.","Öffne einen Kunden für Buchungen, Unterhaltungen und das, was sich der Assistent gemerkt hat.","„Private Notizen“ sind nur für dein Team; der Assistent liest sie nicht.","Du kannst ein Paket verkaufen, Daten exportieren oder löschen (DSGVO)."],
-  "it":["Tutte le persone che hanno prenotato o ti hanno scritto, con spesa e ultima visita.","Apri un cliente per vedere prenotazioni, conversazioni e ciò che l'assistente ricorda.","Le «Note private» sono solo per il tuo team; l'assistente non le legge.","Puoi vendergli un pacchetto, esportarne i dati o cancellarli (GDPR)."],
-  "pt-BR":["Todas as pessoas que reservaram ou escreveram, com gasto e última visita.","Abra um cliente para ver reservas, conversas e o que o assistente lembra dele.","As «Notas privadas» são só para sua equipe; o assistente não as lê.","Você pode vender um pacote, exportar os dados ou apagá-los (LGPD/RGPD)."],
-  "ru":["Все, кто записывался или писал вам, с суммой трат и последним визитом.","Откройте клиента: записи, переписки и то, что помнит ассистент.","«Личные заметки» видит только ваша команда, ассистент их не читает.","Можно продать абонемент, экспортировать или удалить данные (GDPR)."]}},
-
-{"id":"reviews","href":"/app/reviews","paths":["/app/reviews"],"icon":"chat",
- "title":{"en":"Reviews","es":"Valoraciones","fr":"Avis","de":"Bewertungen","it":"Recensioni","pt-BR":"Avaliações","ru":"Отзывы"},
- "keywords":{"en":"review rating stars reply hide","es":"valoración reseña estrellas opinión responder ocultar","fr":"avis note étoiles répondre masquer","de":"bewertung sterne antworten ausblenden","it":"recensione stelle valutazione rispondere nascondere","pt-BR":"avaliação estrelas responder ocultar","ru":"отзыв рейтинг звёзды ответить скрыть"},
- "steps":{
-  "en":["When you mark an appointment completed, the customer gets a link to rate it.","Reviews and your average rating appear on your booking page.","Write a public reply or hide a review from your page."],
-  "es":["Cuando marcas una cita como completada, el cliente recibe un enlace para valorarla.","Las valoraciones y tu nota media aparecen en tu página de reservas.","Puedes responder públicamente u ocultar una valoración de tu página."],
-  "fr":["Quand vous marquez un rendez-vous terminé, le client reçoit un lien pour le noter.","Les avis et votre note moyenne apparaissent sur votre page de réservation.","Répondez publiquement ou masquez un avis de votre page."],
-  "de":["Markierst du einen Termin als abgeschlossen, erhält der Kunde einen Bewertungslink.","Bewertungen und dein Durchschnitt erscheinen auf deiner Buchungsseite.","Antworte öffentlich oder blende eine Bewertung aus."],
-  "it":["Quando segni un appuntamento come completato, il cliente riceve un link per valutarlo.","Le recensioni e la media appaiono sulla tua pagina di prenotazione.","Rispondi pubblicamente o nascondi una recensione."],
-  "pt-BR":["Ao marcar um atendimento como concluído, o cliente recebe um link para avaliar.","As avaliações e sua média aparecem na página de reservas.","Responda publicamente ou oculte uma avaliação."],
-  "ru":["Когда вы отмечаете запись завершённой, клиент получает ссылку для отзыва.","Отзывы и средний балл видны на вашей странице записи.","Можно ответить публично или скрыть отзыв."]}},
-
-{"id":"agent","href":"/app/agent","paths":["/app/agent"],"icon":"sparkles",
- "title":{"en":"Your assistant: personality and instructions","es":"Tu asistente: personalidad e instrucciones","fr":"Votre assistant : personnalité et instructions","de":"Dein Assistent: Persönlichkeit und Anweisungen","it":"Il tuo assistente: personalità e istruzioni","pt-BR":"Seu assistente: personalidade e instruções","ru":"Ваш ассистент: характер и инструкции"},
- "keywords":{"en":"assistant agent ai personality tone instructions greeting emoji language escalate test playground pause","es":"asistente agente ia personalidad tono instrucciones saludo emojis idioma pasar conversación probar pausar","fr":"assistant ia personnalité ton instructions salutation emoji langue tester pause","de":"assistent ki persönlichkeit ton anweisungen begrüßung emoji sprache testen pausieren","it":"assistente ia personalità tono istruzioni saluto emoji lingua provare pausa","pt-BR":"assistente ia personalidade tom instruções saudação emoji idioma testar pausar","ru":"ассистент ии характер тон инструкции приветствие эмодзи язык тест пауза"},
- "steps":{
-  "en":["Choose the name, tone, formality and default language (it always mirrors the customer's language).","«Instructions»: write in plain words what it must always or never do.","«Always escalate when a customer mentions»: words that pass the chat to you.","Test it in the chat on the right before going live; the switch at the top pauses it."],
-  "es":["Elige nombre, tono, formalidad e idioma por defecto (siempre se adapta al idioma del cliente).","«Instrucciones»: escribe con palabras sencillas lo que debe hacer siempre o no hacer nunca.","«Pasarme siempre la conversación si el cliente menciona»: palabras que te pasan el chat a ti.","Pruébalo en el chat de la derecha antes de activarlo; el interruptor de arriba lo pausa."],
-  "fr":["Choisissez le nom, le ton, la formalité et la langue par défaut (il s'adapte toujours à la langue du client).","« Instructions » : écrivez simplement ce qu'il doit toujours ou jamais faire.","« Toujours transférer quand un client mentionne » : des mots qui vous passent la discussion.","Testez-le dans le chat à droite ; l'interrupteur en haut le met en pause."],
-  "de":["Wähle Name, Ton, Förmlichkeit und Standardsprache (er passt sich immer der Sprache des Kunden an).","„Anweisungen“: Schreib in einfachen Worten, was er immer oder nie tun soll.","„Immer weiterleiten, wenn ein Kunde erwähnt“: Wörter, die den Chat an dich übergeben.","Teste ihn im Chat rechts; der Schalter oben pausiert ihn."],
-  "it":["Scegli nome, tono, formalità e lingua predefinita (si adatta sempre alla lingua del cliente).","«Istruzioni»: scrivi in modo semplice cosa deve fare sempre o mai.","«Inoltra sempre quando un cliente menziona»: parole che ti passano la chat.","Provalo nella chat a destra; l'interruttore in alto lo mette in pausa."],
-  "pt-BR":["Escolha nome, tom, formalidade e idioma padrão (ele sempre se adapta ao idioma do cliente).","«Instruções»: escreva de forma simples o que deve sempre ou nunca fazer.","«Sempre encaminhar quando o cliente mencionar»: palavras que passam o chat para você.","Teste no chat à direita; o botão no topo o pausa."],
-  "ru":["Выберите имя, тон, формальность и язык по умолчанию (он всегда подстраивается под язык клиента).","«Инструкции»: простыми словами — что делать всегда и чего никогда.","«Всегда передавать, если клиент упоминает»: слова, при которых чат переходит к вам.","Проверьте его в чате справа; переключатель вверху ставит его на паузу."]}},
-
-{"id":"style","href":"/app/agent","paths":["/app/agent"],"icon":"sparkles",
- "title":{"en":"Learn my style","es":"Aprender mi estilo","fr":"Apprendre mon style","de":"Meinen Stil lernen","it":"Impara il mio stile","pt-BR":"Aprender meu estilo","ru":"Изучить мой стиль"},
- "keywords":{"en":"style voice human analyse conversations export whatsapp telegram writing","es":"estilo voz humano analizar conversaciones exportar whatsapp telegram escribir como yo","fr":"style voix humain analyser conversations export whatsapp telegram","de":"stil stimme menschlich analysieren unterhaltungen export whatsapp telegram","it":"stile voce umano analizzare conversazioni esportare whatsapp telegram","pt-BR":"estilo voz humano analisar conversas exportar whatsapp telegram","ru":"стиль голос человечный анализ переписки экспорт whatsapp telegram"},
- "steps":{
-  "en":["Go to Assistant → Assistant, card «Learn my style».","Press «Analyse my conversations»: it reads replies you wrote yourself.","Optional: upload a chat export (WhatsApp → chat → ⋮ → More → Export chat → without media; Telegram Desktop → Export chat history → JSON) and write your name as it appears in it.","Review and edit the guide, then «Save style». Nothing is used until you save.","Only your writing habits are kept, never customers' names or details."],
-  "es":["Ve a Asistente → Asistente, tarjeta «Aprender mi estilo».","Pulsa «Analizar mis conversaciones»: lee las respuestas que escribiste tú.","Opcional: sube una exportación de chat (WhatsApp → chat → ⋮ → Más → Exportar chat → sin multimedia; Telegram Desktop → Exportar historial → JSON) y escribe tu nombre tal como aparece.","Revisa y edita la guía y pulsa «Guardar estilo». No se usa nada hasta que guardes.","Solo se guardan tus hábitos de escritura, nunca nombres ni datos de clientes."],
-  "fr":["Allez dans Assistant → Assistant, carte « Apprendre mon style ».","Cliquez sur « Analyser mes conversations » : il lit les réponses que vous avez écrites.","Facultatif : importez un export de discussion (WhatsApp → discussion → ⋮ → Plus → Exporter → sans médias ; Telegram Desktop → Exporter l'historique → JSON) et indiquez votre nom tel qu'il y apparaît.","Relisez et modifiez le guide, puis « Enregistrer le style ». Rien n'est utilisé avant.","Seules vos habitudes d'écriture sont conservées, jamais les données des clients."],
-  "de":["Gehe zu Assistent → Assistent, Karte „Meinen Stil lernen“.","Klicke „Meine Unterhaltungen analysieren“: Er liest Antworten, die du selbst geschrieben hast.","Optional: Lade einen Chat-Export hoch (WhatsApp → Chat → ⋮ → Mehr → Chat exportieren → ohne Medien; Telegram Desktop → Chatverlauf exportieren → JSON) und gib deinen Namen wie im Chat an.","Prüfe und bearbeite den Leitfaden, dann „Stil speichern“. Vorher wird nichts verwendet.","Nur deine Schreibgewohnheiten werden gespeichert, nie Kundendaten."],
-  "it":["Vai in Assistente → Assistente, scheda «Impara il mio stile».","Premi «Analizza le mie conversazioni»: legge le risposte scritte da te.","Facoltativo: carica un'esportazione della chat (WhatsApp → chat → ⋮ → Altro → Esporta chat → senza media; Telegram Desktop → Esporta cronologia → JSON) e scrivi il tuo nome come appare.","Rivedi e modifica la guida, poi «Salva stile». Nulla viene usato prima.","Si conservano solo le tue abitudini di scrittura, mai i dati dei clienti."],
-  "pt-BR":["Vá em Assistente → Assistente, cartão «Aprender meu estilo».","Toque em «Analisar minhas conversas»: ele lê as respostas que você escreveu.","Opcional: envie uma exportação de conversa (WhatsApp → conversa → ⋮ → Mais → Exportar conversa → sem mídia; Telegram Desktop → Exportar histórico → JSON) e escreva seu nome como aparece.","Revise e edite o guia e toque em «Salvar estilo». Nada é usado antes disso.","Só seus hábitos de escrita são guardados, nunca dados de clientes."],
-  "ru":["Откройте Ассистент → Ассистент, карточка «Изучить мой стиль».","Нажмите «Проанализировать мои переписки»: читаются ответы, написанные вами.","По желанию загрузите экспорт чата (WhatsApp → чат → ⋮ → Ещё → Экспорт чата → без медиа; Telegram Desktop → Экспорт истории → JSON) и укажите своё имя, как в чате.","Проверьте и отредактируйте описание, затем «Сохранить стиль». До этого ничего не применяется.","Сохраняются только ваши привычки письма, никогда — данные клиентов."]}},
-
-{"id":"permissions","href":"/app/agent","paths":["/app/agent"],"icon":"shield",
- "title":{"en":"What the assistant may do (permissions)","es":"Qué puede hacer el asistente (permisos)","fr":"Ce que l'assistant peut faire (autorisations)","de":"Was der Assistent darf (Berechtigungen)","it":"Cosa può fare l'assistente (permessi)","pt-BR":"O que o assistente pode fazer (permissões)","ru":"Что может ассистент (разрешения)"},
- "keywords":{"en":"permissions auto approve off cancel reschedule book","es":"permisos automático aprobar desactivado cancelar cambiar reservar","fr":"autorisations automatique valider désactivé annuler déplacer","de":"berechtigungen automatisch freigeben aus stornieren verschieben","it":"permessi automatico approvare disattivato annullare spostare","pt-BR":"permissões automático aprovar desligado cancelar remarcar","ru":"разрешения автоматически одобрить выключено отменить перенести"},
- "steps":{
-  "en":["For each action (book, reschedule, cancel…) choose: on its own, with your approval, or not allowed.","Actions that need approval wait in Approvals.","Change it any time in Assistant → Assistant → Permissions."],
-  "es":["Para cada acción (reservar, cambiar, cancelar…) elige: sola, con tu aprobación o no permitida.","Las que necesitan aprobación esperan en Aprobaciones.","Cámbialo cuando quieras en Asistente → Asistente → Permisos."],
-  "fr":["Pour chaque action (réserver, déplacer, annuler…) choisissez : seule, avec votre accord ou interdite.","Celles qui demandent votre accord attendent dans Validations.","Modifiable à tout moment dans Assistant → Assistant → Autorisations."],
-  "de":["Wähle für jede Aktion (buchen, verschieben, stornieren…): selbstständig, mit deiner Freigabe oder nicht erlaubt.","Freigabepflichtige Aktionen warten unter Freigaben.","Jederzeit änderbar unter Assistent → Assistent → Berechtigungen."],
-  "it":["Per ogni azione (prenotare, spostare, annullare…) scegli: da solo, con la tua approvazione o non consentita.","Quelle che richiedono approvazione aspettano in Approvazioni.","Modificalo quando vuoi in Assistente → Assistente → Permessi."],
-  "pt-BR":["Para cada ação (reservar, remarcar, cancelar…) escolha: sozinho, com sua aprovação ou não permitido.","As que precisam de aprovação esperam em Aprovações.","Altere quando quiser em Assistente → Assistente → Permissões."],
-  "ru":["Для каждого действия (записать, перенести, отменить…) выберите: сам, с вашим одобрением или запрещено.","Действия, требующие одобрения, ждут в разделе Одобрения.","Меняется в любое время: Ассистент → Ассистент → Разрешения."]}},
-
-{"id":"knowledge","href":"/app/agent/knowledge","paths":["/app/agent/knowledge"],"icon":"book",
- "title":{"en":"Knowledge: FAQs and documents","es":"Conocimiento: preguntas frecuentes y documentos","fr":"Connaissances : FAQ et documents","de":"Wissen: FAQs und Dokumente","it":"Conoscenza: FAQ e documenti","pt-BR":"Conhecimento: perguntas frequentes e documentos","ru":"Знания: FAQ и документы"},
- "keywords":{"en":"knowledge faq question answer policy document upload parking payment","es":"conocimiento preguntas frecuentes respuesta política documento subir aparcamiento pago","fr":"connaissances faq question réponse politique document importer","de":"wissen faq frage antwort richtlinie dokument hochladen","it":"conoscenza faq domanda risposta politica documento caricare","pt-BR":"conhecimento perguntas resposta política documento enviar","ru":"знания вопросы ответы правила документ загрузить"},
- "steps":{
-  "en":["The assistant already knows your services, prices, team, hours and booking rules.","Add FAQs for everything else: parking, payment methods, what to bring, late arrivals.","Upload documents (.txt, .md, .csv, .json, .html up to 1 MB); long ones are searched when needed."],
-  "es":["El asistente ya conoce tus servicios, precios, equipo, horarios y reglas de reserva.","Añade preguntas frecuentes para todo lo demás: aparcamiento, formas de pago, qué traer, retrasos.","Sube documentos (.txt, .md, .csv, .json, .html hasta 1 MB); los largos se consultan cuando hace falta."],
-  "fr":["L'assistant connaît déjà vos services, prix, équipe, horaires et règles.","Ajoutez des FAQ pour le reste : parking, moyens de paiement, quoi apporter, retards.","Importez des documents (.txt, .md, .csv, .json, .html jusqu'à 1 Mo) ; les longs sont consultés si besoin."],
-  "de":["Der Assistent kennt bereits Leistungen, Preise, Team, Zeiten und Buchungsregeln.","Füge FAQs für alles andere hinzu: Parken, Zahlungsarten, was mitbringen, Verspätungen.","Lade Dokumente hoch (.txt, .md, .csv, .json, .html bis 1 MB); lange werden bei Bedarf durchsucht."],
-  "it":["L'assistente conosce già servizi, prezzi, team, orari e regole.","Aggiungi FAQ per il resto: parcheggio, pagamenti, cosa portare, ritardi.","Carica documenti (.txt, .md, .csv, .json, .html fino a 1 MB); quelli lunghi vengono consultati quando serve."],
-  "pt-BR":["O assistente já conhece serviços, preços, equipe, horários e regras.","Adicione perguntas frequentes para o resto: estacionamento, pagamento, o que levar, atrasos.","Envie documentos (.txt, .md, .csv, .json, .html até 1 MB); os longos são consultados quando necessário."],
-  "ru":["Ассистент уже знает ваши услуги, цены, команду, часы и правила записи.","Добавьте FAQ для остального: парковка, способы оплаты, что взять с собой, опоздания.","Загружайте документы (.txt, .md, .csv, .json, .html до 1 МБ); длинные используются по необходимости."]}},
-
-{"id":"channels","href":"/app/channels","paths":["/app/channels"],"icon":"plug",
- "title":{"en":"Channels: Telegram, WhatsApp and web chat","es":"Canales: Telegram, WhatsApp y chat web","fr":"Canaux : Telegram, WhatsApp et chat web","de":"Kanäle: Telegram, WhatsApp und Web-Chat","it":"Canali: Telegram, WhatsApp e chat web","pt-BR":"Canais: Telegram, WhatsApp e chat web","ru":"Каналы: Telegram, WhatsApp и веб-чат"},
- "keywords":{"en":"channels telegram whatsapp link connect qr web chat booking page","es":"canales telegram whatsapp enlace conectar vincular qr chat web página","fr":"canaux telegram whatsapp lien connecter qr chat web","de":"kanäle telegram whatsapp link verbinden qr web-chat","it":"canali telegram whatsapp link collegare qr chat web","pt-BR":"canais telegram whatsapp link conectar qr chat web","ru":"каналы telegram whatsapp ссылка подключить qr веб-чат"},
- "steps":{
-  "en":["Booking page chat is always on.","Telegram: press «Turn on Telegram» and share your personal link (Instagram bio, website, receipts). It opens the shared bot directly on your business.","WhatsApp: link the WhatsApp Business app you already use; your phone keeps working as usual. Messages from the last 30 days are imported to learn your style.","You can unlink a channel at any time."],
-  "es":["El chat de la página de reservas está siempre activo.","Telegram: pulsa «Activar Telegram» y comparte tu enlace personal (bio de Instagram, web, tickets). Abre el bot compartido directamente en tu negocio.","WhatsApp: vincula la app WhatsApp Business que ya usas; tu móvil sigue funcionando igual. Se importan los mensajes de los últimos 30 días para aprender tu estilo.","Puedes desvincular un canal cuando quieras."],
-  "fr":["Le chat de la page de réservation est toujours actif.","Telegram : cliquez « Activer Telegram » et partagez votre lien personnel (bio Instagram, site, reçus). Il ouvre le bot partagé directement sur votre établissement.","WhatsApp : liez l'app WhatsApp Business que vous utilisez déjà ; votre téléphone fonctionne comme avant. Les messages des 30 derniers jours sont importés pour apprendre votre style.","Vous pouvez délier un canal à tout moment."],
-  "de":["Der Chat auf der Buchungsseite ist immer aktiv.","Telegram: „Telegram aktivieren“ und deinen persönlichen Link teilen (Instagram-Bio, Website, Belege). Er öffnet den gemeinsamen Bot direkt bei deinem Geschäft.","WhatsApp: Verknüpfe die WhatsApp-Business-App, die du schon nutzt; dein Handy funktioniert weiter. Nachrichten der letzten 30 Tage werden importiert, um deinen Stil zu lernen.","Du kannst einen Kanal jederzeit trennen."],
-  "it":["La chat della pagina di prenotazione è sempre attiva.","Telegram: premi «Attiva Telegram» e condividi il tuo link personale (bio Instagram, sito, ricevute). Apre il bot condiviso direttamente sulla tua attività.","WhatsApp: collega l'app WhatsApp Business che usi già; il telefono funziona come sempre. Si importano i messaggi degli ultimi 30 giorni per imparare il tuo stile.","Puoi scollegare un canale quando vuoi."],
-  "pt-BR":["O chat da página de reservas está sempre ativo.","Telegram: toque em «Ativar Telegram» e compartilhe seu link pessoal (bio do Instagram, site, recibos). Ele abre o bot compartilhado direto no seu negócio.","WhatsApp: vincule o app WhatsApp Business que você já usa; seu celular continua funcionando. As mensagens dos últimos 30 dias são importadas para aprender seu estilo.","Você pode desvincular um canal a qualquer momento."],
-  "ru":["Чат на странице записи работает всегда.","Telegram: нажмите «Включить Telegram» и делитесь личной ссылкой (био Instagram, сайт, чеки). Она открывает общий бот сразу на вашем бизнесе.","WhatsApp: подключите WhatsApp Business, которым уже пользуетесь; телефон работает как обычно. Сообщения за последние 30 дней импортируются, чтобы изучить ваш стиль.","Канал можно отключить в любой момент."]}},
-
-{"id":"services","href":"/app/services","paths":["/app/services"],"icon":"scissors",
- "title":{"en":"Services and prices","es":"Servicios y precios","fr":"Services et prix","de":"Leistungen und Preise","it":"Servizi e prezzi","pt-BR":"Serviços e preços","ru":"Услуги и цены"},
- "keywords":{"en":"service price duration buffer staff archive catalog","es":"servicio precio duración margen descanso profesional archivar catálogo tarifa","fr":"service prix durée battement équipe archiver catalogue","de":"leistung preis dauer puffer team archivieren katalog","it":"servizio prezzo durata pausa team archiviare catalogo","pt-BR":"serviço preço duração intervalo equipe arquivar catálogo","ru":"услуга цена длительность перерыв сотрудник архив каталог"},
- "steps":{
-  "en":["Each service has a name, description, minutes, buffer (rest time after) and price.","«Performed by»: tick who can do it; none ticked means anyone.","The assistant quotes these prices and durations exactly.","Archive a service to hide it; existing bookings are kept."],
-  "es":["Cada servicio tiene nombre, descripción, minutos, margen (descanso después) y precio.","«Lo realiza»: marca quién puede hacerlo; si no marcas a nadie, cualquiera.","El asistente da exactamente estos precios y duraciones.","Archiva un servicio para ocultarlo; las reservas existentes se mantienen."],
-  "fr":["Chaque service a un nom, une description, une durée, un battement (pause après) et un prix.","« Réalisé par » : cochez qui peut le faire ; aucun coché = tout le monde.","L'assistant donne exactement ces prix et durées.","Archivez un service pour le masquer ; les réservations existantes sont conservées."],
-  "de":["Jede Leistung hat Name, Beschreibung, Minuten, Puffer (Pause danach) und Preis.","„Ausgeführt von“: Hake an, wer sie anbietet; keiner = alle.","Der Assistent nennt genau diese Preise und Dauern.","Archiviere eine Leistung, um sie auszublenden; Buchungen bleiben erhalten."],
-  "it":["Ogni servizio ha nome, descrizione, minuti, pausa dopo e prezzo.","«Eseguito da»: spunta chi può farlo; nessuno = chiunque.","L'assistente comunica esattamente questi prezzi e durate.","Archivia un servizio per nasconderlo; le prenotazioni restano."],
-  "pt-BR":["Cada serviço tem nome, descrição, minutos, intervalo (descanso depois) e preço.","«Realizado por»: marque quem pode fazer; nenhum marcado = qualquer um.","O assistente informa exatamente esses preços e durações.","Arquive um serviço para ocultá-lo; as reservas existentes são mantidas."],
-  "ru":["У каждой услуги есть название, описание, минуты, перерыв после и цена.","«Выполнил»: отметьте, кто может; никто не отмечен — любой.","Ассистент называет именно эти цены и длительность.","Архивируйте услугу, чтобы скрыть её; существующие записи сохраняются."]}},
-
-{"id":"team","href":"/app/team","paths":["/app/team"],"icon":"clock",
- "title":{"en":"Team, hours and days off","es":"Equipo, horarios y días libres","fr":"Équipe, horaires et congés","de":"Team, Zeiten und freie Tage","it":"Team, orari e giorni liberi","pt-BR":"Equipe, horários e folgas","ru":"Команда, часы и выходные"},
- "keywords":{"en":"team staff hours schedule opening closing break holiday time off closed","es":"equipo profesional horario apertura cierre descanso vacaciones festivo cerrado ausencia","fr":"équipe horaires ouverture fermeture pause vacances congé fermé","de":"team zeiten öffnung schließung pause urlaub frei geschlossen","it":"team orari apertura chiusura pausa ferie chiuso","pt-BR":"equipe horário abertura fechamento pausa férias folga fechado","ru":"команда часы открытие закрытие перерыв отпуск выходной"},
- "steps":{
-  "en":["Add team members (with photo color, title and short bio shown to customers and the assistant).","Set opening and closing time per day, with an optional break.","«Time off & closures»: holidays or training for one person or the whole business.","These hours decide availability everywhere: booking page, assistant and app."],
-  "es":["Añade profesionales (con color, cargo y una breve bio que ven los clientes y el asistente).","Pon la hora de apertura y cierre de cada día, con descanso opcional.","«Vacaciones y cierres»: vacaciones o formación de una persona o de todo el negocio.","Estos horarios deciden la disponibilidad en todas partes: página de reservas, asistente y app."],
-  "fr":["Ajoutez des membres (couleur, titre et courte bio visibles par les clients et l'assistant).","Définissez l'ouverture et la fermeture de chaque jour, avec pause facultative.","« Congés & fermetures » : congés ou formation pour une personne ou tout l'établissement.","Ces horaires définissent la disponibilité partout : page de réservation, assistant et app."],
-  "de":["Füge Teammitglieder hinzu (Farbe, Titel und kurze Bio für Kunden und Assistent).","Lege Öffnungs- und Schließzeit pro Tag fest, optional mit Pause.","„Abwesenheiten & Schließungen“: Urlaub oder Schulung für eine Person oder das ganze Geschäft.","Diese Zeiten bestimmen die Verfügbarkeit überall: Buchungsseite, Assistent und App."],
-  "it":["Aggiungi membri del team (colore, ruolo e breve bio visibili a clienti e assistente).","Imposta apertura e chiusura per ogni giorno, con pausa facoltativa.","«Assenze e chiusure»: ferie o formazione per una persona o tutta l'attività.","Questi orari decidono la disponibilità ovunque: pagina, assistente e app."],
-  "pt-BR":["Adicione profissionais (cor, cargo e bio curta vistos por clientes e assistente).","Defina abertura e fechamento de cada dia, com pausa opcional.","«Folgas e fechamentos»: férias ou treinamento de uma pessoa ou do negócio todo.","Esses horários definem a disponibilidade em todo lugar: página, assistente e app."],
-  "ru":["Добавьте сотрудников (цвет, должность и краткое био видят клиенты и ассистент).","Задайте время открытия и закрытия на каждый день, при желании с перерывом.","«Отпуска и закрытия»: отпуск или обучение одного человека или всего бизнеса.","Эти часы определяют доступность везде: страница записи, ассистент и приложение."]}},
-
-{"id":"packs","href":"/app/packs","paths":["/app/packs","/app/customers"],"icon":"ticket",
- "title":{"en":"Packs (prepaid sessions)","es":"Bonos (sesiones prepagadas)","fr":"Forfaits (séances prépayées)","de":"Pakete (vorausbezahlte Sitzungen)","it":"Pacchetti (sedute prepagate)","pt-BR":"Pacotes (sessões pré-pagas)","ru":"Абонементы (предоплаченные сеансы)"},
- "keywords":{"en":"pack bundle prepaid sessions voucher sell discount","es":"bono bonos paquete prepago sesiones vender descuento","fr":"forfait carnet prépayé séances vendre remise","de":"paket prepaid sitzungen gutschein verkaufen rabatt","it":"pacchetto prepagato sedute vendere sconto","pt-BR":"pacote pré-pago sessões vender desconto","ru":"абонемент пакет предоплата сеансы продать скидка"},
- "steps":{
-  "en":["Create a pack in Business → Packs: name, service, number of sessions, price and days of validity (the saving is shown).","Sell it from the customer's page: card «Packs» → «Sell a pack (paid in person)».","When that customer books that service, the booking is taken from the pack and marked paid (from the pack that expires first).","Cancelling a booking gives the session back. You can also void a pack.","The assistant explains your packs and knows how many sessions each customer has left, but cannot sell them. Online sales will come with card payments."],
-  "es":["Crea un bono en Negocio → Bonos: nombre, servicio, número de sesiones, precio y días de validez (se muestra el ahorro).","Véndelo desde la ficha del cliente: tarjeta «Bonos» → «Vender un bono (pagado en persona)».","Cuando ese cliente reserva ese servicio, la reserva se descuenta del bono y queda pagada (del que caduca antes).","Si se cancela una cita, la sesión vuelve al bono. También puedes anular un bono.","El asistente explica tus bonos y sabe cuántas sesiones le quedan a cada cliente, pero no puede venderlos. La venta online llegará con los pagos con tarjeta."],
-  "fr":["Créez un forfait dans Établissement → Forfaits : nom, service, nombre de séances, prix et validité (l'économie est affichée).","Vendez-le depuis la fiche client : carte « Forfaits » → « Vendre un forfait (payé sur place) ».","Quand ce client réserve ce service, la réservation est déduite du forfait et marquée payée (celui qui expire en premier).","Annuler une réservation rend la séance. Vous pouvez aussi annuler un forfait.","L'assistant présente vos forfaits et connaît le solde de chaque client, mais ne peut pas les vendre. La vente en ligne arrivera avec le paiement par carte."],
-  "de":["Lege ein Paket unter Geschäft → Pakete an: Name, Leistung, Anzahl Sitzungen, Preis und Gültigkeit (die Ersparnis wird angezeigt).","Verkaufe es auf der Kundenseite: Karte „Pakete“ → „Paket verkaufen (vor Ort bezahlt)“.","Bucht dieser Kunde diese Leistung, wird die Buchung vom Paket abgezogen und als bezahlt markiert (vom zuerst ablaufenden).","Eine Stornierung gibt die Sitzung zurück. Du kannst ein Paket auch stornieren.","Der Assistent erklärt deine Pakete und kennt das Guthaben jedes Kunden, kann sie aber nicht verkaufen. Online-Verkauf kommt mit Kartenzahlung."],
-  "it":["Crea un pacchetto in Attività → Pacchetti: nome, servizio, numero di sedute, prezzo e validità (viene mostrato il risparmio).","Vendilo dalla scheda del cliente: scheda «Pacchetti» → «Vendi un pacchetto (pagato di persona)».","Quando quel cliente prenota quel servizio, la prenotazione viene scalata dal pacchetto e segnata pagata (da quello che scade prima).","Annullare una prenotazione restituisce la seduta. Puoi anche annullare un pacchetto.","L'assistente spiega i pacchetti e sa quante sedute restano a ogni cliente, ma non può venderli. La vendita online arriverà con i pagamenti con carta."],
-  "pt-BR":["Crie um pacote em Negócio → Pacotes: nome, serviço, número de sessões, preço e validade (a economia é mostrada).","Venda na ficha do cliente: cartão «Pacotes» → «Vender um pacote (pago pessoalmente)».","Quando esse cliente reserva esse serviço, a reserva é descontada do pacote e marcada como paga (do que vence primeiro).","Cancelar uma reserva devolve a sessão. Você também pode anular um pacote.","O assistente explica seus pacotes e sabe quantas sessões restam a cada cliente, mas não pode vendê-los. A venda online virá com o pagamento por cartão."],
-  "ru":["Создайте абонемент в Бизнес → Абонементы: название, услуга, число сеансов, цена и срок действия (видна экономия).","Продайте его на странице клиента: карточка «Абонементы» → «Продать абонемент (оплата на месте)».","Когда клиент записывается на эту услугу, запись списывается с абонемента и считается оплаченной (с того, что истекает раньше).","Отмена записи возвращает сеанс. Абонемент можно аннулировать.","Ассистент рассказывает об абонементах и знает остаток у каждого клиента, но продавать их не может. Онлайн-продажа появится с оплатой картой."]}},
-
-{"id":"settings","href":"/app/settings","paths":["/app/settings"],"icon":"settings",
- "title":{"en":"Settings: profile and booking rules","es":"Ajustes: perfil y reglas de reserva","fr":"Paramètres : profil et règles de réservation","de":"Einstellungen: Profil und Buchungsregeln","it":"Impostazioni: profilo e regole di prenotazione","pt-BR":"Configurações: perfil e regras de reserva","ru":"Настройки: профиль и правила записи"},
- "keywords":{"en":"settings profile currency timezone logo color notice cancellation confirm automatically policy publish marketplace","es":"ajustes perfil moneda zona horaria logo color antelación cancelación confirmar automáticamente política publicar directorio","fr":"paramètres profil devise fuseau logo couleur délai annulation confirmer politique publier","de":"einstellungen profil währung zeitzone logo farbe vorlauf stornierung bestätigen richtlinie veröffentlichen","it":"impostazioni profilo valuta fuso logo colore preavviso cancellazione confermare politica pubblicare","pt-BR":"configurações perfil moeda fuso logo cor antecedência cancelamento confirmar política publicar","ru":"настройки профиль валюта часовой пояс логотип цвет отмена подтверждение правила публикация"},
- "steps":{
-  "en":["Profile: name, category, description, contact, currency and time zone. The assistant reads all of this.","Branding: brand color, logo and cover image for your booking page.","Booking rules: minimum notice, how far ahead people can book, free cancellation window, slot grid and automatic confirmation (off = bookings arrive as requests).","«Policy shown to customers»: late arrivals, deposits, what to bring…","Publishing: list your page in the directory or keep it private to your team."],
-  "es":["Perfil: nombre, categoría, descripción, contacto, moneda y zona horaria. El asistente lee todo esto.","Imagen: color de marca, logo e imagen de portada de tu página de reservas.","Reglas de reserva: antelación mínima, con cuánto tiempo se puede reservar, plazo de cancelación gratuita, intervalos de horas y confirmación automática (desactivada = las reservas llegan como solicitudes).","«Política que ven los clientes»: retrasos, señales, qué traer…","Publicación: aparecer en el directorio o mantener la página privada para tu equipo."],
-  "fr":["Profil : nom, catégorie, description, contact, devise et fuseau horaire. L'assistant lit tout cela.","Image : couleur, logo et image de couverture de votre page.","Règles : délai minimum, réservation à l'avance, annulation gratuite, grille horaire et confirmation automatique (désactivée = demandes à valider).","« Politique affichée aux clients » : retards, acomptes, quoi apporter…","Publication : apparaître dans l'annuaire ou rester privé."],
-  "de":["Profil: Name, Kategorie, Beschreibung, Kontakt, Währung und Zeitzone. Der Assistent liest alles.","Branding: Markenfarbe, Logo und Titelbild deiner Buchungsseite.","Buchungsregeln: Mindestvorlauf, wie weit im Voraus, kostenlose Stornierung, Zeitraster und automatische Bestätigung (aus = Buchungen kommen als Anfragen).","„Richtlinie für Kunden“: Verspätungen, Anzahlungen, was mitbringen…","Veröffentlichung: im Verzeichnis listen oder nur fürs Team sichtbar."],
-  "it":["Profilo: nome, categoria, descrizione, contatti, valuta e fuso orario. L'assistente legge tutto.","Immagine: colore, logo e copertina della pagina.","Regole: preavviso minimo, quanto in anticipo si prenota, cancellazione gratuita, griglia oraria e conferma automatica (disattivata = richieste da confermare).","«Politica mostrata ai clienti»: ritardi, acconti, cosa portare…","Pubblicazione: comparire nella directory o restare privata."],
-  "pt-BR":["Perfil: nome, categoria, descrição, contato, moeda e fuso horário. O assistente lê tudo isso.","Visual: cor da marca, logo e imagem de capa da página.","Regras: antecedência mínima, com quanto tempo se pode reservar, cancelamento grátis, grade de horários e confirmação automática (desligada = reservas chegam como pedidos).","«Política exibida aos clientes»: atrasos, sinal, o que levar…","Publicação: aparecer no diretório ou manter privada."],
-  "ru":["Профиль: название, категория, описание, контакты, валюта и часовой пояс. Ассистент читает всё это.","Оформление: фирменный цвет, логотип и обложка страницы.","Правила: минимальное время до записи, на сколько вперёд можно записаться, бесплатная отмена, шаг слотов и автоподтверждение (выкл. = записи приходят как заявки).","«Правила для клиентов»: опоздания, предоплата, что взять с собой…","Публикация: показываться в каталоге или только для команды."]}},
-
-{"id":"billing","href":"/app/billing","paths":["/app/billing"],"icon":"card",
- "title":{"en":"Plan, billing and usage","es":"Plan, facturación y uso","fr":"Offre, facturation et usage","de":"Tarif, Abrechnung und Nutzung","it":"Piano, fatturazione e utilizzo","pt-BR":"Plano, cobrança e uso","ru":"Тариф, оплата и использование"},
- "keywords":{"en":"plan billing subscription upgrade price basic pro premium usage limit","es":"plan facturación suscripción mejorar precio basic pro premium uso límite","fr":"offre facturation abonnement passer prix usage limite","de":"tarif abrechnung abo upgrade preis nutzung limit","it":"piano fatturazione abbonamento upgrade prezzo utilizzo limite","pt-BR":"plano cobrança assinatura upgrade preço uso limite","ru":"тариф оплата подписка повысить цена использование лимит"},
- "steps":{
-  "en":["See your current plan (Basic, Pro or Premium), renewal date and this month's usage.","If you reach the monthly limit, new conversations wait for you in the inbox until next month or an upgrade.","Change plan with «Switch to…»; card payments are handled by Stripe."],
-  "es":["Consulta tu plan (Basic, Pro o Premium), la fecha de renovación y el uso de este mes.","Si llegas al límite mensual, las nuevas conversaciones te esperan en la bandeja hasta el mes siguiente o hasta que mejores el plan.","Cambia de plan con «Cambiar a…»; los pagos con tarjeta los gestiona Stripe."],
-  "fr":["Consultez votre offre (Basic, Pro ou Premium), la date de renouvellement et l'usage du mois.","À la limite mensuelle, les nouvelles conversations vous attendent dans la boîte jusqu'au mois suivant ou un changement d'offre.","Changez d'offre avec « Passer à… » ; les paiements par carte passent par Stripe."],
-  "de":["Sieh deinen Tarif (Basic, Pro oder Premium), das Verlängerungsdatum und die Nutzung dieses Monats.","Ist das Monatslimit erreicht, warten neue Unterhaltungen im Posteingang bis zum nächsten Monat oder einem Upgrade.","Wechsle mit „Wechseln zu…“; Kartenzahlungen laufen über Stripe."],
-  "it":["Vedi il tuo piano (Basic, Pro o Premium), la data di rinnovo e l'utilizzo del mese.","Raggiunto il limite mensile, le nuove conversazioni ti aspettano nella posta fino al mese dopo o a un upgrade.","Cambia piano con «Passa a…»; i pagamenti con carta sono gestiti da Stripe."],
-  "pt-BR":["Veja seu plano (Basic, Pro ou Premium), a data de renovação e o uso do mês.","Ao atingir o limite mensal, novas conversas esperam na caixa de entrada até o mês seguinte ou um upgrade.","Troque de plano com «Mudar para…»; pagamentos com cartão são feitos pelo Stripe."],
-  "ru":["Смотрите свой тариф (Basic, Pro или Premium), дату продления и использование за месяц.","При достижении месячного лимита новые переписки ждут во входящих до следующего месяца или смены тарифа.","Меняйте тариф кнопкой «Перейти на…»; оплату картой обрабатывает Stripe."]}},
-
-{"id":"bookingpage","href":"/app/settings","paths":["/app","/app/settings","/app/channels"],"icon":"globe",
- "title":{"en":"Your booking page and what customers receive","es":"Tu página de reservas y lo que reciben tus clientes","fr":"Votre page de réservation et ce que reçoivent vos clients","de":"Deine Buchungsseite und was Kunden erhalten","it":"La tua pagina di prenotazione e cosa ricevono i clienti","pt-BR":"Sua página de reservas e o que seus clientes recebem","ru":"Ваша страница записи и что получают клиенты"},
- "keywords":{"en":"booking page link public share email confirmation reminder manage cancel review","es":"página de reservas enlace pública compartir email confirmación recordatorio gestionar cancelar valoración","fr":"page réservation lien public partager email confirmation rappel gérer annuler avis","de":"buchungsseite link öffentlich teilen email bestätigung erinnerung verwalten stornieren bewertung","it":"pagina prenotazione link pubblica condividere email conferma promemoria gestire annullare recensione","pt-BR":"página reservas link pública compartilhar email confirmação lembrete gerenciar cancelar avaliação","ru":"страница записи ссылка публичная поделиться email подтверждение напоминание отменить отзыв"},
- "steps":{
-  "en":["Your page is /b/your-name (link at the top of the side menu). Customers book there or chat with your assistant.","They receive an email confirmation, a reminder before the appointment and a link to change or cancel it themselves.","After a completed appointment they get a link to leave a review."],
-  "es":["Tu página es /b/tu-nombre (enlace arriba en el menú lateral). Ahí los clientes reservan o hablan con tu asistente.","Reciben un email de confirmación, un recordatorio antes de la cita y un enlace para cambiarla o cancelarla ellos mismos.","Tras una cita completada reciben un enlace para dejar su valoración."],
-  "fr":["Votre page est /b/votre-nom (lien en haut du menu). Les clients y réservent ou discutent avec votre assistant.","Ils reçoivent un e-mail de confirmation, un rappel avant le rendez-vous et un lien pour le modifier ou l'annuler eux-mêmes.","Après un rendez-vous terminé, ils reçoivent un lien pour laisser un avis."],
-  "de":["Deine Seite ist /b/dein-name (Link oben im Menü). Dort buchen Kunden oder chatten mit deinem Assistenten.","Sie erhalten eine Bestätigungs-E-Mail, eine Erinnerung vor dem Termin und einen Link zum selbst Ändern oder Stornieren.","Nach einem abgeschlossenen Termin bekommen sie einen Bewertungslink."],
-  "it":["La tua pagina è /b/tuo-nome (link in alto nel menu). Lì i clienti prenotano o chattano con l'assistente.","Ricevono un'email di conferma, un promemoria prima dell'appuntamento e un link per modificarlo o annullarlo da soli.","Dopo un appuntamento completato ricevono un link per lasciare una recensione."],
-  "pt-BR":["Sua página é /b/seu-nome (link no topo do menu). Lá os clientes reservam ou falam com seu assistente.","Eles recebem um email de confirmação, um lembrete antes do horário e um link para remarcar ou cancelar sozinhos.","Após um atendimento concluído, recebem um link para avaliar."],
-  "ru":["Ваша страница — /b/ваше-имя (ссылка вверху бокового меню). Там клиенты записываются или пишут ассистенту.","Они получают письмо с подтверждением, напоминание перед визитом и ссылку, чтобы самим перенести или отменить запись.","После завершённой записи приходит ссылка для отзыва."]}},
-
-{"id":"community","href":"/app/community","paths":["/app/community"],"icon":"crown",
- "title":{"en":"VIP community","es":"Comunidad VIP","fr":"Communauté VIP","de":"VIP-Community","it":"Community VIP","pt-BR":"Comunidade VIP","ru":"VIP-сообщество"},
- "keywords":{"en":"community forum discussion vip premium report","es":"comunidad foro debate vip premium reportar","fr":"communauté forum discussion vip signaler","de":"community forum diskussion vip melden","it":"community forum discussione vip segnalare","pt-BR":"comunidade fórum discussão vip denunciar","ru":"сообщество форум обсуждение vip пожаловаться"},
- "steps":{
-  "en":["A private, moderated space for verified VIP businesses; it unlocks with your plan.","Start a discussion in a category or reply to others.","Use «Report» to alert the moderators."],
-  "es":["Un espacio privado y moderado para negocios VIP verificados; se desbloquea según tu plan.","Abre un debate en una categoría o responde a otros.","Usa «Denunciar» para avisar a los moderadores."],
-  "fr":["Un espace privé et modéré pour les établissements VIP vérifiés ; il se débloque selon votre offre.","Lancez une discussion dans une catégorie ou répondez aux autres.","Utilisez « Signaler » pour alerter les modérateurs."],
-  "de":["Ein privater, moderierter Bereich für verifizierte VIP-Geschäfte; je nach Tarif freigeschaltet.","Starte eine Diskussion in einer Kategorie oder antworte anderen.","Mit „Melden“ informierst du die Moderation."],
-  "it":["Uno spazio privato e moderato per attività VIP verificate; si sblocca con il piano.","Avvia una discussione in una categoria o rispondi agli altri.","Usa «Segnala» per avvisare i moderatori."],
-  "pt-BR":["Um espaço privado e moderado para negócios VIP verificados; libera conforme seu plano.","Inicie uma discussão em uma categoria ou responda a outros.","Use «Denunciar» para avisar os moderadores."],
-  "ru":["Закрытое модерируемое пространство для проверенных VIP-бизнесов; открывается по тарифу.","Начните обсуждение в категории или отвечайте другим.","Кнопка «Пожаловаться» уведомляет модераторов."]}}
+ {
+  "id": "start",
+  "href": "/app",
+  "paths": [
+   "/app"
+  ],
+  "icon": "home",
+  "title": {
+   "en": "Getting started",
+   "es": "Primeros pasos",
+   "fr": "Bien démarrer",
+   "de": "Erste Schritte",
+   "it": "Primi passi",
+   "pt-BR": "Primeiros passos",
+   "ru": "С чего начать"
+  },
+  "keywords": {
+   "en": "start setup begin overview dashboard",
+   "es": "empezar configurar inicio resumen panel",
+   "fr": "commencer configurer accueil résumé",
+   "de": "start einrichten übersicht",
+   "it": "iniziare configurare panoramica",
+   "pt-BR": "começar configurar início resumo",
+   "ru": "начало настройка обзор"
+  },
+  "steps": {
+   "en": [
+    "Add your services with price and duration in Business → Services.",
+    "Set your working hours in Business → Team & hours.",
+    "Check your currency, time zone and booking rules in Business → Settings.",
+    "Try your assistant in Assistant → Assistant (test chat on the right).",
+    "Turn on Telegram (and WhatsApp when available) in Assistant → Channels and share your link."
+   ],
+   "es": [
+    "Añade tus servicios con precio y duración en Negocio → Servicios.",
+    "Configura tu horario en Negocio → Equipo y horarios.",
+    "Revisa moneda, zona horaria y reglas de reserva en Negocio → Ajustes.",
+    "Prueba tu asistente en Asistente → Asistente (chat de prueba a la derecha).",
+    "Activa Telegram (y WhatsApp cuando esté disponible) en Asistente → Canales y comparte tu enlace."
+   ],
+   "fr": [
+    "Ajoutez vos services avec prix et durée dans Établissement → Services.",
+    "Définissez vos horaires dans Établissement → Équipe & horaires.",
+    "Vérifiez devise, fuseau horaire et règles de réservation dans Établissement → Paramètres.",
+    "Testez votre assistant dans Assistant → Assistant (chat de test à droite).",
+    "Activez Telegram (et WhatsApp quand il sera disponible) dans Assistant → Canaux et partagez votre lien."
+   ],
+   "de": [
+    "Füge deine Leistungen mit Preis und Dauer unter Geschäft → Leistungen hinzu.",
+    "Lege deine Arbeitszeiten unter Geschäft → Team & Zeiten fest.",
+    "Prüfe Währung, Zeitzone und Buchungsregeln unter Geschäft → Einstellungen.",
+    "Teste deinen Assistenten unter Assistent → Assistent (Test-Chat rechts).",
+    "Aktiviere Telegram (und WhatsApp, sobald verfügbar) unter Assistent → Kanäle und teile deinen Link."
+   ],
+   "it": [
+    "Aggiungi i servizi con prezzo e durata in Attività → Servizi.",
+    "Imposta gli orari in Attività → Team e orari.",
+    "Controlla valuta, fuso orario e regole di prenotazione in Attività → Impostazioni.",
+    "Prova l'assistente in Assistente → Assistente (chat di prova a destra).",
+    "Attiva Telegram (e WhatsApp quando disponibile) in Assistente → Canali e condividi il tuo link."
+   ],
+   "pt-BR": [
+    "Adicione seus serviços com preço e duração em Negócio → Serviços.",
+    "Defina seus horários em Negócio → Equipe e horários.",
+    "Confira moeda, fuso horário e regras de reserva em Negócio → Configurações.",
+    "Teste seu assistente em Assistente → Assistente (chat de teste à direita).",
+    "Ative o Telegram (e o WhatsApp quando disponível) em Assistente → Canais e compartilhe seu link."
+   ],
+   "ru": [
+    "Добавьте услуги с ценой и длительностью: Бизнес → Услуги.",
+    "Задайте рабочие часы: Бизнес → Команда и часы.",
+    "Проверьте валюту, часовой пояс и правила записи: Бизнес → Настройки.",
+    "Проверьте ассистента: Ассистент → Ассистент (тестовый чат справа).",
+    "Включите Telegram (и WhatsApp, когда появится): Ассистент → Каналы, и поделитесь ссылкой."
+   ]
+  }
+ },
+ {
+  "id": "bookings",
+  "href": "/app/bookings",
+  "paths": [
+   "/app/bookings"
+  ],
+  "icon": "calendar",
+  "title": {
+   "en": "Bookings and calendar",
+   "es": "Reservas y agenda",
+   "fr": "Réservations et agenda",
+   "de": "Buchungen und Kalender",
+   "it": "Prenotazioni e agenda",
+   "pt-BR": "Reservas e agenda",
+   "ru": "Записи и календарь"
+  },
+  "keywords": {
+   "en": "booking appointment calendar new reschedule move cancel no-show completed walk-in",
+   "es": "reserva cita agenda calendario nueva cambiar mover cancelar no presentado completada sin cita",
+   "fr": "réservation rendez-vous agenda déplacer annuler absence terminé",
+   "de": "buchung termin kalender verschieben stornieren nicht erschienen abgeschlossen",
+   "it": "prenotazione appuntamento agenda spostare annullare assente completato",
+   "pt-BR": "reserva agendamento agenda remarcar cancelar não compareceu concluído",
+   "ru": "запись встреча календарь перенести отменить неявка завершено"
+  },
+  "steps": {
+   "en": [
+    "See the day or week and filter by team member.",
+    "«New booking»: pick a service, time and an existing or new customer.",
+    "Open a booking to reschedule, cancel (the customer is notified), mark it completed or no-show.",
+    "«Allow outside opening hours» lets you book walk-ins; overlaps are still blocked.",
+    "Marking an appointment completed sends the customer a review request."
+   ],
+   "es": [
+    "Ve el día o la semana y filtra por profesional.",
+    "«Nueva reserva»: elige servicio, hora y un cliente existente o nuevo.",
+    "Abre una reserva para cambiarla, cancelarla (se avisa al cliente), marcarla completada o como no presentado.",
+    "«Permitir fuera del horario» te deja meter citas sin hueco; los solapamientos siguen bloqueados.",
+    "Al marcar una cita como completada, el cliente recibe una petición de valoración."
+   ],
+   "fr": [
+    "Affichez le jour ou la semaine et filtrez par membre de l'équipe.",
+    "« Nouvelle réservation » : choisissez un service, un horaire et un client existant ou nouveau.",
+    "Ouvrez une réservation pour la déplacer, l'annuler (le client est prévenu), la marquer terminée ou absent.",
+    "« Autoriser hors horaires d'ouverture » permet les clients sans rendez-vous ; les chevauchements restent bloqués.",
+    "Marquer un rendez-vous terminé envoie au client une demande d'avis."
+   ],
+   "de": [
+    "Sieh dir Tag oder Woche an und filtere nach Teammitglied.",
+    "„Neue Buchung“: Leistung, Zeit und bestehenden oder neuen Kunden wählen.",
+    "Öffne eine Buchung, um sie zu verschieben, zu stornieren (Kunde wird informiert) oder als abgeschlossen/nicht erschienen zu markieren.",
+    "„Außerhalb der Öffnungszeiten erlauben“ ermöglicht Spontanbuchungen; Überschneidungen bleiben gesperrt.",
+    "Ein abgeschlossener Termin löst eine Bewertungsanfrage an den Kunden aus."
+   ],
+   "it": [
+    "Visualizza il giorno o la settimana e filtra per membro del team.",
+    "«Nuova prenotazione»: scegli servizio, orario e un cliente esistente o nuovo.",
+    "Apri una prenotazione per spostarla, annullarla (il cliente viene avvisato), segnarla completata o assente.",
+    "«Consenti fuori orario» permette clienti senza appuntamento; le sovrapposizioni restano bloccate.",
+    "Segnare un appuntamento come completato invia al cliente una richiesta di recensione."
+   ],
+   "pt-BR": [
+    "Veja o dia ou a semana e filtre por profissional.",
+    "«Nova reserva»: escolha serviço, horário e um cliente existente ou novo.",
+    "Abra uma reserva para remarcar, cancelar (o cliente é avisado), marcar como concluída ou não compareceu.",
+    "«Permitir fora do horário de funcionamento» deixa encaixar clientes; sobreposições continuam bloqueadas.",
+    "Marcar um atendimento como concluído envia ao cliente um pedido de avaliação."
+   ],
+   "ru": [
+    "Смотрите день или неделю и фильтруйте по сотруднику.",
+    "«Новая запись»: выберите услугу, время и существующего или нового клиента.",
+    "Откройте запись, чтобы перенести, отменить (клиент получит уведомление), отметить как завершённую или неявку.",
+    "«Разрешить вне рабочих часов» — для клиентов без записи; пересечения всё равно блокируются.",
+    "Завершённая запись отправляет клиенту просьбу оставить отзыв."
+   ]
+  }
+ },
+ {
+  "id": "inbox",
+  "href": "/app/inbox",
+  "paths": [
+   "/app/inbox"
+  ],
+  "icon": "inbox",
+  "title": {
+   "en": "Inbox: conversations",
+   "es": "Bandeja de entrada: conversaciones",
+   "fr": "Boîte de réception : conversations",
+   "de": "Posteingang: Unterhaltungen",
+   "it": "Posta in arrivo: conversazioni",
+   "pt-BR": "Caixa de entrada: conversas",
+   "ru": "Входящие: переписки"
+  },
+  "keywords": {
+   "en": "inbox messages chat conversation reply take over hand back escalated human",
+   "es": "bandeja mensajes chat conversación responder tomar el control devolver escalado humano",
+   "fr": "messages discussion répondre reprendre rendre escaladé humain",
+   "de": "nachrichten chat antworten übernehmen zurückgeben eskaliert mensch",
+   "it": "messaggi chat rispondere prendere il controllo restituire escalation umano",
+   "pt-BR": "mensagens chat conversa responder assumir devolver escalado humano",
+   "ru": "сообщения чат ответить взять на себя вернуть эскалация человек"
+  },
+  "steps": {
+   "en": [
+    "All WhatsApp, Telegram and booking-page chats arrive here.",
+    "Conversations the assistant escalated are marked «Needs you».",
+    "Writing a reply takes over: the assistant stays silent in that chat.",
+    "«Hand back to agent» lets the assistant answer again.",
+    "Your own replies teach the assistant your style (Assistant → Learn my style)."
+   ],
+   "es": [
+    "Aquí llegan todos los chats de WhatsApp, Telegram y de tu página de reservas.",
+    "Las conversaciones que el asistente te pasa aparecen como «Te necesita».",
+    "Al escribir una respuesta tomas el control: el asistente se calla en ese chat.",
+    "«Devolver al asistente» hace que vuelva a responder.",
+    "Tus propias respuestas enseñan tu estilo al asistente (Asistente → Aprender mi estilo)."
+   ],
+   "fr": [
+    "Toutes les discussions WhatsApp, Telegram et de votre page de réservation arrivent ici.",
+    "Les conversations escaladées par l'assistant sont marquées « Vous attend ».",
+    "Écrire une réponse vous donne la main : l'assistant se tait dans cette discussion.",
+    "« Rendre la main à l'assistant » lui permet de répondre à nouveau.",
+    "Vos propres réponses lui apprennent votre style (Assistant → Apprendre mon style)."
+   ],
+   "de": [
+    "Alle Chats aus WhatsApp, Telegram und deiner Buchungsseite landen hier.",
+    "Vom Assistenten eskalierte Unterhaltungen sind mit „Braucht dich“ markiert.",
+    "Wenn du antwortest, übernimmst du: Der Assistent schweigt in diesem Chat.",
+    "„An Assistent zurückgeben“ lässt ihn wieder antworten.",
+    "Deine eigenen Antworten bringen ihm deinen Stil bei (Assistent → Meinen Stil lernen)."
+   ],
+   "it": [
+    "Qui arrivano tutte le chat di WhatsApp, Telegram e della pagina di prenotazione.",
+    "Le conversazioni passate dall'assistente sono segnate «Ti aspetta».",
+    "Rispondendo prendi il controllo: l'assistente tace in quella chat.",
+    "«Ripassa all'assistente» lo fa rispondere di nuovo.",
+    "Le tue risposte gli insegnano il tuo stile (Assistente → Impara il mio stile)."
+   ],
+   "pt-BR": [
+    "Todas as conversas de WhatsApp, Telegram e da página de reservas chegam aqui.",
+    "Conversas que o assistente repassou aparecem como «Precisa de você».",
+    "Ao responder você assume: o assistente fica em silêncio nessa conversa.",
+    "«Devolver ao assistente» faz ele voltar a responder.",
+    "Suas respostas ensinam seu estilo ao assistente (Assistente → Aprender meu estilo)."
+   ],
+   "ru": [
+    "Сюда приходят все чаты из WhatsApp, Telegram и страницы записи.",
+    "Переписки, переданные ассистентом, помечены «Требует вас».",
+    "Когда вы отвечаете сами, ассистент замолкает в этом чате.",
+    "«Вернуть ассистенту» снова включает его ответы.",
+    "Ваши ответы учат ассистента вашему стилю (Ассистент → Изучить мой стиль)."
+   ]
+  }
+ },
+ {
+  "id": "approvals",
+  "href": "/app/approvals",
+  "paths": [
+   "/app/approvals"
+  ],
+  "icon": "checkCircle",
+  "title": {
+   "en": "Approvals and activity",
+   "es": "Aprobaciones y actividad",
+   "fr": "Validations et activité",
+   "de": "Freigaben und Aktivität",
+   "it": "Approvazioni e attività",
+   "pt-BR": "Aprovações e atividade",
+   "ru": "Одобрения и активность"
+  },
+  "keywords": {
+   "en": "approve reject permission action log audit",
+   "es": "aprobar rechazar permiso acción registro",
+   "fr": "approuver refuser autorisation action journal",
+   "de": "genehmigen ablehnen berechtigung aktion protokoll",
+   "it": "approvare rifiutare permesso azione registro",
+   "pt-BR": "aprovar rejeitar permissão ação registro",
+   "ru": "одобрить отклонить разрешение действие журнал"
+  },
+  "steps": {
+   "en": [
+    "When the assistant wants to do something that needs your OK (for example a cancellation), it waits here.",
+    "Approve or reject it; you can add a note for the customer.",
+    "The activity log lists everything the assistant did.",
+    "Choose what needs approval in Assistant → Assistant → Permissions."
+   ],
+   "es": [
+    "Cuando el asistente quiere hacer algo que necesita tu OK (por ejemplo, una cancelación), espera aquí.",
+    "Apruébalo o recházalo; puedes añadir una nota para el cliente.",
+    "El registro de actividad muestra todo lo que ha hecho el asistente.",
+    "Decide qué necesita aprobación en Asistente → Asistente → Permisos."
+   ],
+   "fr": [
+    "Quand l'assistant veut faire une action qui demande votre accord (par exemple une annulation), elle attend ici.",
+    "Approuvez ou refusez ; vous pouvez ajouter une note pour le client.",
+    "Le journal d'activité liste tout ce que l'assistant a fait.",
+    "Choisissez ce qui demande validation dans Assistant → Assistant → Autorisations."
+   ],
+   "de": [
+    "Wenn der Assistent etwas tun will, das deine Freigabe braucht (z. B. eine Stornierung), wartet es hier.",
+    "Genehmige oder lehne ab; du kannst eine Notiz für den Kunden hinzufügen.",
+    "Das Aktivitätsprotokoll zeigt alles, was der Assistent getan hat.",
+    "Was eine Freigabe braucht, legst du unter Assistent → Assistent → Berechtigungen fest."
+   ],
+   "it": [
+    "Quando l'assistente vuole fare qualcosa che richiede il tuo OK (ad esempio un annullamento), aspetta qui.",
+    "Approva o rifiuta; puoi aggiungere una nota per il cliente.",
+    "Il registro attività elenca tutto ciò che ha fatto l'assistente.",
+    "Scegli cosa richiede approvazione in Assistente → Assistente → Permessi."
+   ],
+   "pt-BR": [
+    "Quando o assistente quer fazer algo que precisa do seu OK (por exemplo, um cancelamento), espera aqui.",
+    "Aprove ou rejeite; você pode adicionar uma nota para o cliente.",
+    "O registro de atividade lista tudo o que o assistente fez.",
+    "Escolha o que precisa de aprovação em Assistente → Assistente → Permissões."
+   ],
+   "ru": [
+    "Если ассистенту нужно ваше согласие (например, на отмену), действие ждёт здесь.",
+    "Одобрите или отклоните; можно добавить заметку для клиента.",
+    "В журнале активности видно всё, что сделал ассистент.",
+    "Что требует одобрения, настраивается в Ассистент → Ассистент → Разрешения."
+   ]
+  }
+ },
+ {
+  "id": "customers",
+  "href": "/app/customers",
+  "paths": [
+   "/app/customers"
+  ],
+  "icon": "users",
+  "title": {
+   "en": "Customers",
+   "es": "Clientes",
+   "fr": "Clients",
+   "de": "Kunden",
+   "it": "Clienti",
+   "pt-BR": "Clientes",
+   "ru": "Клиенты"
+  },
+  "keywords": {
+   "en": "customer client profile notes memory export erase gdpr delete data",
+   "es": "cliente ficha notas memoria exportar borrar rgpd eliminar datos",
+   "fr": "client fiche notes mémoire exporter effacer rgpd données",
+   "de": "kunde profil notizen gedächtnis export löschen dsgvo daten",
+   "it": "cliente scheda note memoria esportare cancellare gdpr dati",
+   "pt-BR": "cliente ficha notas memória exportar apagar lgpd dados",
+   "ru": "клиент карточка заметки память экспорт удалить данные"
+  },
+  "steps": {
+   "en": [
+    "Everyone who booked or wrote to you, with what they spent and their last visit.",
+    "Open a customer to see their bookings, conversations and what the assistant remembers about them.",
+    "«Private notes» are only for your team; the assistant doesn't read them.",
+    "You can sell them a pack, export their data or erase it (GDPR)."
+   ],
+   "es": [
+    "Todas las personas que han reservado o te han escrito, con lo que han gastado y su última visita.",
+    "Abre un cliente para ver sus reservas, conversaciones y lo que el asistente recuerda de él.",
+    "Las «Notas privadas» son solo para tu equipo; el asistente no las lee.",
+    "Puedes venderle un bono, exportar sus datos o borrarlos (RGPD)."
+   ],
+   "fr": [
+    "Toutes les personnes qui ont réservé ou vous ont écrit, avec leurs dépenses et leur dernière visite.",
+    "Ouvrez un client pour voir ses réservations, ses conversations et ce que l'assistant retient de lui.",
+    "Les « Notes privées » sont réservées à votre équipe ; l'assistant ne les lit pas.",
+    "Vous pouvez lui vendre un forfait, exporter ses données ou les effacer (RGPD)."
+   ],
+   "de": [
+    "Alle, die gebucht oder dir geschrieben haben, mit Umsatz und letztem Besuch.",
+    "Öffne einen Kunden für Buchungen, Unterhaltungen und das, was sich der Assistent gemerkt hat.",
+    "„Private Notizen“ sind nur für dein Team; der Assistent liest sie nicht.",
+    "Du kannst ein Paket verkaufen, Daten exportieren oder löschen (DSGVO)."
+   ],
+   "it": [
+    "Tutte le persone che hanno prenotato o ti hanno scritto, con spesa e ultima visita.",
+    "Apri un cliente per vedere prenotazioni, conversazioni e ciò che l'assistente ricorda.",
+    "Le «Note private» sono solo per il tuo team; l'assistente non le legge.",
+    "Puoi vendergli un pacchetto, esportarne i dati o cancellarli (GDPR)."
+   ],
+   "pt-BR": [
+    "Todas as pessoas que reservaram ou escreveram, com gasto e última visita.",
+    "Abra um cliente para ver reservas, conversas e o que o assistente lembra dele.",
+    "As «Notas privadas» são só para sua equipe; o assistente não as lê.",
+    "Você pode vender um pacote, exportar os dados ou apagá-los (LGPD/RGPD)."
+   ],
+   "ru": [
+    "Все, кто записывался или писал вам, с суммой трат и последним визитом.",
+    "Откройте клиента: записи, переписки и то, что помнит ассистент.",
+    "«Личные заметки» видит только ваша команда, ассистент их не читает.",
+    "Можно продать абонемент, экспортировать или удалить данные (GDPR)."
+   ]
+  }
+ },
+ {
+  "id": "reviews",
+  "href": "/app/reviews",
+  "paths": [
+   "/app/reviews"
+  ],
+  "icon": "chat",
+  "title": {
+   "en": "Reviews",
+   "es": "Valoraciones",
+   "fr": "Avis",
+   "de": "Bewertungen",
+   "it": "Recensioni",
+   "pt-BR": "Avaliações",
+   "ru": "Отзывы"
+  },
+  "keywords": {
+   "en": "review rating stars reply hide",
+   "es": "valoración reseña estrellas opinión responder ocultar",
+   "fr": "avis note étoiles répondre masquer",
+   "de": "bewertung sterne antworten ausblenden",
+   "it": "recensione stelle valutazione rispondere nascondere",
+   "pt-BR": "avaliação estrelas responder ocultar",
+   "ru": "отзыв рейтинг звёзды ответить скрыть"
+  },
+  "steps": {
+   "en": [
+    "When you mark an appointment completed, the customer gets a link to rate it.",
+    "Reviews and your average rating appear on your booking page.",
+    "Write a public reply or hide a review from your page."
+   ],
+   "es": [
+    "Cuando marcas una cita como completada, el cliente recibe un enlace para valorarla.",
+    "Las valoraciones y tu nota media aparecen en tu página de reservas.",
+    "Puedes responder públicamente u ocultar una valoración de tu página."
+   ],
+   "fr": [
+    "Quand vous marquez un rendez-vous terminé, le client reçoit un lien pour le noter.",
+    "Les avis et votre note moyenne apparaissent sur votre page de réservation.",
+    "Répondez publiquement ou masquez un avis de votre page."
+   ],
+   "de": [
+    "Markierst du einen Termin als abgeschlossen, erhält der Kunde einen Bewertungslink.",
+    "Bewertungen und dein Durchschnitt erscheinen auf deiner Buchungsseite.",
+    "Antworte öffentlich oder blende eine Bewertung aus."
+   ],
+   "it": [
+    "Quando segni un appuntamento come completato, il cliente riceve un link per valutarlo.",
+    "Le recensioni e la media appaiono sulla tua pagina di prenotazione.",
+    "Rispondi pubblicamente o nascondi una recensione."
+   ],
+   "pt-BR": [
+    "Ao marcar um atendimento como concluído, o cliente recebe um link para avaliar.",
+    "As avaliações e sua média aparecem na página de reservas.",
+    "Responda publicamente ou oculte uma avaliação."
+   ],
+   "ru": [
+    "Когда вы отмечаете запись завершённой, клиент получает ссылку для отзыва.",
+    "Отзывы и средний балл видны на вашей странице записи.",
+    "Можно ответить публично или скрыть отзыв."
+   ]
+  }
+ },
+ {
+  "id": "agent",
+  "href": "/app/agent",
+  "paths": [
+   "/app/agent"
+  ],
+  "icon": "sparkles",
+  "title": {
+   "en": "Your assistant: personality and instructions",
+   "es": "Tu asistente: personalidad e instrucciones",
+   "fr": "Votre assistant : personnalité et instructions",
+   "de": "Dein Assistent: Persönlichkeit und Anweisungen",
+   "it": "Il tuo assistente: personalità e istruzioni",
+   "pt-BR": "Seu assistente: personalidade e instruções",
+   "ru": "Ваш ассистент: характер и инструкции"
+  },
+  "keywords": {
+   "en": "assistant agent ai personality tone instructions greeting emoji language escalate test playground pause",
+   "es": "asistente agente ia personalidad tono instrucciones saludo emojis idioma pasar conversación probar pausar",
+   "fr": "assistant ia personnalité ton instructions salutation emoji langue tester pause",
+   "de": "assistent ki persönlichkeit ton anweisungen begrüßung emoji sprache testen pausieren",
+   "it": "assistente ia personalità tono istruzioni saluto emoji lingua provare pausa",
+   "pt-BR": "assistente ia personalidade tom instruções saudação emoji idioma testar pausar",
+   "ru": "ассистент ии характер тон инструкции приветствие эмодзи язык тест пауза"
+  },
+  "steps": {
+   "en": [
+    "Choose the name, tone, formality and default language (it always mirrors the customer's language).",
+    "«Instructions»: write in plain words what it must always or never do.",
+    "«Always escalate when a customer mentions»: words that pass the chat to you.",
+    "Test it in the chat on the right before going live; the switch at the top pauses it."
+   ],
+   "es": [
+    "Elige nombre, tono, formalidad e idioma por defecto (siempre se adapta al idioma del cliente).",
+    "«Instrucciones»: escribe con palabras sencillas lo que debe hacer siempre o no hacer nunca.",
+    "«Pasarme siempre la conversación si el cliente menciona»: palabras que te pasan el chat a ti.",
+    "Pruébalo en el chat de la derecha antes de activarlo; el interruptor de arriba lo pausa."
+   ],
+   "fr": [
+    "Choisissez le nom, le ton, la formalité et la langue par défaut (il s'adapte toujours à la langue du client).",
+    "« Instructions » : écrivez simplement ce qu'il doit toujours ou jamais faire.",
+    "« Toujours transférer quand un client mentionne » : des mots qui vous passent la discussion.",
+    "Testez-le dans le chat à droite ; l'interrupteur en haut le met en pause."
+   ],
+   "de": [
+    "Wähle Name, Ton, Förmlichkeit und Standardsprache (er passt sich immer der Sprache des Kunden an).",
+    "„Anweisungen“: Schreib in einfachen Worten, was er immer oder nie tun soll.",
+    "„Immer weiterleiten, wenn ein Kunde erwähnt“: Wörter, die den Chat an dich übergeben.",
+    "Teste ihn im Chat rechts; der Schalter oben pausiert ihn."
+   ],
+   "it": [
+    "Scegli nome, tono, formalità e lingua predefinita (si adatta sempre alla lingua del cliente).",
+    "«Istruzioni»: scrivi in modo semplice cosa deve fare sempre o mai.",
+    "«Inoltra sempre quando un cliente menziona»: parole che ti passano la chat.",
+    "Provalo nella chat a destra; l'interruttore in alto lo mette in pausa."
+   ],
+   "pt-BR": [
+    "Escolha nome, tom, formalidade e idioma padrão (ele sempre se adapta ao idioma do cliente).",
+    "«Instruções»: escreva de forma simples o que deve sempre ou nunca fazer.",
+    "«Sempre encaminhar quando o cliente mencionar»: palavras que passam o chat para você.",
+    "Teste no chat à direita; o botão no topo o pausa."
+   ],
+   "ru": [
+    "Выберите имя, тон, формальность и язык по умолчанию (он всегда подстраивается под язык клиента).",
+    "«Инструкции»: простыми словами — что делать всегда и чего никогда.",
+    "«Всегда передавать, если клиент упоминает»: слова, при которых чат переходит к вам.",
+    "Проверьте его в чате справа; переключатель вверху ставит его на паузу."
+   ]
+  }
+ },
+ {
+  "id": "style",
+  "href": "/app/agent",
+  "paths": [
+   "/app/agent"
+  ],
+  "icon": "sparkles",
+  "title": {
+   "en": "Learn my style",
+   "es": "Aprender mi estilo",
+   "fr": "Apprendre mon style",
+   "de": "Meinen Stil lernen",
+   "it": "Impara il mio stile",
+   "pt-BR": "Aprender meu estilo",
+   "ru": "Изучить мой стиль"
+  },
+  "keywords": {
+   "en": "style voice human analyse conversations export whatsapp telegram writing",
+   "es": "estilo voz humano analizar conversaciones exportar whatsapp telegram escribir como yo",
+   "fr": "style voix humain analyser conversations export whatsapp telegram",
+   "de": "stil stimme menschlich analysieren unterhaltungen export whatsapp telegram",
+   "it": "stile voce umano analizzare conversazioni esportare whatsapp telegram",
+   "pt-BR": "estilo voz humano analisar conversas exportar whatsapp telegram",
+   "ru": "стиль голос человечный анализ переписки экспорт whatsapp telegram"
+  },
+  "steps": {
+   "en": [
+    "Go to Assistant → Assistant, card «Learn my style».",
+    "Press «Analyse my conversations»: it reads replies you wrote yourself.",
+    "Optional: upload a chat export (WhatsApp → chat → ⋮ → More → Export chat → without media; Telegram Desktop → Export chat history → JSON) and write your name as it appears in it.",
+    "Review and edit the guide, then «Save style». Nothing is used until you save.",
+    "Only your writing habits are kept, never customers' names or details."
+   ],
+   "es": [
+    "Ve a Asistente → Asistente, tarjeta «Aprender mi estilo».",
+    "Pulsa «Analizar mis conversaciones»: lee las respuestas que escribiste tú.",
+    "Opcional: sube una exportación de chat (WhatsApp → chat → ⋮ → Más → Exportar chat → sin multimedia; Telegram Desktop → Exportar historial → JSON) y escribe tu nombre tal como aparece.",
+    "Revisa y edita la guía y pulsa «Guardar estilo». No se usa nada hasta que guardes.",
+    "Solo se guardan tus hábitos de escritura, nunca nombres ni datos de clientes."
+   ],
+   "fr": [
+    "Allez dans Assistant → Assistant, carte « Apprendre mon style ».",
+    "Cliquez sur « Analyser mes conversations » : il lit les réponses que vous avez écrites.",
+    "Facultatif : importez un export de discussion (WhatsApp → discussion → ⋮ → Plus → Exporter → sans médias ; Telegram Desktop → Exporter l'historique → JSON) et indiquez votre nom tel qu'il y apparaît.",
+    "Relisez et modifiez le guide, puis « Enregistrer le style ». Rien n'est utilisé avant.",
+    "Seules vos habitudes d'écriture sont conservées, jamais les données des clients."
+   ],
+   "de": [
+    "Gehe zu Assistent → Assistent, Karte „Meinen Stil lernen“.",
+    "Klicke „Meine Unterhaltungen analysieren“: Er liest Antworten, die du selbst geschrieben hast.",
+    "Optional: Lade einen Chat-Export hoch (WhatsApp → Chat → ⋮ → Mehr → Chat exportieren → ohne Medien; Telegram Desktop → Chatverlauf exportieren → JSON) und gib deinen Namen wie im Chat an.",
+    "Prüfe und bearbeite den Leitfaden, dann „Stil speichern“. Vorher wird nichts verwendet.",
+    "Nur deine Schreibgewohnheiten werden gespeichert, nie Kundendaten."
+   ],
+   "it": [
+    "Vai in Assistente → Assistente, scheda «Impara il mio stile».",
+    "Premi «Analizza le mie conversazioni»: legge le risposte scritte da te.",
+    "Facoltativo: carica un'esportazione della chat (WhatsApp → chat → ⋮ → Altro → Esporta chat → senza media; Telegram Desktop → Esporta cronologia → JSON) e scrivi il tuo nome come appare.",
+    "Rivedi e modifica la guida, poi «Salva stile». Nulla viene usato prima.",
+    "Si conservano solo le tue abitudini di scrittura, mai i dati dei clienti."
+   ],
+   "pt-BR": [
+    "Vá em Assistente → Assistente, cartão «Aprender meu estilo».",
+    "Toque em «Analisar minhas conversas»: ele lê as respostas que você escreveu.",
+    "Opcional: envie uma exportação de conversa (WhatsApp → conversa → ⋮ → Mais → Exportar conversa → sem mídia; Telegram Desktop → Exportar histórico → JSON) e escreva seu nome como aparece.",
+    "Revise e edite o guia e toque em «Salvar estilo». Nada é usado antes disso.",
+    "Só seus hábitos de escrita são guardados, nunca dados de clientes."
+   ],
+   "ru": [
+    "Откройте Ассистент → Ассистент, карточка «Изучить мой стиль».",
+    "Нажмите «Проанализировать мои переписки»: читаются ответы, написанные вами.",
+    "По желанию загрузите экспорт чата (WhatsApp → чат → ⋮ → Ещё → Экспорт чата → без медиа; Telegram Desktop → Экспорт истории → JSON) и укажите своё имя, как в чате.",
+    "Проверьте и отредактируйте описание, затем «Сохранить стиль». До этого ничего не применяется.",
+    "Сохраняются только ваши привычки письма, никогда — данные клиентов."
+   ]
+  }
+ },
+ {
+  "id": "permissions",
+  "href": "/app/agent",
+  "paths": [
+   "/app/agent"
+  ],
+  "icon": "shield",
+  "title": {
+   "en": "What the assistant may do (permissions)",
+   "es": "Qué puede hacer el asistente (permisos)",
+   "fr": "Ce que l'assistant peut faire (autorisations)",
+   "de": "Was der Assistent darf (Berechtigungen)",
+   "it": "Cosa può fare l'assistente (permessi)",
+   "pt-BR": "O que o assistente pode fazer (permissões)",
+   "ru": "Что может ассистент (разрешения)"
+  },
+  "keywords": {
+   "en": "permissions auto approve off cancel reschedule book",
+   "es": "permisos automático aprobar desactivado cancelar cambiar reservar",
+   "fr": "autorisations automatique valider désactivé annuler déplacer",
+   "de": "berechtigungen automatisch freigeben aus stornieren verschieben",
+   "it": "permessi automatico approvare disattivato annullare spostare",
+   "pt-BR": "permissões automático aprovar desligado cancelar remarcar",
+   "ru": "разрешения автоматически одобрить выключено отменить перенести"
+  },
+  "steps": {
+   "en": [
+    "For each action (book, reschedule, cancel…) choose: on its own, with your approval, or not allowed.",
+    "Actions that need approval wait in Approvals.",
+    "Change it any time in Assistant → Assistant → Permissions."
+   ],
+   "es": [
+    "Para cada acción (reservar, cambiar, cancelar…) elige: sola, con tu aprobación o no permitida.",
+    "Las que necesitan aprobación esperan en Aprobaciones.",
+    "Cámbialo cuando quieras en Asistente → Asistente → Permisos."
+   ],
+   "fr": [
+    "Pour chaque action (réserver, déplacer, annuler…) choisissez : seule, avec votre accord ou interdite.",
+    "Celles qui demandent votre accord attendent dans Validations.",
+    "Modifiable à tout moment dans Assistant → Assistant → Autorisations."
+   ],
+   "de": [
+    "Wähle für jede Aktion (buchen, verschieben, stornieren…): selbstständig, mit deiner Freigabe oder nicht erlaubt.",
+    "Freigabepflichtige Aktionen warten unter Freigaben.",
+    "Jederzeit änderbar unter Assistent → Assistent → Berechtigungen."
+   ],
+   "it": [
+    "Per ogni azione (prenotare, spostare, annullare…) scegli: da solo, con la tua approvazione o non consentita.",
+    "Quelle che richiedono approvazione aspettano in Approvazioni.",
+    "Modificalo quando vuoi in Assistente → Assistente → Permessi."
+   ],
+   "pt-BR": [
+    "Para cada ação (reservar, remarcar, cancelar…) escolha: sozinho, com sua aprovação ou não permitido.",
+    "As que precisam de aprovação esperam em Aprovações.",
+    "Altere quando quiser em Assistente → Assistente → Permissões."
+   ],
+   "ru": [
+    "Для каждого действия (записать, перенести, отменить…) выберите: сам, с вашим одобрением или запрещено.",
+    "Действия, требующие одобрения, ждут в разделе Одобрения.",
+    "Меняется в любое время: Ассистент → Ассистент → Разрешения."
+   ]
+  }
+ },
+ {
+  "id": "knowledge",
+  "href": "/app/agent/knowledge",
+  "paths": [
+   "/app/agent/knowledge"
+  ],
+  "icon": "book",
+  "title": {
+   "en": "Knowledge: FAQs and documents",
+   "es": "Conocimiento: preguntas frecuentes y documentos",
+   "fr": "Connaissances : FAQ et documents",
+   "de": "Wissen: FAQs und Dokumente",
+   "it": "Conoscenza: FAQ e documenti",
+   "pt-BR": "Conhecimento: perguntas frequentes e documentos",
+   "ru": "Знания: FAQ и документы"
+  },
+  "keywords": {
+   "en": "knowledge faq question answer policy document upload parking payment",
+   "es": "conocimiento preguntas frecuentes respuesta política documento subir aparcamiento pago",
+   "fr": "connaissances faq question réponse politique document importer",
+   "de": "wissen faq frage antwort richtlinie dokument hochladen",
+   "it": "conoscenza faq domanda risposta politica documento caricare",
+   "pt-BR": "conhecimento perguntas resposta política documento enviar",
+   "ru": "знания вопросы ответы правила документ загрузить"
+  },
+  "steps": {
+   "en": [
+    "The assistant already knows your services, prices, team, hours and booking rules.",
+    "Add FAQs for everything else: parking, payment methods, what to bring, late arrivals.",
+    "Upload documents (.txt, .md, .csv, .json, .html up to 1 MB); long ones are searched when needed."
+   ],
+   "es": [
+    "El asistente ya conoce tus servicios, precios, equipo, horarios y reglas de reserva.",
+    "Añade preguntas frecuentes para todo lo demás: aparcamiento, formas de pago, qué traer, retrasos.",
+    "Sube documentos (.txt, .md, .csv, .json, .html hasta 1 MB); los largos se consultan cuando hace falta."
+   ],
+   "fr": [
+    "L'assistant connaît déjà vos services, prix, équipe, horaires et règles.",
+    "Ajoutez des FAQ pour le reste : parking, moyens de paiement, quoi apporter, retards.",
+    "Importez des documents (.txt, .md, .csv, .json, .html jusqu'à 1 Mo) ; les longs sont consultés si besoin."
+   ],
+   "de": [
+    "Der Assistent kennt bereits Leistungen, Preise, Team, Zeiten und Buchungsregeln.",
+    "Füge FAQs für alles andere hinzu: Parken, Zahlungsarten, was mitbringen, Verspätungen.",
+    "Lade Dokumente hoch (.txt, .md, .csv, .json, .html bis 1 MB); lange werden bei Bedarf durchsucht."
+   ],
+   "it": [
+    "L'assistente conosce già servizi, prezzi, team, orari e regole.",
+    "Aggiungi FAQ per il resto: parcheggio, pagamenti, cosa portare, ritardi.",
+    "Carica documenti (.txt, .md, .csv, .json, .html fino a 1 MB); quelli lunghi vengono consultati quando serve."
+   ],
+   "pt-BR": [
+    "O assistente já conhece serviços, preços, equipe, horários e regras.",
+    "Adicione perguntas frequentes para o resto: estacionamento, pagamento, o que levar, atrasos.",
+    "Envie documentos (.txt, .md, .csv, .json, .html até 1 MB); os longos são consultados quando necessário."
+   ],
+   "ru": [
+    "Ассистент уже знает ваши услуги, цены, команду, часы и правила записи.",
+    "Добавьте FAQ для остального: парковка, способы оплаты, что взять с собой, опоздания.",
+    "Загружайте документы (.txt, .md, .csv, .json, .html до 1 МБ); длинные используются по необходимости."
+   ]
+  }
+ },
+ {
+  "id": "channels",
+  "href": "/app/channels",
+  "paths": [
+   "/app/channels"
+  ],
+  "icon": "plug",
+  "title": {
+   "en": "Channels: Telegram, WhatsApp and web chat",
+   "es": "Canales: Telegram, WhatsApp y chat web",
+   "fr": "Canaux : Telegram, WhatsApp et chat web",
+   "de": "Kanäle: Telegram, WhatsApp und Web-Chat",
+   "it": "Canali: Telegram, WhatsApp e chat web",
+   "pt-BR": "Canais: Telegram, WhatsApp e chat web",
+   "ru": "Каналы: Telegram, WhatsApp и веб-чат"
+  },
+  "keywords": {
+   "en": "channels telegram whatsapp link connect qr web chat booking page",
+   "es": "canales telegram whatsapp enlace conectar vincular qr chat web página",
+   "fr": "canaux telegram whatsapp lien connecter qr chat web",
+   "de": "kanäle telegram whatsapp link verbinden qr web-chat",
+   "it": "canali telegram whatsapp link collegare qr chat web",
+   "pt-BR": "canais telegram whatsapp link conectar qr chat web",
+   "ru": "каналы telegram whatsapp ссылка подключить qr веб-чат"
+  },
+  "steps": {
+   "en": [
+    "Booking page chat is always on.",
+    "Telegram: press «Turn on Telegram» and share your personal link (Instagram bio, website, receipts). It opens the shared bot directly on your business.",
+    "WhatsApp: link the WhatsApp Business app you already use; your phone keeps working as usual. Messages from the last 30 days are imported to learn your style.",
+    "You can unlink a channel at any time."
+   ],
+   "es": [
+    "El chat de la página de reservas está siempre activo.",
+    "Telegram: pulsa «Activar Telegram» y comparte tu enlace personal (bio de Instagram, web, tickets). Abre el bot compartido directamente en tu negocio.",
+    "WhatsApp: vincula la app WhatsApp Business que ya usas; tu móvil sigue funcionando igual. Se importan los mensajes de los últimos 30 días para aprender tu estilo.",
+    "Puedes desvincular un canal cuando quieras."
+   ],
+   "fr": [
+    "Le chat de la page de réservation est toujours actif.",
+    "Telegram : cliquez « Activer Telegram » et partagez votre lien personnel (bio Instagram, site, reçus). Il ouvre le bot partagé directement sur votre établissement.",
+    "WhatsApp : liez l'app WhatsApp Business que vous utilisez déjà ; votre téléphone fonctionne comme avant. Les messages des 30 derniers jours sont importés pour apprendre votre style.",
+    "Vous pouvez délier un canal à tout moment."
+   ],
+   "de": [
+    "Der Chat auf der Buchungsseite ist immer aktiv.",
+    "Telegram: „Telegram aktivieren“ und deinen persönlichen Link teilen (Instagram-Bio, Website, Belege). Er öffnet den gemeinsamen Bot direkt bei deinem Geschäft.",
+    "WhatsApp: Verknüpfe die WhatsApp-Business-App, die du schon nutzt; dein Handy funktioniert weiter. Nachrichten der letzten 30 Tage werden importiert, um deinen Stil zu lernen.",
+    "Du kannst einen Kanal jederzeit trennen."
+   ],
+   "it": [
+    "La chat della pagina di prenotazione è sempre attiva.",
+    "Telegram: premi «Attiva Telegram» e condividi il tuo link personale (bio Instagram, sito, ricevute). Apre il bot condiviso direttamente sulla tua attività.",
+    "WhatsApp: collega l'app WhatsApp Business che usi già; il telefono funziona come sempre. Si importano i messaggi degli ultimi 30 giorni per imparare il tuo stile.",
+    "Puoi scollegare un canale quando vuoi."
+   ],
+   "pt-BR": [
+    "O chat da página de reservas está sempre ativo.",
+    "Telegram: toque em «Ativar Telegram» e compartilhe seu link pessoal (bio do Instagram, site, recibos). Ele abre o bot compartilhado direto no seu negócio.",
+    "WhatsApp: vincule o app WhatsApp Business que você já usa; seu celular continua funcionando. As mensagens dos últimos 30 dias são importadas para aprender seu estilo.",
+    "Você pode desvincular um canal a qualquer momento."
+   ],
+   "ru": [
+    "Чат на странице записи работает всегда.",
+    "Telegram: нажмите «Включить Telegram» и делитесь личной ссылкой (био Instagram, сайт, чеки). Она открывает общий бот сразу на вашем бизнесе.",
+    "WhatsApp: подключите WhatsApp Business, которым уже пользуетесь; телефон работает как обычно. Сообщения за последние 30 дней импортируются, чтобы изучить ваш стиль.",
+    "Канал можно отключить в любой момент."
+   ]
+  }
+ },
+ {
+  "id": "services",
+  "href": "/app/services",
+  "paths": [
+   "/app/services"
+  ],
+  "icon": "scissors",
+  "title": {
+   "en": "Services and prices",
+   "es": "Servicios y precios",
+   "fr": "Services et prix",
+   "de": "Leistungen und Preise",
+   "it": "Servizi e prezzi",
+   "pt-BR": "Serviços e preços",
+   "ru": "Услуги и цены"
+  },
+  "keywords": {
+   "en": "service price duration buffer staff archive catalog",
+   "es": "servicio precio duración margen descanso profesional archivar catálogo tarifa",
+   "fr": "service prix durée battement équipe archiver catalogue",
+   "de": "leistung preis dauer puffer team archivieren katalog",
+   "it": "servizio prezzo durata pausa team archiviare catalogo",
+   "pt-BR": "serviço preço duração intervalo equipe arquivar catálogo",
+   "ru": "услуга цена длительность перерыв сотрудник архив каталог"
+  },
+  "steps": {
+   "en": [
+    "Each service has a name, description, minutes, buffer (rest time after) and price.",
+    "«Performed by»: tick who can do it; none ticked means anyone.",
+    "The assistant quotes these prices and durations exactly.",
+    "Archive a service to hide it; existing bookings are kept."
+   ],
+   "es": [
+    "Cada servicio tiene nombre, descripción, minutos, margen (descanso después) y precio.",
+    "«Lo realiza»: marca quién puede hacerlo; si no marcas a nadie, cualquiera.",
+    "El asistente da exactamente estos precios y duraciones.",
+    "Archiva un servicio para ocultarlo; las reservas existentes se mantienen."
+   ],
+   "fr": [
+    "Chaque service a un nom, une description, une durée, un battement (pause après) et un prix.",
+    "« Réalisé par » : cochez qui peut le faire ; aucun coché = tout le monde.",
+    "L'assistant donne exactement ces prix et durées.",
+    "Archivez un service pour le masquer ; les réservations existantes sont conservées."
+   ],
+   "de": [
+    "Jede Leistung hat Name, Beschreibung, Minuten, Puffer (Pause danach) und Preis.",
+    "„Ausgeführt von“: Hake an, wer sie anbietet; keiner = alle.",
+    "Der Assistent nennt genau diese Preise und Dauern.",
+    "Archiviere eine Leistung, um sie auszublenden; Buchungen bleiben erhalten."
+   ],
+   "it": [
+    "Ogni servizio ha nome, descrizione, minuti, pausa dopo e prezzo.",
+    "«Eseguito da»: spunta chi può farlo; nessuno = chiunque.",
+    "L'assistente comunica esattamente questi prezzi e durate.",
+    "Archivia un servizio per nasconderlo; le prenotazioni restano."
+   ],
+   "pt-BR": [
+    "Cada serviço tem nome, descrição, minutos, intervalo (descanso depois) e preço.",
+    "«Realizado por»: marque quem pode fazer; nenhum marcado = qualquer um.",
+    "O assistente informa exatamente esses preços e durações.",
+    "Arquive um serviço para ocultá-lo; as reservas existentes são mantidas."
+   ],
+   "ru": [
+    "У каждой услуги есть название, описание, минуты, перерыв после и цена.",
+    "«Выполнил»: отметьте, кто может; никто не отмечен — любой.",
+    "Ассистент называет именно эти цены и длительность.",
+    "Архивируйте услугу, чтобы скрыть её; существующие записи сохраняются."
+   ]
+  }
+ },
+ {
+  "id": "team",
+  "href": "/app/team",
+  "paths": [
+   "/app/team"
+  ],
+  "icon": "clock",
+  "title": {
+   "en": "Team, hours and days off",
+   "es": "Equipo, horarios y días libres",
+   "fr": "Équipe, horaires et congés",
+   "de": "Team, Zeiten und freie Tage",
+   "it": "Team, orari e giorni liberi",
+   "pt-BR": "Equipe, horários e folgas",
+   "ru": "Команда, часы и выходные"
+  },
+  "keywords": {
+   "en": "team staff hours schedule opening closing break holiday time off closed",
+   "es": "equipo profesional horario apertura cierre descanso vacaciones festivo cerrado ausencia",
+   "fr": "équipe horaires ouverture fermeture pause vacances congé fermé",
+   "de": "team zeiten öffnung schließung pause urlaub frei geschlossen",
+   "it": "team orari apertura chiusura pausa ferie chiuso",
+   "pt-BR": "equipe horário abertura fechamento pausa férias folga fechado",
+   "ru": "команда часы открытие закрытие перерыв отпуск выходной"
+  },
+  "steps": {
+   "en": [
+    "Add team members (with photo color, title and short bio shown to customers and the assistant).",
+    "Set opening and closing time per day, with an optional break.",
+    "«Time off & closures»: holidays or training for one person or the whole business.",
+    "These hours decide availability everywhere: booking page, assistant and app."
+   ],
+   "es": [
+    "Añade profesionales (con color, cargo y una breve bio que ven los clientes y el asistente).",
+    "Pon la hora de apertura y cierre de cada día, con descanso opcional.",
+    "«Vacaciones y cierres»: vacaciones o formación de una persona o de todo el negocio.",
+    "Estos horarios deciden la disponibilidad en todas partes: página de reservas, asistente y app."
+   ],
+   "fr": [
+    "Ajoutez des membres (couleur, titre et courte bio visibles par les clients et l'assistant).",
+    "Définissez l'ouverture et la fermeture de chaque jour, avec pause facultative.",
+    "« Congés & fermetures » : congés ou formation pour une personne ou tout l'établissement.",
+    "Ces horaires définissent la disponibilité partout : page de réservation, assistant et app."
+   ],
+   "de": [
+    "Füge Teammitglieder hinzu (Farbe, Titel und kurze Bio für Kunden und Assistent).",
+    "Lege Öffnungs- und Schließzeit pro Tag fest, optional mit Pause.",
+    "„Abwesenheiten & Schließungen“: Urlaub oder Schulung für eine Person oder das ganze Geschäft.",
+    "Diese Zeiten bestimmen die Verfügbarkeit überall: Buchungsseite, Assistent und App."
+   ],
+   "it": [
+    "Aggiungi membri del team (colore, ruolo e breve bio visibili a clienti e assistente).",
+    "Imposta apertura e chiusura per ogni giorno, con pausa facoltativa.",
+    "«Assenze e chiusure»: ferie o formazione per una persona o tutta l'attività.",
+    "Questi orari decidono la disponibilità ovunque: pagina, assistente e app."
+   ],
+   "pt-BR": [
+    "Adicione profissionais (cor, cargo e bio curta vistos por clientes e assistente).",
+    "Defina abertura e fechamento de cada dia, com pausa opcional.",
+    "«Folgas e fechamentos»: férias ou treinamento de uma pessoa ou do negócio todo.",
+    "Esses horários definem a disponibilidade em todo lugar: página, assistente e app."
+   ],
+   "ru": [
+    "Добавьте сотрудников (цвет, должность и краткое био видят клиенты и ассистент).",
+    "Задайте время открытия и закрытия на каждый день, при желании с перерывом.",
+    "«Отпуска и закрытия»: отпуск или обучение одного человека или всего бизнеса.",
+    "Эти часы определяют доступность везде: страница записи, ассистент и приложение."
+   ]
+  }
+ },
+ {
+  "id": "packs",
+  "href": "/app/packs",
+  "paths": [
+   "/app/packs",
+   "/app/customers"
+  ],
+  "icon": "ticket",
+  "title": {
+   "en": "Packs (prepaid sessions)",
+   "es": "Bonos (sesiones prepagadas)",
+   "fr": "Forfaits (séances prépayées)",
+   "de": "Pakete (vorausbezahlte Sitzungen)",
+   "it": "Pacchetti (sedute prepagate)",
+   "pt-BR": "Pacotes (sessões pré-pagas)",
+   "ru": "Абонементы (предоплаченные сеансы)"
+  },
+  "keywords": {
+   "en": "pack bundle prepaid sessions voucher sell discount",
+   "es": "bono bonos paquete prepago sesiones vender descuento",
+   "fr": "forfait carnet prépayé séances vendre remise",
+   "de": "paket prepaid sitzungen gutschein verkaufen rabatt",
+   "it": "pacchetto prepagato sedute vendere sconto",
+   "pt-BR": "pacote pré-pago sessões vender desconto",
+   "ru": "абонемент пакет предоплата сеансы продать скидка"
+  },
+  "steps": {
+   "en": [
+    "Create a pack in Business → Packs: name, service, number of sessions, price and days of validity (the saving is shown).",
+    "Sell it from the customer's page: card «Packs» → «Sell a pack (paid in person)».",
+    "When that customer books that service, the booking is taken from the pack and marked paid (from the pack that expires first).",
+    "Cancelling a booking gives the session back. You can also void a pack.",
+    "The assistant explains your packs and knows how many sessions each customer has left, but cannot sell them. Online sales will come with card payments."
+   ],
+   "es": [
+    "Crea un bono en Negocio → Bonos: nombre, servicio, número de sesiones, precio y días de validez (se muestra el ahorro).",
+    "Véndelo desde la ficha del cliente: tarjeta «Bonos» → «Vender un bono (pagado en persona)».",
+    "Cuando ese cliente reserva ese servicio, la reserva se descuenta del bono y queda pagada (del que caduca antes).",
+    "Si se cancela una cita, la sesión vuelve al bono. También puedes anular un bono.",
+    "El asistente explica tus bonos y sabe cuántas sesiones le quedan a cada cliente, pero no puede venderlos. La venta online llegará con los pagos con tarjeta."
+   ],
+   "fr": [
+    "Créez un forfait dans Établissement → Forfaits : nom, service, nombre de séances, prix et validité (l'économie est affichée).",
+    "Vendez-le depuis la fiche client : carte « Forfaits » → « Vendre un forfait (payé sur place) ».",
+    "Quand ce client réserve ce service, la réservation est déduite du forfait et marquée payée (celui qui expire en premier).",
+    "Annuler une réservation rend la séance. Vous pouvez aussi annuler un forfait.",
+    "L'assistant présente vos forfaits et connaît le solde de chaque client, mais ne peut pas les vendre. La vente en ligne arrivera avec le paiement par carte."
+   ],
+   "de": [
+    "Lege ein Paket unter Geschäft → Pakete an: Name, Leistung, Anzahl Sitzungen, Preis und Gültigkeit (die Ersparnis wird angezeigt).",
+    "Verkaufe es auf der Kundenseite: Karte „Pakete“ → „Paket verkaufen (vor Ort bezahlt)“.",
+    "Bucht dieser Kunde diese Leistung, wird die Buchung vom Paket abgezogen und als bezahlt markiert (vom zuerst ablaufenden).",
+    "Eine Stornierung gibt die Sitzung zurück. Du kannst ein Paket auch stornieren.",
+    "Der Assistent erklärt deine Pakete und kennt das Guthaben jedes Kunden, kann sie aber nicht verkaufen. Online-Verkauf kommt mit Kartenzahlung."
+   ],
+   "it": [
+    "Crea un pacchetto in Attività → Pacchetti: nome, servizio, numero di sedute, prezzo e validità (viene mostrato il risparmio).",
+    "Vendilo dalla scheda del cliente: scheda «Pacchetti» → «Vendi un pacchetto (pagato di persona)».",
+    "Quando quel cliente prenota quel servizio, la prenotazione viene scalata dal pacchetto e segnata pagata (da quello che scade prima).",
+    "Annullare una prenotazione restituisce la seduta. Puoi anche annullare un pacchetto.",
+    "L'assistente spiega i pacchetti e sa quante sedute restano a ogni cliente, ma non può venderli. La vendita online arriverà con i pagamenti con carta."
+   ],
+   "pt-BR": [
+    "Crie um pacote em Negócio → Pacotes: nome, serviço, número de sessões, preço e validade (a economia é mostrada).",
+    "Venda na ficha do cliente: cartão «Pacotes» → «Vender um pacote (pago pessoalmente)».",
+    "Quando esse cliente reserva esse serviço, a reserva é descontada do pacote e marcada como paga (do que vence primeiro).",
+    "Cancelar uma reserva devolve a sessão. Você também pode anular um pacote.",
+    "O assistente explica seus pacotes e sabe quantas sessões restam a cada cliente, mas não pode vendê-los. A venda online virá com o pagamento por cartão."
+   ],
+   "ru": [
+    "Создайте абонемент в Бизнес → Абонементы: название, услуга, число сеансов, цена и срок действия (видна экономия).",
+    "Продайте его на странице клиента: карточка «Абонементы» → «Продать абонемент (оплата на месте)».",
+    "Когда клиент записывается на эту услугу, запись списывается с абонемента и считается оплаченной (с того, что истекает раньше).",
+    "Отмена записи возвращает сеанс. Абонемент можно аннулировать.",
+    "Ассистент рассказывает об абонементах и знает остаток у каждого клиента, но продавать их не может. Онлайн-продажа появится с оплатой картой."
+   ]
+  }
+ },
+ {
+  "id": "settings",
+  "href": "/app/settings",
+  "paths": [
+   "/app/settings"
+  ],
+  "icon": "settings",
+  "title": {
+   "en": "Settings: profile and booking rules",
+   "es": "Ajustes: perfil y reglas de reserva",
+   "fr": "Paramètres : profil et règles de réservation",
+   "de": "Einstellungen: Profil und Buchungsregeln",
+   "it": "Impostazioni: profilo e regole di prenotazione",
+   "pt-BR": "Configurações: perfil e regras de reserva",
+   "ru": "Настройки: профиль и правила записи"
+  },
+  "keywords": {
+   "en": "settings profile currency timezone logo color notice cancellation confirm automatically policy publish marketplace",
+   "es": "ajustes perfil moneda zona horaria logo color antelación cancelación confirmar automáticamente política publicar directorio",
+   "fr": "paramètres profil devise fuseau logo couleur délai annulation confirmer politique publier",
+   "de": "einstellungen profil währung zeitzone logo farbe vorlauf stornierung bestätigen richtlinie veröffentlichen",
+   "it": "impostazioni profilo valuta fuso logo colore preavviso cancellazione confermare politica pubblicare",
+   "pt-BR": "configurações perfil moeda fuso logo cor antecedência cancelamento confirmar política publicar",
+   "ru": "настройки профиль валюта часовой пояс логотип цвет отмена подтверждение правила публикация"
+  },
+  "steps": {
+   "en": [
+    "Profile: name, category, description, contact, currency and time zone. The assistant reads all of this.",
+    "Branding: brand color, logo and cover image for your booking page.",
+    "Booking rules: minimum notice, how far ahead people can book, free cancellation window, slot grid and automatic confirmation (off = bookings arrive as requests).",
+    "«Policy shown to customers»: late arrivals, deposits, what to bring…",
+    "Publishing: list your page in the directory or keep it private to your team."
+   ],
+   "es": [
+    "Perfil: nombre, categoría, descripción, contacto, moneda y zona horaria. El asistente lee todo esto.",
+    "Imagen: color de marca, logo e imagen de portada de tu página de reservas.",
+    "Reglas de reserva: antelación mínima, con cuánto tiempo se puede reservar, plazo de cancelación gratuita, intervalos de horas y confirmación automática (desactivada = las reservas llegan como solicitudes).",
+    "«Política que ven los clientes»: retrasos, señales, qué traer…",
+    "Publicación: aparecer en el directorio o mantener la página privada para tu equipo."
+   ],
+   "fr": [
+    "Profil : nom, catégorie, description, contact, devise et fuseau horaire. L'assistant lit tout cela.",
+    "Image : couleur, logo et image de couverture de votre page.",
+    "Règles : délai minimum, réservation à l'avance, annulation gratuite, grille horaire et confirmation automatique (désactivée = demandes à valider).",
+    "« Politique affichée aux clients » : retards, acomptes, quoi apporter…",
+    "Publication : apparaître dans l'annuaire ou rester privé."
+   ],
+   "de": [
+    "Profil: Name, Kategorie, Beschreibung, Kontakt, Währung und Zeitzone. Der Assistent liest alles.",
+    "Branding: Markenfarbe, Logo und Titelbild deiner Buchungsseite.",
+    "Buchungsregeln: Mindestvorlauf, wie weit im Voraus, kostenlose Stornierung, Zeitraster und automatische Bestätigung (aus = Buchungen kommen als Anfragen).",
+    "„Richtlinie für Kunden“: Verspätungen, Anzahlungen, was mitbringen…",
+    "Veröffentlichung: im Verzeichnis listen oder nur fürs Team sichtbar."
+   ],
+   "it": [
+    "Profilo: nome, categoria, descrizione, contatti, valuta e fuso orario. L'assistente legge tutto.",
+    "Immagine: colore, logo e copertina della pagina.",
+    "Regole: preavviso minimo, quanto in anticipo si prenota, cancellazione gratuita, griglia oraria e conferma automatica (disattivata = richieste da confermare).",
+    "«Politica mostrata ai clienti»: ritardi, acconti, cosa portare…",
+    "Pubblicazione: comparire nella directory o restare privata."
+   ],
+   "pt-BR": [
+    "Perfil: nome, categoria, descrição, contato, moeda e fuso horário. O assistente lê tudo isso.",
+    "Visual: cor da marca, logo e imagem de capa da página.",
+    "Regras: antecedência mínima, com quanto tempo se pode reservar, cancelamento grátis, grade de horários e confirmação automática (desligada = reservas chegam como pedidos).",
+    "«Política exibida aos clientes»: atrasos, sinal, o que levar…",
+    "Publicação: aparecer no diretório ou manter privada."
+   ],
+   "ru": [
+    "Профиль: название, категория, описание, контакты, валюта и часовой пояс. Ассистент читает всё это.",
+    "Оформление: фирменный цвет, логотип и обложка страницы.",
+    "Правила: минимальное время до записи, на сколько вперёд можно записаться, бесплатная отмена, шаг слотов и автоподтверждение (выкл. = записи приходят как заявки).",
+    "«Правила для клиентов»: опоздания, предоплата, что взять с собой…",
+    "Публикация: показываться в каталоге или только для команды."
+   ]
+  }
+ },
+ {
+  "id": "invoices",
+  "href": "/app/invoices",
+  "paths": [
+   "/app/invoices"
+  ],
+  "icon": "file",
+  "title": {
+   "en": "Invoices and quarterly totals",
+   "es": "Facturas y totales por trimestre",
+   "fr": "Factures et totaux trimestriels",
+   "de": "Rechnungen und Quartalssummen",
+   "it": "Fatture e totali trimestrali",
+   "pt-BR": "Faturas e totais por trimestre",
+   "ru": "Счета и квартальные итоги"
+  },
+  "keywords": {
+   "en": "invoice receipt tax vat accountant quarter csv pdf print email paid cancel number fiscal",
+   "es": "factura recibo iva impuestos gestoría gestor trimestre csv pdf imprimir email pagada anular número fiscal nif",
+   "fr": "facture reçu tva comptable trimestre csv pdf imprimer payée annuler",
+   "de": "rechnung beleg steuer mwst steuerberater quartal csv pdf drucken bezahlt stornieren",
+   "it": "fattura ricevuta iva commercialista trimestre csv pdf stampare pagata annullare",
+   "pt-BR": "fatura nota recibo imposto contador trimestre csv pdf imprimir paga cancelar",
+   "ru": "счёт квитанция налог ндс бухгалтер квартал csv pdf печать оплачен аннулировать"
+  },
+  "steps": {
+   "en": [
+    "The first time, fill in your invoicing details in Business → Invoices: legal name, tax ID, address, series and default tax %. An optional footer is printed on every invoice.",
+    "Create an invoice with «New invoice», or from a booking («Create invoice») or a sold pack (document icon on the customer's page). Customer, service and amount are filled in for you.",
+    "Numbers are correlative per year (e.g. F2026-0001). Issued invoices can't be edited: to correct one, cancel it with a reason and issue a new one.",
+    "«Print / save as PDF» opens the invoice ready to print; «Send by email» sends it to the customer.",
+    "The quarter boxes show base, tax and total. Download the CSV of the year or of each quarter for your accountant."
+   ],
+   "es": [
+    "La primera vez, rellena tus datos fiscales en Negocio → Facturas: nombre o razón social, NIF, dirección, serie e impuesto por defecto. El pie opcional aparece en todas las facturas.",
+    "Crea una factura con «Nueva factura», o desde una reserva («Crear factura») o un bono vendido (icono de documento en la ficha del cliente). Cliente, servicio e importe se rellenan solos.",
+    "La numeración es correlativa por año (p. ej. F2026-0001). Las facturas emitidas no se pueden editar: para corregir una, anúlala indicando el motivo y emite otra.",
+    "«Imprimir / guardar PDF» abre la factura lista para imprimir; «Enviar por email» se la manda al cliente.",
+    "Los recuadros por trimestre muestran base, impuestos y total. Descarga el CSV del año o de cada trimestre para tu gestoría."
+   ],
+   "fr": [
+    "La première fois, renseignez vos informations dans Établissement → Factures : raison sociale, n° fiscal, adresse, série et taxe par défaut. Un pied de page facultatif figure sur chaque facture.",
+    "Créez une facture avec « Nouvelle facture », ou depuis une réservation (« Créer une facture ») ou un forfait vendu (icône document sur la fiche client). Client, service et montant sont préremplis.",
+    "La numérotation est continue par année (ex. F2026-0001). Une facture émise ne se modifie pas : annulez-la avec un motif et émettez-en une nouvelle.",
+    "« Imprimer / enregistrer en PDF » ouvre la facture prête à imprimer ; « Envoyer par e-mail » l'envoie au client.",
+    "Les cases trimestrielles montrent base, taxes et total. Téléchargez le CSV de l'année ou du trimestre pour votre comptable."
+   ],
+   "de": [
+    "Beim ersten Mal trägst du unter Geschäft → Rechnungen deine Daten ein: Name/Firma, Steuernummer, Adresse, Serie und Standardsteuer. Eine optionale Fußzeile steht auf jeder Rechnung.",
+    "Erstelle eine Rechnung über „Neue Rechnung“, aus einer Buchung („Rechnung erstellen“) oder aus einem verkauften Paket (Dokument-Symbol auf der Kundenseite). Kunde, Leistung und Betrag werden vorausgefüllt.",
+    "Die Nummern sind pro Jahr fortlaufend (z. B. F2026-0001). Ausgestellte Rechnungen sind nicht änderbar: storniere mit Grund und stelle eine neue aus.",
+    "„Drucken / als PDF speichern“ öffnet die druckfertige Rechnung; „Per E-Mail senden“ schickt sie dem Kunden.",
+    "Die Quartalskästen zeigen Netto, Steuer und Summe. Lade die CSV des Jahres oder Quartals für deine Steuerberatung herunter."
+   ],
+   "it": [
+    "La prima volta, compila i dati in Attività → Fatture: ragione sociale, partita IVA, indirizzo, serie e imposta predefinita. Un piè di pagina facoltativo compare su ogni fattura.",
+    "Crea una fattura con «Nuova fattura», o da una prenotazione («Crea fattura») o da un pacchetto venduto (icona documento nella scheda cliente). Cliente, servizio e importo sono precompilati.",
+    "La numerazione è progressiva per anno (es. F2026-0001). Le fatture emesse non si modificano: annullala con un motivo ed emettine una nuova.",
+    "«Stampa / salva PDF» apre la fattura pronta da stampare; «Invia per email» la manda al cliente.",
+    "I riquadri trimestrali mostrano imponibile, imposte e totale. Scarica il CSV dell'anno o del trimestre per il commercialista."
+   ],
+   "pt-BR": [
+    "Na primeira vez, preencha seus dados em Negócio → Faturas: razão social, CPF/CNPJ, endereço, série e imposto padrão. Um rodapé opcional aparece em todas as faturas.",
+    "Crie uma fatura em «Nova fatura», ou a partir de uma reserva («Criar fatura») ou de um pacote vendido (ícone de documento na ficha do cliente). Cliente, serviço e valor vêm preenchidos.",
+    "A numeração é sequencial por ano (ex.: F2026-0001). Faturas emitidas não podem ser editadas: cancele com um motivo e emita outra.",
+    "«Imprimir / salvar PDF» abre a fatura pronta para imprimir; «Enviar por email» manda para o cliente.",
+    "Os quadros por trimestre mostram base, impostos e total. Baixe o CSV do ano ou de cada trimestre para seu contador."
+   ],
+   "ru": [
+    "В первый раз заполните реквизиты в Бизнес → Счета: название, ИНН, адрес, серию и налог по умолчанию. Необязательный текст внизу печатается на каждом счёте.",
+    "Создайте счёт кнопкой «Новый счёт», из записи («Создать счёт») или из проданного абонемента (значок документа на странице клиента). Клиент, услуга и сумма заполняются сами.",
+    "Нумерация сквозная по году (напр. F2026-0001). Выставленный счёт нельзя изменить: аннулируйте его с причиной и выставьте новый.",
+    "«Печать / сохранить PDF» открывает счёт для печати; «Отправить по email» отправляет его клиенту.",
+    "Квартальные блоки показывают базу, налог и итог. Скачайте CSV за год или квартал для бухгалтера."
+   ]
+  }
+ },
+ {
+  "id": "billing",
+  "href": "/app/billing",
+  "paths": [
+   "/app/billing"
+  ],
+  "icon": "card",
+  "title": {
+   "en": "Plan, billing and usage",
+   "es": "Plan, facturación y uso",
+   "fr": "Offre, facturation et usage",
+   "de": "Tarif, Abrechnung und Nutzung",
+   "it": "Piano, fatturazione e utilizzo",
+   "pt-BR": "Plano, cobrança e uso",
+   "ru": "Тариф, оплата и использование"
+  },
+  "keywords": {
+   "en": "plan billing subscription upgrade price basic pro premium usage limit",
+   "es": "plan facturación suscripción mejorar precio basic pro premium uso límite",
+   "fr": "offre facturation abonnement passer prix usage limite",
+   "de": "tarif abrechnung abo upgrade preis nutzung limit",
+   "it": "piano fatturazione abbonamento upgrade prezzo utilizzo limite",
+   "pt-BR": "plano cobrança assinatura upgrade preço uso limite",
+   "ru": "тариф оплата подписка повысить цена использование лимит"
+  },
+  "steps": {
+   "en": [
+    "See your current plan (Basic, Pro or Premium), renewal date and this month's usage.",
+    "If you reach the monthly limit, new conversations wait for you in the inbox until next month or an upgrade.",
+    "Change plan with «Switch to…»; card payments are handled by Stripe."
+   ],
+   "es": [
+    "Consulta tu plan (Basic, Pro o Premium), la fecha de renovación y el uso de este mes.",
+    "Si llegas al límite mensual, las nuevas conversaciones te esperan en la bandeja hasta el mes siguiente o hasta que mejores el plan.",
+    "Cambia de plan con «Cambiar a…»; los pagos con tarjeta los gestiona Stripe."
+   ],
+   "fr": [
+    "Consultez votre offre (Basic, Pro ou Premium), la date de renouvellement et l'usage du mois.",
+    "À la limite mensuelle, les nouvelles conversations vous attendent dans la boîte jusqu'au mois suivant ou un changement d'offre.",
+    "Changez d'offre avec « Passer à… » ; les paiements par carte passent par Stripe."
+   ],
+   "de": [
+    "Sieh deinen Tarif (Basic, Pro oder Premium), das Verlängerungsdatum und die Nutzung dieses Monats.",
+    "Ist das Monatslimit erreicht, warten neue Unterhaltungen im Posteingang bis zum nächsten Monat oder einem Upgrade.",
+    "Wechsle mit „Wechseln zu…“; Kartenzahlungen laufen über Stripe."
+   ],
+   "it": [
+    "Vedi il tuo piano (Basic, Pro o Premium), la data di rinnovo e l'utilizzo del mese.",
+    "Raggiunto il limite mensile, le nuove conversazioni ti aspettano nella posta fino al mese dopo o a un upgrade.",
+    "Cambia piano con «Passa a…»; i pagamenti con carta sono gestiti da Stripe."
+   ],
+   "pt-BR": [
+    "Veja seu plano (Basic, Pro ou Premium), a data de renovação e o uso do mês.",
+    "Ao atingir o limite mensal, novas conversas esperam na caixa de entrada até o mês seguinte ou um upgrade.",
+    "Troque de plano com «Mudar para…»; pagamentos com cartão são feitos pelo Stripe."
+   ],
+   "ru": [
+    "Смотрите свой тариф (Basic, Pro или Premium), дату продления и использование за месяц.",
+    "При достижении месячного лимита новые переписки ждут во входящих до следующего месяца или смены тарифа.",
+    "Меняйте тариф кнопкой «Перейти на…»; оплату картой обрабатывает Stripe."
+   ]
+  }
+ },
+ {
+  "id": "bookingpage",
+  "href": "/app/settings",
+  "paths": [
+   "/app",
+   "/app/settings",
+   "/app/channels"
+  ],
+  "icon": "globe",
+  "title": {
+   "en": "Your booking page and what customers receive",
+   "es": "Tu página de reservas y lo que reciben tus clientes",
+   "fr": "Votre page de réservation et ce que reçoivent vos clients",
+   "de": "Deine Buchungsseite und was Kunden erhalten",
+   "it": "La tua pagina di prenotazione e cosa ricevono i clienti",
+   "pt-BR": "Sua página de reservas e o que seus clientes recebem",
+   "ru": "Ваша страница записи и что получают клиенты"
+  },
+  "keywords": {
+   "en": "booking page link public share email confirmation reminder manage cancel review",
+   "es": "página de reservas enlace pública compartir email confirmación recordatorio gestionar cancelar valoración",
+   "fr": "page réservation lien public partager email confirmation rappel gérer annuler avis",
+   "de": "buchungsseite link öffentlich teilen email bestätigung erinnerung verwalten stornieren bewertung",
+   "it": "pagina prenotazione link pubblica condividere email conferma promemoria gestire annullare recensione",
+   "pt-BR": "página reservas link pública compartilhar email confirmação lembrete gerenciar cancelar avaliação",
+   "ru": "страница записи ссылка публичная поделиться email подтверждение напоминание отменить отзыв"
+  },
+  "steps": {
+   "en": [
+    "Your page is /b/your-name (link at the top of the side menu). Customers book there or chat with your assistant.",
+    "They receive an email confirmation, a reminder before the appointment and a link to change or cancel it themselves.",
+    "After a completed appointment they get a link to leave a review."
+   ],
+   "es": [
+    "Tu página es /b/tu-nombre (enlace arriba en el menú lateral). Ahí los clientes reservan o hablan con tu asistente.",
+    "Reciben un email de confirmación, un recordatorio antes de la cita y un enlace para cambiarla o cancelarla ellos mismos.",
+    "Tras una cita completada reciben un enlace para dejar su valoración."
+   ],
+   "fr": [
+    "Votre page est /b/votre-nom (lien en haut du menu). Les clients y réservent ou discutent avec votre assistant.",
+    "Ils reçoivent un e-mail de confirmation, un rappel avant le rendez-vous et un lien pour le modifier ou l'annuler eux-mêmes.",
+    "Après un rendez-vous terminé, ils reçoivent un lien pour laisser un avis."
+   ],
+   "de": [
+    "Deine Seite ist /b/dein-name (Link oben im Menü). Dort buchen Kunden oder chatten mit deinem Assistenten.",
+    "Sie erhalten eine Bestätigungs-E-Mail, eine Erinnerung vor dem Termin und einen Link zum selbst Ändern oder Stornieren.",
+    "Nach einem abgeschlossenen Termin bekommen sie einen Bewertungslink."
+   ],
+   "it": [
+    "La tua pagina è /b/tuo-nome (link in alto nel menu). Lì i clienti prenotano o chattano con l'assistente.",
+    "Ricevono un'email di conferma, un promemoria prima dell'appuntamento e un link per modificarlo o annullarlo da soli.",
+    "Dopo un appuntamento completato ricevono un link per lasciare una recensione."
+   ],
+   "pt-BR": [
+    "Sua página é /b/seu-nome (link no topo do menu). Lá os clientes reservam ou falam com seu assistente.",
+    "Eles recebem um email de confirmação, um lembrete antes do horário e um link para remarcar ou cancelar sozinhos.",
+    "Após um atendimento concluído, recebem um link para avaliar."
+   ],
+   "ru": [
+    "Ваша страница — /b/ваше-имя (ссылка вверху бокового меню). Там клиенты записываются или пишут ассистенту.",
+    "Они получают письмо с подтверждением, напоминание перед визитом и ссылку, чтобы самим перенести или отменить запись.",
+    "После завершённой записи приходит ссылка для отзыва."
+   ]
+  }
+ },
+ {
+  "id": "community",
+  "href": "/app/community",
+  "paths": [
+   "/app/community"
+  ],
+  "icon": "crown",
+  "title": {
+   "en": "VIP community",
+   "es": "Comunidad VIP",
+   "fr": "Communauté VIP",
+   "de": "VIP-Community",
+   "it": "Community VIP",
+   "pt-BR": "Comunidade VIP",
+   "ru": "VIP-сообщество"
+  },
+  "keywords": {
+   "en": "community forum discussion vip premium report",
+   "es": "comunidad foro debate vip premium reportar",
+   "fr": "communauté forum discussion vip signaler",
+   "de": "community forum diskussion vip melden",
+   "it": "community forum discussione vip segnalare",
+   "pt-BR": "comunidade fórum discussão vip denunciar",
+   "ru": "сообщество форум обсуждение vip пожаловаться"
+  },
+  "steps": {
+   "en": [
+    "A private, moderated space for verified VIP businesses; it unlocks with your plan.",
+    "Start a discussion in a category or reply to others.",
+    "Use «Report» to alert the moderators."
+   ],
+   "es": [
+    "Un espacio privado y moderado para negocios VIP verificados; se desbloquea según tu plan.",
+    "Abre un debate en una categoría o responde a otros.",
+    "Usa «Denunciar» para avisar a los moderadores."
+   ],
+   "fr": [
+    "Un espace privé et modéré pour les établissements VIP vérifiés ; il se débloque selon votre offre.",
+    "Lancez une discussion dans une catégorie ou répondez aux autres.",
+    "Utilisez « Signaler » pour alerter les modérateurs."
+   ],
+   "de": [
+    "Ein privater, moderierter Bereich für verifizierte VIP-Geschäfte; je nach Tarif freigeschaltet.",
+    "Starte eine Diskussion in einer Kategorie oder antworte anderen.",
+    "Mit „Melden“ informierst du die Moderation."
+   ],
+   "it": [
+    "Uno spazio privato e moderato per attività VIP verificate; si sblocca con il piano.",
+    "Avvia una discussione in una categoria o rispondi agli altri.",
+    "Usa «Segnala» per avvisare i moderatori."
+   ],
+   "pt-BR": [
+    "Um espaço privado e moderado para negócios VIP verificados; libera conforme seu plano.",
+    "Inicie uma discussão em uma categoria ou responda a outros.",
+    "Use «Denunciar» para avisar os moderadores."
+   ],
+   "ru": [
+    "Закрытое модерируемое пространство для проверенных VIP-бизнесов; открывается по тарифу.",
+    "Начните обсуждение в категории или отвечайте другим.",
+    "Кнопка «Пожаловаться» уведомляет модераторов."
+   ]
+  }
+ }
 ]

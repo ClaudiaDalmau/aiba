@@ -179,7 +179,10 @@ async function BookingDrawer({ b, tz, currency, close, staff }: { b: Awaited<Ret
         {b.notes && <Row k={t("Notes")} v={b.notes} />}
         {b.cancelReason && <Row k={t("Cancel reason")} v={b.cancelReason} />}
       </dl>
-      <Link href={`/app/customers/${b.customer.id}`} className="mt-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg">{t("Customer profile")} <Icon name="arrowRight" size={14} /></Link>
+      <div className="mt-3 flex flex-wrap gap-4">
+        <Link href={`/app/customers/${b.customer.id}`} className="inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg">{t("Customer profile")} <Icon name="arrowRight" size={14} /></Link>
+        {b.status !== "cancelled" && b.priceCents > 0 && <Link href={`/app/invoices/new?booking=${b.id}`} className="inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg"><Icon name="file" size={14} /> {t("Create invoice")}</Link>}
+      </div>
 
       {live && (
         <>

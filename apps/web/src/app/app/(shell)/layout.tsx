@@ -47,6 +47,7 @@ export default async function ShellLayout({ children }: { children: React.ReactN
     ...(can(tenant.role, "business.manage")
       ? [
           { href: "/app/settings", label: t("Settings"), icon: "settings" as const, section: t("Business") },
+          { href: "/app/invoices", label: t("Invoices"), icon: "file" as const, section: t("Business") },
           { href: "/app/billing", label: t("Plan & billing"), icon: "card" as const, section: t("Business") },
         ]
       : []),
