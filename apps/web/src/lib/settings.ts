@@ -44,6 +44,8 @@ export const SETTINGS = [
     { value: "medium", label: "Medium" },
     { value: "high", label: "High" },
   ] },
+  { key: "ai.priceInput", group: "ai", label: "Price per million input tokens (USD)", help: "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.", kind: "number", default: 0, min: 0, max: 1000 },
+  { key: "ai.priceOutput", group: "ai", label: "Price per million output tokens (USD)", help: "Used only to estimate costs in AI usage. 0 = not set.", kind: "number", default: 0, min: 0, max: 1000 },
   { key: "ai.takeoverHours", group: "ai", label: "Hand back to the agent after (hours of owner silence)", kind: "number", env: "AGENT_TAKEOVER_TIMEOUT_HOURS", default: 12, min: 1, max: 720 },
 
   // Telegram (one shared bot)

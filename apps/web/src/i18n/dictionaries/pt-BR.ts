@@ -1561,7 +1561,27 @@ const ptBR: Dictionary = {
   "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.": "Sua conta está vinculada a um único celular. Para trocar, fale com o suporte para verificarmos sua identidade de novo.",
   "For your safety, this account can only be used from your mobile phone.": "Para sua segurança, esta conta só pode ser usada no celular.",
   "Open AIBA on your phone": "Abra a AIBA no celular",
-  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Para sua segurança, perfis Sensível só são geridos no seu próprio celular, com digital ou rosto."
+  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Para sua segurança, perfis Sensível só são geridos no seu próprio celular, com digital ou rosto.",
+  "AI usage": "Consumo de IA",
+  "Tokens the assistant consumed per business and plan. Use it to price plans: a plan must cover what a heavy business (90th percentile) consumes.": "Tokens consumidos pelo assistente por negócio e plano. Use para definir preços: um plano deve cobrir o consumo de um negócio intenso (percentil 90).",
+  "Assistant replies": "Respostas do assistente",
+  "Input tokens": "Tokens de entrada",
+  "Output tokens": "Tokens de saída",
+  "Estimated cost": "Custo estimado",
+  "Set the token prices in Settings → AI agents": "Defina o preço dos tokens em Configurações → Agentes de IA",
+  "By plan": "Por plano",
+  "Average tokens": "Tokens em média",
+  "Heavy business (p90)": "Negócio intenso (p90)",
+  "Tokens per reply": "Tokens por resposta",
+  "Average cost": "Custo médio",
+  "Sensible": "Sensível",
+  "Ordinary": "Comum",
+  "By business": "Por negócio",
+  "No AI usage this month.": "Nenhum consumo de IA este mês.",
+  "Price per million input tokens (USD)": "Preço por milhão de tokens de entrada (USD)",
+  "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Só para estimar custos. Copie da página de preços da Anthropic para o modelo padrão. 0 = não definido.",
+  "Price per million output tokens (USD)": "Preço por milhão de tokens de saída (USD)",
+  "Used only to estimate costs in AI usage. 0 = not set.": "Só para estimar custos. 0 = não definido."
 };
 
 export default ptBR;

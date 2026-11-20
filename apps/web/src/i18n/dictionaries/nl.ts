@@ -1561,7 +1561,27 @@ const nl: Dictionary = {
   "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.": "Je account is gekoppeld aan één telefoon. Wil je wisselen, neem dan contact op met support zodat we je identiteit opnieuw verifiëren.",
   "For your safety, this account can only be used from your mobile phone.": "Voor je veiligheid kan dit account alleen op je mobiele telefoon worden gebruikt.",
   "Open AIBA on your phone": "Open AIBA op je telefoon",
-  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Voor je veiligheid kun je Sensible-profielen alleen beheren op je eigen telefoon, met je vingerafdruk of gezicht."
+  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Voor je veiligheid kun je Sensible-profielen alleen beheren op je eigen telefoon, met je vingerafdruk of gezicht.",
+  "AI usage": "AI-verbruik",
+  "Tokens the assistant consumed per business and plan. Use it to price plans: a plan must cover what a heavy business (90th percentile) consumes.": "Tokens die de assistent verbruikte per bedrijf en abonnement. Gebruik dit voor prijzen: een abonnement moet dekken wat een intensief bedrijf (90e percentiel) verbruikt.",
+  "Assistant replies": "Antwoorden van de assistent",
+  "Input tokens": "Invoertokens",
+  "Output tokens": "Uitvoertokens",
+  "Estimated cost": "Geschatte kosten",
+  "Set the token prices in Settings → AI agents": "Stel de tokenprijzen in bij Instellingen → AI-agenten",
+  "By plan": "Per abonnement",
+  "Average tokens": "Gemiddeld aantal tokens",
+  "Heavy business (p90)": "Intensief bedrijf (p90)",
+  "Tokens per reply": "Tokens per antwoord",
+  "Average cost": "Gemiddelde kosten",
+  "Sensible": "Sensible",
+  "Ordinary": "Gewoon",
+  "By business": "Per bedrijf",
+  "No AI usage this month.": "Geen AI-verbruik deze maand.",
+  "Price per million input tokens (USD)": "Prijs per miljoen invoertokens (USD)",
+  "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Alleen om kosten te schatten. Neem het over van de prijspagina van Anthropic voor het standaardmodel. 0 = niet ingesteld.",
+  "Price per million output tokens (USD)": "Prijs per miljoen uitvoertokens (USD)",
+  "Used only to estimate costs in AI usage. 0 = not set.": "Alleen om kosten te schatten. 0 = niet ingesteld."
 };
 
 export default nl;

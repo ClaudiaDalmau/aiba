@@ -1561,7 +1561,27 @@ const ro: Dictionary = {
   "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.": "Contul tău e legat de un singur telefon. Pentru a-l schimba, contactează suportul pentru o nouă verificare a identității.",
   "For your safety, this account can only be used from your mobile phone.": "Pentru siguranța ta, acest cont poate fi folosit doar de pe telefon.",
   "Open AIBA on your phone": "Deschide AIBA pe telefon",
-  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Pentru siguranța ta, profilurile Sensibil se gestionează doar de pe propriul telefon, cu amprenta sau fața."
+  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Pentru siguranța ta, profilurile Sensibil se gestionează doar de pe propriul telefon, cu amprenta sau fața.",
+  "AI usage": "Consum AI",
+  "Tokens the assistant consumed per business and plan. Use it to price plans: a plan must cover what a heavy business (90th percentile) consumes.": "Tokeni consumați de asistent pe afacere și plan. Folosește-l pentru prețuri: un plan trebuie să acopere consumul unei afaceri intense (percentila 90).",
+  "Assistant replies": "Răspunsuri ale asistentului",
+  "Input tokens": "Tokeni de intrare",
+  "Output tokens": "Tokeni de ieșire",
+  "Estimated cost": "Cost estimat",
+  "Set the token prices in Settings → AI agents": "Setează prețurile tokenilor în Setări → Agenți AI",
+  "By plan": "Pe plan",
+  "Average tokens": "Tokeni în medie",
+  "Heavy business (p90)": "Afacere intensă (p90)",
+  "Tokens per reply": "Tokeni per răspuns",
+  "Average cost": "Cost mediu",
+  "Sensible": "Sensibil",
+  "Ordinary": "Obișnuit",
+  "By business": "Pe afacere",
+  "No AI usage this month.": "Niciun consum AI luna aceasta.",
+  "Price per million input tokens (USD)": "Preț per milion de tokeni de intrare (USD)",
+  "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Doar pentru estimarea costurilor. Copiază-l de pe pagina de prețuri Anthropic pentru modelul implicit. 0 = nesetat.",
+  "Price per million output tokens (USD)": "Preț per milion de tokeni de ieșire (USD)",
+  "Used only to estimate costs in AI usage. 0 = not set.": "Doar pentru estimarea costurilor. 0 = nesetat."
 };
 
 export default ro;

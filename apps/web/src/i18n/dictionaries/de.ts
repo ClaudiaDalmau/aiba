@@ -1561,7 +1561,27 @@ const de: Dictionary = {
   "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.": "Dein Konto ist an ein einziges Handy gebunden. Für einen Wechsel kontaktiere den Support zur erneuten Identitätsprüfung.",
   "For your safety, this account can only be used from your mobile phone.": "Zu deiner Sicherheit kann dieses Konto nur auf deinem Handy genutzt werden.",
   "Open AIBA on your phone": "Öffne AIBA auf deinem Handy",
-  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Zu deiner Sicherheit werden Sensible-Profile nur auf deinem eigenen Handy mit Fingerabdruck oder Gesicht verwaltet."
+  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Zu deiner Sicherheit werden Sensible-Profile nur auf deinem eigenen Handy mit Fingerabdruck oder Gesicht verwaltet.",
+  "AI usage": "KI-Verbrauch",
+  "Tokens the assistant consumed per business and plan. Use it to price plans: a plan must cover what a heavy business (90th percentile) consumes.": "Vom Assistenten verbrauchte Tokens je Unternehmen und Tarif. Für die Preisgestaltung: Ein Tarif muss abdecken, was ein intensives Unternehmen (90. Perzentil) verbraucht.",
+  "Assistant replies": "Antworten des Assistenten",
+  "Input tokens": "Eingabe-Tokens",
+  "Output tokens": "Ausgabe-Tokens",
+  "Estimated cost": "Geschätzte Kosten",
+  "Set the token prices in Settings → AI agents": "Tokenpreise unter Einstellungen → KI-Agenten eintragen",
+  "By plan": "Nach Tarif",
+  "Average tokens": "Tokens im Schnitt",
+  "Heavy business (p90)": "Intensives Unternehmen (p90)",
+  "Tokens per reply": "Tokens pro Antwort",
+  "Average cost": "Durchschnittskosten",
+  "Sensible": "Sensible",
+  "Ordinary": "Standard",
+  "By business": "Nach Unternehmen",
+  "No AI usage this month.": "Kein KI-Verbrauch in diesem Monat.",
+  "Price per million input tokens (USD)": "Preis pro Million Eingabe-Tokens (USD)",
+  "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Nur zur Kostenschätzung. Von der Anthropic-Preisseite für das Standardmodell übernehmen. 0 = nicht gesetzt.",
+  "Price per million output tokens (USD)": "Preis pro Million Ausgabe-Tokens (USD)",
+  "Used only to estimate costs in AI usage. 0 = not set.": "Nur zur Kostenschätzung. 0 = nicht gesetzt."
 };
 
 export default de;

@@ -3,6 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { and, asc, desc, eq, inArray, notLike } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { badRequest } from "../errors";
+import { newId } from "../ids";
 import { getSettings } from "../settings";
 
 /**
@@ -129,6 +130,7 @@ export async function generateStyleGuide(business: schema.Business, agent: schem
       },
     ],
   });
+  await db.insert(schema.usageEvents).values({ id: newId("use"), businessId: business.id, kind: "style_learn", inputTokens: res.usage.input_tokens, outputTokens: res.usage.output_tokens });
   const text = res.content
     .filter((b): b is Anthropic.TextBlock => b.type === "text")
     .map((b) => b.text)

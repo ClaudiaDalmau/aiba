@@ -682,7 +682,7 @@ export const usageEvents = pgTable(
   {
     id: id(),
     businessId: businessId(),
-    kind: text("kind", { enum: ["agent_turn", "message_out", "message_in"] }).notNull(),
+    kind: text("kind", { enum: ["agent_turn", "message_out", "message_in", "style_learn"] }).notNull(),
     inputTokens: integer("input_tokens").notNull().default(0),
     outputTokens: integer("output_tokens").notNull().default(0),
     latencyMs: integer("latency_ms").notNull().default(0),

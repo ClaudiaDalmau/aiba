@@ -1561,7 +1561,27 @@ const ru: Dictionary = {
   "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.": "Аккаунт привязан к одному телефону. Чтобы сменить телефон, обратитесь в поддержку для повторной проверки личности.",
   "For your safety, this account can only be used from your mobile phone.": "В целях безопасности аккаунтом можно пользоваться только с телефона.",
   "Open AIBA on your phone": "Откройте AIBA на телефоне",
-  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "В целях безопасности профили Sensible управляются только с вашего телефона, по отпечатку или лицу."
+  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "В целях безопасности профили Sensible управляются только с вашего телефона, по отпечатку или лицу.",
+  "AI usage": "Расход ИИ",
+  "Tokens the assistant consumed per business and plan. Use it to price plans: a plan must cover what a heavy business (90th percentile) consumes.": "Токены, израсходованные ассистентом по компаниям и тарифам. Для расчёта цен: тариф должен покрывать расход активной компании (90-й перцентиль).",
+  "Assistant replies": "Ответы ассистента",
+  "Input tokens": "Входные токены",
+  "Output tokens": "Выходные токены",
+  "Estimated cost": "Оценочная стоимость",
+  "Set the token prices in Settings → AI agents": "Укажите цены токенов в Настройки → ИИ-агенты",
+  "By plan": "По тарифам",
+  "Average tokens": "Токенов в среднем",
+  "Heavy business (p90)": "Активная компания (p90)",
+  "Tokens per reply": "Токенов на ответ",
+  "Average cost": "Средняя стоимость",
+  "Sensible": "Sensible",
+  "Ordinary": "Обычная",
+  "By business": "По компаниям",
+  "No AI usage this month.": "В этом месяце ИИ не использовался.",
+  "Price per million input tokens (USD)": "Цена за миллион входных токенов (USD)",
+  "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Только для оценки затрат. Возьмите с страницы цен Anthropic для модели по умолчанию. 0 = не задано.",
+  "Price per million output tokens (USD)": "Цена за миллион выходных токенов (USD)",
+  "Used only to estimate costs in AI usage. 0 = not set.": "Только для оценки затрат. 0 = не задано."
 };
 
 export default ru;

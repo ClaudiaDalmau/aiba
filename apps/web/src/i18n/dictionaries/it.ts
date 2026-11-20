@@ -1561,7 +1561,27 @@ const it: Dictionary = {
   "Your account is linked to one phone only. To change phone, contact support so we can verify your identity again.": "Il tuo account è collegato a un solo telefono. Per cambiarlo contatta il supporto per una nuova verifica d'identità.",
   "For your safety, this account can only be used from your mobile phone.": "Per la tua sicurezza, questo account si usa solo dal telefono.",
   "Open AIBA on your phone": "Apri AIBA sul telefono",
-  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Per la tua sicurezza, i profili Sensibile si gestiscono solo dal tuo telefono, con impronta o volto."
+  "For your safety, Sensible profiles can only be managed from your own mobile phone, with your fingerprint or face.": "Per la tua sicurezza, i profili Sensibile si gestiscono solo dal tuo telefono, con impronta o volto.",
+  "AI usage": "Consumo di IA",
+  "Tokens the assistant consumed per business and plan. Use it to price plans: a plan must cover what a heavy business (90th percentile) consumes.": "Token consumati dall'assistente per attività e piano. Usalo per i prezzi: un piano deve coprire ciò che consuma un'attività intensiva (90° percentile).",
+  "Assistant replies": "Risposte dell'assistente",
+  "Input tokens": "Token in ingresso",
+  "Output tokens": "Token in uscita",
+  "Estimated cost": "Costo stimato",
+  "Set the token prices in Settings → AI agents": "Imposta i prezzi dei token in Impostazioni → Agenti IA",
+  "By plan": "Per piano",
+  "Average tokens": "Token medi",
+  "Heavy business (p90)": "Attività intensiva (p90)",
+  "Tokens per reply": "Token per risposta",
+  "Average cost": "Costo medio",
+  "Sensible": "Sensibile",
+  "Ordinary": "Ordinaria",
+  "By business": "Per attività",
+  "No AI usage this month.": "Nessun consumo di IA questo mese.",
+  "Price per million input tokens (USD)": "Prezzo per milione di token in ingresso (USD)",
+  "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Solo per stimare i costi. Copialo dalla pagina prezzi di Anthropic per il modello predefinito. 0 = non impostato.",
+  "Price per million output tokens (USD)": "Prezzo per milione di token in uscita (USD)",
+  "Used only to estimate costs in AI usage. 0 = not set.": "Solo per stimare i costi. 0 = non impostato."
 };
 
 export default it;

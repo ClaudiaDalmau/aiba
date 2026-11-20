@@ -17,6 +17,7 @@ const ITEMS: Item[] = [
   { href: "/admin/safety", label: "Safety alerts", icon: "bell", perm: "users.manage", section: "Customers" },
   { href: "/admin/users", label: "Users", icon: "users", perm: "users.view", section: "Customers" },
   { href: "/admin/agents", label: "AI agents", icon: "sparkles", perm: "businesses.view", section: "Customers" },
+  { href: "/admin/usage", label: "AI usage", icon: "chart", perm: "billing.view", section: "Revenue" },
   { href: "/admin/plans", label: "Plans & pricing", icon: "card", perm: "plans.manage", section: "Revenue" },
   { href: "/admin/payments", label: "Subscriptions", icon: "chart", perm: "billing.view", section: "Revenue" },
   { href: "/admin/telegram", label: "Telegram bot", icon: "telegram", perm: "channels.manage", section: "Channels" },
