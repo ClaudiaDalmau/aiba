@@ -435,7 +435,7 @@ export async function saveSettings(_prev: ActionState, f: FormData): Promise<Act
       // Sensible: always reachable by direct link only, never in the marketplace; no description for the AI; no Stripe.
       patch.published = t.business.published;
       patch.description = "";
-      patch.policy.requirePayment = false;
+      if (patch.policy) patch.policy.requirePayment = false;
     }
     let note = "";
     if (patch.published && !t.business.published && !(await getSetting("general.autoPublish"))) {
