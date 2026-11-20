@@ -18,7 +18,7 @@ export async function importCustomersAction(_prev: ActionState, f: FormData): Pr
     const r = await importCustomers(t.business.id, await file.text());
     await audit(t.business.id, { type: "user", id: t.user.id }, "customers.imported", t.business.id, r);
     revalidatePath("/app/customers");
-    return { ok: true, message: tr("{created} new, {updated} already existed, {skipped} skipped (no name or contact).", r) };
+    return { ok: true, message: tr("{created} new, {updated} already existed, {skipped} skipped (no name or contact).", { created: r.created, updated: r.updated, skipped: r.skipped }) };
   } catch (e) {
     if (e instanceof AppError) return { error: tr(e.message) };
     console.error(e);
