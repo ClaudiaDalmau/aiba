@@ -1,6 +1,7 @@
 import { requestIntlLocale } from "@/i18n/request-locale";
 import { getT } from "@/i18n/server";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 import { Avatar, Badge, ChannelIcon, cx, Empty } from "@/components/ui";
 import { listConversations } from "@/lib/queries";
 import { currentTenant } from "@/lib/tenant";
@@ -22,7 +23,10 @@ export default async function InboxLayout({ children }: { children: React.ReactN
       <aside className="flex min-h-0 flex-col border-r border-border">
         <div className="flex items-center justify-between border-b border-border px-4 py-3.5">
           <h1 className="text-[16px] font-semibold">{t("Inbox")}</h1>
-          <span className="text-[12px] text-muted">{convs.filter((c) => c.status === "escalated").length} need you</span>
+          <div className="flex items-center gap-3">
+            <span className="text-[12px] text-muted">{t("{n} need you", { n: convs.filter((c) => c.status === "escalated").length })}</span>
+            <Link href="/app/inbox/replies" title={t("Quick replies")} className="rounded-md p-1 text-muted hover:bg-subtle hover:text-fg"><Icon name="bolt" size={16} /></Link>
+          </div>
         </div>
         <ul className="min-h-0 flex-1 overflow-y-auto">
           {convs.length === 0 && <Empty icon="inbox" title={t("No conversations yet")}>{t("Messages from WhatsApp, Telegram and your booking page chat appear here.")}</Empty>}

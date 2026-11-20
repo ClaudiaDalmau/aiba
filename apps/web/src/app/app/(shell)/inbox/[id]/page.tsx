@@ -5,6 +5,9 @@ import { SubmitButton } from "@/components/client";
 import { Icon } from "@/components/icons";
 import { Avatar, Badge, Button, ChannelIcon, cx, Textarea } from "@/components/ui";
 import { getConversation } from "@/lib/queries";
+import { ReplyBox } from "@/components/workspace/reply-box";
+import { asc, desc, eq } from "drizzle-orm";
+import { db, schema } from "@/db";
 import { currentTenant } from "@/lib/tenant";
 import { formatDateTime, formatTime } from "@/lib/time";
 
@@ -13,6 +16,7 @@ export default async function Thread({ params }: { params: Promise<{ id: string 
   const { id } = await params;
   const tenant = await currentTenant();
   const c = await getConversation(tenant.business.id, id);
+  const replies = await db.select({ id: schema.quickReplies.id, title: schema.quickReplies.title, body: schema.quickReplies.body }).from(schema.quickReplies).where(eq(schema.quickReplies.businessId, tenant.business.id)).orderBy(desc(schema.quickReplies.uses), asc(schema.quickReplies.title));
   const tz = tenant.business.timezone;
   type Item = { at: Date; kind: "msg"; m: (typeof c.messages)[number] } | { at: Date; kind: "act"; a: (typeof c.actions)[number] };
   const items: Item[] = [...c.messages.map((m) => ({ at: m.createdAt, kind: "msg" as const, m })), ...c.actions.map((a) => ({ at: a.createdAt, kind: "act" as const, a }))].sort((x, y) => x.at.getTime() - y.at.getTime());
@@ -86,10 +90,7 @@ export default async function Thread({ params }: { params: Promise<{ id: string 
       ) : (
         <form action={replyAction} className="border-t border-border p-3">
           <input type="hidden" name="conversationId" value={c.id} />
-          <div className="flex items-end gap-2">
-            <Textarea name="text" rows={2} placeholder={c.humanTakeover ? t("Reply to the customer…") : t("Replying takes over the conversation from the agent…")} className="min-h-12 flex-1 resize-none" required />
-            <SubmitButton icon="send">{t("Send")}</SubmitButton>
-          </div>
+          <ReplyBox replies={replies} customerName={c.customer?.name ?? ""} placeholder={c.humanTakeover ? t("Reply to the customer…") : t("Replying takes over the conversation from the agent…")} />
           <div className="mt-1.5 text-[11px] text-faint">{t("Sent via {channel}. Last activity {when}.", { channel: c.channel, when: formatDateTime(c.lastMessageAt, tz) })}</div>
         </form>
       )}

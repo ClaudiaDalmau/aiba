@@ -1416,5 +1416,257 @@
     "Кнопка «Пожаловаться» уведомляет модераторов."
    ]
   }
+ },
+ {
+  "id": "stats",
+  "href": "/app/stats",
+  "paths": [
+   "/app/stats"
+  ],
+  "icon": "chart",
+  "title": {
+   "en": "Statistics",
+   "es": "Estadísticas",
+   "fr": "Statistiques",
+   "de": "Statistiken",
+   "it": "Statistiche",
+   "pt-BR": "Estatísticas",
+   "ru": "Статистика"
+  },
+  "keywords": {
+   "en": "statistics stats revenue report numbers kpi",
+   "es": "estadisticas ingresos informe numeros facturacion",
+   "fr": "statistiques chiffre rapport",
+   "de": "statistik umsatz bericht zahlen",
+   "it": "statistiche ricavi report numeri",
+   "pt-BR": "estatisticas receita relatorio numeros",
+   "ru": "статистика выручка отчёт цифры"
+  },
+  "steps": {
+   "en": [
+    "Choose 30 days, 90 days or 1 year; each figure is compared with the previous period (▲ better, ▼ worse).",
+    "Revenue includes appointments and packs sold. You also see appointments, average ticket, new and returning customers, cancellations and no-shows.",
+    "Below: top services, results per team member, where bookings come from (page, assistant, WhatsApp, Telegram, you) and your busiest days and hours."
+   ],
+   "es": [
+    "Elige 30 días, 90 días o 1 año; cada cifra se compara con el periodo anterior (▲ mejor, ▼ peor).",
+    "Los ingresos incluyen citas y bonos vendidos. También ves citas, ticket medio, clientes nuevos y que repiten, cancelaciones y no presentados.",
+    "Abajo: servicios principales, resultados por profesional, de dónde vienen las reservas (página, asistente, WhatsApp, Telegram, tú) y tus días y horas con más citas."
+   ],
+   "fr": [
+    "Choisissez 30 jours, 90 jours ou 1 an ; chaque chiffre est comparé à la période précédente (▲ mieux, ▼ moins bien).",
+    "Le chiffre d'affaires inclut rendez-vous et forfaits vendus. Vous voyez aussi panier moyen, nouveaux clients et fidèles, annulations et absences.",
+    "En dessous : services principaux, résultats par membre, origine des réservations et jours/heures les plus chargés."
+   ],
+   "de": [
+    "Wähle 30 Tage, 90 Tage oder 1 Jahr; jede Zahl wird mit dem Vorzeitraum verglichen (▲ besser, ▼ schlechter).",
+    "Der Umsatz enthält Termine und verkaufte Pakete. Außerdem: Termine, Ø Bon, neue und Stammkunden, Stornierungen, Nichterscheinen.",
+    "Darunter: Top-Leistungen, Ergebnisse pro Teammitglied, Herkunft der Buchungen und die stärksten Tage und Uhrzeiten."
+   ],
+   "it": [
+    "Scegli 30 giorni, 90 giorni o 1 anno; ogni cifra è confrontata col periodo precedente (▲ meglio, ▼ peggio).",
+    "I ricavi includono appuntamenti e pacchetti venduti. Vedi anche scontrino medio, clienti nuovi e di ritorno, cancellazioni e assenze.",
+    "Sotto: servizi principali, risultati per membro del team, da dove arrivano le prenotazioni e giorni/ore più pieni."
+   ],
+   "pt-BR": [
+    "Escolha 30 dias, 90 dias ou 1 ano; cada número é comparado ao período anterior (▲ melhor, ▼ pior).",
+    "A receita inclui atendimentos e pacotes vendidos. Você também vê ticket médio, clientes novos e recorrentes, cancelamentos e faltas.",
+    "Abaixo: principais serviços, resultados por profissional, de onde vêm as reservas e os dias e horários mais cheios."
+   ],
+   "ru": [
+    "Выберите 30 дней, 90 дней или 1 год; каждая цифра сравнивается с прошлым периодом (▲ лучше, ▼ хуже).",
+    "Выручка включает записи и проданные абонементы. Также: средний чек, новые и постоянные клиенты, отмены и неявки.",
+    "Ниже: популярные услуги, результаты по сотрудникам, откуда приходят записи и самые загруженные дни и часы."
+   ]
+  }
+ },
+ {
+  "id": "waitlist",
+  "href": "/app/bookings/waitlist",
+  "paths": [
+   "/app/bookings"
+  ],
+  "icon": "bell",
+  "title": {
+   "en": "Waitlist for full days",
+   "es": "Lista de espera para días completos",
+   "fr": "Liste d'attente pour les jours complets",
+   "de": "Warteliste für volle Tage",
+   "it": "Lista d'attesa per giorni pieni",
+   "pt-BR": "Lista de espera para dias cheios",
+   "ru": "Лист ожидания на занятые дни"
+  },
+  "keywords": {
+   "en": "waitlist full day cancelled slot notify gap",
+   "es": "lista de espera dia completo hueco libre cancelacion avisar",
+   "fr": "liste attente complet créneau annulation prévenir",
+   "de": "warteliste voll frei stornierung benachrichtigen",
+   "it": "lista attesa pieno posto libero cancellazione avvisare",
+   "pt-BR": "lista espera cheio horario vago cancelamento avisar",
+   "ru": "лист ожидания занято отмена уведомить"
+  },
+  "steps": {
+   "en": [
+    "When a day is full, customers can press «Let me know if a slot frees up» on your booking page, or ask your assistant.",
+    "If a booking on that day is cancelled or moved, the first people in line (up to 3) get a message and an email with the link and the free times. Whoever books first gets it.",
+    "See and manage the list in Bookings → «Waitlist»."
+   ],
+   "es": [
+    "Cuando un día está completo, los clientes pueden pulsar «Avísame si se libera un hueco» en tu página de reservas, o pedírselo a tu asistente.",
+    "Si se cancela o mueve una cita de ese día, los primeros de la lista (hasta 3) reciben un mensaje y un email con el enlace y las horas libres. Se lo queda quien reserve antes.",
+    "Consulta y gestiona la lista en Reservas → «Lista de espera»."
+   ],
+   "fr": [
+    "Quand un jour est complet, les clients peuvent cliquer « Prévenez-moi si un créneau se libère » sur votre page, ou demander à l'assistant.",
+    "Si un rendez-vous ce jour-là est annulé ou déplacé, les premiers (jusqu'à 3) reçoivent un message et un e-mail avec le lien. Le premier qui réserve l'obtient.",
+    "Gérez la liste dans Réservations → « Liste d'attente »."
+   ],
+   "de": [
+    "An vollen Tagen können Kunden auf deiner Seite „Benachrichtige mich, wenn etwas frei wird“ wählen oder den Assistenten fragen.",
+    "Wird an dem Tag ein Termin storniert oder verschoben, bekommen die Ersten (bis zu 3) Nachricht und E-Mail mit Link. Wer zuerst bucht, bekommt ihn.",
+    "Die Liste findest du unter Buchungen → „Warteliste“."
+   ],
+   "it": [
+    "Quando un giorno è pieno, i clienti possono premere «Avvisami se si libera un posto» sulla pagina, o chiedere all'assistente.",
+    "Se un appuntamento di quel giorno viene annullato o spostato, i primi (fino a 3) ricevono messaggio ed email con il link. Chi prenota prima lo ottiene.",
+    "Gestisci la lista in Prenotazioni → «Lista d'attesa»."
+   ],
+   "pt-BR": [
+    "Quando um dia está cheio, os clientes podem tocar em «Me avise se abrir um horário» na página, ou pedir ao assistente.",
+    "Se um atendimento desse dia for cancelado ou remarcado, os primeiros (até 3) recebem mensagem e email com o link. Quem reservar primeiro leva.",
+    "Veja a lista em Reservas → «Lista de espera»."
+   ],
+   "ru": [
+    "Если день занят, клиенты могут нажать «Сообщите, если освободится время» на странице или попросить ассистента.",
+    "При отмене или переносе записи первые в очереди (до 3) получают сообщение и письмо со ссылкой. Кто первым запишется — тот и получит.",
+    "Список: Записи → «Лист ожидания»."
+   ]
+  }
+ },
+ {
+  "id": "import",
+  "href": "/app/customers/import",
+  "paths": [
+   "/app/customers"
+  ],
+  "icon": "users",
+  "title": {
+   "en": "Import and export customers",
+   "es": "Importar y exportar clientes",
+   "fr": "Importer et exporter des clients",
+   "de": "Kunden importieren und exportieren",
+   "it": "Importare ed esportare clienti",
+   "pt-BR": "Importar e exportar clientes",
+   "ru": "Импорт и экспорт клиентов"
+  },
+  "keywords": {
+   "en": "import export csv excel contacts list migrate",
+   "es": "importar exportar csv excel contactos lista migrar",
+   "fr": "importer exporter csv excel contacts",
+   "de": "importieren exportieren csv excel kontakte",
+   "it": "importare esportare csv excel contatti",
+   "pt-BR": "importar exportar csv excel contatos",
+   "ru": "импорт экспорт csv excel контакты"
+  },
+  "steps": {
+   "en": [
+    "Customers → «Import»: upload a CSV with columns name, email, phone, notes (any language; ; or , separators).",
+    "Each customer needs an email or phone; existing ones are not duplicated.",
+    "«Export CSV» downloads all your customers with visits, money spent and last visit."
+   ],
+   "es": [
+    "Clientes → «Importar»: sube un CSV con columnas nombre, email, teléfono, notas (en cualquier idioma; separado por ; o ,).",
+    "Cada cliente necesita email o teléfono; los que ya existen no se duplican.",
+    "«Exportar CSV» descarga todos tus clientes con visitas, gasto y última visita."
+   ],
+   "fr": [
+    "Clients → « Importer » : un CSV avec colonnes nom, e-mail, téléphone, notes (toute langue ; séparateur ; ou ,).",
+    "Chaque client doit avoir un e-mail ou un téléphone ; pas de doublons.",
+    "« Exporter CSV » télécharge tous vos clients avec visites, dépenses et dernière visite."
+   ],
+   "de": [
+    "Kunden → „Importieren“: CSV mit Spalten Name, E-Mail, Telefon, Notizen (jede Sprache; Trenner ; oder ,).",
+    "Jeder Kunde braucht E-Mail oder Telefon; keine Duplikate.",
+    "„CSV exportieren“ lädt alle Kunden mit Besuchen, Umsatz und letztem Besuch."
+   ],
+   "it": [
+    "Clienti → «Importa»: CSV con colonne nome, email, telefono, note (qualsiasi lingua; separatore ; o ,).",
+    "Ogni cliente deve avere email o telefono; niente duplicati.",
+    "«Esporta CSV» scarica tutti i clienti con visite, spesa e ultima visita."
+   ],
+   "pt-BR": [
+    "Clientes → «Importar»: envie um CSV com colunas nome, email, telefone, notas (qualquer idioma; separador ; ou ,).",
+    "Cada cliente precisa de email ou telefone; sem duplicados.",
+    "«Exportar CSV» baixa todos os clientes com visitas, gasto e última visita."
+   ],
+   "ru": [
+    "Клиенты → «Импорт»: CSV с колонками имя, email, телефон, заметки (любой язык; разделитель ; или ,).",
+    "У каждого клиента должен быть email или телефон; дублей не будет.",
+    "«Экспорт CSV» скачивает всех клиентов с визитами, тратами и последним визитом."
+   ]
+  }
+ },
+ {
+  "id": "replies",
+  "href": "/app/inbox/replies",
+  "paths": [
+   "/app/inbox"
+  ],
+  "icon": "bolt",
+  "title": {
+   "en": "Quick replies",
+   "es": "Respuestas rápidas",
+   "fr": "Réponses rapides",
+   "de": "Schnellantworten",
+   "it": "Risposte rapide",
+   "pt-BR": "Respostas rápidas",
+   "ru": "Быстрые ответы"
+  },
+  "keywords": {
+   "en": "quick replies templates canned saved answers",
+   "es": "respuestas rapidas plantillas guardadas",
+   "fr": "réponses rapides modèles",
+   "de": "schnellantworten vorlagen",
+   "it": "risposte rapide modelli",
+   "pt-BR": "respostas rápidas modelos",
+   "ru": "быстрые ответы шаблоны"
+  },
+  "steps": {
+   "en": [
+    "In the inbox, press ⚡ (top of the list or next to the reply box) → «Manage quick replies» to save answers you write often.",
+    "When replying, press ⚡ and pick one: it's inserted and you can edit it before sending.",
+    "Write {name} and it becomes the customer's first name."
+   ],
+   "es": [
+    "En la bandeja, pulsa ⚡ (arriba de la lista o junto a la caja de respuesta) → «Gestionar respuestas rápidas» para guardar respuestas que escribes a menudo.",
+    "Al responder, pulsa ⚡ y elige una: se inserta y puedes editarla antes de enviar.",
+    "Escribe {name} y se cambia por el nombre del cliente."
+   ],
+   "fr": [
+    "Dans la boîte, cliquez ⚡ → « Gérer les réponses rapides » pour enregistrer vos réponses fréquentes.",
+    "En répondant, cliquez ⚡ et choisissez : elle est insérée et modifiable avant envoi.",
+    "{name} devient le prénom du client."
+   ],
+   "de": [
+    "Im Posteingang ⚡ → „Schnellantworten verwalten“, um häufige Antworten zu speichern.",
+    "Beim Antworten ⚡ drücken und eine wählen: Sie wird eingefügt und ist vor dem Senden bearbeitbar.",
+    "{name} wird zum Vornamen des Kunden."
+   ],
+   "it": [
+    "Nella posta, premi ⚡ → «Gestisci risposte rapide» per salvare le risposte frequenti.",
+    "Rispondendo, premi ⚡ e scegline una: viene inserita e puoi modificarla.",
+    "{name} diventa il nome del cliente."
+   ],
+   "pt-BR": [
+    "Na caixa, toque em ⚡ → «Gerenciar respostas rápidas» para salvar respostas frequentes.",
+    "Ao responder, toque em ⚡ e escolha: ela é inserida e pode ser editada antes de enviar.",
+    "{name} vira o nome do cliente."
+   ],
+   "ru": [
+    "Во входящих нажмите ⚡ → «Управлять быстрыми ответами», чтобы сохранить частые ответы.",
+    "При ответе нажмите ⚡ и выберите: текст вставится, его можно изменить.",
+    "{name} заменяется именем клиента."
+   ]
+  }
  }
 ]

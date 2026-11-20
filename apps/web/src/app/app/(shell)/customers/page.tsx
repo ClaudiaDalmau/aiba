@@ -1,6 +1,6 @@
 import { getT } from "@/i18n/server";
 import Link from "next/link";
-import { Avatar, Card, Empty, Input, PageHeader } from "@/components/ui";
+import { Avatar, Card, Empty, Input, LinkButton, PageHeader } from "@/components/ui";
 import { listCustomers } from "@/lib/queries";
 import { currentTenant } from "@/lib/tenant";
 import { formatDate, formatMoney } from "@/lib/time";
@@ -17,7 +17,16 @@ export default async function CustomersPage({ searchParams }: { searchParams: Pr
   const customers = await listCustomers(tenant.business.id, q);
   return (
     <>
-      <PageHeader title={t("Customers")} description={t("Everyone who booked or messaged you. Your customer data stays yours and is never shared with other businesses.")} />
+      <PageHeader
+        title={t("Customers")}
+        description={t("Everyone who booked or messaged you. Your customer data stays yours and is never shared with other businesses.")}
+        actions={
+          <>
+            <LinkButton href="/app/customers/import" variant="secondary" icon="plus">{t("Import")}</LinkButton>
+            <a href="/api/v1/customers/export.csv" className="inline-flex h-10 items-center rounded-lg px-3 text-[14px] font-medium text-muted hover:bg-subtle hover:text-fg">{t("Export CSV")}</a>
+          </>
+        }
+      />
       <form className="mb-4 max-w-sm"><Input name="q" defaultValue={q} placeholder={t("Search name, email or phone")} /></form>
       <Card className="overflow-x-auto">
         {customers.length === 0 ? (

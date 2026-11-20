@@ -14,12 +14,12 @@ const addDays = (d: string, n: number) => {
   return new Date(Date.UTC(y, m - 1, day + n)).toISOString().slice(0, 10);
 };
 
-export function BookingFlow({ slug, services, staff, currency, timezone, today, brand, autoConfirm, initialServiceId }: { slug: string; services: Service[]; staff: Staff[]; currency: string; timezone: string; today: string; brand: string; autoConfirm: boolean; initialServiceId?: string }) {
+export function BookingFlow({ slug, services, staff, currency, timezone, today, brand, autoConfirm, initialServiceId, initialDate }: { slug: string; services: Service[]; staff: Staff[]; currency: string; timezone: string; today: string; brand: string; autoConfirm: boolean; initialServiceId?: string; initialDate?: string }) {
   const t = useT();
   const intl = useIntlLocale();
   const [serviceId, setServiceId] = useState<string | null>(initialServiceId ?? null);
   const [staffId, setStaffId] = useState<string>("");
-  const [date, setDate] = useState(today);
+  const [date, setDate] = useState(initialDate ?? today);
   const [slots, setSlots] = useState<Slot[] | null>(null);
   const [slot, setSlot] = useState<Slot | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -140,7 +140,10 @@ export function BookingFlow({ slug, services, staff, currency, timezone, today, 
             {slots === null ? (
               <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">{Array.from({ length: 12 }, (_, i) => <div key={i} className="h-10 animate-pulse rounded-lg bg-subtle" />)}</div>
             ) : slots.length === 0 ? (
-              <p className="py-6 text-center text-[14px] text-muted">{t("No openings this day. Try another date.")}</p>
+              <div className="py-4 text-center">
+                <p className="text-[14px] text-muted">{t("No openings this day. Try another date.")}</p>
+                {service && <WaitlistForm slug={slug} serviceId={service.id} staffId={staffId} date={date} brand={brand} />}
+              </div>
             ) : (
               <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">
                 {slots.map((s) => (
@@ -186,5 +189,50 @@ function StepTitle({ n, title }: { n: number; title: string }) {
     <h3 className="mb-3 flex items-center gap-2 text-[15px] font-semibold">
       <span className="grid size-6 place-items-center rounded-full bg-subtle text-[12px] text-muted">{n}</span> {title}
     </h3>
+  );
+}
+
+/** Full day: «Let me know if a slot frees up». */
+function WaitlistForm({ slug, serviceId, staffId, date, brand }: { slug: string; serviceId: string; staffId: string; date: string; brand: string }) {
+  const t = useT();
+  const [open, setOpen] = useState(false);
+  const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [error, setError] = useState("");
+  useEffect(() => {
+    setState("idle");
+    setOpen(false);
+  }, [date, serviceId]);
+  if (state === "done") return <p className="mt-3 text-[14px] font-medium text-ok">{t("Done! We'll write to you if a slot frees up that day.")}</p>;
+  if (!open)
+    return (
+      <button type="button" onClick={() => setOpen(true)} className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-border bg-surface px-3 py-2 text-[13px] font-medium hover:border-fg/30">
+        <Icon name="bell" size={15} /> {t("Let me know if a slot frees up")}
+      </button>
+    );
+  return (
+    <form
+      className="mx-auto mt-3 max-w-sm space-y-2 text-left"
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const f = new FormData(e.currentTarget);
+        setState("sending");
+        const res = await fetch(`/api/v1/public/businesses/${slug}/waitlist`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ serviceId, staffId: staffId || null, date, name: f.get("name"), email: f.get("email"), phone: f.get("phone") || undefined, consent: f.get("consent") === "on" }),
+        });
+        if (res.ok) return setState("done");
+        const j = await res.json().catch(() => ({}));
+        setError(j.errors ? Object.values(j.errors).flat().join(" ") : (j.detail ?? t("Something went wrong. Please try again.")));
+        setState("error");
+      }}
+    >
+      <Input name="name" placeholder={t("Your name")} required />
+      <Input name="email" type="email" placeholder={t("Email")} required />
+      <Input name="phone" type="tel" placeholder={t("Phone (optional)")} />
+      <label className="flex items-start gap-2 text-[12px] text-muted"><input type="checkbox" name="consent" required className="mt-0.5" /> {t("I agree that the business stores my details to contact me about this request.")}</label>
+      {state === "error" && <p className="text-[13px] text-bad">{error}</p>}
+      <Button type="submit" disabled={state === "sending"} style={{ background: brand }} className="w-full text-white">{t("Notify me")}</Button>
+    </form>
   );
 }

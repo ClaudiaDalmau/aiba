@@ -877,6 +877,45 @@ export const calendarConnections = pgTable(
 );
 export type CalendarConnection = typeof calendarConnections.$inferSelect;
 
+/** «Notify me if a slot frees up» for a full day. */
+export const slotWaitlist = pgTable(
+  "slot_waitlist",
+  {
+    id: id(),
+    businessId: businessId(),
+    customerId: text("customer_id")
+      .notNull()
+      .references(() => customers.id, { onDelete: "cascade" }),
+    serviceId: text("service_id")
+      .notNull()
+      .references(() => services.id, { onDelete: "cascade" }),
+    staffId: text("staff_id").references(() => staff.id, { onDelete: "set null" }),
+    /** YYYY-MM-DD in the business's timezone. */
+    date: text("date").notNull(),
+    status: text("status", { enum: ["waiting", "notified", "booked", "removed"] }).notNull().default("waiting"),
+    source: text("source").notNull().default("web"),
+    notifiedAt: timestamp("notified_at", { withTimezone: true }),
+    createdAt: createdAt(),
+  },
+  (t) => [index("slot_waitlist_lookup_idx").on(t.businessId, t.date, t.status)],
+);
+export type SlotWaitlist = typeof slotWaitlist.$inferSelect;
+
+/** Saved replies the team inserts in the inbox with one click. {name} = customer's first name. */
+export const quickReplies = pgTable(
+  "quick_replies",
+  {
+    id: id(),
+    businessId: businessId(),
+    title: text("title").notNull(),
+    body: text("body").notNull(),
+    uses: integer("uses").notNull().default(0),
+    createdAt: createdAt(),
+  },
+  (t) => [index("quick_replies_business_idx").on(t.businessId)],
+);
+export type QuickReply = typeof quickReplies.$inferSelect;
+
 export type Pack = typeof packs.$inferSelect;
 export type CustomerPack = typeof customerPacks.$inferSelect;
 export type Business = typeof businesses.$inferSelect;

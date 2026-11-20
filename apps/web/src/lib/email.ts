@@ -192,3 +192,24 @@ export async function emailTeamNewLead(lead: schema.Lead) {
   });
   return sendEmail({ to, subject: `[AIBA] ${kind}: ${lead.name || lead.email}`, html, text, replyTo: lead.email });
 }
+
+/** «A slot opened up» for someone on the waitlist. */
+export async function emailCustomerAboutWaitlist(business: schema.Business, customer: schema.Customer, service: string, date: string, times: string, link: string) {
+  if (!(await emailConfigured()) || !customer.email || customer.erasedAt) return false;
+  const { t } = translatorFor(business.locale);
+  const title = t("A slot just opened up");
+  const { html, text } = layout({
+    brand: business.name,
+    color: business.brandColor,
+    title,
+    lines: [
+      t("Hi {name},", { name: customer.name.split(" ")[0] || customer.name }),
+      t("You asked {business} to let you know if a slot freed up. Now there is one — first come, first served.", { business: business.name }),
+      `${t("Service")}: ${service}`,
+      `${t("When")}: ${date} · ${times}`,
+    ],
+    cta: { label: t("Book now"), href: link },
+    footer: t("Sent by {business} with AIBA", { business: business.name }),
+  });
+  return sendEmail({ to: customer.email, subject: `${title} · ${business.name}`, html, text, replyTo: business.email || undefined });
+}

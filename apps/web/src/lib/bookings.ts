@@ -1,6 +1,7 @@
 import "server-only";
 import { usablePack } from "./packs";
 import { syncBookingToGoogle } from "./google-calendar";
+import { markWaitlistBooked, notifyFreedSlot } from "./waitlist";
 import { and, eq, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { getService, getSlots } from "./availability";
@@ -134,6 +135,7 @@ export async function createBooking(business: schema.Business, input: CreateBook
 
   const when = formatDateTime(startsAt, business.timezone);
   await syncBookingToGoogle(booking.id);
+  await markWaitlistBooked(business.id, customer.id, zonedParts(startsAt, business.timezone).date);
   await audit(business.id, actor, "booking.created", booking.id, { serviceId: service.id, startsAt: startsAt.toISOString(), source: input.source, ...(pack ? { pack: pack.id } : {}) });
   await notifyBusiness(business.id, {
     kind: "booking.created",
@@ -176,6 +178,7 @@ export async function cancelBooking(business: schema.Business, bookingId: string
     .where(eq(schema.bookings.id, b.id))
     .returning();
   await syncBookingToGoogle(b.id);
+  await notifyFreedSlot(business, zonedParts(b.startsAt, business.timezone).date);
   await audit(business.id, actor, "booking.cancelled", b.id, { reason });
   await emailCustomerAboutBooking(b.id, "cancelled", { reason: reason || undefined }).catch(() => false);
   const [c] = await db.select().from(schema.customers).where(eq(schema.customers.id, b.customerId));
@@ -230,6 +233,7 @@ export async function rescheduleBooking(
     throw e;
   }
   await syncBookingToGoogle(b.id);
+  await notifyFreedSlot(business, zonedParts(b.startsAt, business.timezone).date);
   await audit(business.id, actor, "booking.rescheduled", b.id, { from: b.startsAt.toISOString(), to: startsAt.toISOString() });
   await emailCustomerAboutBooking(b.id, "rescheduled").catch(() => false);
   const when = formatDateTime(startsAt, business.timezone);

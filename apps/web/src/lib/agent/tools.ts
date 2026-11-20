@@ -114,6 +114,38 @@ export const TOOLS: ToolDef[] = [
     },
   },
   {
+    name: "join_waitlist",
+    label: "Add customers to the waitlist",
+    description:
+      "When the day the customer wants is full, offer to put them on the waitlist for that day: they get a message if a slot frees up (first come, first served; it is not a booking). Needs a known customer, or their name and a phone or email.",
+    input_schema: obj(
+      {
+        service_id: { type: "string" },
+        date: { type: "string", description: "YYYY-MM-DD in the business's timezone" },
+        staff_id: { type: "string" },
+        customer_name: { type: "string" },
+        customer_phone: { type: "string" },
+        customer_email: { type: "string" },
+      },
+      ["service_id", "date"],
+    ),
+    defaultMode: "auto",
+    summarize: async (i, ctx) => `Waitlist for ${await serviceName(ctx.business.id, i.service_id)} on ${i.date}`,
+    async run(i, ctx) {
+      let customer = ctx.customer;
+      if (!customer) {
+        if (!i.customer_name || (!i.customer_phone && !i.customer_email))
+          return { error: "missing_customer_details", message: "Ask for the customer's name and a phone number or email first." };
+        const { findOrCreateCustomer } = await import("../bookings");
+        customer = await findOrCreateCustomer(ctx.business.id, { name: i.customer_name, phone: i.customer_phone, email: i.customer_email });
+        await ctx.setCustomer(customer);
+      }
+      const { joinWaitlist } = await import("../waitlist");
+      await joinWaitlist(ctx.business.id, { customerId: customer.id, serviceId: i.service_id, staffId: i.staff_id, date: i.date, source: ctx.conversation.channel });
+      return { added: true, note: "Tell the customer they'll get a message here if a slot opens that day; it is not a booking yet." };
+    },
+  },
+  {
     name: "create_booking",
     label: "Create bookings",
     description:

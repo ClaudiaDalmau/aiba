@@ -8,6 +8,7 @@ import { Badge, BOOKING_LABEL, BOOKING_TONE, Button, Card, cx, Field, Input, Lin
 import { ActionForm } from "@/components/workspace/action-form";
 import { getBookingRow, listBookings, listCustomers, listServices, listStaff, type BookingRow } from "@/lib/queries";
 import { currentTenant } from "@/lib/tenant";
+import { waitlistCount } from "@/lib/waitlist";
 import { addDays, formatMoney, formatTime, minutesToHHMM, todayIn, weekdayOf, zonedParts, zonedToUtc } from "@/lib/time";
 
 export async function generateMetadata() {
@@ -30,11 +31,12 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
   const anchor = sp.date && /^\d{4}-\d{2}-\d{2}$/.test(sp.date) ? sp.date : todayIn(tz);
   const start = view === "week" ? addDays(anchor, -((weekdayOf(anchor) + 6) % 7)) : anchor;
   const days = Array.from({ length: view === "week" ? 7 : 1 }, (_, i) => addDays(start, i));
-  const [bookings, staff, services, pending] = await Promise.all([
+  const [bookings, staff, services, pending, waiting] = await Promise.all([
     listBookings(tenant.business.id, { from: zonedToUtc(days[0], 0, tz), to: zonedToUtc(addDays(days[days.length - 1], 1), 0, tz), status: ["pending", "confirmed", "completed", "no_show"] }),
     listStaff(tenant.business.id),
     listServices(tenant.business.id, false),
     listBookings(tenant.business.id, { from: new Date(), status: ["pending"] }),
+    waitlistCount(tenant.business),
   ]);
   const focus = sp.focus ? await getBookingRow(tenant.business.id, sp.focus).catch(() => null) : null;
   const q = (p: Partial<SP>) => {
@@ -53,6 +55,7 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
         description={rangeLabel}
         actions={
           <>
+            <LinkButton href="/app/bookings/waitlist" variant="ghost" icon="bell">{t("Waitlist")}{waiting > 0 && <span className="ml-1 rounded-full bg-ai/15 px-1.5 text-[11px] font-semibold text-ai">{waiting}</span>}</LinkButton>
             <div className="flex rounded-[10px] border border-border bg-surface p-0.5 shadow-card">
               {(["day", "week"] as const).map((v) => (
                 <Link key={v} href={q({ view: v })} className={cx("rounded-lg px-3 py-1.5 text-[13px] capitalize", view === v ? "bg-subtle font-medium" : "text-muted")}>{v === "day" ? t("day") : t("week")}</Link>

@@ -17,7 +17,7 @@ import { todayIn } from "@/lib/time";
 import { db, schema } from "@/db";
 import { and, eq } from "drizzle-orm";
 
-type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ service?: string }> };
+type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ service?: string; date?: string }> };
 
 async function load(slug: string) {
   // Team members can preview an unpublished page.
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BusinessPage({ params, searchParams }: Props) {
   const t = await getT();
   const { slug } = await params;
-  const { service } = await searchParams;
+  const { service, date } = await searchParams;
   const business = await load(slug);
   if (!business) notFound();
   const [{ business: b, services, staff, locations }, agent, channels, rating, reviews] = await Promise.all([
@@ -84,7 +84,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
                 )}
               </div>
             </div>
-            <div className="mt-8"><BookingFlow slug={b.slug} services={services} staff={staff} currency={b.currency} timezone={b.timezone} today={todayIn(b.timezone)} brand={b.brandColor} autoConfirm={b.policy.autoConfirm} initialServiceId={service} /></div>
+            <div className="mt-8"><BookingFlow slug={b.slug} services={services} staff={staff} currency={b.currency} timezone={b.timezone} today={todayIn(b.timezone)} brand={b.brandColor} autoConfirm={b.policy.autoConfirm} initialServiceId={service} initialDate={date && /^\d{4}-\d{2}-\d{2}$/.test(date) && date >= todayIn(b.timezone) ? date : undefined} /></div>
             {reviews.length > 0 && (
               <section id="reviews" className="mt-10 border-t border-border pt-8">
                 <div className="flex items-baseline justify-between gap-3">
