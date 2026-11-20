@@ -106,8 +106,8 @@ export async function telegramWebhookInfo() {
 }
 
 export type TelegramUpdate =
-  | { kind: "message"; chatId: string; messageId: string; text: string; name: string; startPayload: string | null; command: string | null }
-  | { kind: "callback"; chatId: string; callbackId: string; data: string; name: string };
+  | { kind: "message"; chatId: string; messageId: string; text: string; name: string; startPayload: string | null; command: string | null; lang?: string }
+  | { kind: "callback"; chatId: string; callbackId: string; data: string; name: string; lang?: string };
 
 export function parseTelegramUpdate(update: unknown): TelegramUpdate | null {
   const u = update as { message?: Record<string, any>; callback_query?: Record<string, any> };
@@ -115,11 +115,16 @@ export function parseTelegramUpdate(update: unknown): TelegramUpdate | null {
   if (u?.callback_query) {
     const cq = u.callback_query;
     if (cq.message?.chat?.type !== "private" || typeof cq.data !== "string") return null;
-    return { kind: "callback", chatId: String(cq.message.chat.id), callbackId: String(cq.id), data: cq.data, name: nameOf(cq.from) };
+    return { kind: "callback", chatId: String(cq.message.chat.id), callbackId: String(cq.id), data: cq.data, name: nameOf(cq.from), lang: cq.from?.language_code };
   }
   const msg = u?.message;
   if (!msg || typeof msg.text !== "string" || msg.chat?.type !== "private") return null;
   const cmd = /^\/(\w+)(?:@\w+)?(?:\s+(.+))?$/.exec(msg.text.trim());
+  // Someone pasted a business's link (t.me/<bot>?start=<slug>) as a message instead of tapping it.
+  const pasted = cmd ? null : /t\.me\/\w+\?start=([\w-]{1,64})/i.exec(msg.text);
+  if (pasted) {
+    return { kind: "message", chatId: String(msg.chat.id), messageId: String(msg.message_id), text: msg.text, name: nameOf(msg.from), command: "start", startPayload: pasted[1], lang: msg.from?.language_code };
+  }
   return {
     kind: "message",
     chatId: String(msg.chat.id),
@@ -128,5 +133,6 @@ export function parseTelegramUpdate(update: unknown): TelegramUpdate | null {
     name: nameOf(msg.from),
     command: cmd ? cmd[1].toLowerCase() : null,
     startPayload: cmd && cmd[1].toLowerCase() === "start" ? (cmd[2]?.trim() ?? null) : null,
+    lang: msg.from?.language_code,
   };
 }

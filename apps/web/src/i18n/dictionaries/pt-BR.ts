@@ -1097,7 +1097,23 @@ const ptBR: Dictionary = {
   "You can review your appointment once it has taken place": "Você poderá avaliar seu horário depois que ele acontecer",
   "Rating must be between 1 and 5": "A avaliação deve ser entre 1 e 5",
   "You have already reviewed this appointment": "Você já avaliou este horário",
-  "Review not found": "Avaliação não encontrada"
+  "Review not found": "Avaliação não encontrada",
+  "Open the Telegram link on a business's booking page to start chatting with them.": "Abra o link do Telegram na página de reservas de um negócio para começar a conversar.",
+  "Who would you like to talk to?": "Com quem você quer falar?",
+  "Hi {name}! You're chatting with {business}.": "Oi, {name}! Você está falando com {business}.",
+  "I can answer questions, check availability and book for you. (Type /switch to talk to another business.)": "Posso responder dúvidas, ver horários e reservar para você. (Digite /switch para falar com outro negócio.)",
+  "No longer available": "Não está mais disponível",
+  "That business isn't available on Telegram right now.": "Esse negócio não está disponível no Telegram agora.",
+  "Welcome! This assistant books appointments with local businesses.": "Bem-vindo! Este assistente agenda horários com negócios locais.",
+  "Sure.": "Claro.",
+  "Hi!": "Oi!",
+  "Webhook registered at {url}.": "Webhook registrado em {url}.",
+  "Connected @{bot}.": "@{bot} conectado.",
+  "@{bot} now delivers to {url}": "@{bot} agora entrega em {url}",
+  "Secret rotated and webhook re-registered at {url}": "Segredo renovado e webhook registrado de novo em {url}",
+  "Created {email}.": "{email} criado.",
+  "Temporary password: {password}": "Senha temporária: {password}",
+  "{name} is now {role}": "{name} agora é {role}"
 };
 
 export default ptBR;

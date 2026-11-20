@@ -1097,7 +1097,23 @@ const fr: Dictionary = {
   "You can review your appointment once it has taken place": "Vous pourrez noter votre rendez-vous une fois passé",
   "Rating must be between 1 and 5": "La note doit être comprise entre 1 et 5",
   "You have already reviewed this appointment": "Vous avez déjà noté ce rendez-vous",
-  "Review not found": "Avis introuvable"
+  "Review not found": "Avis introuvable",
+  "Open the Telegram link on a business's booking page to start chatting with them.": "Ouvrez le lien Telegram de la page de réservation d'un établissement pour commencer à discuter.",
+  "Who would you like to talk to?": "Avec qui voulez-vous discuter ?",
+  "Hi {name}! You're chatting with {business}.": "Bonjour {name} ! Vous discutez avec {business}.",
+  "I can answer questions, check availability and book for you. (Type /switch to talk to another business.)": "Je peux répondre à vos questions, vérifier les disponibilités et réserver pour vous. (Tapez /switch pour parler à un autre établissement.)",
+  "No longer available": "Plus disponible",
+  "That business isn't available on Telegram right now.": "Cet établissement n'est pas disponible sur Telegram pour le moment.",
+  "Welcome! This assistant books appointments with local businesses.": "Bienvenue ! Cet assistant réserve des rendez-vous auprès d'établissements locaux.",
+  "Sure.": "Bien sûr.",
+  "Hi!": "Bonjour !",
+  "Webhook registered at {url}.": "Webhook enregistré sur {url}.",
+  "Connected @{bot}.": "@{bot} connecté.",
+  "@{bot} now delivers to {url}": "@{bot} livre désormais vers {url}",
+  "Secret rotated and webhook re-registered at {url}": "Secret renouvelé et webhook réenregistré sur {url}",
+  "Created {email}.": "{email} créé.",
+  "Temporary password: {password}": "Mot de passe temporaire : {password}",
+  "{name} is now {role}": "{name} est maintenant {role}"
 };
 
 export default fr;

@@ -8233,5 +8233,133 @@
 "it": "Recensione non trovata",
 "pt-BR": "Avaliação não encontrada",
 "ru": "Отзыв не найден"
+},
+"Open the Telegram link on a business's booking page to start chatting with them.": {
+"es": "Abre el enlace de Telegram de la página de reservas de un negocio para empezar a hablar con él.",
+"fr": "Ouvrez le lien Telegram de la page de réservation d'un établissement pour commencer à discuter.",
+"de": "Öffne den Telegram-Link auf der Buchungsseite eines Geschäfts, um mit ihm zu chatten.",
+"it": "Apri il link Telegram nella pagina di prenotazione di un'attività per iniziare a chattare.",
+"pt-BR": "Abra o link do Telegram na página de reservas de um negócio para começar a conversar.",
+"ru": "Откройте ссылку Telegram на странице записи бизнеса, чтобы начать переписку."
+},
+"Who would you like to talk to?": {
+"es": "¿Con quién quieres hablar?",
+"fr": "Avec qui voulez-vous discuter ?",
+"de": "Mit wem möchtest du sprechen?",
+"it": "Con chi vuoi parlare?",
+"pt-BR": "Com quem você quer falar?",
+"ru": "С кем хотите поговорить?"
+},
+"Hi {name}! You're chatting with {business}.": {
+"es": "¡Hola, {name}! Estás hablando con {business}.",
+"fr": "Bonjour {name} ! Vous discutez avec {business}.",
+"de": "Hallo {name}! Du schreibst mit {business}.",
+"it": "Ciao {name}! Stai parlando con {business}.",
+"pt-BR": "Oi, {name}! Você está falando com {business}.",
+"ru": "Здравствуйте, {name}! Вы общаетесь с {business}."
+},
+"I can answer questions, check availability and book for you. (Type /switch to talk to another business.)": {
+"es": "Puedo responder tus preguntas, ver disponibilidad y reservar por ti. (Escribe /switch para hablar con otro negocio.)",
+"fr": "Je peux répondre à vos questions, vérifier les disponibilités et réserver pour vous. (Tapez /switch pour parler à un autre établissement.)",
+"de": "Ich beantworte Fragen, prüfe freie Termine und buche für dich. (Schreib /switch, um mit einem anderen Geschäft zu sprechen.)",
+"it": "Posso rispondere alle domande, verificare la disponibilità e prenotare per te. (Scrivi /switch per parlare con un'altra attività.)",
+"pt-BR": "Posso responder dúvidas, ver horários e reservar para você. (Digite /switch para falar com outro negócio.)",
+"ru": "Я отвечу на вопросы, проверю свободное время и запишу вас. (Напишите /switch, чтобы перейти к другому бизнесу.)"
+},
+"No longer available": {
+"es": "Ya no está disponible",
+"fr": "Plus disponible",
+"de": "Nicht mehr verfügbar",
+"it": "Non più disponibile",
+"pt-BR": "Não está mais disponível",
+"ru": "Больше недоступно"
+},
+"That business isn't available on Telegram right now.": {
+"es": "Ese negocio no está disponible en Telegram ahora mismo.",
+"fr": "Cet établissement n'est pas disponible sur Telegram pour le moment.",
+"de": "Dieses Geschäft ist gerade nicht auf Telegram verfügbar.",
+"it": "Questa attività non è disponibile su Telegram al momento.",
+"pt-BR": "Esse negócio não está disponível no Telegram agora.",
+"ru": "Этот бизнес сейчас недоступен в Telegram."
+},
+"Welcome! This assistant books appointments with local businesses.": {
+"es": "¡Bienvenida! Este asistente reserva citas con negocios locales.",
+"fr": "Bienvenue ! Cet assistant réserve des rendez-vous auprès d'établissements locaux.",
+"de": "Willkommen! Dieser Assistent bucht Termine bei lokalen Geschäften.",
+"it": "Benvenuto! Questo assistente prenota appuntamenti con attività locali.",
+"pt-BR": "Bem-vindo! Este assistente agenda horários com negócios locais.",
+"ru": "Добро пожаловать! Этот ассистент записывает к местным мастерам."
+},
+"Sure.": {
+"es": "Claro.",
+"fr": "Bien sûr.",
+"de": "Klar.",
+"it": "Certo.",
+"pt-BR": "Claro.",
+"ru": "Конечно."
+},
+"Hi!": {
+"es": "¡Hola!",
+"fr": "Bonjour !",
+"de": "Hallo!",
+"it": "Ciao!",
+"pt-BR": "Oi!",
+"ru": "Здравствуйте!"
+},
+"Webhook registered at {url}.": {
+"es": "Webhook registrado en {url}.",
+"fr": "Webhook enregistré sur {url}.",
+"de": "Webhook registriert unter {url}.",
+"it": "Webhook registrato su {url}.",
+"pt-BR": "Webhook registrado em {url}.",
+"ru": "Вебхук зарегистрирован: {url}."
+},
+"Connected @{bot}.": {
+"es": "Conectado @{bot}.",
+"fr": "@{bot} connecté.",
+"de": "@{bot} verbunden.",
+"it": "@{bot} collegato.",
+"pt-BR": "@{bot} conectado.",
+"ru": "@{bot} подключён."
+},
+"@{bot} now delivers to {url}": {
+"es": "@{bot} ahora entrega los mensajes en {url}",
+"fr": "@{bot} livre désormais vers {url}",
+"de": "@{bot} stellt jetzt an {url} zu",
+"it": "@{bot} ora consegna su {url}",
+"pt-BR": "@{bot} agora entrega em {url}",
+"ru": "@{bot} теперь доставляет на {url}"
+},
+"Secret rotated and webhook re-registered at {url}": {
+"es": "Secreto renovado y webhook registrado de nuevo en {url}",
+"fr": "Secret renouvelé et webhook réenregistré sur {url}",
+"de": "Secret erneuert und Webhook neu registriert unter {url}",
+"it": "Segreto rinnovato e webhook registrato di nuovo su {url}",
+"pt-BR": "Segredo renovado e webhook registrado de novo em {url}",
+"ru": "Секрет обновлён, вебхук заново зарегистрирован: {url}"
+},
+"Created {email}.": {
+"es": "Creado {email}.",
+"fr": "{email} créé.",
+"de": "{email} angelegt.",
+"it": "{email} creato.",
+"pt-BR": "{email} criado.",
+"ru": "Создан {email}."
+},
+"Temporary password: {password}": {
+"es": "Contraseña temporal: {password}",
+"fr": "Mot de passe temporaire : {password}",
+"de": "Temporäres Passwort: {password}",
+"it": "Password temporanea: {password}",
+"pt-BR": "Senha temporária: {password}",
+"ru": "Временный пароль: {password}"
+},
+"{name} is now {role}": {
+"es": "{name} ahora es {role}",
+"fr": "{name} est maintenant {role}",
+"de": "{name} ist jetzt {role}",
+"it": "{name} ora è {role}",
+"pt-BR": "{name} agora é {role}",
+"ru": "{name} теперь {role}"
 }
 }

@@ -4,7 +4,17 @@ import { db, schema } from "@/db";
 import { handleInbound } from "../agent/runtime";
 import { findOrCreateCustomer } from "../bookings";
 import { appendMessage, getOrCreateConversation } from "../conversations";
+import { isLocale, translate, type T } from "@/i18n/config";
+import { getDictionary } from "@/i18n/server";
 import { telegramAnswerCallback, telegramSend, telegramTyping, type TelegramUpdate } from "./telegram";
+
+/** Translator for the person's Telegram app language (falls back to English). */
+function tFor(lang?: string): T {
+  const code = (lang ?? "").toLowerCase();
+  const l = code.startsWith("pt") ? "pt-BR" : code.split("-")[0];
+  const dict = getDictionary(isLocale(l) ? l : "en");
+  return (src, vars) => translate(dict, src, vars);
+}
 
 /**
  * Routing for the shared platform bot.
@@ -52,34 +62,35 @@ async function recentBusinesses(chatId: string) {
     .limit(8);
 }
 
-async function sendPicker(chatId: string, intro: string) {
+async function sendPicker(chatId: string, intro: string, t: T) {
   const recent = await recentBusinesses(chatId);
   if (!recent.length) {
-    await telegramSend(chatId, `${intro}\n\nOpen the Telegram link on a business's booking page to start chatting with them.`);
+    await telegramSend(chatId, `${t(intro)}\n\n${t("Open the Telegram link on a business's booking page to start chatting with them.")}`);
     return;
   }
-  await telegramSend(chatId, `${intro}\n\nWho would you like to talk to?`, recent.map((b) => [{ text: b.name, callback_data: `biz:${b.id}` }]));
+  await telegramSend(chatId, `${t(intro)}\n\n${t("Who would you like to talk to?")}`, recent.map((b) => [{ text: b.name, callback_data: `biz:${b.id}` }]));
 }
 
 /** Greet on (re)binding: stored in the business's conversation so the owner sees it too. */
-async function welcome(business: schema.Business, chatId: string, name: string) {
+async function welcome(business: schema.Business, chatId: string, name: string, t: T) {
   const customer = await findOrCreateCustomer(business.id, { name, telegramChatId: chatId });
   const conv = await getOrCreateConversation(business.id, "telegram", chatId, customer.id);
   const [agent] = await db.select().from(schema.agents).where(eq(schema.agents.businessId, business.id));
-  const greeting = agent?.persona.greeting?.trim() || `Hi ${name.split(" ")[0]}! You're chatting with ${business.name}.`;
-  const text = `${greeting}\nI can answer questions, check availability and book for you. (Type /switch to talk to another business.)`;
+  const greeting = agent?.persona.greeting?.trim() || t("Hi {name}! You're chatting with {business}.", { name: name.split(" ")[0], business: business.name });
+  const text = `${greeting}\n${t("I can answer questions, check availability and book for you. (Type /switch to talk to another business.)")}`;
   await appendMessage(conv, "agent", text);
   await telegramSend(chatId, text);
 }
 
 export async function handleTelegramUpdate(u: TelegramUpdate) {
+  const t = tFor(u.lang);
   if (u.kind === "callback") {
     const id = u.data.startsWith("biz:") ? u.data.slice(4) : null;
     const business = id ? await businessWithTelegram(eq(schema.businesses.id, id)) : null;
-    await telegramAnswerCallback(u.callbackId, business ? business.name : "No longer available");
+    await telegramAnswerCallback(u.callbackId, business ? business.name : t("No longer available"));
     if (!business) return;
     await bindChat(u.chatId, business.id);
-    await welcome(business, u.chatId, u.name);
+    await welcome(business, u.chatId, u.name, t);
     return;
   }
 
@@ -87,14 +98,14 @@ export async function handleTelegramUpdate(u: TelegramUpdate) {
     const business = u.startPayload ? await businessWithTelegram(eq(schema.businesses.slug, u.startPayload)) : null;
     if (business) {
       await bindChat(u.chatId, business.id);
-      await welcome(business, u.chatId, u.name);
+      await welcome(business, u.chatId, u.name, t);
       return;
     }
-    await sendPicker(u.chatId, u.startPayload ? "That business isn't available on Telegram right now." : "Welcome! This assistant books appointments with local businesses.");
+    await sendPicker(u.chatId, u.startPayload ? "That business isn't available on Telegram right now." : "Welcome! This assistant books appointments with local businesses.", t);
     return;
   }
   if (u.command === "switch" || u.command === "businesses") {
-    await sendPicker(u.chatId, "Sure.");
+    await sendPicker(u.chatId, "Sure.", t);
     return;
   }
 
@@ -105,13 +116,13 @@ export async function handleTelegramUpdate(u: TelegramUpdate) {
       businessId = recent[0].id;
       await bindChat(u.chatId, businessId);
     } else {
-      await sendPicker(u.chatId, "Hi!");
+      await sendPicker(u.chatId, "Hi!", t);
       return;
     }
   }
   const business = await businessWithTelegram(eq(schema.businesses.id, businessId));
   if (!business) {
-    await sendPicker(u.chatId, "That business isn't available on Telegram right now.");
+    await sendPicker(u.chatId, "That business isn't available on Telegram right now.", t);
     return;
   }
   void telegramTyping(u.chatId);

@@ -1097,7 +1097,23 @@ const ru: Dictionary = {
   "You can review your appointment once it has taken place": "Оценить визит можно после того, как он состоится",
   "Rating must be between 1 and 5": "Оценка должна быть от 1 до 5",
   "You have already reviewed this appointment": "Вы уже оставили отзыв об этом визите",
-  "Review not found": "Отзыв не найден"
+  "Review not found": "Отзыв не найден",
+  "Open the Telegram link on a business's booking page to start chatting with them.": "Откройте ссылку Telegram на странице записи бизнеса, чтобы начать переписку.",
+  "Who would you like to talk to?": "С кем хотите поговорить?",
+  "Hi {name}! You're chatting with {business}.": "Здравствуйте, {name}! Вы общаетесь с {business}.",
+  "I can answer questions, check availability and book for you. (Type /switch to talk to another business.)": "Я отвечу на вопросы, проверю свободное время и запишу вас. (Напишите /switch, чтобы перейти к другому бизнесу.)",
+  "No longer available": "Больше недоступно",
+  "That business isn't available on Telegram right now.": "Этот бизнес сейчас недоступен в Telegram.",
+  "Welcome! This assistant books appointments with local businesses.": "Добро пожаловать! Этот ассистент записывает к местным мастерам.",
+  "Sure.": "Конечно.",
+  "Hi!": "Здравствуйте!",
+  "Webhook registered at {url}.": "Вебхук зарегистрирован: {url}.",
+  "Connected @{bot}.": "@{bot} подключён.",
+  "@{bot} now delivers to {url}": "@{bot} теперь доставляет на {url}",
+  "Secret rotated and webhook re-registered at {url}": "Секрет обновлён, вебхук заново зарегистрирован: {url}",
+  "Created {email}.": "Создан {email}.",
+  "Temporary password: {password}": "Временный пароль: {password}",
+  "{name} is now {role}": "{name} теперь {role}"
 };
 
 export default ru;

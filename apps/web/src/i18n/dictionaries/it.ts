@@ -1097,7 +1097,23 @@ const it: Dictionary = {
   "You can review your appointment once it has taken place": "Potrai recensire l'appuntamento dopo che si è svolto",
   "Rating must be between 1 and 5": "La valutazione deve essere tra 1 e 5",
   "You have already reviewed this appointment": "Hai già recensito questo appuntamento",
-  "Review not found": "Recensione non trovata"
+  "Review not found": "Recensione non trovata",
+  "Open the Telegram link on a business's booking page to start chatting with them.": "Apri il link Telegram nella pagina di prenotazione di un'attività per iniziare a chattare.",
+  "Who would you like to talk to?": "Con chi vuoi parlare?",
+  "Hi {name}! You're chatting with {business}.": "Ciao {name}! Stai parlando con {business}.",
+  "I can answer questions, check availability and book for you. (Type /switch to talk to another business.)": "Posso rispondere alle domande, verificare la disponibilità e prenotare per te. (Scrivi /switch per parlare con un'altra attività.)",
+  "No longer available": "Non più disponibile",
+  "That business isn't available on Telegram right now.": "Questa attività non è disponibile su Telegram al momento.",
+  "Welcome! This assistant books appointments with local businesses.": "Benvenuto! Questo assistente prenota appuntamenti con attività locali.",
+  "Sure.": "Certo.",
+  "Hi!": "Ciao!",
+  "Webhook registered at {url}.": "Webhook registrato su {url}.",
+  "Connected @{bot}.": "@{bot} collegato.",
+  "@{bot} now delivers to {url}": "@{bot} ora consegna su {url}",
+  "Secret rotated and webhook re-registered at {url}": "Segreto rinnovato e webhook registrato di nuovo su {url}",
+  "Created {email}.": "{email} creato.",
+  "Temporary password: {password}": "Password temporanea: {password}",
+  "{name} is now {role}": "{name} ora è {role}"
 };
 
 export default it;

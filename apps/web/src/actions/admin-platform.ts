@@ -92,12 +92,12 @@ export async function saveTelegramBot(_prev: ActionState, f: FormData): Promise<
     let webhook = "";
     try {
       const r = await registerTelegramWebhook();
-      webhook = ` Webhook registered at ${r.url}.`;
+      webhook = " " + (await getT())("Webhook registered at {url}.", { url: r.url });
     } catch (e) {
       webhook = ` Webhook not registered yet: ${e instanceof Error ? e.message : e}`;
     }
     revalidatePath("/admin/telegram");
-    return `Connected @${me.username}.${webhook}`;
+    return (await getT())("Connected @{bot}.", { bot: me.username ?? "" }) + webhook;
   });
 }
 
@@ -116,7 +116,7 @@ export async function registerTelegramWebhookAction(_prev: ActionState, _f: Form
     const r = await registerTelegramWebhook();
     await audit(null, { type: "user", id: admin.id }, "admin.telegram_webhook", r.url);
     revalidatePath("/admin/telegram");
-    return `@${r.bot} now delivers to ${r.url}`;
+    return (await getT())("@{bot} now delivers to {url}", { bot: r.bot, url: r.url });
   });
 }
 
@@ -127,7 +127,7 @@ export async function rotateTelegramSecret(_prev: ActionState, _f: FormData): Pr
     const r = await registerTelegramWebhook();
     await audit(null, { type: "user", id: admin.id }, "admin.telegram_secret_rotated");
     revalidatePath("/admin/telegram");
-    return `Secret rotated and webhook re-registered at ${r.url}`;
+    return (await getT())("Secret rotated and webhook re-registered at {url}", { url: r.url });
   });
 }
 
@@ -293,7 +293,7 @@ export async function createUser(_prev: ActionState, f: FormData): Promise<Actio
     if (businessId) await db.insert(schema.memberships).values({ businessId, userId: id, role: (s(f, "businessRole") as "owner" | "manager" | "staff") || "staff" }).onConflictDoNothing();
     await audit(businessId || null, { type: "user", id: admin.id }, "admin.user_created", id, { email, role: role || null });
     revalidatePath("/admin/users");
-    return `Created ${email}.${s(f, "password") ? "" : ` Temporary password: ${password}`}`;
+    return (await getT())("Created {email}.", { email }) + (s(f, "password") ? "" : " " + (await getT())("Temporary password: {password}", { password }));
   });
 }
 
@@ -368,7 +368,7 @@ export async function grantAccessByEmail(_prev: ActionState, f: FormData): Promi
     await db.delete(schema.sessions).where(eq(schema.sessions.userId, u.id));
     await audit(null, { type: "user", id: admin.id }, "admin.role_granted", u.id, { role });
     revalidatePath("/admin/access");
-    return `${u.name} is now ${role}`;
+    return (await getT())("{name} is now {role}", { name: u.name, role });
   });
 }
 
