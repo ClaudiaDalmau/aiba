@@ -97,6 +97,10 @@ export function parseExport(text: string, ownerName: string): Pair[] {
 
 /** Ask Claude for a concise, editable style guide in the owner's own language. */
 export async function generateStyleGuide(business: schema.Business, agent: schema.Agent, pairs: Pair[]): Promise<string> {
+  if (business.platform === "sensitive") {
+    const { isExplicit } = await import("../content-filter");
+    pairs = pairs.filter((p) => !isExplicit(p.owner) && !isExplicit(p.customer));
+  }
   if (pairs.length < 5) throw badRequest("Not enough of your replies yet: answer a few customers yourself or upload a chat export, then try again.");
   const s = await getSettings();
   const key = s["ai.anthropicApiKey"];

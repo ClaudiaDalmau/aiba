@@ -15,6 +15,7 @@ import { isPlatformRole } from "@/lib/platform-rbac";
 import { getSetting } from "@/lib/settings";
 import { ACTIVE_BUSINESS_COOKIE } from "@/lib/tenant";
 import { finishLogin } from "@/lib/login-finish";
+import { noteSignIn } from "@/lib/devices";
 import { checkTotp, getPending, needsSecondStep, readTotpSecret, setPending, redeemRecoveryCode } from "@/lib/two-step";
 
 export type FormState = { error?: string; fieldErrors?: Record<string, string[] | undefined> } | null;
@@ -45,7 +46,8 @@ export async function login(_prev: FormState, form: FormData): Promise<FormState
     await setPending(user.id, safeNext(form.get("next")));
     redirect("/login/verify");
   }
-  const { token, expiresAt } = await createSession(user.id, "web");
+  const { token, expiresAt, id } = await createSession(user.id, "web");
+  await noteSignIn(user, (await headers()).get("user-agent") ?? "", id);
   await setSessionCookie(token, expiresAt);
   redirect(safeNext(form.get("next")) ?? (isPlatformRole(user.platformRole) ? "/admin" : "/app"));
 }
@@ -86,7 +88,8 @@ export async function signup(_prev: FormState, form: FormData): Promise<FormStat
   const [exists] = await db.select({ id: schema.users.id }).from(schema.users).where(sql`lower(${schema.users.email}) = ${email.toLowerCase()}`);
   if (exists) return { fieldErrors: { email: [t("An account with this email already exists")] } };
   const [user] = await db.insert(schema.users).values({ id: newId("usr"), email: email.toLowerCase(), name, passwordHash: await hashPassword(password) }).returning();
-  const { token, expiresAt } = await createSession(user.id, "web");
+  const { token, expiresAt, id: sid } = await createSession(user.id, "web");
+  await noteSignIn(user, (await headers()).get("user-agent") ?? "", sid);
   await setSessionCookie(token, expiresAt);
   redirect("/app/onboarding");
 }

@@ -19,11 +19,11 @@ export async function generateMetadata() {
 const STATUS_TONE: Record<string, Tone> = { active: "ok", trialing: "ai", past_due: "warn", canceled: "bad" };
 const STATUS_LABEL: Record<string, string> = { active: "Active", trialing: "Trial", past_due: "Past due", canceled: "Canceled" };
 
-export default async function BillingPage({ searchParams }: { searchParams: Promise<{ checkout?: string }> }) {
+export default async function BillingPage({ searchParams }: { searchParams: Promise<{ checkout?: string; sensitive?: string }> }) {
   const t = await getT();
   const tenant = await currentTenant();
   requirePermission(tenant, "business.manage");
-  const { checkout } = await searchParams;
+  const { checkout, sensitive: wantTier } = await searchParams;
   const b = tenant.business;
 
   const [sub] = await db.select().from(schema.subscriptions).where(eq(schema.subscriptions.businessId, b.id));
@@ -57,7 +57,12 @@ export default async function BillingPage({ searchParams }: { searchParams: Prom
           <Icon name="checkCircle" size={17} /> {t("Payment received. Your plan will update in a few seconds.")}
         </div>
       )}
-      {checkout === "cancel" && <div className="mb-6 rounded-card border border-border bg-subtle px-4 py-3 text-[14px] text-muted">{t("Checkout was cancelled. Nothing has changed.")}</div>}
+      {tenant.business.platform === "sensitive" && (
+        <div className="mb-6 rounded-card border border-ai/30 bg-ai/5 px-4 py-3 text-[14px]">
+          {wantTier ? t("We've noted that you want to change plan. Payments for Sensible go through a specialised provider; the team will contact you to activate it.") : t("Payments for Sensible go through a specialised provider (not Stripe). To change plan, choose one below and the team will contact you.")}
+        </div>
+      )}
+            {checkout === "cancel" && <div className="mb-6 rounded-card border border-border bg-subtle px-4 py-3 text-[14px] text-muted">{t("Checkout was cancelled. Nothing has changed.")}</div>}
       {testMode && (
         <div className="mb-6 flex items-start gap-2 rounded-card border border-warn/20 bg-warn/10 px-4 py-3 text-[14px] text-warn">
           <Icon name="bolt" size={17} className="mt-0.5 shrink-0" />

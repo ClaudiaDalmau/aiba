@@ -39,6 +39,8 @@ export type NewBusinessInput = {
   phone?: string;
   description?: string;
   ownerAsStaff?: boolean;
+  platform?: "ordinary" | "sensitive";
+  country?: string;
 };
 
 /**
@@ -60,7 +62,11 @@ export async function createBusiness(owner: { id: string; name: string }, input:
       currency: input.currency,
       locale: input.locale ?? "en",
       phone: input.phone ?? "",
-      description: input.description ?? "",
+      description: input.platform === "sensitive" ? "" : (input.description ?? ""),
+      platform: input.platform ?? "ordinary",
+      country: input.country ?? "",
+      // Sensible profiles are never listed in the marketplace; their page works by direct link once the owner's identity is verified.
+      published: false,
       onboardingStep: 1,
     })
     .returning();
@@ -83,7 +89,7 @@ export async function createBusiness(owner: { id: string; name: string }, input:
 
 /** Marketplace search over published, non-suspended businesses. */
 export async function searchBusinesses(opts: { q?: string; category?: string; city?: string; limit?: number }) {
-  const where = [sql`${schema.businesses.published} = true`, sql`${schema.businesses.suspended} = false`];
+  const where = [sql`${schema.businesses.published} = true`, sql`${schema.businesses.suspended} = false`, sql`${schema.businesses.platform} = 'ordinary'`];
   if (opts.category) where.push(sql`${schema.businesses.category} = ${opts.category}`);
   if (opts.city) where.push(sql`lower(${schema.businesses.city}) like ${`%${opts.city.toLowerCase()}%`}`);
   if (opts.q) {

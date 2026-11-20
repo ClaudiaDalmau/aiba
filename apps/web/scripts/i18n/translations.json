@@ -2427,7 +2427,8 @@
 "de": "Notiz",
 "it": "Nota",
 "pt-BR": "Nota",
-"ru": "Заметка"
+"ru": "Заметка",
+"es": "Nota"
 },
 "Document": {
 "fr": "Document",
@@ -10979,5 +10980,949 @@
 "it": "{n} passkey",
 "pt-BR": "{n} passkeys",
 "ru": "ключей: {n}"
+},
+"(AIBA support)": {
+"es": "(soporte AIBA)",
+"fr": "(support AIBA)",
+"de": "(AIBA-Support)",
+"it": "(supporto AIBA)",
+"pt-BR": "(suporte AIBA)",
+"ru": "(поддержка AIBA)"
+},
+"(not given)": {
+"es": "(no indicado)",
+"fr": "(non indiqué)",
+"de": "(nicht angegeben)",
+"it": "(non indicato)",
+"pt-BR": "(não informado)",
+"ru": "(не указано)"
+},
+"1. Photo of the document (side with your photo)": {
+"es": "1. Foto del documento (cara con tu foto)",
+"fr": "1. Photo du document (face avec votre photo)",
+"de": "1. Foto des Dokuments (Seite mit deinem Foto)",
+"it": "1. Foto del documento (lato con la tua foto)",
+"pt-BR": "1. Foto do documento (lado com sua foto)",
+"ru": "1. Фото документа (сторона с фото)"
+},
+"2. Selfie holding the same document next to your face": {
+"es": "2. Selfie sujetando el mismo documento junto a tu cara",
+"fr": "2. Selfie en tenant le document à côté du visage",
+"de": "2. Selfie mit dem Dokument neben deinem Gesicht",
+"it": "2. Selfie tenendo il documento accanto al viso",
+"pt-BR": "2. Selfie segurando o documento ao lado do rosto",
+"ru": "2. Селфи с этим документом рядом с лицом"
+},
+"A safe way to contact you": {
+"es": "Una forma segura de contactarte",
+"fr": "Un moyen sûr de vous contacter",
+"de": "Ein sicherer Weg, dich zu erreichen",
+"it": "Un modo sicuro per contattarti",
+"pt-BR": "Uma forma segura de contato",
+"ru": "Безопасный способ связи"
+},
+"AIBA Ordinary": {
+"es": "AIBA Ordinaria",
+"fr": "AIBA Ordinaire",
+"de": "AIBA Standard",
+"it": "AIBA Ordinaria",
+"pt-BR": "AIBA Comum",
+"ru": "AIBA Обычная"
+},
+"AIBA Sensible (18+)": {
+"es": "AIBA Sensible (+18)",
+"fr": "AIBA Sensible (18+)",
+"de": "AIBA Sensible (18+)",
+"it": "AIBA Sensibile (18+)",
+"pt-BR": "AIBA Sensível (18+)",
+"ru": "AIBA Sensible (18+)"
+},
+"AIBA is appointment-management software for adults who work independently. We don't intermediate, we don't take commission, and we never manage anyone's work on their behalf. Each profile belongs to one verified person.": {
+"es": "AIBA es un software de gestión de citas para personas adultas que trabajan de forma independiente. No intermediamos, no cobramos comisión y nunca gestionamos el trabajo de nadie en su nombre. Cada perfil pertenece a una única persona verificada.",
+"fr": "AIBA est un logiciel de gestion de rendez-vous pour des adultes indépendants. Nous n'intermédions pas, ne prenons aucune commission et ne gérons jamais le travail de quiconque. Chaque profil appartient à une seule personne vérifiée.",
+"de": "AIBA ist Terminsoftware für selbstständig arbeitende Erwachsene. Wir vermitteln nicht, nehmen keine Provision und verwalten nie die Arbeit anderer. Jedes Profil gehört einer einzigen verifizierten Person.",
+"it": "AIBA è un software di gestione appuntamenti per adulti che lavorano in modo indipendente. Non facciamo intermediazione, non prendiamo commissioni e non gestiamo mai il lavoro altrui. Ogni profilo appartiene a una sola persona verificata.",
+"pt-BR": "A AIBA é um software de agendamento para adultos que trabalham de forma independente. Não intermediamos, não cobramos comissão e nunca gerenciamos o trabalho de ninguém. Cada perfil pertence a uma única pessoa verificada.",
+"ru": "AIBA — программа для записи для взрослых, работающих самостоятельно. Мы не посредничаем, не берём комиссию и никогда не управляем чужой работой. Каждый профиль принадлежит одному проверенному человеку."
+},
+"Add both photos.": {
+"es": "Añade las dos fotos.",
+"fr": "Ajoutez les deux photos.",
+"de": "Füge beide Fotos hinzu.",
+"it": "Aggiungi entrambe le foto.",
+"pt-BR": "Adicione as duas fotos.",
+"ru": "Добавьте оба фото."
+},
+"Add the cities and dates where you'll be working. Your page shows them and your assistant books customers there. Block the hours you travel with «Not available» in Bookings.": {
+"es": "Añade las ciudades y fechas en las que trabajarás. Tu página las muestra y tu asistente reserva clientes allí. Bloquea las horas de viaje con «No disponible» en Reservas.",
+"fr": "Ajoutez les villes et dates où vous travaillerez. Votre page les affiche et l'assistant y prend des réservations. Bloquez les heures de trajet avec « Indisponible ».",
+"de": "Füge Städte und Daten hinzu, an denen du arbeitest. Deine Seite zeigt sie und der Assistent bucht dort. Blockiere Reisezeiten mit „Nicht verfügbar“.",
+"it": "Aggiungi città e date in cui lavorerai. La pagina le mostra e l'assistente prenota lì. Blocca le ore di viaggio con «Non disponibile».",
+"pt-BR": "Adicione cidades e datas em que vai trabalhar. A página mostra e o assistente agenda lá. Bloqueie as horas de viagem com «Indisponível».",
+"ru": "Добавьте города и даты работы. Страница покажет их, ассистент будет записывать туда. Время в пути блокируйте через «Недоступно»."
+},
+"Add trip": {
+"es": "Añadir viaje",
+"fr": "Ajouter le voyage",
+"de": "Reise hinzufügen",
+"it": "Aggiungi viaggio",
+"pt-BR": "Adicionar viagem",
+"ru": "Добавить поездку"
+},
+"Adult independent professionals: unlisted pages, logistics-only assistant, passkey sign-in, no Stripe. Profiles are counted per verified person.": {
+"es": "Profesionales adultas independientes: páginas no listadas, asistente solo de logística, acceso con huella o cara, sin Stripe. Los perfiles se cuentan por persona verificada.",
+"fr": "Professionnelles adultes indépendantes : pages non listées, assistant logistique uniquement, connexion par passkey, sans Stripe.",
+"de": "Selbstständige Erwachsene: nicht gelistete Seiten, Assistent nur für Logistik, Passkey-Login, kein Stripe.",
+"it": "Professioniste adulte indipendenti: pagine non elencate, assistente solo logistica, accesso con passkey, niente Stripe.",
+"pt-BR": "Profissionais adultas independentes: páginas não listadas, assistente só de logística, acesso com passkey, sem Stripe.",
+"ru": "Взрослые самозанятые: страницы вне каталога, ассистент только для логистики, вход по ключу, без Stripe."
+},
+"Adult, voluntary and independent work. Private page by link only, sign-in with fingerprint or face.": {
+"es": "Trabajo adulto, voluntario e independiente. Página privada solo por enlace, acceso con huella o cara.",
+"fr": "Travail adulte, volontaire et indépendant. Page privée par lien, connexion par empreinte ou visage.",
+"de": "Erwachsene, freiwillige und selbstständige Arbeit. Private Seite nur per Link, Login per Fingerabdruck oder Gesicht.",
+"it": "Lavoro adulto, volontario e indipendente. Pagina privata solo tramite link, accesso con impronta o volto.",
+"pt-BR": "Trabalho adulto, voluntário e independente. Página privada só por link, acesso com digital ou rosto.",
+"ru": "Взрослая, добровольная и самостоятельная работа. Страница только по ссылке, вход по отпечатку или лицу."
+},
+"Allowed countries": {
+"es": "Países permitidos",
+"fr": "Pays autorisés",
+"de": "Erlaubte Länder",
+"it": "Paesi consentiti",
+"pt-BR": "Países permitidos",
+"ru": "Разрешённые страны"
+},
+"Any independent professional or business. Listed in the AIBA directory.": {
+"es": "Cualquier profesional o negocio independiente. Aparece en el directorio de AIBA.",
+"fr": "Tout professionnel ou commerce indépendant. Listé dans l'annuaire AIBA.",
+"de": "Jede selbstständige Fachkraft oder jedes Geschäft. Im AIBA-Verzeichnis gelistet.",
+"it": "Qualsiasi professionista o attività indipendente. Elencata nella directory AIBA.",
+"pt-BR": "Qualquer profissional ou negócio independente. Listado no diretório AIBA.",
+"ru": "Любой самозанятый специалист или бизнес. В каталоге AIBA."
+},
+"Before you start": {
+"es": "Antes de empezar",
+"fr": "Avant de commencer",
+"de": "Bevor du startest",
+"it": "Prima di iniziare",
+"pt-BR": "Antes de começar",
+"ru": "Прежде чем начать"
+},
+"Choose the document type.": {
+"es": "Elige el tipo de documento.",
+"fr": "Choisissez le type de document.",
+"de": "Wähle den Dokumenttyp.",
+"it": "Scegli il tipo di documento.",
+"pt-BR": "Escolha o tipo de documento.",
+"ru": "Выберите тип документа."
+},
+"Choose…": {
+"es": "Elige…",
+"fr": "Choisir…",
+"de": "Wählen…",
+"it": "Scegli…",
+"pt-BR": "Escolha…",
+"ru": "Выберите…"
+},
+"Confidential help": {
+"es": "Ayuda confidencial",
+"fr": "Aide confidentielle",
+"de": "Vertrauliche Hilfe",
+"it": "Aiuto riservato",
+"pt-BR": "Ajuda confidencial",
+"ru": "Конфиденциальная помощь"
+},
+"Confidential help requests and support messages. Never contact the person through a channel she didn't give you, and never through her business inbox: someone else may be reading it.": {
+"es": "Peticiones de ayuda confidenciales y mensajes de soporte. Nunca contactes a la persona por un canal que no te haya dado, ni por la bandeja de su negocio: otra persona podría estar leyéndola.",
+"fr": "Demandes d'aide confidentielles. Ne contactez jamais la personne par un canal qu'elle n'a pas donné, ni par la boîte de son activité : quelqu'un d'autre peut la lire.",
+"de": "Vertrauliche Hilferufe. Kontaktiere die Person nie über einen Kanal, den sie nicht angegeben hat, und nie über ihren Geschäftsposteingang: jemand anderes könnte mitlesen.",
+"it": "Richieste di aiuto riservate. Non contattare mai la persona con un canale che non ha indicato, né tramite la posta dell'attività: qualcun altro potrebbe leggerla.",
+"pt-BR": "Pedidos de ajuda confidenciais. Nunca contate a pessoa por um canal que ela não informou, nem pela caixa do negócio: outra pessoa pode estar lendo.",
+"ru": "Конфиденциальные запросы о помощи. Никогда не связывайтесь через канал, который человек не указал, и не через входящие бизнеса: их может читать кто-то другой."
+},
+"Confirm you are of legal age and work independently and voluntarily.": {
+"es": "Confirma que eres mayor de edad y trabajas de forma independiente y voluntaria.",
+"fr": "Confirmez que vous êtes majeure et travaillez de façon indépendante et volontaire.",
+"de": "Bestätige, dass du volljährig bist und selbstständig und freiwillig arbeitest.",
+"it": "Conferma di essere maggiorenne e di lavorare in modo indipendente e volontario.",
+"pt-BR": "Confirme que é maior de idade e trabalha de forma independente e voluntária.",
+"ru": "Подтвердите совершеннолетие и самостоятельную добровольную работу."
+},
+"Contact support": {
+"es": "Contactar con soporte",
+"fr": "Contacter le support",
+"de": "Support kontaktieren",
+"it": "Contatta il supporto",
+"pt-BR": "Falar com o suporte",
+"ru": "Связаться с поддержкой"
+},
+"Country where you work": {
+"es": "País donde trabajas",
+"fr": "Pays où vous travaillez",
+"de": "Land, in dem du arbeitest",
+"it": "Paese in cui lavori",
+"pt-BR": "País onde você trabalha",
+"ru": "Страна работы"
+},
+"Devices with access": {
+"es": "Dispositivos con acceso",
+"fr": "Appareils avec accès",
+"de": "Geräte mit Zugriff",
+"it": "Dispositivi con accesso",
+"pt-BR": "Dispositivos com acesso",
+"ru": "Устройства с доступом"
+},
+"Driving licence": {
+"es": "Carné de conducir",
+"fr": "Permis de conduire",
+"de": "Führerschein",
+"it": "Patente",
+"pt-BR": "Carteira de motorista",
+"ru": "Водительское удостоверение"
+},
+"Every time your account is opened on a new device we email you. If you don't recognise one, sign it out and change your password.": {
+"es": "Cada vez que se abre tu cuenta en un dispositivo nuevo te avisamos por email. Si no reconoces uno, ciérralo y cambia tu contraseña.",
+"fr": "À chaque connexion depuis un nouvel appareil, nous vous écrivons. Si vous ne le reconnaissez pas, déconnectez-le et changez votre mot de passe.",
+"de": "Bei jeder Anmeldung auf einem neuen Gerät schicken wir dir eine E-Mail. Erkennst du eines nicht, melde es ab und ändere dein Passwort.",
+"it": "Ogni accesso da un nuovo dispositivo ti viene segnalato per email. Se non ne riconosci uno, disconnettilo e cambia password.",
+"pt-BR": "Sempre que sua conta é aberta num novo dispositivo enviamos um email. Se não reconhecer, desconecte e mude a senha.",
+"ru": "При входе с нового устройства мы пишем вам. Если не узнаёте устройство, завершите сеанс и смените пароль."
+},
+"For the assistant, name your appointment types neutrally in Services (e.g. «Appointment 1 h», «Appointment 2 h»): it gives customers only those names, durations and prices.": {
+"es": "Para el asistente, pon nombres neutros a tus tipos de cita en Servicios (p. ej. «Cita 1 h», «Cita 2 h»): solo da a los clientes esos nombres, duraciones y precios.",
+"fr": "Pour l'assistant, nommez vos rendez-vous de façon neutre dans Services (ex. « Rendez-vous 1 h ») : il ne donne que ces noms, durées et prix.",
+"de": "Benenne deine Terminarten unter Leistungen neutral (z. B. „Termin 1 Std.“): Der Assistent nennt nur diese Namen, Dauern und Preise.",
+"it": "Per l'assistente, dai nomi neutri ai tipi di appuntamento in Servizi (es. «Appuntamento 1 h»): comunica solo nomi, durate e prezzi.",
+"pt-BR": "Para o assistente, use nomes neutros nos tipos de atendimento em Serviços (ex.: «Atendimento 1 h»): ele só passa esses nomes, durações e preços.",
+"ru": "Для ассистента называйте виды встреч нейтрально в разделе Услуги (напр. «Встреча 1 ч»): он сообщает только названия, длительность и цены."
+},
+"Good light, no glare; all four corners of the document visible.": {
+"es": "Buena luz, sin reflejos; las cuatro esquinas del documento visibles.",
+"fr": "Bonne lumière, sans reflet ; les quatre coins visibles.",
+"de": "Gutes Licht, keine Spiegelung; alle vier Ecken sichtbar.",
+"it": "Buona luce, niente riflessi; tutti e quattro gli angoli visibili.",
+"pt-BR": "Boa luz, sem reflexos; os quatro cantos visíveis.",
+"ru": "Хороший свет, без бликов; видны все четыре угла."
+},
+"Google Calendar": {
+"es": "Google Calendar",
+"fr": "Google Agenda",
+"de": "Google Kalender",
+"it": "Google Calendar",
+"pt-BR": "Google Agenda",
+"ru": "Google Календарь"
+},
+"I agree that AIBA uses these photos only to verify my identity. They are stored encrypted and deleted as soon as the check is done; only the result is kept.": {
+"es": "Acepto que AIBA use estas fotos solo para verificar mi identidad. Se guardan cifradas y se borran en cuanto termina la verificación; solo se conserva el resultado.",
+"fr": "J'accepte qu'AIBA utilise ces photos uniquement pour vérifier mon identité. Chiffrées, elles sont supprimées dès la vérification faite.",
+"de": "Ich bin einverstanden, dass AIBA diese Fotos nur zur Identitätsprüfung nutzt. Sie werden verschlüsselt gespeichert und nach der Prüfung gelöscht.",
+"it": "Accetto che AIBA usi queste foto solo per verificare la mia identità. Sono cifrate e cancellate appena conclusa la verifica.",
+"pt-BR": "Concordo que a AIBA use estas fotos só para verificar minha identidade. São criptografadas e apagadas assim que a verificação termina.",
+"ru": "Я согласна, что AIBA использует фото только для проверки личности. Они шифруются и удаляются сразу после проверки."
+},
+"I am of legal age in my country.": {
+"es": "Soy mayor de edad en mi país.",
+"fr": "Je suis majeure dans mon pays.",
+"de": "Ich bin in meinem Land volljährig.",
+"it": "Sono maggiorenne nel mio paese.",
+"pt-BR": "Sou maior de idade no meu país.",
+"ru": "Я совершеннолетняя в своей стране."
+},
+"I work independently and voluntarily; nobody manages my work or receives my earnings.": {
+"es": "Trabajo de forma independiente y voluntaria; nadie gestiona mi trabajo ni recibe mis ingresos.",
+"fr": "Je travaille de façon indépendante et volontaire ; personne ne gère mon travail ni ne reçoit mes revenus.",
+"de": "Ich arbeite selbstständig und freiwillig; niemand verwaltet meine Arbeit oder erhält meine Einnahmen.",
+"it": "Lavoro in modo indipendente e volontario; nessuno gestisce il mio lavoro o riceve i miei guadagni.",
+"pt-BR": "Trabalho de forma independente e voluntária; ninguém gerencia meu trabalho nem recebe meus ganhos.",
+"ru": "Я работаю самостоятельно и добровольно; никто не управляет моей работой и не получает мой доход."
+},
+"ISO codes separated by commas (e.g. ES,PT,NL,DE). Only these countries can create Sensible profiles. Blank = none.": {
+"es": "Códigos ISO separados por comas (p. ej. ES,PT,NL,DE). Solo estos países pueden crear perfiles Sensible. Vacío = ninguno.",
+"fr": "Codes ISO séparés par des virgules (ex. ES,PT,NL,DE). Vide = aucun.",
+"de": "ISO-Codes durch Kommas getrennt (z. B. ES,PT,NL,DE). Leer = keines.",
+"it": "Codici ISO separati da virgole (es. ES,PT,NL,DE). Vuoto = nessuno.",
+"pt-BR": "Códigos ISO separados por vírgulas (ex.: ES,PT,NL,DE). Vazio = nenhum.",
+"ru": "ISO-коды через запятую (напр. ES,PT,NL,DE). Пусто = ни одной."
+},
+"Identity verified": {
+"es": "Identidad verificada",
+"fr": "Identité vérifiée",
+"de": "Identität bestätigt",
+"it": "Identità verificata",
+"pt-BR": "Identidade verificada",
+"ru": "Личность подтверждена"
+},
+"If it was you, you don't need to do anything. If not, sign out the other devices now and change your password.": {
+"es": "Si fuiste tú, no tienes que hacer nada. Si no, cierra ahora la sesión en los demás dispositivos y cambia tu contraseña.",
+"fr": "Si c'était vous, rien à faire. Sinon, déconnectez les autres appareils et changez votre mot de passe.",
+"de": "Wenn du es warst, musst du nichts tun. Sonst melde jetzt die anderen Geräte ab und ändere dein Passwort.",
+"it": "Se eri tu, non devi fare nulla. Altrimenti disconnetti gli altri dispositivi e cambia password.",
+"pt-BR": "Se foi você, não precisa fazer nada. Se não, desconecte os outros dispositivos e mude a senha.",
+"ru": "Если это были вы — ничего делать не нужно. Если нет — завершите другие сеансы и смените пароль."
+},
+"If someone is controlling your work, your phone or your money, or you feel unsafe, tell us here. Only the AIBA safety team sees it: nothing appears in your account, your inbox or your activity, and nobody with access to your profile is notified.": {
+"es": "Si alguien controla tu trabajo, tu móvil o tu dinero, o no te sientes segura, cuéntanoslo aquí. Solo lo ve el equipo de seguridad de AIBA: no aparece nada en tu cuenta, tu bandeja ni tu actividad, y no se avisa a nadie con acceso a tu perfil.",
+"fr": "Si quelqu'un contrôle votre travail, votre téléphone ou votre argent, ou si vous ne vous sentez pas en sécurité, dites-le ici. Seule l'équipe sécurité d'AIBA le voit : rien n'apparaît dans votre compte.",
+"de": "Wenn jemand deine Arbeit, dein Handy oder dein Geld kontrolliert oder du dich unsicher fühlst, sag es uns hier. Nur das AIBA-Sicherheitsteam sieht es: Nichts erscheint in deinem Konto.",
+"it": "Se qualcuno controlla il tuo lavoro, il telefono o il denaro, o non ti senti al sicuro, scrivilo qui. Lo vede solo il team sicurezza di AIBA: nulla appare nel tuo account.",
+"pt-BR": "Se alguém controla seu trabalho, seu celular ou seu dinheiro, ou você não se sente segura, conte aqui. Só a equipe de segurança da AIBA vê: nada aparece na sua conta.",
+"ru": "Если кто-то контролирует вашу работу, телефон или деньги, или вы чувствуете опасность, напишите здесь. Видит только команда безопасности AIBA: в аккаунте ничего не отображается."
+},
+"If you are in immediate danger, call the emergency number of your country (112 in the EU).": {
+"es": "Si estás en peligro inmediato, llama al número de emergencias de tu país (112 en la UE).",
+"fr": "En cas de danger immédiat, appelez le numéro d'urgence de votre pays (112 dans l'UE).",
+"de": "Bei unmittelbarer Gefahr ruf den Notruf deines Landes an (112 in der EU).",
+"it": "In caso di pericolo immediato chiama il numero di emergenza del tuo paese (112 nell'UE).",
+"pt-BR": "Em perigo imediato, ligue para o número de emergência do seu país (112 na UE).",
+"ru": "При непосредственной опасности звоните в экстренную службу (112 в ЕС)."
+},
+"In the selfie your face and the document photo must both be clear.": {
+"es": "En el selfie tu cara y la foto del documento deben verse claras.",
+"fr": "Sur le selfie, votre visage et la photo du document doivent être nets.",
+"de": "Im Selfie müssen dein Gesicht und das Dokumentfoto klar sein.",
+"it": "Nel selfie volto e foto del documento devono essere nitidi.",
+"pt-BR": "No selfie seu rosto e a foto do documento devem estar nítidos.",
+"ru": "На селфи лицо и фото в документе должны быть чёткими."
+},
+"Internal notes": {
+"es": "Notas internas",
+"fr": "Notes internes",
+"de": "Interne Notizen",
+"it": "Note interne",
+"pt-BR": "Notas internas",
+"ru": "Внутренние заметки"
+},
+"It's urgent": {
+"es": "Es urgente",
+"fr": "C'est urgent",
+"de": "Es ist dringend",
+"it": "È urgente",
+"pt-BR": "É urgente",
+"ru": "Срочно"
+},
+"Message sent to support. We'll reply only through the contact you gave us.": {
+"es": "Mensaje enviado a soporte. Responderemos solo por el contacto que nos has dado.",
+"fr": "Message envoyé. Nous répondrons uniquement par le contact indiqué.",
+"de": "Nachricht gesendet. Wir antworten nur über den angegebenen Kontakt.",
+"it": "Messaggio inviato. Risponderemo solo tramite il contatto indicato.",
+"pt-BR": "Mensagem enviada. Responderemos só pelo contato informado.",
+"ru": "Сообщение отправлено. Ответим только через указанный контакт."
+},
+"My limits": {
+"es": "Mis límites",
+"fr": "Mes limites",
+"de": "Meine Grenzen",
+"it": "I miei limiti",
+"pt-BR": "Meus limites",
+"ru": "Мои границы"
+},
+"National ID card": {
+"es": "DNI / documento de identidad",
+"fr": "Carte d'identité",
+"de": "Personalausweis",
+"it": "Carta d'identità",
+"pt-BR": "Documento de identidade",
+"ru": "Удостоверение личности"
+},
+"New requests appear here and arrive by email to the team inbox.": {
+"es": "Las nuevas solicitudes aparecen aquí y llegan por email al buzón del equipo.",
+"fr": "Les nouvelles demandes apparaissent ici et arrivent par e-mail.",
+"de": "Neue Anfragen erscheinen hier und per E-Mail.",
+"it": "Le nuove richieste appaiono qui e arrivano via email.",
+"pt-BR": "Novos pedidos aparecem aqui e chegam por email.",
+"ru": "Новые запросы появляются здесь и приходят на почту."
+},
+"New sign-in to your account": {
+"es": "Nuevo inicio de sesión en tu cuenta",
+"fr": "Nouvelle connexion à votre compte",
+"de": "Neue Anmeldung bei deinem Konto",
+"it": "Nuovo accesso al tuo account",
+"pt-BR": "Novo acesso à sua conta",
+"ru": "Новый вход в аккаунт"
+},
+"New trip": {
+"es": "Nuevo viaje",
+"fr": "Nouveau voyage",
+"de": "Neue Reise",
+"it": "Nuovo viaggio",
+"pt-BR": "Nova viagem",
+"ru": "Новая поездка"
+},
+"Next step:": {
+"es": "Siguiente paso:",
+"fr": "Étape suivante :",
+"de": "Nächster Schritt:",
+"it": "Prossimo passo:",
+"pt-BR": "Próximo passo:",
+"ru": "Следующий шаг:"
+},
+"No alerts": {
+"es": "Sin alertas",
+"fr": "Aucune alerte",
+"de": "Keine Meldungen",
+"it": "Nessun avviso",
+"pt-BR": "Sem alertas",
+"ru": "Нет обращений"
+},
+"No trips": {
+"es": "Sin viajes",
+"fr": "Aucun voyage",
+"de": "Keine Reisen",
+"it": "Nessun viaggio",
+"pt-BR": "Sem viagens",
+"ru": "Поездок нет"
+},
+"On AIBA Sensible each profile belongs to one real, adult person who works for herself. We check it once so nobody can open a profile in your name or manage you through one.": {
+"es": "En AIBA Sensible cada perfil pertenece a una persona real y adulta que trabaja para sí misma. Lo comprobamos una vez para que nadie pueda abrir un perfil en tu nombre ni gestionarte a través de uno.",
+"fr": "Sur AIBA Sensible, chaque profil appartient à une personne réelle et majeure qui travaille pour elle-même. Nous le vérifions une fois pour que personne n'ouvre un profil à votre nom.",
+"de": "Bei AIBA Sensible gehört jedes Profil einer echten, erwachsenen Person, die für sich selbst arbeitet. Wir prüfen das einmal, damit niemand ein Profil in deinem Namen eröffnet.",
+"it": "Su AIBA Sensibile ogni profilo appartiene a una persona reale e adulta che lavora per sé. Lo verifichiamo una volta perché nessuno apra un profilo a tuo nome.",
+"pt-BR": "Na AIBA Sensível cada perfil pertence a uma pessoa real e adulta que trabalha para si mesma. Verificamos uma vez para que ninguém abra um perfil em seu nome.",
+"ru": "В AIBA Sensible каждый профиль принадлежит реальному взрослому человеку, работающему на себя. Проверяем один раз, чтобы никто не открыл профиль от вашего имени."
+},
+"Only for Sensible profiles": {
+"es": "Solo para perfiles Sensible",
+"fr": "Uniquement pour les profils Sensible",
+"de": "Nur für Sensible-Profile",
+"it": "Solo per profili Sensibile",
+"pt-BR": "Só para perfis Sensível",
+"ru": "Только для профилей Sensible"
+},
+"Only for you": {
+"es": "Solo para ti",
+"fr": "Rien que pour vous",
+"de": "Nur für dich",
+"it": "Solo per te",
+"pt-BR": "Só para você",
+"ru": "Только для вас"
+},
+"Passport": {
+"es": "Pasaporte",
+"fr": "Passeport",
+"de": "Reisepass",
+"it": "Passaporto",
+"pt-BR": "Passaporte",
+"ru": "Паспорт"
+},
+"Payments for Sensible go through a specialised provider (not Stripe). To change plan, choose one below and the team will contact you.": {
+"es": "Los pagos de Sensible pasan por un proveedor especializado (no Stripe). Para cambiar de plan, elige uno abajo y el equipo te contactará.",
+"fr": "Les paiements Sensible passent par un prestataire spécialisé (pas Stripe). Choisissez une offre et l'équipe vous contactera.",
+"de": "Zahlungen für Sensible laufen über einen spezialisierten Anbieter (nicht Stripe). Wähle einen Tarif, das Team meldet sich.",
+"it": "I pagamenti Sensibile passano da un fornitore specializzato (non Stripe). Scegli un piano e il team ti contatterà.",
+"pt-BR": "Os pagamentos da Sensível passam por um provedor especializado (não Stripe). Escolha um plano e a equipe entrará em contato.",
+"ru": "Оплата Sensible идёт через специализированного провайдера (не Stripe). Выберите тариф — команда свяжется с вами."
+},
+"Please try again.": {
+"es": "Inténtalo de nuevo.",
+"fr": "Veuillez réessayer.",
+"de": "Bitte versuch es erneut.",
+"it": "Riprova.",
+"pt-BR": "Tente novamente.",
+"ru": "Попробуйте ещё раз."
+},
+"Private sheet": {
+"es": "Ficha privada",
+"fr": "Fiche privée",
+"de": "Private Notizen",
+"it": "Scheda privata",
+"pt-BR": "Ficha privada",
+"ru": "Личная карточка"
+},
+"Profile name": {
+"es": "Nombre del perfil",
+"fr": "Nom du profil",
+"de": "Profilname",
+"it": "Nome del profilo",
+"pt-BR": "Nome do perfil",
+"ru": "Имя профиля"
+},
+"Profiles on Basic": {
+"es": "Perfiles en Basic",
+"fr": "Profils en Basic",
+"de": "Profile in Basic",
+"it": "Profili in Basic",
+"pt-BR": "Perfis no Basic",
+"ru": "Профилей в Basic"
+},
+"Profiles on Premium": {
+"es": "Perfiles en Premium",
+"fr": "Profils en Premium",
+"de": "Profile in Premium",
+"it": "Profili in Premium",
+"pt-BR": "Perfis no Premium",
+"ru": "Профилей в Premium"
+},
+"Profiles on Pro": {
+"es": "Perfiles en Pro",
+"fr": "Profils en Pro",
+"de": "Profile in Pro",
+"it": "Profili in Pro",
+"pt-BR": "Perfis no Pro",
+"ru": "Профилей в Pro"
+},
+"Questions, problems or ideas: we'll answer by email.": {
+"es": "Dudas, problemas o ideas: te respondemos por email.",
+"fr": "Questions, problèmes ou idées : nous répondons par e-mail.",
+"de": "Fragen, Probleme oder Ideen: wir antworten per E-Mail.",
+"it": "Domande, problemi o idee: rispondiamo via email.",
+"pt-BR": "Dúvidas, problemas ou ideias: respondemos por email.",
+"ru": "Вопросы, проблемы, идеи — ответим по email."
+},
+"Rates and extras": {
+"es": "Tarifas y extras",
+"fr": "Tarifs et extras",
+"de": "Preise und Extras",
+"it": "Tariffe ed extra",
+"pt-BR": "Valores e extras",
+"ru": "Тарифы и доп."
+},
+"Reason (sent to the person), e.g. blurry photo": {
+"es": "Motivo (se envía a la persona), p. ej. foto borrosa",
+"fr": "Motif (envoyé à la personne), ex. photo floue",
+"de": "Grund (wird gesendet), z. B. unscharfes Foto",
+"it": "Motivo (inviato alla persona), es. foto sfocata",
+"pt-BR": "Motivo (enviado à pessoa), ex.: foto borrada",
+"ru": "Причина (отправляется), напр. размытое фото"
+},
+"Reject and delete the photos?": {
+"es": "¿Rechazar y borrar las fotos?",
+"fr": "Refuser et supprimer les photos ?",
+"de": "Ablehnen und Fotos löschen?",
+"it": "Rifiutare e cancellare le foto?",
+"pt-BR": "Rejeitar e apagar as fotos?",
+"ru": "Отклонить и удалить фото?"
+},
+"Remove this trip?": {
+"es": "¿Quitar este viaje?",
+"fr": "Supprimer ce voyage ?",
+"de": "Diese Reise entfernen?",
+"it": "Rimuovere questo viaggio?",
+"pt-BR": "Remover esta viagem?",
+"ru": "Удалить поездку?"
+},
+"Requests sent from Support appear here and by email to the team inbox.": {
+"es": "Las solicitudes enviadas desde Soporte aparecen aquí y por email al buzón del equipo.",
+"fr": "Les demandes envoyées depuis Support apparaissent ici et par e-mail.",
+"de": "Anfragen aus dem Support erscheinen hier und per E-Mail.",
+"it": "Le richieste inviate dal Supporto appaiono qui e via email.",
+"pt-BR": "Pedidos enviados pelo Suporte aparecem aqui e por email.",
+"ru": "Запросы из раздела Поддержка появляются здесь и на почте."
+},
+"Residence permit": {
+"es": "Permiso de residencia (TIE)",
+"fr": "Titre de séjour",
+"de": "Aufenthaltstitel",
+"it": "Permesso di soggiorno",
+"pt-BR": "Autorização de residência",
+"ru": "Вид на жительство"
+},
+"Review my devices": {
+"es": "Revisar mis dispositivos",
+"fr": "Voir mes appareils",
+"de": "Meine Geräte prüfen",
+"it": "Controlla i miei dispositivi",
+"pt-BR": "Ver meus dispositivos",
+"ru": "Проверить устройства"
+},
+"Safe contact": {
+"es": "Contacto seguro",
+"fr": "Contact sûr",
+"de": "Sicherer Kontakt",
+"it": "Contatto sicuro",
+"pt-BR": "Contato seguro",
+"ru": "Безопасный контакт"
+},
+"Safety alerts": {
+"es": "Alertas de seguridad",
+"fr": "Alertes de sécurité",
+"de": "Sicherheitsmeldungen",
+"it": "Avvisi di sicurezza",
+"pt-BR": "Alertas de segurança",
+"ru": "Обращения о безопасности"
+},
+"Saved. Only you can see it.": {
+"es": "Guardado. Solo tú puedes verlo.",
+"fr": "Enregistré. Vous seule pouvez le voir.",
+"de": "Gespeichert. Nur du kannst es sehen.",
+"it": "Salvato. Solo tu puoi vederlo.",
+"pt-BR": "Salvo. Só você pode ver.",
+"ru": "Сохранено. Видите только вы."
+},
+"Security alert from AIBA": {
+"es": "Alerta de seguridad de AIBA",
+"fr": "Alerte de sécurité AIBA",
+"de": "Sicherheitswarnung von AIBA",
+"it": "Avviso di sicurezza AIBA",
+"pt-BR": "Alerta de segurança da AIBA",
+"ru": "Оповещение безопасности AIBA"
+},
+"Send for verification": {
+"es": "Enviar para verificar",
+"fr": "Envoyer pour vérification",
+"de": "Zur Prüfung senden",
+"it": "Invia per la verifica",
+"pt-BR": "Enviar para verificação",
+"ru": "Отправить на проверку"
+},
+"Sensible platform": {
+"es": "Plataforma Sensible",
+"fr": "Plateforme Sensible",
+"de": "Sensible-Plattform",
+"it": "Piattaforma Sensibile",
+"pt-BR": "Plataforma Sensível",
+"ru": "Платформа Sensible"
+},
+"Sensible platform open for sign-ups": {
+"es": "Plataforma Sensible abierta a registros",
+"fr": "Plateforme Sensible ouverte aux inscriptions",
+"de": "Sensible-Plattform für Anmeldungen offen",
+"it": "Piattaforma Sensibile aperta alle iscrizioni",
+"pt-BR": "Plataforma Sensível aberta a cadastros",
+"ru": "Платформа Sensible открыта для регистрации"
+},
+"Sensible profiles can't have other members: only the verified owner has access.": {
+"es": "Los perfiles Sensible no pueden tener otros miembros: solo accede la titular verificada.",
+"fr": "Les profils Sensible ne peuvent pas avoir d'autres membres : seule la titulaire vérifiée y accède.",
+"de": "Sensible-Profile haben keine weiteren Mitglieder: nur die verifizierte Inhaberin hat Zugriff.",
+"it": "I profili Sensibile non possono avere altri membri: accede solo la titolare verificata.",
+"pt-BR": "Perfis Sensível não podem ter outros membros: só a titular verificada acessa.",
+"ru": "У профилей Sensible не может быть других участников: доступ только у проверенной владелицы."
+},
+"Sensible: compare the document photo with the selfie holding it (same person, adult, document valid and not edited). Photos are deleted as soon as you decide.": {
+"es": "Sensible: compara la foto del documento con el selfie sujetándolo (misma persona, adulta, documento válido y sin editar). Las fotos se borran en cuanto decides.",
+"fr": "Sensible : comparez la photo du document avec le selfie (même personne, majeure, document valide et non retouché). Les photos sont supprimées dès votre décision.",
+"de": "Sensible: Vergleiche Dokumentfoto und Selfie (gleiche Person, volljährig, Dokument gültig und unbearbeitet). Fotos werden nach der Entscheidung gelöscht.",
+"it": "Sensibile: confronta la foto del documento con il selfie (stessa persona, maggiorenne, documento valido e non modificato). Le foto si cancellano appena decidi.",
+"pt-BR": "Sensível: compare a foto do documento com o selfie (mesma pessoa, adulta, documento válido e sem edição). As fotos são apagadas ao decidir.",
+"ru": "Sensible: сравните фото документа с селфи (тот же человек, совершеннолетний, документ подлинный). Фото удаляются после решения."
+},
+"Sign out all other devices": {
+"es": "Cerrar sesión en todos los demás dispositivos",
+"fr": "Déconnecter tous les autres appareils",
+"de": "Alle anderen Geräte abmelden",
+"it": "Disconnetti tutti gli altri dispositivi",
+"pt-BR": "Sair de todos os outros dispositivos",
+"ru": "Выйти на всех других устройствах"
+},
+"Sign out every other device?": {
+"es": "¿Cerrar sesión en todos los demás dispositivos?",
+"fr": "Déconnecter tous les autres appareils ?",
+"de": "Alle anderen Geräte abmelden?",
+"it": "Disconnettere tutti gli altri dispositivi?",
+"pt-BR": "Sair de todos os outros dispositivos?",
+"ru": "Выйти на всех других устройствах?"
+},
+"Sign out this device?": {
+"es": "¿Cerrar sesión en este dispositivo?",
+"fr": "Déconnecter cet appareil ?",
+"de": "Dieses Gerät abmelden?",
+"it": "Disconnettere questo dispositivo?",
+"pt-BR": "Sair deste dispositivo?",
+"ru": "Завершить сеанс на этом устройстве?"
+},
+"The Sensible platform isn't available in any country yet.": {
+"es": "La plataforma Sensible aún no está disponible en ningún país.",
+"fr": "La plateforme Sensible n'est encore disponible dans aucun pays.",
+"de": "Die Sensible-Plattform ist noch in keinem Land verfügbar.",
+"it": "La piattaforma Sensibile non è ancora disponibile in nessun paese.",
+"pt-BR": "A plataforma Sensível ainda não está disponível em nenhum país.",
+"ru": "Платформа Sensible пока недоступна ни в одной стране."
+},
+"The Sensible platform isn't available in that country.": {
+"es": "La plataforma Sensible no está disponible en ese país.",
+"fr": "La plateforme Sensible n'est pas disponible dans ce pays.",
+"de": "Die Sensible-Plattform ist in diesem Land nicht verfügbar.",
+"it": "La piattaforma Sensibile non è disponibile in quel paese.",
+"pt-BR": "A plataforma Sensível não está disponível nesse país.",
+"ru": "Платформа Sensible недоступна в этой стране."
+},
+"The Sensible platform isn't open for sign-ups yet.": {
+"es": "La plataforma Sensible aún no admite registros.",
+"fr": "La plateforme Sensible n'accepte pas encore d'inscriptions.",
+"de": "Die Sensible-Plattform nimmt noch keine Anmeldungen an.",
+"it": "La piattaforma Sensibile non accetta ancora iscrizioni.",
+"pt-BR": "A plataforma Sensível ainda não aceita cadastros.",
+"ru": "Регистрация на платформе Sensible пока закрыта."
+},
+"The name you work with": {
+"es": "El nombre con el que trabajas",
+"fr": "Le nom sous lequel vous travaillez",
+"de": "Der Name, unter dem du arbeitest",
+"it": "Il nome con cui lavori",
+"pt-BR": "O nome com que você trabalha",
+"ru": "Имя, под которым вы работаете"
+},
+"The photo is too large. Try again.": {
+"es": "La foto es demasiado grande. Inténtalo de nuevo.",
+"fr": "La photo est trop lourde. Réessayez.",
+"de": "Das Foto ist zu groß. Versuch es erneut.",
+"it": "La foto è troppo grande. Riprova.",
+"pt-BR": "A foto é grande demais. Tente de novo.",
+"ru": "Фото слишком большое. Попробуйте ещё раз."
+},
+"This check was already decided.": {
+"es": "Esta verificación ya se resolvió.",
+"fr": "Cette vérification a déjà été traitée.",
+"de": "Diese Prüfung wurde schon entschieden.",
+"it": "Questa verifica è già stata decisa.",
+"pt-BR": "Esta verificação já foi decidida.",
+"ru": "По этой проверке уже есть решение."
+},
+"This photo couldn't be read. Try a JPG or PNG.": {
+"es": "No se pudo leer la foto. Prueba con JPG o PNG.",
+"fr": "Impossible de lire la photo. Essayez JPG ou PNG.",
+"de": "Foto nicht lesbar. Versuch JPG oder PNG.",
+"it": "Impossibile leggere la foto. Prova JPG o PNG.",
+"pt-BR": "Não foi possível ler a foto. Tente JPG ou PNG.",
+"ru": "Не удалось прочитать фото. Попробуйте JPG или PNG."
+},
+"Travel mode": {
+"es": "Modo viaje",
+"fr": "Mode voyage",
+"de": "Reisemodus",
+"it": "Modalità viaggio",
+"pt-BR": "Modo viagem",
+"ru": "Режим поездок"
+},
+"Trip added. Your page and your assistant show it now.": {
+"es": "Viaje añadido. Tu página y tu asistente ya lo muestran.",
+"fr": "Voyage ajouté. Votre page et l'assistant l'affichent.",
+"de": "Reise hinzugefügt. Seite und Assistent zeigen sie jetzt.",
+"it": "Viaggio aggiunto. Pagina e assistente lo mostrano.",
+"pt-BR": "Viagem adicionada. Sua página e o assistente já mostram.",
+"ru": "Поездка добавлена. Страница и ассистент её показывают."
+},
+"Turn on fingerprint or face unlock in your phone's settings first (Settings → Security / Face ID & passcode), then try again.": {
+"es": "Activa primero el desbloqueo con huella o cara en los ajustes del móvil (Ajustes → Seguridad / Face ID y código) y vuelve a intentarlo.",
+"fr": "Activez d'abord le déverrouillage par empreinte ou visage dans les réglages du téléphone, puis réessayez.",
+"de": "Aktiviere zuerst Fingerabdruck- oder Gesichtsentsperrung in den Einstellungen, dann versuch es erneut.",
+"it": "Attiva prima lo sblocco con impronta o volto nelle impostazioni del telefono, poi riprova.",
+"pt-BR": "Ative primeiro o desbloqueio por digital ou rosto nas configurações do celular e tente de novo.",
+"ru": "Сначала включите разблокировку по отпечатку или лицу в настройках телефона, затем повторите."
+},
+"Under review": {
+"es": "En revisión",
+"fr": "En cours de vérification",
+"de": "In Prüfung",
+"it": "In revisione",
+"pt-BR": "Em análise",
+"ru": "На проверке"
+},
+"Upcoming trips": {
+"es": "Próximos viajes",
+"fr": "Prochains voyages",
+"de": "Kommende Reisen",
+"it": "Prossimi viaggi",
+"pt-BR": "Próximas viagens",
+"ru": "Ближайшие поездки"
+},
+"Upload a photo (JPG, PNG or WebP).": {
+"es": "Sube una foto (JPG, PNG o WebP).",
+"fr": "Importez une photo (JPG, PNG ou WebP).",
+"de": "Lade ein Foto hoch (JPG, PNG oder WebP).",
+"it": "Carica una foto (JPG, PNG o WebP).",
+"pt-BR": "Envie uma foto (JPG, PNG ou WebP).",
+"ru": "Загрузите фото (JPG, PNG или WebP)."
+},
+"Urgent": {
+"es": "Urgente",
+"fr": "Urgent",
+"de": "Dringend",
+"it": "Urgente",
+"pt-BR": "Urgente",
+"ru": "Срочно"
+},
+"Verifications": {
+"es": "Verificaciones",
+"fr": "Vérifications",
+"de": "Verifizierungen",
+"it": "Verifiche",
+"pt-BR": "Verificações",
+"ru": "Проверки"
+},
+"Verify your identity": {
+"es": "Verifica tu identidad",
+"fr": "Vérifiez votre identité",
+"de": "Bestätige deine Identität",
+"it": "Verifica la tua identità",
+"pt-BR": "Verifique sua identidade",
+"ru": "Подтвердите личность"
+},
+"We couldn't verify the last photos": {
+"es": "No pudimos verificar las últimas fotos",
+"fr": "Nous n'avons pas pu vérifier les dernières photos",
+"de": "Wir konnten die letzten Fotos nicht prüfen",
+"it": "Non abbiamo potuto verificare le ultime foto",
+"pt-BR": "Não conseguimos verificar as últimas fotos",
+"ru": "Не удалось проверить последние фото"
+},
+"We usually review within 24 hours. You'll get an email. Meanwhile you can set up your profile; it goes live once you're verified.": {
+"es": "Solemos revisar en menos de 24 horas. Recibirás un email. Mientras tanto puedes configurar tu perfil; se activará cuando estés verificada.",
+"fr": "Nous vérifions en général sous 24 h. Vous recevrez un e-mail. En attendant, configurez votre profil ; il sera en ligne après vérification.",
+"de": "Wir prüfen meist innerhalb von 24 Std. Du bekommst eine E-Mail. Bis dahin kannst du dein Profil einrichten.",
+"it": "Di solito verifichiamo entro 24 ore. Riceverai un'email. Intanto puoi configurare il profilo.",
+"pt-BR": "Costumamos analisar em até 24 horas. Você receberá um email. Enquanto isso, configure seu perfil.",
+"ru": "Обычно проверяем в течение 24 часов. Вы получите письмо. Пока можно настроить профиль."
+},
+"We've noted that you want to change plan. Payments for Sensible go through a specialised provider; the team will contact you to activate it.": {
+"es": "Hemos anotado que quieres cambiar de plan. Los pagos de Sensible pasan por un proveedor especializado; el equipo te contactará para activarlo.",
+"fr": "Nous avons noté votre demande de changement d'offre. L'équipe vous contactera pour l'activer.",
+"de": "Wir haben deinen Tarifwunsch notiert. Das Team meldet sich zur Aktivierung.",
+"it": "Abbiamo registrato la richiesta di cambio piano. Il team ti contatterà per attivarlo.",
+"pt-BR": "Anotamos que você quer mudar de plano. A equipe entrará em contato para ativar.",
+"ru": "Мы зафиксировали запрос на смену тарифа. Команда свяжется с вами."
+},
+"What I offer": {
+"es": "Lo que ofrezco",
+"fr": "Ce que je propose",
+"de": "Was ich anbiete",
+"it": "Cosa offro",
+"pt-BR": "O que ofereço",
+"ru": "Что я предлагаю"
+},
+"What's happening?": {
+"es": "¿Qué está pasando?",
+"fr": "Que se passe-t-il ?",
+"de": "Was ist los?",
+"it": "Cosa sta succedendo?",
+"pt-BR": "O que está acontecendo?",
+"ru": "Что происходит?"
+},
+"When off, only admins can create Sensible profiles.": {
+"es": "Desactivado: solo los administradores pueden crear perfiles Sensible.",
+"fr": "Désactivé : seuls les admins peuvent créer des profils Sensible.",
+"de": "Aus: nur Admins können Sensible-Profile anlegen.",
+"it": "Disattivato: solo gli admin creano profili Sensibile.",
+"pt-BR": "Desligado: só admins criam perfis Sensível.",
+"ru": "Выключено: профили Sensible создают только админы."
+},
+"While there are no trips, customers see your usual city.": {
+"es": "Mientras no haya viajes, los clientes ven tu ciudad habitual.",
+"fr": "Sans voyage, les clients voient votre ville habituelle.",
+"de": "Ohne Reisen sehen Kunden deine übliche Stadt.",
+"it": "Senza viaggi, i clienti vedono la tua città abituale.",
+"pt-BR": "Sem viagens, os clientes veem sua cidade habitual.",
+"ru": "Без поездок клиенты видят ваш обычный город."
+},
+"Write the city and valid dates": {
+"es": "Escribe la ciudad y fechas válidas",
+"fr": "Indiquez la ville et des dates valides",
+"de": "Gib Stadt und gültige Daten ein",
+"it": "Scrivi città e date valide",
+"pt-BR": "Escreva a cidade e datas válidas",
+"ru": "Укажите город и корректные даты"
+},
+"Write to the AIBA team.": {
+"es": "Escribe al equipo de AIBA.",
+"fr": "Écrivez à l'équipe AIBA.",
+"de": "Schreib dem AIBA-Team.",
+"it": "Scrivi al team AIBA.",
+"pt-BR": "Escreva para a equipe AIBA.",
+"ru": "Напишите команде AIBA."
+},
+"You've reached the number of profiles in your plan. Upgrade to add more.": {
+"es": "Has llegado al número de perfiles de tu plan. Mejora el plan para añadir más.",
+"fr": "Vous avez atteint le nombre de profils de votre offre.",
+"de": "Du hast die Profilanzahl deines Tarifs erreicht.",
+"it": "Hai raggiunto il numero di profili del tuo piano.",
+"pt-BR": "Você atingiu o número de perfis do seu plano.",
+"ru": "Достигнут лимит профилей по тарифу."
+},
+"Your AIBA account was just opened on a device we hadn't seen before:": {
+"es": "Tu cuenta de AIBA se acaba de abrir en un dispositivo que no conocíamos:",
+"fr": "Votre compte AIBA vient d'être ouvert sur un nouvel appareil :",
+"de": "Dein AIBA-Konto wurde gerade auf einem neuen Gerät geöffnet:",
+"it": "Il tuo account AIBA è stato appena aperto su un nuovo dispositivo:",
+"pt-BR": "Sua conta AIBA acabou de ser aberta num dispositivo novo:",
+"ru": "В ваш аккаунт AIBA только что вошли с нового устройства:"
+},
+"Your own notes about what you offer, your rates and your limits. Encrypted, visible only to you. The assistant never reads it and it never appears on your page.": {
+"es": "Tus propias notas sobre lo que ofreces, tus tarifas y tus límites. Cifradas y visibles solo para ti. El asistente nunca las lee y nunca aparecen en tu página.",
+"fr": "Vos notes sur ce que vous proposez, vos tarifs et vos limites. Chiffrées, visibles par vous seule. L'assistant ne les lit jamais.",
+"de": "Deine Notizen zu Angebot, Preisen und Grenzen. Verschlüsselt, nur für dich sichtbar. Der Assistent liest sie nie.",
+"it": "Le tue note su offerta, tariffe e limiti. Cifrate, visibili solo a te. L'assistente non le legge mai.",
+"pt-BR": "Suas notas sobre o que oferece, valores e limites. Criptografadas, visíveis só para você. O assistente nunca lê.",
+"ru": "Ваши заметки об услугах, тарифах и границах. Зашифрованы, видны только вам. Ассистент их не читает."
+},
+"Your page /b/{slug} only works for people you give the link to. It never appears in the AIBA directory or in search engines.": {
+"es": "Tu página /b/{slug} solo funciona para quien tenga el enlace. Nunca aparece en el directorio de AIBA ni en buscadores.",
+"fr": "Votre page /b/{slug} ne fonctionne que pour qui a le lien. Jamais dans l'annuaire ni les moteurs de recherche.",
+"de": "Deine Seite /b/{slug} funktioniert nur mit Link. Nie im Verzeichnis oder in Suchmaschinen.",
+"it": "La tua pagina /b/{slug} funziona solo con il link. Mai nella directory né nei motori di ricerca.",
+"pt-BR": "Sua página /b/{slug} só funciona com o link. Nunca aparece no diretório nem em buscadores.",
+"ru": "Страница /b/{slug} открывается только по ссылке. Её нет в каталоге и поисковиках."
+},
+"Your private details (services, rates, limits) go in your Private sheet once inside. The assistant never reads it.": {
+"es": "Tus datos privados (servicios, tarifas, límites) van en tu Ficha privada una vez dentro. El asistente nunca la lee.",
+"fr": "Vos détails privés vont dans votre Fiche privée une fois connectée. L'assistant ne la lit jamais.",
+"de": "Private Details kommen später in deine privaten Notizen. Der Assistent liest sie nie.",
+"it": "I dati privati vanno nella Scheda privata una volta dentro. L'assistente non la legge mai.",
+"pt-BR": "Seus dados privados vão na Ficha privada depois de entrar. O assistente nunca lê.",
+"ru": "Личные данные заполните потом в личной карточке. Ассистент её не читает."
+},
+"Your profiles are live. Your photos were deleted after the check.": {
+"es": "Tus perfiles están activos. Tus fotos se borraron tras la verificación.",
+"fr": "Vos profils sont en ligne. Vos photos ont été supprimées.",
+"de": "Deine Profile sind online. Deine Fotos wurden gelöscht.",
+"it": "I tuoi profili sono attivi. Le foto sono state cancellate.",
+"pt-BR": "Seus perfis estão ativos. Suas fotos foram apagadas.",
+"ru": "Ваши профили активны. Фото удалены после проверки."
+},
+"e.g. Central area": {
+"es": "p. ej. Zona centro",
+"fr": "ex. Centre-ville",
+"de": "z. B. Zentrum",
+"it": "es. Zona centro",
+"pt-BR": "ex.: Região central",
+"ru": "напр. Центр"
+},
+"from then on only you can sign in.": {
+"es": "a partir de ahí solo tú podrás entrar.",
+"fr": "ensuite vous seule pourrez vous connecter.",
+"de": "danach kannst nur du dich anmelden.",
+"it": "da lì potrai entrare solo tu.",
+"pt-BR": "a partir daí só você poderá entrar.",
+"ru": "после этого войти сможете только вы."
+},
+"optional, public": {
+"es": "opcional, público",
+"fr": "facultatif, public",
+"de": "optional, öffentlich",
+"it": "facoltativo, pubblico",
+"pt-BR": "opcional, público",
+"ru": "необязательно, публично"
+},
+"phone, email, a time of day… leave empty to answer only here": {
+"es": "teléfono, email, una hora del día… déjalo vacío para responder solo aquí",
+"fr": "téléphone, e-mail, un horaire… vide pour répondre seulement ici",
+"de": "Telefon, E-Mail, Uhrzeit… leer lassen für Antwort nur hier",
+"it": "telefono, email, un orario… vuoto per rispondere solo qui",
+"pt-BR": "telefone, email, um horário… vazio para responder só aqui",
+"ru": "телефон, email, время… оставьте пустым — ответим только здесь"
+},
+"register your fingerprint or face": {
+"es": "registra tu huella o tu cara",
+"fr": "enregistrez votre empreinte ou visage",
+"de": "registriere Fingerabdruck oder Gesicht",
+"it": "registra impronta o volto",
+"pt-BR": "registre sua digital ou rosto",
+"ru": "зарегистрируйте отпечаток или лицо"
+},
+"since {date}": {
+"es": "desde {date}",
+"fr": "depuis {date}",
+"de": "seit {date}",
+"it": "dal {date}",
+"pt-BR": "desde {date}",
+"ru": "с {date}"
+},
+"what I never do": {
+"es": "lo que nunca hago",
+"fr": "ce que je ne fais jamais",
+"de": "was ich nie mache",
+"it": "cosa non faccio mai",
+"pt-BR": "o que nunca faço",
+"ru": "чего я никогда не делаю"
 }
 }

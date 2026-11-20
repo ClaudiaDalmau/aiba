@@ -1816,5 +1816,98 @@
     "Биометрия никогда не покидает ваше устройство."
    ]
   }
+ },
+ {
+  "id": "sensible",
+  "href": "/account/verify",
+  "paths": [
+   "/app/private",
+   "/app/travel",
+   "/app/support"
+  ],
+  "icon": "shield",
+  "title": {
+   "en": "AIBA Sensible: how it works",
+   "es": "AIBA Sensible: cómo funciona",
+   "fr": "AIBA Sensible : fonctionnement",
+   "de": "AIBA Sensible: so funktioniert's",
+   "it": "AIBA Sensibile: come funziona",
+   "pt-BR": "AIBA Sensível: como funciona",
+   "ru": "AIBA Sensible: как это работает"
+  },
+  "keywords": {
+   "en": "sensible verification identity id selfie private sheet travel trips support help safety",
+   "es": "sensible verificacion identidad dni selfie ficha privada viajes soporte ayuda seguridad",
+   "fr": "sensible vérification identité fiche privée voyages aide sécurité",
+   "de": "sensible verifizierung identität private notizen reisen hilfe sicherheit",
+   "it": "sensibile verifica identità scheda privata viaggi aiuto sicurezza",
+   "pt-BR": "sensível verificação identidade ficha privada viagens ajuda segurança",
+   "ru": "sensible проверка личность карточка поездки помощь безопасность"
+  },
+  "steps": {
+   "en": [
+    "Your page works only by direct link and never appears in the directory or search engines.",
+    "Verify your identity once (ID document + selfie holding it). Until then your page isn't live. Photos are deleted after the check.",
+    "Sign-in is only with your fingerprint or face; every new device triggers an email alert. Review devices in Sign-in security.",
+    "Private sheet: your notes about services, rates and limits; encrypted, the assistant never reads it.",
+    "The assistant only handles logistics. Explicit messages never reach it: they wait for you in the inbox.",
+    "Travel mode: add cities and dates; your page and the assistant show them.",
+    "Support (speech bubble at the bottom of the menu) is also a confidential help channel that only the AIBA safety team sees."
+   ],
+   "es": [
+    "Tu página solo funciona por enlace directo y nunca aparece en el directorio ni en buscadores.",
+    "Verifica tu identidad una vez (documento + selfie sujetándolo). Hasta entonces tu página no está activa. Las fotos se borran tras la verificación.",
+    "Solo se entra con tu huella o tu cara; cada dispositivo nuevo genera un aviso por email. Revisa los dispositivos en Seguridad de acceso.",
+    "Ficha privada: tus notas sobre servicios, tarifas y límites; cifrada, el asistente nunca la lee.",
+    "El asistente solo gestiona logística. Los mensajes explícitos nunca le llegan: te esperan en la bandeja.",
+    "Modo viaje: añade ciudades y fechas; tu página y el asistente las muestran.",
+    "Soporte (bocadillo abajo en el menú) es también un canal de ayuda confidencial que solo ve el equipo de seguridad de AIBA."
+   ],
+   "fr": [
+    "Votre page ne fonctionne que par lien direct, jamais dans l'annuaire ni les moteurs de recherche.",
+    "Vérifiez votre identité une fois (document + selfie). Avant cela la page n'est pas en ligne. Photos supprimées après.",
+    "Connexion uniquement par empreinte ou visage ; chaque nouvel appareil déclenche un e-mail.",
+    "Fiche privée : vos notes, chiffrées ; l'assistant ne la lit jamais.",
+    "L'assistant ne gère que la logistique ; les messages explicites ne lui parviennent jamais.",
+    "Mode voyage : ajoutez villes et dates.",
+    "Support est aussi un canal d'aide confidentiel vu uniquement par l'équipe sécurité."
+   ],
+   "de": [
+    "Deine Seite funktioniert nur per Direktlink, nie im Verzeichnis oder in Suchmaschinen.",
+    "Bestätige einmal deine Identität (Dokument + Selfie). Vorher ist die Seite nicht online. Fotos werden danach gelöscht.",
+    "Anmeldung nur per Fingerabdruck oder Gesicht; jedes neue Gerät löst eine E-Mail aus.",
+    "Private Notizen: verschlüsselt, der Assistent liest sie nie.",
+    "Der Assistent macht nur Logistik; explizite Nachrichten erreichen ihn nie.",
+    "Reisemodus: Städte und Daten hinzufügen.",
+    "Support ist auch ein vertraulicher Hilfekanal, den nur das Sicherheitsteam sieht."
+   ],
+   "it": [
+    "La pagina funziona solo tramite link diretto, mai nella directory o nei motori di ricerca.",
+    "Verifica l'identità una volta (documento + selfie). Prima la pagina non è attiva. Le foto si cancellano dopo.",
+    "Accesso solo con impronta o volto; ogni nuovo dispositivo genera un'email.",
+    "Scheda privata: cifrata, l'assistente non la legge mai.",
+    "L'assistente gestisce solo la logistica; i messaggi espliciti non gli arrivano mai.",
+    "Modalità viaggio: aggiungi città e date.",
+    "Supporto è anche un canale di aiuto riservato visto solo dal team sicurezza."
+   ],
+   "pt-BR": [
+    "Sua página só funciona por link direto, nunca no diretório nem em buscadores.",
+    "Verifique sua identidade uma vez (documento + selfie). Antes disso a página não fica ativa. Fotos apagadas depois.",
+    "Acesso só com digital ou rosto; cada dispositivo novo gera um email.",
+    "Ficha privada: criptografada, o assistente nunca lê.",
+    "O assistente só cuida da logística; mensagens explícitas nunca chegam a ele.",
+    "Modo viagem: adicione cidades e datas.",
+    "Suporte também é um canal de ajuda confidencial visto só pela equipe de segurança."
+   ],
+   "ru": [
+    "Страница открывается только по прямой ссылке, её нет в каталоге и поисковиках.",
+    "Один раз подтвердите личность (документ + селфи). До этого страница неактивна. Фото удаляются после проверки.",
+    "Вход только по отпечатку или лицу; о каждом новом устройстве приходит письмо.",
+    "Личная карточка: зашифрована, ассистент её не читает.",
+    "Ассистент занимается только логистикой; откровенные сообщения до него не доходят.",
+    "Режим поездок: добавьте города и даты.",
+    "Поддержка — также конфиденциальный канал помощи, его видит только команда безопасности."
+   ]
+  }
  }
 ]

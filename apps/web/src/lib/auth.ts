@@ -24,8 +24,9 @@ export async function createSession(userId: string, kind: "web" | "mobile", opts
   const token = randomToken();
   const ttl = kind === "web" ? WEB_TTL_DAYS : MOBILE_TTL_DAYS;
   const expiresAt = new Date(Date.now() + (opts.ttlHours ? opts.ttlHours * 3600_000 : ttl * 86400_000));
-  await db.insert(schema.sessions).values({ id: newId("ses"), tokenHash: sha256(token), userId, kind, expiresAt, impersonatorId: opts.impersonatorId ?? null });
-  return { token, expiresAt };
+  const id = newId("ses");
+  await db.insert(schema.sessions).values({ id, tokenHash: sha256(token), userId, kind, expiresAt, impersonatorId: opts.impersonatorId ?? null });
+  return { token, expiresAt, id };
 }
 
 export async function userFromToken(token: string | undefined | null): Promise<SessionUser | null> {

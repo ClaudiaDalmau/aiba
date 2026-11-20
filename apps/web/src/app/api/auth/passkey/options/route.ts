@@ -38,7 +38,8 @@ export const POST = publicRoute(async (req) => {
           { type: "public-key", alg: -7 },
           { type: "public-key", alg: -257 },
         ],
-        authenticatorSelection: { residentKey: "preferred", requireResidentKey: false, userVerification: "required" },
+        // Sensible (passkey required): only the phone's / computer's own authenticator, not a USB key or another device.
+        authenticatorSelection: { residentKey: "preferred", requireResidentKey: false, userVerification: "required", ...(user.requirePasskey ? { authenticatorAttachment: "platform" } : {}) },
         attestation: "none",
         timeout: 120000,
         excludeCredentials: existing.map((e) => ({ type: "public-key", id: e.credentialId })),

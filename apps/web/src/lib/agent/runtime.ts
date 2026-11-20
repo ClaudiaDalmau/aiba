@@ -1,4 +1,5 @@
 import "server-only";
+import { HIDDEN_PLACEHOLDER, isExplicit } from "../content-filter";
 import Anthropic from "@anthropic-ai/sdk";
 import { and, eq, gte, lte, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
@@ -114,6 +115,15 @@ export async function handleInbound(msg: InboundMessage): Promise<TurnResult> {
     return { conversationId: conv.id, reply: null, skipped: "quota" };
   }
 
+  // Sensible: explicit messages never reach the AI model; the professional answers them herself.
+  if (msg.business.platform === "sensitive" && isExplicit(msg.text)) {
+    await escalate(msg.business, conv, "Private message (not sent to the assistant)");
+    const reply = "Thanks for your message. She'll answer you personally.";
+    await appendMessage(conv, "agent", reply);
+    await deliver(conv, reply);
+    return { conversationId: conv.id, reply };
+  }
+
   // Owner-configured escalation keywords bypass the model entirely.
   const keywords = agent.escalationKeywords.split(",").map((k) => k.trim().toLowerCase()).filter(Boolean);
   const hit = keywords.find((k) => msg.text.toLowerCase().includes(k));
@@ -170,8 +180,8 @@ export async function handleInbound(msg: InboundMessage): Promise<TurnResult> {
 }
 
 /** Rebuild the chat as plain text turns. Owner replies are shown to the model as the business speaking. */
-async function historyAsMessages(conversationId: string): Promise<Anthropic.Beta.BetaMessageParam[]> {
-  const rows = await recentMessages(conversationId, 30);
+async function historyAsMessages(conversationId: string, sensitive = false): Promise<Anthropic.Beta.BetaMessageParam[]> {
+  const rows = (await recentMessages(conversationId, 30)).map((m) => (sensitive && isExplicit(m.content) ? { ...m, content: HIDDEN_PLACEHOLDER } : m));
   const out: Anthropic.Beta.BetaMessageParam[] = [];
   for (const m of rows) {
     if (m.role === "system") continue;
@@ -189,7 +199,7 @@ async function runLiveTurn(ctx: AgentContext, settings: Settings) {
   const { business, agent } = ctx;
   const stable = await buildStablePrompt(business, agent);
   const volatile = await buildVolatilePrompt(business, ctx.customer);
-  const messages = await historyAsMessages(ctx.conversation.id);
+  const messages = await historyAsMessages(ctx.conversation.id, business.platform === "sensitive");
   const tools = toolsFor(agent);
   // An agent without its own model follows the platform default (Admin → Settings → AI).
   const model = agent.model || settings["ai.model"] || "claude-opus-5-5";

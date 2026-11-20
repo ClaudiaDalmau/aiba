@@ -31,15 +31,19 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
         <Card>
           <CardHeader title={t("Publishing")} />
           <div className="p-5">
-            <Toggle name="published" defaultChecked={b.published} label={t("Listed in the marketplace & bookable")} description={t("Your page lives at /b/{slug}. Unpublished pages are only visible to your team.", { slug: b.slug })} />
+            {b.platform === "sensitive" ? (
+              <p className="text-[14px] text-muted">{t("Your page /b/{slug} only works for people you give the link to. It never appears in the AIBA directory or in search engines.", { slug: b.slug })}</p>
+            ) : (
+              <Toggle name="published" defaultChecked={b.published} label={t("Listed in the marketplace & bookable")} description={t("Your page lives at /b/{slug}. Unpublished pages are only visible to your team.", { slug: b.slug })} />
+            )}
           </div>
         </Card>
         <Card>
           <CardHeader title={t("Profile")} />
           <div className="grid gap-4 p-5 sm:grid-cols-2">
-            <Field label={t("Business name")}><Input name="name" defaultValue={b.name} required /></Field>
+            <Field label={b.platform === "sensitive" ? t("Profile name") : t("Business name")}><Input name="name" defaultValue={b.name} required /></Field>
             <Field label={t("Tagline")}><Input name="tagline" defaultValue={b.tagline} maxLength={140} /></Field>
-            <Field label={t("Description")} className="sm:col-span-2"><Textarea name="description" rows={4} defaultValue={b.description} /></Field>
+            {b.platform !== "sensitive" && <Field label={t("Description")} className="sm:col-span-2"><Textarea name="description" rows={4} defaultValue={b.description} /></Field>}
             <Field label={t("Category")}><Select name="category" defaultValue={b.category}>{CATEGORIES.map((c) => <option key={c.id} value={c.id}>{t(c.label)}</option>)}</Select></Field>
             <Field label={t("City")}><Input name="city" defaultValue={b.city} /></Field>
             <Field label={t("Phone")}><Input name="phone" defaultValue={b.phone} /></Field>
@@ -66,7 +70,7 @@ export default async function SettingsPage({ searchParams }: { searchParams: Pro
             <Field label={t("Slot grid")} hint={t("minutes")}><Select name="slotIntervalMinutes" defaultValue={String(p.slotIntervalMinutes)}>{[5, 10, 15, 20, 30, 60].map((n) => <option key={n}>{n}</option>)}</Select></Field>
             <div className="space-y-4 sm:col-span-4">
               <Toggle name="autoConfirm" defaultChecked={p.autoConfirm} label={t("Confirm bookings automatically")} description={t("Off: web and agent bookings arrive as requests you confirm.")} />
-              <Toggle name="requirePayment" defaultChecked={p.requirePayment} label={t("Require online payment")} description={t("Requires Stripe to be configured on the platform.")} />
+              {b.platform !== "sensitive" && <Toggle name="requirePayment" defaultChecked={p.requirePayment} label={t("Require online payment")} description={t("Requires Stripe to be configured on the platform.")} />}
             </div>
             <Field label={t("Policy shown to customers")} className="sm:col-span-4"><Textarea name="policyText" rows={3} defaultValue={p.policyText} placeholder={t("Late arrivals, deposits, what to bring…")} /></Field>
           </div>

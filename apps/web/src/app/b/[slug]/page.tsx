@@ -10,6 +10,7 @@ import { getAgent } from "@/lib/agent/runtime";
 import { currentUser } from "@/lib/auth";
 import { publicBusiness, publicProfile } from "@/lib/public";
 import { businessRating, publicReviews } from "@/lib/reviews";
+import { upcomingTravel } from "@/lib/sensitive";
 import { Stars } from "@/components/public/review-form";
 import { requestIntlLocale } from "@/i18n/request-locale";
 import { membershipsOf } from "@/lib/tenant";
@@ -34,6 +35,7 @@ async function load(slug: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const b = await load((await params).slug);
+  if (b?.platform === "sensitive") return { title: b.name, robots: { index: false, follow: false, nocache: true } };
   return b ? { title: `${b.name}: book online`, description: b.tagline || b.description.slice(0, 150) } : {};
 }
 
@@ -77,7 +79,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
               <div className="min-w-0">
                 <h1 className="flex flex-wrap items-center gap-2 text-[26px] font-semibold tracking-tight">{b.name} {b.vip && <Badge tone="ai" icon="crown">VIP</Badge>}</h1>
                 {b.tagline && <p className="text-muted">{b.tagline}</p>}
-                {rating.count > 0 && (
+                {rating.count > 0 && business.platform !== "sensitive" && (
                   <a href="#reviews" className="mt-1 inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-fg">
                     <Stars value={rating.average ?? 0} /> <span className="font-medium text-fg">{rating.average?.toLocaleString(requestIntlLocale(), { minimumFractionDigits: 1 })}</span> · {t(rating.count === 1 ? "{n} review" : "{n} reviews", { n: rating.count })}
                   </a>
@@ -85,7 +87,15 @@ export default async function BusinessPage({ params, searchParams }: Props) {
               </div>
             </div>
             <div className="mt-8"><BookingFlow slug={b.slug} services={services} staff={staff} currency={b.currency} timezone={b.timezone} today={todayIn(b.timezone)} brand={b.brandColor} autoConfirm={b.policy.autoConfirm} initialServiceId={service} initialDate={date && /^\d{4}-\d{2}-\d{2}$/.test(date) && date >= todayIn(b.timezone) ? date : undefined} /></div>
-            {reviews.length > 0 && (
+            {business.platform === "sensitive" && upcomingTravel(business, todayIn(business.timezone)).length > 0 && (
+              <section className="mt-8 rounded-xl border border-border p-4 text-[14px]">
+                <div className="mb-2 font-semibold">{t("Upcoming trips")}</div>
+                <ul className="space-y-1 text-muted">
+                  {upcomingTravel(business, todayIn(business.timezone)).map((s, i) => <li key={i}><span className="font-medium text-fg">{s.city}</span> · {s.from} → {s.to}{s.note ? ` · ${s.note}` : ""}</li>)}
+                </ul>
+              </section>
+            )}
+            {reviews.length > 0 && business.platform !== "sensitive" && (
               <section id="reviews" className="mt-10 border-t border-border pt-8">
                 <div className="flex items-baseline justify-between gap-3">
                   <h2 className="text-[19px] font-semibold tracking-tight">{t("Reviews")}</h2>
@@ -112,7 +122,7 @@ export default async function BusinessPage({ params, searchParams }: Props) {
             <Card className="p-5 text-[14px]">
               {b.description && <p className="text-muted">{b.description}</p>}
               <ul className="mt-4 space-y-2">
-                {(locations[0]?.address || b.city) && <li className="flex gap-2"><Icon name="mapPin" size={16} className="mt-0.5 text-faint" /> {locations[0]?.address || b.city}</li>}
+                {business.platform === "sensitive" ? (b.city && <li className="flex gap-2"><Icon name="mapPin" size={16} className="mt-0.5 text-faint" /> {b.city}</li>) : (locations[0]?.address || b.city) && <li className="flex gap-2"><Icon name="mapPin" size={16} className="mt-0.5 text-faint" /> {locations[0]?.address || b.city}</li>}
                 {b.phone && <li className="flex gap-2"><Icon name="chat" size={16} className="mt-0.5 text-faint" /> {b.phone}</li>}
                 {b.website && <li className="flex gap-2"><Icon name="globe" size={16} className="mt-0.5 text-faint" /> <a href={b.website} className="underline" target="_blank" rel="noreferrer">{b.website.replace(/^https?:\/\//, "")}</a></li>}
               </ul>

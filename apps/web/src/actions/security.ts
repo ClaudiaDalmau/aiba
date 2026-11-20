@@ -58,3 +58,22 @@ export async function deletePasskey(f: FormData) {
   await audit(null, { type: "user", id: u.id }, "security.passkey_removed", u.id);
   revalidatePath("/account/security");
 }
+
+export async function signOutSession(f: FormData) {
+  const u = await requireUser();
+  await db.delete(schema.sessions).where(and(eq(schema.sessions.id, String(f.get("id"))), eq(schema.sessions.userId, u.id)));
+  await audit(null, { type: "user", id: u.id }, "security.session_revoked", u.id);
+  revalidatePath("/account/security");
+}
+
+export async function signOutOthers() {
+  const u = await requireUser();
+  const { cookies: c } = await import("next/headers");
+  const { SESSION_COOKIE } = await import("@/lib/auth");
+  const { sha256 } = await import("@/lib/crypto");
+  const { ne } = await import("drizzle-orm");
+  const token = (await c()).get(SESSION_COOKIE)?.value ?? "";
+  await db.delete(schema.sessions).where(and(eq(schema.sessions.userId, u.id), ne(schema.sessions.tokenHash, sha256(token))));
+  await audit(null, { type: "user", id: u.id }, "security.sessions_revoked_others", u.id);
+  revalidatePath("/account/security");
+}

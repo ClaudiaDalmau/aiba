@@ -393,6 +393,9 @@ export async function addMembership(_prev: ActionState, f: FormData): Promise<Ac
       businessId = b?.id ?? "";
     }
     if (!businessId) throw new AppError(404, "not_found", "Business not found (use its slug or id)");
+    // Sensible: a profile belongs to one verified person; nobody else can be given access (anti-exploitation).
+    const [target] = await db.select({ platform: schema.businesses.platform }).from(schema.businesses).where(eq(schema.businesses.id, businessId));
+    if (target?.platform === "sensitive") throw new AppError(403, "sensitive", "Sensible profiles can't have other members: only the verified owner has access.");
     const role = BusinessRole.parse(s(f, "role"));
     await db
       .insert(schema.memberships)

@@ -50,10 +50,27 @@ async function attempt(fn: () => Promise<string | void>): Promise<ActionState> {
 
 export async function onboard(_prev: ActionState, f: FormData): Promise<ActionState> {
   const user = await requireUser("/app/onboarding");
+  let goSecurity = false;
+  let goVerify = false;
   const res = await attempt(async () => {
     const name = s(f, "name");
     if (!name) throw new AppError(400, "bad_request", "Business name is required");
+    const platform = s(f, "platform") === "sensitive" ? "sensitive" : "ordinary";
+    const country = s(f, "country").toUpperCase();
+    if (platform === "sensitive") {
+      const { allowedCountries, profileAllowance } = await import("@/lib/sensitive");
+      const { getSettings } = await import("@/lib/settings");
+      const st = await getSettings();
+      const [me] = await db.select().from(schema.users).where(eq(schema.users.id, user.id));
+      if (!st["sensitive.enabled"] && !me?.platformRole) throw new AppError(403, "closed", "The Sensible platform isn't open for sign-ups yet.");
+      if (f.get("adult") !== "on" || f.get("independent") !== "on") throw new AppError(400, "bad_request", "Confirm you are of legal age and work independently and voluntarily.");
+      if (!(await allowedCountries()).includes(country)) throw new AppError(400, "country", "The Sensible platform isn't available in that country.");
+      const { used, limit } = await profileAllowance(user.id);
+      if (used >= limit) throw new AppError(403, "profile_limit", "You've reached the number of profiles in your plan. Upgrade to add more.");
+    }
     const business = await createBusiness(user, {
+      platform,
+      country,
       name,
       category: s(f, "category") || "other",
       city: s(f, "city"),
@@ -72,11 +89,21 @@ export async function onboard(_prev: ActionState, f: FormData): Promise<ActionSt
       const agent = await getAgent(business.id);
       if (agent) await db.update(schema.agents).set({ persona: { ...agent.persona, tone: tone.data } }).where(eq(schema.agents.id, agent.id));
     }
+    if (platform === "sensitive") {
+      // Sign-in with fingerprint / face from now on (anti-impersonation); sessions continue until the next sign-in.
+      await db.update(schema.users).set({ requirePasskey: true }).where(eq(schema.users.id, user.id));
+      await audit(business.id, { type: "user", id: user.id }, "sensitive.profile_created", business.id, { country });
+      const [me2] = await db.select({ v: schema.users.identityVerifiedAt }).from(schema.users).where(eq(schema.users.id, user.id));
+      if (me2?.v) await db.update(schema.businesses).set({ published: true }).where(eq(schema.businesses.id, business.id));
+      else goVerify = true;
+      const [pk] = await db.select({ id: schema.passkeys.id }).from(schema.passkeys).where(eq(schema.passkeys.userId, user.id)).limit(1);
+      goSecurity = !pk;
+    }
     const { cookies } = await import("next/headers");
     (await cookies()).set("aiba_biz", business.id, { path: "/", sameSite: "lax", httpOnly: true });
   });
   if (res?.error) return res;
-  redirect("/app?welcome=1");
+  redirect(goVerify ? "/account/verify" : goSecurity ? "/account/security?first=1" : "/app?welcome=1");
 }
 
 // ---------------------------------------------------------------- bookings
@@ -404,6 +431,12 @@ export async function saveSettings(_prev: ActionState, f: FormData): Promise<Act
         policyText: s(f, "policyText"),
       },
     });
+    if (t.business.platform === "sensitive") {
+      // Sensible: always reachable by direct link only, never in the marketplace; no description for the AI; no Stripe.
+      patch.published = t.business.published;
+      patch.description = "";
+      patch.policy.requirePayment = false;
+    }
     let note = "";
     if (patch.published && !t.business.published && !(await getSetting("general.autoPublish"))) {
       patch.published = false;

@@ -48,6 +48,12 @@ export default async function ShellLayout({ children }: { children: React.ReactN
     ...(can(tenant.role, "business.manage")
       ? [
           { href: "/app/settings", label: t("Settings"), icon: "settings" as const, section: t("Business") },
+          ...(tenant.business.platform === "sensitive"
+            ? [
+                { href: "/app/private", label: t("Private sheet"), icon: "shield" as const, section: t("Business") },
+                { href: "/app/travel", label: t("Travel mode"), icon: "globe" as const, section: t("Business") },
+              ]
+            : []),
           { href: "/app/invoices", label: t("Invoices"), icon: "file" as const, section: t("Business") },
           { href: "/app/billing", label: t("Plan & billing"), icon: "card" as const, section: t("Business") },
         ]
@@ -110,6 +116,7 @@ export default async function ShellLayout({ children }: { children: React.ReactN
         <Link href="/admin" title={t("Platform admin")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="shield" size={16} /></Link>
       )}
       <LocaleSwitcher />
+      <Link href="/app/support" title={t("Support")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="chat" size={16} /></Link>
       <Link href="/account/security" title={t("Sign-in security")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="shield" size={16} /></Link>
       <form action={logout}>
         <button title={t("Sign out")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="logout" size={16} /></button>

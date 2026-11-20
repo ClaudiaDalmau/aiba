@@ -16,6 +16,8 @@ export function PasskeyButton({ purpose, label, className, name, variant = "prim
   async function run() {
     setError(null);
     if (!window.PublicKeyCredential) return setError(t("This browser doesn't support passkeys. Update it or try another device."));
+    if (purpose === "register" && !(await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable().catch(() => false)))
+      return setError(t("Turn on fingerprint or face unlock in your phone's settings first (Settings → Security / Face ID & passcode), then try again."));
     setBusy(true);
     try {
       const o = await fetch("/api/auth/passkey/options", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ purpose }) });

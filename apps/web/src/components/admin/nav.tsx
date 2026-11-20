@@ -13,6 +13,8 @@ const ITEMS: Item[] = [
   { href: "/admin", label: "Overview", icon: "chart", perm: "overview.view" },
   { href: "/admin/businesses", label: "Businesses", icon: "building", perm: "businesses.view", section: "Customers" },
   { href: "/admin/leads", label: "Website leads", icon: "send", perm: "businesses.view", section: "Customers" },
+  { href: "/admin/verifications", label: "Verifications", icon: "shield", perm: "users.manage", section: "Customers" },
+  { href: "/admin/safety", label: "Safety alerts", icon: "bell", perm: "users.manage", section: "Customers" },
   { href: "/admin/users", label: "Users", icon: "users", perm: "users.view", section: "Customers" },
   { href: "/admin/agents", label: "AI agents", icon: "sparkles", perm: "businesses.view", section: "Customers" },
   { href: "/admin/plans", label: "Plans & pricing", icon: "card", perm: "plans.manage", section: "Revenue" },

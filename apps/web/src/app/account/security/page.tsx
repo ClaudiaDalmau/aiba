@@ -3,7 +3,8 @@ import { eq } from "drizzle-orm";
 import Link from "next/link";
 import { cookies } from "next/headers";
 import QRCode from "qrcode";
-import { deletePasskey, disableTotp, startTotp } from "@/actions/security";
+import { deletePasskey, disableTotp, signOutOthers, signOutSession, startTotp } from "@/actions/security";
+import { activeSessions } from "@/lib/devices";
 import { ConfirmSubmit, SubmitButton } from "@/components/client";
 import { PasskeyButton } from "@/components/passkey-button";
 import { ConfirmTotpForm, RegenerateCodesForm } from "@/components/security-forms";
@@ -24,6 +25,7 @@ export default async function SecurityPage() {
   const me = await requireUser("/account/security");
   const [user] = await db.select().from(schema.users).where(eq(schema.users.id, me.id));
   const keys = await db.select().from(schema.passkeys).where(eq(schema.passkeys.userId, me.id));
+  const sessions = await activeSessions(me.id);
   const setupRaw = (await cookies()).get("aiba_totp_setup")?.value;
   let setup: { secret: string; qr: string } | null = null;
   if (!user.totpSecret && setupRaw) {
@@ -88,6 +90,30 @@ export default async function SecurityPage() {
             </form>
           )}
         </div>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader title={t("Devices with access")} description={t("Every time your account is opened on a new device we email you. If you don't recognise one, sign it out and change your password.")} />
+        <ul className="divide-y divide-border">
+          {sessions.map((s) => (
+            <li key={s.id} className="flex items-center gap-3 px-5 py-3 text-[14px]">
+              <span className="flex-1">
+                <span className="font-medium">{s.device || (s.kind === "mobile" ? t("Mobile app") : "Web")}</span>
+                {s.impersonatorId && <span className="ml-2 text-[12px] text-faint">{t("(AIBA support)")}</span>}
+                <span className="block text-[12px] text-muted">{t("since {date}", { date: s.createdAt.toISOString().slice(0, 16).replace("T", " ") })}</span>
+              </span>
+              <form action={signOutSession}>
+                <input type="hidden" name="id" value={s.id} />
+                <ConfirmSubmit message={t("Sign out this device?")} variant="ghost" size="sm">{t("Sign out")}</ConfirmSubmit>
+              </form>
+            </li>
+          ))}
+        </ul>
+        {sessions.length > 1 && (
+          <form action={signOutOthers} className="border-t border-border p-5">
+            <ConfirmSubmit message={t("Sign out every other device?")} variant="secondary">{t("Sign out all other devices")}</ConfirmSubmit>
+          </form>
+        )}
       </Card>
 
       {on && !user.requirePasskey && (

@@ -14,6 +14,7 @@ const GROUPS = [
   { id: "ai", title: "AI agents", description: "Model access and behaviour for every business's NanoClaw agent." },
   { id: "billing", title: "Billing (Stripe)", description: "Without a Stripe key, plan changes apply immediately in test mode. Prices are set per plan in Plans & pricing." },
   { id: "reminders", title: "Reminders", description: "Automatic appointment reminders sent by each business's agent." },
+  { id: "sensitive", title: "Sensible platform", description: "Adult independent professionals: unlisted pages, logistics-only assistant, passkey sign-in, no Stripe. Profiles are counted per verified person." },
   { id: "google", title: "Google Calendar", description: "Lets each business connect its Google Calendar. Authorised redirect URI: {url}/api/integrations/google/callback" },
   { id: "email", title: "Email", description: "Booking emails to customers and businesses, and website lead alerts, sent through Resend." },
 ] as const;

@@ -61,9 +61,31 @@ export const users = pgTable(
     recoveryCodes: jsonb("recovery_codes").$type<string[]>().notNull().default([]),
     /** Must sign in with a passkey (fingerprint / face). Password alone is never enough. */
     requirePasskey: boolean("require_passkey").notNull().default(false),
+    /** Identity checked (ID document + selfie with the document) by the platform team. */
+    identityVerifiedAt: timestamp("identity_verified_at", { withTimezone: true }),
     createdAt: createdAt(),
   },
   (t) => [uniqueIndex("users_email_uq").on(sql`lower(${t.email})`)],
+);
+
+/** Identity verification for the Sensible platform. Images are encrypted and deleted once a decision is taken. */
+export const identityChecks = pgTable(
+  "identity_checks",
+  {
+    id: id(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    status: text("status", { enum: ["pending", "approved", "rejected"] }).notNull().default("pending"),
+    documentType: text("document_type").notNull(),
+    documentImage: text("document_image"),
+    selfieImage: text("selfie_image"),
+    reason: text("reason").notNull().default(""),
+    reviewedBy: text("reviewed_by"),
+    reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
+    createdAt: createdAt(),
+  },
+  (t) => [index("identity_checks_status_idx").on(t.status, t.createdAt)],
 );
 
 /** WebAuthn credentials («passkeys»): the biometric check happens on the device; only a public key is stored. */
@@ -97,11 +119,44 @@ export const sessions = pgTable(
     kind: text("kind", { enum: ["web", "mobile"] }).notNull(),
     /** Set when a platform admin is signed in as this user ("view as"). */
     impersonatorId: text("impersonator_id"),
+    /** Human label of the device/browser ("Chrome on Android") and a hash used for new-device alerts. */
+    device: text("device").notNull().default(""),
+    deviceHash: text("device_hash").notNull().default(""),
     expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
     createdAt: createdAt(),
   },
   (t) => [uniqueIndex("sessions_token_uq").on(t.tokenHash)],
 );
+
+export const knownDevices = pgTable(
+  "known_devices",
+  {
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    deviceHash: text("device_hash").notNull(),
+    label: text("label").notNull().default(""),
+    firstSeenAt: timestamp("first_seen_at", { withTimezone: true }).notNull().defaultNow(),
+    lastSeenAt: timestamp("last_seen_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.deviceHash] })],
+);
+
+/** Confidential help requests (Sensible). Visible only to the platform safety team, never to the business. */
+export const safetyAlerts = pgTable("safety_alerts", {
+  id: id(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  businessId: text("business_id"),
+  message: text("message").notNull().default(""),
+  contact: text("contact").notNull().default(""),
+  urgent: boolean("urgent").notNull().default(false),
+  status: text("status", { enum: ["open", "in_progress", "closed"] }).notNull().default("open"),
+  notes: text("notes").notNull().default(""),
+  handledBy: text("handled_by"),
+  createdAt: createdAt(),
+});
 
 export const pushTokens = pgTable(
   "push_tokens",
@@ -220,6 +275,14 @@ export const businesses = pgTable(
     tier: text("tier").notNull().default("standard").references(() => plans.id, { onUpdate: "cascade" }),
     published: boolean("published").notNull().default(false),
     suspended: boolean("suspended").notNull().default(false),
+    /** ordinary = marketplace platform; sensitive = adult independent workers (never listed, logistics-only AI, passkey sign-in). */
+    platform: text("platform", { enum: ["ordinary", "sensitive"] }).notNull().default("ordinary"),
+    /** ISO country code (Sensible: must be in the platform's allowed list). */
+    country: text("country").notNull().default(""),
+    /** Sensible: the professional's private sheet, encrypted. The AI never reads it. */
+    privateProfile: text("private_profile"),
+    /** Sensible «travel mode»: cities and dates where she will be working. */
+    travel: jsonb("travel").$type<TravelStop[]>().notNull().default([]),
     onboardingStep: integer("onboarding_step").notNull().default(0),
     createdAt: createdAt(),
   },
@@ -819,6 +882,7 @@ export const customerPacks = pgTable(
   (t) => [index("customer_packs_customer_idx").on(t.businessId, t.customerId)],
 );
 
+export type TravelStop = { city: string; from: string; to: string; note?: string };
 export type FiscalProfile = {
   legalName?: string;
   taxId?: string;
