@@ -1,7 +1,7 @@
 import { router } from "expo-router";
 import { Alert, View } from "react-native";
 import { Avatar, Button, Card, Pill, Row, RowList, Screen, Section, T } from "../../components/ui";
-import { API_URL } from "../../lib/config";
+import { API_URL, APP_NAME } from "../../lib/config";
 import { useSession } from "../../lib/session";
 import { space } from "../../lib/theme";
 import { tierLabel } from "../../lib/types";
@@ -61,7 +61,7 @@ export default function More() {
           />
         </RowList>
         <T v="caption" faint style={{ textAlign: "center", marginTop: space.md }}>
-          AIBA Business · {API_URL}
+          {APP_NAME} · {API_URL}
         </T>
       </Section>
     </Screen>

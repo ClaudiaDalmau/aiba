@@ -73,3 +73,21 @@ assistant status but not approvals, permissions or catalog settings (the API enf
 
 `npx eas-cli@latest build --platform ios|android` with bundle id / package `app.aiba.business`
 (change in `app.json` before the first store build).
+
+## Dos apps: Ordinaria y Sensible
+
+El mismo código genera dos apps (ver `app.config.ts`), elegidas con `APP_VARIANT`:
+
+| | Ordinaria | Sensible |
+|---|---|---|
+| Nombre en el móvil | AIBA Business | AIBA (neutro) |
+| Identificador | app.aiba.business | app.aiba.agenda |
+| Icono | «a» + estrella (`assets/`) | «a» + corazón (`assets/sensible/`) |
+| Distribución | App Store y Google Play | APK propio (Android) y Web Distribution UE (iOS) |
+
+```bash
+APP_VARIANT=sensible npx expo start          # desarrollo
+npx eas-cli@latest build --profile sensible-apk --platform android
+```
+
+Cada app solo muestra los negocios de su plataforma. Pendiente para la Sensible: inicio de sesión con llave de acceso nativa y biometría sin PIN (requiere `expo-local-authentication` y un módulo de passkeys).

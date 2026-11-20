@@ -2,7 +2,7 @@ import * as SecureStore from "expo-secure-store";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { AppState } from "react-native";
 import { api, configureSession } from "./api";
-import { POLL_INTERVAL_MS } from "./config";
+import { POLL_INTERVAL_MS, belongsHere } from "./config";
 import { registerForPush } from "./push";
 import type { BusinessSummary, Counts, Me, User } from "./types";
 
@@ -14,6 +14,8 @@ type SessionState = {
   token: string | null;
   user: User | null;
   businesses: BusinessSummary[];
+  /** Businesses of this account that belong to the other app. */
+  elsewhere: number;
   business: BusinessSummary | null;
   counts: Counts;
   signIn: (email: string, password: string) => Promise<void>;
@@ -44,7 +46,9 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const loadMe = useCallback(async () => {
-    const data = await api<Me>("/api/v1/me");
+    const all = await api<Me>("/api/v1/me");
+    // Each app shows only its own platform's businesses; the rest are counted to explain why they're missing.
+    const data = { ...all, businesses: all.businesses.filter((b) => belongsHere(b.platform)), elsewhere: all.businesses.filter((b) => !belongsHere(b.platform)).length };
     setMe(data);
     const saved = await SecureStore.getItemAsync(BUSINESS_KEY).catch(() => null);
     const pick = data.businesses.find((b) => b.id === saved) ?? data.businesses[0] ?? null;
@@ -143,6 +147,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       token,
       user: me?.user ?? null,
       businesses: me?.businesses ?? [],
+      elsewhere: me?.elsewhere ?? 0,
       business: me?.businesses.find((b) => b.id === businessId) ?? null,
       counts,
       signIn,

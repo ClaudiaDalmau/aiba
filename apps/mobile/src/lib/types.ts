@@ -19,9 +19,11 @@ export type BusinessSummary = {
   brandColor: string;
   timezone: string;
   currency: string;
+  /** "sensitive" = plataforma Sensible: solo se gestiona desde la app Sensible. */
+  platform?: "ordinary" | "sensitive";
 };
 
-export type Me = { user: User; businesses: BusinessSummary[] };
+export type Me = { user: User; businesses: BusinessSummary[]; elsewhere?: number };
 
 export type BookingStatus = "pending" | "confirmed" | "cancelled" | "completed" | "no_show";
 export type BookingSource = "web" | "owner" | "agent" | "whatsapp" | "telegram";
