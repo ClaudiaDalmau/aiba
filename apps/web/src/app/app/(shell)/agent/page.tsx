@@ -84,7 +84,7 @@ export default async function AgentPage() {
               <Field label={t("Sign-off")} hint={t("used on confirmations")}><Input name="signature" defaultValue={p.signature} placeholder={t("— The team")} /></Field>
               <Toggle name="emoji" defaultChecked={p.emoji} label={t("Use emoji")} description={t("A few, tastefully.")} />
               <Field label={t("Instructions")} hint={t("plain language")}>
-                <Textarea name="instructions" rows={6} defaultValue={agent.instructions} placeholder={"e.g. Always suggest a patch test for first-time colour clients.\nNever offer discounts.\nIf someone asks for Maya on Saturday, offer Sami."} />
+                <Textarea name="instructions" rows={6} defaultValue={agent.instructions} placeholder={t("e.g. Always suggest a patch test for first-time colour clients.\nNever offer discounts.\nIf someone asks for Maya on Saturday, offer Sami.")} />
               </Field>
               <Field label={t("Always escalate when a customer mentions")} hint={t("comma-separated")}>
                 <Input name="escalationKeywords" defaultValue={agent.escalationKeywords} />

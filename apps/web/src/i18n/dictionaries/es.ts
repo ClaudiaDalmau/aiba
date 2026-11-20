@@ -1139,7 +1139,8 @@ const es: Dictionary = {
   "None of the messages are from that name. Check how your name appears in the chat.": "Ningún mensaje es de ese nombre. Revisa cómo aparece tu nombre en el chat.",
   "Not enough of your replies yet: answer a few customers yourself or upload a chat export, then try again.": "Aún no hay suficientes respuestas tuyas: contesta tú a algunos clientes o sube una exportación de chat y vuelve a intentarlo.",
   "Add the Anthropic API key in Admin → Settings → AI agents first.": "Primero añade la clave API de Anthropic en Admin → Ajustes → Agentes de IA.",
-  "The AI couldn't produce a style guide from these messages. Try with more of your replies.": "La IA no pudo crear una guía con estos mensajes. Prueba con más respuestas tuyas."
+  "The AI couldn't produce a style guide from these messages. Try with more of your replies.": "La IA no pudo crear una guía con estos mensajes. Prueba con más respuestas tuyas.",
+  "e.g. Always suggest a patch test for first-time colour clients.\nNever offer discounts.\nIf someone asks for Maya on Saturday, offer Sami.": "p. ej. Sugiere siempre una prueba de alergia a quien se tiña por primera vez.\nNunca ofrezcas descuentos.\nSi alguien pide a Maya un sábado, ofrécele a Sami."
 };
 
 export default es;

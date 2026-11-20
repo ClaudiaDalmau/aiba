@@ -8569,5 +8569,13 @@
 "it": "L'IA non è riuscita a creare una guida da questi messaggi. Prova con più tue risposte.",
 "pt-BR": "A IA não conseguiu criar um guia com essas mensagens. Tente com mais respostas suas.",
 "ru": "ИИ не смог составить описание по этим сообщениям. Попробуйте с большим числом ваших ответов."
+},
+"e.g. Always suggest a patch test for first-time colour clients.\nNever offer discounts.\nIf someone asks for Maya on Saturday, offer Sami.": {
+"es": "p. ej. Sugiere siempre una prueba de alergia a quien se tiña por primera vez.\nNunca ofrezcas descuentos.\nSi alguien pide a Maya un sábado, ofrécele a Sami.",
+"fr": "ex. Proposez toujours un test d'allergie aux clients qui font une première coloration.\nNe proposez jamais de réduction.\nSi quelqu'un demande Maya un samedi, proposez Sami.",
+"de": "z. B. Schlage Erstkunden für Farbe immer einen Allergietest vor.\nBiete nie Rabatte an.\nWenn jemand samstags nach Maya fragt, biete Sami an.",
+"it": "es. Suggerisci sempre un test allergico a chi fa il colore per la prima volta.\nNon offrire mai sconti.\nSe qualcuno chiede Maya di sabato, proponi Sami.",
+"pt-BR": "ex.: Sugira sempre um teste de alergia para quem vai colorir pela primeira vez.\nNunca ofereça descontos.\nSe alguém pedir a Maya no sábado, ofereça a Sami.",
+"ru": "напр. Всегда предлагай тест на аллергию тем, кто красится впервые.\nНикогда не предлагай скидки.\nЕсли в субботу просят Майю, предложи Сами."
 }
 }

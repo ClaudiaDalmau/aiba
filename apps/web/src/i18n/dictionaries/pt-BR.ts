@@ -1139,7 +1139,8 @@ const ptBR: Dictionary = {
   "None of the messages are from that name. Check how your name appears in the chat.": "Nenhuma mensagem é desse nome. Verifique como seu nome aparece na conversa.",
   "Not enough of your replies yet: answer a few customers yourself or upload a chat export, then try again.": "Ainda não há respostas suas suficientes: responda alguns clientes você mesma ou envie uma exportação de conversa e tente de novo.",
   "Add the Anthropic API key in Admin → Settings → AI agents first.": "Adicione primeiro a chave de API da Anthropic em Admin → Configurações → Agentes de IA.",
-  "The AI couldn't produce a style guide from these messages. Try with more of your replies.": "A IA não conseguiu criar um guia com essas mensagens. Tente com mais respostas suas."
+  "The AI couldn't produce a style guide from these messages. Try with more of your replies.": "A IA não conseguiu criar um guia com essas mensagens. Tente com mais respostas suas.",
+  "e.g. Always suggest a patch test for first-time colour clients.\nNever offer discounts.\nIf someone asks for Maya on Saturday, offer Sami.": "ex.: Sugira sempre um teste de alergia para quem vai colorir pela primeira vez.\nNunca ofereça descontos.\nSe alguém pedir a Maya no sábado, ofereça a Sami."
 };
 
 export default ptBR;

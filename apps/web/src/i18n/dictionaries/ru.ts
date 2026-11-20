@@ -1139,7 +1139,8 @@ const ru: Dictionary = {
   "None of the messages are from that name. Check how your name appears in the chat.": "Нет сообщений от этого имени. Проверьте, как ваше имя отображается в чате.",
   "Not enough of your replies yet: answer a few customers yourself or upload a chat export, then try again.": "Пока мало ваших ответов: ответьте сами нескольким клиентам или загрузите экспорт чата и попробуйте снова.",
   "Add the Anthropic API key in Admin → Settings → AI agents first.": "Сначала добавьте ключ API Anthropic в Admin → Настройки → ИИ-агенты.",
-  "The AI couldn't produce a style guide from these messages. Try with more of your replies.": "ИИ не смог составить описание по этим сообщениям. Попробуйте с большим числом ваших ответов."
+  "The AI couldn't produce a style guide from these messages. Try with more of your replies.": "ИИ не смог составить описание по этим сообщениям. Попробуйте с большим числом ваших ответов.",
+  "e.g. Always suggest a patch test for first-time colour clients.\nNever offer discounts.\nIf someone asks for Maya on Saturday, offer Sami.": "напр. Всегда предлагай тест на аллергию тем, кто красится впервые.\nНикогда не предлагай скидки.\nЕсли в субботу просят Майю, предложи Сами."
 };
 
 export default ru;
