@@ -7,6 +7,9 @@ import { Icon } from "@/components/icons";
 import { Avatar, Badge, Logo } from "@/components/ui";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { MobileNav, Nav, type NavItem } from "@/components/workspace/nav";
+import { HelpCenter } from "@/components/workspace/help-center";
+import { helpArticles } from "@/lib/help";
+import { requestLocale } from "@/i18n/request-locale";
 import { can } from "@/lib/rbac";
 import { planOf } from "@/lib/plans";
 import { isPlatformRole } from "@/lib/platform-rbac";
@@ -49,6 +52,19 @@ export default async function ShellLayout({ children }: { children: React.ReactN
       : []),
     { href: "/app/community", label: t("VIP community"), icon: "crown", section: t("Community"), locked: !vip },
   ];
+
+  const help = helpArticles(requestLocale());
+  const helpLabels = {
+    search: t("Search help"),
+    placeholder: t("What do you need? e.g. packs, Telegram, hours…"),
+    onThisPage: t("On this page"),
+    all: t("All guides"),
+    noResults: t("No guides match. Try another word."),
+    open: t("Go to this page"),
+    close: t("Close"),
+    title: t("Help"),
+    hint: t("Tip: press Ctrl+K (⌘K on Mac) anywhere to open help."),
+  };
 
   const switcher = (
     <div className="mb-4 rounded-card border border-border bg-surface p-3 shadow-card">
@@ -105,13 +121,17 @@ export default async function ShellLayout({ children }: { children: React.ReactN
       <aside className="sticky top-0 hidden h-dvh flex-col overflow-y-auto border-r border-border bg-subtle/60 px-4 py-5 lg:flex">
         <Link href="/app" className="mb-5 px-1"><Logo /></Link>
         {switcher}
+        <HelpCenter articles={help} labels={helpLabels} />
         <Nav items={items} />
         <div className="h-6" />
         {footer}
       </aside>
       <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-bg/90 px-4 backdrop-blur lg:hidden">
         <Link href="/app"><Logo /></Link>
-        <MobileNav items={items}>{switcher}</MobileNav>
+        <div className="flex items-center gap-1">
+          <HelpCenter articles={help} labels={helpLabels} variant="icon" />
+          <MobileNav items={items}>{switcher}</MobileNav>
+        </div>
       </header>
       <main className="min-w-0 px-4 py-6 sm:px-8 lg:py-10">
         <div className="mx-auto max-w-6xl">{children}</div>

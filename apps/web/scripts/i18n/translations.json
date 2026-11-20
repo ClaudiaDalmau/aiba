@@ -512,11 +512,12 @@
 "ru": "Клиенты"
 },
 "Agent": {
-"fr": "Agent",
-"de": "Agent",
-"it": "Agente",
-"pt-BR": "Agente",
-"ru": "Агент"
+"fr": "Assistant",
+"de": "Assistent",
+"it": "Assistente",
+"pt-BR": "Assistente",
+"ru": "Ассистент",
+"es": "Asistente"
 },
 "Knowledge": {
 "fr": "Connaissances",
@@ -534,10 +535,11 @@
 },
 "Services": {
 "fr": "Services",
-"de": "Services",
+"de": "Leistungen",
 "it": "Servizi",
 "pt-BR": "Serviços",
-"ru": "Услуги"
+"ru": "Услуги",
+"es": "Servicios"
 },
 "Team & hours": {
 "fr": "Équipe & horaires",
@@ -1733,11 +1735,12 @@
 "ru": "Отправлено через {channel}. Последняя активность {when}."
 },
 "Hand back to agent": {
-"fr": "Rendre la main à l'agent",
-"de": "An Agent zurückgeben",
-"it": "Ripassa all'agente",
-"pt-BR": "Devolver para a assistente",
-"ru": "Вернуть агенту"
+"fr": "Rendre la main à l'assistant",
+"de": "An Assistent zurückgeben",
+"it": "Ripassa all'assistente",
+"pt-BR": "Devolver ao assistente",
+"ru": "Вернуть ассистенту",
+"es": "Devolver al asistente"
 },
 "Take over": {
 "fr": "Prendre la main",
@@ -8916,5 +8919,69 @@
 "it": "Pacchetto non trovato",
 "pt-BR": "Pacote não encontrado",
 "ru": "Абонемент не найден"
+},
+"Search help": {
+"es": "Buscar en la ayuda",
+"fr": "Rechercher dans l'aide",
+"de": "Hilfe durchsuchen",
+"it": "Cerca nella guida",
+"pt-BR": "Buscar na ajuda",
+"ru": "Поиск по справке"
+},
+"What do you need? e.g. packs, Telegram, hours…": {
+"es": "¿Qué necesitas? p. ej. bonos, Telegram, horarios…",
+"fr": "De quoi avez-vous besoin ? ex. forfaits, Telegram, horaires…",
+"de": "Was brauchst du? z. B. Pakete, Telegram, Zeiten…",
+"it": "Cosa ti serve? es. pacchetti, Telegram, orari…",
+"pt-BR": "Do que você precisa? ex.: pacotes, Telegram, horários…",
+"ru": "Что вы ищете? напр. абонементы, Telegram, часы…"
+},
+"On this page": {
+"es": "En esta página",
+"fr": "Sur cette page",
+"de": "Auf dieser Seite",
+"it": "In questa pagina",
+"pt-BR": "Nesta página",
+"ru": "На этой странице"
+},
+"All guides": {
+"es": "Todas las guías",
+"fr": "Tous les guides",
+"de": "Alle Anleitungen",
+"it": "Tutte le guide",
+"pt-BR": "Todos os guias",
+"ru": "Все инструкции"
+},
+"No guides match. Try another word.": {
+"es": "No hay guías con esa palabra. Prueba con otra.",
+"fr": "Aucun guide ne correspond. Essayez un autre mot.",
+"de": "Keine passende Anleitung. Versuch ein anderes Wort.",
+"it": "Nessuna guida trovata. Prova un'altra parola.",
+"pt-BR": "Nenhum guia encontrado. Tente outra palavra.",
+"ru": "Ничего не найдено. Попробуйте другое слово."
+},
+"Go to this page": {
+"es": "Ir a esta página",
+"fr": "Aller à cette page",
+"de": "Zu dieser Seite",
+"it": "Vai a questa pagina",
+"pt-BR": "Ir para esta página",
+"ru": "Перейти на страницу"
+},
+"Help": {
+"es": "Ayuda",
+"fr": "Aide",
+"de": "Hilfe",
+"it": "Guida",
+"pt-BR": "Ajuda",
+"ru": "Справка"
+},
+"Tip: press Ctrl+K (⌘K on Mac) anywhere to open help.": {
+"es": "Truco: pulsa Ctrl+K (⌘K en Mac) en cualquier pantalla para abrir la ayuda.",
+"fr": "Astuce : appuyez sur Ctrl+K (⌘K sur Mac) n'importe où pour ouvrir l'aide.",
+"de": "Tipp: Drücke überall Strg+K (⌘K auf dem Mac), um die Hilfe zu öffnen.",
+"it": "Suggerimento: premi Ctrl+K (⌘K su Mac) ovunque per aprire la guida.",
+"pt-BR": "Dica: pressione Ctrl+K (⌘K no Mac) em qualquer tela para abrir a ajuda.",
+"ru": "Совет: нажмите Ctrl+K (⌘K на Mac) на любом экране, чтобы открыть справку."
 }
 }

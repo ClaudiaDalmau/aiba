@@ -75,7 +75,7 @@ const ru: Dictionary = {
   "Inbox": "Входящие",
   "Approvals": "Одобрения",
   "Customers": "Клиенты",
-  "Agent": "Агент",
+  "Agent": "Ассистент",
   "Knowledge": "Знания",
   "Channels": "Каналы",
   "Services": "Услуги",
@@ -249,7 +249,7 @@ const ru: Dictionary = {
   "Escalated: {reason}. The agent is silent until you hand it back.": "Передано: {reason}. Агент молчит, пока вы не вернёте ему диалог.",
   "the agent asked for a human": "агент запросил человека",
   "Sent via {channel}. Last activity {when}.": "Отправлено через {channel}. Последняя активность {when}.",
-  "Hand back to agent": "Вернуть агенту",
+  "Hand back to agent": "Вернуть ассистенту",
   "Take over": "Взять на себя",
   "Reopen": "Открыть снова",
   "Playground conversation. Continue it from the Agent page.": "Тестовый диалог. Продолжите его на странице «Агент».",
@@ -1182,7 +1182,15 @@ const ru: Dictionary = {
   "A pack has between 2 and 100 sessions": "В абонементе от 2 до 100 сеансов",
   "Set the pack price": "Укажите цену абонемента",
   "Validity must be between 7 and 1095 days": "Срок действия — от 7 до 1095 дней",
-  "Pack not found": "Абонемент не найден"
+  "Pack not found": "Абонемент не найден",
+  "Search help": "Поиск по справке",
+  "What do you need? e.g. packs, Telegram, hours…": "Что вы ищете? напр. абонементы, Telegram, часы…",
+  "On this page": "На этой странице",
+  "All guides": "Все инструкции",
+  "No guides match. Try another word.": "Ничего не найдено. Попробуйте другое слово.",
+  "Go to this page": "Перейти на страницу",
+  "Help": "Справка",
+  "Tip: press Ctrl+K (⌘K on Mac) anywhere to open help.": "Совет: нажмите Ctrl+K (⌘K на Mac) на любом экране, чтобы открыть справку."
 };
 
 export default ru;

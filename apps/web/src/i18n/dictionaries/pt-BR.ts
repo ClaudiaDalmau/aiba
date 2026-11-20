@@ -75,7 +75,7 @@ const ptBR: Dictionary = {
   "Inbox": "Caixa de entrada",
   "Approvals": "Aprovações",
   "Customers": "Clientes",
-  "Agent": "Agente",
+  "Agent": "Assistente",
   "Knowledge": "Conhecimento",
   "Channels": "Canais",
   "Services": "Serviços",
@@ -249,7 +249,7 @@ const ptBR: Dictionary = {
   "Escalated: {reason}. The agent is silent until you hand it back.": "Encaminhada: {reason}. A assistente fica em silêncio até você devolver a conversa.",
   "the agent asked for a human": "a assistente pediu um humano",
   "Sent via {channel}. Last activity {when}.": "Enviado via {channel}. Última atividade {when}.",
-  "Hand back to agent": "Devolver para a assistente",
+  "Hand back to agent": "Devolver ao assistente",
   "Take over": "Assumir",
   "Reopen": "Reabrir",
   "Playground conversation. Continue it from the Agent page.": "Conversa de teste. Continue pela página Assistente.",
@@ -1182,7 +1182,15 @@ const ptBR: Dictionary = {
   "A pack has between 2 and 100 sessions": "Um pacote tem de 2 a 100 sessões",
   "Set the pack price": "Defina o preço do pacote",
   "Validity must be between 7 and 1095 days": "A validade deve ficar entre 7 e 1095 dias",
-  "Pack not found": "Pacote não encontrado"
+  "Pack not found": "Pacote não encontrado",
+  "Search help": "Buscar na ajuda",
+  "What do you need? e.g. packs, Telegram, hours…": "Do que você precisa? ex.: pacotes, Telegram, horários…",
+  "On this page": "Nesta página",
+  "All guides": "Todos os guias",
+  "No guides match. Try another word.": "Nenhum guia encontrado. Tente outra palavra.",
+  "Go to this page": "Ir para esta página",
+  "Help": "Ajuda",
+  "Tip: press Ctrl+K (⌘K on Mac) anywhere to open help.": "Dica: pressione Ctrl+K (⌘K no Mac) em qualquer tela para abrir a ajuda."
 };
 
 export default ptBR;

@@ -75,10 +75,10 @@ const de: Dictionary = {
   "Inbox": "Posteingang",
   "Approvals": "Freigaben",
   "Customers": "Kunden",
-  "Agent": "Agent",
+  "Agent": "Assistent",
   "Knowledge": "Wissen",
   "Channels": "Kanäle",
-  "Services": "Services",
+  "Services": "Leistungen",
   "Team & hours": "Team & Zeiten",
   "Settings": "Einstellungen",
   "Plan & billing": "Tarif & Abrechnung",
@@ -249,7 +249,7 @@ const de: Dictionary = {
   "Escalated: {reason}. The agent is silent until you hand it back.": "Weitergeleitet: {reason}. Der Agent schweigt, bis du übergibst.",
   "the agent asked for a human": "der Agent hat einen Menschen angefordert",
   "Sent via {channel}. Last activity {when}.": "Gesendet über {channel}. Letzte Aktivität {when}.",
-  "Hand back to agent": "An Agent zurückgeben",
+  "Hand back to agent": "An Assistent zurückgeben",
   "Take over": "Übernehmen",
   "Reopen": "Wieder öffnen",
   "Playground conversation. Continue it from the Agent page.": "Playground-Unterhaltung. Setze sie auf der Agent-Seite fort.",
@@ -1182,7 +1182,15 @@ const de: Dictionary = {
   "A pack has between 2 and 100 sessions": "Ein Paket hat 2 bis 100 Sitzungen",
   "Set the pack price": "Lege den Paketpreis fest",
   "Validity must be between 7 and 1095 days": "Die Gültigkeit muss zwischen 7 und 1095 Tagen liegen",
-  "Pack not found": "Paket nicht gefunden"
+  "Pack not found": "Paket nicht gefunden",
+  "Search help": "Hilfe durchsuchen",
+  "What do you need? e.g. packs, Telegram, hours…": "Was brauchst du? z. B. Pakete, Telegram, Zeiten…",
+  "On this page": "Auf dieser Seite",
+  "All guides": "Alle Anleitungen",
+  "No guides match. Try another word.": "Keine passende Anleitung. Versuch ein anderes Wort.",
+  "Go to this page": "Zu dieser Seite",
+  "Help": "Hilfe",
+  "Tip: press Ctrl+K (⌘K on Mac) anywhere to open help.": "Tipp: Drücke überall Strg+K (⌘K auf dem Mac), um die Hilfe zu öffnen."
 };
 
 export default de;

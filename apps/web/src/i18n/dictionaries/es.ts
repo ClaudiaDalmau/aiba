@@ -1182,7 +1182,15 @@ const es: Dictionary = {
   "A pack has between 2 and 100 sessions": "Un bono tiene entre 2 y 100 sesiones",
   "Set the pack price": "Indica el precio del bono",
   "Validity must be between 7 and 1095 days": "La validez debe estar entre 7 y 1095 días",
-  "Pack not found": "Bono no encontrado"
+  "Pack not found": "Bono no encontrado",
+  "Search help": "Buscar en la ayuda",
+  "What do you need? e.g. packs, Telegram, hours…": "¿Qué necesitas? p. ej. bonos, Telegram, horarios…",
+  "On this page": "En esta página",
+  "All guides": "Todas las guías",
+  "No guides match. Try another word.": "No hay guías con esa palabra. Prueba con otra.",
+  "Go to this page": "Ir a esta página",
+  "Help": "Ayuda",
+  "Tip: press Ctrl+K (⌘K on Mac) anywhere to open help.": "Truco: pulsa Ctrl+K (⌘K en Mac) en cualquier pantalla para abrir la ayuda."
 };
 
 export default es;

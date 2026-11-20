@@ -75,7 +75,7 @@ const fr: Dictionary = {
   "Inbox": "Messagerie",
   "Approvals": "Validations",
   "Customers": "Clients",
-  "Agent": "Agent",
+  "Agent": "Assistant",
   "Knowledge": "Connaissances",
   "Channels": "Canaux",
   "Services": "Services",
@@ -249,7 +249,7 @@ const fr: Dictionary = {
   "Escalated: {reason}. The agent is silent until you hand it back.": "Transférée : {reason}. L'agent reste silencieux jusqu'à ce que vous lui rendiez la main.",
   "the agent asked for a human": "l'agent a demandé un humain",
   "Sent via {channel}. Last activity {when}.": "Envoyé via {channel}. Dernière activité {when}.",
-  "Hand back to agent": "Rendre la main à l'agent",
+  "Hand back to agent": "Rendre la main à l'assistant",
   "Take over": "Prendre la main",
   "Reopen": "Rouvrir",
   "Playground conversation. Continue it from the Agent page.": "Conversation de test. Continuez-la depuis la page Agent.",
@@ -1182,7 +1182,15 @@ const fr: Dictionary = {
   "A pack has between 2 and 100 sessions": "Un forfait compte entre 2 et 100 séances",
   "Set the pack price": "Indiquez le prix du forfait",
   "Validity must be between 7 and 1095 days": "La validité doit être comprise entre 7 et 1095 jours",
-  "Pack not found": "Forfait introuvable"
+  "Pack not found": "Forfait introuvable",
+  "Search help": "Rechercher dans l'aide",
+  "What do you need? e.g. packs, Telegram, hours…": "De quoi avez-vous besoin ? ex. forfaits, Telegram, horaires…",
+  "On this page": "Sur cette page",
+  "All guides": "Tous les guides",
+  "No guides match. Try another word.": "Aucun guide ne correspond. Essayez un autre mot.",
+  "Go to this page": "Aller à cette page",
+  "Help": "Aide",
+  "Tip: press Ctrl+K (⌘K on Mac) anywhere to open help.": "Astuce : appuyez sur Ctrl+K (⌘K sur Mac) n'importe où pour ouvrir l'aide."
 };
 
 export default fr;
