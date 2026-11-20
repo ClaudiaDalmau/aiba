@@ -11,7 +11,7 @@ export function randomId(len = 16): string {
 
 export type IdPrefix =
   | "usr" | "ses" | "biz" | "loc" | "stf" | "svc" | "avl" | "off" | "cus" | "bkg" | "pay" | "agt" | "kno"
-  | "mem" | "chn" | "cnv" | "msg" | "act" | "use" | "ntf" | "aud" | "fcat" | "thr" | "pst" | "rpt" | "psh" | "lead" | "rev";
+  | "mem" | "chn" | "cnv" | "msg" | "act" | "use" | "ntf" | "aud" | "fcat" | "thr" | "pst" | "rpt" | "psh" | "lead" | "rev" | "pck" | "cpk";
 
 export const newId = (prefix: IdPrefix) => `${prefix}_${randomId(16)}`;
 

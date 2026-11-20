@@ -3,13 +3,16 @@ import { and, eq } from "drizzle-orm";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { eraseCustomerAction, saveCustomerNotes } from "@/actions/workspace";
+import { grantPackAction, voidPackAction } from "@/actions/packs";
+import { ActionForm } from "@/components/workspace/action-form";
+import { listCustomerPacks, listPacks } from "@/lib/packs";
 import { ConfirmSubmit, SubmitButton } from "@/components/client";
-import { Avatar, Badge, BOOKING_LABEL, BOOKING_TONE, Card, CardHeader, ChannelIcon, LinkButton, PageHeader, Textarea } from "@/components/ui";
+import { Avatar, Badge, BOOKING_LABEL, BOOKING_TONE, Card, CardHeader, ChannelIcon, LinkButton, PageHeader, Select, Textarea } from "@/components/ui";
 import { db, schema } from "@/db";
 import { can } from "@/lib/rbac";
 import { listBookings } from "@/lib/queries";
 import { currentTenant } from "@/lib/tenant";
-import { formatDateTime, formatMoney } from "@/lib/time";
+import { formatDate, formatDateTime, formatMoney } from "@/lib/time";
 
 export default async function CustomerPage({ params }: { params: Promise<{ id: string }> }) {
   const t = await getT();
@@ -17,11 +20,15 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
   const tenant = await currentTenant();
   const [c] = await db.select().from(schema.customers).where(and(eq(schema.customers.id, id), eq(schema.customers.businessId, tenant.business.id)));
   if (!c) notFound();
-  const [bookings, memories, convs] = await Promise.all([
+  const [bookings, memories, convs, owned, offers] = await Promise.all([
     listBookings(tenant.business.id, { customerId: id }),
     db.select().from(schema.customerMemories).where(and(eq(schema.customerMemories.businessId, tenant.business.id), eq(schema.customerMemories.customerId, id))),
     db.select().from(schema.conversations).where(and(eq(schema.conversations.businessId, tenant.business.id), eq(schema.conversations.customerId, id))),
+    listCustomerPacks(tenant.business.id, { customerId: id }),
+    listPacks(tenant.business.id, true),
   ]);
+  const STATUS = { active: t("In use"), used_up: t("Used up"), expired: t("Expired"), voided: t("Voided") };
+  const STATUS_TONE = { active: "ok", used_up: "neutral", expired: "warn", voided: "bad" } as const;
   const tz = tenant.business.timezone;
   const manage = can(tenant.role, "customers.manage");
   return (
@@ -33,13 +40,13 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
       />
       <div className="grid gap-6 lg:grid-cols-3">
         <Card className="lg:col-span-2">
-          <CardHeader title={`Bookings (${bookings.length})`} />
+          <CardHeader title={`${t("Bookings")} (${bookings.length})`} />
           <ul className="divide-y divide-border">
             {bookings.slice().reverse().map((b) => (
               <li key={b.id} className="flex items-center gap-3 px-5 py-3 text-[14px]">
                 <div className="flex-1">
-                  <div className="font-medium">{b.service.name} <span className="font-normal text-muted">with {b.staff.name}</span></div>
-                  <div className="text-[13px] text-muted">{formatDateTime(b.startsAt, tz)} · {formatMoney(b.priceCents, tenant.business.currency)} · via {b.source}</div>
+                  <div className="font-medium">{b.service.name} <span className="font-normal text-muted">{t("with {name}", { name: b.staff.name })}</span></div>
+                  <div className="text-[13px] text-muted">{formatDateTime(b.startsAt, tz)} · {b.customerPackId ? t("Pack session") : formatMoney(b.priceCents, tenant.business.currency)} · {t("via {source}", { source: t(b.source) })}</div>
                 </div>
                 <Badge tone={BOOKING_TONE[b.status]}>{BOOKING_LABEL[b.status]}</Badge>
               </li>
@@ -47,6 +54,39 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
           </ul>
         </Card>
         <div className="space-y-6">
+          <Card>
+            <CardHeader title={t("Packs")} description={t("Prepaid sessions; used automatically when they book that service.")} />
+            <ul className="divide-y divide-border">
+              {owned.map((p) => (
+                <li key={p.id} className="flex items-center gap-3 px-5 py-3 text-[14px]">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-medium">{p.name}</div>
+                    <div className="text-[13px] text-muted">{t("{used} of {total} used", { used: p.used, total: p.sessionsTotal })} · {t("until {date}", { date: formatDate(p.expiresAt, tz) })}</div>
+                  </div>
+                  <Badge tone={STATUS_TONE[p.status]}>{STATUS[p.status]}</Badge>
+                  {manage && p.status === "active" && (
+                    <form action={voidPackAction}>
+                      <input type="hidden" name="id" value={p.id} />
+                      <input type="hidden" name="customerId" value={c.id} />
+                      <ConfirmSubmit message={t("Void this pack? Remaining sessions can no longer be used.")} variant="ghost" size="sm">{t("Void")}</ConfirmSubmit>
+                    </form>
+                  )}
+                </li>
+              ))}
+              {!owned.length && <li className="px-5 py-3 text-[14px] text-muted">{t("No packs.")}</li>}
+            </ul>
+            {manage && !c.erasedAt && (offers.length ? (
+              <ActionForm action={grantPackAction} className="space-y-2 border-t border-border p-5">
+                <input type="hidden" name="customerId" value={c.id} />
+                <Select name="packId" required>
+                  {offers.map(({ pack, serviceName }) => <option key={pack.id} value={pack.id}>{pack.name} · {pack.sessions} × {serviceName} · {formatMoney(pack.priceCents, tenant.business.currency)}</option>)}
+                </Select>
+                <SubmitButton size="sm" variant="secondary" icon="ticket">{t("Sell a pack (paid in person)")}</SubmitButton>
+              </ActionForm>
+            ) : (
+              <p className="border-t border-border px-5 py-3 text-[13px] text-muted"><Link href="/app/packs" className="underline">{t("Create packs")}</Link> {t("to sell them here.")}</p>
+            ))}
+          </Card>
           <Card>
             <CardHeader title={t("What your agent remembers")} description={t("Facts learned in conversations")} />
             <ul className="space-y-1.5 p-5 text-[14px]">

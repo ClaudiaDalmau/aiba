@@ -364,6 +364,8 @@ export const bookings = pgTable(
     /** Random token for the customer's manage link (hash not needed: grants only this booking). */
     manageToken: text("manage_token").notNull(),
     reminderSentAt: timestamp("reminder_sent_at", { withTimezone: true }),
+    /** Session taken from a prepaid pack («bono»); the booking is then prepaid. FK added in migration 0008. */
+    customerPackId: text("customer_pack_id"),
     createdAt: createdAt(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
   },
@@ -742,6 +744,54 @@ export const reviews = pgTable(
   (t) => [uniqueIndex("reviews_booking_uq").on(t.bookingId), index("reviews_business_idx").on(t.businessId, t.createdAt)],
 );
 
+/** «Bonos»: prepaid packs of sessions of one service that a business sells. */
+export const packs = pgTable(
+  "packs",
+  {
+    id: id(),
+    businessId: businessId(),
+    serviceId: text("service_id")
+      .notNull()
+      .references(() => services.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    description: text("description").notNull().default(""),
+    sessions: integer("sessions").notNull(),
+    priceCents: integer("price_cents").notNull(),
+    validityDays: integer("validity_days").notNull().default(365),
+    active: boolean("active").notNull().default(true),
+    createdAt: createdAt(),
+  },
+  (t) => [index("packs_business_idx").on(t.businessId)],
+);
+
+/** A pack sold to a customer. Used sessions = its non-cancelled bookings. */
+export const customerPacks = pgTable(
+  "customer_packs",
+  {
+    id: id(),
+    businessId: businessId(),
+    customerId: text("customer_id")
+      .notNull()
+      .references(() => customers.id, { onDelete: "cascade" }),
+    packId: text("pack_id").references(() => packs.id, { onDelete: "set null" }),
+    serviceId: text("service_id")
+      .notNull()
+      .references(() => services.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    sessionsTotal: integer("sessions_total").notNull(),
+    priceCents: integer("price_cents").notNull(),
+    /** offline = paid in person / by transfer; online payments come with Stripe. */
+    payment: text("payment").notNull().default("offline"),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    voidedAt: timestamp("voided_at", { withTimezone: true }),
+    createdBy: text("created_by"),
+    createdAt: createdAt(),
+  },
+  (t) => [index("customer_packs_customer_idx").on(t.businessId, t.customerId)],
+);
+
+export type Pack = typeof packs.$inferSelect;
+export type CustomerPack = typeof customerPacks.$inferSelect;
 export type Business = typeof businesses.$inferSelect;
 export type Review = typeof reviews.$inferSelect;
 export type Lead = typeof leads.$inferSelect;

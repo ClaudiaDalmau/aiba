@@ -1188,7 +1188,8 @@
 "de": "über {source}",
 "it": "tramite {source}",
 "pt-BR": "via {source}",
-"ru": "через {source}"
+"ru": "через {source}",
+"es": "vía {source}"
 },
 "web": {
 "fr": "web",
@@ -1361,10 +1362,11 @@
 },
 "Add a service first.": {
 "fr": "Ajoutez d'abord un service.",
-"de": "Füge zuerst einen Service hinzu.",
+"de": "Füge zuerst eine Leistung hinzu.",
 "it": "Aggiungi prima un servizio.",
-"pt-BR": "Adicione um serviço primeiro.",
-"ru": "Сначала добавьте услугу."
+"pt-BR": "Adicione primeiro um serviço.",
+"ru": "Сначала добавьте услугу.",
+"es": "Primero añade un servicio."
 },
 "First available": {
 "fr": "Premier disponible",
@@ -3114,7 +3116,8 @@
 "de": "Tage",
 "it": "giorni",
 "pt-BR": "dias",
-"ru": "дней"
+"ru": "дней",
+"es": "días"
 },
 "Free cancellation": {
 "fr": "Annulation gratuite",
@@ -8577,5 +8580,341 @@
 "it": "es. Suggerisci sempre un test allergico a chi fa il colore per la prima volta.\nNon offrire mai sconti.\nSe qualcuno chiede Maya di sabato, proponi Sami.",
 "pt-BR": "ex.: Sugira sempre um teste de alergia para quem vai colorir pela primeira vez.\nNunca ofereça descontos.\nSe alguém pedir a Maya no sábado, ofereça a Sami.",
 "ru": "напр. Всегда предлагай тест на аллергию тем, кто красится впервые.\nНикогда не предлагай скидки.\nЕсли в субботу просят Майю, предложи Сами."
+},
+"Packs": {
+"es": "Bonos",
+"fr": "Forfaits",
+"de": "Pakete",
+"it": "Pacchetti",
+"pt-BR": "Pacotes",
+"ru": "Абонементы"
+},
+"e.g. 5 massages": {
+"es": "p. ej. 5 masajes",
+"fr": "ex. 5 massages",
+"de": "z. B. 5 Massagen",
+"it": "es. 5 massaggi",
+"pt-BR": "ex.: 5 massagens",
+"ru": "напр. 5 массажей"
+},
+"Sessions": {
+"es": "Sesiones",
+"fr": "Séances",
+"de": "Sitzungen",
+"it": "Sedute",
+"pt-BR": "Sessões",
+"ru": "Сеансы"
+},
+"Valid for": {
+"es": "Válido durante",
+"fr": "Valable",
+"de": "Gültig für",
+"it": "Valido per",
+"pt-BR": "Válido por",
+"ru": "Действует"
+},
+"On sale": {
+"es": "A la venta",
+"fr": "En vente",
+"de": "Im Verkauf",
+"it": "In vendita",
+"pt-BR": "À venda",
+"ru": "В продаже"
+},
+"Packs not on sale are hidden from the agent. Packs already sold keep working.": {
+"es": "Los bonos que no están a la venta no se muestran al asistente. Los ya vendidos siguen funcionando.",
+"fr": "Les forfaits qui ne sont pas en vente sont masqués pour l'assistant. Ceux déjà vendus restent valables.",
+"de": "Pakete, die nicht im Verkauf sind, sieht der Assistent nicht. Bereits verkaufte gelten weiter.",
+"it": "I pacchetti non in vendita sono nascosti all'assistente. Quelli già venduti restano validi.",
+"pt-BR": "Pacotes fora de venda ficam ocultos para o assistente. Os já vendidos continuam valendo.",
+"ru": "Абонементы не в продаже скрыты от ассистента. Уже проданные продолжают действовать."
+},
+"In use": {
+"es": "En uso",
+"fr": "En cours",
+"de": "Aktiv",
+"it": "In uso",
+"pt-BR": "Em uso",
+"ru": "Действует"
+},
+"Used up": {
+"es": "Agotado",
+"fr": "Épuisé",
+"de": "Aufgebraucht",
+"it": "Esaurito",
+"pt-BR": "Esgotado",
+"ru": "Израсходован"
+},
+"Expired": {
+"es": "Caducado",
+"fr": "Expiré",
+"de": "Abgelaufen",
+"it": "Scaduto",
+"pt-BR": "Expirado",
+"ru": "Истёк"
+},
+"Voided": {
+"es": "Anulado",
+"fr": "Annulé",
+"de": "Storniert",
+"it": "Annullato",
+"pt-BR": "Anulado",
+"ru": "Аннулирован"
+},
+"Prepaid packs of sessions («bonos»). Sell one from a customer's page: their next bookings of that service are covered automatically.": {
+"es": "Bonos de sesiones prepagadas. Véndelos desde la ficha del cliente: sus próximas reservas de ese servicio se descuentan del bono automáticamente.",
+"fr": "Forfaits de séances prépayées. Vendez-en un depuis la fiche du client : ses prochaines réservations de ce service sont couvertes automatiquement.",
+"de": "Vorausbezahlte Sitzungspakete. Verkaufe eines auf der Kundenseite: Die nächsten Buchungen dieser Leistung werden automatisch abgedeckt.",
+"it": "Pacchetti di sedute prepagate. Vendine uno dalla scheda del cliente: le sue prossime prenotazioni di quel servizio vengono coperte automaticamente.",
+"pt-BR": "Pacotes de sessões pré-pagas. Venda um na ficha do cliente: as próximas reservas desse serviço são cobertas automaticamente.",
+"ru": "Предоплаченные абонементы на сеансы. Продайте абонемент на странице клиента: его следующие записи на эту услугу покрываются автоматически."
+},
+"New pack": {
+"es": "Nuevo bono",
+"fr": "Nouveau forfait",
+"de": "Neues Paket",
+"it": "Nuovo pacchetto",
+"pt-BR": "Novo pacote",
+"ru": "Новый абонемент"
+},
+"Add pack": {
+"es": "Añadir bono",
+"fr": "Ajouter le forfait",
+"de": "Paket hinzufügen",
+"it": "Aggiungi pacchetto",
+"pt-BR": "Adicionar pacote",
+"ru": "Добавить абонемент"
+},
+"No packs yet": {
+"es": "Aún no hay bonos",
+"fr": "Pas encore de forfaits",
+"de": "Noch keine Pakete",
+"it": "Nessun pacchetto",
+"pt-BR": "Ainda não há pacotes",
+"ru": "Абонементов пока нет"
+},
+"For example: 5 sessions for the price of 4. Your agent will tell customers about them.": {
+"es": "Por ejemplo: 5 sesiones al precio de 4. Tu asistente se lo contará a tus clientes.",
+"fr": "Par exemple : 5 séances pour le prix de 4. Votre assistant en parlera à vos clients.",
+"de": "Zum Beispiel: 5 Sitzungen zum Preis von 4. Dein Assistent erzählt deinen Kunden davon.",
+"it": "Per esempio: 5 sedute al prezzo di 4. Il tuo assistente ne parlerà ai clienti.",
+"pt-BR": "Por exemplo: 5 sessões pelo preço de 4. Seu assistente vai contar aos clientes.",
+"ru": "Например: 5 сеансов по цене 4. Ассистент расскажет о них клиентам."
+},
+"Not on sale": {
+"es": "No está a la venta",
+"fr": "Pas en vente",
+"de": "Nicht im Verkauf",
+"it": "Non in vendita",
+"pt-BR": "Fora de venda",
+"ru": "Не продаётся"
+},
+"valid {n} days": {
+"es": "válido {n} días",
+"fr": "valable {n} jours",
+"de": "{n} Tage gültig",
+"it": "valido {n} giorni",
+"pt-BR": "válido por {n} dias",
+"ru": "действует {n} дн."
+},
+"Delete this pack? Packs already sold keep working.": {
+"es": "¿Eliminar este bono? Los ya vendidos siguen funcionando.",
+"fr": "Supprimer ce forfait ? Ceux déjà vendus restent valables.",
+"de": "Dieses Paket löschen? Bereits verkaufte gelten weiter.",
+"it": "Eliminare questo pacchetto? Quelli già venduti restano validi.",
+"pt-BR": "Excluir este pacote? Os já vendidos continuam valendo.",
+"ru": "Удалить абонемент? Уже проданные продолжают действовать."
+},
+"Sold packs": {
+"es": "Bonos vendidos",
+"fr": "Forfaits vendus",
+"de": "Verkaufte Pakete",
+"it": "Pacchetti venduti",
+"pt-BR": "Pacotes vendidos",
+"ru": "Проданные абонементы"
+},
+"Sessions are counted from bookings; a cancelled booking gives the session back.": {
+"es": "Las sesiones se cuentan a partir de las reservas; si se cancela una reserva, se devuelve la sesión.",
+"fr": "Les séances sont comptées à partir des réservations ; une réservation annulée rend la séance.",
+"de": "Sitzungen werden aus Buchungen gezählt; eine stornierte Buchung gibt die Sitzung zurück.",
+"it": "Le sedute si contano dalle prenotazioni; una prenotazione annullata restituisce la seduta.",
+"pt-BR": "As sessões são contadas pelas reservas; uma reserva cancelada devolve a sessão.",
+"ru": "Сеансы считаются по записям; отменённая запись возвращает сеанс."
+},
+"None yet. Open a customer and use «Sell a pack».": {
+"es": "Aún ninguno. Abre un cliente y usa «Vender un bono».",
+"fr": "Aucun pour l'instant. Ouvrez un client et utilisez « Vendre un forfait ».",
+"de": "Noch keine. Öffne einen Kunden und nutze „Paket verkaufen“.",
+"it": "Ancora nessuno. Apri un cliente e usa «Vendi un pacchetto».",
+"pt-BR": "Nenhum ainda. Abra um cliente e use «Vender um pacote».",
+"ru": "Пока нет. Откройте клиента и нажмите «Продать абонемент»."
+},
+"until {date}": {
+"es": "hasta el {date}",
+"fr": "jusqu'au {date}",
+"de": "bis {date}",
+"it": "fino al {date}",
+"pt-BR": "até {date}",
+"ru": "до {date}"
+},
+"{used} of {total} used": {
+"es": "{used} de {total} usadas",
+"fr": "{used} sur {total} utilisées",
+"de": "{used} von {total} genutzt",
+"it": "{used} di {total} usate",
+"pt-BR": "{used} de {total} usadas",
+"ru": "использовано {used} из {total}"
+},
+"Prepaid sessions; used automatically when they book that service.": {
+"es": "Sesiones prepagadas; se usan solas cuando reserva ese servicio.",
+"fr": "Séances prépayées ; utilisées automatiquement lorsqu'il réserve ce service.",
+"de": "Vorausbezahlte Sitzungen; werden automatisch genutzt, wenn diese Leistung gebucht wird.",
+"it": "Sedute prepagate; usate automaticamente quando prenota quel servizio.",
+"pt-BR": "Sessões pré-pagas; usadas automaticamente quando reservar esse serviço.",
+"ru": "Предоплаченные сеансы; списываются автоматически при записи на эту услугу."
+},
+"Void this pack? Remaining sessions can no longer be used.": {
+"es": "¿Anular este bono? Las sesiones restantes ya no se podrán usar.",
+"fr": "Annuler ce forfait ? Les séances restantes ne pourront plus être utilisées.",
+"de": "Dieses Paket stornieren? Verbleibende Sitzungen können nicht mehr genutzt werden.",
+"it": "Annullare questo pacchetto? Le sedute rimanenti non potranno più essere usate.",
+"pt-BR": "Anular este pacote? As sessões restantes não poderão mais ser usadas.",
+"ru": "Аннулировать абонемент? Оставшиеся сеансы больше нельзя будет использовать."
+},
+"Void": {
+"es": "Anular",
+"fr": "Annuler",
+"de": "Stornieren",
+"it": "Annulla",
+"pt-BR": "Anular",
+"ru": "Аннулировать"
+},
+"No packs.": {
+"es": "Sin bonos.",
+"fr": "Aucun forfait.",
+"de": "Keine Pakete.",
+"it": "Nessun pacchetto.",
+"pt-BR": "Sem pacotes.",
+"ru": "Нет абонементов."
+},
+"Sell a pack (paid in person)": {
+"es": "Vender un bono (pagado en persona)",
+"fr": "Vendre un forfait (payé sur place)",
+"de": "Paket verkaufen (vor Ort bezahlt)",
+"it": "Vendi un pacchetto (pagato di persona)",
+"pt-BR": "Vender um pacote (pago pessoalmente)",
+"ru": "Продать абонемент (оплата на месте)"
+},
+"Create packs": {
+"es": "Crea bonos",
+"fr": "Créez des forfaits",
+"de": "Erstelle Pakete",
+"it": "Crea pacchetti",
+"pt-BR": "Crie pacotes",
+"ru": "Создайте абонементы"
+},
+"to sell them here.": {
+"es": "para venderlos aquí.",
+"fr": "pour les vendre ici.",
+"de": "um sie hier zu verkaufen.",
+"it": "per venderli qui.",
+"pt-BR": "para vendê-los aqui.",
+"ru": "чтобы продавать их здесь."
+},
+"Pack session": {
+"es": "Sesión de bono",
+"fr": "Séance du forfait",
+"de": "Paket-Sitzung",
+"it": "Seduta del pacchetto",
+"pt-BR": "Sessão do pacote",
+"ru": "Сеанс по абонементу"
+},
+"agent": {
+"es": "asistente",
+"fr": "assistant",
+"de": "Assistent",
+"it": "assistente",
+"pt-BR": "assistente",
+"ru": "ассистент"
+},
+"whatsapp": {
+"es": "WhatsApp",
+"fr": "WhatsApp",
+"de": "WhatsApp",
+"it": "WhatsApp",
+"pt-BR": "WhatsApp",
+"ru": "WhatsApp"
+},
+"telegram": {
+"es": "Telegram",
+"fr": "Telegram",
+"de": "Telegram",
+"it": "Telegram",
+"pt-BR": "Telegram",
+"ru": "Telegram"
+},
+"(none = anyone)": {
+"es": "(ninguno = cualquiera)",
+"fr": "(aucun = n'importe qui)",
+"de": "(keine = alle)",
+"it": "(nessuno = chiunque)",
+"pt-BR": "(nenhum = qualquer um)",
+"ru": "(никто = любой)"
+},
+"Pack saved": {
+"es": "Bono guardado",
+"fr": "Forfait enregistré",
+"de": "Paket gespeichert",
+"it": "Pacchetto salvato",
+"pt-BR": "Pacote salvo",
+"ru": "Абонемент сохранён"
+},
+"Pack added. Their next bookings of that service will use it automatically.": {
+"es": "Bono añadido. Sus próximas reservas de ese servicio lo usarán automáticamente.",
+"fr": "Forfait ajouté. Ses prochaines réservations de ce service l'utiliseront automatiquement.",
+"de": "Paket hinzugefügt. Die nächsten Buchungen dieser Leistung nutzen es automatisch.",
+"it": "Pacchetto aggiunto. Le prossime prenotazioni di quel servizio lo useranno automaticamente.",
+"pt-BR": "Pacote adicionado. As próximas reservas desse serviço vão usá-lo automaticamente.",
+"ru": "Абонемент добавлен. Следующие записи на эту услугу будут списываться с него автоматически."
+},
+"Give the pack a name": {
+"es": "Ponle un nombre al bono",
+"fr": "Donnez un nom au forfait",
+"de": "Gib dem Paket einen Namen",
+"it": "Dai un nome al pacchetto",
+"pt-BR": "Dê um nome ao pacote",
+"ru": "Назовите абонемент"
+},
+"A pack has between 2 and 100 sessions": {
+"es": "Un bono tiene entre 2 y 100 sesiones",
+"fr": "Un forfait compte entre 2 et 100 séances",
+"de": "Ein Paket hat 2 bis 100 Sitzungen",
+"it": "Un pacchetto ha da 2 a 100 sedute",
+"pt-BR": "Um pacote tem de 2 a 100 sessões",
+"ru": "В абонементе от 2 до 100 сеансов"
+},
+"Set the pack price": {
+"es": "Indica el precio del bono",
+"fr": "Indiquez le prix du forfait",
+"de": "Lege den Paketpreis fest",
+"it": "Imposta il prezzo del pacchetto",
+"pt-BR": "Defina o preço do pacote",
+"ru": "Укажите цену абонемента"
+},
+"Validity must be between 7 and 1095 days": {
+"es": "La validez debe estar entre 7 y 1095 días",
+"fr": "La validité doit être comprise entre 7 et 1095 jours",
+"de": "Die Gültigkeit muss zwischen 7 und 1095 Tagen liegen",
+"it": "La validità deve essere tra 7 e 1095 giorni",
+"pt-BR": "A validade deve ficar entre 7 e 1095 dias",
+"ru": "Срок действия — от 7 до 1095 дней"
+},
+"Pack not found": {
+"es": "Bono no encontrado",
+"fr": "Forfait introuvable",
+"de": "Paket nicht gefunden",
+"it": "Pacchetto non trovato",
+"pt-BR": "Pacote não encontrado",
+"ru": "Абонемент не найден"
 }
 }

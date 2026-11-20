@@ -1,4 +1,5 @@
 import "server-only";
+import { usablePack } from "./packs";
 import { and, eq, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { getService, getSlots } from "./availability";
@@ -100,6 +101,8 @@ export async function createBooking(business: schema.Business, input: CreateBook
   const customer = await findOrCreateCustomer(business.id, input.customer);
   const endsAt = new Date(startsAt.getTime() + (service.durationMinutes + service.bufferMinutes) * 60_000);
   const status = actor.type === "user" || business.policy.autoConfirm ? "confirmed" : "pending";
+  // A session from the customer's prepaid pack («bono») covers this booking.
+  const pack = await usablePack(business.id, customer.id, service.id, startsAt);
 
   let booking: schema.Booking;
   try {
@@ -116,7 +119,9 @@ export async function createBooking(business: schema.Business, input: CreateBook
         endsAt,
         status,
         source: input.source,
-        priceCents: service.priceCents,
+        priceCents: pack ? 0 : service.priceCents,
+        paymentStatus: pack ? "paid" : "unpaid",
+        customerPackId: pack?.id ?? null,
         notes: input.notes ?? "",
         manageToken: randomToken(18),
       })
@@ -127,7 +132,7 @@ export async function createBooking(business: schema.Business, input: CreateBook
   }
 
   const when = formatDateTime(startsAt, business.timezone);
-  await audit(business.id, actor, "booking.created", booking.id, { serviceId: service.id, startsAt: startsAt.toISOString(), source: input.source });
+  await audit(business.id, actor, "booking.created", booking.id, { serviceId: service.id, startsAt: startsAt.toISOString(), source: input.source, ...(pack ? { pack: pack.id } : {}) });
   await notifyBusiness(business.id, {
     kind: "booking.created",
     title: status === "pending" ? `Booking request: ${service.name}` : `New booking: ${service.name}`,

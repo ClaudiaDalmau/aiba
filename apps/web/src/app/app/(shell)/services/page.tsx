@@ -28,7 +28,7 @@ async function ServiceFields({ s, staff }: { s?: Svc; staff: St[] }) {
         <Field label={t("Price")}><Input name="price" type="number" min={0} step="0.01" defaultValue={s ? s.priceCents / 100 : ""} required /></Field>
       </div>
       <div>
-        <div className="mb-1.5 text-[13px] font-medium">{t("Performed by")} <span className="font-normal text-faint">(none = anyone)</span></div>
+        <div className="mb-1.5 text-[13px] font-medium">{t("Performed by")} <span className="font-normal text-faint">{t("(none = anyone)")}</span></div>
         <div className="flex flex-wrap gap-2">
           {staff.filter((x) => x.active).map((x) => (
             <label key={x.id} className="flex cursor-pointer items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[13px] has-checked:border-fg has-checked:bg-subtle">

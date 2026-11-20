@@ -1,6 +1,7 @@
 import "server-only";
 import { and, asc, eq } from "drizzle-orm";
 import { db, schema } from "@/db";
+import { listCustomerPacks, listPacks } from "../packs";
 import { formatMoney, minutesToHHMM, todayIn, zonedParts } from "../time";
 
 const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -19,11 +20,12 @@ const TONE: Record<schema.AgentPersona["tone"], string> = {
  * in a second block after the cache breakpoint.
  */
 export async function buildStablePrompt(business: schema.Business, agent: schema.Agent): Promise<string> {
-  const [services, staffList, rules, knowledge] = await Promise.all([
+  const [services, staffList, rules, knowledge, packOffers] = await Promise.all([
     db.select().from(schema.services).where(and(eq(schema.services.businessId, business.id), eq(schema.services.active, true))).orderBy(asc(schema.services.sortOrder), asc(schema.services.name)),
     db.select().from(schema.staff).where(and(eq(schema.staff.businessId, business.id), eq(schema.staff.active, true))).orderBy(asc(schema.staff.name)),
     db.select().from(schema.availabilityRules).where(eq(schema.availabilityRules.businessId, business.id)),
     db.select().from(schema.knowledgeItems).where(eq(schema.knowledgeItems.businessId, business.id)).orderBy(asc(schema.knowledgeItems.kind), asc(schema.knowledgeItems.title)),
+    listPacks(business.id, true),
   ]);
   const p = agent.persona;
   const policy = business.policy;
@@ -56,6 +58,7 @@ ${hours}
 <services>
 ${services.map((s) => `- ${s.name} [service_id=${s.id}]: ${formatMoney(s.priceCents, business.currency)}, ${s.durationMinutes} min.${s.description ? ` ${s.description}` : ""}`).join("\n") || "(none yet)"}
 </services>
+${packOffers.length ? `\n<packs>\nPrepaid packs («bonos») the business sells. You can describe them, but you cannot sell them: the team sells them in person and then they are applied automatically when the customer books that service.\n${packOffers.map(({ pack, serviceName, servicePriceCents }) => `- ${pack.name}: ${pack.sessions} × ${serviceName} for ${formatMoney(pack.priceCents, business.currency)} (instead of ${formatMoney(servicePriceCents * pack.sessions, business.currency)}), valid ${pack.validityDays} days.${pack.description ? ` ${pack.description}` : ""}`).join("\n")}\n</packs>` : ""}
 
 <team>
 ${staffList.map((s) => `- ${s.name} [staff_id=${s.id}]${s.title ? `, ${s.title}` : ""}${s.bio ? `: ${s.bio}` : ""}`).join("\n") || "(none)"}
@@ -118,9 +121,10 @@ export async function buildVolatilePrompt(business: schema.Business, customer: s
       .from(schema.customerMemories)
       .where(and(eq(schema.customerMemories.businessId, business.id), eq(schema.customerMemories.customerId, customer.id)))
       .limit(20);
+    const owned = (await listCustomerPacks(business.id, { customerId: customer.id })).filter((p) => p.status === "active");
     customerBlock = `Customer: ${customer.name}${customer.phone ? `, phone ${customer.phone}` : ""}${customer.email ? `, email ${customer.email}` : ""}.${
       memories.length ? `\nWhat you remember about them:\n${memories.map((m) => `- ${m.fact}`).join("\n")}` : ""
-    }`;
+    }${owned.length ? `\nActive prepaid packs (a booking of that service uses one session and costs nothing more):\n${owned.map((p) => `- ${p.name} (${p.serviceName}): ${p.remaining} of ${p.sessionsTotal} sessions left, valid until ${p.expiresAt.toISOString().slice(0, 10)}`).join("\n")}` : ""}`;
   }
   return `Now: ${WEEKDAYS[weekday]} ${date} ${minutesToHHMM(minute)} (${business.timezone}). Today is ${todayIn(business.timezone)}.\n${customerBlock}`;
 }
