@@ -1581,7 +1581,14 @@ const ru: Dictionary = {
   "Price per million input tokens (USD)": "Цена за миллион входных токенов (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Только для оценки затрат. Возьмите с страницы цен Anthropic для модели по умолчанию. 0 = не задано.",
   "Price per million output tokens (USD)": "Цена за миллион выходных токенов (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Только для оценки затрат. 0 = не задано."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Только для оценки затрат. 0 = не задано.",
+  "Manual review list": "Список ручной проверки",
+  "Manual review": "Ручная проверка",
+  "You're on the waitlist": "Вы в листе ожидания",
+  "Hello,": "Здравствуйте!",
+  "Thanks for your request to join AIBA. Places are limited, so for now you're on the waitlist.": "Спасибо за заявку в AIBA. Количество мест ограничено, поэтому пока вы в листе ожидания.",
+  "Our team reviews every request by hand. We'll write to you at this address as soon as there's an answer.": "Наша команда проверяет каждую заявку вручную. Мы напишем вам на этот адрес, как только будет ответ.",
+  "Sent by AIBA": "Отправлено AIBA",
 };
 
 export default ru;

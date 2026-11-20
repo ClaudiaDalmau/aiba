@@ -193,6 +193,87 @@ export async function emailTeamNewLead(lead: schema.Lead) {
   return sendEmail({ to, subject: `[AIBA] ${kind}: ${lead.name || lead.email}`, html, text, replyTo: lead.email });
 }
 
+/** Sensible manual review: tell the applicant they're on the waitlist (their language). */
+export async function emailApplicantWaitlisted(to: string, name: string, locale: string) {
+  if (!to) return false;
+  const { t } = translatorFor(locale);
+  const title = t("You're on the waitlist");
+  const { html, text } = layout({
+    brand: "AIBA",
+    title,
+    lines: [
+      name ? t("Hi {name},", { name: name.split(" ")[0] || name }) : t("Hello,"),
+      t("Thanks for your request to join AIBA. Places are limited, so for now you're on the waitlist."),
+      t("Our team reviews every request by hand. We'll write to you at this address as soon as there's an answer."),
+    ],
+    footer: t("Sent by AIBA"),
+  });
+  return sendEmail({ to, subject: `AIBA · ${title}`, html, text });
+}
+
+/** Sensible manual review: alert the platform team that someone on the review list applied. */
+export async function emailTeamReviewMatch(opts: { what: "Access request" | "New Sensible profile"; name: string; email: string; phone?: string; matched: string; href: string }) {
+  const s = await getSettings();
+  const to = s["email.teamInbox"] || s["general.supportEmail"] || "";
+  if (!to) return false;
+  const title = `⚠ Manual review · ${opts.what}: ${opts.name || opts.email}`;
+  const { html, text } = layout({
+    brand: "AIBA",
+    color: "#dc2626",
+    title,
+    lines: [
+      "This person matches your manual review list. They have been told they're on the waitlist; the request is only accepted when you do it by hand. Once they sign up, the review period applies (Sensible works normally, community titles-only).",
+      `Matched: ${opts.matched}`,
+      `Email: ${opts.email}`,
+      ...(opts.phone ? [`Phone: ${opts.phone}`] : []),
+    ],
+    cta: { label: "Review now", href: `${s["general.appUrl"]}${opts.href}` },
+  });
+  return sendEmail({ to, subject: `[AIBA] ${title}`, html, text, replyTo: opts.email });
+}
+
+/** Review protocol started: tell the person what is limited, until when, why and how to appeal (DSA art. 17). */
+export async function emailReviewPeriodStarted(to: string, name: string, locale: string, until: Date, reason: string) {
+  if (!to) return false;
+  const s = await getSettings();
+  const { t, intl } = translatorFor(locale);
+  const date = new Intl.DateTimeFormat(intl, { dateStyle: "long" }).format(until);
+  const contact = s["general.supportEmail"] || s["email.teamInbox"] || "";
+  const title = t("Your access to the private community is limited");
+  const { html, text } = layout({
+    brand: "AIBA",
+    title,
+    lines: [
+      name ? t("Hi {name},", { name: name.split(" ")[0] || name }) : t("Hello,"),
+      t("You can use the Sensible platform normally. Until {date}, in the private community you can only see the topic titles: you can't open the content, post or reply.", { date }),
+      `${t("Reason")}: ${t(reason)}`,
+      t("If you think this is a mistake, reply to this email or write to {contact} and a person from the team will review it.", { contact: contact || "AIBA" }),
+    ],
+    footer: t("Sent by AIBA"),
+  });
+  return sendEmail({ to, subject: `AIBA · ${title}`, html, text, ...(contact ? { replyTo: contact } : {}) });
+}
+
+/** Advance notice to the team: a review period ends soon (it then lifts on its own unless extended). */
+export async function emailReviewPeriodEnding(opts: { userId: string; name: string; email: string; until: Date }) {
+  const s = await getSettings();
+  const to = s["email.teamInbox"] || s["general.supportEmail"] || "";
+  if (!to) return false;
+  const date = new Intl.DateTimeFormat("es-ES", { dateStyle: "long", timeZone: "Europe/Madrid" }).format(opts.until);
+  const title = `⏰ Review period ends ${date}: ${opts.name || opts.email}`;
+  const { html, text } = layout({
+    brand: "AIBA",
+    color: "#d97706",
+    title,
+    lines: [
+      `The manual-review period of ${opts.name || opts.email} (${opts.email}) ends on ${date}. From then on they get full access to the private community.`,
+      "If you want to keep the restriction, extend it from the user's page before that date. If you do nothing, it lifts on its own.",
+    ],
+    cta: { label: "Open user", href: `${s["general.appUrl"]}/admin/users/${opts.userId}` },
+  });
+  return sendEmail({ to, subject: `[AIBA] ${title}`, html, text });
+}
+
 /** «A slot opened up» for someone on the waitlist. */
 export async function emailCustomerAboutWaitlist(business: schema.Business, customer: schema.Customer, service: string, date: string, times: string, link: string) {
   if (!(await emailConfigured()) || !customer.email || customer.erasedAt) return false;

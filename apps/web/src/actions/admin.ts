@@ -91,6 +91,41 @@ export async function adminSetUserDisabled(form: FormData) {
   revalidatePath("/admin/users");
 }
 
+/** Review protocol (Sensible): start, extend, edit the reason, or lift the titles-only period. */
+export async function adminSetReviewPeriod(form: FormData) {
+  const admin = await assertPlatform("users.manage");
+  const userId = str(form, "userId");
+  const op = str(form, "op");
+  const [u] = await db.select().from(schema.users).where(eq(schema.users.id, userId));
+  if (!u) throw notFound("User");
+  const { addMonths } = await import("@/lib/review-protocol");
+  const { getSettings } = await import("@/lib/settings");
+  const st = await getSettings();
+  const months = Number(st["sensitive.reviewMonths"]) || 12;
+  const reason = String(form.get("reason") ?? "").trim().slice(0, 1000) || u.communityReadOnlyReason || String(st["sensitive.reviewReason"] ?? "");
+  const now = new Date();
+  if (op === "lift") {
+    await db.update(schema.users).set({ communityReadOnlyUntil: null, communityReadOnlyNoticeAt: null }).where(eq(schema.users.id, userId));
+  } else if (op === "extend" || op === "start") {
+    const base = op === "extend" && u.communityReadOnlyUntil && u.communityReadOnlyUntil > now ? u.communityReadOnlyUntil : now;
+    const until = addMonths(base, months);
+    await db.update(schema.users).set({ communityReadOnlyUntil: until, communityReadOnlyReason: reason, communityReadOnlyNoticeAt: null }).where(eq(schema.users.id, userId));
+    // Every new restriction decision is explained to the person (DSA art. 17).
+    const { emailReviewPeriodStarted } = await import("@/lib/email");
+    const [biz] = await db
+      .select({ locale: schema.businesses.locale })
+      .from(schema.memberships)
+      .innerJoin(schema.businesses, eq(schema.businesses.id, schema.memberships.businessId))
+      .where(eq(schema.memberships.userId, userId))
+      .limit(1);
+    await emailReviewPeriodStarted(u.email, u.name, biz?.locale ?? "en", until, reason).catch(() => false);
+  } else if (op === "reason") {
+    await db.update(schema.users).set({ communityReadOnlyReason: reason }).where(eq(schema.users.id, userId));
+  } else throw badRequest("Unknown operation");
+  await audit(null, { type: "user", id: admin.id }, `admin.review_period_${op}`, userId);
+  revalidatePath(`/admin/users/${userId}`);
+}
+
 export async function adminSetUserAdmin(form: FormData) {
   const admin = await assertPlatform("staff.manage");
   const userId = str(form, "userId");

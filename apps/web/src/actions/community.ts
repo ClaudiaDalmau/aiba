@@ -5,14 +5,14 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { db, schema } from "@/db";
-import { assertCommunityAccess, isCommunityModerator } from "@/lib/community";
+import { assertCommunityWrite, isCommunityModerator } from "@/lib/community";
 import { forbidden, notFound } from "@/lib/errors";
 import { newId } from "@/lib/ids";
 import { currentTenant } from "@/lib/tenant";
 
 async function member() {
   const t = await currentTenant();
-  await assertCommunityAccess(t);
+  await assertCommunityWrite(t);
   return t;
 }
 

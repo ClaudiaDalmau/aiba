@@ -50,11 +50,17 @@ export async function decideCheck(adminId: string, checkId: string, approve: boo
     await db.update(schema.users).set({ identityVerifiedAt: new Date(), requirePasskey: true }).where(eq(schema.users.id, c.userId));
     // Her Sensible profiles go live (by direct link only).
     const owned = await db
-      .select({ id: schema.businesses.id })
+      .select({ id: schema.businesses.id, name: schema.businesses.name, phone: schema.businesses.phone, description: schema.businesses.description })
       .from(schema.memberships)
       .innerJoin(schema.businesses, eq(schema.businesses.id, schema.memberships.businessId))
       .where(and(eq(schema.memberships.userId, c.userId), eq(schema.memberships.role, "owner"), eq(schema.businesses.platform, "sensitive")));
-    for (const b of owned) await db.update(schema.businesses).set({ published: true }).where(eq(schema.businesses.id, b.id));
+    // Profiles on the manual review list stay hidden: the admin publishes them by hand in Businesses.
+    const { reviewMatch } = await import("./leads");
+    const [u] = await db.select({ email: schema.users.email, name: schema.users.name }).from(schema.users).where(eq(schema.users.id, c.userId));
+    for (const b of owned) {
+      if (await reviewMatch({ email: u?.email ?? "", name: u?.name ?? "", businessName: b.name, phone: b.phone ?? "", website: "", links: [], message: b.description ?? "" })) continue;
+      await db.update(schema.businesses).set({ published: true }).where(eq(schema.businesses.id, b.id));
+    }
   }
   await audit(null, { type: "user", id: adminId }, approve ? "identity.approved" : "identity.rejected", c.userId, { check: checkId, reason });
   return c.userId;

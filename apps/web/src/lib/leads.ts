@@ -2,8 +2,10 @@ import "server-only";
 import { and, count, desc, eq, sql } from "drizzle-orm";
 import { z } from "zod";
 import { db, schema } from "@/db";
-import { emailTeamNewLead } from "./email";
+import { emailApplicantWaitlisted, emailTeamNewLead, emailTeamReviewMatch } from "./email";
 import { newId } from "./ids";
+import { describeMatches, matchReviewList, parseReviewList } from "./review-list";
+import { getSettings } from "./settings";
 
 const url = z.string().trim().max(300);
 
@@ -37,10 +39,30 @@ export async function createLead(raw: unknown) {
       .returning();
   } else {
     [lead] = await db.insert(schema.leads).values({ id: newId("lead"), ...input, email }).returning();
+  }
+  const matched = input.kind === "access_request" ? await reviewMatch(lead) : "";
+  if (matched) {
+    // On the manual review list: waitlist reply to the person, alert to the team, approval stays manual.
+    const flag = `⚠ Manual review: ${matched}`;
+    const newlyFlagged = !lead.notes.includes("⚠ Manual review");
+    if (newlyFlagged) {
+      [lead] = await db.update(schema.leads).set({ notes: lead.notes ? `${flag}\n${lead.notes}` : flag }).where(eq(schema.leads.id, lead.id)).returning();
+    }
+    if ((!existing || newlyFlagged) && lead.status !== "approved" && lead.status !== "rejected") {
+      await emailApplicantWaitlisted(lead.email, lead.name, lead.locale).catch(() => false);
+      await emailTeamReviewMatch({ what: "Access request", name: lead.name, email: lead.email, phone: lead.phone, matched, href: "/admin/leads?kind=access_request" }).catch(() => false);
+    }
+  } else if (!existing) {
     await emailTeamNewLead(lead).catch(() => false);
   }
   const [{ n }] = await db.select({ n: count() }).from(schema.leads).where(eq(schema.leads.kind, input.kind));
   return { lead, total: Number(n), isNew: !existing };
+}
+
+/** Which manual-review entries a lead matches («» = none). */
+export async function reviewMatch(lead: Pick<schema.Lead, "email" | "name" | "businessName" | "phone" | "website" | "links" | "message">) {
+  const list = parseReviewList(String((await getSettings())["sensitive.reviewList"] ?? ""));
+  return describeMatches(matchReviewList(list, lead));
 }
 
 export async function leadStats() {

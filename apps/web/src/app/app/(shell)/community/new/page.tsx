@@ -3,9 +3,10 @@ import Link from "next/link";
 import { createThread } from "@/actions/community";
 import { SubmitButton } from "@/components/client";
 import { Icon } from "@/components/icons";
-import { LockedCommunity } from "@/components/community/parts";
+import { LockedCommunity, ReadOnlyNotice } from "@/components/community/parts";
 import { Card, Field, Input, PageHeader, Select, Textarea } from "@/components/ui";
 import { canAccessCommunity, listCategories, isCommunityModerator } from "@/lib/community";
+import { communityReadOnly } from "@/lib/review-protocol";
 import { currentTenant } from "@/lib/tenant";
 
 export async function generateMetadata() {
@@ -17,6 +18,8 @@ export default async function NewThreadPage({ searchParams }: { searchParams: Pr
   const t = await getT();
   const tenant = await currentTenant();
   if (!(await canAccessCommunity(tenant))) return <LockedCommunity />;
+  const readOnly = await communityReadOnly(tenant.user);
+  if (readOnly) return <div className="mx-auto max-w-3xl"><ReadOnlyNotice until={readOnly.until} reason={readOnly.reason} /></div>;
   const { category } = await searchParams;
   const isAdmin = isCommunityModerator(tenant.user);
   const categories = (await listCategories()).filter((c) => !c.adminOnlyPosting || isAdmin);

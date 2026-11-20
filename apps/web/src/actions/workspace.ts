@@ -93,7 +93,18 @@ export async function onboard(_prev: ActionState, f: FormData): Promise<ActionSt
       // Sign-in with fingerprint / face from now on (anti-impersonation); sessions continue until the next sign-in.
       await db.update(schema.users).set({ requirePasskey: true }).where(eq(schema.users.id, user.id));
       await audit(business.id, { type: "user", id: user.id }, "sensitive.profile_created", business.id, { country });
-      const [me2] = await db.select({ v: schema.users.identityVerifiedAt }).from(schema.users).where(eq(schema.users.id, user.id));
+      const [me2] = await db.select({ v: schema.users.identityVerifiedAt, email: schema.users.email, name: schema.users.name }).from(schema.users).where(eq(schema.users.id, user.id));
+      // Manual review list: the profile is created but never auto-published; the admin decides.
+      const { reviewMatch } = await import("@/lib/leads");
+      const matched = await reviewMatch({ email: me2?.email ?? "", name: me2?.name ?? "", businessName: name, phone: s(f, "phone"), website: "", links: [], message: s(f, "description") });
+      if (matched) {
+        // Review protocol: Sensible works normally, the private community is titles-only for the period.
+        const { emailTeamReviewMatch } = await import("@/lib/email");
+        const { startReviewPeriod } = await import("@/lib/review-protocol");
+        await audit(business.id, { type: "user", id: user.id }, "sensitive.manual_review", business.id, { matched });
+        await startReviewPeriod(user.id, matched, { locale: s(f, "language") || "en" });
+        await emailTeamReviewMatch({ what: "New Sensible profile", name: `${me2?.name ?? ""} · ${name}`, email: me2?.email ?? "", phone: s(f, "phone"), matched, href: `/admin/users/${user.id}` }).catch(() => false);
+      }
       if (me2?.v) await db.update(schema.businesses).set({ published: true }).where(eq(schema.businesses.id, business.id));
       else goVerify = true;
       const [pk] = await db.select({ id: schema.passkeys.id }).from(schema.passkeys).where(eq(schema.passkeys.userId, user.id)).limit(1);

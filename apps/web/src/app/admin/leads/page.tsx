@@ -53,6 +53,7 @@ export default async function AdminLeads({ searchParams }: { searchParams: Promi
             <tr key={l.id} className="align-top hover:bg-subtle/50">
               <Td>
                 <div className="font-medium">{l.name || "—"}</div>
+                {l.notes.includes("⚠ Manual review") && <Badge tone="bad">{t("Manual review")}</Badge>}
                 <a href={`mailto:${l.email}`} className="text-[13px] text-muted hover:underline">{l.email}</a>
                 {l.phone && <div className="text-[12px] text-faint">{l.phone}</div>}
               </Td>
