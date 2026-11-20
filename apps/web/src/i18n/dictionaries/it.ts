@@ -1581,7 +1581,27 @@ const it: Dictionary = {
   "Price per million input tokens (USD)": "Prezzo per milione di token in ingresso (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Solo per stimare i costi. Copialo dalla pagina prezzi di Anthropic per il modello predefinito. 0 = non impostato.",
   "Price per million output tokens (USD)": "Prezzo per milione di token in uscita (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Solo per stimare i costi. 0 = non impostato."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Solo per stimare i costi. 0 = non impostato.",
+  "No agreement": "Nessun accordo",
+  "Completed without code": "Completato senza codice",
+  "Verify the visit": "Verifica la visita",
+  "Ask the customer for the 6-digit code from their confirmation and enter it here.": "Chiedi al cliente il codice di 6 cifre della conferma e inseriscilo qui.",
+  "If you don't reach an agreement at the appointment, close it here: it doesn't count as a no-show or a late cancellation for either side, and no review is requested. The reason stays private.": "Se all'appuntamento non trovate un accordo, chiudilo qui: non conta come assenza né cancellazione tardiva per nessuna delle parti e non si chiede recensione. Il motivo resta privato.",
+  "Reason (optional, private)": "Motivo (facoltativo, privato)",
+  "Close this appointment without agreement?": "Chiudere questo appuntamento senza accordo?",
+  "Close without agreement": "Chiudi senza accordo",
+  "Verified": "Verificata",
+  "with the customer's code": "con il codice del cliente",
+  "Visit verified": "Visita verificata",
+  "This booking is already closed.": "Questa prenotazione è già chiusa.",
+  "That code doesn't match this booking.": "Questo codice non corrisponde a questa prenotazione.",
+  "This can only be used at the time of the appointment.": "Si può usare solo al momento dell'appuntamento.",
+  "Closed without agreement. Nothing is charged as a no-show.": "Chiuso senza accordo. Non conta come assenza.",
+  "Your code for the appointment": "Il tuo codice per l'appuntamento",
+  "Show it when you arrive so the visit is verified.": "Mostralo all'arrivo per verificare la visita.",
+  "No agreement?": "Nessun accordo?",
+  "If you don't reach an agreement at the appointment, you can close it here without consequences for either side.": "Se all'appuntamento non trovate un accordo, puoi chiuderlo qui senza conseguenze per nessuno.",
+  "No agreement at the appointment": "Nessun accordo all'appuntamento"
 };
 
 export default it;

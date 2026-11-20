@@ -25,7 +25,7 @@ const createdAt = () => timestamp("created_at", { withTimezone: true }).notNull(
 const businessId = () => text("business_id").notNull().references(() => businesses.id, { onDelete: "cascade" });
 
 export const memberRoleEnum = pgEnum("member_role", ["owner", "manager", "staff"]);
-export const bookingStatusEnum = pgEnum("booking_status", ["pending", "confirmed", "cancelled", "completed", "no_show"]);
+export const bookingStatusEnum = pgEnum("booking_status", ["pending", "confirmed", "cancelled", "completed", "no_show", "no_agreement"]);
 export const bookingSourceEnum = pgEnum("booking_source", ["web", "owner", "agent", "whatsapp", "telegram"]);
 export const paymentStatusEnum = pgEnum("payment_status", ["unpaid", "pending", "paid", "refunded"]);
 export const channelKindEnum = pgEnum("channel_kind", ["whatsapp", "telegram", "web"]);
@@ -454,6 +454,12 @@ export const bookings = pgTable(
     /** Random token for the customer's manage link (hash not needed: grants only this booking). */
     manageToken: text("manage_token").notNull(),
     reminderSentAt: timestamp("reminder_sent_at", { withTimezone: true }),
+    /** 6-digit code the customer shows at the appointment; the business enters it to verify the visit. */
+    checkInCode: text("check_in_code"),
+    /** Set when the visit was verified with the customer's code. */
+    checkedInAt: timestamp("checked_in_at", { withTimezone: true }),
+    /** Why the appointment ended with «no agreement» (private, never shown publicly). */
+    outcomeNote: text("outcome_note"),
     /** Session taken from a prepaid pack («bono»); the booking is then prepaid. FK added in migration 0008. */
     customerPackId: text("customer_pack_id"),
     /** Event id in the business's connected Google Calendar. */

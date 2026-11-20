@@ -1,7 +1,7 @@
 import { requestIntlLocale } from "@/i18n/request-locale";
 import { getT } from "@/i18n/server";
 import Link from "next/link";
-import { blockTimeAction, bookingAction, createBookingAction, rescheduleAction, unblockTimeAction } from "@/actions/workspace";
+import { blockTimeAction, bookingAction, checkInAction, createBookingAction, rescheduleAction, unblockTimeAction } from "@/actions/workspace";
 import { and, eq, gt, lt } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { ConfirmSubmit, SubmitButton, Toggle } from "@/components/client";
@@ -36,7 +36,7 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
   const rangeFrom = zonedToUtc(days[0], 0, tz);
   const rangeTo = zonedToUtc(addDays(days[days.length - 1], 1), 0, tz);
   const [bookings, staff, services, pending, waiting, offs] = await Promise.all([
-    listBookings(tenant.business.id, { from: zonedToUtc(days[0], 0, tz), to: zonedToUtc(addDays(days[days.length - 1], 1), 0, tz), status: ["pending", "confirmed", "completed", "no_show"] }),
+    listBookings(tenant.business.id, { from: zonedToUtc(days[0], 0, tz), to: zonedToUtc(addDays(days[days.length - 1], 1), 0, tz), status: ["pending", "confirmed", "completed", "no_show", "no_agreement"] }),
     listStaff(tenant.business.id),
     listServices(tenant.business.id, false),
     listBookings(tenant.business.id, { from: new Date(), status: ["pending"] }),
@@ -196,6 +196,7 @@ async function Drawer({ title, close, children }: { title: string; close: string
 async function BookingDrawer({ b, tz, currency, close, staff }: { b: Awaited<ReturnType<typeof getBookingRow>>; tz: string; currency: string; close: string; staff: { id: string; name: string }[] }) {
   const t = await getT();
   const live = b.status === "pending" || b.status === "confirmed";
+  const atDoor = live && Date.now() >= b.startsAt.getTime() - 30 * 60_000 && Date.now() <= b.endsAt.getTime() + 24 * 3600_000;
   const { date, minute } = zonedParts(b.startsAt, tz);
   return (
     <Drawer title={b.customer.name} close={close}>
@@ -211,6 +212,8 @@ async function BookingDrawer({ b, tz, currency, close, staff }: { b: Awaited<Ret
         <Row k={t("Contact")} v={[b.customer.phone, b.customer.email].filter(Boolean).join(" · ") || "—"} />
         {b.notes && <Row k={t("Notes")} v={b.notes} />}
         {b.cancelReason && <Row k={t("Cancel reason")} v={b.cancelReason} />}
+        {b.outcomeNote && <Row k={t("No agreement")} v={b.outcomeNote} />}
+        {b.checkedInAt && <Row k={t("Verified")} v={t("with the customer's code")} />}
       </dl>
       <div className="mt-3 flex flex-wrap gap-4">
         <Link href={`/app/customers/${b.customer.id}`} className="inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg">{t("Customer profile")} <Icon name="arrowRight" size={14} /></Link>
@@ -222,9 +225,33 @@ async function BookingDrawer({ b, tz, currency, close, staff }: { b: Awaited<Ret
           <form action={bookingAction} className="mt-6 flex flex-wrap gap-2">
             <input type="hidden" name="bookingId" value={b.id} />
             {b.status === "pending" && <Button name="action" value="confirm" icon="check">{t("Confirm")}</Button>}
-            {b.startsAt < new Date() && <Button name="action" value="complete" variant="secondary">{t("Mark completed")}</Button>}
+            {b.startsAt < new Date() && <Button name="action" value="complete" variant="secondary">{t(b.hasCheckInCode ? "Completed without code" : "Mark completed")}</Button>}
             {b.startsAt < new Date() && <Button name="action" value="no_show" variant="secondary">{t("No-show")}</Button>}
           </form>
+
+          {atDoor && (
+            <div className="mt-6 space-y-5 border-t border-border pt-5">
+              {b.hasCheckInCode && (
+                <ActionForm action={checkInAction} className="space-y-2">
+                  <input type="hidden" name="bookingId" value={b.id} />
+                  <div className="text-[14px] font-semibold">{t("Verify the visit")}</div>
+                  <p className="text-[13px] text-muted">{t("Ask the customer for the 6-digit code from their confirmation and enter it here.")}</p>
+                  <div className="flex gap-2">
+                    <Input name="code" inputMode="numeric" autoComplete="one-time-code" maxLength={7} placeholder="123456" className="max-w-36 font-mono tracking-widest" required />
+                    <SubmitButton>{t("Verify")}</SubmitButton>
+                  </div>
+                </ActionForm>
+              )}
+              <form action={bookingAction} className="space-y-2">
+                <input type="hidden" name="bookingId" value={b.id} />
+                <div className="text-[14px] font-semibold">{t("No agreement")}</div>
+                <p className="text-[13px] text-muted">{t("If you don't reach an agreement at the appointment, close it here: it doesn't count as a no-show or a late cancellation for either side, and no review is requested. The reason stays private.")}</p>
+                <Input name="reason" placeholder={t("Reason (optional, private)")} maxLength={300} />
+                <input type="hidden" name="action" value="no_agreement" />
+                <ConfirmSubmit variant="secondary" message={t("Close this appointment without agreement?")}>{t("Close without agreement")}</ConfirmSubmit>
+              </form>
+            </div>
+          )}
 
           <div className="mt-6 border-t border-border pt-5">
             <div className="mb-3 text-[14px] font-semibold">{t("Reschedule")}</div>

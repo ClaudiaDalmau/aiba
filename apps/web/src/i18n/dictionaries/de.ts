@@ -1581,7 +1581,27 @@ const de: Dictionary = {
   "Price per million input tokens (USD)": "Preis pro Million Eingabe-Tokens (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Nur zur Kostenschätzung. Von der Anthropic-Preisseite für das Standardmodell übernehmen. 0 = nicht gesetzt.",
   "Price per million output tokens (USD)": "Preis pro Million Ausgabe-Tokens (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Nur zur Kostenschätzung. 0 = nicht gesetzt."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Nur zur Kostenschätzung. 0 = nicht gesetzt.",
+  "No agreement": "Keine Einigung",
+  "Completed without code": "Ohne Code abgeschlossen",
+  "Verify the visit": "Besuch bestätigen",
+  "Ask the customer for the 6-digit code from their confirmation and enter it here.": "Frag den Kunden nach dem 6-stelligen Code aus seiner Bestätigung und gib ihn hier ein.",
+  "If you don't reach an agreement at the appointment, close it here: it doesn't count as a no-show or a late cancellation for either side, and no review is requested. The reason stays private.": "Wenn ihr euch beim Termin nicht einigt, schließe ihn hier: Er zählt für keine Seite als Nichterscheinen oder späte Absage, und es wird keine Bewertung angefragt. Der Grund bleibt privat.",
+  "Reason (optional, private)": "Grund (optional, privat)",
+  "Close this appointment without agreement?": "Diesen Termin ohne Einigung schließen?",
+  "Close without agreement": "Ohne Einigung schließen",
+  "Verified": "Bestätigt",
+  "with the customer's code": "mit dem Code des Kunden",
+  "Visit verified": "Besuch bestätigt",
+  "This booking is already closed.": "Diese Buchung ist bereits abgeschlossen.",
+  "That code doesn't match this booking.": "Dieser Code passt nicht zu dieser Buchung.",
+  "This can only be used at the time of the appointment.": "Nur zum Zeitpunkt des Termins möglich.",
+  "Closed without agreement. Nothing is charged as a no-show.": "Ohne Einigung geschlossen. Es zählt nicht als Nichterscheinen.",
+  "Your code for the appointment": "Dein Code für den Termin",
+  "Show it when you arrive so the visit is verified.": "Zeig ihn bei der Ankunft, damit der Besuch bestätigt wird.",
+  "No agreement?": "Keine Einigung?",
+  "If you don't reach an agreement at the appointment, you can close it here without consequences for either side.": "Wenn ihr euch beim Termin nicht einigt, kannst du ihn hier ohne Folgen für beide Seiten schließen.",
+  "No agreement at the appointment": "Keine Einigung beim Termin"
 };
 
 export default de;

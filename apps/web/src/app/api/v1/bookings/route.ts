@@ -35,5 +35,5 @@ export const POST = tenantRoute("bookings.manage", async (req, t) => {
     { serviceId: input.serviceId, staffId: input.staffId, startsAt: input.startsAt, customer, source: "owner", notes: input.notes, override: input.override },
     { type: "user", id: t.user.id },
   );
-  return Response.json({ booking: { ...booking, manageToken: undefined } }, { status: 201 });
+  return Response.json({ booking: { ...booking, manageToken: undefined, checkInCode: undefined } }, { status: 201 });
 });

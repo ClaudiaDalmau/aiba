@@ -1581,7 +1581,27 @@ const ru: Dictionary = {
   "Price per million input tokens (USD)": "Цена за миллион входных токенов (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Только для оценки затрат. Возьмите с страницы цен Anthropic для модели по умолчанию. 0 = не задано.",
   "Price per million output tokens (USD)": "Цена за миллион выходных токенов (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Только для оценки затрат. 0 = не задано."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Только для оценки затрат. 0 = не задано.",
+  "No agreement": "Без договорённости",
+  "Completed without code": "Завершено без кода",
+  "Verify the visit": "Подтвердить визит",
+  "Ask the customer for the 6-digit code from their confirmation and enter it here.": "Попросите у клиента 6-значный код из подтверждения и введите его здесь.",
+  "If you don't reach an agreement at the appointment, close it here: it doesn't count as a no-show or a late cancellation for either side, and no review is requested. The reason stays private.": "Если на встрече вы не договорились, закройте её здесь: это не считается неявкой или поздней отменой ни для одной стороны, отзыв не запрашивается. Причина остаётся конфиденциальной.",
+  "Reason (optional, private)": "Причина (необязательно, конфиденциально)",
+  "Close this appointment without agreement?": "Закрыть эту запись без договорённости?",
+  "Close without agreement": "Закрыть без договорённости",
+  "Verified": "Подтверждено",
+  "with the customer's code": "кодом клиента",
+  "Visit verified": "Визит подтверждён",
+  "This booking is already closed.": "Эта запись уже закрыта.",
+  "That code doesn't match this booking.": "Этот код не подходит к этой записи.",
+  "This can only be used at the time of the appointment.": "Доступно только во время записи.",
+  "Closed without agreement. Nothing is charged as a no-show.": "Закрыто без договорённости. Неявка не засчитывается.",
+  "Your code for the appointment": "Ваш код для записи",
+  "Show it when you arrive so the visit is verified.": "Покажите его по приходе, чтобы визит был подтверждён.",
+  "No agreement?": "Не договорились?",
+  "If you don't reach an agreement at the appointment, you can close it here without consequences for either side.": "Если на встрече вы не договорились, её можно закрыть здесь без последствий для обеих сторон.",
+  "No agreement at the appointment": "Не договорились на встрече"
 };
 
 export default ru;

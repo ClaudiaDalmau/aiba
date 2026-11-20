@@ -8,7 +8,7 @@ import { z } from "zod";
 import { db, schema } from "@/db";
 import { decideAction } from "@/lib/agent/approvals";
 import { getAgent, handleInbound } from "@/lib/agent/runtime";
-import { cancelBooking, createBooking, rescheduleBooking, setBookingStatus } from "@/lib/bookings";
+import { cancelBooking, createBooking, rescheduleBooking, setBookingStatus, markNoAgreement, verifyCheckIn } from "@/lib/bookings";
 import { createBusiness } from "@/lib/businesses";
 import { setServiceStaff, setStaffHours } from "@/lib/catalog";
 import { disconnectChannel, enableTelegram, startWhatsAppLink } from "@/lib/channels";
@@ -118,10 +118,22 @@ export async function bookingAction(f: FormData) {
     else if (action === "confirm") await setBookingStatus(t.business, id, "confirmed", actor);
     else if (action === "complete") await setBookingStatus(t.business, id, "completed", actor);
     else if (action === "no_show") await setBookingStatus(t.business, id, "no_show", actor);
+    else if (action === "no_agreement") await markNoAgreement(t.business, id, "business", s(f, "reason"), actor);
   } catch (e) {
     if (!(e instanceof AppError)) throw e;
   }
   revalidatePath("/app", "layout");
+}
+
+/** The business enters the customer's code at the appointment. */
+export async function checkInAction(_prev: ActionState, f: FormData): Promise<ActionState> {
+  const t = await tenantFor("bookings.manage");
+  const res = await attempt(async () => {
+    await verifyCheckIn(t.business, s(f, "bookingId"), s(f, "code"), { type: "user", id: t.user.id });
+    return "Visit verified";
+  });
+  revalidatePath("/app", "layout");
+  return res;
 }
 
 export async function rescheduleAction(_prev: ActionState, f: FormData): Promise<ActionState> {

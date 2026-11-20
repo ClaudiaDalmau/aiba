@@ -1581,7 +1581,27 @@ const ro: Dictionary = {
   "Price per million input tokens (USD)": "Preț per milion de tokeni de intrare (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Doar pentru estimarea costurilor. Copiază-l de pe pagina de prețuri Anthropic pentru modelul implicit. 0 = nesetat.",
   "Price per million output tokens (USD)": "Preț per milion de tokeni de ieșire (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Doar pentru estimarea costurilor. 0 = nesetat."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Doar pentru estimarea costurilor. 0 = nesetat.",
+  "No agreement": "Fără acord",
+  "Completed without code": "Finalizată fără cod",
+  "Verify the visit": "Verifică vizita",
+  "Ask the customer for the 6-digit code from their confirmation and enter it here.": "Cere clientului codul din 6 cifre din confirmare și introdu-l aici.",
+  "If you don't reach an agreement at the appointment, close it here: it doesn't count as a no-show or a late cancellation for either side, and no review is requested. The reason stays private.": "Dacă la programare nu ajungeți la un acord, închide-o aici: nu contează ca neprezentare sau anulare târzie pentru nicio parte și nu se cere recenzie. Motivul rămâne privat.",
+  "Reason (optional, private)": "Motiv (opțional, privat)",
+  "Close this appointment without agreement?": "Închizi această programare fără acord?",
+  "Close without agreement": "Închide fără acord",
+  "Verified": "Verificată",
+  "with the customer's code": "cu codul clientului",
+  "Visit verified": "Vizită verificată",
+  "This booking is already closed.": "Această rezervare este deja închisă.",
+  "That code doesn't match this booking.": "Codul nu corespunde acestei rezervări.",
+  "This can only be used at the time of the appointment.": "Se poate folosi doar în momentul programării.",
+  "Closed without agreement. Nothing is charged as a no-show.": "Închisă fără acord. Nu contează ca neprezentare.",
+  "Your code for the appointment": "Codul tău pentru programare",
+  "Show it when you arrive so the visit is verified.": "Arată-l la sosire ca vizita să fie verificată.",
+  "No agreement?": "Fără acord?",
+  "If you don't reach an agreement at the appointment, you can close it here without consequences for either side.": "Dacă la programare nu ajungeți la un acord, o poți închide aici fără consecințe pentru nicio parte.",
+  "No agreement at the appointment": "Fără acord la programare"
 };
 
 export default ro;

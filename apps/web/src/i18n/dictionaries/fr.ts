@@ -1581,7 +1581,27 @@ const fr: Dictionary = {
   "Price per million input tokens (USD)": "Prix par million de tokens d'entrée (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Sert uniquement à estimer les coûts. Copiez-le depuis la page de tarifs d'Anthropic pour le modèle par défaut. 0 = non défini.",
   "Price per million output tokens (USD)": "Prix par million de tokens de sortie (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Sert uniquement à estimer les coûts. 0 = non défini."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Sert uniquement à estimer les coûts. 0 = non défini.",
+  "No agreement": "Pas d'accord",
+  "Completed without code": "Terminé sans code",
+  "Verify the visit": "Vérifier la visite",
+  "Ask the customer for the 6-digit code from their confirmation and enter it here.": "Demandez au client le code à 6 chiffres de sa confirmation et saisissez-le ici.",
+  "If you don't reach an agreement at the appointment, close it here: it doesn't count as a no-show or a late cancellation for either side, and no review is requested. The reason stays private.": "Si vous ne trouvez pas d'accord au rendez-vous, clôturez-le ici : cela ne compte ni comme absence ni comme annulation tardive pour personne, et aucun avis n'est demandé. Le motif reste privé.",
+  "Reason (optional, private)": "Motif (facultatif, privé)",
+  "Close this appointment without agreement?": "Clôturer ce rendez-vous sans accord ?",
+  "Close without agreement": "Clôturer sans accord",
+  "Verified": "Vérifiée",
+  "with the customer's code": "avec le code du client",
+  "Visit verified": "Visite vérifiée",
+  "This booking is already closed.": "Cette réservation est déjà clôturée.",
+  "That code doesn't match this booking.": "Ce code ne correspond pas à cette réservation.",
+  "This can only be used at the time of the appointment.": "Utilisable uniquement au moment du rendez-vous.",
+  "Closed without agreement. Nothing is charged as a no-show.": "Clôturé sans accord. Rien n'est compté comme absence.",
+  "Your code for the appointment": "Votre code pour le rendez-vous",
+  "Show it when you arrive so the visit is verified.": "Montrez-le en arrivant pour que la visite soit vérifiée.",
+  "No agreement?": "Pas d'accord ?",
+  "If you don't reach an agreement at the appointment, you can close it here without consequences for either side.": "Si vous ne trouvez pas d'accord au rendez-vous, vous pouvez le clôturer ici sans conséquence pour personne.",
+  "No agreement at the appointment": "Pas d'accord au rendez-vous"
 };
 
 export default fr;

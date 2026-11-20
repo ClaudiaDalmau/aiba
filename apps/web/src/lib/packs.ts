@@ -1,5 +1,5 @@
 import "server-only";
-import { and, asc, desc, eq, gt, inArray, isNull, ne, sql } from "drizzle-orm";
+import { and, asc, desc, eq, gt, inArray, isNull, ne, sql, notInArray } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { badRequest, notFound } from "./errors";
 import { audit } from "./events";
@@ -50,7 +50,7 @@ export async function listCustomerPacks(businessId: string, opts: { customerId?:
   const used = db
     .select({ cp: schema.bookings.customerPackId, n: sql<number>`count(*)::int`.as("n") })
     .from(schema.bookings)
-    .where(and(eq(schema.bookings.businessId, businessId), ne(schema.bookings.status, "cancelled")))
+    .where(and(eq(schema.bookings.businessId, businessId), notInArray(schema.bookings.status, ["cancelled", "no_agreement"])))
     .groupBy(schema.bookings.customerPackId)
     .as("used");
   const rows = await db
@@ -118,7 +118,7 @@ export async function usablePack(businessId: string, customerId: string, service
   const counts = await db
     .select({ cp: schema.bookings.customerPackId, n: sql<number>`count(*)::int` })
     .from(schema.bookings)
-    .where(and(inArray(schema.bookings.customerPackId, cands.map((c) => c.id)), ne(schema.bookings.status, "cancelled")))
+    .where(and(inArray(schema.bookings.customerPackId, cands.map((c) => c.id)), notInArray(schema.bookings.status, ["cancelled", "no_agreement"])))
     .groupBy(schema.bookings.customerPackId);
   return cands.find((c) => (counts.find((x) => x.cp === c.id)?.n ?? 0) < c.sessionsTotal) ?? null;
 }

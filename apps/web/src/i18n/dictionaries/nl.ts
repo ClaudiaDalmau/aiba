@@ -1581,7 +1581,27 @@ const nl: Dictionary = {
   "Price per million input tokens (USD)": "Prijs per miljoen invoertokens (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Alleen om kosten te schatten. Neem het over van de prijspagina van Anthropic voor het standaardmodel. 0 = niet ingesteld.",
   "Price per million output tokens (USD)": "Prijs per miljoen uitvoertokens (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Alleen om kosten te schatten. 0 = niet ingesteld."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Alleen om kosten te schatten. 0 = niet ingesteld.",
+  "No agreement": "Geen overeenstemming",
+  "Completed without code": "Voltooid zonder code",
+  "Verify the visit": "Bezoek verifiëren",
+  "Ask the customer for the 6-digit code from their confirmation and enter it here.": "Vraag de klant om de 6-cijferige code uit de bevestiging en vul hem hier in.",
+  "If you don't reach an agreement at the appointment, close it here: it doesn't count as a no-show or a late cancellation for either side, and no review is requested. The reason stays private.": "Komen jullie bij de afspraak niet tot overeenstemming, sluit hem dan hier: het telt voor geen van beiden als no-show of late annulering en er wordt geen review gevraagd. De reden blijft privé.",
+  "Reason (optional, private)": "Reden (optioneel, privé)",
+  "Close this appointment without agreement?": "Deze afspraak sluiten zonder overeenstemming?",
+  "Close without agreement": "Sluiten zonder overeenstemming",
+  "Verified": "Geverifieerd",
+  "with the customer's code": "met de code van de klant",
+  "Visit verified": "Bezoek geverifieerd",
+  "This booking is already closed.": "Deze boeking is al gesloten.",
+  "That code doesn't match this booking.": "Die code hoort niet bij deze boeking.",
+  "This can only be used at the time of the appointment.": "Dit kan alleen op het moment van de afspraak.",
+  "Closed without agreement. Nothing is charged as a no-show.": "Gesloten zonder overeenstemming. Het telt niet als no-show.",
+  "Your code for the appointment": "Je code voor de afspraak",
+  "Show it when you arrive so the visit is verified.": "Laat hem zien bij aankomst zodat het bezoek wordt geverifieerd.",
+  "No agreement?": "Geen overeenstemming?",
+  "If you don't reach an agreement at the appointment, you can close it here without consequences for either side.": "Komen jullie bij de afspraak niet tot overeenstemming, dan kun je hem hier sluiten zonder gevolgen voor beiden.",
+  "No agreement at the appointment": "Geen overeenstemming bij de afspraak"
 };
 
 export default nl;

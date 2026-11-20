@@ -29,7 +29,7 @@ export async function listBookings(
     .where(and(...where))
     .orderBy(asc(schema.bookings.startsAt))
     .limit(opts.limit ?? 500);
-  return rows.map((r) => ({ ...r.booking, manageToken: undefined, service: r.service, staff: r.staff, customer: r.customer }));
+  return rows.map((r) => ({ ...r.booking, manageToken: undefined, checkInCode: undefined, hasCheckInCode: !!r.booking.checkInCode, service: r.service, staff: r.staff, customer: r.customer }));
 }
 export type BookingRow = Awaited<ReturnType<typeof listBookings>>[number];
 
@@ -47,7 +47,7 @@ export async function getBookingRow(businessId: string, bookingId: string) {
     .innerJoin(schema.customers, eq(schema.customers.id, schema.bookings.customerId))
     .where(and(eq(schema.bookings.businessId, businessId), eq(schema.bookings.id, bookingId)));
   if (!row) throw notFound("Booking");
-  return { ...row.booking, manageToken: undefined, service: row.service, staff: row.staff, customer: row.customer };
+  return { ...row.booking, manageToken: undefined, checkInCode: undefined, hasCheckInCode: !!row.booking.checkInCode, service: row.service, staff: row.staff, customer: row.customer };
 }
 
 export async function listServices(businessId: string, includeInactive = true) {

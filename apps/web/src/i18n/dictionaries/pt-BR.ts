@@ -1581,7 +1581,27 @@ const ptBR: Dictionary = {
   "Price per million input tokens (USD)": "Preço por milhão de tokens de entrada (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Só para estimar custos. Copie da página de preços da Anthropic para o modelo padrão. 0 = não definido.",
   "Price per million output tokens (USD)": "Preço por milhão de tokens de saída (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Só para estimar custos. 0 = não definido."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Só para estimar custos. 0 = não definido.",
+  "No agreement": "Sem acordo",
+  "Completed without code": "Concluído sem código",
+  "Verify the visit": "Verificar a visita",
+  "Ask the customer for the 6-digit code from their confirmation and enter it here.": "Peça ao cliente o código de 6 dígitos da confirmação e digite aqui.",
+  "If you don't reach an agreement at the appointment, close it here: it doesn't count as a no-show or a late cancellation for either side, and no review is requested. The reason stays private.": "Se no atendimento vocês não chegarem a um acordo, feche aqui: não conta como falta nem cancelamento tardio para nenhuma das partes e não se pede avaliação. O motivo fica privado.",
+  "Reason (optional, private)": "Motivo (opcional, privado)",
+  "Close this appointment without agreement?": "Fechar este atendimento sem acordo?",
+  "Close without agreement": "Fechar sem acordo",
+  "Verified": "Verificada",
+  "with the customer's code": "com o código do cliente",
+  "Visit verified": "Visita verificada",
+  "This booking is already closed.": "Esta reserva já está fechada.",
+  "That code doesn't match this booking.": "Esse código não corresponde a esta reserva.",
+  "This can only be used at the time of the appointment.": "Só pode ser usado no momento do atendimento.",
+  "Closed without agreement. Nothing is charged as a no-show.": "Fechado sem acordo. Não conta como falta.",
+  "Your code for the appointment": "Seu código para o atendimento",
+  "Show it when you arrive so the visit is verified.": "Mostre ao chegar para a visita ser verificada.",
+  "No agreement?": "Sem acordo?",
+  "If you don't reach an agreement at the appointment, you can close it here without consequences for either side.": "Se no atendimento vocês não chegarem a um acordo, pode fechá-lo aqui sem consequências para ninguém.",
+  "No agreement at the appointment": "Sem acordo no atendimento"
 };
 
 export default ptBR;

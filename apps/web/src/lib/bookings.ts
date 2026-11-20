@@ -6,6 +6,7 @@ import { and, eq, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { getService, getSlots } from "./availability";
 import { messageCustomer } from "./conversations";
+import { randomInt } from "node:crypto";
 import { randomToken } from "./crypto";
 import { badRequest, conflict, forbidden, notFound } from "./errors";
 import { emailBusinessNewBooking, emailCustomerAboutBooking } from "./email";
@@ -126,6 +127,7 @@ export async function createBooking(business: schema.Business, input: CreateBook
         customerPackId: pack?.id ?? null,
         notes: input.notes ?? "",
         manageToken: randomToken(18),
+        checkInCode: String(randomInt(0, 1_000_000)).padStart(6, "0"),
       })
       .returning();
   } catch (e) {
@@ -269,6 +271,47 @@ export async function setBookingStatus(
     const link = `${(await getSettings())["general.appUrl"]}/manage/${b.manageToken}#review`;
     await messageCustomer(business.id, b.customerId, `Thanks for visiting ${business.name}! How was it? Leave a quick review here: ${link}`).catch(() => false);
     await emailCustomerAboutBooking(b.id, "review").catch(() => false);
+  }
+  return updated;
+}
+
+/** Window in which an appointment can be closed at the door: from 30 min before until 24 h after its end. */
+function atAppointment(b: schema.Booking) {
+  const now = Date.now();
+  return now >= b.startsAt.getTime() - 30 * 60_000 && now <= b.endsAt.getTime() + 24 * 3600_000;
+}
+
+/** The business enters the code the customer shows: the visit is verified and marked completed. */
+export async function verifyCheckIn(business: schema.Business, bookingId: string, code: string, actor: Actor) {
+  const b = await loadBooking(business, bookingId);
+  if (b.status !== "confirmed" && b.status !== "pending") throw badRequest("This booking is already closed.");
+  if (!b.checkInCode || code.replace(/\D/g, "") !== b.checkInCode) throw badRequest("That code doesn't match this booking.");
+  await db.update(schema.bookings).set({ checkedInAt: new Date() }).where(eq(schema.bookings.id, b.id));
+  await audit(business.id, actor, "booking.checked_in", b.id);
+  return setBookingStatus(business, bookingId, "completed", actor);
+}
+
+/**
+ * «No agreement» at the door (photos didn't match, price, anything): either side can close the
+ * appointment without consequences. It isn't a no-show or a late cancellation, sends no review
+ * request, returns the pack session, and the reason stays private.
+ */
+export async function markNoAgreement(business: schema.Business, bookingId: string, by: "business" | "customer", reason: string, actor: Actor) {
+  const b = await loadBooking(business, bookingId);
+  if (b.status !== "confirmed" && b.status !== "pending") throw badRequest("This booking is already closed.");
+  if (!atAppointment(b)) throw badRequest("This can only be used at the time of the appointment.");
+  const note = `${by === "customer" ? "Customer" : "Business"}: ${reason.trim().slice(0, 300) || "—"}`;
+  const [updated] = await db
+    .update(schema.bookings)
+    .set({ status: "no_agreement", outcomeNote: note, updatedAt: new Date() })
+    .where(eq(schema.bookings.id, b.id))
+    .returning();
+  await audit(business.id, actor, "booking.no_agreement", b.id, { by });
+  const service = await getService(business.id, b.serviceId);
+  if (by === "customer") {
+    await notifyBusiness(business.id, { kind: "booking.cancelled", title: "No agreement at the appointment", body: `${service.name} · ${formatDateTime(b.startsAt, business.timezone)}`, href: `/app/bookings?focus=${b.id}` });
+  } else {
+    await messageCustomer(business.id, b.customerId, `Your ${service.name} at ${business.name} was closed without agreement. Nothing is charged as a no-show.`).catch(() => false);
   }
   return updated;
 }

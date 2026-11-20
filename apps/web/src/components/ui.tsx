@@ -88,8 +88,8 @@ export function Badge({ tone = "neutral", children, className, icon }: { tone?: 
   );
 }
 
-export const BOOKING_TONE: Record<string, Tone> = { pending: "warn", confirmed: "ok", completed: "neutral", cancelled: "bad", no_show: "bad" };
-export const BOOKING_LABEL: Record<string, string> = { pending: "Pending", confirmed: "Confirmed", completed: "Completed", cancelled: "Cancelled", no_show: "No-show" };
+export const BOOKING_TONE: Record<string, Tone> = { pending: "warn", confirmed: "ok", completed: "neutral", cancelled: "bad", no_show: "bad", no_agreement: "neutral" };
+export const BOOKING_LABEL: Record<string, string> = { pending: "Pending", confirmed: "Confirmed", completed: "Completed", cancelled: "Cancelled", no_show: "No-show", no_agreement: "No agreement" };
 
 export function Label({ children, htmlFor, hint }: { children: ReactNode; htmlFor?: string; hint?: ReactNode }) {
   return (

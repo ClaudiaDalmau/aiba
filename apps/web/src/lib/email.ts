@@ -118,6 +118,9 @@ export async function emailCustomerAboutBooking(bookingId: string, kind: Booking
     `${t("When")}: ${when}`,
     `${t("With")}: ${staff.name}`,
     ...(extra.reason ? [`${t("Reason")}: ${extra.reason}`] : []),
+    ...(booking.checkInCode && (kind === "confirmed" || kind === "reminder" || kind === "rescheduled")
+      ? [`${t("Your code for the appointment")}: ${booking.checkInCode}`, t("Show it when you arrive so the visit is verified.")]
+      : []),
     ...(kind !== "cancelled" && kind !== "review" && business.policy.cancellationWindowHours
       ? [t("Free cancellation up to {h}h before.", { h: business.policy.cancellationWindowHours })]
       : []),

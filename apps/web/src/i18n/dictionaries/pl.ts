@@ -1581,7 +1581,27 @@ const pl: Dictionary = {
   "Price per million input tokens (USD)": "Cena za milion tokenów wejściowych (USD)",
   "Used only to estimate costs in AI usage. Copy it from the Anthropic pricing page for the default model. 0 = not set.": "Tylko do szacowania kosztów. Skopiuj ze strony cennika Anthropic dla modelu domyślnego. 0 = nie ustawiono.",
   "Price per million output tokens (USD)": "Cena za milion tokenów wyjściowych (USD)",
-  "Used only to estimate costs in AI usage. 0 = not set.": "Tylko do szacowania kosztów. 0 = nie ustawiono."
+  "Used only to estimate costs in AI usage. 0 = not set.": "Tylko do szacowania kosztów. 0 = nie ustawiono.",
+  "No agreement": "Brak porozumienia",
+  "Completed without code": "Zakończona bez kodu",
+  "Verify the visit": "Zweryfikuj wizytę",
+  "Ask the customer for the 6-digit code from their confirmation and enter it here.": "Poproś klienta o 6-cyfrowy kod z potwierdzenia i wpisz go tutaj.",
+  "If you don't reach an agreement at the appointment, close it here: it doesn't count as a no-show or a late cancellation for either side, and no review is requested. The reason stays private.": "Jeśli na wizycie nie dojdziecie do porozumienia, zamknij ją tutaj: dla żadnej ze stron nie liczy się jako nieobecność ani późne odwołanie i nie prosimy o opinię. Powód pozostaje prywatny.",
+  "Reason (optional, private)": "Powód (opcjonalnie, prywatnie)",
+  "Close this appointment without agreement?": "Zamknąć tę wizytę bez porozumienia?",
+  "Close without agreement": "Zamknij bez porozumienia",
+  "Verified": "Zweryfikowana",
+  "with the customer's code": "kodem klienta",
+  "Visit verified": "Wizyta zweryfikowana",
+  "This booking is already closed.": "Ta rezerwacja jest już zamknięta.",
+  "That code doesn't match this booking.": "Ten kod nie pasuje do tej rezerwacji.",
+  "This can only be used at the time of the appointment.": "Można tego użyć tylko w czasie wizyty.",
+  "Closed without agreement. Nothing is charged as a no-show.": "Zamknięto bez porozumienia. Nie liczy się jako nieobecność.",
+  "Your code for the appointment": "Twój kod na wizytę",
+  "Show it when you arrive so the visit is verified.": "Pokaż go po przyjściu, by wizyta została zweryfikowana.",
+  "No agreement?": "Brak porozumienia?",
+  "If you don't reach an agreement at the appointment, you can close it here without consequences for either side.": "Jeśli na wizycie nie dojdziecie do porozumienia, możesz ją tu zamknąć bez konsekwencji dla obu stron.",
+  "No agreement at the appointment": "Brak porozumienia na wizycie"
 };
 
 export default pl;
