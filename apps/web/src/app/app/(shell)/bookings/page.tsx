@@ -1,7 +1,9 @@
 import { requestIntlLocale } from "@/i18n/request-locale";
 import { getT } from "@/i18n/server";
 import Link from "next/link";
-import { bookingAction, createBookingAction, rescheduleAction } from "@/actions/workspace";
+import { blockTimeAction, bookingAction, createBookingAction, rescheduleAction, unblockTimeAction } from "@/actions/workspace";
+import { and, eq, gt, lt } from "drizzle-orm";
+import { db, schema } from "@/db";
 import { ConfirmSubmit, SubmitButton, Toggle } from "@/components/client";
 import { Icon } from "@/components/icons";
 import { Badge, BOOKING_LABEL, BOOKING_TONE, Button, Card, cx, Field, Input, LinkButton, PageHeader, Select, Textarea } from "@/components/ui";
@@ -20,7 +22,7 @@ const START_HOUR = 7;
 const END_HOUR = 21;
 const PX_PER_MIN = 1.1;
 
-type SP = { date?: string; view?: "day" | "week"; new?: string; focus?: string; staff?: string };
+type SP = { date?: string; view?: "day" | "week"; new?: string; focus?: string; staff?: string; block?: string; off?: string };
 
 export default async function BookingsPage({ searchParams }: { searchParams: Promise<SP> }) {
   const t = await getT();
@@ -31,12 +33,15 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
   const anchor = sp.date && /^\d{4}-\d{2}-\d{2}$/.test(sp.date) ? sp.date : todayIn(tz);
   const start = view === "week" ? addDays(anchor, -((weekdayOf(anchor) + 6) % 7)) : anchor;
   const days = Array.from({ length: view === "week" ? 7 : 1 }, (_, i) => addDays(start, i));
-  const [bookings, staff, services, pending, waiting] = await Promise.all([
+  const rangeFrom = zonedToUtc(days[0], 0, tz);
+  const rangeTo = zonedToUtc(addDays(days[days.length - 1], 1), 0, tz);
+  const [bookings, staff, services, pending, waiting, offs] = await Promise.all([
     listBookings(tenant.business.id, { from: zonedToUtc(days[0], 0, tz), to: zonedToUtc(addDays(days[days.length - 1], 1), 0, tz), status: ["pending", "confirmed", "completed", "no_show"] }),
     listStaff(tenant.business.id),
     listServices(tenant.business.id, false),
     listBookings(tenant.business.id, { from: new Date(), status: ["pending"] }),
     waitlistCount(tenant.business),
+    db.select().from(schema.timeOff).where(and(eq(schema.timeOff.businessId, tenant.business.id), lt(schema.timeOff.startsAt, rangeTo), gt(schema.timeOff.endsAt, rangeFrom))),
   ]);
   const focus = sp.focus ? await getBookingRow(tenant.business.id, sp.focus).catch(() => null) : null;
   const q = (p: Partial<SP>) => {
@@ -45,6 +50,15 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
   };
   const shown = sp.staff ? bookings.filter((b) => b.staff.id === sp.staff) : bookings;
   const columns = view === "day" ? staff.filter((s) => s.active && (!sp.staff || s.id === sp.staff)).map((s) => ({ key: s.id, label: s.name, date: anchor, items: shown.filter((b) => b.staff.id === s.id) })) : days.map((d) => ({ key: d, label: d, date: d, items: shown.filter((b) => zonedParts(b.startsAt, tz).date === d) }));
+  const offsFor = (c: { key: string; date: string }) =>
+    offs.filter((o) => (view === "day" ? !o.staffId || o.staffId === c.key : !o.staffId || !sp.staff || o.staffId === sp.staff)).flatMap((o) => {
+      const dayStart = zonedToUtc(c.date, 0, tz).getTime();
+      const dayEnd = zonedToUtc(addDays(c.date, 1), 0, tz).getTime();
+      const s0 = Math.max(o.startsAt.getTime(), dayStart);
+      const e0 = Math.min(o.endsAt.getTime(), dayEnd);
+      return e0 > s0 ? [{ o, from: (s0 - dayStart) / 60000, to: (e0 - dayStart) / 60000 }] : [];
+    });
+  const staffName = new Map(staff.map((s) => [s.id, s.name]));
   const today = todayIn(tz);
   const rangeLabel = view === "week" ? `${fmtDay(days[0], tz)} – ${fmtDay(days[6], tz)}` : fmtDay(anchor, tz, true);
 
@@ -64,6 +78,7 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
             <LinkButton href={q({ date: addDays(anchor, view === "week" ? -7 : -1) })} variant="secondary" aria-label={t("Previous")}><Icon name="chevronLeft" /></LinkButton>
             <LinkButton href={q({ date: today })} variant="secondary">{t("Today")}</LinkButton>
             <LinkButton href={q({ date: addDays(anchor, view === "week" ? 7 : 1) })} variant="secondary" aria-label={t("Next")}><Icon name="chevronRight" /></LinkButton>
+            <LinkButton href={q({ block: "1" })} variant="secondary" icon="clock">{t("Not available")}</LinkButton>
             <LinkButton href={q({ new: "1" })} icon="plus">{t("New booking")}</LinkButton>
           </>
         }
@@ -114,6 +129,16 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
               {Array.from({ length: END_HOUR - START_HOUR }, (_, i) => (
                 <div key={i} className="absolute inset-x-0 border-t border-border/60" style={{ top: i * 60 * PX_PER_MIN }} />
               ))}
+              {offsFor(c).map(({ o, from, to }) => {
+                const top = Math.max(0, (from - START_HOUR * 60) * PX_PER_MIN);
+                const bottom = Math.min((END_HOUR - START_HOUR) * 60 * PX_PER_MIN, (to - START_HOUR * 60) * PX_PER_MIN);
+                if (bottom <= top) return null;
+                return (
+                  <Link key={o.id} href={q({ off: o.id })} scroll={false} className="absolute inset-x-1 overflow-hidden rounded-lg border border-border/80 px-2 py-1 text-[11px] leading-tight text-muted hover:z-10" style={{ top, height: Math.max(18, bottom - top - 2), background: "repeating-linear-gradient(135deg, var(--color-subtle) 0 6px, transparent 6px 12px)" }}>
+                    <span className="font-medium">{t(o.reason || "Not available")}</span>{view === "week" && o.staffId ? ` · ${staffName.get(o.staffId) ?? ""}` : ""}
+                  </Link>
+                );
+              })}
               {c.items.map((b) => <Block key={b.id} b={b} tz={tz} href={q({ focus: b.id })} />)}
             </div>
           ))}
@@ -121,6 +146,11 @@ export default async function BookingsPage({ searchParams }: { searchParams: Pro
       </Card>
 
       {sp.new && <NewBookingDrawer close={q({ new: undefined }).replace(/&?new=1/, "")} services={services} staff={staff} customers={await listCustomers(tenant.business.id)} date={anchor} />}
+      {sp.block && <BlockTimeDrawer close={q({}).replace(/&?block=[^&]*/, "")} staff={staff} date={anchor} staffId={sp.staff} />}
+      {sp.off && (() => {
+        const o = offs.find((x) => x.id === sp.off);
+        return o ? <OffDrawer o={o} tz={tz} who={o.staffId ? (staffName.get(o.staffId) ?? "") : t("Everyone (whole business)")} close={q({}).replace(/&?off=[^&]*/, "")} /> : null;
+      })()}
       {focus && <BookingDrawer b={focus} tz={tz} currency={tenant.business.currency} close={q({}).replace(/&?focus=[^&]*/, "")} staff={staff} />}
     </>
   );
@@ -259,6 +289,65 @@ async function NewBookingDrawer({ close, services, staff, customers, date }: { c
           <SubmitButton className="w-full">{t("Create booking")}</SubmitButton>
         </ActionForm>
       )}
+    </Drawer>
+  );
+}
+
+async function BlockTimeDrawer({ close, staff, date, staffId }: { close: string; staff: { id: string; name: string; active: boolean }[]; date: string; staffId?: string }) {
+  const t = await getT();
+  return (
+    <Drawer title={t("Block time (not available)")} close={close}>
+      <p className="mb-4 text-[14px] text-muted">{t("Lunch, a break, an errand… Nobody can book those hours: not customers, not your assistant. Bookings already there are kept.")}</p>
+      <ActionForm action={blockTimeAction} className="space-y-4" resetOnSuccess>
+        <Field label={t("Reason")}>
+          <Select name="reason" defaultValue="Lunch">
+            <option value="Lunch">{t("Lunch")}</option>
+            <option value="Break">{t("Break")}</option>
+            <option value="Personal">{t("Personal")}</option>
+            <option value="other">{t("Other…")}</option>
+          </Select>
+        </Field>
+        <Field label={t("Other reason")} hint={t("optional")}><Input name="reasonText" maxLength={80} placeholder={t("e.g. Doctor")} /></Field>
+        <Field label={t("Date")}><Input type="date" name="date" defaultValue={date} required /></Field>
+        <div className="grid grid-cols-2 gap-3">
+          <Field label={t("From")}><Input type="time" name="from" step={300} defaultValue="14:00" required /></Field>
+          <Field label={t("To")}><Input type="time" name="to" step={300} defaultValue="15:00" required /></Field>
+        </div>
+        <Field label={t("Who")}>
+          <Select name="staffId" defaultValue={staffId ?? ""}>
+            <option value="">{t("Everyone (whole business)")}</option>
+            {staff.filter((s) => s.active).map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+          </Select>
+        </Field>
+        <Field label={t("Repeat")}>
+          <Select name="repeat" defaultValue="none">
+            <option value="none">{t("Only this day")}</option>
+            <option value="daily">{t("Every day for the next 7 days")}</option>
+            <option value="weekly">{t("Same weekday for the next 8 weeks")}</option>
+          </Select>
+        </Field>
+        <p className="text-[12px] text-faint">{t("For a break every day, you can also set it once in Team & hours.")}</p>
+        <SubmitButton className="w-full" icon="clock">{t("Block time")}</SubmitButton>
+      </ActionForm>
+    </Drawer>
+  );
+}
+
+async function OffDrawer({ o, tz, who, close }: { o: { id: string; startsAt: Date; endsAt: Date; reason: string }; tz: string; who: string; close: string }) {
+  const t = await getT();
+  const s0 = zonedParts(o.startsAt, tz);
+  const e0 = zonedParts(o.endsAt, tz);
+  return (
+    <Drawer title={t(o.reason || "Not available")} close={close}>
+      <dl className="space-y-3 text-[14px]">
+        <Row k={t("From")} v={`${fmtDay(s0.date, tz, true)}, ${formatTime(o.startsAt, tz)}`} />
+        <Row k={t("To")} v={`${fmtDay(e0.date, tz, true)}, ${formatTime(o.endsAt, tz)}`} />
+        <Row k={t("Who")} v={who} />
+      </dl>
+      <form action={unblockTimeAction} className="mt-6">
+        <input type="hidden" name="id" value={o.id} />
+        <ConfirmSubmit message={t("Make this time available again?")} variant="secondary" icon="trash">{t("Remove block")}</ConfirmSubmit>
+      </form>
     </Drawer>
   );
 }

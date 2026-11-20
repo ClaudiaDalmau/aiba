@@ -422,7 +422,7 @@ const ru: Dictionary = {
   "Time off & closures": "Отпуска и закрытия",
   "Who": "Кто",
   "From": "С",
-  "To": "По",
+  "To": "До",
   "inclusive": "включительно",
   "Reason": "Причина",
   "Holiday, training…": "Отпуск, обучение…",
@@ -1355,7 +1355,27 @@ const ru: Dictionary = {
   "{n} days": "{n} дн.",
   "{n} need you": "ждут вас: {n}",
   "{pct} of chats solved without you": "{pct} чатов решено без вас",
-  "Add customers to the waitlist": "Добавлять клиентов в лист ожидания"
+  "Add customers to the waitlist": "Добавлять клиентов в лист ожидания",
+  "Not available": "Недоступно",
+  "Block time (not available)": "Заблокировать время (недоступно)",
+  "Lunch, a break, an errand… Nobody can book those hours: not customers, not your assistant. Bookings already there are kept.": "Обед, перерыв, дела… Никто не сможет записаться на это время — ни клиенты, ни ассистент. Существующие записи сохранятся.",
+  "Lunch": "Обед",
+  "Break": "Перерыв",
+  "Personal": "Личное",
+  "Other…": "Другое…",
+  "Other reason": "Другая причина",
+  "e.g. Doctor": "напр. Врач",
+  "Repeat": "Повторять",
+  "Only this day": "Только этот день",
+  "Every day for the next 7 days": "Каждый день 7 дней",
+  "Same weekday for the next 8 weeks": "Тот же день недели 8 недель",
+  "For a break every day, you can also set it once in Team & hours.": "Для ежедневного перерыва можно один раз задать его в разделе «Команда и часы».",
+  "Block time": "Заблокировать",
+  "Make this time available again?": "Снова сделать это время доступным?",
+  "Remove block": "Снять блокировку",
+  "Time blocked": "Время заблокировано",
+  "Time blocked on the chosen days": "Время заблокировано в выбранные дни",
+  "Pick a valid day and times": "Выберите корректные день и время"
 };
 
 export default ru;

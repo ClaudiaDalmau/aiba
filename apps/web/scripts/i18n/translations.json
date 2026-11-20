@@ -2938,21 +2938,24 @@
 "de": "Wer",
 "it": "Chi",
 "pt-BR": "Quem",
-"ru": "Кто"
+"ru": "Кто",
+"es": "Quién"
 },
 "From": {
-"fr": "Du",
+"fr": "De",
 "de": "Von",
-"it": "Dal",
+"it": "Dalle",
 "pt-BR": "De",
-"ru": "С"
+"ru": "С",
+"es": "Desde"
 },
 "To": {
-"fr": "Au",
+"fr": "À",
 "de": "Bis",
-"it": "Al",
+"it": "Alle",
 "pt-BR": "Até",
-"ru": "По"
+"ru": "До",
+"es": "Hasta"
 },
 "inclusive": {
 "fr": "inclus",
@@ -10304,5 +10307,165 @@
 "it": "Aggiungere clienti alla lista d'attesa",
 "pt-BR": "Adicionar clientes à lista de espera",
 "ru": "Добавлять клиентов в лист ожидания"
+},
+"Not available": {
+"es": "No disponible",
+"fr": "Indisponible",
+"de": "Nicht verfügbar",
+"it": "Non disponibile",
+"pt-BR": "Indisponível",
+"ru": "Недоступно"
+},
+"Block time (not available)": {
+"es": "Bloquear horario (no disponible)",
+"fr": "Bloquer un créneau (indisponible)",
+"de": "Zeit blockieren (nicht verfügbar)",
+"it": "Blocca orario (non disponibile)",
+"pt-BR": "Bloquear horário (indisponível)",
+"ru": "Заблокировать время (недоступно)"
+},
+"Lunch, a break, an errand… Nobody can book those hours: not customers, not your assistant. Bookings already there are kept.": {
+"es": "Comida, un descanso, un recado… Nadie podrá reservar esas horas: ni clientes ni tu asistente. Las citas que ya hubiera se mantienen.",
+"fr": "Déjeuner, pause, course… Personne ne peut réserver ces heures, ni les clients ni l'assistant. Les rendez-vous existants sont conservés.",
+"de": "Mittagessen, Pause, Besorgung… Niemand kann diese Zeit buchen – weder Kunden noch dein Assistent. Bestehende Buchungen bleiben.",
+"it": "Pranzo, pausa, una commissione… Nessuno potrà prenotare quelle ore: né i clienti né l'assistente. Gli appuntamenti già presenti restano.",
+"pt-BR": "Almoço, pausa, um compromisso… Ninguém poderá reservar esses horários: nem clientes nem o assistente. As reservas existentes são mantidas.",
+"ru": "Обед, перерыв, дела… Никто не сможет записаться на это время — ни клиенты, ни ассистент. Существующие записи сохранятся."
+},
+"Lunch": {
+"es": "Comida",
+"fr": "Déjeuner",
+"de": "Mittagessen",
+"it": "Pranzo",
+"pt-BR": "Almoço",
+"ru": "Обед"
+},
+"Break": {
+"es": "Descanso",
+"fr": "Pause",
+"de": "Pause",
+"it": "Pausa",
+"pt-BR": "Pausa",
+"ru": "Перерыв"
+},
+"Personal": {
+"es": "Personal",
+"fr": "Personnel",
+"de": "Privat",
+"it": "Personale",
+"pt-BR": "Pessoal",
+"ru": "Личное"
+},
+"Other…": {
+"es": "Otro…",
+"fr": "Autre…",
+"de": "Anderes…",
+"it": "Altro…",
+"pt-BR": "Outro…",
+"ru": "Другое…"
+},
+"Other reason": {
+"es": "Otro motivo",
+"fr": "Autre motif",
+"de": "Anderer Grund",
+"it": "Altro motivo",
+"pt-BR": "Outro motivo",
+"ru": "Другая причина"
+},
+"e.g. Doctor": {
+"es": "p. ej. Médico",
+"fr": "ex. Médecin",
+"de": "z. B. Arzt",
+"it": "es. Medico",
+"pt-BR": "ex.: Médico",
+"ru": "напр. Врач"
+},
+"Repeat": {
+"es": "Repetir",
+"fr": "Répéter",
+"de": "Wiederholen",
+"it": "Ripeti",
+"pt-BR": "Repetir",
+"ru": "Повторять"
+},
+"Only this day": {
+"es": "Solo este día",
+"fr": "Ce jour uniquement",
+"de": "Nur an diesem Tag",
+"it": "Solo questo giorno",
+"pt-BR": "Só este dia",
+"ru": "Только этот день"
+},
+"Every day for the next 7 days": {
+"es": "Todos los días durante 7 días",
+"fr": "Tous les jours pendant 7 jours",
+"de": "Täglich für 7 Tage",
+"it": "Ogni giorno per 7 giorni",
+"pt-BR": "Todos os dias por 7 dias",
+"ru": "Каждый день 7 дней"
+},
+"Same weekday for the next 8 weeks": {
+"es": "El mismo día de la semana durante 8 semanas",
+"fr": "Le même jour pendant 8 semaines",
+"de": "Gleicher Wochentag für 8 Wochen",
+"it": "Stesso giorno della settimana per 8 settimane",
+"pt-BR": "Mesmo dia da semana por 8 semanas",
+"ru": "Тот же день недели 8 недель"
+},
+"For a break every day, you can also set it once in Team & hours.": {
+"es": "Para un descanso fijo todos los días, también puedes ponerlo una vez en Equipo y horarios.",
+"fr": "Pour une pause quotidienne fixe, réglez-la une fois dans Équipe & horaires.",
+"de": "Für eine tägliche feste Pause kannst du sie auch einmal unter Team & Zeiten eintragen.",
+"it": "Per una pausa fissa ogni giorno, impostala una volta in Team e orari.",
+"pt-BR": "Para uma pausa fixa diária, defina uma vez em Equipe e horários.",
+"ru": "Для ежедневного перерыва можно один раз задать его в разделе «Команда и часы»."
+},
+"Block time": {
+"es": "Bloquear horario",
+"fr": "Bloquer",
+"de": "Zeit blockieren",
+"it": "Blocca orario",
+"pt-BR": "Bloquear horário",
+"ru": "Заблокировать"
+},
+"Make this time available again?": {
+"es": "¿Volver a dejar libre este horario?",
+"fr": "Rendre ce créneau à nouveau disponible ?",
+"de": "Diese Zeit wieder freigeben?",
+"it": "Rendere di nuovo disponibile questo orario?",
+"pt-BR": "Liberar este horário de novo?",
+"ru": "Снова сделать это время доступным?"
+},
+"Remove block": {
+"es": "Quitar bloqueo",
+"fr": "Supprimer le blocage",
+"de": "Blockierung entfernen",
+"it": "Rimuovi blocco",
+"pt-BR": "Remover bloqueio",
+"ru": "Снять блокировку"
+},
+"Time blocked": {
+"es": "Horario bloqueado",
+"fr": "Créneau bloqué",
+"de": "Zeit blockiert",
+"it": "Orario bloccato",
+"pt-BR": "Horário bloqueado",
+"ru": "Время заблокировано"
+},
+"Time blocked on the chosen days": {
+"es": "Horario bloqueado en los días elegidos",
+"fr": "Créneau bloqué les jours choisis",
+"de": "Zeit an den gewählten Tagen blockiert",
+"it": "Orario bloccato nei giorni scelti",
+"pt-BR": "Horário bloqueado nos dias escolhidos",
+"ru": "Время заблокировано в выбранные дни"
+},
+"Pick a valid day and times": {
+"es": "Elige un día y horas válidos",
+"fr": "Choisissez un jour et des heures valides",
+"de": "Wähle gültigen Tag und Uhrzeiten",
+"it": "Scegli giorno e orari validi",
+"pt-BR": "Escolha dia e horários válidos",
+"ru": "Выберите корректные день и время"
 }
 }

@@ -1355,7 +1355,27 @@ const ptBR: Dictionary = {
   "{n} days": "{n} dias",
   "{n} need you": "{n} precisam de você",
   "{pct} of chats solved without you": "{pct} das conversas resolvidas sem você",
-  "Add customers to the waitlist": "Adicionar clientes à lista de espera"
+  "Add customers to the waitlist": "Adicionar clientes à lista de espera",
+  "Not available": "Indisponível",
+  "Block time (not available)": "Bloquear horário (indisponível)",
+  "Lunch, a break, an errand… Nobody can book those hours: not customers, not your assistant. Bookings already there are kept.": "Almoço, pausa, um compromisso… Ninguém poderá reservar esses horários: nem clientes nem o assistente. As reservas existentes são mantidas.",
+  "Lunch": "Almoço",
+  "Break": "Pausa",
+  "Personal": "Pessoal",
+  "Other…": "Outro…",
+  "Other reason": "Outro motivo",
+  "e.g. Doctor": "ex.: Médico",
+  "Repeat": "Repetir",
+  "Only this day": "Só este dia",
+  "Every day for the next 7 days": "Todos os dias por 7 dias",
+  "Same weekday for the next 8 weeks": "Mesmo dia da semana por 8 semanas",
+  "For a break every day, you can also set it once in Team & hours.": "Para uma pausa fixa diária, defina uma vez em Equipe e horários.",
+  "Block time": "Bloquear horário",
+  "Make this time available again?": "Liberar este horário de novo?",
+  "Remove block": "Remover bloqueio",
+  "Time blocked": "Horário bloqueado",
+  "Time blocked on the chosen days": "Horário bloqueado nos dias escolhidos",
+  "Pick a valid day and times": "Escolha dia e horários válidos"
 };
 
 export default ptBR;

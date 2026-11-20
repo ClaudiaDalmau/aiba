@@ -21,7 +21,7 @@ import { requireUser } from "@/lib/auth";
 import { tenantFor } from "@/lib/tenant";
 import { assertStaffAllowed } from "@/lib/catalog";
 import { getSetting } from "@/lib/settings";
-import { hhmmToMinutes, zonedToUtc } from "@/lib/time";
+import { addDays, hhmmToMinutes, zonedToUtc } from "@/lib/time";
 import { AgentPatch, BusinessPatch, KnowledgeInput, PersonaInput, ServiceInput } from "@/lib/validators";
 
 export type ActionState = { ok?: boolean; error?: string; message?: string } | null;
@@ -478,4 +478,33 @@ export async function saveStyleGuide(_prev: ActionState, f: FormData): Promise<A
     revalidatePath("/app/agent");
     return styleGuide ? "Style saved. Your agent writes like you from its next message." : "Style guide removed";
   });
+}
+
+// ---------------------------------------------------------------- «not available» blocks from the calendar
+
+export async function blockTimeAction(_prev: ActionState, f: FormData): Promise<ActionState> {
+  const t = await tenantFor("bookings.manage");
+  return attempt(async () => {
+    const tz = t.business.timezone;
+    const date = s(f, "date");
+    const from = hhmmToMinutes(s(f, "from"));
+    const to = hhmmToMinutes(s(f, "to"));
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(from) || !Number.isFinite(to)) throw new AppError(400, "bad_request", "Pick a valid day and times");
+    if (to <= from) throw new AppError(400, "bad_request", "End must be after start");
+    const repeat = s(f, "repeat");
+    const dates = repeat === "daily" ? Array.from({ length: 7 }, (_, i) => addDays(date, i)) : repeat === "weekly" ? Array.from({ length: 8 }, (_, i) => addDays(date, i * 7)) : [date];
+    const reason = (s(f, "reason") === "other" ? s(f, "reasonText") : s(f, "reason")) || "Not available";
+    const staffId = s(f, "staffId") || null;
+    await db.insert(schema.timeOff).values(dates.map((d) => ({ id: newId("off"), businessId: t.business.id, staffId, startsAt: zonedToUtc(d, from, tz), endsAt: zonedToUtc(d, to, tz), reason: reason.slice(0, 80) })));
+    await audit(t.business.id, { type: "user", id: t.user.id }, "time.blocked", t.business.id, { date, from, to, repeat, staffId });
+    revalidatePath("/app/bookings");
+    return dates.length > 1 ? "Time blocked on the chosen days" : "Time blocked";
+  });
+}
+
+export async function unblockTimeAction(f: FormData) {
+  const t = await tenantFor("bookings.manage");
+  await db.delete(schema.timeOff).where(and(eq(schema.timeOff.id, s(f, "id")), eq(schema.timeOff.businessId, t.business.id)));
+  revalidatePath("/app/bookings");
+  revalidatePath("/app/team");
 }

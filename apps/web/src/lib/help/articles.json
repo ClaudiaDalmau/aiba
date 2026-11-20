@@ -154,6 +154,77 @@
   }
  },
  {
+  "id": "block",
+  "href": "/app/bookings?block=1",
+  "paths": [
+   "/app/bookings",
+   "/app/team"
+  ],
+  "icon": "clock",
+  "title": {
+   "en": "Block time (lunch, breaks)",
+   "es": "Bloquear horas (comida, descansos)",
+   "fr": "Bloquer des heures (déjeuner, pauses)",
+   "de": "Zeit blockieren (Mittag, Pausen)",
+   "it": "Bloccare orari (pranzo, pause)",
+   "pt-BR": "Bloquear horários (almoço, pausas)",
+   "ru": "Блокировать время (обед, перерывы)"
+  },
+  "keywords": {
+   "en": "not available block lunch break busy unavailable rest",
+   "es": "no disponible bloquear comida descanso comer ocupado pausa",
+   "fr": "indisponible bloquer déjeuner pause",
+   "de": "nicht verfügbar blockieren mittag pause",
+   "it": "non disponibile bloccare pranzo pausa",
+   "pt-BR": "indisponível bloquear almoço pausa",
+   "ru": "недоступно блокировать обед перерыв"
+  },
+  "steps": {
+   "en": [
+    "In Bookings press «Not available».",
+    "Choose the reason (lunch, break, personal or your own), the day, from–to, who it applies to, and whether to repeat it (7 days in a row or the same weekday for 8 weeks).",
+    "Those hours disappear from your booking page and the assistant won't offer them. Bookings already there are kept.",
+    "Blocks appear striped in the calendar; click one to remove it. For a fixed daily break, set it in Team & hours."
+   ],
+   "es": [
+    "En Reservas pulsa «No disponible».",
+    "Elige el motivo (comida, descanso, personal u otro), el día, desde–hasta, a quién afecta y si se repite (7 días seguidos o el mismo día de la semana durante 8 semanas).",
+    "Esas horas desaparecen de tu página de reservas y el asistente no las ofrece. Las citas que ya hubiera se mantienen.",
+    "Los bloqueos aparecen rayados en la agenda; pulsa uno para quitarlo. Para un descanso fijo diario, ponlo en Equipo y horarios."
+   ],
+   "fr": [
+    "Dans Réservations, cliquez « Indisponible ».",
+    "Choisissez le motif, le jour, de–à, la personne concernée et la répétition (7 jours ou même jour pendant 8 semaines).",
+    "Ces heures disparaissent de votre page et l'assistant ne les propose pas. Les rendez-vous existants restent.",
+    "Les blocages apparaissent hachurés ; cliquez pour les supprimer. Pour une pause quotidienne fixe, utilisez Équipe & horaires."
+   ],
+   "de": [
+    "Unter Buchungen „Nicht verfügbar“ wählen.",
+    "Grund, Tag, von–bis, wen es betrifft und Wiederholung (7 Tage oder gleicher Wochentag für 8 Wochen) wählen.",
+    "Diese Zeiten verschwinden von deiner Buchungsseite und der Assistent bietet sie nicht an. Bestehende Buchungen bleiben.",
+    "Blockierungen erscheinen schraffiert; zum Entfernen anklicken. Feste tägliche Pause: unter Team & Zeiten."
+   ],
+   "it": [
+    "In Prenotazioni premi «Non disponibile».",
+    "Scegli motivo, giorno, dalle–alle, a chi si applica e se ripetere (7 giorni o stesso giorno per 8 settimane).",
+    "Quelle ore spariscono dalla pagina e l'assistente non le offre. Gli appuntamenti già presenti restano.",
+    "I blocchi appaiono a righe; cliccane uno per toglierlo. Per una pausa fissa giornaliera usa Team e orari."
+   ],
+   "pt-BR": [
+    "Em Reservas toque em «Indisponível».",
+    "Escolha motivo, dia, de–até, a quem se aplica e se repete (7 dias seguidos ou o mesmo dia por 8 semanas).",
+    "Esses horários somem da página e o assistente não os oferece. Reservas existentes são mantidas.",
+    "Os bloqueios aparecem listrados; toque em um para remover. Para pausa fixa diária, use Equipe e horários."
+   ],
+   "ru": [
+    "В разделе Записи нажмите «Недоступно».",
+    "Выберите причину, день, с–до, для кого и повтор (7 дней подряд или тот же день недели 8 недель).",
+    "Это время исчезнет со страницы записи, и ассистент не будет его предлагать. Существующие записи сохранятся.",
+    "Блокировки показаны штриховкой; нажмите, чтобы снять. Постоянный ежедневный перерыв задайте в «Команда и часы»."
+   ]
+  }
+ },
+ {
   "id": "inbox",
   "href": "/app/inbox",
   "paths": [

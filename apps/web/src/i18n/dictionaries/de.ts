@@ -1355,7 +1355,27 @@ const de: Dictionary = {
   "{n} days": "{n} Tage",
   "{n} need you": "{n} brauchen dich",
   "{pct} of chats solved without you": "{pct} der Chats ohne dich gelöst",
-  "Add customers to the waitlist": "Kunden auf die Warteliste setzen"
+  "Add customers to the waitlist": "Kunden auf die Warteliste setzen",
+  "Not available": "Nicht verfügbar",
+  "Block time (not available)": "Zeit blockieren (nicht verfügbar)",
+  "Lunch, a break, an errand… Nobody can book those hours: not customers, not your assistant. Bookings already there are kept.": "Mittagessen, Pause, Besorgung… Niemand kann diese Zeit buchen – weder Kunden noch dein Assistent. Bestehende Buchungen bleiben.",
+  "Lunch": "Mittagessen",
+  "Break": "Pause",
+  "Personal": "Privat",
+  "Other…": "Anderes…",
+  "Other reason": "Anderer Grund",
+  "e.g. Doctor": "z. B. Arzt",
+  "Repeat": "Wiederholen",
+  "Only this day": "Nur an diesem Tag",
+  "Every day for the next 7 days": "Täglich für 7 Tage",
+  "Same weekday for the next 8 weeks": "Gleicher Wochentag für 8 Wochen",
+  "For a break every day, you can also set it once in Team & hours.": "Für eine tägliche feste Pause kannst du sie auch einmal unter Team & Zeiten eintragen.",
+  "Block time": "Zeit blockieren",
+  "Make this time available again?": "Diese Zeit wieder freigeben?",
+  "Remove block": "Blockierung entfernen",
+  "Time blocked": "Zeit blockiert",
+  "Time blocked on the chosen days": "Zeit an den gewählten Tagen blockiert",
+  "Pick a valid day and times": "Wähle gültigen Tag und Uhrzeiten"
 };
 
 export default de;
