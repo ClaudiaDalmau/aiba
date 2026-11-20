@@ -15,6 +15,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     ...config,
     name: "AIBA",
     slug: "aiba-agenda",
+    owner: "aiba-app",
     scheme: "aibaagenda",
     icon: `${a}/icon.png`,
     ios: { ...config.ios, supportsTablet: false, bundleIdentifier: "app.aiba.agenda" },
@@ -29,6 +30,6 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       },
     },
     web: { ...config.web, favicon: `${a}/favicon.png` },
-    extra: { ...config.extra, variant: "sensible" },
+    extra: { ...config.extra, variant: "sensible", eas: { projectId: "4c9a1f77-220d-4c3a-a3a4-53c245e32fd6" } },
   };
 };
