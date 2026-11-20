@@ -13,7 +13,7 @@ type Kind = "string" | "secret" | "number" | "boolean" | "select";
 
 export type SettingDef = {
   key: string;
-  group: "general" | "ai" | "telegram" | "whatsapp" | "billing" | "reminders" | "email";
+  group: "general" | "ai" | "telegram" | "whatsapp" | "billing" | "reminders" | "email" | "google";
   label: string;
   help?: string;
   kind: Kind;
@@ -72,6 +72,8 @@ export const SETTINGS = [
   { key: "email.enabled", group: "email", label: "Send emails", help: "Booking confirmations, changes and reminders to customers, plus alerts to the platform team.", kind: "boolean", default: true },
   { key: "email.resendApiKey", group: "email", label: "Resend API key", help: "From resend.com → API Keys. Without it no emails are sent.", kind: "secret", env: "RESEND_API_KEY", default: null },
   { key: "email.from", group: "email", label: "Sender", help: "A verified sender in Resend, e.g. AIBA <hola@aiba.app>. Until your domain is verified use onboarding@resend.dev (only delivers to your own address).", kind: "string", env: "EMAIL_FROM", default: "AIBA <onboarding@resend.dev>" },
+  { key: "google.clientId", group: "google", label: "Google OAuth client ID", help: "Google Cloud Console → APIs & Services → Credentials → OAuth client (Web application).", kind: "string", env: "GOOGLE_CLIENT_ID", default: "" },
+  { key: "google.clientSecret", group: "google", label: "Google OAuth client secret", kind: "secret", env: "GOOGLE_CLIENT_SECRET", default: null },
   { key: "email.teamInbox", group: "email", label: "Platform team inbox", help: "Receives new waitlist sign-ups and access requests from the website. Blank = support email.", kind: "string", env: "TEAM_INBOX", default: "" },
 ] as const satisfies readonly SettingDef[];
 

@@ -1,4 +1,5 @@
 import "server-only";
+import { googleBusy } from "./google-calendar";
 import { and, eq, gt, inArray, isNull, lt, or } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { notFound } from "./errors";
@@ -62,7 +63,7 @@ export async function getSlots(
   const staffIds = staffList.map((s) => s.id);
   const weekday = weekdayOf(opts.date);
 
-  const [rules, busy, off] = await Promise.all([
+  const [rules, busy, off, gbusy] = await Promise.all([
     db
       .select()
       .from(schema.availabilityRules)
@@ -96,6 +97,7 @@ export async function getSlots(
           gt(schema.timeOff.endsAt, dayStart),
         ),
       ),
+    googleBusy(business.id, dayStart, dayEnd, tz),
   ]);
 
   const step = Math.max(5, policy.slotIntervalMinutes);
@@ -108,6 +110,7 @@ export async function getSlots(
         .filter((b) => b.staffId === s.id && b.id !== opts.excludeBookingId)
         .map((b) => ({ start: b.startsAt.getTime(), end: b.endsAt.getTime() })),
       ...off.filter((o) => !o.staffId || o.staffId === s.id).map((o) => ({ start: o.startsAt.getTime(), end: o.endsAt.getTime() })),
+      ...gbusy.filter((g) => !g.staffId || g.staffId === s.id).map((g) => ({ start: g.start, end: g.end })),
     ];
     for (const r of rules.filter((r) => r.staffId === s.id)) {
       for (let m = r.startMinute; m + service.durationMinutes <= r.endMinute; m += step) {

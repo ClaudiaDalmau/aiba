@@ -1264,7 +1264,32 @@ const fr: Dictionary = {
   "on {amount}": "sur {amount}",
   "prefix of the number": "préfixe du numéro",
   "{n} invoices": "{n} factures",
-  "Invoice not found": "Facture introuvable"
+  "Invoice not found": "Facture introuvable",
+  "See your AIBA bookings in your Google Calendar, and keep your personal events from being booked over.": "Voyez vos réservations AIBA dans Google Agenda et évitez qu'on réserve par-dessus vos événements personnels.",
+  "Google Calendar connected.": "Google Agenda connecté.",
+  "You didn't give access, so nothing was connected.": "Vous n'avez pas autorisé l'accès, rien n'a été connecté.",
+  "Google didn't complete the connection. Try again and tick the calendar permission.": "Google n'a pas terminé la connexion. Réessayez en cochant l'autorisation de l'agenda.",
+  "Google Calendar isn't set up on this platform yet.": "Google Agenda n'est pas encore configuré sur la plateforme.",
+  "Connect Google Calendar": "Connecter Google Agenda",
+  "Needs reconnecting": "À reconnecter",
+  "Connected": "Connecté",
+  "Reconnect": "Reconnecter",
+  "Add my bookings to Google Calendar": "Ajouter mes réservations à Google Agenda",
+  "New, moved and cancelled bookings update the calendar automatically.": "Les réservations nouvelles, déplacées et annulées mettent l'agenda à jour automatiquement.",
+  "Block my busy times": "Bloquer mes heures occupées",
+  "Your own Google events (not the ones AIBA creates) make those hours unavailable for booking. Events marked «free» don't block.": "Vos propres événements Google (pas ceux créés par AIBA) rendent ces heures non réservables. Les événements « disponible » ne bloquent pas.",
+  "Whose calendar is it?": "À qui est cet agenda ?",
+  "its busy times block this person": "ses heures occupées bloquent cette personne",
+  "Everyone (whole business)": "Tout le monde (tout l'établissement)",
+  "Disconnect Google Calendar? Events already created stay in your calendar.": "Déconnecter Google Agenda ? Les événements créés restent dans votre agenda.",
+  "Disconnect": "Déconnecter",
+  "Calendar settings saved": "Réglages de l'agenda enregistrés",
+  "Google Calendar OAuth redirect URI (Google Cloud → Credentials → Authorised redirect URIs)": "URI de redirection OAuth Google Agenda (Google Cloud → Identifiants → URI de redirection autorisés)",
+  "Configured": "Configuré",
+  "Lets each business connect its Google Calendar. Authorised redirect URI: {url}/api/integrations/google/callback": "Permet à chaque établissement de connecter son Google Agenda. URI de redirection autorisé : {url}/api/integrations/google/callback",
+  "Google OAuth client ID": "ID client OAuth Google",
+  "Google OAuth client secret": "Secret client OAuth Google",
+  "Google Cloud Console → APIs & Services → Credentials → OAuth client (Web application).": "Google Cloud Console → API et services → Identifiants → ID client OAuth (Application Web)."
 };
 
 export default fr;

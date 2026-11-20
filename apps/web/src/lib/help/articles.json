@@ -1072,6 +1072,84 @@
   }
  },
  {
+  "id": "calendar",
+  "href": "/app/settings#calendar",
+  "paths": [
+   "/app/settings",
+   "/app/team"
+  ],
+  "icon": "calendar",
+  "title": {
+   "en": "Google Calendar",
+   "es": "Google Calendar",
+   "fr": "Google Agenda",
+   "de": "Google Kalender",
+   "it": "Google Calendar",
+   "pt-BR": "Google Agenda",
+   "ru": "Google Календарь"
+  },
+  "keywords": {
+   "en": "google calendar sync connect busy events agenda gmail",
+   "es": "google calendar calendario sincronizar conectar ocupado eventos agenda gmail",
+   "fr": "google agenda calendrier synchroniser connecter occupé événements",
+   "de": "google kalender synchronisieren verbinden belegt termine",
+   "it": "google calendar calendario sincronizzare collegare occupato eventi",
+   "pt-BR": "google agenda calendário sincronizar conectar ocupado eventos",
+   "ru": "google календарь синхронизация подключить занято события"
+  },
+  "steps": {
+   "en": [
+    "Go to Business → Settings, card «Google Calendar», and press «Connect Google Calendar». Sign in with your Google account and allow calendar access.",
+    "«Add my bookings to Google Calendar»: every booking appears in your calendar with the customer's details, and moves or disappears when it is changed or cancelled. Pending requests show with ⏳.",
+    "«Block my busy times»: your own events (doctor, school run…) make those hours unavailable on your booking page and for the assistant. Events marked «free» and all bookings created by AIBA don't count twice.",
+    "«Whose calendar is it?»: choose the team member whose availability it blocks, or the whole business.",
+    "You can disconnect at any time; events already created stay in your calendar."
+   ],
+   "es": [
+    "Ve a Negocio → Ajustes, tarjeta «Google Calendar», y pulsa «Conectar Google Calendar». Entra con tu cuenta de Google y permite el acceso al calendario.",
+    "«Añadir mis reservas a Google Calendar»: cada reserva aparece en tu calendario con los datos del cliente, y se mueve o desaparece si se cambia o cancela. Las solicitudes pendientes llevan ⏳.",
+    "«Bloquear mis horas ocupadas»: tus propios eventos (médico, recoger a los niños…) hacen que esas horas no estén disponibles en tu página ni para el asistente. Los eventos marcados como «disponible» y las reservas creadas por AIBA no cuentan dos veces.",
+    "«¿De quién es el calendario?»: elige la persona del equipo cuya disponibilidad bloquea, o todo el negocio.",
+    "Puedes desconectarlo cuando quieras; los eventos ya creados se quedan en tu calendario."
+   ],
+   "fr": [
+    "Allez dans Établissement → Paramètres, carte « Google Agenda », et cliquez « Connecter Google Agenda ». Connectez-vous et autorisez l'accès à l'agenda.",
+    "« Ajouter mes réservations à Google Agenda » : chaque réservation apparaît avec les coordonnées du client, et se déplace ou disparaît si elle change ou est annulée. Les demandes en attente portent ⏳.",
+    "« Bloquer mes heures occupées » : vos propres événements rendent ces heures indisponibles sur votre page et pour l'assistant. Les événements « disponible » et les réservations AIBA ne comptent pas deux fois.",
+    "« À qui est cet agenda ? » : choisissez le membre de l'équipe concerné, ou tout l'établissement.",
+    "Vous pouvez le déconnecter à tout moment ; les événements créés restent dans votre agenda."
+   ],
+   "de": [
+    "Gehe zu Geschäft → Einstellungen, Karte „Google Kalender“, und klicke „Google Kalender verbinden“. Melde dich an und erlaube den Kalenderzugriff.",
+    "„Meine Buchungen in Google Kalender eintragen“: Jede Buchung erscheint mit den Kundendaten und wird verschoben oder entfernt, wenn sie sich ändert. Offene Anfragen tragen ⏳.",
+    "„Meine belegten Zeiten blockieren“: Deine eigenen Termine machen diese Zeiten auf deiner Seite und für den Assistenten unbuchbar. Als „frei“ markierte Termine und AIBA-Buchungen zählen nicht doppelt.",
+    "„Wessen Kalender ist das?“: Wähle das Teammitglied oder das ganze Geschäft.",
+    "Du kannst jederzeit trennen; bereits erstellte Termine bleiben im Kalender."
+   ],
+   "it": [
+    "Vai in Attività → Impostazioni, scheda «Google Calendar», e premi «Collega Google Calendar». Accedi e consenti l'accesso al calendario.",
+    "«Aggiungi le mie prenotazioni a Google Calendar»: ogni prenotazione compare con i dati del cliente, e si sposta o sparisce se cambia o viene annullata. Le richieste in attesa hanno ⏳.",
+    "«Blocca i miei orari occupati»: i tuoi eventi personali rendono quelle ore non prenotabili sulla pagina e per l'assistente. Gli eventi «libero» e le prenotazioni AIBA non contano due volte.",
+    "«Di chi è il calendario?»: scegli il membro del team o tutta l'attività.",
+    "Puoi scollegarlo quando vuoi; gli eventi creati restano nel calendario."
+   ],
+   "pt-BR": [
+    "Vá em Negócio → Configurações, cartão «Google Agenda», e toque em «Conectar Google Agenda». Entre com sua conta Google e permita o acesso à agenda.",
+    "«Adicionar minhas reservas ao Google Agenda»: cada reserva aparece com os dados do cliente, e muda ou some se for alterada ou cancelada. Pedidos pendentes têm ⏳.",
+    "«Bloquear meus horários ocupados»: seus eventos pessoais deixam esses horários indisponíveis na página e para o assistente. Eventos marcados como «livre» e reservas criadas pela AIBA não contam duas vezes.",
+    "«De quem é a agenda?»: escolha o profissional ou o negócio todo.",
+    "Você pode desconectar quando quiser; os eventos criados continuam na agenda."
+   ],
+   "ru": [
+    "Откройте Бизнес → Настройки, карточка «Google Календарь», и нажмите «Подключить Google Календарь». Войдите в аккаунт Google и разрешите доступ к календарю.",
+    "«Добавлять мои записи в Google Календарь»: каждая запись появляется с данными клиента и переносится или исчезает при изменении или отмене. Заявки в ожидании отмечены ⏳.",
+    "«Блокировать занятое время»: ваши личные события делают эти часы недоступными на странице и для ассистента. События «свободен» и записи AIBA не учитываются дважды.",
+    "«Чей это календарь?»: выберите сотрудника или весь бизнес.",
+    "Отключить можно в любой момент; созданные события останутся в календаре."
+   ]
+  }
+ },
+ {
   "id": "invoices",
   "href": "/app/invoices",
   "paths": [

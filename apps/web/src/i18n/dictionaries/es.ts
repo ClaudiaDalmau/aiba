@@ -1264,7 +1264,32 @@ const es: Dictionary = {
   "on {amount}": "sobre {amount}",
   "prefix of the number": "prefijo del número",
   "{n} invoices": "{n} facturas",
-  "Invoice not found": "Factura no encontrada"
+  "Invoice not found": "Factura no encontrada",
+  "See your AIBA bookings in your Google Calendar, and keep your personal events from being booked over.": "Ve tus reservas de AIBA en tu Google Calendar y evita que te reserven encima de tus eventos personales.",
+  "Google Calendar connected.": "Google Calendar conectado.",
+  "You didn't give access, so nothing was connected.": "No diste acceso, así que no se ha conectado nada.",
+  "Google didn't complete the connection. Try again and tick the calendar permission.": "Google no completó la conexión. Vuelve a intentarlo y marca el permiso del calendario.",
+  "Google Calendar isn't set up on this platform yet.": "Google Calendar aún no está configurado en la plataforma.",
+  "Connect Google Calendar": "Conectar Google Calendar",
+  "Needs reconnecting": "Hay que volver a conectarlo",
+  "Connected": "Conectado",
+  "Reconnect": "Volver a conectar",
+  "Add my bookings to Google Calendar": "Añadir mis reservas a Google Calendar",
+  "New, moved and cancelled bookings update the calendar automatically.": "Las reservas nuevas, movidas y canceladas actualizan el calendario solas.",
+  "Block my busy times": "Bloquear mis horas ocupadas",
+  "Your own Google events (not the ones AIBA creates) make those hours unavailable for booking. Events marked «free» don't block.": "Tus propios eventos de Google (no los que crea AIBA) hacen que esas horas no se puedan reservar. Los eventos marcados como «disponible» no bloquean.",
+  "Whose calendar is it?": "¿De quién es el calendario?",
+  "its busy times block this person": "sus horas ocupadas bloquean a esta persona",
+  "Everyone (whole business)": "Todos (todo el negocio)",
+  "Disconnect Google Calendar? Events already created stay in your calendar.": "¿Desconectar Google Calendar? Los eventos ya creados se quedan en tu calendario.",
+  "Disconnect": "Desconectar",
+  "Calendar settings saved": "Ajustes del calendario guardados",
+  "Google Calendar OAuth redirect URI (Google Cloud → Credentials → Authorised redirect URIs)": "URI de redirección OAuth de Google Calendar (Google Cloud → Credenciales → URI de redireccionamiento autorizados)",
+  "Configured": "Configurado",
+  "Lets each business connect its Google Calendar. Authorised redirect URI: {url}/api/integrations/google/callback": "Permite que cada negocio conecte su Google Calendar. URI de redireccionamiento autorizado: {url}/api/integrations/google/callback",
+  "Google OAuth client ID": "ID de cliente OAuth de Google",
+  "Google OAuth client secret": "Secreto de cliente OAuth de Google",
+  "Google Cloud Console → APIs & Services → Credentials → OAuth client (Web application).": "Google Cloud Console → APIs y servicios → Credenciales → ID de cliente de OAuth (Aplicación web)."
 };
 
 export default es;

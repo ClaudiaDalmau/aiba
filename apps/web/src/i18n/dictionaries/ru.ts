@@ -1264,7 +1264,32 @@ const ru: Dictionary = {
   "on {amount}": "с {amount}",
   "prefix of the number": "префикс номера",
   "{n} invoices": "счетов: {n}",
-  "Invoice not found": "Счёт не найден"
+  "Invoice not found": "Счёт не найден",
+  "See your AIBA bookings in your Google Calendar, and keep your personal events from being booked over.": "Видите записи AIBA в Google Календаре, и никто не запишется поверх ваших личных дел.",
+  "Google Calendar connected.": "Google Календарь подключён.",
+  "You didn't give access, so nothing was connected.": "Доступ не предоставлен, ничего не подключено.",
+  "Google didn't complete the connection. Try again and tick the calendar permission.": "Google не завершил подключение. Попробуйте ещё раз и отметьте доступ к календарю.",
+  "Google Calendar isn't set up on this platform yet.": "Google Календарь на платформе ещё не настроен.",
+  "Connect Google Calendar": "Подключить Google Календарь",
+  "Needs reconnecting": "Нужно переподключить",
+  "Connected": "Подключено",
+  "Reconnect": "Переподключить",
+  "Add my bookings to Google Calendar": "Добавлять мои записи в Google Календарь",
+  "New, moved and cancelled bookings update the calendar automatically.": "Новые, перенесённые и отменённые записи обновляют календарь автоматически.",
+  "Block my busy times": "Блокировать занятое время",
+  "Your own Google events (not the ones AIBA creates) make those hours unavailable for booking. Events marked «free» don't block.": "Ваши события Google (не созданные AIBA) делают это время недоступным для записи. События «свободен» не блокируют.",
+  "Whose calendar is it?": "Чей это календарь?",
+  "its busy times block this person": "занятое время блокирует этого человека",
+  "Everyone (whole business)": "Все (весь бизнес)",
+  "Disconnect Google Calendar? Events already created stay in your calendar.": "Отключить Google Календарь? Созданные события останутся в календаре.",
+  "Disconnect": "Отключить",
+  "Calendar settings saved": "Настройки календаря сохранены",
+  "Google Calendar OAuth redirect URI (Google Cloud → Credentials → Authorised redirect URIs)": "URI перенаправления OAuth для Google Календаря (Google Cloud → Учётные данные → Разрешённые URI перенаправления)",
+  "Configured": "Настроено",
+  "Lets each business connect its Google Calendar. Authorised redirect URI: {url}/api/integrations/google/callback": "Каждый бизнес может подключить Google Календарь. Разрешённый URI перенаправления: {url}/api/integrations/google/callback",
+  "Google OAuth client ID": "Google OAuth client ID",
+  "Google OAuth client secret": "Google OAuth client secret",
+  "Google Cloud Console → APIs & Services → Credentials → OAuth client (Web application).": "Google Cloud Console → API и сервисы → Учётные данные → OAuth client (Веб-приложение)."
 };
 
 export default ru;

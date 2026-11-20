@@ -1,8 +1,12 @@
 import { currencies, timezones } from "@/lib/locale-data";
 import { getLocale, getT } from "@/i18n/server";
 import { saveSettings } from "@/actions/workspace";
-import { SubmitButton, Toggle } from "@/components/client";
-import { Card, CardHeader, Field, Input, LinkButton, PageHeader, Select, Textarea } from "@/components/ui";
+import { ConfirmSubmit, SubmitButton, Toggle } from "@/components/client";
+import { Badge, Card, CardHeader, Field, Input, LinkButton, PageHeader, Select, Textarea } from "@/components/ui";
+import { saveCalendarAction, disconnectCalendarAction } from "@/actions/calendar";
+import { Icon } from "@/components/icons";
+import { getConnection, googleConfigured } from "@/lib/google-calendar";
+import { listStaff } from "@/lib/queries";
 import { ActionForm } from "@/components/workspace/action-form";
 import { CATEGORIES } from "@/lib/businesses";
 import { currentTenant, requirePermission } from "@/lib/tenant";
@@ -12,12 +16,14 @@ export async function generateMetadata() {
   return { title: t("Settings") };
 }
 
-export default async function SettingsPage() {
+export default async function SettingsPage({ searchParams }: { searchParams: Promise<{ google?: string }> }) {
   const t = await getT();
   const tenant = await currentTenant();
   requirePermission(tenant, "business.manage");
   const b = tenant.business;
   const p = b.policy;
+  const sp = await searchParams;
+  const [conn, gReady, staff] = await Promise.all([getConnection(b.id), googleConfigured(), listStaff(b.id)]);
   return (
     <>
       <PageHeader eyebrow={t("Business")} title={t("Settings")} description={t("Your public profile, branding and booking rules. Your agent reads all of this.")} actions={<LinkButton href={`/b/${b.slug}`} target="_blank" variant="secondary" icon="external">{t("View booking page")}</LinkButton>} />
@@ -67,6 +73,46 @@ export default async function SettingsPage() {
         </Card>
         <div className="sticky bottom-4 flex justify-end"><SubmitButton size="lg">{t("Save settings")}</SubmitButton></div>
       </ActionForm>
+
+      <Card id="calendar" className="mt-6 scroll-mt-6">
+        <CardHeader title="Google Calendar" description={t("See your AIBA bookings in your Google Calendar, and keep your personal events from being booked over.")} />
+        <div className="space-y-4 p-5">
+          {sp.google === "connected" && <p className="rounded-lg bg-ok/10 px-3 py-2 text-[13px] text-ok">{t("Google Calendar connected.")}</p>}
+          {sp.google === "denied" && <p className="rounded-lg bg-warn/10 px-3 py-2 text-[13px] text-warn">{t("You didn't give access, so nothing was connected.")}</p>}
+          {sp.google === "error" && <p className="rounded-lg bg-bad/10 px-3 py-2 text-[13px] text-bad">{t("Google didn't complete the connection. Try again and tick the calendar permission.")}</p>}
+          {!gReady ? (
+            <p className="text-[14px] text-muted">{t("Google Calendar isn't set up on this platform yet.")}</p>
+          ) : !conn ? (
+            <a href="/api/integrations/google/start" className="inline-flex h-10 items-center gap-2 rounded-lg border border-border bg-surface px-4 text-[14px] font-medium shadow-card hover:bg-subtle">
+              <Icon name="calendar" size={16} /> {t("Connect Google Calendar")}
+            </a>
+          ) : (
+            <>
+              <div className="flex flex-wrap items-center gap-2 text-[14px]">
+                <Badge tone={conn.lastError ? "bad" : "ok"}>{conn.lastError ? t("Needs reconnecting") : t("Connected")}</Badge>
+                <span className="font-medium">{conn.accountEmail || "Google"}</span>
+              </div>
+              {conn.lastError && (
+                <a href="/api/integrations/google/start" className="inline-flex text-[13px] font-medium text-ai hover:underline">{t("Reconnect")}</a>
+              )}
+              <ActionForm action={saveCalendarAction} className="space-y-4">
+                <Toggle name="pushBookings" defaultChecked={conn.pushBookings} label={t("Add my bookings to Google Calendar")} description={t("New, moved and cancelled bookings update the calendar automatically.")} />
+                <Toggle name="blockBusy" defaultChecked={conn.blockBusy} label={t("Block my busy times")} description={t("Your own Google events (not the ones AIBA creates) make those hours unavailable for booking. Events marked «free» don't block.")} />
+                <Field label={t("Whose calendar is it?")} hint={t("its busy times block this person")}>
+                  <Select name="staffId" defaultValue={conn.staffId ?? ""}>
+                    <option value="">{t("Everyone (whole business)")}</option>
+                    {staff.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+                  </Select>
+                </Field>
+                <SubmitButton variant="secondary" size="sm">{t("Save")}</SubmitButton>
+              </ActionForm>
+              <form action={disconnectCalendarAction}>
+                <ConfirmSubmit message={t("Disconnect Google Calendar? Events already created stay in your calendar.")} variant="ghost">{t("Disconnect")}</ConfirmSubmit>
+              </form>
+            </>
+          )}
+        </div>
+      </Card>
     </>
   );
 }

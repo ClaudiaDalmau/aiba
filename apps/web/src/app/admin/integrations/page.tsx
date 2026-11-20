@@ -36,11 +36,13 @@ export default async function SystemStatus() {
     { label: t("WhatsApp gateway"), ok: gw === true, detail: gw === null ? t("Not configured") : gw ? t("Reachable") : t("Unreachable") },
     { label: "Stripe", ok: stripe, detail: stripe ? t("Live payments") : t("Test mode") },
     { label: t("Email (Resend)"), ok: Boolean(s["email.enabled"] && s["email.resendApiKey"]), detail: s["email.resendApiKey"] ? (s["email.enabled"] ? String(s["email.from"]) : t("Configured but switched off in Settings")) : t("Not configured") },
+    { label: "Google Calendar", ok: Boolean(s["google.clientId"] && s["google.clientSecret"]), detail: s["google.clientId"] && s["google.clientSecret"] ? t("Configured") : t("Not configured") },
     { label: t("Public URL"), ok: base.startsWith("https://"), detail: base || t("Not set") },
   ];
   const urls = [
     { label: t("Telegram webhook (registered from Telegram bot)"), url: `${base}/api/webhooks/telegram` },
     { label: t("Stripe webhook (events: checkout.session.completed, customer.subscription.updated / deleted)"), url: `${base}/api/webhooks/stripe` },
+    { label: t("Google Calendar OAuth redirect URI (Google Cloud → Credentials → Authorised redirect URIs)"), url: `${base}/api/integrations/google/callback` },
     { label: t("Reminders cron (GET every 10–15 min, Authorization: Bearer CRON_SECRET)"), url: `${base}/api/cron/reminders` },
     { label: t("WhatsApp gateway → web (internal network only; set WEB_URL on the gateway)"), url: `${base}/api/internal/whatsapp` },
   ];

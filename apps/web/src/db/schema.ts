@@ -368,6 +368,8 @@ export const bookings = pgTable(
     reminderSentAt: timestamp("reminder_sent_at", { withTimezone: true }),
     /** Session taken from a prepaid pack («bono»); the booking is then prepaid. FK added in migration 0008. */
     customerPackId: text("customer_pack_id"),
+    /** Event id in the business's connected Google Calendar. */
+    googleEventId: text("google_event_id"),
     createdAt: createdAt(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
   },
@@ -852,6 +854,28 @@ export const invoices = pgTable(
   (t) => [uniqueIndex("invoices_number_uq").on(t.businessId, t.number), index("invoices_business_idx").on(t.businessId, t.issuedAt)],
 );
 export type Invoice = typeof invoices.$inferSelect;
+
+/** A business's connected external calendar (Google). Refresh token is encrypted (AES-GCM). */
+export const calendarConnections = pgTable(
+  "calendar_connections",
+  {
+    id: id(),
+    businessId: businessId(),
+    provider: text("provider").notNull().default("google"),
+    accountEmail: text("account_email").notNull().default(""),
+    refreshToken: text("refresh_token").notNull(),
+    calendarId: text("calendar_id").notNull().default("primary"),
+    /** Whose availability the calendar's busy times block; null = everyone. */
+    staffId: text("staff_id").references(() => staff.id, { onDelete: "set null" }),
+    pushBookings: boolean("push_bookings").notNull().default(true),
+    blockBusy: boolean("block_busy").notNull().default(true),
+    lastError: text("last_error"),
+    createdBy: text("created_by"),
+    createdAt: createdAt(),
+  },
+  (t) => [uniqueIndex("calendar_connections_business_uq").on(t.businessId, t.provider)],
+);
+export type CalendarConnection = typeof calendarConnections.$inferSelect;
 
 export type Pack = typeof packs.$inferSelect;
 export type CustomerPack = typeof customerPacks.$inferSelect;

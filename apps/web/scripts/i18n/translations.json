@@ -9575,5 +9575,205 @@
 "it": "Fattura non trovata",
 "pt-BR": "Fatura não encontrada",
 "ru": "Счёт не найден"
+},
+"See your AIBA bookings in your Google Calendar, and keep your personal events from being booked over.": {
+"es": "Ve tus reservas de AIBA en tu Google Calendar y evita que te reserven encima de tus eventos personales.",
+"fr": "Voyez vos réservations AIBA dans Google Agenda et évitez qu'on réserve par-dessus vos événements personnels.",
+"de": "Sieh deine AIBA-Buchungen in Google Kalender und verhindere Buchungen über deine privaten Termine.",
+"it": "Vedi le prenotazioni AIBA nel tuo Google Calendar ed evita che si prenoti sopra i tuoi impegni personali.",
+"pt-BR": "Veja suas reservas da AIBA no Google Agenda e evite reservas por cima dos seus compromissos pessoais.",
+"ru": "Видите записи AIBA в Google Календаре, и никто не запишется поверх ваших личных дел."
+},
+"Google Calendar connected.": {
+"es": "Google Calendar conectado.",
+"fr": "Google Agenda connecté.",
+"de": "Google Kalender verbunden.",
+"it": "Google Calendar collegato.",
+"pt-BR": "Google Agenda conectado.",
+"ru": "Google Календарь подключён."
+},
+"You didn't give access, so nothing was connected.": {
+"es": "No diste acceso, así que no se ha conectado nada.",
+"fr": "Vous n'avez pas autorisé l'accès, rien n'a été connecté.",
+"de": "Du hast keinen Zugriff erlaubt, daher wurde nichts verbunden.",
+"it": "Non hai concesso l'accesso, quindi non è stato collegato nulla.",
+"pt-BR": "Você não deu acesso, então nada foi conectado.",
+"ru": "Доступ не предоставлен, ничего не подключено."
+},
+"Google didn't complete the connection. Try again and tick the calendar permission.": {
+"es": "Google no completó la conexión. Vuelve a intentarlo y marca el permiso del calendario.",
+"fr": "Google n'a pas terminé la connexion. Réessayez en cochant l'autorisation de l'agenda.",
+"de": "Google hat die Verbindung nicht abgeschlossen. Versuche es erneut und erlaube den Kalenderzugriff.",
+"it": "Google non ha completato il collegamento. Riprova e spunta il permesso del calendario.",
+"pt-BR": "O Google não concluiu a conexão. Tente de novo e marque a permissão da agenda.",
+"ru": "Google не завершил подключение. Попробуйте ещё раз и отметьте доступ к календарю."
+},
+"Google Calendar isn't set up on this platform yet.": {
+"es": "Google Calendar aún no está configurado en la plataforma.",
+"fr": "Google Agenda n'est pas encore configuré sur la plateforme.",
+"de": "Google Kalender ist auf der Plattform noch nicht eingerichtet.",
+"it": "Google Calendar non è ancora configurato sulla piattaforma.",
+"pt-BR": "O Google Agenda ainda não está configurado na plataforma.",
+"ru": "Google Календарь на платформе ещё не настроен."
+},
+"Connect Google Calendar": {
+"es": "Conectar Google Calendar",
+"fr": "Connecter Google Agenda",
+"de": "Google Kalender verbinden",
+"it": "Collega Google Calendar",
+"pt-BR": "Conectar Google Agenda",
+"ru": "Подключить Google Календарь"
+},
+"Needs reconnecting": {
+"es": "Hay que volver a conectarlo",
+"fr": "À reconnecter",
+"de": "Neu verbinden nötig",
+"it": "Da ricollegare",
+"pt-BR": "Precisa reconectar",
+"ru": "Нужно переподключить"
+},
+"Connected": {
+"es": "Conectado",
+"fr": "Connecté",
+"de": "Verbunden",
+"it": "Collegato",
+"pt-BR": "Conectado",
+"ru": "Подключено"
+},
+"Reconnect": {
+"es": "Volver a conectar",
+"fr": "Reconnecter",
+"de": "Neu verbinden",
+"it": "Ricollega",
+"pt-BR": "Reconectar",
+"ru": "Переподключить"
+},
+"Add my bookings to Google Calendar": {
+"es": "Añadir mis reservas a Google Calendar",
+"fr": "Ajouter mes réservations à Google Agenda",
+"de": "Meine Buchungen in Google Kalender eintragen",
+"it": "Aggiungi le mie prenotazioni a Google Calendar",
+"pt-BR": "Adicionar minhas reservas ao Google Agenda",
+"ru": "Добавлять мои записи в Google Календарь"
+},
+"New, moved and cancelled bookings update the calendar automatically.": {
+"es": "Las reservas nuevas, movidas y canceladas actualizan el calendario solas.",
+"fr": "Les réservations nouvelles, déplacées et annulées mettent l'agenda à jour automatiquement.",
+"de": "Neue, verschobene und stornierte Buchungen aktualisieren den Kalender automatisch.",
+"it": "Le prenotazioni nuove, spostate e annullate aggiornano il calendario automaticamente.",
+"pt-BR": "Reservas novas, remarcadas e canceladas atualizam a agenda sozinhas.",
+"ru": "Новые, перенесённые и отменённые записи обновляют календарь автоматически."
+},
+"Block my busy times": {
+"es": "Bloquear mis horas ocupadas",
+"fr": "Bloquer mes heures occupées",
+"de": "Meine belegten Zeiten blockieren",
+"it": "Blocca i miei orari occupati",
+"pt-BR": "Bloquear meus horários ocupados",
+"ru": "Блокировать занятое время"
+},
+"Your own Google events (not the ones AIBA creates) make those hours unavailable for booking. Events marked «free» don't block.": {
+"es": "Tus propios eventos de Google (no los que crea AIBA) hacen que esas horas no se puedan reservar. Los eventos marcados como «disponible» no bloquean.",
+"fr": "Vos propres événements Google (pas ceux créés par AIBA) rendent ces heures non réservables. Les événements « disponible » ne bloquent pas.",
+"de": "Deine eigenen Google-Termine (nicht die von AIBA) machen diese Zeiten unbuchbar. Als „frei“ markierte Termine blockieren nicht.",
+"it": "I tuoi eventi Google (non quelli creati da AIBA) rendono quelle ore non prenotabili. Gli eventi «libero» non bloccano.",
+"pt-BR": "Seus eventos do Google (não os criados pela AIBA) deixam esses horários indisponíveis. Eventos marcados como «livre» não bloqueiam.",
+"ru": "Ваши события Google (не созданные AIBA) делают это время недоступным для записи. События «свободен» не блокируют."
+},
+"Whose calendar is it?": {
+"es": "¿De quién es el calendario?",
+"fr": "À qui est cet agenda ?",
+"de": "Wessen Kalender ist das?",
+"it": "Di chi è il calendario?",
+"pt-BR": "De quem é a agenda?",
+"ru": "Чей это календарь?"
+},
+"its busy times block this person": {
+"es": "sus horas ocupadas bloquean a esta persona",
+"fr": "ses heures occupées bloquent cette personne",
+"de": "belegte Zeiten blockieren diese Person",
+"it": "i suoi orari occupati bloccano questa persona",
+"pt-BR": "os horários ocupados bloqueiam esta pessoa",
+"ru": "занятое время блокирует этого человека"
+},
+"Everyone (whole business)": {
+"es": "Todos (todo el negocio)",
+"fr": "Tout le monde (tout l'établissement)",
+"de": "Alle (ganzes Geschäft)",
+"it": "Tutti (tutta l'attività)",
+"pt-BR": "Todos (negócio inteiro)",
+"ru": "Все (весь бизнес)"
+},
+"Disconnect Google Calendar? Events already created stay in your calendar.": {
+"es": "¿Desconectar Google Calendar? Los eventos ya creados se quedan en tu calendario.",
+"fr": "Déconnecter Google Agenda ? Les événements créés restent dans votre agenda.",
+"de": "Google Kalender trennen? Bereits erstellte Termine bleiben im Kalender.",
+"it": "Scollegare Google Calendar? Gli eventi creati restano nel calendario.",
+"pt-BR": "Desconectar o Google Agenda? Os eventos criados ficam na sua agenda.",
+"ru": "Отключить Google Календарь? Созданные события останутся в календаре."
+},
+"Disconnect": {
+"es": "Desconectar",
+"fr": "Déconnecter",
+"de": "Trennen",
+"it": "Scollega",
+"pt-BR": "Desconectar",
+"ru": "Отключить"
+},
+"Calendar settings saved": {
+"es": "Ajustes del calendario guardados",
+"fr": "Réglages de l'agenda enregistrés",
+"de": "Kalendereinstellungen gespeichert",
+"it": "Impostazioni del calendario salvate",
+"pt-BR": "Configurações da agenda salvas",
+"ru": "Настройки календаря сохранены"
+},
+"Google Calendar OAuth redirect URI (Google Cloud → Credentials → Authorised redirect URIs)": {
+"es": "URI de redirección OAuth de Google Calendar (Google Cloud → Credenciales → URI de redireccionamiento autorizados)",
+"fr": "URI de redirection OAuth Google Agenda (Google Cloud → Identifiants → URI de redirection autorisés)",
+"de": "OAuth-Weiterleitungs-URI für Google Kalender (Google Cloud → Anmeldedaten → Autorisierte Weiterleitungs-URIs)",
+"it": "URI di reindirizzamento OAuth di Google Calendar (Google Cloud → Credenziali → URI di reindirizzamento autorizzati)",
+"pt-BR": "URI de redirecionamento OAuth do Google Agenda (Google Cloud → Credenciais → URIs de redirecionamento autorizados)",
+"ru": "URI перенаправления OAuth для Google Календаря (Google Cloud → Учётные данные → Разрешённые URI перенаправления)"
+},
+"Configured": {
+"es": "Configurado",
+"fr": "Configuré",
+"de": "Konfiguriert",
+"it": "Configurato",
+"pt-BR": "Configurado",
+"ru": "Настроено"
+},
+"Lets each business connect its Google Calendar. Authorised redirect URI: {url}/api/integrations/google/callback": {
+"es": "Permite que cada negocio conecte su Google Calendar. URI de redireccionamiento autorizado: {url}/api/integrations/google/callback",
+"fr": "Permet à chaque établissement de connecter son Google Agenda. URI de redirection autorisé : {url}/api/integrations/google/callback",
+"de": "Jedes Geschäft kann seinen Google Kalender verbinden. Autorisierte Weiterleitungs-URI: {url}/api/integrations/google/callback",
+"it": "Ogni attività può collegare il proprio Google Calendar. URI di reindirizzamento autorizzato: {url}/api/integrations/google/callback",
+"pt-BR": "Cada negócio pode conectar seu Google Agenda. URI de redirecionamento autorizado: {url}/api/integrations/google/callback",
+"ru": "Каждый бизнес может подключить Google Календарь. Разрешённый URI перенаправления: {url}/api/integrations/google/callback"
+},
+"Google OAuth client ID": {
+"es": "ID de cliente OAuth de Google",
+"fr": "ID client OAuth Google",
+"de": "Google-OAuth-Client-ID",
+"it": "ID client OAuth di Google",
+"pt-BR": "ID do cliente OAuth do Google",
+"ru": "Google OAuth client ID"
+},
+"Google OAuth client secret": {
+"es": "Secreto de cliente OAuth de Google",
+"fr": "Secret client OAuth Google",
+"de": "Google-OAuth-Client-Secret",
+"it": "Segreto client OAuth di Google",
+"pt-BR": "Segredo do cliente OAuth do Google",
+"ru": "Google OAuth client secret"
+},
+"Google Cloud Console → APIs & Services → Credentials → OAuth client (Web application).": {
+"es": "Google Cloud Console → APIs y servicios → Credenciales → ID de cliente de OAuth (Aplicación web).",
+"fr": "Google Cloud Console → API et services → Identifiants → ID client OAuth (Application Web).",
+"de": "Google Cloud Console → APIs & Dienste → Anmeldedaten → OAuth-Client (Webanwendung).",
+"it": "Google Cloud Console → API e servizi → Credenziali → ID client OAuth (Applicazione web).",
+"pt-BR": "Google Cloud Console → APIs e serviços → Credenciais → ID do cliente OAuth (Aplicativo da Web).",
+"ru": "Google Cloud Console → API и сервисы → Учётные данные → OAuth client (Веб-приложение)."
 }
 }

@@ -1,5 +1,6 @@
 import "server-only";
 import { usablePack } from "./packs";
+import { syncBookingToGoogle } from "./google-calendar";
 import { and, eq, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { getService, getSlots } from "./availability";
@@ -132,6 +133,7 @@ export async function createBooking(business: schema.Business, input: CreateBook
   }
 
   const when = formatDateTime(startsAt, business.timezone);
+  await syncBookingToGoogle(booking.id);
   await audit(business.id, actor, "booking.created", booking.id, { serviceId: service.id, startsAt: startsAt.toISOString(), source: input.source, ...(pack ? { pack: pack.id } : {}) });
   await notifyBusiness(business.id, {
     kind: "booking.created",
@@ -173,6 +175,7 @@ export async function cancelBooking(business: schema.Business, bookingId: string
     .set({ status: "cancelled", cancelReason: reason || null, updatedAt: new Date() })
     .where(eq(schema.bookings.id, b.id))
     .returning();
+  await syncBookingToGoogle(b.id);
   await audit(business.id, actor, "booking.cancelled", b.id, { reason });
   await emailCustomerAboutBooking(b.id, "cancelled", { reason: reason || undefined }).catch(() => false);
   const [c] = await db.select().from(schema.customers).where(eq(schema.customers.id, b.customerId));
@@ -226,6 +229,7 @@ export async function rescheduleBooking(
     if (isOverlapError(e)) throw conflict("slot_taken", "That time was just taken");
     throw e;
   }
+  await syncBookingToGoogle(b.id);
   await audit(business.id, actor, "booking.rescheduled", b.id, { from: b.startsAt.toISOString(), to: startsAt.toISOString() });
   await emailCustomerAboutBooking(b.id, "rescheduled").catch(() => false);
   const when = formatDateTime(startsAt, business.timezone);
@@ -249,6 +253,7 @@ export async function setBookingStatus(
     .set({ status, updatedAt: new Date() })
     .where(eq(schema.bookings.id, b.id))
     .returning();
+  if (status === "confirmed" && b.status === "pending") await syncBookingToGoogle(b.id);
   await audit(business.id, actor, `booking.${status}`, b.id);
   if (status === "confirmed" && b.status === "pending") {
     const service = await getService(business.id, b.serviceId);
