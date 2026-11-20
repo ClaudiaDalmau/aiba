@@ -1,0 +1,34 @@
+name: Mobile build (EAS)
+
+# Lanza una compilación de la app móvil en EAS (expo.dev). Requiere el secreto EXPO_TOKEN.
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "Perfil de eas.json"
+        default: sensible-apk
+        type: choice
+        options: [sensible-apk, sensible-production, production]
+      platform:
+        description: "Plataforma"
+        default: android
+        type: choice
+        options: [android, ios]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+      - run: npm ci
+      - run: eas build --profile ${{ inputs.profile }} --platform ${{ inputs.platform }} --non-interactive --no-wait

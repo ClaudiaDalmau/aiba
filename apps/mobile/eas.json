@@ -1,10 +1,45 @@
 {
-  "cli": { "appVersionSource": "remote" },
+  "cli": {
+    "appVersionSource": "remote"
+  },
   "build": {
-    "development": { "developmentClient": true, "distribution": "internal", "env": { "APP_VARIANT": "ordinaria" } },
-    "production": { "env": { "APP_VARIANT": "ordinaria" } },
-    "sensible-development": { "developmentClient": true, "distribution": "internal", "env": { "APP_VARIANT": "sensible" } },
-    "sensible-apk": { "distribution": "internal", "android": { "buildType": "apk" }, "env": { "APP_VARIANT": "sensible" } },
-    "sensible-production": { "env": { "APP_VARIANT": "sensible" } }
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "APP_VARIANT": "ordinaria",
+        "EXPO_PUBLIC_API_URL": "https://aiba-pied.vercel.app"
+      }
+    },
+    "production": {
+      "env": {
+        "APP_VARIANT": "ordinaria",
+        "EXPO_PUBLIC_API_URL": "https://aiba-pied.vercel.app"
+      }
+    },
+    "sensible-development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "APP_VARIANT": "sensible",
+        "EXPO_PUBLIC_API_URL": "https://aiba-pied.vercel.app"
+      }
+    },
+    "sensible-apk": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "APP_VARIANT": "sensible",
+        "EXPO_PUBLIC_API_URL": "https://aiba-pied.vercel.app"
+      }
+    },
+    "sensible-production": {
+      "env": {
+        "APP_VARIANT": "sensible",
+        "EXPO_PUBLIC_API_URL": "https://aiba-pied.vercel.app"
+      }
+    }
   }
 }
