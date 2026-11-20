@@ -192,33 +192,6 @@
       "check2": "Résiliez à tout moment",
       "check3": "Support multilingue"
     },
-    "testimonials": {
-      "badge": "Ce que disent nos early adopters",
-      "title": "Des professionnels l'utilisent déjà",
-      "subtitle": "Témoignages des Founding Members. Rejoignez la première vague dès maintenant.",
-      "foundingMember": "Founding",
-      "betaNote": "* Les 20 premiers membres obtiennent 6 mois gratuits + 30% de réduction à vie.",
-      "t1": {
-        "quote": "En 3 jours j'ai éliminé les annulations de dernière minute. L'acompte fait des miracles.",
-        "name": "Ana M.",
-        "role": "Coiffeuse · Madrid"
-      },
-      "t2": {
-        "quote": "Avant je jonglais entre WhatsApp et Google Agenda et je perdais des heures. Maintenant tout est automatisé.",
-        "name": "Diego R.",
-        "role": "Coach business · Barcelone"
-      },
-      "t3": {
-        "quote": "Mes clients réservent à toute heure sans m'appeler. J'ai récupéré mes soirées et mes week-ends complets.",
-        "name": "Carla S.",
-        "role": "Coach sportif · Valence"
-      },
-      "t4": {
-        "quote": "L'IA répond à mes clients 24h/24 en espagnol et catalan. Je prends des rendez-vous en dormant. Littéralement.",
-        "name": "Marc T.",
-        "role": "Thérapeute · Barcelone"
-      }
-    },
     "comparison": {
       "badge": "Comparaison objective",
       "title": "Comment nous nous comparons ?",

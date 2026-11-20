@@ -192,33 +192,6 @@
       "check2": "Cancela cuando quieras",
       "check3": "Soporte en español"
     },
-    "testimonials": {
-      "badge": "Lo que dicen los early adopters",
-      "title": "Profesionales que ya lo prueban",
-      "subtitle": "Testimonios de miembros del programa Founding Members. Únete y sé parte de la primera oleada.",
-      "foundingMember": "Founding",
-      "betaNote": "* Los primeros 20 miembros obtienen 6 meses gratis y un 30% de descuento de por vida.",
-      "t1": {
-        "quote": "En 3 días eliminé las cancelaciones de última hora. El depósito hace magia: si no pagas, no reservas.",
-        "name": "Ana M.",
-        "role": "Estilista · Madrid"
-      },
-      "t2": {
-        "quote": "Antes usaba WhatsApp + Google Calendar y perdía horas. Ahora todo automático, incluso los recordatorios.",
-        "name": "Diego R.",
-        "role": "Coach de negocios · Barcelona"
-      },
-      "t3": {
-        "quote": "Mis clientes reservan a cualquier hora sin llamarme. He recuperado mis noches y fines de semana enteros.",
-        "name": "Carla S.",
-        "role": "Entrenadora personal · Valencia"
-      },
-      "t4": {
-        "quote": "La IA responde a mis clientes 24/7 en español y catalán. Reservo mientras duermo. Literalmente.",
-        "name": "Marc T.",
-        "role": "Terapeuta · Barcelona"
-      }
-    },
     "comparison": {
       "badge": "Comparativa objetiva",
       "title": "¿Cómo nos comparamos con las otras opciones?",

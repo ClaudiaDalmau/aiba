@@ -192,33 +192,6 @@
       "check2": "Cancella quando vuoi",
       "check3": "Supporto multilingua"
     },
-    "testimonials": {
-      "badge": "Cosa dicono gli early adopter",
-      "title": "Professionisti che lo stanno già usando",
-      "subtitle": "Testimonianze dei Founding Members. Unisciti alla prima ondata.",
-      "foundingMember": "Founding",
-      "betaNote": "* I primi 20 membri ottengono 6 mesi gratis + 30% di sconto a vita.",
-      "t1": {
-        "quote": "In 3 giorni ho eliminato le cancellazioni dell'ultimo minuto. L'acconto fa magia.",
-        "name": "Ana M.",
-        "role": "Parrucchiera · Madrid"
-      },
-      "t2": {
-        "quote": "Prima usavo WhatsApp + Google Calendar e perdevo ore. Ora tutto automatico.",
-        "name": "Diego R.",
-        "role": "Business coach · Barcellona"
-      },
-      "t3": {
-        "quote": "I miei clienti prenotano a qualsiasi ora senza chiamarmi. Ho recuperato le mie serate e i weekend interi.",
-        "name": "Carla S.",
-        "role": "Personal trainer · Valencia"
-      },
-      "t4": {
-        "quote": "L'IA risponde 24/7 in spagnolo e catalano. Prenoto mentre dormo. Letteralmente.",
-        "name": "Marc T.",
-        "role": "Terapeuta · Barcellona"
-      }
-    },
     "comparison": {
       "badge": "Confronto oggettivo",
       "title": "Come ci confrontiamo con le altre opzioni?",

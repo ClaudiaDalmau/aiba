@@ -192,33 +192,6 @@
       "check2": "Jederzeit kündbar",
       "check3": "Mehrsprachiger Support"
     },
-    "testimonials": {
-      "badge": "Was Early Adopter sagen",
-      "title": "Profis, die es bereits nutzen",
-      "subtitle": "Stimmen von Founding Members. Werde jetzt Teil der ersten Welle.",
-      "foundingMember": "Founding",
-      "betaNote": "* Die ersten 20 Mitglieder erhalten 6 Monate gratis + 30% Rabatt lebenslang.",
-      "t1": {
-        "quote": "In 3 Tagen habe ich Last-Minute-Absagen eliminiert. Die Anzahlung wirkt Wunder.",
-        "name": "Ana M.",
-        "role": "Friseurin · Madrid"
-      },
-      "t2": {
-        "quote": "Früher jonglierte ich WhatsApp + Google Kalender und verlor Stunden. Jetzt alles automatisch.",
-        "name": "Diego R.",
-        "role": "Business Coach · Barcelona"
-      },
-      "t3": {
-        "quote": "Meine Kunden buchen jederzeit, ohne mich anzurufen. Ich habe meine Abende und ganze Wochenenden zurückgewonnen.",
-        "name": "Carla S.",
-        "role": "Personal Trainerin · Valencia"
-      },
-      "t4": {
-        "quote": "Die KI antwortet 24/7 auf Spanisch und Katalanisch. Ich buche im Schlaf. Wortwörtlich.",
-        "name": "Marc T.",
-        "role": "Therapeut · Barcelona"
-      }
-    },
     "comparison": {
       "badge": "Objektiver Vergleich",
       "title": "Wie schneiden wir im Vergleich ab?",

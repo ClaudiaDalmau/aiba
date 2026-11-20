@@ -192,33 +192,6 @@
       "check2": "Rezygnacja w każdej chwili",
       "check3": "Wielojęzyczne wsparcie"
     },
-    "testimonials": {
-      "badge": "What early adopters say",
-      "title": "Professionals already using it",
-      "subtitle": "Testimonials from Founding Members. Join now and be part of the first wave.",
-      "foundingMember": "Founding",
-      "betaNote": "* First 20 members get 6 months free plus a 30% lifetime discount.",
-      "t1": {
-        "quote": "In 3 days I eliminated last-minute cancellations. Deposits are magic: no payment, no booking.",
-        "name": "Ana M.",
-        "role": "Hairstylist · Madrid"
-      },
-      "t2": {
-        "quote": "I used to juggle WhatsApp + Google Calendar and lost hours. Now everything is automated, including reminders.",
-        "name": "Diego R.",
-        "role": "Business coach · Barcelona"
-      },
-      "t3": {
-        "quote": "My clients book any time without calling me. I've recovered my nights and full weekends.",
-        "name": "Carla S.",
-        "role": "Personal trainer · Valencia"
-      },
-      "t4": {
-        "quote": "The AI answers my clients 24/7 in Spanish and Catalan. I book while I sleep. Literally.",
-        "name": "Marc T.",
-        "role": "Therapist · Barcelona"
-      }
-    },
     "comparison": {
       "badge": "Obiektywne porównanie",
       "title": "Jak wypadamy na tle innych rozwiązań?",
