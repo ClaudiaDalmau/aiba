@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useT } from "@/i18n/client";
 import { useActionState } from "react";
-import { login, signup, type FormState } from "@/actions/auth";
+import { login, signup, verifyCode, type FormState } from "@/actions/auth";
+import { PasskeyButton } from "./passkey-button";
 import { SubmitButton } from "./client";
 import { Field, Input } from "./ui";
 
@@ -22,6 +23,8 @@ export function LoginForm({ next }: { next?: string }) {
       <Field label={t("Password")}><Input name="password" type="password" autoComplete="current-password" required /></Field>
       <Err msg={state?.error} />
       <SubmitButton className="w-full" size="lg">{t("Sign in")}</SubmitButton>
+      <div className="flex items-center gap-3 text-[12px] text-faint"><span className="h-px flex-1 bg-border" />{t("or")}<span className="h-px flex-1 bg-border" /></div>
+      <PasskeyButton purpose="login" variant="secondary" label={t("Sign in with fingerprint or face")} />
       <p className="text-center text-[14px] text-muted">{t("New here?")} <Link href="/signup" className="font-medium text-fg underline-offset-4 hover:underline">{t("Create a business account")}</Link></p>
     </form>
   );
@@ -39,6 +42,21 @@ export function SignupForm() {
       <SubmitButton className="w-full" size="lg">{t("Create account")}</SubmitButton>
       <p className="text-center text-[13px] text-muted">{t("By continuing you agree to the Terms and acknowledge the Privacy notice.")}</p>
       <p className="text-center text-[14px] text-muted">{t("Already have an account?")} <Link href="/login" className="font-medium text-fg underline-offset-4 hover:underline">{t("Sign in")}</Link></p>
+    </form>
+  );
+}
+
+export function CodeForm({ kind }: { kind: "totp" | "recovery" }) {
+  const t = useT();
+  const [state, action] = useActionState<FormState, FormData>(verifyCode, null);
+  return (
+    <form action={action} className="space-y-3">
+      <input type="hidden" name="kind" value={kind} />
+      <Field label={kind === "totp" ? t("6-digit code from your authenticator app") : t("Recovery code")}>
+        <Input name="code" inputMode={kind === "totp" ? "numeric" : "text"} autoComplete="one-time-code" maxLength={kind === "totp" ? 7 : 12} required autoFocus={kind === "totp"} />
+      </Field>
+      <Err msg={state?.error} />
+      <SubmitButton className="w-full" variant={kind === "totp" ? "primary" : "secondary"}>{t("Verify")}</SubmitButton>
     </form>
   );
 }

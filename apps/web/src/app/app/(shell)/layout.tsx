@@ -110,6 +110,7 @@ export default async function ShellLayout({ children }: { children: React.ReactN
         <Link href="/admin" title={t("Platform admin")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="shield" size={16} /></Link>
       )}
       <LocaleSwitcher />
+      <Link href="/account/security" title={t("Sign-in security")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="shield" size={16} /></Link>
       <form action={logout}>
         <button title={t("Sign out")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="logout" size={16} /></button>
       </form>

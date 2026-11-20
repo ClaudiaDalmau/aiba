@@ -14,6 +14,8 @@ import { rateLimit } from "@/lib/rate-limit";
 import { isPlatformRole } from "@/lib/platform-rbac";
 import { getSetting } from "@/lib/settings";
 import { ACTIVE_BUSINESS_COOKIE } from "@/lib/tenant";
+import { finishLogin } from "@/lib/login-finish";
+import { checkTotp, getPending, needsSecondStep, readTotpSecret, setPending, redeemRecoveryCode } from "@/lib/two-step";
 
 export type FormState = { error?: string; fieldErrors?: Record<string, string[] | undefined> } | null;
 
@@ -39,9 +41,33 @@ export async function login(_prev: FormState, form: FormData): Promise<FormState
   const password = String(form.get("password") ?? "");
   const [user] = await db.select().from(schema.users).where(sql`lower(${schema.users.email}) = ${email}`);
   if (!user || user.disabled || !(await verifyPassword(password, user.passwordHash))) return { error: t("Email or password is incorrect.") };
+  if ((await needsSecondStep(user)).required) {
+    await setPending(user.id, safeNext(form.get("next")));
+    redirect("/login/verify");
+  }
   const { token, expiresAt } = await createSession(user.id, "web");
   await setSessionCookie(token, expiresAt);
   redirect(safeNext(form.get("next")) ?? (isPlatformRole(user.platformRole) ? "/admin" : "/app"));
+}
+
+/** Second step with an authenticator-app code or a recovery code. */
+export async function verifyCode(_prev: FormState, form: FormData): Promise<FormState> {
+  const t = await getT();
+  try {
+    await limit("login-code", 8);
+  } catch {
+    return { error: t("Too many attempts. Wait a minute and try again.") };
+  }
+  const pending = await getPending();
+  if (!pending) redirect("/login");
+  const [user] = await db.select().from(schema.users).where(sql`${schema.users.id} = ${pending.userId}`);
+  if (!user || user.disabled) redirect("/login");
+  if (user.requirePasskey) return { error: t("This account can only sign in with its passkey (fingerprint or face).") };
+  const code = String(form.get("code") ?? "").trim();
+  const secret = readTotpSecret(user);
+  const ok = form.get("kind") === "recovery" ? await redeemRecoveryCode(user, code) : Boolean(secret && checkTotp(secret, code));
+  if (!ok) return { error: t("That code isn't valid. Try again.") };
+  redirect(await finishLogin(user, pending.next));
 }
 
 const Signup = z.object({ name: z.string().trim().min(1, "Required").max(80), email: z.email("Enter a valid email"), password: z.string().min(8, "At least 8 characters") });

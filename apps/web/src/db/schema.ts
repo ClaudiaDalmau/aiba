@@ -55,9 +55,34 @@ export const users = pgTable(
     /** Platform staff role (see lib/platform-rbac.ts). Null for regular business users. */
     platformRole: text("platform_role", { enum: ["admin", "operator", "support", "finance", "moderator"] }),
     disabled: boolean("disabled").notNull().default(false),
+    /** Authenticator-app secret (encrypted). Null = no authenticator app. */
+    totpSecret: text("totp_secret"),
+    /** SHA-256 of unused one-time recovery codes. */
+    recoveryCodes: jsonb("recovery_codes").$type<string[]>().notNull().default([]),
+    /** Must sign in with a passkey (fingerprint / face). Password alone is never enough. */
+    requirePasskey: boolean("require_passkey").notNull().default(false),
     createdAt: createdAt(),
   },
   (t) => [uniqueIndex("users_email_uq").on(sql`lower(${t.email})`)],
+);
+
+/** WebAuthn credentials («passkeys»): the biometric check happens on the device; only a public key is stored. */
+export const passkeys = pgTable(
+  "passkeys",
+  {
+    id: id(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    credentialId: text("credential_id").notNull(),
+    publicKey: jsonb("public_key").$type<JsonWebKey>().notNull(),
+    alg: integer("alg").notNull(),
+    counter: integer("counter").notNull().default(0),
+    name: text("name").notNull().default(""),
+    createdAt: createdAt(),
+    lastUsedAt: timestamp("last_used_at", { withTimezone: true }),
+  },
+  (t) => [uniqueIndex("passkeys_credential_uq").on(t.credentialId), index("passkeys_user_idx").on(t.userId)],
 );
 
 /** Web sessions (cookie) and mobile/API tokens (bearer). Only the SHA-256 of the token is stored. */

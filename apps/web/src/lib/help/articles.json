@@ -1739,5 +1739,82 @@
     "{name} заменяется именем клиента."
    ]
   }
+ },
+ {
+  "id": "security",
+  "href": "/account/security",
+  "paths": [
+   "/app"
+  ],
+  "icon": "shield",
+  "title": {
+   "en": "Sign-in security: fingerprint, face and codes",
+   "es": "Seguridad de acceso: huella, cara y códigos",
+   "fr": "Sécurité : empreinte, visage et codes",
+   "de": "Anmeldesicherheit: Fingerabdruck, Gesicht und Codes",
+   "it": "Sicurezza di accesso: impronta, volto e codici",
+   "pt-BR": "Segurança de acesso: digital, rosto e códigos",
+   "ru": "Безопасность входа: отпечаток, лицо и коды"
+  },
+  "keywords": {
+   "en": "security two step 2fa passkey fingerprint face id touch id authenticator password login",
+   "es": "seguridad dos pasos 2fa huella cara face id touch id autenticador contraseña entrar",
+   "fr": "sécurité double passkey empreinte visage authentification",
+   "de": "sicherheit zwei schritte passkey fingerabdruck gesicht",
+   "it": "sicurezza due passaggi passkey impronta volto",
+   "pt-BR": "segurança duas etapas passkey digital rosto",
+   "ru": "безопасность двухэтапный ключ отпечаток лицо"
+  },
+  "steps": {
+   "en": [
+    "Open the shield icon at the bottom of the side menu (Sign-in security).",
+    "«Register fingerprint or face on this device»: your phone or computer saves a passkey. From then on you can press «Sign in with fingerprint or face» on the login page, without a password.",
+    "Or set up an authenticator app (scan the QR, type the code) and keep the recovery codes somewhere safe.",
+    "With either one on, after your password AIBA always asks for your fingerprint/face or the code.",
+    "Your biometric data never leaves your device: AIBA only receives a signature."
+   ],
+   "es": [
+    "Pulsa el icono del escudo abajo en el menú lateral (Seguridad de acceso).",
+    "«Registrar huella o cara en este dispositivo»: tu móvil u ordenador guarda una llave de acceso. Desde entonces puedes pulsar «Entrar con huella o cara» en la pantalla de inicio, sin contraseña.",
+    "O configura una app de autenticación (escanea el QR y escribe el código) y guarda los códigos de recuperación en un sitio seguro.",
+    "Con cualquiera de las dos activada, tras tu contraseña AIBA siempre te pedirá la huella/cara o el código.",
+    "Tus datos biométricos nunca salen de tu dispositivo: AIBA solo recibe una firma."
+   ],
+   "fr": [
+    "Ouvrez l'icône bouclier en bas du menu (Sécurité de connexion).",
+    "« Enregistrer empreinte ou visage » : votre appareil garde une passkey. Ensuite, « Se connecter avec empreinte ou visage » sans mot de passe.",
+    "Ou configurez une app d'authentification et gardez les codes de récupération.",
+    "Avec l'une des deux, après le mot de passe AIBA demande toujours empreinte/visage ou code.",
+    "Vos données biométriques ne quittent jamais votre appareil."
+   ],
+   "de": [
+    "Öffne das Schild-Symbol unten im Menü (Anmeldesicherheit).",
+    "„Fingerabdruck oder Gesicht registrieren“: Dein Gerät speichert einen Passkey. Danach „Mit Fingerabdruck oder Gesicht anmelden“ ohne Passwort.",
+    "Oder richte eine Authenticator-App ein und bewahre die Wiederherstellungscodes auf.",
+    "Ist eins davon aktiv, fragt AIBA nach dem Passwort immer nach Fingerabdruck/Gesicht oder Code.",
+    "Biometrische Daten verlassen nie dein Gerät."
+   ],
+   "it": [
+    "Apri l'icona dello scudo in fondo al menu (Sicurezza di accesso).",
+    "«Registra impronta o volto»: il dispositivo salva una passkey. Poi «Accedi con impronta o volto» senza password.",
+    "Oppure configura un'app di autenticazione e conserva i codici di recupero.",
+    "Con una delle due attiva, dopo la password AIBA chiede sempre impronta/volto o codice.",
+    "I dati biometrici non lasciano mai il dispositivo."
+   ],
+   "pt-BR": [
+    "Toque no ícone de escudo no fim do menu (Segurança de acesso).",
+    "«Registrar digital ou rosto»: seu dispositivo guarda uma passkey. Depois, «Entrar com digital ou rosto» sem senha.",
+    "Ou configure um app autenticador e guarde os códigos de recuperação.",
+    "Com qualquer um ativo, após a senha a AIBA sempre pede digital/rosto ou código.",
+    "Seus dados biométricos nunca saem do dispositivo."
+   ],
+   "ru": [
+    "Нажмите значок щита внизу меню («Безопасность входа»).",
+    "«Зарегистрировать отпечаток или лицо»: устройство сохранит ключ доступа. Затем «Войти по отпечатку или лицу» без пароля.",
+    "Или настройте приложение-аутентификатор и сохраните коды восстановления.",
+    "Если включено что-то одно, после пароля AIBA всегда спросит отпечаток/лицо или код.",
+    "Биометрия никогда не покидает ваше устройство."
+   ]
+  }
  }
 ]

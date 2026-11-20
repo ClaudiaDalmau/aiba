@@ -517,3 +517,25 @@ export async function settingsSnapshotForAdmin() {
   await assertPlatform("settings.manage");
   return describeSettings();
 }
+
+/** Sensible accounts (and any account the team decides): passkey (fingerprint / face) mandatory at sign-in. */
+export async function setRequirePasskey(f: FormData) {
+  const admin = await assertPlatform("users.manage");
+  const id = s(f, "userId");
+  const on = s(f, "on") === "true";
+  await db.update(schema.users).set({ requirePasskey: on }).where(eq(schema.users.id, id));
+  if (on) await db.delete(schema.sessions).where(eq(schema.sessions.userId, id)); // next sign-in must use the passkey
+  await audit(null, { type: "user", id: admin.id }, on ? "admin.passkey_required" : "admin.passkey_optional", id);
+  revalidatePath(`/admin/users/${id}`);
+}
+
+/** Lost device: remove passkeys and authenticator app after verifying the person's identity out of band. */
+export async function resetTwoStep(f: FormData) {
+  const admin = await assertPlatform("users.manage");
+  const id = s(f, "userId");
+  await db.delete(schema.passkeys).where(eq(schema.passkeys.userId, id));
+  await db.update(schema.users).set({ totpSecret: null, recoveryCodes: [] }).where(eq(schema.users.id, id));
+  await db.delete(schema.sessions).where(eq(schema.sessions.userId, id));
+  await audit(null, { type: "user", id: admin.id }, "admin.two_step_reset", id);
+  revalidatePath(`/admin/users/${id}`);
+}

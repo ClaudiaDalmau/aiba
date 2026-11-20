@@ -32,6 +32,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
               <div className="truncate text-[13px] font-medium">{admin.name}</div>
               <div className="truncate text-[12px] text-faint">{admin.email}</div>
             </div>
+            <Link href="/account/security" title={t("Sign-in security")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="shield" size={16} /></Link>
             <form action={logout}>
               <button title={t("Sign out")} className="rounded-md p-1.5 text-faint hover:bg-subtle hover:text-fg"><Icon name="logout" size={16} /></button>
             </form>

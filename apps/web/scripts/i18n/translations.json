@@ -10467,5 +10467,517 @@
 "it": "Scegli giorno e orari validi",
 "pt-BR": "Escolha dia e horários válidos",
 "ru": "Выберите корректные день и время"
+},
+"1. Scan this QR code with your authenticator app (or type the key).": {
+"es": "1. Escanea este código QR con tu app de autenticación (o escribe la clave).",
+"fr": "1. Scannez ce QR code avec votre app d'authentification (ou saisissez la clé).",
+"de": "1. Scanne diesen QR-Code mit deiner Authenticator-App (oder gib den Schlüssel ein).",
+"it": "1. Scansiona questo QR con la tua app di autenticazione (o digita la chiave).",
+"pt-BR": "1. Escaneie este QR code com seu app autenticador (ou digite a chave).",
+"ru": "1. Отсканируйте QR-код приложением-аутентификатором (или введите ключ)."
+},
+"2. Enter the 6-digit code it shows:": {
+"es": "2. Escribe el código de 6 cifras que aparece:",
+"fr": "2. Saisissez le code à 6 chiffres affiché :",
+"de": "2. Gib den angezeigten 6-stelligen Code ein:",
+"it": "2. Inserisci il codice a 6 cifre mostrato:",
+"pt-BR": "2. Digite o código de 6 dígitos exibido:",
+"ru": "2. Введите показанный 6-значный код:"
+},
+"6-digit code from your authenticator app": {
+"es": "Código de 6 cifras de tu app de autenticación",
+"fr": "Code à 6 chiffres de votre app d'authentification",
+"de": "6-stelliger Code aus deiner Authenticator-App",
+"it": "Codice a 6 cifre dalla tua app di autenticazione",
+"pt-BR": "Código de 6 dígitos do seu app autenticador",
+"ru": "6-значный код из приложения-аутентификатора"
+},
+"Activate": {
+"es": "Activar",
+"fr": "Activer",
+"de": "Aktivieren",
+"it": "Attiva",
+"pt-BR": "Ativar",
+"ru": "Включить"
+},
+"Add a second step so nobody can get in with just your password.": {
+"es": "Añade un segundo paso para que nadie pueda entrar solo con tu contraseña.",
+"fr": "Ajoutez une deuxième étape pour que personne n'entre avec votre seul mot de passe.",
+"de": "Füge einen zweiten Schritt hinzu, damit niemand nur mit deinem Passwort hineinkommt.",
+"it": "Aggiungi un secondo passaggio così nessuno può entrare solo con la password.",
+"pt-BR": "Adicione uma segunda etapa para ninguém entrar só com sua senha.",
+"ru": "Добавьте второй шаг, чтобы никто не вошёл только с паролем."
+},
+"Add another device": {
+"es": "Añadir otro dispositivo",
+"fr": "Ajouter un autre appareil",
+"de": "Weiteres Gerät hinzufügen",
+"it": "Aggiungi un altro dispositivo",
+"pt-BR": "Adicionar outro dispositivo",
+"ru": "Добавить другое устройство"
+},
+"Allow this user to sign in without a passkey again?": {
+"es": "¿Permitir de nuevo que este usuario entre sin huella o cara?",
+"fr": "Autoriser à nouveau cet utilisateur à se connecter sans passkey ?",
+"de": "Diesem Nutzer wieder die Anmeldung ohne Passkey erlauben?",
+"it": "Consentire di nuovo l'accesso senza passkey a questo utente?",
+"pt-BR": "Permitir de novo que este usuário entre sem passkey?",
+"ru": "Снова разрешить вход без ключа доступа?"
+},
+"Authenticator app": {
+"es": "App de autenticación",
+"fr": "App d'authentification",
+"de": "Authenticator-App",
+"it": "App di autenticazione",
+"pt-BR": "App autenticador",
+"ru": "Приложение-аутентификатор"
+},
+"Authenticator app activated. Save these recovery codes somewhere safe: each works once if you lose your phone.": {
+"es": "App de autenticación activada. Guarda estos códigos de recuperación en un lugar seguro: cada uno sirve una vez si pierdes el móvil.",
+"fr": "App activée. Gardez ces codes de récupération en lieu sûr : chacun fonctionne une fois si vous perdez votre téléphone.",
+"de": "Authenticator-App aktiviert. Bewahre diese Wiederherstellungscodes sicher auf: jeder funktioniert einmal, falls du dein Handy verlierst.",
+"it": "App attivata. Conserva questi codici di recupero al sicuro: ognuno funziona una volta se perdi il telefono.",
+"pt-BR": "App ativado. Guarde estes códigos de recuperação em local seguro: cada um funciona uma vez se perder o celular.",
+"ru": "Приложение включено. Сохраните коды восстановления: каждый срабатывает один раз, если вы потеряете телефон."
+},
+"Cancelled or timed out. Try again.": {
+"es": "Cancelado o se agotó el tiempo. Inténtalo de nuevo.",
+"fr": "Annulé ou expiré. Réessayez.",
+"de": "Abgebrochen oder abgelaufen. Versuch es erneut.",
+"it": "Annullato o scaduto. Riprova.",
+"pt-BR": "Cancelado ou expirou. Tente de novo.",
+"ru": "Отменено или время вышло. Попробуйте ещё раз."
+},
+"Confirm it's you": {
+"es": "Confirma que eres tú",
+"fr": "Confirmez que c'est vous",
+"de": "Bestätige, dass du es bist",
+"it": "Conferma che sei tu",
+"pt-BR": "Confirme que é você",
+"ru": "Подтвердите, что это вы"
+},
+"Email or password is incorrect": {
+"es": "El email o la contraseña no son correctos",
+"fr": "E-mail ou mot de passe incorrect",
+"de": "E-Mail oder Passwort ist falsch",
+"it": "Email o password errati",
+"pt-BR": "Email ou senha incorretos",
+"ru": "Неверный email или пароль"
+},
+"Enter the 6-digit code from your authenticator app.": {
+"es": "Escribe el código de 6 cifras de tu app de autenticación.",
+"fr": "Saisissez le code à 6 chiffres de votre app.",
+"de": "Gib den 6-stelligen Code aus deiner App ein.",
+"it": "Inserisci il codice a 6 cifre della tua app.",
+"pt-BR": "Digite o código de 6 dígitos do seu app.",
+"ru": "Введите 6-значный код из приложения."
+},
+"Fingerprint or face (passkeys)": {
+"es": "Huella o cara (llaves de acceso)",
+"fr": "Empreinte ou visage (passkeys)",
+"de": "Fingerabdruck oder Gesicht (Passkeys)",
+"it": "Impronta o volto (passkey)",
+"pt-BR": "Digital ou rosto (chaves de acesso)",
+"ru": "Отпечаток или лицо (ключи доступа)"
+},
+"Generate new recovery codes": {
+"es": "Generar nuevos códigos de recuperación",
+"fr": "Générer de nouveaux codes",
+"de": "Neue Wiederherstellungscodes erzeugen",
+"it": "Genera nuovi codici di recupero",
+"pt-BR": "Gerar novos códigos de recuperação",
+"ru": "Создать новые коды восстановления"
+},
+"Google Authenticator, Microsoft Authenticator, 1Password… gives you a new 6-digit code every 30 seconds.": {
+"es": "Google Authenticator, Microsoft Authenticator, 1Password… te da un código nuevo de 6 cifras cada 30 segundos.",
+"fr": "Google Authenticator, Microsoft Authenticator, 1Password… donne un nouveau code à 6 chiffres toutes les 30 secondes.",
+"de": "Google Authenticator, Microsoft Authenticator, 1Password… liefert alle 30 Sekunden einen neuen 6-stelligen Code.",
+"it": "Google Authenticator, Microsoft Authenticator, 1Password… ti dà un nuovo codice a 6 cifre ogni 30 secondi.",
+"pt-BR": "Google Authenticator, Microsoft Authenticator, 1Password… gera um código novo de 6 dígitos a cada 30 segundos.",
+"ru": "Google Authenticator, Microsoft Authenticator, 1Password… — новый 6-значный код каждые 30 секунд."
+},
+"Lost the device with your passkey? Contact support to verify your identity again.": {
+"es": "¿Has perdido el dispositivo con tu huella o cara? Contacta con soporte para volver a verificar tu identidad.",
+"fr": "Appareil perdu ? Contactez le support pour vérifier à nouveau votre identité.",
+"de": "Gerät verloren? Kontaktiere den Support, um deine Identität erneut zu bestätigen.",
+"it": "Dispositivo perso? Contatta il supporto per verificare di nuovo la tua identità.",
+"pt-BR": "Perdeu o dispositivo? Fale com o suporte para verificar sua identidade de novo.",
+"ru": "Потеряли устройство? Обратитесь в поддержку для повторной проверки личности."
+},
+"Lost your device? Use a recovery code": {
+"es": "¿Has perdido el móvil? Usa un código de recuperación",
+"fr": "Appareil perdu ? Utilisez un code de récupération",
+"de": "Gerät verloren? Nutze einen Wiederherstellungscode",
+"it": "Dispositivo perso? Usa un codice di recupero",
+"pt-BR": "Perdeu o celular? Use um código de recuperação",
+"ru": "Потеряли устройство? Используйте код восстановления"
+},
+"Make passkey optional": {
+"es": "Hacer la huella opcional",
+"fr": "Rendre la passkey facultative",
+"de": "Passkey optional machen",
+"it": "Rendi passkey facoltativa",
+"pt-BR": "Tornar passkey opcional",
+"ru": "Сделать ключ необязательным"
+},
+"New recovery codes. The old ones no longer work.": {
+"es": "Nuevos códigos de recuperación. Los anteriores ya no sirven.",
+"fr": "Nouveaux codes. Les anciens ne fonctionnent plus.",
+"de": "Neue Codes. Die alten funktionieren nicht mehr.",
+"it": "Nuovi codici. I precedenti non funzionano più.",
+"pt-BR": "Novos códigos. Os antigos não funcionam mais.",
+"ru": "Новые коды. Старые больше не действуют."
+},
+"On": {
+"es": "Activada",
+"fr": "Activée",
+"de": "Aktiv",
+"it": "Attiva",
+"pt-BR": "Ativado",
+"ru": "Включено"
+},
+"Passkey required": {
+"es": "Huella o cara obligatoria",
+"fr": "Passkey obligatoire",
+"de": "Passkey erforderlich",
+"it": "Passkey obbligatoria",
+"pt-BR": "Passkey obrigatória",
+"ru": "Ключ обязателен"
+},
+"Recovery code": {
+"es": "Código de recuperación",
+"fr": "Code de récupération",
+"de": "Wiederherstellungscode",
+"it": "Codice di recupero",
+"pt-BR": "Código de recuperação",
+"ru": "Код восстановления"
+},
+"Recovery codes": {
+"es": "Códigos de recuperación",
+"fr": "Codes de récupération",
+"de": "Wiederherstellungscodes",
+"it": "Codici di recupero",
+"pt-BR": "Códigos de recuperação",
+"ru": "Коды восстановления"
+},
+"Register fingerprint or face": {
+"es": "Registrar huella o cara",
+"fr": "Enregistrer empreinte ou visage",
+"de": "Fingerabdruck oder Gesicht registrieren",
+"it": "Registra impronta o volto",
+"pt-BR": "Registrar digital ou rosto",
+"ru": "Зарегистрировать отпечаток или лицо"
+},
+"Register fingerprint or face on this device": {
+"es": "Registrar huella o cara en este dispositivo",
+"fr": "Enregistrer empreinte ou visage sur cet appareil",
+"de": "Fingerabdruck oder Gesicht auf diesem Gerät registrieren",
+"it": "Registra impronta o volto su questo dispositivo",
+"pt-BR": "Registrar digital ou rosto neste dispositivo",
+"ru": "Зарегистрировать отпечаток или лицо на этом устройстве"
+},
+"Remove all passkeys and the authenticator app of this user? Only do it after verifying their identity (lost phone).": {
+"es": "¿Quitar todas las llaves de acceso y la app de autenticación de este usuario? Hazlo solo tras verificar su identidad (móvil perdido).",
+"fr": "Supprimer toutes les passkeys et l'app d'authentification ? Uniquement après avoir vérifié son identité.",
+"de": "Alle Passkeys und die Authenticator-App entfernen? Nur nach Prüfung der Identität (verlorenes Handy).",
+"it": "Rimuovere tutte le passkey e l'app di autenticazione? Solo dopo aver verificato l'identità.",
+"pt-BR": "Remover todas as passkeys e o app autenticador? Só após verificar a identidade (celular perdido).",
+"ru": "Удалить все ключи и аутентификатор? Только после проверки личности (потерян телефон)."
+},
+"Remove this passkey?": {
+"es": "¿Quitar esta llave de acceso?",
+"fr": "Supprimer cette passkey ?",
+"de": "Diesen Passkey entfernen?",
+"it": "Rimuovere questa passkey?",
+"pt-BR": "Remover esta passkey?",
+"ru": "Удалить этот ключ доступа?"
+},
+"Require fingerprint or face (passkey) to sign in? Their sessions end now; on the next sign-in they register their device.": {
+"es": "¿Exigir huella o cara para entrar? Sus sesiones se cierran ahora; en el próximo inicio registrará su dispositivo.",
+"fr": "Exiger empreinte ou visage pour se connecter ? Ses sessions prennent fin ; à la prochaine connexion, il enregistre son appareil.",
+"de": "Fingerabdruck oder Gesicht zur Anmeldung verlangen? Sitzungen enden jetzt; beim nächsten Login wird das Gerät registriert.",
+"it": "Richiedere impronta o volto per accedere? Le sessioni terminano ora; al prossimo accesso registrerà il dispositivo.",
+"pt-BR": "Exigir digital ou rosto para entrar? As sessões terminam agora; no próximo login a pessoa registra o dispositivo.",
+"ru": "Требовать отпечаток или лицо для входа? Сессии завершатся; при следующем входе нужно зарегистрировать устройство."
+},
+"Require passkey": {
+"es": "Exigir huella o cara",
+"fr": "Exiger une passkey",
+"de": "Passkey verlangen",
+"it": "Richiedi passkey",
+"pt-BR": "Exigir passkey",
+"ru": "Требовать ключ"
+},
+"Reset two-step": {
+"es": "Restablecer verificación en dos pasos",
+"fr": "Réinitialiser la double vérification",
+"de": "Zwei-Schritt zurücksetzen",
+"it": "Reimposta verifica in due passaggi",
+"pt-BR": "Redefinir verificação em duas etapas",
+"ru": "Сбросить двухэтапный вход"
+},
+"Set up authenticator app": {
+"es": "Configurar app de autenticación",
+"fr": "Configurer l'app d'authentification",
+"de": "Authenticator-App einrichten",
+"it": "Configura app di autenticazione",
+"pt-BR": "Configurar app autenticador",
+"ru": "Настроить приложение-аутентификатор"
+},
+"Sign in first": {
+"es": "Inicia sesión primero",
+"fr": "Connectez-vous d'abord",
+"de": "Bitte zuerst anmelden",
+"it": "Accedi prima",
+"pt-BR": "Entre primeiro",
+"ru": "Сначала войдите"
+},
+"Sign in with fingerprint or face": {
+"es": "Entrar con huella o cara",
+"fr": "Se connecter avec empreinte ou visage",
+"de": "Mit Fingerabdruck oder Gesicht anmelden",
+"it": "Accedi con impronta o volto",
+"pt-BR": "Entrar com digital ou rosto",
+"ru": "Войти по отпечатку или лицу"
+},
+"Sign-in security": {
+"es": "Seguridad de acceso",
+"fr": "Sécurité de connexion",
+"de": "Anmeldesicherheit",
+"it": "Sicurezza di accesso",
+"pt-BR": "Segurança de acesso",
+"ru": "Безопасность входа"
+},
+"Signature check failed": {
+"es": "La verificación de la firma ha fallado",
+"fr": "Échec de la vérification de signature",
+"de": "Signaturprüfung fehlgeschlagen",
+"it": "Verifica della firma non riuscita",
+"pt-BR": "Falha na verificação da assinatura",
+"ru": "Проверка подписи не пройдена"
+},
+"That code isn't valid. Try again.": {
+"es": "Ese código no es válido. Inténtalo de nuevo.",
+"fr": "Ce code n'est pas valide. Réessayez.",
+"de": "Dieser Code ist ungültig. Versuch es erneut.",
+"it": "Codice non valido. Riprova.",
+"pt-BR": "Código inválido. Tente de novo.",
+"ru": "Неверный код. Попробуйте ещё раз."
+},
+"The safest option. Your phone or computer checks your fingerprint or face; AIBA only receives a cryptographic signature, never your biometric data.": {
+"es": "La opción más segura. Tu móvil u ordenador comprueba tu huella o tu cara; AIBA solo recibe una firma criptográfica, nunca tus datos biométricos.",
+"fr": "L'option la plus sûre. Votre appareil vérifie votre empreinte ou visage ; AIBA ne reçoit qu'une signature cryptographique, jamais vos données biométriques.",
+"de": "Die sicherste Option. Dein Gerät prüft Fingerabdruck oder Gesicht; AIBA erhält nur eine kryptografische Signatur, nie biometrische Daten.",
+"it": "L'opzione più sicura. Il dispositivo verifica impronta o volto; AIBA riceve solo una firma crittografica, mai i dati biometrici.",
+"pt-BR": "A opção mais segura. Seu celular ou computador verifica sua digital ou rosto; a AIBA só recebe uma assinatura criptográfica, nunca seus dados biométricos.",
+"ru": "Самый надёжный вариант. Устройство проверяет отпечаток или лицо; AIBA получает только криптографическую подпись, никогда биометрию."
+},
+"This account can only sign in with its passkey (fingerprint or face).": {
+"es": "Esta cuenta solo puede entrar con su huella o cara.",
+"fr": "Ce compte ne peut se connecter qu'avec sa passkey (empreinte ou visage).",
+"de": "Dieses Konto kann sich nur mit seinem Passkey anmelden (Fingerabdruck oder Gesicht).",
+"it": "Questo account può accedere solo con la passkey (impronta o volto).",
+"pt-BR": "Esta conta só entra com a passkey (digital ou rosto).",
+"ru": "Этот аккаунт входит только по ключу (отпечаток или лицо)."
+},
+"This account is disabled.": {
+"es": "Esta cuenta está desactivada.",
+"fr": "Ce compte est désactivé.",
+"de": "Dieses Konto ist deaktiviert.",
+"it": "Questo account è disattivato.",
+"pt-BR": "Esta conta está desativada.",
+"ru": "Аккаунт отключён."
+},
+"This account must sign in with a passkey. Register the fingerprint or face of this device now; next time you'll sign in with it.": {
+"es": "Esta cuenta debe entrar con huella o cara. Registra ahora la de este dispositivo; la próxima vez entrarás con ella.",
+"fr": "Ce compte doit se connecter avec une passkey. Enregistrez maintenant l'empreinte ou le visage de cet appareil.",
+"de": "Dieses Konto muss sich mit Passkey anmelden. Registriere jetzt Fingerabdruck oder Gesicht dieses Geräts.",
+"it": "Questo account deve accedere con passkey. Registra ora impronta o volto di questo dispositivo.",
+"pt-BR": "Esta conta deve entrar com passkey. Registre agora a digital ou rosto deste dispositivo.",
+"ru": "Этот аккаунт должен входить по ключу. Зарегистрируйте отпечаток или лицо на этом устройстве."
+},
+"This account signs in with its passkey (fingerprint or face). Use the website.": {
+"es": "Esta cuenta entra con huella o cara. Usa la web.",
+"fr": "Ce compte se connecte avec sa passkey. Utilisez le site web.",
+"de": "Dieses Konto meldet sich mit Passkey an. Nutze die Website.",
+"it": "Questo account accede con passkey. Usa il sito web.",
+"pt-BR": "Esta conta entra com passkey. Use o site.",
+"ru": "Этот аккаунт входит по ключу. Используйте сайт."
+},
+"This browser doesn't support passkeys. Update it or try another device.": {
+"es": "Este navegador no admite llaves de acceso. Actualízalo o prueba con otro dispositivo.",
+"fr": "Ce navigateur ne gère pas les passkeys. Mettez-le à jour ou essayez un autre appareil.",
+"de": "Dieser Browser unterstützt keine Passkeys. Aktualisiere ihn oder nutze ein anderes Gerät.",
+"it": "Questo browser non supporta le passkey. Aggiornalo o prova un altro dispositivo.",
+"pt-BR": "Este navegador não suporta passkeys. Atualize ou use outro dispositivo.",
+"ru": "Браузер не поддерживает ключи доступа. Обновите его или используйте другое устройство."
+},
+"This device is already registered.": {
+"es": "Este dispositivo ya está registrado.",
+"fr": "Cet appareil est déjà enregistré.",
+"de": "Dieses Gerät ist bereits registriert.",
+"it": "Questo dispositivo è già registrato.",
+"pt-BR": "Este dispositivo já está registrado.",
+"ru": "Это устройство уже зарегистрировано."
+},
+"This passkey belongs to another account.": {
+"es": "Esta llave pertenece a otra cuenta.",
+"fr": "Cette passkey appartient à un autre compte.",
+"de": "Dieser Passkey gehört zu einem anderen Konto.",
+"it": "Questa passkey appartiene a un altro account.",
+"pt-BR": "Esta passkey pertence a outra conta.",
+"ru": "Этот ключ принадлежит другому аккаунту."
+},
+"This passkey isn't registered in AIBA. Sign in with your password.": {
+"es": "Esta llave no está registrada en AIBA. Entra con tu contraseña.",
+"fr": "Cette passkey n'est pas enregistrée dans AIBA. Connectez-vous avec votre mot de passe.",
+"de": "Dieser Passkey ist in AIBA nicht registriert. Melde dich mit Passwort an.",
+"it": "Questa passkey non è registrata in AIBA. Accedi con la password.",
+"pt-BR": "Esta passkey não está registrada na AIBA. Entre com sua senha.",
+"ru": "Этот ключ не зарегистрирован в AIBA. Войдите с паролем."
+},
+"This passkey looks cloned. Contact support.": {
+"es": "Esta llave parece clonada. Contacta con soporte.",
+"fr": "Cette passkey semble clonée. Contactez le support.",
+"de": "Dieser Passkey scheint kopiert. Kontaktiere den Support.",
+"it": "Questa passkey sembra clonata. Contatta il supporto.",
+"pt-BR": "Esta passkey parece clonada. Fale com o suporte.",
+"ru": "Похоже, ключ скопирован. Обратитесь в поддержку."
+},
+"This request expired. Try again.": {
+"es": "Esta solicitud ha caducado. Inténtalo de nuevo.",
+"fr": "Cette demande a expiré. Réessayez.",
+"de": "Diese Anfrage ist abgelaufen. Versuch es erneut.",
+"it": "Questa richiesta è scaduta. Riprova.",
+"pt-BR": "Esta solicitação expirou. Tente de novo.",
+"ru": "Запрос устарел. Попробуйте ещё раз."
+},
+"Turn off the authenticator app?": {
+"es": "¿Desactivar la app de autenticación?",
+"fr": "Désactiver l'app d'authentification ?",
+"de": "Authenticator-App deaktivieren?",
+"it": "Disattivare l'app di autenticazione?",
+"pt-BR": "Desativar o app autenticador?",
+"ru": "Отключить приложение-аутентификатор?"
+},
+"Two-step sign-in": {
+"es": "Verificación en dos pasos",
+"fr": "Double vérification",
+"de": "Zwei-Schritt-Anmeldung",
+"it": "Verifica in due passaggi",
+"pt-BR": "Verificação em duas etapas",
+"ru": "Двухэтапный вход"
+},
+"Two-step sign-in is on: after your password we ask for your fingerprint, face or a code.": {
+"es": "La verificación en dos pasos está activada: tras tu contraseña te pedimos huella, cara o un código.",
+"fr": "La double vérification est active : après le mot de passe, nous demandons empreinte, visage ou code.",
+"de": "Zwei-Schritt-Anmeldung ist aktiv: Nach dem Passwort fragen wir nach Fingerabdruck, Gesicht oder Code.",
+"it": "La verifica in due passaggi è attiva: dopo la password chiediamo impronta, volto o codice.",
+"pt-BR": "A verificação em duas etapas está ativa: após a senha pedimos digital, rosto ou código.",
+"ru": "Двухэтапный вход включён: после пароля мы запросим отпечаток, лицо или код."
+},
+"Use fingerprint or face": {
+"es": "Usar huella o cara",
+"fr": "Utiliser empreinte ou visage",
+"de": "Fingerabdruck oder Gesicht verwenden",
+"it": "Usa impronta o volto",
+"pt-BR": "Usar digital ou rosto",
+"ru": "Использовать отпечаток или лицо"
+},
+"User presence missing": {
+"es": "Falta la confirmación del usuario",
+"fr": "Présence de l'utilisateur manquante",
+"de": "Benutzeranwesenheit fehlt",
+"it": "Presenza dell'utente mancante",
+"pt-BR": "Presença do usuário ausente",
+"ru": "Не подтверждено присутствие"
+},
+"Verify": {
+"es": "Verificar",
+"fr": "Vérifier",
+"de": "Bestätigen",
+"it": "Verifica",
+"pt-BR": "Verificar",
+"ru": "Подтвердить"
+},
+"Waiting for your device…": {
+"es": "Esperando a tu dispositivo…",
+"fr": "En attente de votre appareil…",
+"de": "Warte auf dein Gerät…",
+"it": "In attesa del dispositivo…",
+"pt-BR": "Aguardando seu dispositivo…",
+"ru": "Ждём ваше устройство…"
+},
+"Your account must sign in with a passkey (fingerprint or face). A password alone is never enough.": {
+"es": "Tu cuenta debe entrar con huella o cara. La contraseña sola nunca es suficiente.",
+"fr": "Votre compte doit se connecter avec une passkey. Le mot de passe seul ne suffit jamais.",
+"de": "Dein Konto muss sich mit Passkey anmelden. Ein Passwort allein reicht nie.",
+"it": "Il tuo account deve accedere con passkey. La sola password non basta mai.",
+"pt-BR": "Sua conta deve entrar com passkey. Só a senha nunca basta.",
+"ru": "Ваш аккаунт входит только по ключу. Одного пароля недостаточно."
+},
+"Your device checks your fingerprint or face. AIBA never receives it.": {
+"es": "Tu dispositivo comprueba tu huella o tu cara. AIBA nunca la recibe.",
+"fr": "Votre appareil vérifie votre empreinte ou visage. AIBA ne la reçoit jamais.",
+"de": "Dein Gerät prüft Fingerabdruck oder Gesicht. AIBA erhält sie nie.",
+"it": "Il dispositivo verifica impronta o volto. AIBA non li riceve mai.",
+"pt-BR": "Seu dispositivo verifica digital ou rosto. A AIBA nunca recebe.",
+"ru": "Устройство проверяет отпечаток или лицо. AIBA их не получает."
+},
+"Your device didn't verify you (fingerprint, face or device PIN). Try again.": {
+"es": "Tu dispositivo no te ha verificado (huella, cara o PIN del dispositivo). Inténtalo de nuevo.",
+"fr": "Votre appareil ne vous a pas vérifié. Réessayez.",
+"de": "Dein Gerät hat dich nicht bestätigt (Fingerabdruck, Gesicht oder PIN). Versuch es erneut.",
+"it": "Il dispositivo non ti ha verificato. Riprova.",
+"pt-BR": "Seu dispositivo não verificou você. Tente de novo.",
+"ru": "Устройство не подтвердило вас. Попробуйте ещё раз."
+},
+"Your sign-in expired. Start again.": {
+"es": "Tu inicio de sesión ha caducado. Empieza de nuevo.",
+"fr": "Votre connexion a expiré. Recommencez.",
+"de": "Deine Anmeldung ist abgelaufen. Beginne von vorn.",
+"it": "L'accesso è scaduto. Ricomincia.",
+"pt-BR": "Seu login expirou. Comece de novo.",
+"ru": "Сеанс входа истёк. Начните заново."
+},
+"added {date}": {
+"es": "añadida el {date}",
+"fr": "ajoutée le {date}",
+"de": "hinzugefügt am {date}",
+"it": "aggiunta il {date}",
+"pt-BR": "adicionada em {date}",
+"ru": "добавлен {date}"
+},
+"last used {date}": {
+"es": "último uso {date}",
+"fr": "dernière utilisation {date}",
+"de": "zuletzt genutzt {date}",
+"it": "ultimo uso {date}",
+"pt-BR": "último uso {date}",
+"ru": "последнее использование {date}"
+},
+"or": {
+"es": "o",
+"fr": "ou",
+"de": "oder",
+"it": "o",
+"pt-BR": "ou",
+"ru": "или"
+},
+"{n} left. Each one lets you in once if you lose your phone.": {
+"es": "Quedan {n}. Cada uno te deja entrar una vez si pierdes el móvil.",
+"fr": "Il en reste {n}. Chacun permet une connexion si vous perdez votre téléphone.",
+"de": "Noch {n}. Jeder erlaubt einmal den Zugang, falls du dein Handy verlierst.",
+"it": "Ne restano {n}. Ognuno ti fa entrare una volta se perdi il telefono.",
+"pt-BR": "Restam {n}. Cada um permite entrar uma vez se perder o celular.",
+"ru": "Осталось {n}. Каждый позволяет войти один раз при потере телефона."
+},
+"{n} passkeys": {
+"es": "{n} llaves",
+"fr": "{n} passkeys",
+"de": "{n} Passkeys",
+"it": "{n} passkey",
+"pt-BR": "{n} passkeys",
+"ru": "ключей: {n}"
 }
 }

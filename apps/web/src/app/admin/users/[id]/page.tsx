@@ -3,7 +3,7 @@ import { and, desc, eq, gt, or } from "drizzle-orm";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { adminSetUserDisabled } from "@/actions/admin";
-import { addMembership, impersonate, resetUserPassword, revokeUserSessions, setPlatformRole, updateMembership, updateUser } from "@/actions/admin-platform";
+import { addMembership, impersonate, resetUserPassword, revokeUserSessions, setPlatformRole, updateMembership, updateUser, resetTwoStep, setRequirePasskey } from "@/actions/admin-platform";
 import { Table, Td, fmtDate } from "@/components/admin/table";
 import { ConfirmSubmit, SubmitButton } from "@/components/client";
 import { Badge, Button, Card, CardHeader, Field, Input, PageHeader, Select } from "@/components/ui";
@@ -38,6 +38,7 @@ export default async function AdminUser({ params }: { params: Promise<{ id: stri
       .limit(25),
   ]);
   const self = u.id === me.id;
+  const passkeyCount = (await db.select({ id: schema.passkeys.id }).from(schema.passkeys).where(eq(schema.passkeys.userId, id))).length;
   const manage = platformCan(me.platformRole, "users.manage") && !self;
   const staff = platformCan(me.platformRole, "staff.manage") && !self;
   const canImpersonate = platformCan(me.platformRole, "impersonate") && !self && !u.disabled && (!isPlatformRole(u.platformRole) || staff);
@@ -96,6 +97,28 @@ export default async function AdminUser({ params }: { params: Promise<{ id: stri
                   <Field label={t("Reset password")} hint={t("blank = generate")} className="min-w-48 flex-1"><Input name="password" autoComplete="off" /></Field>
                   <SubmitButton size="md" variant="secondary">{t("Reset")}</SubmitButton>
                 </ActionForm>
+                <div className="space-y-2 rounded-lg border border-border p-3 text-[13px]">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-medium">{t("Two-step sign-in")}:</span>
+                    {passkeyCount > 0 && <Badge tone="ok" icon="fingerprint">{t("{n} passkeys", { n: passkeyCount })}</Badge>}
+                    {u.totpSecret && <Badge tone="ok">{t("Authenticator app")}</Badge>}
+                    {!passkeyCount && !u.totpSecret && <Badge>{t("Off")}</Badge>}
+                    {u.requirePasskey && <Badge tone="solid">{t("Passkey required")}</Badge>}
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <form action={setRequirePasskey}>
+                      <input type="hidden" name="userId" value={u.id} />
+                      <input type="hidden" name="on" value={String(!u.requirePasskey)} />
+                      <ConfirmSubmit variant="secondary" message={u.requirePasskey ? t("Allow this user to sign in without a passkey again?") : t("Require fingerprint or face (passkey) to sign in? Their sessions end now; on the next sign-in they register their device.")}>{u.requirePasskey ? t("Make passkey optional") : t("Require passkey")}</ConfirmSubmit>
+                    </form>
+                    {(passkeyCount > 0 || u.totpSecret) && (
+                      <form action={resetTwoStep}>
+                        <input type="hidden" name="userId" value={u.id} />
+                        <ConfirmSubmit message={t("Remove all passkeys and the authenticator app of this user? Only do it after verifying their identity (lost phone).")}>{t("Reset two-step")}</ConfirmSubmit>
+                      </form>
+                    )}
+                  </div>
+                </div>
                 <div className="flex flex-wrap gap-2">
                   <form action={revokeUserSessions}>
                     <input type="hidden" name="userId" value={u.id} />
