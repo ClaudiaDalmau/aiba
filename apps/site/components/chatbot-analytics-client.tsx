@@ -32,7 +32,7 @@ async function api<T>(path: string): Promise<T> {
 }
 
 const LANG_FLAGS: Record<string, string> = {
-  es: "🇪🇸", en: "🇬🇧", pt: "🇧🇷", "pt-BR": "🇧🇷",
+  es: "🇪🇸", en: "🇬🇧", pt: "🇧🇷", "pt-BR": "🇧🇷", nl: "🇳🇱", ro: "🇷🇴", pl: "🇵🇱",
   fr: "🇫🇷", it: "🇮🇹", de: "🇩🇪", ru: "🇷🇺",
 };
 const LANG_NAMES: Record<string, string> = {

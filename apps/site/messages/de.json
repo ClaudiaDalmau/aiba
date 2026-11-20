@@ -93,7 +93,7 @@
       "label": "Funktionen",
       "title": "Alles, was du brauchst. Nichts Überflüssiges.",
       "aiTitle": "Konversationelle KI",
-      "aiDesc": "GPT-4o versteht Nuancen, geht mit Einwänden um und lernt deine Services.",
+      "aiDesc": "Claude versteht Nuancen, geht mit Einwänden um und lernt deine Services.",
       "paymentsTitle": "Integrierte Zahlungen",
       "paymentsDesc": "Anzahlungen, Endzahlungen und automatische Rückerstattungen. Keine Kasse, kein Bargeld.",
       "dashboardTitle": "Analytics-Dashboard",
@@ -238,7 +238,7 @@
         "deposit": "Anzahlung gegen No-Shows",
         "clientDatabase": "Kundendatenbank",
         "sharedBlacklist": "Geteilte Blacklist zwischen Profis",
-        "multiLang": "Dashboard in 7 Sprachen",
+        "multiLang": "Dashboard in 10 Sprachen",
         "gdpr": "Natives DSGVO (EU-Server)",
         "flatFee": "Flatrate, keine Provision pro Buchung",
         "regulatedTier": "Reguliertes Private-Tier (nur mit Einladung)"
@@ -598,7 +598,7 @@
     "ctaSecondary": "Mit uns sprechen",
     "s1": {
       "title": "1. Kunde kontaktiert den Bot",
-      "desc": "Teile deinen einzigartigen WhatsApp- oder Telegram-Link. Der Bot begrüßt, präsentiert Services mit Preisen und antwortet 24/7 mit GPT-4o KI.",
+      "desc": "Teile deinen einzigartigen WhatsApp- oder Telegram-Link. Der Bot begrüßt, präsentiert Services mit Preisen und antwortet 24/7 mit Claude KI.",
       "example": "Kunde: «Hallo, ich möchte eine Massage buchen» → Bot: «Klar! Verfügbar: Entspannungsmassage 60min · 45€, Sportmassage 60min · 55€. Welche passt?»"
     },
     "s2": {
@@ -884,7 +884,7 @@
   "meta": {
     "home": {
       "title": "AIBA · Automatisierte Buchungen mit KI",
-      "description": "SaaS für selbstständige Fachkräfte: 24/7-KI-Chatbot, Terminverwaltung, Anzahlungen und beidseitige Bewertungen. 7 Sprachen."
+      "description": "SaaS für selbstständige Fachkräfte: 24/7-KI-Chatbot, Terminverwaltung, Anzahlungen und beidseitige Bewertungen. 10 Sprachen."
     }
   }
 }

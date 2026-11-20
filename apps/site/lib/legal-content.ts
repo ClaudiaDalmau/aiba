@@ -1299,6 +1299,10 @@ export const LEGAL_CONTENT: Record<Locale, LocaleLegal> = {
   it: IT,
   "pt-BR": PT_BR,
   ru: RU,
+  // Sin traducción legal revisada todavía: se muestra la versión en inglés (prevalece la española).
+  nl: EN,
+  ro: EN,
+  pl: EN,
 };
 
 export function getLegalContent(locale: string): LocaleLegal {

@@ -93,7 +93,7 @@
       "label": "Funcionalidades",
       "title": "Todo lo que necesitas. Nada de lo que sobra.",
       "aiTitle": "IA conversacional",
-      "aiDesc": "GPT-4o entiende matices, gestiona objeciones y aprende de tus servicios.",
+      "aiDesc": "Claude entiende matices, gestiona objeciones y aprende de tus servicios.",
       "paymentsTitle": "Pagos integrados",
       "paymentsDesc": "Depósitos, cobros finales y reembolsos automáticos. Sin cajas ni efectivo.",
       "dashboardTitle": "Dashboard analítico",
@@ -238,7 +238,7 @@
         "deposit": "Cobro de depósito anti no-show",
         "clientDatabase": "Base de datos de clientes",
         "sharedBlacklist": "Blacklist compartida entre profesionales",
-        "multiLang": "Panel disponible en 7 idiomas",
+        "multiLang": "Panel disponible en 10 idiomas",
         "gdpr": "GDPR nativo (servidores EU)",
         "flatFee": "Tarifa plana sin comisión por reserva",
         "regulatedTier": "Vertical privado regulado (invite-only)"
@@ -598,7 +598,7 @@
     "ctaSecondary": "Hablar con nosotras/os",
     "s1": {
       "title": "1. El cliente contacta al bot",
-      "desc": "Compartes tu enlace único de WhatsApp o Telegram (@My_AI_Booking_Assistant_Bot). El bot saluda, presenta tus servicios con precios y responde dudas 24/7 con inteligencia artificial GPT-4o.",
+      "desc": "Compartes tu enlace único de WhatsApp o Telegram (@My_AI_Booking_Assistant_Bot). El bot saluda, presenta tus servicios con precios y responde dudas 24/7 con inteligencia artificial Claude.",
       "example": "Cliente: «Hola, quiero reservar una sesión de masaje» → Bot: «¡Claro! Tenemos disponibles: Masaje relajante 60min · 45€, Masaje deportivo 60min · 55€. ¿Cuál te encaja?»"
     },
     "s2": {
@@ -884,7 +884,7 @@
   "meta": {
     "home": {
       "title": "AIBA · Reservas automáticas con IA",
-      "description": "SaaS para profesionales independientes: chatbot 24/7, gestión de citas, depósitos y valoraciones bidireccionales. 7 idiomas."
+      "description": "SaaS para profesionales independientes: chatbot 24/7, gestión de citas, depósitos y valoraciones bidireccionales. 10 idiomas."
     }
   }
 }

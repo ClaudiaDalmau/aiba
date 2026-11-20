@@ -93,7 +93,7 @@
       "label": "Fonctionnalités",
       "title": "Tout ce dont vous avez besoin. Rien de superflu.",
       "aiTitle": "IA conversationnelle",
-      "aiDesc": "GPT-4o comprend les nuances, gère les objections et apprend vos services.",
+      "aiDesc": "Claude comprend les nuances, gère les objections et apprend vos services.",
       "paymentsTitle": "Paiements intégrés",
       "paymentsDesc": "Acomptes, encaissements finaux et remboursements automatiques. Sans caisse ni espèces.",
       "dashboardTitle": "Tableau de bord analytique",
@@ -238,7 +238,7 @@
         "deposit": "Acompte anti-no-show",
         "clientDatabase": "Base de données clients",
         "sharedBlacklist": "Blacklist partagée entre pros",
-        "multiLang": "Interface en 7 langues",
+        "multiLang": "Interface en 10 langues",
         "gdpr": "RGPD natif (serveurs UE)",
         "flatFee": "Tarif fixe, sans commission par réservation",
         "regulatedTier": "Vertical privé régulé (sur invitation)"
@@ -598,7 +598,7 @@
     "ctaSecondary": "Nous contacter",
     "s1": {
       "title": "1. Le client contacte le bot",
-      "desc": "Partagez votre lien unique WhatsApp ou Telegram (@My_AI_Booking_Assistant_Bot). Le bot accueille, présente vos services avec les prix et répond 24/7 grâce à l'IA GPT-4o.",
+      "desc": "Partagez votre lien unique WhatsApp ou Telegram (@My_AI_Booking_Assistant_Bot). Le bot accueille, présente vos services avec les prix et répond 24/7 grâce à l'IA Claude.",
       "example": "Client : «Bonjour, je veux réserver un massage» → Bot : «Bien sûr ! Dispo : Massage relaxant 60min · 45€, Massage sportif 60min · 55€. Lequel choisir ?»"
     },
     "s2": {
@@ -884,7 +884,7 @@
   "meta": {
     "home": {
       "title": "AIBA · Réservations automatisées avec IA",
-      "description": "SaaS pour professionnels indépendants : chatbot IA 24/7, gestion des rendez-vous, acomptes et avis bidirectionnels. 7 langues."
+      "description": "SaaS pour professionnels indépendants : chatbot IA 24/7, gestion des rendez-vous, acomptes et avis bidirectionnels. 10 langues."
     }
   }
 }

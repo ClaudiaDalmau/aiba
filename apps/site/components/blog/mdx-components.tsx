@@ -19,7 +19,7 @@ function AutoLink({ href = "", children, ...rest }: ComponentProps<"a">) {
     );
   }
   // Strip leading locale if the author accidentally included one
-  const cleaned = href.replace(/^\/(es|en|fr|de|it|pt-BR|ru)(\/|$)/, "/");
+  const cleaned = href.replace(/^\/(es|en|fr|de|it|pt-BR|ru|nl|ro|pl)(\/|$)/, "/");
   // next-intl Link only supports internal absolute paths (starting with `/`)
   if (cleaned.startsWith("/")) {
     return (

@@ -33,6 +33,9 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
     it: { home: "Home", here: "Come funziona" },
     "pt-BR": { home: "Início", here: "Como funciona" },
     ru: { home: "Главная", here: "Как это работает" },
+    nl: { home: "Home", here: "Hoe het werkt" },
+    ro: { home: "Acasă", here: "Cum funcționează" },
+    pl: { home: "Strona główna", here: "Jak to działa" },
   };
   const cl = crumbLabels[locale] || crumbLabels.es;
   const breadcrumbLd = marketingBreadcrumbs({

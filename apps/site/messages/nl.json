@@ -1,0 +1,890 @@
+{
+  "header": {
+    "brand": {
+      "main": "AI Booking",
+      "sub": "Assistant"
+    },
+    "nav": {
+      "howItWorks": "Hoe het werkt",
+      "businessTypes": "Soorten bedrijven",
+      "pricing": "Prijzen",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "menu": "Menu"
+    },
+    "cta": {
+      "login": "Inloggen",
+      "goToDashboard": "Naar dashboard",
+      "startFree": "Gratis beginnen"
+    }
+  },
+  "footer": {
+    "tagline": "Geautomatiseerde boekingen met AI voor zelfstandige professionals.",
+    "sections": {
+      "product": "PRODUCT",
+      "company": "BEDRIJF",
+      "legal": "JURIDISCH"
+    },
+    "product": {
+      "howItWorks": "Hoe het werkt",
+      "businessTypes": "Soorten bedrijven",
+      "pricing": "Prijzen",
+      "faq": "FAQ"
+    },
+    "company": {
+      "about": "Over ons",
+      "contact": "Contact"
+    },
+    "legal": {
+      "terms": "Voorwaarden",
+      "privacy": "Privacy",
+      "legalNotice": "Juridische informatie",
+      "cookies": "Cookies"
+    },
+    "copyright": "© 2026 Claudia Dalmau · Alle rechten voorbehouden",
+    "madeIn": "Gemaakt in Spanje 🇪🇸"
+  },
+  "home": {
+    "hero": {
+      "badge": "Een nieuw tijdperk van boekingen · Met AI",
+      "titleStart": "Beheer je afspraken met ",
+      "titleHighlight": "kunstmatige intelligentie 24/7",
+      "subtitle": "De bot praat met je klanten op WhatsApp of Telegram, regelt boekingen, int aanbetalingen en geeft je tijd terug. Geen telefoontjes. Geen handmatige agenda.",
+      "ctaPrimary": "Gratis beginnen",
+      "ctaSecondary": "Bekijk hoe het werkt"
+    },
+    "stats": {
+      "attention247Number": "24/7",
+      "attention247Label": "Geautomatiseerde service",
+      "timeNumber": "0 min",
+      "timeLabel": "Handwerk per boeking",
+      "secureNumber": "100%",
+      "secureLabel": "Veilig en privé"
+    },
+    "autopilot": {
+      "label": "Automatische piloot",
+      "titleStart": "Terwijl je werkt of rust, ",
+      "titleHighlight": "werkt je agenda voor jou door.",
+      "subtitle": "Of je nu bij een klant bent, een vrije dag hebt of gewoon uitschakelt: de bot blijft boekingen aannemen, aanbetalingen innen en je week vullen.",
+      "emphasis": "Je tijd is weer van jou.",
+      "pillar1Title": "Boekingen terwijl je slaapt",
+      "pillar1Desc": "Bijna de helft van de boekingsvragen komt buiten werktijd binnen. Met AIBA vang je ze allemaal op, zelfs als je slaapt.",
+      "pillar2Title": "Inkomsten, ook offline",
+      "pillar2Desc": "De agenda van volgende week vult zich terwijl jij vandaag rust. Mis nooit meer een kans omdat je niet op tijd antwoordde.",
+      "pillar3Title": "Nul minuten aan WhatsApp",
+      "pillar3Desc": "De tijd die je kwijt was aan berichten beantwoorden is nu van jou. Gebruik hem voor je werk, je gezin of helemaal niets. Jij kiest.",
+      "quoteStart": "Blijf klanten winnen, ook als je uitschakelt. ",
+      "quoteHighlight": "Je bedrijf werkt in jouw tempo."
+    },
+    "process": {
+      "label": "Het proces",
+      "title": "Van eerste vraag tot betaling. Zonder omkijken.",
+      "step1Title": "De klant schrijft de bot",
+      "step1Desc": "Deel je unieke WhatsApp- of Telegram-link. De bot toont je diensten en beantwoordt 24/7 vragen.",
+      "step2Title": "Kiest een tijd en betaalt een aanbetaling",
+      "step2Desc": "De bot toont de actuele beschikbaarheid. Bij een keuze wordt een veilige betaallink gemaakt.",
+      "step3Title": "Herinnering met code",
+      "step3Desc": "1 uur voor de afspraak stuurt de bot een 6-cijferige code. Zonder bevestiging komt de plek vrij.",
+      "step4Title": "Automatische eindbetaling",
+      "step4Desc": "Als de klant aankomt, valideer je de code en rekent het systeem het restbedrag automatisch af.",
+      "seeFullProcess": "Bekijk het hele proces"
+    },
+    "features": {
+      "label": "Functies",
+      "title": "Alles wat je nodig hebt. Niets te veel.",
+      "aiTitle": "Conversationele AI",
+      "aiDesc": "De AI begrijpt nuances, gaat in op bezwaren en leert je diensten kennen.",
+      "paymentsTitle": "Geïntegreerde betalingen",
+      "paymentsDesc": "Aanbetalingen, eindbetalingen en automatische terugbetalingen. Geen kassa, geen contant geld.",
+      "dashboardTitle": "Analysedashboard",
+      "dashboardDesc": "Inkomsten, opkomst, terugkerende klanten en prognoses in realtime.",
+      "ratingsTitle": "Wederzijdse beoordelingen",
+      "ratingsDesc": "Gezamenlijk beoordelingssysteem tussen klant en professional om je tijd te beschermen.",
+      "agendaTitle": "Slimme agenda",
+      "agendaDesc": "Automatische buffers, geen overlappingen en agendasynchronisatie.",
+      "privacyTitle": "Volledige privacy",
+      "privacyDesc": "Servers in de EU, end-to-endversleuteling, volledig AVG-conform."
+    },
+    "cases": {
+      "label": "Soorten bedrijven",
+      "title": "Eén assistent. Veel professionals.",
+      "subtitle": "Gezondheid, beauty, sport, onderwijs, juridisch, evenementen, horeca en veel meer.",
+      "seeAll": "Bekijk alle sectoren in detail",
+      "case": {
+        "health": {
+          "title": "Privézorg",
+          "desc": "Psychologen, fysiotherapeuten, diëtisten, tandartsen, esthetische geneeskunde."
+        },
+        "beauty": {
+          "title": "Beauty",
+          "desc": "Kappers, nagelstudio's, tatoeëerders, laser, micropigmentatie."
+        },
+        "sports": {
+          "title": "Sport en fitness",
+          "desc": "Personal trainers, yoga, pilates, zwemmen, vechtsporten."
+        },
+        "education": {
+          "title": "Privéonderwijs",
+          "desc": "Bijlesdocenten, kleine academies, talen, muziek, rijscholen."
+        },
+        "legal": {
+          "title": "Juridisch en advies",
+          "desc": "Advocaten, accountants, adviseurs, notarissen."
+        },
+        "events": {
+          "title": "Evenementen",
+          "desc": "Fotografie, video, dj's, visagisten, weddingplanners."
+        },
+        "hospitality": {
+          "title": "Horeca en toerisme",
+          "desc": "Restaurants, hotels, vakantieappartementen, landelijke huizen."
+        },
+        "pets": {
+          "title": "Dierenverzorging",
+          "desc": "Hondentrimsalons, training, privédierenartsen."
+        },
+        "home": {
+          "title": "Diensten aan huis",
+          "desc": "Schoonmaak, verbouwingen, interieurontwerp, personal shopping."
+        },
+        "other": {
+          "title": "Andere professionals",
+          "desc": "Past je bedrijf er niet bij? We passen ons aan, met discretie en respect."
+        }
+      }
+    },
+    "pricingPreview": {
+      "label": "Prijzen",
+      "title": "Abonnementen voor elke fase.",
+      "subtitle": "Vanaf €39/maand. Zonder vastzitten.",
+      "seeAll": "Bekijk alle abonnementen",
+      "planBasic": {
+        "name": "Basic",
+        "price": "€39",
+        "period": "/mnd",
+        "desc": "Perfect om te beginnen"
+      },
+      "planPro": {
+        "name": "Pro",
+        "price": "€79",
+        "period": "/mnd",
+        "desc": "Meest gekozen",
+        "badge": "Populairst"
+      },
+      "planPremium": {
+        "name": "Premium",
+        "price": "€149",
+        "period": "/mnd",
+        "desc": "Meerdere professionals"
+      }
+    },
+    "questions": {
+      "title": "Vragen?",
+      "subtitle": "Mail ons en we antwoorden binnen 24 werkuren.",
+      "cta": "Contact per e-mail"
+    },
+    "finalCta": {
+      "title": "Begin gratis. Reken af zonder verrassingen.",
+      "subtitle": "14 dagen gratis. Zonder kaart. In 5 minuten ingesteld.",
+      "ctaPrimary": "Gratis account maken",
+      "ctaSecondary": "Bekijk prijzen",
+      "check1": "Geen vaste looptijd",
+      "check2": "Altijd opzegbaar",
+      "check3": "Meertalige support"
+    },
+    "testimonials": {
+      "badge": "What early adopters say",
+      "title": "Professionals already using it",
+      "subtitle": "Testimonials from Founding Members. Join now and be part of the first wave.",
+      "foundingMember": "Founding",
+      "betaNote": "* First 20 members get 6 months free plus a 30% lifetime discount.",
+      "t1": {
+        "quote": "In 3 days I eliminated last-minute cancellations. Deposits are magic: no payment, no booking.",
+        "name": "Ana M.",
+        "role": "Hairstylist · Madrid"
+      },
+      "t2": {
+        "quote": "I used to juggle WhatsApp + Google Calendar and lost hours. Now everything is automated, including reminders.",
+        "name": "Diego R.",
+        "role": "Business coach · Barcelona"
+      },
+      "t3": {
+        "quote": "My clients book any time without calling me. I've recovered my nights and full weekends.",
+        "name": "Carla S.",
+        "role": "Personal trainer · Valencia"
+      },
+      "t4": {
+        "quote": "The AI answers my clients 24/7 in Spanish and Catalan. I book while I sleep. Literally.",
+        "name": "Marc T.",
+        "role": "Therapist · Barcelona"
+      }
+    },
+    "comparison": {
+      "badge": "Objectieve vergelijking",
+      "title": "Hoe verhouden we ons tot de alternatieven?",
+      "subtitle": "Eerlijke vergelijking met de populairste platforms in 2026.",
+      "featureHeader": "Functie",
+      "us": "Wij",
+      "gcal": "Google Cal.",
+      "legend": {
+        "yes": "Inbegrepen",
+        "partial": "Gedeeltelijk / met add-on",
+        "no": "Niet beschikbaar"
+      },
+      "disclaimer": "* Vergelijking op basis van openbare informatie van elk platform per juni 2026.",
+      "rows": {
+        "aiBot": "Meertalige AI-bot (24/7)",
+        "reminders": "Automatische herinneringen (WhatsApp/Telegram)",
+        "deposit": "Aanbetaling tegen no-shows",
+        "clientDatabase": "Klantendatabase",
+        "sharedBlacklist": "Gedeelde zwarte lijst tussen professionals",
+        "multiLang": "Dashboard beschikbaar in 10 talen",
+        "gdpr": "AVG-native (servers in de EU)",
+        "flatFee": "Vast bedrag, geen commissie per boeking",
+        "regulatedTier": "Gereguleerd privéniveau (alleen op uitnodiging)"
+      }
+    },
+    "faqInline": {
+      "badge": "Veelgesteld",
+      "title": "Wat mensen ons vragen",
+      "subtitle": "Snelle antwoorden op de meest gestelde vragen. Voor de volledige lijst, zie onze FAQ.",
+      "seeAll": "Alle vragen bekijken",
+      "items": {
+        "q1": {
+          "q": "Moet ik kunnen programmeren?",
+          "a": "Nee. Je stelt je agenda en diensten in 5 minuten in vanuit het dashboard. Alles werkt zonder code."
+        },
+        "q2": {
+          "q": "Hoe vinden mijn klanten de bot?",
+          "a": "Bij je aanmelding maken we je unieke WhatsApp- en Telegram-links. Zet ze op je Instagram, website of in automatische antwoorden."
+        },
+        "q3": {
+          "q": "En no-shows?",
+          "a": "Aanbetalingen worden niet terugbetaald: je houdt ze als compensatie. De meeste gebruikers verminderen no-shows met meer dan 60% in de eerste maand."
+        },
+        "q4": {
+          "q": "Werkt het voor mijn sector?",
+          "a": "Ja. Het werkt voor beauty, wellness, coaching, fysio, trainers, therapie, fotografie en nog veel meer. Stel je eigen diensten en prijzen in."
+        },
+        "q5": {
+          "q": "Wanneer kan ik beginnen?",
+          "a": "Het platform is in gesloten bèta. Zet je op de wachtlijst en krijg de komende weken voorrang."
+        },
+        "q6": {
+          "q": "Is het AVG-conform?",
+          "a": "Ja. Servers in de EU, versleuteling tijdens transport en in opslag, verwijdering op verzoek en een transparant bewaarbeleid. Volledig AVG- en ePrivacy-conform."
+        }
+      }
+    },
+    "waitlist": {
+      "badge": "Vroege toegang",
+      "title": "Zet je op de wachtlijst",
+      "subtitle": "Wees een van de eersten die het platform probeert bij de lancering. De eerste 20 leden krijgen 6 maanden gratis + 30% levenslange korting.",
+      "counter": "professionals al aangemeld",
+      "emailPlaceholder": "jij@email.com",
+      "professionPlaceholder": "Wat is je beroep? (optioneel)",
+      "submit": "Aanmelden",
+      "submitting": "Verzenden...",
+      "successTitle": "Je bent erbij!",
+      "successDesc": "We mailen je bij de lancering. Zet je beste diensten alvast klaar.",
+      "positionLabel": "Je positie",
+      "successToast": "Welkom op de wachtlijst",
+      "alreadyRegistered": "Dit e-mailadres staat al op de lijst",
+      "errorInvalidEmail": "Vul een geldig e-mailadres in",
+      "errorRateLimit": "Te veel aanmeldingen. Probeer het over 1 uur opnieuw.",
+      "errorGeneric": "Er ging iets mis. Probeer opnieuw.",
+      "errorNetwork": "Offline. Controleer je verbinding.",
+      "privacyNote": "Door je aan te melden accepteer je ons privacybeleid. Geen spam. Je kunt je altijd afmelden.",
+      "professions": {
+        "beauty": "💅 Beauty / Esthetiek",
+        "wellness": "🧘 Wellness / Massage",
+        "fitness": "🏋️ Fitness / Training",
+        "coaching": "🎓 Coaching / Advies",
+        "health": "🩺 Gezondheid / Fysio",
+        "education": "📚 Onderwijs / Bijles",
+        "creative": "🎨 Creatief / Fotografie",
+        "professional": "⚖️ Zakelijke diensten",
+        "home": "🏠 Diensten aan huis",
+        "pets": "🐾 Huisdieren",
+        "events": "🎉 Evenementen",
+        "hospitality": "🍽️ Horeca",
+        "other": "☔ Andere professionals"
+      }
+    },
+    "mock": {
+      "chatName": "Lúa Studio",
+      "online": "AI-assistent · online",
+      "m1": "Hoi, heb je zaterdag plek voor een massage?",
+      "m2": "Hoi! Zaterdag heb ik 10:00 of 12:30. Ontspanningsmassage 60 min · €45. Wat heeft je voorkeur?",
+      "m3": "10:00, prima",
+      "m4": "Geboekt ✓ Betaal de aanbetaling van €15 om te bevestigen:",
+      "pay": "Aanbetaling betalen · €15",
+      "c1Label": "Nieuwe boeking",
+      "c1Title": "Zaterdag · 10:00",
+      "c1Sub": "Marta G. · Ontspanningsmassage",
+      "c2Label": "Aanbetaling ontvangen",
+      "c2Title": "€15,00",
+      "c2Sub": "Afspraak bevestigd",
+      "c3Label": "Herinnering verstuurd",
+      "c3Title": "Code 384 762",
+      "c3Sub": "1 u voor de afspraak",
+      "stepLabel": "Stap {n}",
+      "finalAmount": "+ €30,00"
+    },
+    "demo": {
+      "label": "Live demo",
+      "title": "Chat met de AI alsof je je eigen klant bent",
+      "subtitle": "Typ wat je wilt en zie hoe de assistent de dienst begrijpt, tijden voorstelt en de boeking afrondt. Niets te installeren.",
+      "b1": "Begrijpt variaties (\"even bijknippen\", \"hele kleuring\", \"mani en pedi\")",
+      "b2": "Stelt tijden voor op basis van je echte agenda",
+      "b3": "Int de aanbetaling en stuurt automatische herinneringen"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Taal",
+    "current": "Nederlands"
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog · AIBA",
+      "desc": "Gidsen, praktijkvoorbeelden en tips om je agenda te beheren en je bedrijf als zelfstandige te laten groeien."
+    },
+    "kicker": "Blog",
+    "title": "Gidsen, cases en tips voor professionals",
+    "subtitle": "Alles wat je nodig hebt om no-shows te verminderen, aanbetalingen te innen en je boekingen te laten groeien.",
+    "empty": "Nog geen artikelen in deze taal.",
+    "read_more": "Lezen",
+    "reading_time": "{minutes} min lezen",
+    "related": "Lees verder",
+    "crumb_home": "Home",
+    "cta_title": "Begin je gratis proefperiode van 14 dagen",
+    "cta_desc": "AIBA automatiseert je boekingen, int aanbetalingen en vermindert annuleringen. Zonder creditcard.",
+    "cta_button": "Bekijk abonnementen",
+    "search_placeholder": "Artikelen zoeken…",
+    "no_results": "Geen resultaten voor je zoekopdracht.",
+    "filter_by_category": "Categorieën",
+    "clear_filters": "Filters wissen",
+    "filter_by_tag": "Tags",
+    "results_count": "[N] artikelen",
+    "filter_all": "Alle"
+  },
+  "pricing": {
+    "meta": {
+      "title": "Prijzen · AIBA",
+      "desc": "Flexibele abonnementen vanaf €39/maand. Basic voor je agenda, Pro met online betalingen, Premium met geavanceerde AI. 14 dagen gratis proberen."
+    },
+    "badge": "Duidelijke prijzen, geen verrassingen",
+    "title": "Kies het abonnement dat bij je past.",
+    "subtitle": "14 dagen gratis bij elk abonnement. Geen kaart nodig. Altijd opzegbaar.",
+    "perMonth": "/mnd",
+    "trialNote": "14 dagen gratis · zonder kaart",
+    "smallPrint": "Jaarabonnement met 2 maanden gratis · Prijzen excl. btw · Altijd opzegbaar",
+    "highlightBadge": "Meest gekozen",
+    "plans": {
+      "basic": {
+        "name": "Basic",
+        "tagline": "Alleen agenda — begin zonder online kosten.",
+        "cta": "Start met Basic"
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Online betalingen + slimme herinneringen.",
+        "cta": "Start met Pro"
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "Geavanceerde AI, dagelijkse samenvattingen, lagere kosten.",
+        "cta": "Start met Premium"
+      }
+    },
+    "tableTitle": "Vergelijk alle details",
+    "rows": {
+      "bookings": {
+        "label": "Boekingen per maand",
+        "basic": "Tot 100",
+        "pro": "Onbeperkt",
+        "premium": "Onbeperkt"
+      },
+      "bot": {
+        "label": "AI-bot (WhatsApp + Telegram)"
+      },
+      "agenda": {
+        "label": "Agenda met meerdere diensten + extra's"
+      },
+      "verify": {
+        "label": "Verificatie in 3 stappen"
+      },
+      "deposits": {
+        "label": "Online aanbetalingen innen"
+      },
+      "commission": {
+        "label": "AI Pay-commissie",
+        "basic": "2,0%",
+        "pro": "1,5%",
+        "premium": "1,0%"
+      },
+      "reminders": {
+        "label": "Eigen herinneringen",
+        "basic": "Standaard",
+        "pro": "Instelbaar",
+        "premium": "Instelbaar"
+      },
+      "push": {
+        "label": "Geavanceerde pushmeldingen",
+        "basic": "Basis",
+        "pro": "Volledig",
+        "premium": "+ VIP-meldingen"
+      },
+      "daily": {
+        "label": "Dagelijkse samenvatting om 8 uur"
+      },
+      "analytics": {
+        "label": "Geavanceerde analyses",
+        "basic": "Basis",
+        "pro": "Volledig",
+        "premium": "+ dagelijkse AI-briefings"
+      },
+      "extras": {
+        "label": "Extra's per dienst",
+        "basic": "Max. 3",
+        "pro": "Onbeperkt",
+        "premium": "Onbeperkt"
+      },
+      "support": {
+        "label": "Support",
+        "basic": "E-mail",
+        "pro": "E-mail + chat",
+        "premium": "Voorrang + WhatsApp"
+      }
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "q1": "Kan ik van abonnement wisselen?",
+      "a1": "Ja, je kunt altijd upgraden of downgraden. Het wordt automatisch naar rato berekend.",
+      "q2": "Hoe werkt de gratis proefperiode van 14 dagen?",
+      "a2": "Meld je aan zonder kaart en probeer alle functies van je abonnement. Op dag 15 beslis je of je betaalt of opzegt — zonder kosten.",
+      "q3": "Wat is AI Pay?",
+      "a3": "Een kleine vergoeding per boeking bij online betalingen: **2% bij Basic, 1,5% bij Pro, 1% bij Premium**. Hiermee financieren we de fraudebeveiliging en AI-verbeteringen. Betaalt de klant ter plekke, dan betaal je niets.",
+      "q4": "Heb ik technische kennis nodig?",
+      "a4": "Helemaal niet. Stel je agenda in 5 minuten in en de bot praat met je klanten op WhatsApp of Telegram. Niets te installeren."
+    }
+  },
+  "businessTypes": {
+    "meta": {
+      "title": "Soorten bedrijven · AIBA",
+      "desc": "Gezondheid, beauty, sport, onderwijs, juridisch, evenementen, horeca, huisdieren, diensten aan huis en meer."
+    },
+    "badge": "Soorten bedrijven",
+    "title": "Eén assistent. Veel beroepsprofielen.",
+    "subtitle": "Wij passen ons aan jouw dienst aan, niet andersom. Of je nu alleen werkt of met een team, op locatie of onderweg.",
+    "ctaTitle": "Past geen enkele categorie bij jou?",
+    "ctaSubtitle": "Schrijf ons. We passen de bot aan jouw manier van werken aan, met de discretie en het respect die je verdient.",
+    "ctaPrimary": "Probeer 14 dagen gratis",
+    "ctaSecondary": "Contact",
+    "cases": {
+      "health": {
+        "subtitle": "Psychologen, fysiotherapeuten, diëtisten, privétandartsen, esthetische geneeskunde",
+        "b1": "24/7 boekingen zonder tussen consulten door WhatsApp te beheren",
+        "b2": "Automatische aanbetaling vermindert no-shows drastisch",
+        "b3": "Vertrouwelijke patiëntgeschiedenis met versleutelde notities",
+        "b4": "Eigen herinneringen per type behandeling"
+      },
+      "beauty": {
+        "subtitle": "Kappers, nagelstudio's, tatoeëerders, laserontharing, micropigmentatie",
+        "b1": "Veel boekingen afgehandeld zonder uren aan de telefoon",
+        "b2": "Terugkerende klanten met opgeslagen geschiedenis en voorkeuren",
+        "b3": "Boekingen per dienst met verschillende duur en prijs",
+        "b4": "Aanbetaling voor lange sessies of dure materialen"
+      },
+      "sports": {
+        "subtitle": "Personal trainers, yoga, pilates, zwemmen, vechtsporten",
+        "b1": "Beheer kaarten, tegoedbundels en terugkerende sessies",
+        "b2": "Motiverende herinneringen voor elke les",
+        "b3": "Groeps- of individuele boekingen afhankelijk van de dienst",
+        "b4": "Analyse van klantbehoud en verlengingen"
+      },
+      "education": {
+        "subtitle": "Bijlesdocenten, kleine academies, talen, muziek, rijscholen",
+        "b1": "Aanbetaling vooraf voorkomt last-minute annuleringen",
+        "b2": "Terugkerende boekingen per periode of lessenkaarten",
+        "b3": "Meerdere leerlingen en roosters in één paneel",
+        "b4": "Automatische herinneringen met lesmateriaal of huiswerk"
+      },
+      "legal": {
+        "subtitle": "Advocaten, accountants, adviseurs, notarissen",
+        "b1": "Strak beheerde agenda met beschermde tijdblokken",
+        "b2": "Aanbetaling vooraf voor waardevolle consulten",
+        "b3": "Vertrouwelijke geschiedenis met end-to-endversleuteling",
+        "b4": "Automatische facturatie na het consult"
+      },
+      "events": {
+        "subtitle": "Fotografen, videografen, dj's, visagisten, weddingplanners",
+        "b1": "Eenmalige boekingen met hoge aanbetaling (30-50% van de dienst)",
+        "b2": "Automatisch hele dagen blokkeren in de agenda",
+        "b3": "Betaling in termijnen: boeking + tussentijds + eind",
+        "b4": "Evenementgeschiedenis met notities en contacten per klant"
+      },
+      "hospitality": {
+        "subtitle": "Restaurants, hotels, vakantieappartementen, landelijke huizen",
+        "b1": "Tafel- of kamerboekingen 24/7 zonder telefoontjes of e-mails",
+        "b2": "Automatische aanbetaling voor groepen, evenementen en lange verblijven",
+        "b3": "Herinneringen met aankomsttijd en check-in verminderen no-shows",
+        "b4": "Meerdere ruimtes beheren: tafels, kamers of appartementen vanuit één paneel"
+      },
+      "pets": {
+        "subtitle": "Hondentrimsalons, training, privédierenarts, opvang",
+        "b1": "Boekingen met gegevens van het dier (ras, leeftijd, behandeling)",
+        "b2": "Automatische herinneringen voor vaccinaties en controles",
+        "b3": "Volledige geschiedenis van het dier met voor/na-foto's",
+        "b4": "Loyaliteitssysteem voor terugkerende klanten"
+      },
+      "home": {
+        "subtitle": "Schoonmaak, verbouwingen (bezoeken), interieurontwerp, personal shopping",
+        "b1": "Boekingen met adres, parkeren en toegangsnotities",
+        "b2": "Routebeheer om reistijd tussen klanten te optimaliseren",
+        "b3": "Aanbetaling vooraf voor offertes en bezoeken",
+        "b4": "Herinneringen aan klanten met geschatte aankomsttijd"
+      },
+      "other": {
+        "subtitle": "Past je dienst niet in de categorieën hierboven?",
+        "b1": "100% aanpasbare configuratie aan jouw manier van werken",
+        "b2": "Voeg extra's, voorwaarden en eigen beleid toe",
+        "b3": "Geen verplichte categorieën: jij bepaalt hoe je werkt",
+        "b4": ""
+      }
+    },
+    "form": {
+      "signupTitle": "Begin nu",
+      "signupSubtitle": "Vul het formulier in en we activeren je proefperiode van 30 dagen.",
+      "signupNamePh": "Je naam",
+      "signupBusinessPh": "Bedrijfsnaam",
+      "signupEmailPh": "Zakelijke e-mail",
+      "signupPhonePh": "Telefoon (optioneel)",
+      "signupWebsitePh": "Website (optioneel)",
+      "signupCta": "Gratis proefperiode starten",
+      "signupSuccess": "Je staat op de voorrangslijst. Check je e-mail om je aanmelding af te ronden.",
+      "accessTitle": "Privétoegang aanvragen",
+      "accessSubtitle": "Deze sector vereist verificatie. We beoordelen elke aanvraag binnen 24 uur en sturen een privécode per e-mail.",
+      "accessProfPh": "Beroeps- / artiestennaam",
+      "accessPhonePh": "Contacttelefoon",
+      "accessEmailPh": "Contact-e-mail",
+      "accessWebsitePh": "Je website (https://…)",
+      "accessPortalPh": "Link naar je profiel op een portaal (https://…)",
+      "accessCta": "Toegang aanvragen",
+      "accessSuccess": "Aanvraag ontvangen. We mailen je binnen 24 uur je privétoegangscode.",
+      "close": "Sluiten",
+      "fieldRequired": "Vul de verplichte velden in.",
+      "emailInvalid": "Dat e-mailadres lijkt niet geldig.",
+      "urlHint": "We moeten je beroepsactiviteit verifiëren. Voeg je website of de link naar minstens één actief profiel toe.",
+      "accessKicker": "Geverifieerde toegang",
+      "portalsLabel": "Profielen op portalen",
+      "addPortal": "Nog een portaal toevoegen",
+      "accessSuccessTitle": "Aanvraag ontvangen",
+      "removeAriaLabel": "Verwijderen"
+    }
+  },
+  "howItWorks": {
+    "meta": {
+      "title": "Hoe het werkt · AIBA",
+      "desc": "5 stappen, nul handwerk: de klant schrijft de bot, kiest een tijd, betaalt een aanbetaling, krijgt een herinnering en bevestigt bij de afspraak."
+    },
+    "badge": "Hoe het werkt",
+    "title": "Van eerste vraag tot betaling. Zonder omkijken.",
+    "subtitle": "Een volledig geautomatiseerde flow in 5 stappen. De AI regelt, int en verifieert. Jij doet gewoon je werk.",
+    "exampleLabel": "Echt voorbeeld",
+    "ctaTitle": "Klaar om je agenda niet meer met de hand te beheren?",
+    "ctaSubtitle": "Stel je bot in 5 minuten in. 14 dagen gratis bij elk abonnement.",
+    "ctaPrimary": "Gratis beginnen",
+    "ctaSecondary": "Praat met ons",
+    "s1": {
+      "title": "1. De klant schrijft de bot",
+      "desc": "Deel je unieke WhatsApp- of Telegram-link (@My_AI_Booking_Assistant_Bot). De bot begroet, toont je diensten met prijzen en beantwoordt 24/7 vragen met AI.",
+      "example": "Klant: «Hoi, ik wil een massage boeken» → Bot: «Natuurlijk! Beschikbaar: Ontspanningsmassage 60 min · €45, Sportmassage 60 min · €55. Welke past bij je?»"
+    },
+    "s2": {
+      "title": "2. Kiest datum, tijd en betaalt een aanbetaling",
+      "desc": "De bot toont de actuele beschikbaarheid uit je agenda. Zodra de klant kiest, wordt automatisch een veilige betaallink voor de aanbetaling gemaakt (20-50% van de dienst, naar keuze).",
+      "example": "Bot: «Prima. Vrij op donderdag: 10:00, 12:30, 17:00. Betaal €15 aanbetaling om te bevestigen → https://pay.aib.app/xyz»"
+    },
+    "s3": {
+      "title": "3. Herinnering met verificatiecode",
+      "desc": "1 uur voor de afspraak stuurt de bot automatisch een herinnering met een 6-cijferige code. De klant heeft 30 minuten om te bevestigen; zonder antwoord komt de plek vrij.",
+      "example": "Bot: «⏰ Herinnering: ontspanningsmassage vandaag om 17:00. Je code: 384762. Antwoord JA om te bevestigen.»"
+    },
+    "s4": {
+      "title": "4. Automatische eindbetaling bij de afspraak",
+      "desc": "Als de klant aankomt, zegt of typt die de code in jouw dashboard. Het systeem rekent automatisch het restbedrag af met de opgeslagen methode. Geen kassa, geen contant geld, geen gedoe.",
+      "example": "Jij: code 384762 → ✅ €30 (rest van de dienst) afgeschreven bij María González · Bon per e-mail verstuurd"
+    },
+    "s5": {
+      "title": "5. Wederzijdse beoordeling en bescherming van de community",
+      "desc": "Na de afspraak beoordelen beide partijen elkaar (1-5 sterren). Klanten met een betrouwbare geschiedenis krijgen voorrang; herhaalde no-shows worden discreet gemarkeerd in de communitydatabase om andere professionals te beschermen.",
+      "example": "Jij beoordeelt: ⭐⭐⭐⭐⭐ «Stipt en respectvol» → Klant beoordeelt: ⭐⭐⭐⭐⭐ «Uitstekende service»"
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "FAQ · AIBA",
+      "desc": "Alles wat je over AIBA moet weten."
+    },
+    "badge": "FAQ",
+    "title": "Veelgestelde vragen",
+    "subtitleStart": "De vragen die we het vaakst krijgen. Staat de jouwe er niet bij, mail ons dan op ",
+    "subtitleEnd": ".",
+    "ctaTitle": "Nog vragen?",
+    "ctaSubtitle": "Mail ons en we antwoorden binnen 24 werkuren.",
+    "ctaContact": "Contact",
+    "ctaTry": "Gratis proberen",
+    "items": {
+      "q1": "Moet ik kunnen programmeren of technische kennis hebben?",
+      "a1": "Helemaal niet. Je stelt je agenda en diensten in 5 minuten in vanuit het webdashboard. De bot praat met je klanten op WhatsApp of Telegram zonder dat je één regel code schrijft. Kun je Instagram gebruiken, dan kun je AIBA gebruiken.",
+      "q2": "Hoe vindt mijn klant de bot?",
+      "a2": "Bij je aanmelding maken we je unieke WhatsApp Business-link en een Telegram-link (@My_AI_Booking_Assistant_Bot met jouw ID). Deel hem in je Instagram-bio, TikTok, visitekaartje of waar je maar wilt. Wie klikt, praat met JOUW persoonlijke bot.",
+      "q3": "Wat gebeurt er als een klant niet komt (no-show)?",
+      "a3": "De aanbetaling wordt niet terugbetaald — die blijft als vergoeding voor de geblokkeerde tijd. Ook krijgt de klant automatisch een negatieve beoordeling, wat zijn geloofwaardigheid bij toekomstige boekingen bij andere professionals in het netwerk verlaagt.",
+      "q4": "Hoe ver van tevoren kan een klant annuleren zonder de aanbetaling te verliezen?",
+      "a4": "Dat bepaal jij bij het instellen van je account. Standaard: meer dan 1 uur van tevoren geannuleerd betekent volledige terugbetaling. Minder dan 1 uur: de aanbetaling vervalt. Je kunt de termijn aanpassen naar 24 u, 48 u of wat in jouw sector logisch is.",
+      "q5": "Zijn mijn gegevens en die van mijn klanten veilig?",
+      "a5": "Ja. We versleutelen alle gegevens tijdens transport (TLS 1.3) en in opslag (AES-256). Onze servers staan in de Europese Unie en we voldoen volledig aan de AVG. We verkopen of delen nooit gegevens met derden. Je kunt al je gegevens altijd exporteren of verwijderen.",
+      "q6": "Kan ik meerdere diensten met verschillende prijzen beheren?",
+      "a6": "Ja, plus extra's. Je kunt zoveel diensten maken als je wilt (of tot 100/maand bij Basic), met eigen prijzen, duur en aanbetalingen. Je kunt ook optionele extra's toevoegen.",
+      "q7": "Hoe wordt de community van professionals beschermd?",
+      "a7": "Er is een privé en optioneel systeem van gezamenlijke verificatie. Als een klant niet komt of zich misdraagt, wordt dat in je geschiedenis vastgelegd en, met jouw toestemming, in een anonieme database die andere geverifieerde professionals kunnen raadplegen.",
+      "q8": "Is er een minimale looptijd of kan ik altijd opzeggen?",
+      "a8": "Geen minimale looptijd. Geen verborgen voorwaarden. Zeg met één klik op in het dashboard; je account blijft actief tot het einde van de betaalde periode. Je gegevens blijven 30 dagen exporteerbaar voordat ze definitief worden verwijderd."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Over ons · AIBA",
+      "desc": "Ontstaan in Barcelona in 2026 om de tijd die verloren gaat aan agendabeheer te elimineren. Privacy, community en eenvoud zijn onze waarden."
+    },
+    "badge": "Ons verhaal",
+    "titleStart": "Gemaakt om je ",
+    "titleHighlight": "tijd terug te geven.",
+    "intro": "AIBA is een onafhankelijk Spaans project, in 2026 in Barcelona gemaakt door en voor zelfstandigen die elke dag uren kwijt waren aan WhatsApp beantwoorden, afspraken op papier noteren en achter betalingen aan zitten.",
+    "missionTitle": "Onze missie",
+    "mission": "De tijd die verloren gaat aan agendabeheer volledig elimineren, zodat zelfstandige professionals elke minuut kunnen besteden aan wat echt telt: hun werk, hun klanten en hun leven buiten het bedrijf.",
+    "originTitle": "Waar we vandaan komen",
+    "origin1": "Het begon toen we vrienden — masseurs, coaches, fotografen, personal trainers — elke week uren zagen verliezen aan herhalend werk: antwoorden op «heb je donderdag plek?», via WhatsApp herinneren «vergeet morgen niet», achter betalingen aan, last-minute annuleringen opvangen.",
+    "origin2": "Er bestonden tools, ja. Maar geen enkele was gemaakt voor zelfstandigen, en geen enkele respecteerde de verschillende beroepen of de privacy van klanten. Zo ontstond AIBA: een echte AI-bot, gemaakt in Spanje, gericht op discretie en respect.",
+    "stat1": "Opgericht",
+    "stat1Label": "2026",
+    "stat2": "Gemaakt in Barcelona",
+    "stat2Label": "🇪🇸",
+    "stat3": "100% conform",
+    "stat3Label": "AVG",
+    "valuesLabel": "Onze waarden",
+    "valuesTitle": "Drie dingen waar we nooit op toegeven.",
+    "v1Title": "🔒 Privacy voorop",
+    "v1Desc": "Servers in de EU, end-to-endversleuteling, volledig AVG-conform. Jouw gegevens en die van je klanten worden nooit verkocht of gedeeld. Punt.",
+    "v2Title": "🤝 Community en wederzijdse bescherming",
+    "v2Desc": "We geloven dat zelfstandigen beter voor zichzelf zorgen als ze als netwerk werken. Ons systeem van gezamenlijke verificatie komt uit dat idee voort.",
+    "v3Title": "✨ Radicale eenvoud",
+    "v3Desc": "We voegen geen functies toe omdat ze mooi staan in de marketing. Elke knop, elk bericht en elke melding heeft een duidelijk doel: je tijd besparen op je agenda.",
+    "ctaTitle": "Met liefde gemaakt in Spanje.",
+    "ctaSubtitle": "Spreekt onze filosofie je aan, probeer de tool dan 14 dagen. Geen kaart, geen verplichting.",
+    "ctaBtn": "Maak mijn gratis account"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact · AIBA",
+      "desc": "Vragen over het product? Een demo nodig? We staan voor je klaar."
+    },
+    "badge": "Contact",
+    "title": "Laten we praten.",
+    "subtitle": "Vragen over het product, een demo nodig of een samenwerking voorstellen? We staan voor je klaar.",
+    "sidebarEmailTitle": "E-mail",
+    "sidebarEmailDesc": "We antwoorden binnen 24 werkuren",
+    "sidebarBotTitle": "Probeer de bot",
+    "sidebarBotDesc": "Chat direct met onze assistent op Telegram om te zien hoe het werkt.",
+    "sidebarTip": "💡 Tip: heb je al een account, mail ons dan vanaf het geregistreerde adres voor snellere support.",
+    "formSubjects": {
+      "demo": "Demo aanvragen",
+      "pricing": "Vragen over prijzen",
+      "support": "Technische support",
+      "press": "Pers / samenwerkingen",
+      "other": "Anders"
+    },
+    "labelName": "Naam",
+    "labelEmail": "E-mail",
+    "labelSubject": "Onderwerp",
+    "labelMessage": "Bericht",
+    "placeholderName": "Maria de Vries",
+    "placeholderEmail": "jij@email.com",
+    "placeholderMessage": "Vertel ons hoe we je kunnen helpen...",
+    "sendBtn": "Bericht versturen",
+    "successTitle": "Je e-mailprogramma wordt geopend…",
+    "successBody": "Opent het niet, mail ons dan zelf op ",
+    "legalNoteStart": "Bij verzenden opent je e-mailprogramma met het ingevulde bericht. Zie ons ",
+    "legalNoteLink": "Privacybeleid",
+    "legalNoteEnd": ".",
+    "finalCtaTitle": "Liever eerst proberen?",
+    "finalCtaSubtitle": "Maak een gratis account en ontdek AIBA in 5 minuten.",
+    "finalCtaBtn": "Gratis beginnen"
+  },
+  "accessRequest": {
+    "badge": "Toegangsaanvraag",
+    "title": "Vraag een toegangscode aan",
+    "subtitle": "We werken met professionals in sectoren die maximale discretie nodig hebben. Vertel kort over jezelf en we sturen je een toegangscode.",
+    "features": {
+      "privacy": {
+        "title": "Vertrouwelijk",
+        "body": "Alleen ons team ziet je aanvraag. Nooit gedeeld of gepubliceerd."
+      },
+      "verify": {
+        "title": "Snelle beoordeling",
+        "body": "We antwoorden binnen 48 werkuren per e-mail."
+      },
+      "code": {
+        "title": "Unieke code",
+        "body": "Je krijgt een eenmalige code om je registratie af te ronden."
+      }
+    },
+    "form": {
+      "fullName": "Volledige naam of beroepsnaam",
+      "fullNamePh": "Maria V. / MV Studio",
+      "email": "Contact-e-mail",
+      "activity": "Je activiteit",
+      "activityPh": "Coach, therapeut, enz.",
+      "message": "Bericht (optioneel)",
+      "messagePh": "Vertel kort hoe je de app gaat gebruiken…",
+      "referral": "Hoe heb je ons gevonden? (optioneel)",
+      "referralPh": "Google, een collega, sociale media…",
+      "sending": "Verzenden…",
+      "submit": "Aanvraag versturen",
+      "legal": "Door te verzenden accepteer je ons privacybeleid. We delen je gegevens niet."
+    },
+    "success": {
+      "title": "Aanvraag verstuurd",
+      "body": "Dank je. We bekijken je aanvraag en antwoorden binnen 48 werkuren per e-mail.",
+      "backHome": "Terug naar home"
+    },
+    "errors": {
+      "required": "Vul de verplichte velden in (naam, e-mail en activiteit).",
+      "rateLimit": "Te veel aanvragen. Probeer het over 24 uur opnieuw.",
+      "generic": "Je aanvraag kon niet worden verstuurd. Probeer opnieuw.",
+      "network": "Netwerkfout. Controleer je internetverbinding."
+    },
+    "meta": {
+      "title": "Toegang aanvragen · AIBA",
+      "desc": "Vraag een toegangscode aan voor privésectoren."
+    }
+  },
+  "publicBooking": {
+    "chooseService": "1. Kies een dienst",
+    "chooseDay": "2. Kies een dag",
+    "chooseTime": "3. Kies een tijd",
+    "yourDetails": "4. Je gegevens",
+    "fullName": "Volledige naam *",
+    "fullNamePh": "bijv. Maria de Vries",
+    "phone": "Telefoon *",
+    "phonePh": "+31 6 12345678",
+    "email": "E-mail",
+    "optional": "(optioneel)",
+    "emailPh": "jij@email.com",
+    "notes": "Notities voor de professional",
+    "notesPh": "Allergieën, voorkeuren…",
+    "bookBtn": "Boeken",
+    "depositLabel": "aanbetaling",
+    "loadingSlots": "Beschikbare tijden laden…",
+    "noSlots": "Geen tijden die dag. Probeer een andere datum.",
+    "noServices": "Deze professional heeft nog geen diensten gepubliceerd. Kom later terug.",
+    "errorBook": "Boeking mislukt",
+    "bookedOk": "Boeking aangemaakt! Rond nu je aanbetaling af.",
+    "policyTerms": "Door te boeken accepteer je dat de aanbetaling bij een no-show niet wordt terugbetaald. Alle betalingen worden veilig verwerkt.",
+    "successTitle": "Bijna klaar!",
+    "successHold": "Je plek wordt 15 minuten vastgehouden.",
+    "successStep1": "Open onze Telegram-bot (link hieronder)",
+    "successStep2": "Bevestig de betaling van de aanbetaling",
+    "successStep3": "Je krijgt automatisch een bevestiging + herinneringen",
+    "successCta": "Verder in Telegram",
+    "verifyCode": "Verificatiecode (bewaar hem):",
+    "footerBy": "Boekingen mogelijk gemaakt door",
+    "footerTail": ". Je aanbetaling wordt bevestigd via onze Telegram-bot (veilig, geen extra app).",
+    "notFound": "Professional niet gevonden",
+    "portalTitle": "Mijn boeking",
+    "portalService": "Dienst",
+    "portalDate": "Datum",
+    "portalDuration": "Duur",
+    "portalName": "Geboekt voor",
+    "portalTotal": "Totaal",
+    "portalDeposit": "Aanbetaling",
+    "pendingCta": "Afronden in Telegram",
+    "pendingMsg": "Rond de aanbetaling af om je boeking te bevestigen.",
+    "confirmedMsg": "Je boeking is bevestigd. Je krijgt de dag ervoor automatisch een herinnering.",
+    "cancelBtn": "Mijn boeking annuleren",
+    "cancelConfirm": "Deze boeking annuleren?",
+    "cancelReasonLabel": "Reden",
+    "cancelReasonPh": "Liever een andere dag, iets onverwachts…",
+    "backBtn": "Terug",
+    "confirmCancelBtn": "Annulering bevestigen",
+    "cancelledOk": "Boeking geannuleerd. De professional heeft bericht gekregen.",
+    "cancelError": "Annuleren mislukt",
+    "outOfPolicy": "Annuleren kan tot {hours} u voor de afspraak. Voor uitzonderingen: neem contact op met de professional.",
+    "portalHelp": "Problemen met je boeking? Neem direct contact op met de professional.",
+    "statusPending": "Aanbetaling open",
+    "statusConfirmed": "Bevestigd",
+    "statusReminded": "Herinnering verstuurd",
+    "statusCancelled": "Geannuleerd",
+    "statusCancelledByPro": "Geannuleerd door de professional",
+    "statusCompleted": "Voltooid",
+    "statusNoShow": "Niet verschenen",
+    "statusRefunded": "Terugbetaald",
+    "rescheduleBtn": "Mijn boeking verplaatsen",
+    "rescheduleTitle": "Kies een nieuwe datum",
+    "reschedule_ok": "Boeking verplaatst. De professional heeft bericht gekregen.",
+    "reschedule_error": "Verplaatsen mislukt",
+    "new_datetime": "Nieuwe datum en tijd",
+    "confirmReschedule": "Wijziging bevestigen",
+    "weeklyHoursTitle": "Openingstijden",
+    "weeklyHoursClosed": "Gesloten",
+    "weekdays": [
+      "ma",
+      "di",
+      "wo",
+      "do",
+      "vr",
+      "za",
+      "zo"
+    ],
+    "quickBookTitle": "Eerstvolgend beschikbaar",
+    "quickBookNoService": "Kies een dienst om tijden te zien.",
+    "quickBookEmpty": "Geen tijden beschikbaar in de komende 2 weken.",
+    "quickBookToday": "Vandaag",
+    "quickBookTomorrow": "Morgen",
+    "filterAll": "Alle",
+    "filterAM": "Ochtend",
+    "filterPM": "Middag",
+    "urgencyFewLeft": "Nog maar {n}!",
+    "urgencyLastOne": "De laatste!",
+    "stickyBook": "Nu boeken",
+    "reviewsTitle": "Reviews van klanten",
+    "reviewsEmpty": "Schrijf als eerste een review",
+    "reviewsAvg": "{avg}/5 · {count} reviews",
+    "reviewsBy": "door",
+    "waitlistTitle": "Geen tijden die dag?",
+    "waitlistDesc": "Zet je op de wachtlijst en we laten het weten als er een plek vrijkomt.",
+    "waitlistBtn": "Laat het me weten",
+    "waitlistJoined": "Je staat op de wachtlijst!",
+    "waitlistJoinedPos": "Je bent nummer {n} in de rij",
+    "waitlistErr": "Aanmelden voor de wachtlijst mislukt",
+    "reviewsAxisCleanliness": "Netheid",
+    "reviewsAxisHygiene": "Hygiëne",
+    "reviewsAxisAttitude": "Houding"
+  },
+  "analytics": {
+    "landingAnalytics": "Openbare landingspagina",
+    "views": "Weergaven",
+    "conversionPct": "Conversie",
+    "ctaClicks": "CTA-klikken",
+    "slotClicks": "Klikken op tijden",
+    "formOpens": "Formulier geopend"
+  },
+  "meta": {
+    "home": {
+      "title": "AIBA · Geautomatiseerde boekingen met AI",
+      "description": "SaaS voor zelfstandige professionals: AI-chatbot 24/7, afsprakenbeheer, aanbetalingen en reviews in twee richtingen. 10 talen."
+    }
+  }
+}

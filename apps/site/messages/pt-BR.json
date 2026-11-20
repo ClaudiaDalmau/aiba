@@ -93,7 +93,7 @@
       "label": "Funcionalidades",
       "title": "Tudo o que você precisa. Nada de excesso.",
       "aiTitle": "IA conversacional",
-      "aiDesc": "GPT-4o entende nuances, lida com objeções e aprende seus serviços.",
+      "aiDesc": "Claude entende nuances, lida com objeções e aprende seus serviços.",
       "paymentsTitle": "Pagamentos integrados",
       "paymentsDesc": "Depósitos, cobranças finais e reembolsos automáticos. Sem caixa nem dinheiro.",
       "dashboardTitle": "Dashboard analítico",
@@ -238,7 +238,7 @@
         "deposit": "Depósito anti no-show",
         "clientDatabase": "Base de dados de clientes",
         "sharedBlacklist": "Blacklist compartilhada entre profissionais",
-        "multiLang": "Painel disponível em 7 idiomas",
+        "multiLang": "Painel disponível em 10 idiomas",
         "gdpr": "GDPR nativo (servidores UE)",
         "flatFee": "Tarifa fixa, sem comissão por reserva",
         "regulatedTier": "Vertical privado regulamentado (apenas convite)"
@@ -598,7 +598,7 @@
     "ctaSecondary": "Falar com a gente",
     "s1": {
       "title": "1. O cliente contata o bot",
-      "desc": "Compartilhe seu link único do WhatsApp ou Telegram. O bot cumprimenta, apresenta serviços com preços e responde 24/7 com IA GPT-4o.",
+      "desc": "Compartilhe seu link único do WhatsApp ou Telegram. O bot cumprimenta, apresenta serviços com preços e responde 24/7 com IA Claude.",
       "example": "Cliente: «Oi, quero reservar uma massagem» → Bot: «Claro! Disponíveis: Massagem relaxante 60min · R$ 145, Massagem esportiva 60min · R$ 175. Qual encaixa?»"
     },
     "s2": {
@@ -884,7 +884,7 @@
   "meta": {
     "home": {
       "title": "AIBA · Agendamentos automáticos com IA",
-      "description": "SaaS para profissionais autônomos: chatbot IA 24/7, gestão de agendamentos, depósitos e avaliações bidirecionais. 7 idiomas."
+      "description": "SaaS para profissionais autônomos: chatbot IA 24/7, gestão de agendamentos, depósitos e avaliações bidirecionais. 10 idiomas."
     }
   }
 }

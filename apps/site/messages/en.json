@@ -93,7 +93,7 @@
       "label": "Features",
       "title": "Everything you need. Nothing extra.",
       "aiTitle": "Conversational AI",
-      "aiDesc": "GPT-4o understands nuance, handles objections and learns your services.",
+      "aiDesc": "Claude understands nuance, handles objections and learns your services.",
       "paymentsTitle": "Integrated payments",
       "paymentsDesc": "Deposits, final charges and automated refunds. No till, no cash.",
       "dashboardTitle": "Analytics dashboard",
@@ -238,7 +238,7 @@
         "deposit": "Anti-no-show deposit capture",
         "clientDatabase": "Client database",
         "sharedBlacklist": "Cross-professional shared blacklist",
-        "multiLang": "Dashboard available in 7 languages",
+        "multiLang": "Dashboard available in 10 languages",
         "gdpr": "Native GDPR (EU-hosted servers)",
         "flatFee": "Flat fee, no per-booking commission",
         "regulatedTier": "Regulated private tier (invite-only)"
@@ -598,7 +598,7 @@
     "ctaSecondary": "Talk to us",
     "s1": {
       "title": "1. The client contacts the bot",
-      "desc": "Share your unique WhatsApp or Telegram link (@My_AI_Booking_Assistant_Bot). The bot greets, presents your services with prices and answers questions 24/7 with GPT-4o AI.",
+      "desc": "Share your unique WhatsApp or Telegram link (@My_AI_Booking_Assistant_Bot). The bot greets, presents your services with prices and answers questions 24/7 with Claude AI.",
       "example": "Client: «Hi, I'd like to book a massage session» → Bot: «Sure! Available: Relaxing massage 60min · €45, Sports massage 60min · €55. Which one fits?»"
     },
     "s2": {
@@ -884,7 +884,7 @@
   "meta": {
     "home": {
       "title": "AIBA · Automated bookings with AI",
-      "description": "SaaS for independent professionals: 24/7 AI chatbot, appointment management, deposits and two-way reviews. 7 languages."
+      "description": "SaaS for independent professionals: 24/7 AI chatbot, appointment management, deposits and two-way reviews. 10 languages."
     }
   }
 }

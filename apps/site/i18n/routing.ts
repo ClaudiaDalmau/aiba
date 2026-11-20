@@ -1,7 +1,7 @@
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-  locales: ["es", "en", "fr", "de", "it", "pt-BR", "ru"],
+  locales: ["es", "en", "fr", "de", "it", "pt-BR", "ru", "nl", "ro", "pl"],
   defaultLocale: "en",
   // /es/... , /en/..., etc. — todos los idiomas tienen prefijo explícito
   localePrefix: "always",
@@ -17,4 +17,7 @@ export const LOCALE_LABELS: Record<string, { label: string; countryCode: string;
   it: { label: "Italiano", countryCode: "it", native: "Italiano" },
   "pt-BR": { label: "Português (BR)", countryCode: "br", native: "Português" },
   ru: { label: "Русский", countryCode: "ru", native: "Русский" },
+  nl: { label: "Nederlands", countryCode: "nl", native: "Nederlands" },
+  ro: { label: "Română", countryCode: "ro", native: "Română" },
+  pl: { label: "Polski", countryCode: "pl", native: "Polski" },
 };

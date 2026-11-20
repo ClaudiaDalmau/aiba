@@ -66,6 +66,9 @@ export default async function PricingPage({
     it: { home: "Home", here: "Prezzi" },
     "pt-BR": { home: "Início", here: "Preços" },
     ru: { home: "Главная", here: "Цены" },
+    nl: { home: "Home", here: "Prijzen" },
+    ro: { home: "Acasă", here: "Prețuri" },
+    pl: { home: "Strona główna", here: "Cennik" },
   };
   const cl = crumbLabels[locale] || crumbLabels.es;
   const breadcrumbLd = marketingBreadcrumbs({

@@ -1,0 +1,890 @@
+{
+  "header": {
+    "brand": {
+      "main": "AI Booking",
+      "sub": "Assistant"
+    },
+    "nav": {
+      "howItWorks": "Cum funcționează",
+      "businessTypes": "Tipuri de afaceri",
+      "pricing": "Prețuri",
+      "faq": "Întrebări",
+      "contact": "Contact",
+      "menu": "Meniu"
+    },
+    "cta": {
+      "login": "Conectare",
+      "goToDashboard": "Mergi la panou",
+      "startFree": "Începe gratuit"
+    }
+  },
+  "footer": {
+    "tagline": "Rezervări automate cu AI pentru profesioniști independenți.",
+    "sections": {
+      "product": "PRODUS",
+      "company": "COMPANIE",
+      "legal": "LEGAL"
+    },
+    "product": {
+      "howItWorks": "Cum funcționează",
+      "businessTypes": "Tipuri de afaceri",
+      "pricing": "Prețuri",
+      "faq": "Întrebări"
+    },
+    "company": {
+      "about": "Despre noi",
+      "contact": "Contact"
+    },
+    "legal": {
+      "terms": "Termeni",
+      "privacy": "Confidențialitate",
+      "legalNotice": "Informații legale",
+      "cookies": "Cookie-uri"
+    },
+    "copyright": "© 2026 Claudia Dalmau · Toate drepturile rezervate",
+    "madeIn": "Creat în Spania 🇪🇸"
+  },
+  "home": {
+    "hero": {
+      "badge": "O nouă eră a rezervărilor · Cu AI",
+      "titleStart": "Gestionează-ți programările cu ",
+      "titleHighlight": "inteligență artificială 24/7",
+      "subtitle": "Botul vorbește cu clienții pe WhatsApp sau Telegram, gestionează rezervările, încasează avansuri și îți eliberează timpul. Fără apeluri. Fără agendă manuală.",
+      "ctaPrimary": "Începe gratuit",
+      "ctaSecondary": "Vezi cum funcționează"
+    },
+    "stats": {
+      "attention247Number": "24/7",
+      "attention247Label": "Asistență automată",
+      "timeNumber": "0 min",
+      "timeLabel": "Timp manual per rezervare",
+      "secureNumber": "100%",
+      "secureLabel": "Sigur și privat"
+    },
+    "autopilot": {
+      "label": "Pilot automat",
+      "titleStart": "În timp ce lucrezi sau te odihnești, ",
+      "titleHighlight": "agenda ta continuă să lucreze pentru tine.",
+      "subtitle": "Fie că ești cu un client, ai o zi liberă sau pur și simplu te deconectezi, botul continuă să primească rezervări, să încaseze avansuri și să-ți umple săptămâna.",
+      "emphasis": "Timpul tău devine din nou al tău.",
+      "pillar1Title": "Rezervări cât dormi",
+      "pillar1Desc": "Aproape jumătate din cererile de rezervare vin în afara programului. Cu AIBA le prinzi pe toate, chiar și cât dormi.",
+      "pillar2Title": "Venituri chiar și offline",
+      "pillar2Desc": "Agenda săptămânii viitoare se umple cât te odihnești azi. Nu mai pierzi nicio ocazie pentru că n-ai răspuns la timp.",
+      "pillar3Title": "Zero minute pe WhatsApp",
+      "pillar3Desc": "Timpul pe care îl petreceai răspunzând la mesaje e acum al tău. Folosește-l pentru muncă, familie sau pentru nimic. Tu alegi.",
+      "quoteStart": "Câștigă clienți chiar și când te deconectezi. ",
+      "quoteHighlight": "Afacerea ta merge în ritmul tău."
+    },
+    "process": {
+      "label": "Procesul",
+      "title": "De la prima întrebare la plată. Fără să te implici.",
+      "step1Title": "Clientul scrie botului",
+      "step1Desc": "Distribuie linkul tău unic de WhatsApp sau Telegram. Botul prezintă serviciile și răspunde 24/7.",
+      "step2Title": "Alege o oră și plătește avansul",
+      "step2Desc": "Botul arată disponibilitatea în timp real. La alegere se generează un link sigur de plată.",
+      "step3Title": "Memento cu cod",
+      "step3Desc": "Cu 1 oră înainte, botul trimite un cod din 6 cifre. Fără confirmare, locul se eliberează.",
+      "step4Title": "Plată finală automată",
+      "step4Desc": "Când clientul ajunge, validezi codul și sistemul încasează automat restul.",
+      "seeFullProcess": "Vezi tot procesul"
+    },
+    "features": {
+      "label": "Funcții",
+      "title": "Tot ce-ți trebuie. Nimic în plus.",
+      "aiTitle": "AI conversațional",
+      "aiDesc": "AI-ul înțelege nuanțele, răspunde la obiecții și îți învață serviciile.",
+      "paymentsTitle": "Plăți integrate",
+      "paymentsDesc": "Avansuri, încasări finale și rambursări automate. Fără casă, fără numerar.",
+      "dashboardTitle": "Panou de analiză",
+      "dashboardDesc": "Venituri, rata de prezență, clienți fideli și prognoze în timp real.",
+      "ratingsTitle": "Evaluări reciproce",
+      "ratingsDesc": "Sistem colaborativ de evaluare client-profesionist pentru a-ți proteja timpul.",
+      "agendaTitle": "Agendă inteligentă",
+      "agendaDesc": "Pauze automate, fără suprapuneri și sincronizare cu calendarul.",
+      "privacyTitle": "Confidențialitate totală",
+      "privacyDesc": "Servere în UE, criptare end-to-end, conformitate totală cu GDPR."
+    },
+    "cases": {
+      "label": "Tipuri de afaceri",
+      "title": "Un singur asistent. Mulți profesioniști.",
+      "subtitle": "Sănătate, frumusețe, sport, educație, juridic, evenimente, ospitalitate și multe altele.",
+      "seeAll": "Vezi toate sectoarele în detaliu",
+      "case": {
+        "health": {
+          "title": "Sănătate privată",
+          "desc": "Psihologi, kinetoterapeuți, nutriționiști, stomatologi, medicină estetică."
+        },
+        "beauty": {
+          "title": "Frumusețe",
+          "desc": "Coafură, unghii, tatuaje, laser, micropigmentare."
+        },
+        "sports": {
+          "title": "Sport și fitness",
+          "desc": "Antrenori personali, yoga, pilates, înot, arte marțiale."
+        },
+        "education": {
+          "title": "Educație privată",
+          "desc": "Meditatori, academii mici, limbi străine, muzică, școli de șoferi."
+        },
+        "legal": {
+          "title": "Juridic și consultanță",
+          "desc": "Avocați, contabili, consultanți, notari."
+        },
+        "events": {
+          "title": "Evenimente",
+          "desc": "Fotografie, video, DJ, make-up, organizatori de nunți."
+        },
+        "hospitality": {
+          "title": "Ospitalitate și turism",
+          "desc": "Restaurante, hoteluri, apartamente de vacanță, case rurale."
+        },
+        "pets": {
+          "title": "Îngrijire animale",
+          "desc": "Toaletaj canin, dresaj, veterinari privați."
+        },
+        "home": {
+          "title": "Servicii la domiciliu",
+          "desc": "Curățenie, renovări, design interior, personal shopping."
+        },
+        "other": {
+          "title": "Alți profesioniști",
+          "desc": "Afacerea ta nu se încadrează? Ne adaptăm cu discreție și respect."
+        }
+      }
+    },
+    "pricingPreview": {
+      "label": "Prețuri",
+      "title": "Planuri pentru fiecare etapă.",
+      "subtitle": "De la 39 €/lună. Fără obligații.",
+      "seeAll": "Vezi toate planurile",
+      "planBasic": {
+        "name": "Basic",
+        "price": "39 €",
+        "period": "/lună",
+        "desc": "Perfect pentru început"
+      },
+      "planPro": {
+        "name": "Pro",
+        "price": "79 €",
+        "period": "/lună",
+        "desc": "Cel mai ales",
+        "badge": "Cel mai popular"
+      },
+      "planPremium": {
+        "name": "Premium",
+        "price": "149 €",
+        "period": "/lună",
+        "desc": "Mai mulți profesioniști"
+      }
+    },
+    "questions": {
+      "title": "Ai întrebări?",
+      "subtitle": "Scrie-ne și răspundem în 24 de ore lucrătoare.",
+      "cta": "Contact pe email"
+    },
+    "finalCta": {
+      "title": "Începe gratuit. Încasează fără surprize.",
+      "subtitle": "14 zile gratuit. Fără card. Configurat în 5 minute.",
+      "ctaPrimary": "Creează cont gratuit",
+      "ctaSecondary": "Vezi prețurile",
+      "check1": "Fără obligații",
+      "check2": "Anulezi oricând",
+      "check3": "Suport multilingv"
+    },
+    "testimonials": {
+      "badge": "What early adopters say",
+      "title": "Professionals already using it",
+      "subtitle": "Testimonials from Founding Members. Join now and be part of the first wave.",
+      "foundingMember": "Founding",
+      "betaNote": "* First 20 members get 6 months free plus a 30% lifetime discount.",
+      "t1": {
+        "quote": "In 3 days I eliminated last-minute cancellations. Deposits are magic: no payment, no booking.",
+        "name": "Ana M.",
+        "role": "Hairstylist · Madrid"
+      },
+      "t2": {
+        "quote": "I used to juggle WhatsApp + Google Calendar and lost hours. Now everything is automated, including reminders.",
+        "name": "Diego R.",
+        "role": "Business coach · Barcelona"
+      },
+      "t3": {
+        "quote": "My clients book any time without calling me. I've recovered my nights and full weekends.",
+        "name": "Carla S.",
+        "role": "Personal trainer · Valencia"
+      },
+      "t4": {
+        "quote": "The AI answers my clients 24/7 in Spanish and Catalan. I book while I sleep. Literally.",
+        "name": "Marc T.",
+        "role": "Therapist · Barcelona"
+      }
+    },
+    "comparison": {
+      "badge": "Comparație obiectivă",
+      "title": "Cum ne comparăm cu alternativele?",
+      "subtitle": "Comparație onestă cu cele mai populare platforme din 2026.",
+      "featureHeader": "Funcție",
+      "us": "Noi",
+      "gcal": "Google Cal.",
+      "legend": {
+        "yes": "Inclus",
+        "partial": "Parțial / cu supliment",
+        "no": "Indisponibil"
+      },
+      "disclaimer": "* Comparație bazată pe informațiile publice ale fiecărei platforme în iunie 2026.",
+      "rows": {
+        "aiBot": "Bot AI multilingv (24/7)",
+        "reminders": "Mementouri automate (WhatsApp/Telegram)",
+        "deposit": "Avans împotriva neprezentărilor",
+        "clientDatabase": "Bază de date cu clienți",
+        "sharedBlacklist": "Listă neagră partajată între profesioniști",
+        "multiLang": "Panou disponibil în 10 limbi",
+        "gdpr": "GDPR nativ (servere în UE)",
+        "flatFee": "Tarif fix, fără comision per rezervare",
+        "regulatedTier": "Nivel privat reglementat (doar cu invitație)"
+      }
+    },
+    "faqInline": {
+      "badge": "Întrebări frecvente",
+      "title": "Ce ne întreabă oamenii",
+      "subtitle": "Răspunsuri rapide la cele mai comune întrebări. Pentru lista completă, vezi secțiunea de întrebări.",
+      "seeAll": "Vezi toate întrebările",
+      "items": {
+        "q1": {
+          "q": "Trebuie să știu să programez?",
+          "a": "Nu. Îți configurezi agenda și serviciile în 5 minute din panou. Totul funcționează fără cod."
+        },
+        "q2": {
+          "q": "Cum găsesc clienții botul?",
+          "a": "La înregistrare generăm linkurile tale unice de WhatsApp și Telegram. Pune-le pe Instagram, pe site sau în răspunsurile automate."
+        },
+        "q3": {
+          "q": "Și neprezentările?",
+          "a": "Avansurile nu se returnează: le păstrezi drept compensație. Majoritatea utilizatorilor reduc neprezentările cu peste 60% în prima lună."
+        },
+        "q4": {
+          "q": "E compatibil cu sectorul meu?",
+          "a": "Da. Funcționează pentru frumusețe, wellness, coaching, kinetoterapie, antrenori, terapie, fotografie și multe altele. Configurează-ți serviciile și prețurile."
+        },
+        "q5": {
+          "q": "Când pot începe?",
+          "a": "Platforma e în beta închisă. Înscrie-te pe lista de așteptare și primești acces prioritar în săptămânile următoare."
+        },
+        "q6": {
+          "q": "Respectă GDPR?",
+          "a": "Da. Servere în UE, criptare în tranzit și stocare, ștergere la cerere și politică de păstrare transparentă. Conformitate nativă cu GDPR și ePrivacy."
+        }
+      }
+    },
+    "waitlist": {
+      "badge": "Acces anticipat",
+      "title": "Înscrie-te pe lista de așteptare",
+      "subtitle": "Fii printre primii care încearcă platforma la lansare. Primii 20 de membri primesc 6 luni gratuit + 30% reducere pe viață.",
+      "counter": "profesioniști deja înscriși",
+      "emailPlaceholder": "tu@email.com",
+      "professionPlaceholder": "Care e profesia ta? (opțional)",
+      "submit": "Înscrie-mă",
+      "submitting": "Se trimite...",
+      "successTitle": "Ești înăuntru!",
+      "successDesc": "Îți scriem la lansare. Pregătește-ți cele mai bune servicii.",
+      "positionLabel": "Poziția ta",
+      "successToast": "Bun venit pe lista de așteptare",
+      "alreadyRegistered": "Acest email e deja pe listă",
+      "errorInvalidEmail": "Introdu un email valid",
+      "errorRateLimit": "Prea multe înscrieri. Încearcă din nou peste o oră.",
+      "errorGeneric": "Ceva n-a mers. Încearcă din nou.",
+      "errorNetwork": "Fără conexiune. Verifică internetul.",
+      "privacyNote": "Prin înscriere accepți politica de confidențialitate. Nu trimitem spam. Te poți dezabona oricând.",
+      "professions": {
+        "beauty": "💅 Frumusețe / Estetică",
+        "wellness": "🧘 Wellness / Masaj",
+        "fitness": "🏋️ Fitness / Antrenament",
+        "coaching": "🎓 Coaching / Consultanță",
+        "health": "🩺 Sănătate / Kinetoterapie",
+        "education": "📚 Educație / Meditații",
+        "creative": "🎨 Creativi / Fotografie",
+        "professional": "⚖️ Servicii profesionale",
+        "home": "🏠 Servicii la domiciliu",
+        "pets": "🐾 Animale",
+        "events": "🎉 Evenimente",
+        "hospitality": "🍽️ Ospitalitate",
+        "other": "☔ Alți profesioniști"
+      }
+    },
+    "mock": {
+      "chatName": "Lúa Studio",
+      "online": "Asistent AI · online",
+      "m1": "Bună, ai loc sâmbătă pentru un masaj?",
+      "m2": "Bună! Sâmbătă am la 10:00 sau 12:30. Masaj relaxant 60 min · 45 €. Ce preferi?",
+      "m3": "10:00, perfect",
+      "m4": "Rezervat ✓ Pentru confirmare, plătește avansul de 15 €:",
+      "pay": "Plătește avansul · 15 €",
+      "c1Label": "Rezervare nouă",
+      "c1Title": "Sâmbătă · 10:00",
+      "c1Sub": "Marta G. · Masaj relaxant",
+      "c2Label": "Avans primit",
+      "c2Title": "15,00 €",
+      "c2Sub": "Programare confirmată",
+      "c3Label": "Memento trimis",
+      "c3Title": "Cod 384 762",
+      "c3Sub": "Cu 1 h înainte de programare",
+      "stepLabel": "Pasul {n}",
+      "finalAmount": "+ 30,00 €"
+    },
+    "demo": {
+      "label": "Demo live",
+      "title": "Vorbește cu AI-ul ca și cum ai fi clientul tău",
+      "subtitle": "Scrie orice și vezi cum asistentul înțelege serviciul, propune ore și închide rezervarea. Nimic de instalat.",
+      "b1": "Înțelege variații (\"doar vârfurile\", \"vopsit complet\", \"manichiură și pedichiură\")",
+      "b2": "Propune ore pe baza agendei tale reale",
+      "b3": "Încasează avansul și trimite mementouri automate"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Limbă",
+    "current": "Română"
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog · AIBA",
+      "desc": "Ghiduri, studii de caz și sfaturi pentru a-ți gestiona agenda și a-ți dezvolta afacerea ca profesionist independent."
+    },
+    "kicker": "Blog",
+    "title": "Ghiduri, cazuri și sfaturi pentru profesioniști",
+    "subtitle": "Tot ce îți trebuie pentru a reduce neprezentările, a încasa avansuri și a-ți crește rezervările.",
+    "empty": "Încă nu există articole în această limbă.",
+    "read_more": "Citește",
+    "reading_time": "{minutes} min de citit",
+    "related": "Citește în continuare",
+    "crumb_home": "Acasă",
+    "cta_title": "Începe perioada de probă gratuită de 14 zile",
+    "cta_desc": "AIBA îți automatizează rezervările, încasează avansuri și reduce anulările. Fără card.",
+    "cta_button": "Vezi planurile",
+    "search_placeholder": "Caută articole…",
+    "no_results": "Niciun rezultat pentru căutarea ta.",
+    "filter_by_category": "Categorii",
+    "clear_filters": "Șterge filtrele",
+    "filter_by_tag": "Etichete",
+    "results_count": "[N] articole",
+    "filter_all": "Toate"
+  },
+  "pricing": {
+    "meta": {
+      "title": "Prețuri · AIBA",
+      "desc": "Planuri flexibile de la 39 €/lună. Basic pentru agendă, Pro cu plăți online, Premium cu AI avansat. 14 zile de probă gratuită."
+    },
+    "badge": "Prețuri clare, fără surprize",
+    "title": "Alege planul potrivit pentru tine.",
+    "subtitle": "14 zile gratuite la orice plan. Fără card. Anulezi oricând.",
+    "perMonth": "/lună",
+    "trialNote": "14 zile gratuit · fără card",
+    "smallPrint": "Plan anual cu 2 luni gratuite · Prețuri fără TVA · Anulezi oricând",
+    "highlightBadge": "Cel mai ales",
+    "plans": {
+      "basic": {
+        "name": "Basic",
+        "tagline": "Doar agendă — începe fără costuri online.",
+        "cta": "Începe cu Basic"
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Plăți online + mementouri inteligente.",
+        "cta": "Începe cu Pro"
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "AI avansat, rezumate zilnice, comisioane mai mici.",
+        "cta": "Începe cu Premium"
+      }
+    },
+    "tableTitle": "Compară toate detaliile",
+    "rows": {
+      "bookings": {
+        "label": "Rezervări pe lună",
+        "basic": "Până la 100",
+        "pro": "Nelimitat",
+        "premium": "Nelimitat"
+      },
+      "bot": {
+        "label": "Bot AI (WhatsApp + Telegram)"
+      },
+      "agenda": {
+        "label": "Agendă cu mai multe servicii + extra"
+      },
+      "verify": {
+        "label": "Verificare în 3 pași"
+      },
+      "deposits": {
+        "label": "Încasare online a avansurilor"
+      },
+      "commission": {
+        "label": "Comision AI Pay",
+        "basic": "2,0%",
+        "pro": "1,5%",
+        "premium": "1,0%"
+      },
+      "reminders": {
+        "label": "Mementouri personalizate",
+        "basic": "Standard",
+        "pro": "Configurabile",
+        "premium": "Configurabile"
+      },
+      "push": {
+        "label": "Notificări push avansate",
+        "basic": "De bază",
+        "pro": "Complete",
+        "premium": "+ alerte VIP"
+      },
+      "daily": {
+        "label": "Rezumat zilnic la ora 8"
+      },
+      "analytics": {
+        "label": "Analize avansate",
+        "basic": "De bază",
+        "pro": "Complete",
+        "premium": "+ rezumate zilnice AI"
+      },
+      "extras": {
+        "label": "Extra pe serviciu",
+        "basic": "Max. 3",
+        "pro": "Nelimitat",
+        "premium": "Nelimitat"
+      },
+      "support": {
+        "label": "Suport",
+        "basic": "Email",
+        "pro": "Email + chat",
+        "premium": "Prioritar + WhatsApp"
+      }
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "q1": "Pot schimba planul?",
+      "a1": "Da, poți trece la un plan superior sau inferior oricând. Se calculează proporțional automat.",
+      "q2": "Cum funcționează perioada de probă de 14 zile?",
+      "a2": "Te înregistrezi fără card și încerci toate funcțiile planului. În ziua 15 decizi dacă plătești sau anulezi — fără costuri.",
+      "q3": "Ce este AI Pay?",
+      "a3": "Este un mic comision per rezervare la plățile online: **2% la Basic, 1,5% la Pro, 1% la Premium**. Finanțează sistemul antifraudă și îmbunătățirile AI. Nu plătești nimic dacă clientul plătește pe loc.",
+      "q4": "Am nevoie de cunoștințe tehnice?",
+      "a4": "Deloc. Îți configurezi agenda în 5 minute, iar botul vorbește cu clienții pe WhatsApp sau Telegram. Nimic de instalat."
+    }
+  },
+  "businessTypes": {
+    "meta": {
+      "title": "Tipuri de afaceri · AIBA",
+      "desc": "Sănătate, frumusețe, sport, educație, juridic, evenimente, ospitalitate, animale, servicii la domiciliu și altele."
+    },
+    "badge": "Tipuri de afaceri",
+    "title": "Un singur asistent. Multe profiluri profesionale.",
+    "subtitle": "Ne adaptăm la natura serviciului tău, nu invers. Fie că lucrezi singur sau în echipă, la sediu sau în deplasare.",
+    "ctaTitle": "Nicio categorie nu ți se potrivește?",
+    "ctaSubtitle": "Scrie-ne. Adaptăm botul la felul tău de a lucra, cu discreția și respectul pe care le meriți.",
+    "ctaPrimary": "Încearcă 14 zile gratuit",
+    "ctaSecondary": "Contact",
+    "cases": {
+      "health": {
+        "subtitle": "Psihologi, kinetoterapeuți, nutriționiști, stomatologi privați, medicină estetică",
+        "b1": "Rezervări 24/7 fără să gestionezi WhatsApp între consultații",
+        "b2": "Avansul automat reduce drastic neprezentările",
+        "b3": "Istoric confidențial al pacienților cu note criptate",
+        "b4": "Mementouri personalizate pe tip de tratament"
+      },
+      "beauty": {
+        "subtitle": "Saloane de coafură, unghii, tatuaje, epilare laser, micropigmentare",
+        "b1": "Rezervări frecvente gestionate fără ore la telefon",
+        "b2": "Clienți fideli cu istoric și preferințe salvate",
+        "b3": "Rezervări pe serviciu cu durate și prețuri diferite",
+        "b4": "Avans pentru ședințe lungi sau materiale scumpe"
+      },
+      "sports": {
+        "subtitle": "Antrenori personali, yoga, pilates, înot, arte marțiale",
+        "b1": "Gestionează abonamente, pachete de credite și ședințe recurente",
+        "b2": "Mementouri motivaționale înainte de fiecare oră",
+        "b3": "Rezervări de grup sau individuale, în funcție de serviciu",
+        "b4": "Analiza retenției și a reînnoirilor"
+      },
+      "education": {
+        "subtitle": "Meditatori, academii mici, limbi străine, muzică, școli de șoferi",
+        "b1": "Avansul anticipat elimină anulările de ultim moment",
+        "b2": "Rezervări recurente pe trimestru sau pachete de lecții",
+        "b3": "Mai mulți elevi și orare într-un singur panou",
+        "b4": "Mementouri automate cu materiale sau teme"
+      },
+      "legal": {
+        "subtitle": "Avocați, contabili, consultanți, notari",
+        "b1": "Agendă foarte controlată cu intervale protejate",
+        "b2": "Avans anticipat pentru consultații de valoare mare",
+        "b3": "Istoric confidențial cu criptare end-to-end",
+        "b4": "Facturare automată la finalul consultației"
+      },
+      "events": {
+        "subtitle": "Fotografi, videografi, DJ, make-up artiști, organizatori de nunți",
+        "b1": "Rezervări unice cu avans mare (30-50% din serviciu)",
+        "b2": "Blocarea automată a zilei întregi în agendă",
+        "b3": "Plăți în tranșe: rezervare + intermediară + finală",
+        "b4": "Istoric de evenimente cu note și contacte pe client"
+      },
+      "hospitality": {
+        "subtitle": "Restaurante, hoteluri, apartamente de vacanță, case rurale",
+        "b1": "Rezervări de mese sau camere 24/7 fără apeluri sau emailuri",
+        "b2": "Avans automat pentru grupuri, evenimente și sejururi lungi",
+        "b3": "Mementourile cu ora sosirii și check-in reduc neprezentările",
+        "b4": "Gestionare multi-spațiu: mese, camere sau apartamente dintr-un panou"
+      },
+      "pets": {
+        "subtitle": "Toaletaj canin, dresaj, veterinari privați, pensiuni",
+        "b1": "Rezervări cu datele animalului (rasă, vârstă, tratament)",
+        "b2": "Mementouri automate pentru vaccinuri și controale",
+        "b3": "Istoric complet al animalului cu poze înainte/după",
+        "b4": "Sistem de fidelizare pentru clienții recurenți"
+      },
+      "home": {
+        "subtitle": "Curățenie, renovări (vizite), design interior, personal shopping",
+        "b1": "Rezervări cu adresă, parcare și note de acces",
+        "b2": "Gestionarea traseelor pentru a optimiza deplasările",
+        "b3": "Avans anticipat pentru oferte și vizite",
+        "b4": "Mementouri pentru clienți cu ora estimată de sosire"
+      },
+      "other": {
+        "subtitle": "Serviciul tău nu se încadrează în categoriile de mai sus?",
+        "b1": "Configurare 100% adaptabilă la felul tău de a lucra",
+        "b2": "Adaugă extra, condiții și politici proprii",
+        "b3": "Fără categorii impuse: tu decizi cum lucrezi",
+        "b4": ""
+      }
+    },
+    "form": {
+      "signupTitle": "Începe acum",
+      "signupSubtitle": "Completează formularul și îți activăm perioada de probă de 30 de zile.",
+      "signupNamePh": "Numele tău",
+      "signupBusinessPh": "Numele afacerii",
+      "signupEmailPh": "Email de serviciu",
+      "signupPhonePh": "Telefon (opțional)",
+      "signupWebsitePh": "Site (opțional)",
+      "signupCta": "Începe perioada de probă",
+      "signupSuccess": "Ești pe lista prioritară. Verifică emailul pentru a finaliza înregistrarea.",
+      "accessTitle": "Cere acces privat",
+      "accessSubtitle": "Acest sector necesită verificare. Analizăm fiecare cerere în mai puțin de 24 h și trimitem un cod privat pe email.",
+      "accessProfPh": "Nume profesional / de scenă",
+      "accessPhonePh": "Telefon de contact",
+      "accessEmailPh": "Email de contact",
+      "accessWebsitePh": "Site-ul tău (https://…)",
+      "accessPortalPh": "Link către anunțul tău pe un portal (https://…)",
+      "accessCta": "Cere acces",
+      "accessSuccess": "Cerere primită. Îți trimitem pe email în 24 h codul de acces privat.",
+      "close": "Închide",
+      "fieldRequired": "Completează câmpurile obligatorii.",
+      "emailInvalid": "Emailul nu pare valid.",
+      "urlHint": "Trebuie să-ți verificăm activitatea profesională. Adaugă site-ul sau linkul către cel puțin un anunț activ.",
+      "accessKicker": "Acces verificat",
+      "portalsLabel": "Anunțuri pe portaluri",
+      "addPortal": "Adaugă alt portal",
+      "accessSuccessTitle": "Cerere primită",
+      "removeAriaLabel": "Elimină"
+    }
+  },
+  "howItWorks": {
+    "meta": {
+      "title": "Cum funcționează · AIBA",
+      "desc": "5 pași, zero intervenție manuală: clientul scrie botului, alege o oră, plătește avansul, primește un memento și confirmă la programare."
+    },
+    "badge": "Cum funcționează",
+    "title": "De la prima întrebare la plată. Fără să te implici.",
+    "subtitle": "Un flux complet automatizat în 5 pași. AI-ul gestionează, încasează și verifică. Tu doar îți faci treaba.",
+    "exampleLabel": "Exemplu real",
+    "ctaTitle": "Gata să nu-ți mai gestionezi agenda de mână?",
+    "ctaSubtitle": "Configurează-ți botul în 5 minute. 14 zile gratuite la orice plan.",
+    "ctaPrimary": "Începe gratuit",
+    "ctaSecondary": "Vorbește cu noi",
+    "s1": {
+      "title": "1. Clientul scrie botului",
+      "desc": "Distribuie linkul tău unic de WhatsApp sau Telegram (@My_AI_Booking_Assistant_Bot). Botul salută, prezintă serviciile cu prețuri și răspunde la întrebări 24/7 cu AI.",
+      "example": "Client: «Bună, aș vrea să rezerv un masaj» → Bot: «Sigur! Disponibile: Masaj relaxant 60 min · 45 €, Masaj sportiv 60 min · 55 €. Care ți se potrivește?»"
+    },
+    "s2": {
+      "title": "2. Alege data, ora și plătește avansul",
+      "desc": "Botul arată disponibilitatea în timp real din agenda ta. Când clientul alege, se generează automat un link sigur de plată pentru avans (20-50% din serviciu, la alegerea ta).",
+      "example": "Bot: «Perfect. Ore libere joi: 10:00, 12:30, 17:00. Plătește avansul de 15 € pentru confirmare → https://pay.aib.app/xyz»"
+    },
+    "s3": {
+      "title": "3. Memento cu cod de verificare",
+      "desc": "Cu 1 oră înainte, botul trimite automat un memento cu un cod din 6 cifre. Clientul are 30 de minute să confirme; dacă nu răspunde, locul se eliberează.",
+      "example": "Bot: «⏰ Memento: masaj relaxant azi la 17:00. Codul tău: 384762. Răspunde DA pentru confirmare.»"
+    },
+    "s4": {
+      "title": "4. Plata finală automată la programare",
+      "desc": "Când clientul ajunge, spune sau tastează codul în panoul tău. Sistemul încasează automat restul cu metoda salvată. Fără casă, fără numerar, fără bătăi de cap.",
+      "example": "Tu: cod 384762 → ✅ Încasat 30 € (restul serviciului) de la María González · Chitanță trimisă pe email"
+    },
+    "s5": {
+      "title": "5. Evaluare reciprocă și protecția comunității",
+      "desc": "După programare, ambele părți se evaluează (1-5 stele). Clienții cu istoric de încredere au prioritate; neprezentările repetate sunt marcate discret în baza de date a comunității pentru a proteja alți profesioniști.",
+      "example": "Tu evaluezi: ⭐⭐⭐⭐⭐ «Punctual și respectuos» → Clientul evaluează: ⭐⭐⭐⭐⭐ «Serviciu excelent»"
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Întrebări frecvente · AIBA",
+      "desc": "Tot ce trebuie să știi despre AIBA."
+    },
+    "badge": "Întrebări",
+    "title": "Întrebări frecvente",
+    "subtitleStart": "Întrebările pe care le primim cel mai des. Dacă a ta nu e aici, scrie-ne la ",
+    "subtitleEnd": ".",
+    "ctaTitle": "Mai ai întrebări?",
+    "ctaSubtitle": "Scrie-ne și răspundem în 24 de ore lucrătoare.",
+    "ctaContact": "Contact",
+    "ctaTry": "Încearcă gratuit",
+    "items": {
+      "q1": "Trebuie să știu să programez sau să am cunoștințe tehnice?",
+      "a1": "Deloc. Îți configurezi agenda și serviciile în 5 minute din panoul web. Botul vorbește cu clienții pe WhatsApp sau Telegram fără să scrii vreo linie de cod. Dacă știi să folosești Instagram, știi să folosești AIBA.",
+      "q2": "Cum află clientul de bot?",
+      "a2": "La înregistrare generăm linkul tău unic de WhatsApp Business și un link de Telegram (@My_AI_Booking_Assistant_Bot cu ID-ul tău). Distribuie-l în bio pe Instagram, TikTok, cartea de vizită sau oriunde. Cine apasă vorbește cu botul TĂU personalizat.",
+      "q3": "Ce se întâmplă dacă un client nu vine (neprezentare)?",
+      "a3": "Avansul nu se returnează — rămâne drept compensație pentru locul blocat. În plus, clientul primește automat o evaluare negativă, care îi scade credibilitatea la viitoare rezervări cu alți profesioniști din rețea.",
+      "q4": "Cu cât timp înainte poate anula un client fără să piardă avansul?",
+      "a4": "Decizi tu la configurarea contului. Implicit: anularea cu mai mult de 1 oră înainte înseamnă rambursare integrală. Cu mai puțin de 1 oră, pierde avansul. Poți ajusta la 24 h, 48 h sau cât are sens în sectorul tău.",
+      "q5": "Datele mele și ale clienților sunt în siguranță?",
+      "a5": "Da. Criptăm toate datele în tranzit (TLS 1.3) și stocate (AES-256). Serverele noastre sunt în Uniunea Europeană și respectăm integral GDPR. Nu vindem și nu partajăm date cu terți. Poți exporta sau șterge toate informațiile oricând.",
+      "q6": "Pot gestiona mai multe servicii cu prețuri diferite?",
+      "a6": "Da, plus extra. Poți crea câte servicii vrei (sau până la 100/lună la Basic), cu prețuri, durate și avansuri independente. Poți adăuga și extra opționale.",
+      "q7": "Cum este protejată comunitatea de profesioniști?",
+      "a7": "Există un sistem privat și opțional de verificare colaborativă. Când un client nu vine sau se comportă necorespunzător, se înregistrează în istoricul tău și, cu acordul tău, într-o bază de date anonimă pe care o pot consulta alți profesioniști verificați.",
+      "q8": "Există perioadă minimă sau pot anula oricând?",
+      "a8": "Nicio perioadă minimă. Nicio clauză ascunsă. Anulezi din panou cu un clic, iar contul rămâne activ până la finalul perioadei plătite. Datele rămân exportabile 30 de zile înainte de ștergerea definitivă."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Despre noi · AIBA",
+      "desc": "Născut în Barcelona în 2026 pentru a elimina timpul pierdut cu gestionarea agendei. Confidențialitatea, comunitatea și simplitatea sunt valorile noastre."
+    },
+    "badge": "Povestea noastră",
+    "titleStart": "Creat ca să-ți ",
+    "titleHighlight": "dea timpul înapoi.",
+    "intro": "AIBA este un proiect spaniol independent, creat în Barcelona în 2026 de și pentru profesioniști independenți care pierdeau ore pe zi răspunzând pe WhatsApp, notând programări pe hârtie și urmărind plăți.",
+    "missionTitle": "Misiunea noastră",
+    "mission": "Să eliminăm complet timpul pierdut cu gestionarea agendei, pentru ca profesioniștii independenți să-și dedice fiecare minut lucrurilor care contează cu adevărat: munca, clienții și viața din afara afacerii.",
+    "originTitle": "De unde venim",
+    "origin1": "Totul a început privind prieteni — maseuze, coachi, fotografi, antrenori personali — pierzând ore în fiecare săptămână cu sarcini repetitive: să răspundă la «ai loc joi?», să amintească pe WhatsApp «nu uita de mâine», să urmărească plăți, să gestioneze anulări de ultim moment.",
+    "origin2": "Existau instrumente, da. Dar niciunul nu era făcut pentru profesioniști care lucrează singuri și niciunul nu respecta diferitele meserii sau confidențialitatea clienților. Așa s-a născut AIBA: un bot AI real, creat în Spania, axat pe discreție și respect.",
+    "stat1": "Fondat",
+    "stat1Label": "2026",
+    "stat2": "Creat în Barcelona",
+    "stat2Label": "🇪🇸",
+    "stat3": "100% conform",
+    "stat3Label": "GDPR",
+    "valuesLabel": "Valorile noastre",
+    "valuesTitle": "Trei lucruri la care nu renunțăm.",
+    "v1Title": "🔒 Confidențialitatea pe primul loc",
+    "v1Desc": "Servere în UE, criptare end-to-end, conformitate totală cu GDPR. Datele tale și ale clienților nu se vând și nu se partajează niciodată. Punct.",
+    "v2Title": "🤝 Comunitate și protecție reciprocă",
+    "v2Desc": "Credem că profesioniștii independenți se protejează mai bine când lucrează în rețea. Sistemul nostru de verificare colaborativă pornește de la această idee.",
+    "v3Title": "✨ Simplitate radicală",
+    "v3Desc": "Nu adăugăm funcții doar pentru că arată bine în marketing. Fiecare buton, mesaj și notificare are un scop clar: să-ți economisească timp cu agenda.",
+    "ctaTitle": "Creat cu drag în Spania.",
+    "ctaSubtitle": "Dacă filozofia noastră ți se potrivește, încearcă instrumentul 14 zile. Fără card, fără obligații.",
+    "ctaBtn": "Creează-mi contul gratuit"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact · AIBA",
+      "desc": "Întrebări despre produs? Ai nevoie de o demonstrație? Suntem aici."
+    },
+    "badge": "Contact",
+    "title": "Hai să vorbim.",
+    "subtitle": "Întrebări despre produs, vrei o demonstrație sau o colaborare? Suntem aici.",
+    "sidebarEmailTitle": "Email",
+    "sidebarEmailDesc": "Răspundem în 24 de ore lucrătoare",
+    "sidebarBotTitle": "Încearcă botul",
+    "sidebarBotDesc": "Vorbește direct cu asistentul nostru pe Telegram ca să vezi cum funcționează.",
+    "sidebarTip": "💡 Sfat: dacă ai deja cont, scrie-ne de pe adresa înregistrată pentru un suport mai rapid.",
+    "formSubjects": {
+      "demo": "Cere o demonstrație",
+      "pricing": "Întrebări despre prețuri",
+      "support": "Suport tehnic",
+      "press": "Presă / colaborări",
+      "other": "Altele"
+    },
+    "labelName": "Nume",
+    "labelEmail": "Email",
+    "labelSubject": "Subiect",
+    "labelMessage": "Mesaj",
+    "placeholderName": "Maria Popescu",
+    "placeholderEmail": "tu@email.com",
+    "placeholderMessage": "Spune-ne cum te putem ajuta...",
+    "sendBtn": "Trimite mesajul",
+    "successTitle": "Se deschide clientul de email…",
+    "successBody": "Dacă nu se deschide, scrie-ne manual la ",
+    "legalNoteStart": "La trimitere, clientul de email se deschide cu mesajul completat. Vezi ",
+    "legalNoteLink": "Politica de confidențialitate",
+    "legalNoteEnd": ".",
+    "finalCtaTitle": "Preferi să încerci înainte?",
+    "finalCtaSubtitle": "Creează-ți contul gratuit și descoperă AIBA în 5 minute.",
+    "finalCtaBtn": "Începe gratuit"
+  },
+  "accessRequest": {
+    "badge": "Cerere de acces",
+    "title": "Cere un cod de acces",
+    "subtitle": "Lucrăm cu profesioniști din sectoare care au nevoie de maximă discreție. Spune-ne pe scurt despre tine și îți trimitem un cod de acces.",
+    "features": {
+      "privacy": {
+        "title": "Confidențial",
+        "body": "Doar echipa noastră vede cererea. Nu se distribuie și nu se publică."
+      },
+      "verify": {
+        "title": "Verificare rapidă",
+        "body": "Răspundem în 48 de ore lucrătoare, pe email."
+      },
+      "code": {
+        "title": "Cod unic",
+        "body": "Vei primi un cod de unică folosință pentru a finaliza înregistrarea."
+      }
+    },
+    "form": {
+      "fullName": "Nume complet sau profesional",
+      "fullNamePh": "Maria P. / MP Studio",
+      "email": "Email de contact",
+      "activity": "Activitatea ta",
+      "activityPh": "Coach, terapeut etc.",
+      "message": "Mesaj (opțional)",
+      "messagePh": "Spune-ne pe scurt cum vei folosi aplicația…",
+      "referral": "Cum ai aflat de noi? (opțional)",
+      "referralPh": "Google, un coleg, rețele sociale…",
+      "sending": "Se trimite…",
+      "submit": "Trimite cererea",
+      "legal": "Prin trimitere accepți politica de confidențialitate. Nu îți distribuim datele."
+    },
+    "success": {
+      "title": "Cerere trimisă",
+      "body": "Mulțumim. Analizăm cererea și răspundem pe email în 48 de ore lucrătoare.",
+      "backHome": "Înapoi acasă"
+    },
+    "errors": {
+      "required": "Completează câmpurile obligatorii (nume, email și activitate).",
+      "rateLimit": "Prea multe cereri. Încearcă din nou peste 24 de ore.",
+      "generic": "Cererea nu a putut fi trimisă. Încearcă din nou.",
+      "network": "Eroare de rețea. Verifică conexiunea la internet."
+    },
+    "meta": {
+      "title": "Cere acces · AIBA",
+      "desc": "Cere un cod de acces pentru sectoare private."
+    }
+  },
+  "publicBooking": {
+    "chooseService": "1. Alege un serviciu",
+    "chooseDay": "2. Alege o zi",
+    "chooseTime": "3. Alege o oră",
+    "yourDetails": "4. Datele tale",
+    "fullName": "Nume complet *",
+    "fullNamePh": "ex. Maria Popescu",
+    "phone": "Telefon *",
+    "phonePh": "+40 712 345 678",
+    "email": "Email",
+    "optional": "(opțional)",
+    "emailPh": "tu@email.com",
+    "notes": "Note pentru profesionist",
+    "notesPh": "Alergii, preferințe…",
+    "bookBtn": "Rezervă",
+    "depositLabel": "avans",
+    "loadingSlots": "Se încarcă orele disponibile…",
+    "noSlots": "Nicio oră liberă în acea zi. Încearcă altă dată.",
+    "noServices": "Acest profesionist nu a publicat încă servicii. Revino mai târziu.",
+    "errorBook": "Rezervarea a eșuat",
+    "bookedOk": "Rezervare creată! Acum finalizează avansul.",
+    "policyTerms": "Rezervând, accepți că avansul nu se returnează în caz de neprezentare. Toate plățile sunt procesate în siguranță.",
+    "successTitle": "Aproape gata!",
+    "successHold": "Locul tău e păstrat 15 minute.",
+    "successStep1": "Deschide botul nostru de Telegram (linkul de mai jos)",
+    "successStep2": "Confirmă plata avansului",
+    "successStep3": "Vei primi automat confirmarea + mementouri",
+    "successCta": "Continuă în Telegram",
+    "verifyCode": "Cod de verificare (păstrează-l):",
+    "footerBy": "Rezervări prin",
+    "footerTail": ". Avansul se confirmă prin botul nostru de Telegram (sigur, fără altă aplicație).",
+    "notFound": "Profesionistul nu a fost găsit",
+    "portalTitle": "Rezervarea mea",
+    "portalService": "Serviciu",
+    "portalDate": "Data",
+    "portalDuration": "Durata",
+    "portalName": "Rezervat pentru",
+    "portalTotal": "Total",
+    "portalDeposit": "Avans",
+    "pendingCta": "Finalizează în Telegram",
+    "pendingMsg": "Finalizează avansul pentru a confirma rezervarea.",
+    "confirmedMsg": "Rezervarea e confirmată. Vei primi automat un memento cu o zi înainte.",
+    "cancelBtn": "Anulează rezervarea",
+    "cancelConfirm": "Anulezi această rezervare?",
+    "cancelReasonLabel": "Motiv",
+    "cancelReasonPh": "Prefer altă zi, un imprevizibil…",
+    "backBtn": "Înapoi",
+    "confirmCancelBtn": "Confirmă anularea",
+    "cancelledOk": "Rezervare anulată. Profesionistul a fost anunțat.",
+    "cancelError": "Anularea a eșuat",
+    "outOfPolicy": "Anulările se acceptă cu până la {hours} h înainte de programare. Pentru excepții, contactează profesionistul.",
+    "portalHelp": "Probleme cu rezervarea? Contactează direct profesionistul.",
+    "statusPending": "Avans în așteptare",
+    "statusConfirmed": "Confirmată",
+    "statusReminded": "Memento trimis",
+    "statusCancelled": "Anulată",
+    "statusCancelledByPro": "Anulată de profesionist",
+    "statusCompleted": "Finalizată",
+    "statusNoShow": "Neprezentare",
+    "statusRefunded": "Rambursată",
+    "rescheduleBtn": "Mută rezervarea",
+    "rescheduleTitle": "Alege o dată nouă",
+    "reschedule_ok": "Rezervare mutată. Profesionistul a fost anunțat.",
+    "reschedule_error": "Mutarea a eșuat",
+    "new_datetime": "Data și ora nouă",
+    "confirmReschedule": "Confirmă schimbarea",
+    "weeklyHoursTitle": "Program săptămânal",
+    "weeklyHoursClosed": "Închis",
+    "weekdays": [
+      "Lun",
+      "Mar",
+      "Mie",
+      "Joi",
+      "Vin",
+      "Sâm",
+      "Dum"
+    ],
+    "quickBookTitle": "Următoarele disponibile",
+    "quickBookNoService": "Alege un serviciu pentru a vedea orele.",
+    "quickBookEmpty": "Nicio oră disponibilă în următoarele 2 săptămâni.",
+    "quickBookToday": "Azi",
+    "quickBookTomorrow": "Mâine",
+    "filterAll": "Toate",
+    "filterAM": "Dimineața",
+    "filterPM": "După-amiaza",
+    "urgencyFewLeft": "Doar {n} rămase!",
+    "urgencyLastOne": "Ultima!",
+    "stickyBook": "Rezervă acum",
+    "reviewsTitle": "Recenziile clienților",
+    "reviewsEmpty": "Fii primul care lasă o recenzie",
+    "reviewsAvg": "{avg}/5 · {count} recenzii",
+    "reviewsBy": "de",
+    "waitlistTitle": "Nicio oră liberă în acea zi?",
+    "waitlistDesc": "Înscrie-te pe lista de așteptare și te anunțăm dacă se eliberează un loc.",
+    "waitlistBtn": "Anunță-mă",
+    "waitlistJoined": "Ești pe lista de așteptare!",
+    "waitlistJoinedPos": "Ești al {n}-lea la rând",
+    "waitlistErr": "Nu te-ai putut înscrie pe listă",
+    "reviewsAxisCleanliness": "Curățenie",
+    "reviewsAxisHygiene": "Igienă",
+    "reviewsAxisAttitude": "Atitudine"
+  },
+  "analytics": {
+    "landingAnalytics": "Pagină publică",
+    "views": "Vizualizări",
+    "conversionPct": "Conversie",
+    "ctaClicks": "Clicuri CTA",
+    "slotClicks": "Clicuri pe ore",
+    "formOpens": "Formulare deschise"
+  },
+  "meta": {
+    "home": {
+      "title": "AIBA · Rezervări automate cu AI",
+      "description": "SaaS pentru profesioniști independenți: chatbot AI 24/7, gestionarea programărilor, avansuri și recenzii în ambele sensuri. 10 limbi."
+    }
+  }
+}

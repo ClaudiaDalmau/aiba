@@ -263,6 +263,102 @@ const DICT: Record<string, CookieTexts> = {
       },
     },
   },
+  nl: {
+    bannerAria: "Cookietoestemming",
+    bannerTitle: "We gebruiken cookies",
+    bannerBody:
+      "We gebruiken noodzakelijke cookies om de site te laten werken en, als je akkoord gaat, analytische cookies om hem te verbeteren.",
+    readPolicy: "Beleid lezen",
+    acceptAll: "Alles accepteren",
+    rejectAll: "Alles weigeren",
+    preferences: "Voorkeuren",
+    manage: "Cookies beheren",
+    alwaysOn: "Altijd actief",
+    close: "Sluiten",
+    saveChoices: "Mijn voorkeuren opslaan",
+    prefsAria: "Cookievoorkeuren",
+    prefsTitle: "Cookievoorkeuren",
+    prefsIntro:
+      "Kies welke soorten cookies je accepteert. Je kunt dit altijd wijzigen via de voettekst.",
+    categories: {
+      necessary: {
+        title: "Noodzakelijk",
+        body: "Onmisbaar voor de werking van de site (sessie, beveiliging). Kunnen niet worden uitgeschakeld.",
+      },
+      analytics: {
+        title: "Analytisch",
+        body: "Helpen ons te begrijpen hoe de site wordt gebruikt om hem te verbeteren (Vercel Analytics, Speed Insights). Geaggregeerde, anonieme gegevens.",
+      },
+      marketing: {
+        title: "Marketing",
+        body: "We gebruiken momenteel geen marketingcookies. Gereserveerd voor de toekomst (retargeting, campagnes).",
+      },
+    },
+  },
+  ro: {
+    bannerAria: "Consimțământ cookie-uri",
+    bannerTitle: "Folosim cookie-uri",
+    bannerBody:
+      "Folosim cookie-uri necesare pentru funcționarea site-ului și, dacă accepți, cookie-uri analitice pentru a-l îmbunătăți.",
+    readPolicy: "Citește politica",
+    acceptAll: "Acceptă tot",
+    rejectAll: "Respinge tot",
+    preferences: "Preferințe",
+    manage: "Gestionează cookie-urile",
+    alwaysOn: "Mereu active",
+    close: "Închide",
+    saveChoices: "Salvează preferințele",
+    prefsAria: "Preferințe cookie-uri",
+    prefsTitle: "Preferințe cookie-uri",
+    prefsIntro:
+      "Alege ce tipuri de cookie-uri accepți. Poți schimba oricând din subsolul paginii.",
+    categories: {
+      necessary: {
+        title: "Necesare",
+        body: "Indispensabile pentru funcționarea site-ului (sesiune, securitate). Nu pot fi dezactivate.",
+      },
+      analytics: {
+        title: "Analitice",
+        body: "Ne ajută să înțelegem cum este folosit site-ul pentru a-l îmbunătăți (Vercel Analytics, Speed Insights). Date agregate și anonime.",
+      },
+      marketing: {
+        title: "Marketing",
+        body: "Momentan nu folosim cookie-uri de marketing. Rezervat pentru viitor (retargeting, campanii).",
+      },
+    },
+  },
+  pl: {
+    bannerAria: "Zgoda na cookies",
+    bannerTitle: "Używamy plików cookie",
+    bannerBody:
+      "Używamy niezbędnych plików cookie, aby strona działała, a jeśli się zgodzisz, analitycznych, aby ją ulepszać.",
+    readPolicy: "Przeczytaj politykę",
+    acceptAll: "Akceptuj wszystkie",
+    rejectAll: "Odrzuć wszystkie",
+    preferences: "Preferencje",
+    manage: "Zarządzaj cookies",
+    alwaysOn: "Zawsze aktywne",
+    close: "Zamknij",
+    saveChoices: "Zapisz moje preferencje",
+    prefsAria: "Preferencje cookies",
+    prefsTitle: "Preferencje cookies",
+    prefsIntro:
+      "Wybierz, jakie rodzaje plików cookie akceptujesz. Możesz to zmienić w każdej chwili w stopce.",
+    categories: {
+      necessary: {
+        title: "Niezbędne",
+        body: "Konieczne do działania strony (sesja, bezpieczeństwo). Nie można ich wyłączyć.",
+      },
+      analytics: {
+        title: "Analityczne",
+        body: "Pomagają zrozumieć, jak korzystasz ze strony, aby ją ulepszać (Vercel Analytics, Speed Insights). Dane zagregowane i anonimowe.",
+      },
+      marketing: {
+        title: "Marketingowe",
+        body: "Obecnie nie używamy marketingowych plików cookie. Zarezerwowane na przyszłość (retargeting, kampanie).",
+      },
+    },
+  },
 };
 
 const SUPPORTED = Object.keys(DICT);

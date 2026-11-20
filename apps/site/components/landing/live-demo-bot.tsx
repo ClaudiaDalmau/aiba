@@ -5,7 +5,7 @@ import { Send, Bot, User, Zap } from "lucide-react";
 
 type Msg = { role: "bot" | "client"; text: string; ts: number };
 
-type Lang = "es" | "en" | "fr" | "de" | "it" | "pt-BR" | "ru";
+type Lang = "es" | "en" | "fr" | "de" | "it" | "pt-BR" | "ru" | "nl" | "ro" | "pl";
 
 type Copy = {
   seed: string;
@@ -108,6 +108,41 @@ const COPY: Record<Lang, Copy> = {
     confirm: (s) => `Готово, записала вас на ${s} ✓ Для подтверждения внесите предоплату 10 € здесь: aiba.app/pay · За 1 ч до визита пришлю 6-значный код.`,
     price: "Стрижка 25 € (45 мин) · Окрашивание 40 € (1 ч 30) · Стрижка + окрашивание 60 € (2 ч). Подобрать вам время?",
     fallback: "Я помогу со стрижкой, окрашиванием и комплексами, подскажу цены или подберу время. Что вас интересует?",
+  nl: {
+    seed: "Hoi! Ik ben de virtuele assistent van Estudio Isabel. Wil je een knipbeurt, kleuring of combo boeken?",
+    hints: ["ik wil knippen", "deze week", "donderdag om 16 uur", "wat kost het?"],
+    title: "Estudio Isabel · Live demo",
+    status: "online · antwoordt in <1 sec",
+    badge: "Demo",
+    placeholder: "Typ iets… („ik wil knippen”, „deze week”)",
+    slots: "Top! Deze week heb ik donderdag om 16:00, vrijdag om 10:30 of zaterdag om 12:00. Wat past jou het best?",
+    confirm: (s) => `Perfect, je staat genoteerd voor ${s} ✓ Betaal ter bevestiging de aanbetaling van €10 hier: aiba.app/pay · 1 uur vooraf stuur ik je een 6-cijferige code.`,
+    price: "Knippen €25 (45 min) · Kleuren €40 (1 u 30) · Combo knippen + kleuren €60 (2 u). Zal ik een tijd voor je zoeken?",
+    fallback: "Ik help je met knippen, kleuren en combo's, noem prijzen of zoek een tijd. Wat wil je?",
+  },
+  ro: {
+    seed: "Bună! Sunt asistenta virtuală a Estudio Isabel. Vrei să rezervi o tunsoare, vopsit sau un pachet combo?",
+    hints: ["vreau o tunsoare", "săptămâna asta", "joi la 16", "cât costă?"],
+    title: "Estudio Isabel · Demo live",
+    status: "online · răspunde în <1 sec",
+    badge: "Demo",
+    placeholder: "Scrie ceva… („vreau o tunsoare”, „săptămâna asta”)",
+    slots: "Super! Săptămâna asta am joi la 16:00, vineri la 10:30 sau sâmbătă la 12:00. Ce ți se potrivește?",
+    confirm: (s) => `Perfect, te-am programat ${s} ✓ Pentru confirmare, plătește avansul de 10 € aici: aiba.app/pay · Cu 1 h înainte îți trimit un cod din 6 cifre.`,
+    price: "Tunsoare 25 € (45 min) · Vopsit 40 € (1 h 30) · Combo tunsoare + vopsit 60 € (2 h). Îți caut o oră?",
+    fallback: "Te pot ajuta cu tunsori, vopsit și pachete, îți spun prețurile sau îți găsesc o oră. Ce dorești?",
+  },
+  pl: {
+    seed: "Cześć! Jestem wirtualną asystentką Estudio Isabel. Chcesz zarezerwować strzyżenie, koloryzację czy pakiet?",
+    hints: ["chcę strzyżenie", "w tym tygodniu", "czwartek o 16", "ile to kosztuje?"],
+    title: "Estudio Isabel · Demo na żywo",
+    status: "online · odpowiada w <1 s",
+    badge: "Demo",
+    placeholder: "Napisz coś… („chcę strzyżenie”, „w tym tygodniu”)",
+    slots: "Super! W tym tygodniu mam czwartek 16:00, piątek 10:30 lub sobotę 12:00. Co ci pasuje?",
+    confirm: (s) => `Gotowe, zapisałam cię na ${s} ✓ Aby potwierdzić, zapłać 10 € zaliczki tutaj: aiba.app/pay · Godzinę wcześniej wyślę ci 6-cyfrowy kod.`,
+    price: "Strzyżenie 25 € (45 min) · Koloryzacja 40 € (1 h 30) · Pakiet strzyżenie + koloryzacja 60 € (2 h). Poszukać ci terminu?",
+    fallback: "Pomogę ze strzyżeniem, koloryzacją i pakietami, podam ceny lub znajdę termin. Czego potrzebujesz?",
   },
 };
 
@@ -119,9 +154,12 @@ const SLOT_LABELS: Record<Lang, [RegExp, string][]> = {
   it: [[/gio|16|4/i, "giovedì alle 16:00"], [/ven|10/i, "venerdì alle 10:30"], [/sab|12/i, "sabato alle 12:00"]],
   "pt-BR": [[/qui|16|4/i, "quinta às 16:00"], [/sex|10/i, "sexta às 10:30"], [/s[áa]b|12/i, "sábado às 12:00"]],
   ru: [[/чет|16|4/i, "четверг 16:00"], [/пят|10/i, "пятницу 10:30"], [/суб|12/i, "субботу 12:00"]],
+  nl: [[/don|16|4/i, "donderdag om 16:00"], [/vrij|10/i, "vrijdag om 10:30"], [/zat|12/i, "zaterdag om 12:00"]],
+  ro: [[/joi|16|4/i, "joi la 16:00"], [/vin|10/i, "vineri la 10:30"], [/s[âa]m|12/i, "sâmbătă la 12:00"]],
+  pl: [[/czw|16|4/i, "czwartek 16:00"], [/pi[ąa]t|10/i, "piątek 10:30"], [/sob|12/i, "sobotę 12:00"]],
 };
 
-const PRICE_RE = /cu[áa]nto|precio|cuesta|how much|price|cost|combien|prix|co[ûu]te|kostet|preis|quanto|costa|prezz|pre[çc]o|custa|сколько|цен|стоит/i;
+const PRICE_RE = /cu[áa]nto|precio|cuesta|how much|price|cost|combien|prix|co[ûu]te|kostet|preis|quanto|costa|prezz|pre[çc]o|custa|сколько|цен|стоит|kost|prijs|cât|pre[țt]|\bile\b|cena|kosztuje/i;
 
 function reply(lang: Lang, text: string, offered: boolean): { text: string; offered: boolean } {
   const c = COPY[lang];

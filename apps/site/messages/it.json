@@ -93,7 +93,7 @@
       "label": "Funzionalità",
       "title": "Tutto quello che serve. Nulla di più.",
       "aiTitle": "IA conversazionale",
-      "aiDesc": "GPT-4o capisce le sfumature, gestisce obiezioni e impara i tuoi servizi.",
+      "aiDesc": "Claude capisce le sfumature, gestisce obiezioni e impara i tuoi servizi.",
       "paymentsTitle": "Pagamenti integrati",
       "paymentsDesc": "Acconti, saldi finali e rimborsi automatici. Senza cassa né contanti.",
       "dashboardTitle": "Dashboard analitico",
@@ -238,7 +238,7 @@
         "deposit": "Acconto anti no-show",
         "clientDatabase": "Database clienti",
         "sharedBlacklist": "Blacklist condivisa tra pro",
-        "multiLang": "Pannello disponibile in 7 lingue",
+        "multiLang": "Pannello disponibile in 10 lingue",
         "gdpr": "GDPR nativo (server UE)",
         "flatFee": "Tariffa fissa, senza commissioni per prenotazione",
         "regulatedTier": "Vertical privato regolamentato (solo invito)"
@@ -598,7 +598,7 @@
     "ctaSecondary": "Parla con noi",
     "s1": {
       "title": "1. Il cliente contatta il bot",
-      "desc": "Condividi il tuo link unico WhatsApp o Telegram. Il bot saluta, presenta i servizi con prezzi e risponde 24/7 con IA GPT-4o.",
+      "desc": "Condividi il tuo link unico WhatsApp o Telegram. Il bot saluta, presenta i servizi con prezzi e risponde 24/7 con IA Claude.",
       "example": "Cliente: «Ciao, vorrei prenotare un massaggio» → Bot: «Certo! Disponibili: Massaggio rilassante 60min · 45€, Massaggio sportivo 60min · 55€. Quale preferisci?»"
     },
     "s2": {
@@ -884,7 +884,7 @@
   "meta": {
     "home": {
       "title": "AIBA · Prenotazioni automatiche con IA",
-      "description": "SaaS per professionisti indipendenti: chatbot IA 24/7, gestione appuntamenti, acconti e recensioni bidirezionali. 7 lingue."
+      "description": "SaaS per professionisti indipendenti: chatbot IA 24/7, gestione appuntamenti, acconti e recensioni bidirezionali. 10 lingue."
     }
   }
 }

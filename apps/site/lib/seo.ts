@@ -122,7 +122,7 @@ export function websiteJsonLd() {
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
     name: SITE_NAME,
-    inLanguage: ["es", "en", "pt-BR", "fr", "de", "it", "ru"],
+    inLanguage: ["es", "en", "pt-BR", "fr", "de", "it", "ru", "nl", "ro", "pl"],
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 }
