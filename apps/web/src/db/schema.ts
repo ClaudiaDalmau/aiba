@@ -399,6 +399,8 @@ export type AgentPersona = {
   emoji: boolean;
   greeting: string;
   signature: string;
+  /** «Learn my style»: how the owner writes, reviewed by her; used verbatim in the agent's prompt. */
+  styleGuide?: string;
 };
 
 /** Per tool: auto = run immediately, approve = owner must approve first, off = tool unavailable. */

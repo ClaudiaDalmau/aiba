@@ -6,6 +6,7 @@ import { Icon } from "@/components/icons";
 import { Badge, Button, Card, CardHeader, ChannelIcon, Field, Input, PageHeader, Select, Stat, Textarea } from "@/components/ui";
 import { ActionForm } from "@/components/workspace/action-form";
 import { Playground } from "@/components/workspace/playground";
+import { StyleLearner } from "@/components/workspace/style-learner";
 import { getAgent, isLiveMode } from "@/lib/agent/runtime";
 import { getSetting } from "@/lib/settings";
 import { modeFor, TOOLS } from "@/lib/agent/tools";
@@ -90,6 +91,11 @@ export default async function AgentPage() {
               </Field>
               <SubmitButton>{t("Save")}</SubmitButton>
             </ActionForm>
+          </Card>
+
+          <Card>
+            <CardHeader title={t("Learn my style")} description={t("So your agent answers the way you would: same words, same tone, same rhythm.")} />
+            <StyleLearner initial={p.styleGuide ?? ""} />
           </Card>
 
           <Card>

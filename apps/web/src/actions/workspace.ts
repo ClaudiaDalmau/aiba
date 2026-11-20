@@ -180,6 +180,7 @@ export async function saveAgent(_prev: ActionState, f: FormData): Promise<Action
       escalationKeywords: s(f, "escalationKeywords"),
       persona: { tone: s(f, "tone"), language: s(f, "language"), formality: s(f, "formality"), emoji: on(f, "emoji"), greeting: s(f, "greeting"), signature: s(f, "signature") },
     });
+    if (patch.persona) (patch.persona as schema.AgentPersona).styleGuide = agent.persona.styleGuide;
     await db.update(schema.agents).set(patch as Partial<schema.Agent>).where(eq(schema.agents.id, agent.id));
     await audit(t.business.id, { type: "user", id: t.user.id }, "agent.updated", agent.id);
     revalidatePath("/app/agent");
@@ -437,4 +438,44 @@ export async function markNotificationsRead() {
   const { isNull } = await import("drizzle-orm");
   await db.update(schema.notifications).set({ readAt: new Date() }).where(and(eq(schema.notifications.businessId, t.business.id), isNull(schema.notifications.readAt)));
   revalidatePath("/app");
+}
+
+// ---------------------------------------------------------------- «learn my style»
+
+export type LearnState = { ok?: boolean; error?: string; message?: string; guide?: string } | null;
+
+export async function learnStyle(_prev: LearnState, f: FormData): Promise<LearnState> {
+  const t = await tenantFor("agent.manage");
+  const tr = await getT();
+  try {
+    const agent = await getAgent(t.business.id);
+    if (!agent) throw new AppError(404, "not_found", "Agent not found");
+    const { inboxPairs, parseExport, generateStyleGuide } = await import("@/lib/agent/style");
+    const file = f.get("export");
+    let pairs = await inboxPairs(t.business.id);
+    if (file instanceof File && file.size > 0) {
+      if (file.size > 5 * 1024 * 1024) throw new AppError(400, "too_large", "Max 5 MB per export");
+      pairs = [...pairs, ...parseExport(await file.text(), s(f, "ownerName"))];
+    }
+    const guide = await generateStyleGuide(t.business, agent, pairs);
+    await audit(t.business.id, { type: "user", id: t.user.id }, "agent.style.generated", agent.id, { samples: pairs.length });
+    return { ok: true, message: tr("Done! Review the guide below and save it."), guide };
+  } catch (e) {
+    if (e instanceof AppError) return { error: tr(e.message) };
+    console.error(e);
+    return { error: tr("Something went wrong. Please try again.") };
+  }
+}
+
+export async function saveStyleGuide(_prev: ActionState, f: FormData): Promise<ActionState> {
+  const t = await tenantFor("agent.manage");
+  return attempt(async () => {
+    const agent = await getAgent(t.business.id);
+    if (!agent) throw new AppError(404, "not_found", "Agent not found");
+    const styleGuide = s(f, "styleGuide").slice(0, 4000);
+    await db.update(schema.agents).set({ persona: { ...agent.persona, styleGuide } }).where(eq(schema.agents.id, agent.id));
+    await audit(t.business.id, { type: "user", id: t.user.id }, "agent.style.saved", agent.id);
+    revalidatePath("/app/agent");
+    return styleGuide ? "Style saved. Your agent writes like you from its next message." : "Style guide removed";
+  });
 }

@@ -7267,9 +7267,9 @@
 "ru": "Окончание должно быть позже начала"
 },
 "Something went wrong. Please try again.": {
-"es": "Algo ha fallado. Inténtalo de nuevo.",
+"es": "Algo salió mal. Inténtalo de nuevo.",
 "fr": "Une erreur s'est produite. Veuillez réessayer.",
-"de": "Etwas ist schiefgelaufen. Bitte versuch es erneut.",
+"de": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
 "it": "Qualcosa è andato storto. Riprova.",
 "pt-BR": "Algo deu errado. Tente novamente.",
 "ru": "Что-то пошло не так. Попробуйте ещё раз."
@@ -8361,5 +8361,213 @@
 "it": "{name} ora è {role}",
 "pt-BR": "{name} agora é {role}",
 "ru": "{name} теперь {role}"
+},
+"Learn my style": {
+"es": "Aprender mi estilo",
+"fr": "Apprendre mon style",
+"de": "Meinen Stil lernen",
+"it": "Impara il mio stile",
+"pt-BR": "Aprender meu estilo",
+"ru": "Изучить мой стиль"
+},
+"So your agent answers the way you would: same words, same tone, same rhythm.": {
+"es": "Para que tu asistente responda como lo harías tú: mismas palabras, mismo tono, mismo ritmo.",
+"fr": "Pour que votre assistant réponde comme vous : mêmes mots, même ton, même rythme.",
+"de": "Damit dein Assistent so antwortet wie du: gleiche Worte, gleicher Ton, gleicher Rhythmus.",
+"it": "Così il tuo assistente risponde come faresti tu: stesse parole, stesso tono, stesso ritmo.",
+"pt-BR": "Para que seu assistente responda como você: mesmas palavras, mesmo tom, mesmo ritmo.",
+"ru": "Чтобы ассистент отвечал как вы: те же слова, тот же тон, тот же ритм."
+},
+"AIBA reads the replies you wrote yourself (in the inbox and the WhatsApp history imported when you linked your number) and writes a guide of how you talk. You can also upload a chat export from your phone.": {
+"es": "AIBA lee las respuestas que escribiste tú (en la bandeja y en el historial de WhatsApp importado al vincular tu número) y redacta una guía de cómo hablas. También puedes subir una exportación de chat desde tu móvil.",
+"fr": "AIBA lit les réponses que vous avez écrites vous-même (dans la boîte de réception et l'historique WhatsApp importé lors de la liaison de votre numéro) et rédige un guide de votre façon de parler. Vous pouvez aussi importer un export de discussion depuis votre téléphone.",
+"de": "AIBA liest die Antworten, die du selbst geschrieben hast (im Posteingang und im beim Verknüpfen importierten WhatsApp-Verlauf), und schreibt einen Leitfaden, wie du sprichst. Du kannst auch einen Chat-Export von deinem Handy hochladen.",
+"it": "AIBA legge le risposte che hai scritto tu (nella posta in arrivo e nella cronologia WhatsApp importata quando hai collegato il numero) e scrive una guida su come parli. Puoi anche caricare un'esportazione della chat dal telefono.",
+"pt-BR": "A AIBA lê as respostas que você mesma escreveu (na caixa de entrada e no histórico do WhatsApp importado ao vincular seu número) e escreve um guia de como você fala. Você também pode enviar uma exportação de conversa do celular.",
+"ru": "AIBA читает ответы, которые вы писали сами (во входящих и в истории WhatsApp, импортированной при подключении номера), и составляет описание вашей манеры общения. Можно также загрузить экспорт чата с телефона."
+},
+"Chat export (optional)": {
+"es": "Exportación de chat (opcional)",
+"fr": "Export de discussion (facultatif)",
+"de": "Chat-Export (optional)",
+"it": "Esportazione chat (facoltativa)",
+"pt-BR": "Exportação de conversa (opcional)",
+"ru": "Экспорт чата (необязательно)"
+},
+"WhatsApp .txt or Telegram result.json": {
+"es": "WhatsApp .txt o Telegram result.json",
+"fr": "WhatsApp .txt ou Telegram result.json",
+"de": "WhatsApp .txt oder Telegram result.json",
+"it": "WhatsApp .txt o Telegram result.json",
+"pt-BR": "WhatsApp .txt ou Telegram result.json",
+"ru": "WhatsApp .txt или Telegram result.json"
+},
+"Your name in that chat": {
+"es": "Tu nombre en ese chat",
+"fr": "Votre nom dans cette discussion",
+"de": "Dein Name in diesem Chat",
+"it": "Il tuo nome in quella chat",
+"pt-BR": "Seu nome nessa conversa",
+"ru": "Ваше имя в этом чате"
+},
+"only for exports": {
+"es": "solo para exportaciones",
+"fr": "uniquement pour les exports",
+"de": "nur für Exporte",
+"it": "solo per le esportazioni",
+"pt-BR": "só para exportações",
+"ru": "только для экспорта"
+},
+"e.g. Claudia": {
+"es": "p. ej. Claudia",
+"fr": "ex. Claudia",
+"de": "z. B. Claudia",
+"it": "es. Claudia",
+"pt-BR": "ex.: Claudia",
+"ru": "напр. Claudia"
+},
+"Analysing your messages…": {
+"es": "Analizando tus mensajes…",
+"fr": "Analyse de vos messages…",
+"de": "Deine Nachrichten werden analysiert…",
+"it": "Analisi dei tuoi messaggi…",
+"pt-BR": "Analisando suas mensagens…",
+"ru": "Анализируем ваши сообщения…"
+},
+"Analyse my conversations": {
+"es": "Analizar mis conversaciones",
+"fr": "Analyser mes conversations",
+"de": "Meine Unterhaltungen analysieren",
+"it": "Analizza le mie conversazioni",
+"pt-BR": "Analisar minhas conversas",
+"ru": "Проанализировать мои переписки"
+},
+"Your style guide": {
+"es": "Tu guía de estilo",
+"fr": "Votre guide de style",
+"de": "Dein Stil-Leitfaden",
+"it": "La tua guida di stile",
+"pt-BR": "Seu guia de estilo",
+"ru": "Ваш стиль общения"
+},
+"edit freely — the agent follows it word for word": {
+"es": "edítala a tu gusto: el asistente la sigue al pie de la letra",
+"fr": "modifiez librement : l'assistant le suit à la lettre",
+"de": "frei bearbeitbar – der Assistent folgt ihm wortgetreu",
+"it": "modificala liberamente: l'assistente la segue alla lettera",
+"pt-BR": "edite à vontade: o assistente segue ao pé da letra",
+"ru": "редактируйте свободно — ассистент следует ему дословно"
+},
+"Nothing yet. Analyse your conversations or write how you usually talk to customers.": {
+"es": "Aún nada. Analiza tus conversaciones o escribe cómo sueles hablar con tus clientes.",
+"fr": "Rien pour l'instant. Analysez vos conversations ou décrivez comment vous parlez à vos clients.",
+"de": "Noch nichts. Analysiere deine Unterhaltungen oder beschreibe, wie du mit Kunden sprichst.",
+"it": "Ancora niente. Analizza le tue conversazioni o scrivi come parli di solito con i clienti.",
+"pt-BR": "Nada ainda. Analise suas conversas ou escreva como costuma falar com clientes.",
+"ru": "Пока пусто. Проанализируйте переписки или опишите, как вы обычно общаетесь с клиентами."
+},
+"Only your writing habits are kept, never customers' names or details. Nothing is used until you save.": {
+"es": "Solo se guardan tus hábitos de escritura, nunca nombres ni datos de clientes. No se usa nada hasta que guardes.",
+"fr": "Seules vos habitudes d'écriture sont conservées, jamais les noms ou données des clients. Rien n'est utilisé avant que vous enregistriez.",
+"de": "Nur deine Schreibgewohnheiten werden gespeichert, nie Namen oder Daten von Kunden. Nichts wird verwendet, bevor du speicherst.",
+"it": "Si conservano solo le tue abitudini di scrittura, mai nomi o dati dei clienti. Nulla viene usato finché non salvi.",
+"pt-BR": "Só seus hábitos de escrita são guardados, nunca nomes ou dados de clientes. Nada é usado até você salvar.",
+"ru": "Сохраняются только ваши привычки письма, никогда — имена и данные клиентов. Ничего не применяется, пока вы не сохраните."
+},
+"Save style": {
+"es": "Guardar estilo",
+"fr": "Enregistrer le style",
+"de": "Stil speichern",
+"it": "Salva stile",
+"pt-BR": "Salvar estilo",
+"ru": "Сохранить стиль"
+},
+"Done! Review the guide below and save it.": {
+"es": "¡Listo! Revisa la guía de abajo y guárdala.",
+"fr": "C'est fait ! Relisez le guide ci-dessous et enregistrez-le.",
+"de": "Fertig! Prüfe den Leitfaden unten und speichere ihn.",
+"it": "Fatto! Controlla la guida qui sotto e salvala.",
+"pt-BR": "Pronto! Revise o guia abaixo e salve.",
+"ru": "Готово! Проверьте описание ниже и сохраните его."
+},
+"Max 5 MB per export": {
+"es": "Máximo 5 MB por exportación",
+"fr": "5 Mo maximum par export",
+"de": "Maximal 5 MB pro Export",
+"it": "Massimo 5 MB per esportazione",
+"pt-BR": "Máximo de 5 MB por exportação",
+"ru": "Не более 5 МБ на файл"
+},
+"Style saved. Your agent writes like you from its next message.": {
+"es": "Estilo guardado. Tu asistente escribe como tú desde su próximo mensaje.",
+"fr": "Style enregistré. Votre assistant écrit comme vous dès son prochain message.",
+"de": "Stil gespeichert. Dein Assistent schreibt ab der nächsten Nachricht wie du.",
+"it": "Stile salvato. Il tuo assistente scrive come te dal prossimo messaggio.",
+"pt-BR": "Estilo salvo. Seu assistente escreve como você a partir da próxima mensagem.",
+"ru": "Стиль сохранён. Ассистент пишет как вы, начиная со следующего сообщения."
+},
+"Style guide removed": {
+"es": "Guía de estilo eliminada",
+"fr": "Guide de style supprimé",
+"de": "Stil-Leitfaden entfernt",
+"it": "Guida di stile rimossa",
+"pt-BR": "Guia de estilo removido",
+"ru": "Описание стиля удалено"
+},
+"Write your name exactly as it appears in the chat": {
+"es": "Escribe tu nombre tal como aparece en el chat",
+"fr": "Écrivez votre nom exactement comme il apparaît dans la discussion",
+"de": "Schreibe deinen Namen genau so, wie er im Chat erscheint",
+"it": "Scrivi il tuo nome esattamente come appare nella chat",
+"pt-BR": "Escreva seu nome exatamente como aparece na conversa",
+"ru": "Укажите имя точно так, как оно отображается в чате"
+},
+"This file couldn't be read. Upload the .txt (WhatsApp) or result.json (Telegram) export.": {
+"es": "No se pudo leer el archivo. Sube la exportación .txt (WhatsApp) o result.json (Telegram).",
+"fr": "Impossible de lire ce fichier. Importez l'export .txt (WhatsApp) ou result.json (Telegram).",
+"de": "Diese Datei konnte nicht gelesen werden. Lade den .txt- (WhatsApp) oder result.json-Export (Telegram) hoch.",
+"it": "Impossibile leggere il file. Carica l'esportazione .txt (WhatsApp) o result.json (Telegram).",
+"pt-BR": "Não foi possível ler o arquivo. Envie a exportação .txt (WhatsApp) ou result.json (Telegram).",
+"ru": "Не удалось прочитать файл. Загрузите экспорт .txt (WhatsApp) или result.json (Telegram)."
+},
+"No messages found in this file. Upload the .txt (WhatsApp) or result.json (Telegram) export.": {
+"es": "No hay mensajes en este archivo. Sube la exportación .txt (WhatsApp) o result.json (Telegram).",
+"fr": "Aucun message dans ce fichier. Importez l'export .txt (WhatsApp) ou result.json (Telegram).",
+"de": "Keine Nachrichten in dieser Datei. Lade den .txt- (WhatsApp) oder result.json-Export (Telegram) hoch.",
+"it": "Nessun messaggio in questo file. Carica l'esportazione .txt (WhatsApp) o result.json (Telegram).",
+"pt-BR": "Nenhuma mensagem neste arquivo. Envie a exportação .txt (WhatsApp) ou result.json (Telegram).",
+"ru": "В файле нет сообщений. Загрузите экспорт .txt (WhatsApp) или result.json (Telegram)."
+},
+"None of the messages are from that name. Check how your name appears in the chat.": {
+"es": "Ningún mensaje es de ese nombre. Revisa cómo aparece tu nombre en el chat.",
+"fr": "Aucun message ne provient de ce nom. Vérifiez comment votre nom apparaît dans la discussion.",
+"de": "Keine Nachricht stammt von diesem Namen. Prüfe, wie dein Name im Chat erscheint.",
+"it": "Nessun messaggio è di quel nome. Controlla come appare il tuo nome nella chat.",
+"pt-BR": "Nenhuma mensagem é desse nome. Verifique como seu nome aparece na conversa.",
+"ru": "Нет сообщений от этого имени. Проверьте, как ваше имя отображается в чате."
+},
+"Not enough of your replies yet: answer a few customers yourself or upload a chat export, then try again.": {
+"es": "Aún no hay suficientes respuestas tuyas: contesta tú a algunos clientes o sube una exportación de chat y vuelve a intentarlo.",
+"fr": "Pas encore assez de vos réponses : répondez vous-même à quelques clients ou importez un export de discussion, puis réessayez.",
+"de": "Noch nicht genug eigene Antworten: Antworte selbst ein paar Kunden oder lade einen Chat-Export hoch und versuche es erneut.",
+"it": "Non ci sono ancora abbastanza tue risposte: rispondi tu ad alcuni clienti o carica un'esportazione della chat, poi riprova.",
+"pt-BR": "Ainda não há respostas suas suficientes: responda alguns clientes você mesma ou envie uma exportação de conversa e tente de novo.",
+"ru": "Пока мало ваших ответов: ответьте сами нескольким клиентам или загрузите экспорт чата и попробуйте снова."
+},
+"Add the Anthropic API key in Admin → Settings → AI agents first.": {
+"es": "Primero añade la clave API de Anthropic en Admin → Ajustes → Agentes de IA.",
+"fr": "Ajoutez d'abord la clé API Anthropic dans Admin → Paramètres → Agents IA.",
+"de": "Füge zuerst den Anthropic-API-Schlüssel unter Admin → Einstellungen → KI-Agenten hinzu.",
+"it": "Aggiungi prima la chiave API di Anthropic in Admin → Impostazioni → Agenti IA.",
+"pt-BR": "Adicione primeiro a chave de API da Anthropic em Admin → Configurações → Agentes de IA.",
+"ru": "Сначала добавьте ключ API Anthropic в Admin → Настройки → ИИ-агенты."
+},
+"The AI couldn't produce a style guide from these messages. Try with more of your replies.": {
+"es": "La IA no pudo crear una guía con estos mensajes. Prueba con más respuestas tuyas.",
+"fr": "L'IA n'a pas pu créer de guide à partir de ces messages. Essayez avec plus de vos réponses.",
+"de": "Die KI konnte aus diesen Nachrichten keinen Leitfaden erstellen. Versuche es mit mehr eigenen Antworten.",
+"it": "L'IA non è riuscita a creare una guida da questi messaggi. Prova con più tue risposte.",
+"pt-BR": "A IA não conseguiu criar um guia com essas mensagens. Tente com mais respostas suas.",
+"ru": "ИИ не смог составить описание по этим сообщениям. Попробуйте с большим числом ваших ответов."
 }
 }
