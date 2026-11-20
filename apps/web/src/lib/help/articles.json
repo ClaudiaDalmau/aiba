@@ -13,7 +13,10 @@
    "de": "Erste Schritte",
    "it": "Primi passi",
    "pt-BR": "Primeiros passos",
-   "ru": "С чего начать"
+   "ru": "С чего начать",
+   "nl": "Aan de slag",
+   "ro": "Primii pași",
+   "pl": "Pierwsze kroki"
   },
   "keywords": {
    "en": "start setup begin overview dashboard",
@@ -22,7 +25,10 @@
    "de": "start einrichten übersicht",
    "it": "iniziare configurare panoramica",
    "pt-BR": "começar configurar início resumo",
-   "ru": "начало настройка обзор"
+   "ru": "начало настройка обзор",
+   "nl": "starten instellen begin overzicht dashboard",
+   "ro": "început configurare prezentare panou",
+   "pl": "start konfiguracja początek przegląd panel"
   },
   "steps": {
    "en": [
@@ -73,6 +79,27 @@
     "Проверьте валюту, часовой пояс и правила записи: Бизнес → Настройки.",
     "Проверьте ассистента: Ассистент → Ассистент (тестовый чат справа).",
     "Включите Telegram (и WhatsApp, когда появится): Ассистент → Каналы, и поделитесь ссылкой."
+   ],
+   "nl": [
+    "Voeg je diensten met prijs en duur toe bij Bedrijf → Diensten.",
+    "Stel je werktijden in bij Bedrijf → Team en uren.",
+    "Controleer je valuta, tijdzone en boekingsregels bij Bedrijf → Instellingen.",
+    "Probeer je assistent bij Assistent → Assistent (testchat rechts).",
+    "Zet Telegram (en WhatsApp zodra beschikbaar) aan bij Assistent → Kanalen en deel je link."
+   ],
+   "ro": [
+    "Adaugă serviciile cu preț și durată în Afacere → Servicii.",
+    "Setează programul în Afacere → Echipă și program.",
+    "Verifică moneda, fusul orar și regulile de rezervare în Afacere → Setări.",
+    "Încearcă asistentul în Asistent → Asistent (chatul de test din dreapta).",
+    "Activează Telegram (și WhatsApp când e disponibil) în Asistent → Canale și distribuie linkul."
+   ],
+   "pl": [
+    "Dodaj usługi z ceną i czasem w Firma → Usługi.",
+    "Ustaw godziny pracy w Firma → Zespół i godziny.",
+    "Sprawdź walutę, strefę czasową i zasady rezerwacji w Firma → Ustawienia.",
+    "Wypróbuj asystenta w Asystent → Asystent (czat testowy po prawej).",
+    "Włącz Telegram (i WhatsApp, gdy będzie dostępny) w Asystent → Kanały i udostępnij link."
    ]
   }
  },
@@ -90,7 +117,10 @@
    "de": "Buchungen und Kalender",
    "it": "Prenotazioni e agenda",
    "pt-BR": "Reservas e agenda",
-   "ru": "Записи и календарь"
+   "ru": "Записи и календарь",
+   "nl": "Boekingen en agenda",
+   "ro": "Rezervări și calendar",
+   "pl": "Rezerwacje i kalendarz"
   },
   "keywords": {
    "en": "booking appointment calendar new reschedule move cancel no-show completed walk-in",
@@ -99,7 +129,10 @@
    "de": "buchung termin kalender verschieben stornieren nicht erschienen abgeschlossen",
    "it": "prenotazione appuntamento agenda spostare annullare assente completato",
    "pt-BR": "reserva agendamento agenda remarcar cancelar não compareceu concluído",
-   "ru": "запись встреча календарь перенести отменить неявка завершено"
+   "ru": "запись встреча календарь перенести отменить неявка завершено",
+   "nl": "boeking afspraak agenda nieuw verplaatsen annuleren niet verschenen voltooid inloop",
+   "ro": "rezervare programare calendar nouă mutare anulare neprezentare finalizată",
+   "pl": "rezerwacja wizyta kalendarz nowa przeniesienie odwołanie nieobecność zakończona"
   },
   "steps": {
    "en": [
@@ -150,6 +183,27 @@
     "Откройте запись, чтобы перенести, отменить (клиент получит уведомление), отметить как завершённую или неявку.",
     "«Разрешить вне рабочих часов» — для клиентов без записи; пересечения всё равно блокируются.",
     "Завершённая запись отправляет клиенту просьбу оставить отзыв."
+   ],
+   "nl": [
+    "Bekijk de dag of week en filter op teamlid.",
+    "«Nieuwe boeking»: kies een dienst, tijd en een bestaande of nieuwe klant.",
+    "Open een boeking om te verplaatsen, annuleren (de klant krijgt bericht), of als voltooid of niet verschenen te markeren.",
+    "«Buiten openingstijden toestaan» laat je inloopklanten boeken; overlappingen blijven geblokkeerd.",
+    "Een afspraak als voltooid markeren stuurt de klant een reviewverzoek."
+   ],
+   "ro": [
+    "Vezi ziua sau săptămâna și filtrează după membru al echipei.",
+    "«Rezervare nouă»: alege serviciul, ora și un client existent sau nou.",
+    "Deschide o rezervare pentru a o muta, anula (clientul e anunțat), marca finalizată sau neprezentare.",
+    "«Permite în afara programului» îți permite rezervări spontane; suprapunerile rămân blocate.",
+    "Marcarea unei programări ca finalizată îi trimite clientului o cerere de recenzie."
+   ],
+   "pl": [
+    "Zobacz dzień lub tydzień i filtruj według członka zespołu.",
+    "«Nowa rezerwacja»: wybierz usługę, godzinę i istniejącego lub nowego klienta.",
+    "Otwórz rezerwację, aby ją przenieść, odwołać (klient dostaje powiadomienie), oznaczyć jako zakończoną lub nieobecność.",
+    "«Zezwól poza godzinami otwarcia» pozwala przyjąć klientów z ulicy; nakładanie się nadal jest blokowane.",
+    "Oznaczenie wizyty jako zakończonej wysyła klientowi prośbę o opinię."
    ]
   }
  },
@@ -168,7 +222,10 @@
    "de": "Zeit blockieren (Mittag, Pausen)",
    "it": "Bloccare orari (pranzo, pause)",
    "pt-BR": "Bloquear horários (almoço, pausas)",
-   "ru": "Блокировать время (обед, перерывы)"
+   "ru": "Блокировать время (обед, перерывы)",
+   "nl": "Tijd blokkeren (lunch, pauzes)",
+   "ro": "Blochează timp (prânz, pauze)",
+   "pl": "Blokowanie czasu (obiad, przerwy)"
   },
   "keywords": {
    "en": "not available block lunch break busy unavailable rest",
@@ -177,7 +234,10 @@
    "de": "nicht verfügbar blockieren mittag pause",
    "it": "non disponibile bloccare pranzo pausa",
    "pt-BR": "indisponível bloquear almoço pausa",
-   "ru": "недоступно блокировать обед перерыв"
+   "ru": "недоступно блокировать обед перерыв",
+   "nl": "niet beschikbaar blokkeren lunch pauze bezet rust",
+   "ro": "indisponibil blocare prânz pauză ocupat odihnă",
+   "pl": "niedostępny blokada obiad przerwa zajęty odpoczynek"
   },
   "steps": {
    "en": [
@@ -221,6 +281,24 @@
     "Выберите причину, день, с–до, для кого и повтор (7 дней подряд или тот же день недели 8 недель).",
     "Это время исчезнет со страницы записи, и ассистент не будет его предлагать. Существующие записи сохранятся.",
     "Блокировки показаны штриховкой; нажмите, чтобы снять. Постоянный ежедневный перерыв задайте в «Команда и часы»."
+   ],
+   "nl": [
+    "Druk in Boekingen op «Niet beschikbaar».",
+    "Kies de reden (lunch, pauze, persoonlijk of eigen), de dag, van–tot, voor wie het geldt en of het herhaalt (7 dagen achter elkaar of dezelfde weekdag 8 weken lang).",
+    "Die uren verdwijnen van je boekingspagina en de assistent biedt ze niet aan. Bestaande boekingen blijven staan.",
+    "Blokkeringen zijn gestreept in de agenda; klik erop om ze te verwijderen. Voor een vaste dagelijkse pauze: stel die in bij Team en uren."
+   ],
+   "ro": [
+    "În Rezervări apasă «Indisponibil».",
+    "Alege motivul (prânz, pauză, personal sau altul), ziua, de la–până la, pentru cine se aplică și dacă se repetă (7 zile la rând sau aceeași zi 8 săptămâni).",
+    "Acele ore dispar din pagina de rezervări și asistentul nu le oferă. Rezervările existente rămân.",
+    "Blocările apar hașurate în calendar; apasă pe una pentru a o elimina. Pentru o pauză zilnică fixă, setează-o în Echipă și program."
+   ],
+   "pl": [
+    "W Rezerwacjach naciśnij «Niedostępny».",
+    "Wybierz powód (obiad, przerwa, prywatne lub własny), dzień, od–do, kogo dotyczy i czy powtarzać (7 dni z rzędu lub ten sam dzień tygodnia przez 8 tygodni).",
+    "Te godziny znikają ze strony rezerwacji, a asystent ich nie proponuje. Istniejące rezerwacje zostają.",
+    "Blokady są w kalendarzu zakreskowane; kliknij, aby usunąć. Stałą codzienną przerwę ustaw w Zespół i godziny."
    ]
   }
  },
@@ -238,7 +316,10 @@
    "de": "Posteingang: Unterhaltungen",
    "it": "Posta in arrivo: conversazioni",
    "pt-BR": "Caixa de entrada: conversas",
-   "ru": "Входящие: переписки"
+   "ru": "Входящие: переписки",
+   "nl": "Inbox: gesprekken",
+   "ro": "Inbox: conversații",
+   "pl": "Skrzynka: rozmowy"
   },
   "keywords": {
    "en": "inbox messages chat conversation reply take over hand back escalated human",
@@ -247,7 +328,10 @@
    "de": "nachrichten chat antworten übernehmen zurückgeben eskaliert mensch",
    "it": "messaggi chat rispondere prendere il controllo restituire escalation umano",
    "pt-BR": "mensagens chat conversa responder assumir devolver escalado humano",
-   "ru": "сообщения чат ответить взять на себя вернуть эскалация человек"
+   "ru": "сообщения чат ответить взять на себя вернуть эскалация человек",
+   "nl": "inbox berichten chat gesprek antwoorden overnemen teruggeven geëscaleerd mens",
+   "ro": "inbox mesaje chat conversație răspuns preluare redare escaladat om",
+   "pl": "skrzynka wiadomości czat rozmowa odpowiedź przejęcie oddanie eskalacja człowiek"
   },
   "steps": {
    "en": [
@@ -298,6 +382,27 @@
     "Когда вы отвечаете сами, ассистент замолкает в этом чате.",
     "«Вернуть ассистенту» снова включает его ответы.",
     "Ваши ответы учат ассистента вашему стилю (Ассистент → Изучить мой стиль)."
+   ],
+   "nl": [
+    "Alle chats van WhatsApp, Telegram en de boekingspagina komen hier binnen.",
+    "Gesprekken die de assistent doorgaf zijn gemarkeerd met «Heeft je nodig».",
+    "Als je een antwoord schrijft neem je het over: de assistent zwijgt in die chat.",
+    "«Teruggeven aan de assistent» laat de assistent weer antwoorden.",
+    "Je eigen antwoorden leren de assistent je stijl (Assistent → Leer mijn stijl)."
+   ],
+   "ro": [
+    "Toate chaturile din WhatsApp, Telegram și pagina de rezervări ajung aici.",
+    "Conversațiile transmise de asistent sunt marcate «Are nevoie de tine».",
+    "Când scrii un răspuns, preiei conversația: asistentul tace în acel chat.",
+    "«Redă asistentului» îl lasă să răspundă din nou.",
+    "Răspunsurile tale îl învață pe asistent stilul tău (Asistent → Învață stilul meu)."
+   ],
+   "pl": [
+    "Tu trafiają wszystkie czaty z WhatsAppa, Telegrama i strony rezerwacji.",
+    "Rozmowy przekazane przez asystenta są oznaczone «Czeka na ciebie».",
+    "Pisząc odpowiedź, przejmujesz rozmowę: asystent milknie w tym czacie.",
+    "«Oddaj asystentowi» pozwala mu znów odpowiadać.",
+    "Twoje odpowiedzi uczą asystenta twojego stylu (Asystent → Naucz się mojego stylu)."
    ]
   }
  },
@@ -315,7 +420,10 @@
    "de": "Freigaben und Aktivität",
    "it": "Approvazioni e attività",
    "pt-BR": "Aprovações e atividade",
-   "ru": "Одобрения и активность"
+   "ru": "Одобрения и активность",
+   "nl": "Goedkeuringen en activiteit",
+   "ro": "Aprobări și activitate",
+   "pl": "Akceptacje i aktywność"
   },
   "keywords": {
    "en": "approve reject permission action log audit",
@@ -324,7 +432,10 @@
    "de": "genehmigen ablehnen berechtigung aktion protokoll",
    "it": "approvare rifiutare permesso azione registro",
    "pt-BR": "aprovar rejeitar permissão ação registro",
-   "ru": "одобрить отклонить разрешение действие журнал"
+   "ru": "одобрить отклонить разрешение действие журнал",
+   "nl": "goedkeuren afwijzen toestemming actie logboek",
+   "ro": "aprobare respingere permisiune acțiune jurnal",
+   "pl": "akceptuj odrzuć uprawnienie akcja dziennik"
   },
   "steps": {
    "en": [
@@ -368,6 +479,24 @@
     "Одобрите или отклоните; можно добавить заметку для клиента.",
     "В журнале активности видно всё, что сделал ассистент.",
     "Что требует одобрения, настраивается в Ассистент → Ассистент → Разрешения."
+   ],
+   "nl": [
+    "Als de assistent iets wil doen dat jouw akkoord nodig heeft (bijv. een annulering), wacht het hier.",
+    "Keur goed of wijs af; je kunt een notitie voor de klant toevoegen.",
+    "Het activiteitenlogboek toont alles wat de assistent deed.",
+    "Kies wat goedkeuring nodig heeft bij Assistent → Assistent → Toestemmingen."
+   ],
+   "ro": [
+    "Când asistentul vrea să facă ceva ce necesită acordul tău (de ex. o anulare), așteaptă aici.",
+    "Aprobă sau respinge; poți adăuga o notă pentru client.",
+    "Jurnalul de activitate arată tot ce a făcut asistentul.",
+    "Alege ce necesită aprobare în Asistent → Asistent → Permisiuni."
+   ],
+   "pl": [
+    "Gdy asystent chce zrobić coś, co wymaga twojej zgody (np. odwołanie), czeka tutaj.",
+    "Zatwierdź lub odrzuć; możesz dodać notatkę dla klienta.",
+    "Dziennik aktywności pokazuje wszystko, co zrobił asystent.",
+    "Wybierz, co wymaga akceptacji, w Asystent → Asystent → Uprawnienia."
    ]
   }
  },
@@ -385,7 +514,10 @@
    "de": "Kunden",
    "it": "Clienti",
    "pt-BR": "Clientes",
-   "ru": "Клиенты"
+   "ru": "Клиенты",
+   "nl": "Klanten",
+   "ro": "Clienți",
+   "pl": "Klienci"
   },
   "keywords": {
    "en": "customer client profile notes memory export erase gdpr delete data",
@@ -394,7 +526,10 @@
    "de": "kunde profil notizen gedächtnis export löschen dsgvo daten",
    "it": "cliente scheda note memoria esportare cancellare gdpr dati",
    "pt-BR": "cliente ficha notas memória exportar apagar lgpd dados",
-   "ru": "клиент карточка заметки память экспорт удалить данные"
+   "ru": "клиент карточка заметки память экспорт удалить данные",
+   "nl": "klant profiel notities geheugen exporteren wissen avg verwijderen gegevens",
+   "ro": "client profil note memorie export ștergere gdpr date",
+   "pl": "klient profil notatki pamięć eksport usunięcie rodo dane"
   },
   "steps": {
    "en": [
@@ -438,6 +573,24 @@
     "Откройте клиента: записи, переписки и то, что помнит ассистент.",
     "«Личные заметки» видит только ваша команда, ассистент их не читает.",
     "Можно продать абонемент, экспортировать или удалить данные (GDPR)."
+   ],
+   "nl": [
+    "Iedereen die boekte of je schreef, met wat ze uitgaven en hun laatste bezoek.",
+    "Open een klant om boekingen, gesprekken en wat de assistent over hen onthoudt te zien.",
+    "«Privénotities» zijn alleen voor je team; de assistent leest ze niet.",
+    "Je kunt een kaart verkopen, hun gegevens exporteren of wissen (AVG)."
+   ],
+   "ro": [
+    "Toți cei care au rezervat sau ți-au scris, cu cât au cheltuit și ultima vizită.",
+    "Deschide un client pentru a vedea rezervările, conversațiile și ce își amintește asistentul despre el.",
+    "«Notițele private» sunt doar pentru echipă; asistentul nu le citește.",
+    "Poți vinde un abonament, exporta datele sau șterge (GDPR)."
+   ],
+   "pl": [
+    "Każdy, kto rezerwował lub do ciebie pisał, z wydaną kwotą i ostatnią wizytą.",
+    "Otwórz klienta, aby zobaczyć rezerwacje, rozmowy i co asystent o nim pamięta.",
+    "«Prywatne notatki» są tylko dla zespołu; asystent ich nie czyta.",
+    "Możesz sprzedać karnet, wyeksportować dane lub je usunąć (RODO)."
    ]
   }
  },
@@ -455,7 +608,10 @@
    "de": "Bewertungen",
    "it": "Recensioni",
    "pt-BR": "Avaliações",
-   "ru": "Отзывы"
+   "ru": "Отзывы",
+   "nl": "Reviews",
+   "ro": "Recenzii",
+   "pl": "Opinie"
   },
   "keywords": {
    "en": "review rating stars reply hide",
@@ -464,7 +620,10 @@
    "de": "bewertung sterne antworten ausblenden",
    "it": "recensione stelle valutazione rispondere nascondere",
    "pt-BR": "avaliação estrelas responder ocultar",
-   "ru": "отзыв рейтинг звёзды ответить скрыть"
+   "ru": "отзыв рейтинг звёзды ответить скрыть",
+   "nl": "review beoordeling sterren antwoorden verbergen",
+   "ro": "recenzie evaluare stele răspuns ascunde",
+   "pl": "opinia ocena gwiazdki odpowiedź ukryj"
   },
   "steps": {
    "en": [
@@ -501,6 +660,21 @@
     "Когда вы отмечаете запись завершённой, клиент получает ссылку для отзыва.",
     "Отзывы и средний балл видны на вашей странице записи.",
     "Можно ответить публично или скрыть отзыв."
+   ],
+   "nl": [
+    "Als je een afspraak als voltooid markeert, krijgt de klant een link om te beoordelen.",
+    "Reviews en je gemiddelde score staan op je boekingspagina.",
+    "Schrijf een openbaar antwoord of verberg een review van je pagina."
+   ],
+   "ro": [
+    "Când marchezi o programare ca finalizată, clientul primește un link pentru a o evalua.",
+    "Recenziile și nota medie apar pe pagina de rezervări.",
+    "Scrie un răspuns public sau ascunde o recenzie de pe pagină."
+   ],
+   "pl": [
+    "Po oznaczeniu wizyty jako zakończonej klient dostaje link do oceny.",
+    "Opinie i średnia ocena są na twojej stronie rezerwacji.",
+    "Napisz publiczną odpowiedź lub ukryj opinię ze strony."
    ]
   }
  },
@@ -518,7 +692,10 @@
    "de": "Dein Assistent: Persönlichkeit und Anweisungen",
    "it": "Il tuo assistente: personalità e istruzioni",
    "pt-BR": "Seu assistente: personalidade e instruções",
-   "ru": "Ваш ассистент: характер и инструкции"
+   "ru": "Ваш ассистент: характер и инструкции",
+   "nl": "Je assistent: persoonlijkheid en instructies",
+   "ro": "Asistentul tău: personalitate și instrucțiuni",
+   "pl": "Twój asystent: osobowość i instrukcje"
   },
   "keywords": {
    "en": "assistant agent ai personality tone instructions greeting emoji language escalate test playground pause",
@@ -527,7 +704,10 @@
    "de": "assistent ki persönlichkeit ton anweisungen begrüßung emoji sprache testen pausieren",
    "it": "assistente ia personalità tono istruzioni saluto emoji lingua provare pausa",
    "pt-BR": "assistente ia personalidade tom instruções saudação emoji idioma testar pausar",
-   "ru": "ассистент ии характер тон инструкции приветствие эмодзи язык тест пауза"
+   "ru": "ассистент ии характер тон инструкции приветствие эмодзи язык тест пауза",
+   "nl": "assistent agent ai persoonlijkheid toon instructies begroeting emoji taal escaleren test pauze",
+   "ro": "asistent agent ai personalitate ton instrucțiuni salut emoji limbă escaladare test pauză",
+   "pl": "asystent agent ai osobowość ton instrukcje powitanie emoji język eskalacja test pauza"
   },
   "steps": {
    "en": [
@@ -571,6 +751,24 @@
     "«Инструкции»: простыми словами — что делать всегда и чего никогда.",
     "«Всегда передавать, если клиент упоминает»: слова, при которых чат переходит к вам.",
     "Проверьте его в чате справа; переключатель вверху ставит его на паузу."
+   ],
+   "nl": [
+    "Kies naam, toon, formaliteit en standaardtaal (hij volgt altijd de taal van de klant).",
+    "«Instructies»: schrijf in gewone woorden wat hij altijd of nooit moet doen.",
+    "«Altijd doorgeven als een klant noemt»: woorden die de chat aan jou doorgeven.",
+    "Test hem in de chat rechts voordat je live gaat; de schakelaar bovenaan pauzeert hem."
+   ],
+   "ro": [
+    "Alege numele, tonul, formalitatea și limba implicită (urmează mereu limba clientului).",
+    "«Instrucțiuni»: scrie simplu ce trebuie să facă mereu sau niciodată.",
+    "«Transmite mereu când clientul menționează»: cuvinte care îți trec chatul ție.",
+    "Testează-l în chatul din dreapta înainte de lansare; comutatorul de sus îl pune pe pauză."
+   ],
+   "pl": [
+    "Wybierz imię, ton, formalność i domyślny język (zawsze dopasowuje się do języka klienta).",
+    "«Instrukcje»: napisz prostymi słowami, co ma zawsze lub nigdy robić.",
+    "«Zawsze przekazuj, gdy klient wspomni»: słowa, które przekazują ci czat.",
+    "Przetestuj go w czacie po prawej przed startem; przełącznik u góry go wstrzymuje."
    ]
   }
  },
@@ -588,7 +786,10 @@
    "de": "Meinen Stil lernen",
    "it": "Impara il mio stile",
    "pt-BR": "Aprender meu estilo",
-   "ru": "Изучить мой стиль"
+   "ru": "Изучить мой стиль",
+   "nl": "Leer mijn stijl",
+   "ro": "Învață stilul meu",
+   "pl": "Naucz się mojego stylu"
   },
   "keywords": {
    "en": "style voice human analyse conversations export whatsapp telegram writing",
@@ -597,7 +798,10 @@
    "de": "stil stimme menschlich analysieren unterhaltungen export whatsapp telegram",
    "it": "stile voce umano analizzare conversazioni esportare whatsapp telegram",
    "pt-BR": "estilo voz humano analisar conversas exportar whatsapp telegram",
-   "ru": "стиль голос человечный анализ переписки экспорт whatsapp telegram"
+   "ru": "стиль голос человечный анализ переписки экспорт whatsapp telegram",
+   "nl": "stijl stem menselijk analyseren gesprekken export whatsapp telegram schrijven",
+   "ro": "stil voce uman analiză conversații export whatsapp telegram scriere",
+   "pl": "styl głos ludzki analiza rozmowy eksport whatsapp telegram pisanie"
   },
   "steps": {
    "en": [
@@ -648,6 +852,27 @@
     "По желанию загрузите экспорт чата (WhatsApp → чат → ⋮ → Ещё → Экспорт чата → без медиа; Telegram Desktop → Экспорт истории → JSON) и укажите своё имя, как в чате.",
     "Проверьте и отредактируйте описание, затем «Сохранить стиль». До этого ничего не применяется.",
     "Сохраняются только ваши привычки письма, никогда — данные клиентов."
+   ],
+   "nl": [
+    "Ga naar Assistent → Assistent, kaart «Leer mijn stijl».",
+    "Druk op «Analyseer mijn gesprekken»: hij leest antwoorden die je zelf schreef.",
+    "Optioneel: upload een chatexport (WhatsApp → chat → ⋮ → Meer → Chat exporteren → zonder media; Telegram Desktop → Chatgeschiedenis exporteren → JSON) en schrijf je naam zoals die erin staat.",
+    "Bekijk en bewerk de gids, dan «Stijl opslaan». Er wordt niets gebruikt tot je opslaat.",
+    "Alleen je schrijfgewoonten worden bewaard, nooit namen of gegevens van klanten."
+   ],
+   "ro": [
+    "Mergi la Asistent → Asistent, cardul «Învață stilul meu».",
+    "Apasă «Analizează conversațiile mele»: citește răspunsurile scrise de tine.",
+    "Opțional: încarcă un export de chat (WhatsApp → chat → ⋮ → Mai mult → Exportă chat → fără fișiere media; Telegram Desktop → Exportă istoricul → JSON) și scrie-ți numele cum apare acolo.",
+    "Revizuiește și editează ghidul, apoi «Salvează stilul». Nimic nu se folosește până nu salvezi.",
+    "Se păstrează doar obiceiurile tale de scriere, niciodată numele sau datele clienților."
+   ],
+   "pl": [
+    "Przejdź do Asystent → Asystent, karta «Naucz się mojego stylu».",
+    "Naciśnij «Przeanalizuj moje rozmowy»: czyta odpowiedzi napisane przez ciebie.",
+    "Opcjonalnie: prześlij eksport czatu (WhatsApp → czat → ⋮ → Więcej → Eksportuj czat → bez multimediów; Telegram Desktop → Eksportuj historię czatu → JSON) i wpisz swoje imię tak, jak tam występuje.",
+    "Przejrzyj i popraw przewodnik, potem «Zapisz styl». Nic nie jest używane przed zapisaniem.",
+    "Zapisywane są tylko twoje nawyki pisania, nigdy imiona ani dane klientów."
    ]
   }
  },
@@ -665,7 +890,10 @@
    "de": "Was der Assistent darf (Berechtigungen)",
    "it": "Cosa può fare l'assistente (permessi)",
    "pt-BR": "O que o assistente pode fazer (permissões)",
-   "ru": "Что может ассистент (разрешения)"
+   "ru": "Что может ассистент (разрешения)",
+   "nl": "Wat de assistent mag doen (toestemmingen)",
+   "ro": "Ce poate face asistentul (permisiuni)",
+   "pl": "Co może asystent (uprawnienia)"
   },
   "keywords": {
    "en": "permissions auto approve off cancel reschedule book",
@@ -674,7 +902,10 @@
    "de": "berechtigungen automatisch freigeben aus stornieren verschieben",
    "it": "permessi automatico approvare disattivato annullare spostare",
    "pt-BR": "permissões automático aprovar desligado cancelar remarcar",
-   "ru": "разрешения автоматически одобрить выключено отменить перенести"
+   "ru": "разрешения автоматически одобрить выключено отменить перенести",
+   "nl": "toestemmingen automatisch goedkeuren uit annuleren verplaatsen boeken",
+   "ro": "permisiuni automat aprobare oprit anulare mutare rezervare",
+   "pl": "uprawnienia automatycznie akceptacja wyłączone odwołanie przeniesienie rezerwacja"
   },
   "steps": {
    "en": [
@@ -711,6 +942,21 @@
     "Для каждого действия (записать, перенести, отменить…) выберите: сам, с вашим одобрением или запрещено.",
     "Действия, требующие одобрения, ждут в разделе Одобрения.",
     "Меняется в любое время: Ассистент → Ассистент → Разрешения."
+   ],
+   "nl": [
+    "Kies per actie (boeken, verplaatsen, annuleren…): zelfstandig, met jouw goedkeuring of niet toegestaan.",
+    "Acties die goedkeuring nodig hebben wachten bij Goedkeuringen.",
+    "Wijzig het altijd bij Assistent → Assistent → Toestemmingen."
+   ],
+   "ro": [
+    "Pentru fiecare acțiune (rezervare, mutare, anulare…) alege: singur, cu aprobarea ta sau nepermis.",
+    "Acțiunile care necesită aprobare așteaptă în Aprobări.",
+    "Schimbă oricând în Asistent → Asistent → Permisiuni."
+   ],
+   "pl": [
+    "Dla każdej akcji (rezerwacja, przeniesienie, odwołanie…) wybierz: samodzielnie, za twoją zgodą lub niedozwolone.",
+    "Akcje wymagające zgody czekają w Akceptacjach.",
+    "Zmień w dowolnej chwili w Asystent → Asystent → Uprawnienia."
    ]
   }
  },
@@ -728,7 +974,10 @@
    "de": "Wissen: FAQs und Dokumente",
    "it": "Conoscenza: FAQ e documenti",
    "pt-BR": "Conhecimento: perguntas frequentes e documentos",
-   "ru": "Знания: FAQ и документы"
+   "ru": "Знания: FAQ и документы",
+   "nl": "Kennis: FAQ's en documenten",
+   "ro": "Cunoștințe: întrebări frecvente și documente",
+   "pl": "Wiedza: FAQ i dokumenty"
   },
   "keywords": {
    "en": "knowledge faq question answer policy document upload parking payment",
@@ -737,7 +986,10 @@
    "de": "wissen faq frage antwort richtlinie dokument hochladen",
    "it": "conoscenza faq domanda risposta politica documento caricare",
    "pt-BR": "conhecimento perguntas resposta política documento enviar",
-   "ru": "знания вопросы ответы правила документ загрузить"
+   "ru": "знания вопросы ответы правила документ загрузить",
+   "nl": "kennis faq vraag antwoord beleid document uploaden parkeren betaling",
+   "ro": "cunoștințe faq întrebare răspuns politică document încărcare parcare plată",
+   "pl": "wiedza faq pytanie odpowiedź zasady dokument przesyłanie parking płatność"
   },
   "steps": {
    "en": [
@@ -774,6 +1026,21 @@
     "Ассистент уже знает ваши услуги, цены, команду, часы и правила записи.",
     "Добавьте FAQ для остального: парковка, способы оплаты, что взять с собой, опоздания.",
     "Загружайте документы (.txt, .md, .csv, .json, .html до 1 МБ); длинные используются по необходимости."
+   ],
+   "nl": [
+    "De assistent kent al je diensten, prijzen, team, uren en boekingsregels.",
+    "Voeg FAQ's toe voor de rest: parkeren, betaalmethoden, wat mee te nemen, te laat komen.",
+    "Upload documenten (.txt, .md, .csv, .json, .html tot 1 MB); lange worden doorzocht wanneer nodig."
+   ],
+   "ro": [
+    "Asistentul cunoaște deja serviciile, prețurile, echipa, programul și regulile de rezervare.",
+    "Adaugă întrebări frecvente pentru rest: parcare, metode de plată, ce să aducă, întârzieri.",
+    "Încarcă documente (.txt, .md, .csv, .json, .html până la 1 MB); cele lungi sunt căutate la nevoie."
+   ],
+   "pl": [
+    "Asystent zna już twoje usługi, ceny, zespół, godziny i zasady rezerwacji.",
+    "Dodaj FAQ na resztę: parking, metody płatności, co zabrać, spóźnienia.",
+    "Prześlij dokumenty (.txt, .md, .csv, .json, .html do 1 MB); długie są przeszukiwane w razie potrzeby."
    ]
   }
  },
@@ -791,7 +1058,10 @@
    "de": "Kanäle: Telegram, WhatsApp und Web-Chat",
    "it": "Canali: Telegram, WhatsApp e chat web",
    "pt-BR": "Canais: Telegram, WhatsApp e chat web",
-   "ru": "Каналы: Telegram, WhatsApp и веб-чат"
+   "ru": "Каналы: Telegram, WhatsApp и веб-чат",
+   "nl": "Kanalen: Telegram, WhatsApp en webchat",
+   "ro": "Canale: Telegram, WhatsApp și chat web",
+   "pl": "Kanały: Telegram, WhatsApp i czat na stronie"
   },
   "keywords": {
    "en": "channels telegram whatsapp link connect qr web chat booking page",
@@ -800,7 +1070,10 @@
    "de": "kanäle telegram whatsapp link verbinden qr web-chat",
    "it": "canali telegram whatsapp link collegare qr chat web",
    "pt-BR": "canais telegram whatsapp link conectar qr chat web",
-   "ru": "каналы telegram whatsapp ссылка подключить qr веб-чат"
+   "ru": "каналы telegram whatsapp ссылка подключить qr веб-чат",
+   "nl": "kanalen telegram whatsapp link verbinden qr webchat boekingspagina",
+   "ro": "canale telegram whatsapp link conectare qr chat web pagină rezervări",
+   "pl": "kanały telegram whatsapp link połącz qr czat strona rezerwacji"
   },
   "steps": {
    "en": [
@@ -844,6 +1117,24 @@
     "Telegram: нажмите «Включить Telegram» и делитесь личной ссылкой (био Instagram, сайт, чеки). Она открывает общий бот сразу на вашем бизнесе.",
     "WhatsApp: подключите WhatsApp Business, которым уже пользуетесь; телефон работает как обычно. Сообщения за последние 30 дней импортируются, чтобы изучить ваш стиль.",
     "Канал можно отключить в любой момент."
+   ],
+   "nl": [
+    "De chat op de boekingspagina staat altijd aan.",
+    "Telegram: druk op «Telegram aanzetten» en deel je persoonlijke link (Instagram-bio, website, bonnetjes). Hij opent de gedeelde bot direct op je bedrijf.",
+    "WhatsApp: koppel de WhatsApp Business-app die je al gebruikt; je telefoon werkt gewoon door. Berichten van de laatste 30 dagen worden geïmporteerd om je stijl te leren.",
+    "Je kunt een kanaal altijd ontkoppelen."
+   ],
+   "ro": [
+    "Chatul de pe pagina de rezervări e mereu activ.",
+    "Telegram: apasă «Activează Telegram» și distribuie linkul personal (bio Instagram, site, bonuri). Deschide botul comun direct pe afacerea ta.",
+    "WhatsApp: conectează aplicația WhatsApp Business pe care o folosești deja; telefonul funcționează ca de obicei. Mesajele din ultimele 30 de zile se importă pentru a-ți învăța stilul.",
+    "Poți deconecta un canal oricând."
+   ],
+   "pl": [
+    "Czat na stronie rezerwacji jest zawsze włączony.",
+    "Telegram: naciśnij «Włącz Telegram» i udostępnij swój link (bio na Instagramie, strona, paragony). Otwiera wspólnego bota od razu na twojej firmie.",
+    "WhatsApp: połącz aplikację WhatsApp Business, której już używasz; telefon działa normalnie. Wiadomości z ostatnich 30 dni są importowane, by poznać twój styl.",
+    "Kanał możesz odłączyć w każdej chwili."
    ]
   }
  },
@@ -861,7 +1152,10 @@
    "de": "Leistungen und Preise",
    "it": "Servizi e prezzi",
    "pt-BR": "Serviços e preços",
-   "ru": "Услуги и цены"
+   "ru": "Услуги и цены",
+   "nl": "Diensten en prijzen",
+   "ro": "Servicii și prețuri",
+   "pl": "Usługi i ceny"
   },
   "keywords": {
    "en": "service price duration buffer staff archive catalog",
@@ -870,7 +1164,10 @@
    "de": "leistung preis dauer puffer team archivieren katalog",
    "it": "servizio prezzo durata pausa team archiviare catalogo",
    "pt-BR": "serviço preço duração intervalo equipe arquivar catálogo",
-   "ru": "услуга цена длительность перерыв сотрудник архив каталог"
+   "ru": "услуга цена длительность перерыв сотрудник архив каталог",
+   "nl": "dienst prijs duur buffer medewerker archiveren catalogus",
+   "ro": "serviciu preț durată pauză personal arhivare catalog",
+   "pl": "usługa cena czas bufor personel archiwizuj katalog"
   },
   "steps": {
    "en": [
@@ -914,6 +1211,24 @@
     "«Выполнил»: отметьте, кто может; никто не отмечен — любой.",
     "Ассистент называет именно эти цены и длительность.",
     "Архивируйте услугу, чтобы скрыть её; существующие записи сохраняются."
+   ],
+   "nl": [
+    "Elke dienst heeft naam, beschrijving, minuten, buffer (rusttijd erna) en prijs.",
+    "«Uitgevoerd door»: vink aan wie het kan doen; niets aangevinkt betekent iedereen.",
+    "De assistent noemt deze prijzen en duur exact.",
+    "Archiveer een dienst om hem te verbergen; bestaande boekingen blijven."
+   ],
+   "ro": [
+    "Fiecare serviciu are nume, descriere, minute, pauză (timp de odihnă după) și preț.",
+    "«Realizat de»: bifează cine îl poate face; nimic bifat înseamnă oricine.",
+    "Asistentul comunică exact aceste prețuri și durate.",
+    "Arhivează un serviciu pentru a-l ascunde; rezervările existente rămân."
+   ],
+   "pl": [
+    "Każda usługa ma nazwę, opis, minuty, bufor (czas przerwy po) i cenę.",
+    "«Wykonuje»: zaznacz, kto może ją wykonać; brak zaznaczenia = każdy.",
+    "Asystent podaje dokładnie te ceny i czasy.",
+    "Zarchiwizuj usługę, aby ją ukryć; istniejące rezerwacje zostają."
    ]
   }
  },
@@ -931,7 +1246,10 @@
    "de": "Team, Zeiten und freie Tage",
    "it": "Team, orari e giorni liberi",
    "pt-BR": "Equipe, horários e folgas",
-   "ru": "Команда, часы и выходные"
+   "ru": "Команда, часы и выходные",
+   "nl": "Team, uren en vrije dagen",
+   "ro": "Echipă, program și zile libere",
+   "pl": "Zespół, godziny i dni wolne"
   },
   "keywords": {
    "en": "team staff hours schedule opening closing break holiday time off closed",
@@ -940,7 +1258,10 @@
    "de": "team zeiten öffnung schließung pause urlaub frei geschlossen",
    "it": "team orari apertura chiusura pausa ferie chiuso",
    "pt-BR": "equipe horário abertura fechamento pausa férias folga fechado",
-   "ru": "команда часы открытие закрытие перерыв отпуск выходной"
+   "ru": "команда часы открытие закрытие перерыв отпуск выходной",
+   "nl": "team medewerkers uren rooster openen sluiten pauze vakantie vrij gesloten",
+   "ro": "echipă personal program deschidere închidere pauză vacanță liber închis",
+   "pl": "zespół personel godziny grafik otwarcie zamknięcie przerwa urlop wolne zamknięte"
   },
   "steps": {
    "en": [
@@ -984,6 +1305,24 @@
     "Задайте время открытия и закрытия на каждый день, при желании с перерывом.",
     "«Отпуска и закрытия»: отпуск или обучение одного человека или всего бизнеса.",
     "Эти часы определяют доступность везде: страница записи, ассистент и приложение."
+   ],
+   "nl": [
+    "Voeg teamleden toe (met fotokleur, functie en korte bio die klanten en de assistent zien).",
+    "Stel per dag openings- en sluitingstijd in, met optionele pauze.",
+    "«Vrij en sluitingen»: vakantie of training voor één persoon of het hele bedrijf.",
+    "Deze uren bepalen overal de beschikbaarheid: boekingspagina, assistent en app."
+   ],
+   "ro": [
+    "Adaugă membri (cu culoare, titlu și scurtă descriere văzute de clienți și asistent).",
+    "Setează ora de deschidere și închidere pe zi, cu pauză opțională.",
+    "«Libere și închideri»: vacanțe sau cursuri pentru o persoană sau toată afacerea.",
+    "Aceste ore decid disponibilitatea peste tot: pagina de rezervări, asistentul și aplicația."
+   ],
+   "pl": [
+    "Dodaj członków zespołu (z kolorem, stanowiskiem i krótkim opisem widocznym dla klientów i asystenta).",
+    "Ustaw godzinę otwarcia i zamknięcia dla każdego dnia, z opcjonalną przerwą.",
+    "«Wolne i zamknięcia»: urlopy lub szkolenia jednej osoby lub całej firmy.",
+    "Te godziny decydują o dostępności wszędzie: strona rezerwacji, asystent i aplikacja."
    ]
   }
  },
@@ -1002,7 +1341,10 @@
    "de": "Pakete (vorausbezahlte Sitzungen)",
    "it": "Pacchetti (sedute prepagate)",
    "pt-BR": "Pacotes (sessões pré-pagas)",
-   "ru": "Абонементы (предоплаченные сеансы)"
+   "ru": "Абонементы (предоплаченные сеансы)",
+   "nl": "Kaarten (vooruitbetaalde sessies)",
+   "ro": "Abonamente (ședințe preplătite)",
+   "pl": "Karnety (przedpłacone sesje)"
   },
   "keywords": {
    "en": "pack bundle prepaid sessions voucher sell discount",
@@ -1011,7 +1353,10 @@
    "de": "paket prepaid sitzungen gutschein verkaufen rabatt",
    "it": "pacchetto prepagato sedute vendere sconto",
    "pt-BR": "pacote pré-pago sessões vender desconto",
-   "ru": "абонемент пакет предоплата сеансы продать скидка"
+   "ru": "абонемент пакет предоплата сеансы продать скидка",
+   "nl": "kaart bundel vooruitbetaald sessies tegoedbon verkopen korting",
+   "ro": "abonament pachet preplătit ședințe voucher vânzare reducere",
+   "pl": "karnet pakiet przedpłata sesje voucher sprzedaż rabat"
   },
   "steps": {
    "en": [
@@ -1062,6 +1407,27 @@
     "Когда клиент записывается на эту услугу, запись списывается с абонемента и считается оплаченной (с того, что истекает раньше).",
     "Отмена записи возвращает сеанс. Абонемент можно аннулировать.",
     "Ассистент рассказывает об абонементах и знает остаток у каждого клиента, но продавать их не может. Онлайн-продажа появится с оплатой картой."
+   ],
+   "nl": [
+    "Maak een kaart bij Bedrijf → Kaarten: naam, dienst, aantal sessies, prijs en geldigheid in dagen (de besparing wordt getoond).",
+    "Verkoop hem vanaf de klantpagina: kaart «Kaarten» → «Kaart verkopen (ter plekke betaald)».",
+    "Als die klant die dienst boekt, gaat de boeking van de kaart af en is betaald (van de kaart die het eerst verloopt).",
+    "Een boeking annuleren geeft de sessie terug. Je kunt een kaart ook ongeldig maken.",
+    "De assistent legt je kaarten uit en weet hoeveel sessies elke klant nog heeft, maar kan ze niet verkopen. Online verkoop komt met kaartbetalingen."
+   ],
+   "ro": [
+    "Creează un abonament în Afacere → Abonamente: nume, serviciu, număr de ședințe, preț și zile de valabilitate (economia e afișată).",
+    "Vinde-l din pagina clientului: cardul «Abonamente» → «Vinde un abonament (plătit pe loc)».",
+    "Când clientul rezervă acel serviciu, rezervarea se scade din abonament și e marcată plătită (din cel care expiră primul).",
+    "Anularea unei rezervări returnează ședința. Poți și anula un abonament.",
+    "Asistentul explică abonamentele și știe câte ședințe mai are fiecare client, dar nu le poate vinde. Vânzarea online vine cu plata cu cardul."
+   ],
+   "pl": [
+    "Utwórz karnet w Firma → Karnety: nazwa, usługa, liczba sesji, cena i ważność w dniach (oszczędność jest pokazana).",
+    "Sprzedaj go na stronie klienta: karta «Karnety» → «Sprzedaj karnet (płatny na miejscu)».",
+    "Gdy klient zarezerwuje tę usługę, rezerwacja jest pobierana z karnetu i oznaczana jako opłacona (z tego, który wygasa najwcześniej).",
+    "Odwołanie rezerwacji zwraca sesję. Karnet możesz też unieważnić.",
+    "Asystent objaśnia karnety i wie, ile sesji zostało każdemu klientowi, ale nie może ich sprzedawać. Sprzedaż online pojawi się z płatnościami kartą."
    ]
   }
  },
@@ -1079,7 +1445,10 @@
    "de": "Einstellungen: Profil und Buchungsregeln",
    "it": "Impostazioni: profilo e regole di prenotazione",
    "pt-BR": "Configurações: perfil e regras de reserva",
-   "ru": "Настройки: профиль и правила записи"
+   "ru": "Настройки: профиль и правила записи",
+   "nl": "Instellingen: profiel en boekingsregels",
+   "ro": "Setări: profil și reguli de rezervare",
+   "pl": "Ustawienia: profil i zasady rezerwacji"
   },
   "keywords": {
    "en": "settings profile currency timezone logo color notice cancellation confirm automatically policy publish marketplace",
@@ -1088,7 +1457,10 @@
    "de": "einstellungen profil währung zeitzone logo farbe vorlauf stornierung bestätigen richtlinie veröffentlichen",
    "it": "impostazioni profilo valuta fuso logo colore preavviso cancellazione confermare politica pubblicare",
    "pt-BR": "configurações perfil moeda fuso logo cor antecedência cancelamento confirmar política publicar",
-   "ru": "настройки профиль валюта часовой пояс логотип цвет отмена подтверждение правила публикация"
+   "ru": "настройки профиль валюта часовой пояс логотип цвет отмена подтверждение правила публикация",
+   "nl": "instellingen profiel valuta tijdzone logo kleur termijn annulering automatisch bevestigen beleid publiceren gids",
+   "ro": "setări profil monedă fus orar logo culoare preaviz anulare confirmare automată politică publicare director",
+   "pl": "ustawienia profil waluta strefa czasowa logo kolor wyprzedzenie odwołanie automatyczne potwierdzenie zasady publikacja katalog"
   },
   "steps": {
    "en": [
@@ -1139,6 +1511,27 @@
     "Правила: минимальное время до записи, на сколько вперёд можно записаться, бесплатная отмена, шаг слотов и автоподтверждение (выкл. = записи приходят как заявки).",
     "«Правила для клиентов»: опоздания, предоплата, что взять с собой…",
     "Публикация: показываться в каталоге или только для команды."
+   ],
+   "nl": [
+    "Profiel: naam, categorie, beschrijving, contact, valuta en tijdzone. De assistent leest dit allemaal.",
+    "Huisstijl: merkkleur, logo en omslagfoto van je boekingspagina.",
+    "Boekingsregels: minimale termijn, hoe ver vooruit men kan boeken, gratis annuleringstermijn, tijdrooster en automatische bevestiging (uit = boekingen komen als aanvraag binnen).",
+    "«Beleid voor klanten»: te laat komen, aanbetalingen, wat mee te nemen…",
+    "Publiceren: vermeld je pagina in de gids of houd hem privé voor je team."
+   ],
+   "ro": [
+    "Profil: nume, categorie, descriere, contact, monedă și fus orar. Asistentul citește toate acestea.",
+    "Identitate vizuală: culoarea mărcii, logo și imagine de copertă pentru pagina de rezervări.",
+    "Reguli: preaviz minim, cât de departe se poate rezerva, termen de anulare gratuită, grila orelor și confirmare automată (oprită = rezervările vin ca cereri).",
+    "«Politica afișată clienților»: întârzieri, avansuri, ce să aducă…",
+    "Publicare: listează pagina în director sau păstreaz-o privată pentru echipă."
+   ],
+   "pl": [
+    "Profil: nazwa, kategoria, opis, kontakt, waluta i strefa czasowa. Asystent czyta to wszystko.",
+    "Wygląd: kolor marki, logo i zdjęcie okładki strony rezerwacji.",
+    "Zasady: minimalne wyprzedzenie, jak daleko naprzód można rezerwować, okno bezpłatnego odwołania, siatka godzin i automatyczne potwierdzanie (wyłączone = rezerwacje przychodzą jako prośby).",
+    "«Zasady dla klientów»: spóźnienia, zaliczki, co zabrać…",
+    "Publikacja: pokaż stronę w katalogu lub zachowaj ją prywatną dla zespołu."
    ]
   }
  },
@@ -1157,7 +1550,10 @@
    "de": "Google Kalender",
    "it": "Google Calendar",
    "pt-BR": "Google Agenda",
-   "ru": "Google Календарь"
+   "ru": "Google Календарь",
+   "nl": "Google Agenda",
+   "ro": "Google Calendar",
+   "pl": "Kalendarz Google"
   },
   "keywords": {
    "en": "google calendar sync connect busy events agenda gmail",
@@ -1166,7 +1562,10 @@
    "de": "google kalender synchronisieren verbinden belegt termine",
    "it": "google calendar calendario sincronizzare collegare occupato eventi",
    "pt-BR": "google agenda calendário sincronizar conectar ocupado eventos",
-   "ru": "google календарь синхронизация подключить занято события"
+   "ru": "google календарь синхронизация подключить занято события",
+   "nl": "google agenda synchroniseren verbinden bezet afspraken gmail",
+   "ro": "google calendar sincronizare conectare ocupat evenimente agendă gmail",
+   "pl": "kalendarz google synchronizacja połącz zajęty wydarzenia gmail"
   },
   "steps": {
    "en": [
@@ -1217,6 +1616,27 @@
     "«Блокировать занятое время»: ваши личные события делают эти часы недоступными на странице и для ассистента. События «свободен» и записи AIBA не учитываются дважды.",
     "«Чей это календарь?»: выберите сотрудника или весь бизнес.",
     "Отключить можно в любой момент; созданные события останутся в календаре."
+   ],
+   "nl": [
+    "Ga naar Bedrijf → Instellingen, kaart «Google Agenda», en druk op «Google Agenda verbinden». Log in met je Google-account en geef toegang tot de agenda.",
+    "«Mijn boekingen toevoegen aan Google Agenda»: elke boeking verschijnt in je agenda met de gegevens van de klant, en verschuift of verdwijnt bij wijziging of annulering. Aanvragen staan er met ⏳.",
+    "«Mijn bezette tijden blokkeren»: je eigen afspraken (dokter, school…) maken die uren onboekbaar op je pagina en voor de assistent. Afspraken als «beschikbaar» en boekingen van AIBA tellen niet dubbel.",
+    "«Van wie is de agenda?»: kies het teamlid wiens beschikbaarheid hij blokkeert, of het hele bedrijf.",
+    "Je kunt altijd ontkoppelen; al aangemaakte afspraken blijven in je agenda."
+   ],
+   "ro": [
+    "Mergi la Afacere → Setări, cardul «Google Calendar», și apasă «Conectează Google Calendar». Conectează-te cu contul Google și permite accesul la calendar.",
+    "«Adaugă rezervările mele în Google Calendar»: fiecare rezervare apare cu datele clientului și se mută sau dispare la modificare sau anulare. Cererile în așteptare apar cu ⏳.",
+    "«Blochează orele mele ocupate»: evenimentele tale (medic, școală…) fac acele ore indisponibile pe pagină și pentru asistent. Cele marcate «liber» și rezervările AIBA nu se numără de două ori.",
+    "«Al cui este calendarul?»: alege membrul echipei căruia îi blochează disponibilitatea, sau toată afacerea.",
+    "Te poți deconecta oricând; evenimentele create rămân în calendar."
+   ],
+   "pl": [
+    "Przejdź do Firma → Ustawienia, karta «Kalendarz Google», i naciśnij «Połącz Kalendarz Google». Zaloguj się kontem Google i zezwól na dostęp do kalendarza.",
+    "«Dodawaj moje rezerwacje do Kalendarza Google»: każda rezerwacja pojawia się z danymi klienta i przesuwa się lub znika po zmianie lub odwołaniu. Oczekujące prośby mają ⏳.",
+    "«Blokuj mój zajęty czas»: twoje wydarzenia (lekarz, szkoła…) blokują te godziny na stronie i dla asystenta. Wydarzenia «wolny» i rezerwacje z AIBA nie liczą się podwójnie.",
+    "«Czyj to kalendarz?»: wybierz członka zespołu, którego dostępność blokuje, lub całą firmę.",
+    "Możesz odłączyć w każdej chwili; utworzone wydarzenia zostają w kalendarzu."
    ]
   }
  },
@@ -1234,7 +1654,10 @@
    "de": "Rechnungen und Quartalssummen",
    "it": "Fatture e totali trimestrali",
    "pt-BR": "Faturas e totais por trimestre",
-   "ru": "Счета и квартальные итоги"
+   "ru": "Счета и квартальные итоги",
+   "nl": "Facturen en kwartaaltotalen",
+   "ro": "Facturi și totaluri trimestriale",
+   "pl": "Faktury i sumy kwartalne"
   },
   "keywords": {
    "en": "invoice receipt tax vat accountant quarter csv pdf print email paid cancel number fiscal",
@@ -1243,7 +1666,10 @@
    "de": "rechnung beleg steuer mwst steuerberater quartal csv pdf drucken bezahlt stornieren",
    "it": "fattura ricevuta iva commercialista trimestre csv pdf stampare pagata annullare",
    "pt-BR": "fatura nota recibo imposto contador trimestre csv pdf imprimir paga cancelar",
-   "ru": "счёт квитанция налог ндс бухгалтер квартал csv pdf печать оплачен аннулировать"
+   "ru": "счёт квитанция налог ндс бухгалтер квартал csv pdf печать оплачен аннулировать",
+   "nl": "factuur bon btw belasting boekhouder kwartaal csv pdf afdrukken email betaald annuleren nummer",
+   "ro": "factură chitanță taxă tva contabil trimestru csv pdf tipărire email plătită anulare număr fiscal",
+   "pl": "faktura paragon podatek vat księgowy kwartał csv pdf druk email opłacona anulowanie numer"
   },
   "steps": {
    "en": [
@@ -1294,6 +1720,27 @@
     "Нумерация сквозная по году (напр. F2026-0001). Выставленный счёт нельзя изменить: аннулируйте его с причиной и выставьте новый.",
     "«Печать / сохранить PDF» открывает счёт для печати; «Отправить по email» отправляет его клиенту.",
     "Квартальные блоки показывают базу, налог и итог. Скачайте CSV за год или квартал для бухгалтера."
+   ],
+   "nl": [
+    "Vul de eerste keer je factuurgegevens in bij Bedrijf → Facturen: wettelijke naam, btw-nummer, adres, reeks en standaard btw %. Een optionele voettekst komt op elke factuur.",
+    "Maak een factuur met «Nieuwe factuur», of vanuit een boeking («Factuur maken») of een verkochte kaart (documenticoon op de klantpagina). Klant, dienst en bedrag worden ingevuld.",
+    "Nummers lopen per jaar door (bijv. F2026-0001). Uitgegeven facturen kunnen niet worden bewerkt: annuleer met reden en geef een nieuwe uit.",
+    "«Afdrukken / opslaan als PDF» opent de factuur klaar om af te drukken; «Per e-mail versturen» stuurt hem naar de klant.",
+    "De kwartaalvakken tonen subtotaal, btw en totaal. Download de CSV van het jaar of per kwartaal voor je boekhouder."
+   ],
+   "ro": [
+    "Prima dată, completează datele de facturare în Afacere → Facturi: denumire legală, CUI, adresă, serie și taxă implicită %. Un subsol opțional apare pe fiecare factură.",
+    "Creează o factură cu «Factură nouă», sau dintr-o rezervare («Creează factură») sau un abonament vândut (iconița de document din pagina clientului). Clientul, serviciul și suma se completează singure.",
+    "Numerele sunt consecutive pe an (ex. F2026-0001). Facturile emise nu se pot edita: anulează cu motiv și emite una nouă.",
+    "«Tipărește / salvează PDF» deschide factura gata de tipărit; «Trimite pe email» o trimite clientului.",
+    "Casetele trimestriale arată baza, taxa și totalul. Descarcă CSV-ul anului sau al fiecărui trimestru pentru contabil."
+   ],
+   "pl": [
+    "Za pierwszym razem uzupełnij dane do faktur w Firma → Faktury: nazwa prawna, NIP, adres, seria i domyślny podatek %. Opcjonalna stopka pojawia się na każdej fakturze.",
+    "Utwórz fakturę przez «Nowa faktura», z rezerwacji («Utwórz fakturę») lub sprzedanego karnetu (ikona dokumentu na stronie klienta). Klient, usługa i kwota wypełniają się same.",
+    "Numery są kolejne w ramach roku (np. F2026-0001). Wystawionych faktur nie można edytować: anuluj z podaniem powodu i wystaw nową.",
+    "«Drukuj / zapisz jako PDF» otwiera fakturę gotową do druku; «Wyślij e-mailem» wysyła ją klientowi.",
+    "Pola kwartalne pokazują netto, podatek i sumę. Pobierz CSV roku lub kwartału dla księgowego."
    ]
   }
  },
@@ -1311,7 +1758,10 @@
    "de": "Tarif, Abrechnung und Nutzung",
    "it": "Piano, fatturazione e utilizzo",
    "pt-BR": "Plano, cobrança e uso",
-   "ru": "Тариф, оплата и использование"
+   "ru": "Тариф, оплата и использование",
+   "nl": "Abonnement, facturering en verbruik",
+   "ro": "Plan, facturare și consum",
+   "pl": "Plan, płatności i zużycie"
   },
   "keywords": {
    "en": "plan billing subscription upgrade price basic pro premium usage limit",
@@ -1320,7 +1770,10 @@
    "de": "tarif abrechnung abo upgrade preis nutzung limit",
    "it": "piano fatturazione abbonamento upgrade prezzo utilizzo limite",
    "pt-BR": "plano cobrança assinatura upgrade preço uso limite",
-   "ru": "тариф оплата подписка повысить цена использование лимит"
+   "ru": "тариф оплата подписка повысить цена использование лимит",
+   "nl": "abonnement facturering upgrade prijs basic pro premium verbruik limiet",
+   "ro": "plan facturare abonament upgrade preț basic pro premium consum limită",
+   "pl": "plan płatności subskrypcja zmiana cena basic pro premium zużycie limit"
   },
   "steps": {
    "en": [
@@ -1357,6 +1810,21 @@
     "Смотрите свой тариф (Basic, Pro или Premium), дату продления и использование за месяц.",
     "При достижении месячного лимита новые переписки ждут во входящих до следующего месяца или смены тарифа.",
     "Меняйте тариф кнопкой «Перейти на…»; оплату картой обрабатывает Stripe."
+   ],
+   "nl": [
+    "Zie je huidige abonnement (Basic, Pro of Premium), verlengdatum en het verbruik van deze maand.",
+    "Bereik je de maandlimiet, dan wachten nieuwe gesprekken op jou in de inbox tot volgende maand of een upgrade.",
+    "Wissel van abonnement met «Overstappen naar…»; kaartbetalingen lopen via Stripe."
+   ],
+   "ro": [
+    "Vezi planul actual (Basic, Pro sau Premium), data reînnoirii și consumul lunii.",
+    "Dacă atingi limita lunară, conversațiile noi te așteaptă în inbox până luna viitoare sau până la upgrade.",
+    "Schimbă planul cu «Treci la…»; plățile cu cardul sunt procesate de Stripe."
+   ],
+   "pl": [
+    "Zobacz obecny plan (Basic, Pro lub Premium), datę odnowienia i zużycie w tym miesiącu.",
+    "Po osiągnięciu limitu miesięcznego nowe rozmowy czekają na ciebie w skrzynce do następnego miesiąca lub zmiany planu.",
+    "Zmień plan przez «Przejdź na…»; płatności kartą obsługuje Stripe."
    ]
   }
  },
@@ -1376,7 +1844,10 @@
    "de": "Deine Buchungsseite und was Kunden erhalten",
    "it": "La tua pagina di prenotazione e cosa ricevono i clienti",
    "pt-BR": "Sua página de reservas e o que seus clientes recebem",
-   "ru": "Ваша страница записи и что получают клиенты"
+   "ru": "Ваша страница записи и что получают клиенты",
+   "nl": "Je boekingspagina en wat klanten ontvangen",
+   "ro": "Pagina de rezervări și ce primesc clienții",
+   "pl": "Twoja strona rezerwacji i co dostają klienci"
   },
   "keywords": {
    "en": "booking page link public share email confirmation reminder manage cancel review",
@@ -1385,7 +1856,10 @@
    "de": "buchungsseite link öffentlich teilen email bestätigung erinnerung verwalten stornieren bewertung",
    "it": "pagina prenotazione link pubblica condividere email conferma promemoria gestire annullare recensione",
    "pt-BR": "página reservas link pública compartilhar email confirmação lembrete gerenciar cancelar avaliação",
-   "ru": "страница записи ссылка публичная поделиться email подтверждение напоминание отменить отзыв"
+   "ru": "страница записи ссылка публичная поделиться email подтверждение напоминание отменить отзыв",
+   "nl": "boekingspagina link openbaar delen e-mail bevestiging herinnering beheren annuleren review",
+   "ro": "pagină rezervări link public distribuire email confirmare memento gestionare anulare recenzie",
+   "pl": "strona rezerwacji link publiczny udostępnij email potwierdzenie przypomnienie zarządzaj odwołaj opinia"
   },
   "steps": {
    "en": [
@@ -1422,6 +1896,21 @@
     "Ваша страница — /b/ваше-имя (ссылка вверху бокового меню). Там клиенты записываются или пишут ассистенту.",
     "Они получают письмо с подтверждением, напоминание перед визитом и ссылку, чтобы самим перенести или отменить запись.",
     "После завершённой записи приходит ссылка для отзыва."
+   ],
+   "nl": [
+    "Je pagina is /b/jouw-naam (link bovenaan het zijmenu). Klanten boeken daar of chatten met je assistent.",
+    "Ze krijgen een bevestiging per e-mail, een herinnering vóór de afspraak en een link om zelf te wijzigen of annuleren.",
+    "Na een voltooide afspraak krijgen ze een link om een review te geven."
+   ],
+   "ro": [
+    "Pagina ta este /b/numele-tau (linkul din partea de sus a meniului). Clienții rezervă acolo sau vorbesc cu asistentul.",
+    "Primesc confirmare pe email, un memento înainte de programare și un link pentru a modifica sau anula singuri.",
+    "După o programare finalizată primesc un link pentru a lăsa o recenzie."
+   ],
+   "pl": [
+    "Twoja strona to /b/twoja-nazwa (link na górze menu bocznego). Klienci rezerwują tam lub piszą z asystentem.",
+    "Dostają potwierdzenie e-mailem, przypomnienie przed wizytą i link, by samodzielnie ją zmienić lub odwołać.",
+    "Po zakończonej wizycie dostają link do wystawienia opinii."
    ]
   }
  },
@@ -1439,7 +1928,10 @@
    "de": "VIP-Community",
    "it": "Community VIP",
    "pt-BR": "Comunidade VIP",
-   "ru": "VIP-сообщество"
+   "ru": "VIP-сообщество",
+   "nl": "VIP-community",
+   "ro": "Comunitatea VIP",
+   "pl": "Społeczność VIP"
   },
   "keywords": {
    "en": "community forum discussion vip premium report",
@@ -1448,7 +1940,10 @@
    "de": "community forum diskussion vip melden",
    "it": "community forum discussione vip segnalare",
    "pt-BR": "comunidade fórum discussão vip denunciar",
-   "ru": "сообщество форум обсуждение vip пожаловаться"
+   "ru": "сообщество форум обсуждение vip пожаловаться",
+   "nl": "community forum discussie vip premium melden",
+   "ro": "comunitate forum discuție vip premium raportare",
+   "pl": "społeczność forum dyskusja vip premium zgłoś"
   },
   "steps": {
    "en": [
@@ -1485,6 +1980,21 @@
     "Закрытое модерируемое пространство для проверенных VIP-бизнесов; открывается по тарифу.",
     "Начните обсуждение в категории или отвечайте другим.",
     "Кнопка «Пожаловаться» уведомляет модераторов."
+   ],
+   "nl": [
+    "Een privé, gemodereerde ruimte voor geverifieerde VIP-bedrijven; je abonnement ontgrendelt hem.",
+    "Start een discussie in een categorie of reageer op anderen.",
+    "Gebruik «Melden» om de moderators te waarschuwen."
+   ],
+   "ro": [
+    "Un spațiu privat și moderat pentru afaceri VIP verificate; se deblochează cu planul tău.",
+    "Începe o discuție într-o categorie sau răspunde altora.",
+    "Folosește «Raportează» pentru a anunța moderatorii."
+   ],
+   "pl": [
+    "Prywatna, moderowana przestrzeń dla zweryfikowanych firm VIP; odblokowuje ją twój plan.",
+    "Rozpocznij dyskusję w kategorii lub odpowiadaj innym.",
+    "Użyj «Zgłoś», aby powiadomić moderatorów."
    ]
   }
  },
@@ -1502,7 +2012,10 @@
    "de": "Statistiken",
    "it": "Statistiche",
    "pt-BR": "Estatísticas",
-   "ru": "Статистика"
+   "ru": "Статистика",
+   "nl": "Statistieken",
+   "ro": "Statistici",
+   "pl": "Statystyki"
   },
   "keywords": {
    "en": "statistics stats revenue report numbers kpi",
@@ -1511,7 +2024,10 @@
    "de": "statistik umsatz bericht zahlen",
    "it": "statistiche ricavi report numeri",
    "pt-BR": "estatisticas receita relatorio numeros",
-   "ru": "статистика выручка отчёт цифры"
+   "ru": "статистика выручка отчёт цифры",
+   "nl": "statistieken omzet rapport cijfers kpi",
+   "ro": "statistici venit raport cifre kpi",
+   "pl": "statystyki przychód raport liczby kpi"
   },
   "steps": {
    "en": [
@@ -1548,6 +2064,21 @@
     "Выберите 30 дней, 90 дней или 1 год; каждая цифра сравнивается с прошлым периодом (▲ лучше, ▼ хуже).",
     "Выручка включает записи и проданные абонементы. Также: средний чек, новые и постоянные клиенты, отмены и неявки.",
     "Ниже: популярные услуги, результаты по сотрудникам, откуда приходят записи и самые загруженные дни и часы."
+   ],
+   "nl": [
+    "Kies 30 dagen, 90 dagen of 1 jaar; elk cijfer wordt vergeleken met de vorige periode (▲ beter, ▼ slechter).",
+    "Omzet omvat afspraken en verkochte kaarten. Je ziet ook afspraken, gemiddelde besteding, nieuwe en terugkerende klanten, annuleringen en niet-verschenen.",
+    "Daaronder: topdiensten, resultaten per teamlid, waar boekingen vandaan komen (pagina, assistent, WhatsApp, Telegram, jij) en je drukste dagen en uren."
+   ],
+   "ro": [
+    "Alege 30 de zile, 90 de zile sau 1 an; fiecare cifră e comparată cu perioada anterioară (▲ mai bine, ▼ mai rău).",
+    "Venitul include programările și abonamentele vândute. Vezi și programări, bon mediu, clienți noi și fideli, anulări și neprezentări.",
+    "Mai jos: servicii de top, rezultate pe membru, de unde vin rezervările (pagină, asistent, WhatsApp, Telegram, tu) și zilele și orele cele mai aglomerate."
+   ],
+   "pl": [
+    "Wybierz 30 dni, 90 dni lub 1 rok; każda liczba jest porównana z poprzednim okresem (▲ lepiej, ▼ gorzej).",
+    "Przychód obejmuje wizyty i sprzedane karnety. Widzisz też wizyty, średni paragon, nowych i powracających klientów, odwołania i nieobecności.",
+    "Poniżej: najpopularniejsze usługi, wyniki członków zespołu, skąd pochodzą rezerwacje (strona, asystent, WhatsApp, Telegram, ty) oraz najbardziej obłożone dni i godziny."
    ]
   }
  },
@@ -1565,7 +2096,10 @@
    "de": "Warteliste für volle Tage",
    "it": "Lista d'attesa per giorni pieni",
    "pt-BR": "Lista de espera para dias cheios",
-   "ru": "Лист ожидания на занятые дни"
+   "ru": "Лист ожидания на занятые дни",
+   "nl": "Wachtlijst voor volle dagen",
+   "ro": "Listă de așteptare pentru zile pline",
+   "pl": "Lista oczekujących na pełne dni"
   },
   "keywords": {
    "en": "waitlist full day cancelled slot notify gap",
@@ -1574,7 +2108,10 @@
    "de": "warteliste voll frei stornierung benachrichtigen",
    "it": "lista attesa pieno posto libero cancellazione avvisare",
    "pt-BR": "lista espera cheio horario vago cancelamento avisar",
-   "ru": "лист ожидания занято отмена уведомить"
+   "ru": "лист ожидания занято отмена уведомить",
+   "nl": "wachtlijst volle dag geannuleerd plek melden gat",
+   "ro": "listă așteptare zi plină anulat loc anunț",
+   "pl": "lista oczekujących pełny dzień odwołane termin powiadom"
   },
   "steps": {
    "en": [
@@ -1611,6 +2148,21 @@
     "Если день занят, клиенты могут нажать «Сообщите, если освободится время» на странице или попросить ассистента.",
     "При отмене или переносе записи первые в очереди (до 3) получают сообщение и письмо со ссылкой. Кто первым запишется — тот и получит.",
     "Список: Записи → «Лист ожидания»."
+   ],
+   "nl": [
+    "Als een dag vol is, kunnen klanten op je boekingspagina op «Laat het me weten als er een plek vrijkomt» drukken, of het je assistent vragen.",
+    "Wordt een boeking op die dag geannuleerd of verplaatst, dan krijgen de eersten in de rij (tot 3) een bericht en e-mail met de link en de vrije tijden. Wie het eerst boekt, krijgt hem.",
+    "Bekijk en beheer de lijst bij Boekingen → «Wachtlijst»."
+   ],
+   "ro": [
+    "Când o zi e plină, clienții pot apăsa «Anunță-mă dacă se eliberează un loc» pe pagina de rezervări sau pot întreba asistentul.",
+    "Dacă o rezervare din acea zi e anulată sau mutată, primii de pe listă (până la 3) primesc un mesaj și un email cu linkul și orele libere. Primul care rezervă îl ia.",
+    "Vezi și gestionează lista în Rezervări → «Listă de așteptare»."
+   ],
+   "pl": [
+    "Gdy dzień jest pełny, klienci mogą nacisnąć «Daj znać, jeśli zwolni się termin» na stronie rezerwacji lub zapytać asystenta.",
+    "Jeśli rezerwacja z tego dnia zostanie odwołana lub przeniesiona, pierwsi w kolejce (do 3) dostają wiadomość i e-mail z linkiem i wolnymi godzinami. Kto pierwszy zarezerwuje, ten ma.",
+    "Listę zobaczysz i zarządzisz w Rezerwacje → «Lista oczekujących»."
    ]
   }
  },
@@ -1628,7 +2180,10 @@
    "de": "Kunden importieren und exportieren",
    "it": "Importare ed esportare clienti",
    "pt-BR": "Importar e exportar clientes",
-   "ru": "Импорт и экспорт клиентов"
+   "ru": "Импорт и экспорт клиентов",
+   "nl": "Klanten importeren en exporteren",
+   "ro": "Importă și exportă clienți",
+   "pl": "Import i eksport klientów"
   },
   "keywords": {
    "en": "import export csv excel contacts list migrate",
@@ -1637,7 +2192,10 @@
    "de": "importieren exportieren csv excel kontakte",
    "it": "importare esportare csv excel contatti",
    "pt-BR": "importar exportar csv excel contatos",
-   "ru": "импорт экспорт csv excel контакты"
+   "ru": "импорт экспорт csv excel контакты",
+   "nl": "importeren exporteren csv excel contacten lijst overzetten",
+   "ro": "import export csv excel contacte listă migrare",
+   "pl": "import eksport csv excel kontakty lista migracja"
   },
   "steps": {
    "en": [
@@ -1674,6 +2232,21 @@
     "Клиенты → «Импорт»: CSV с колонками имя, email, телефон, заметки (любой язык; разделитель ; или ,).",
     "У каждого клиента должен быть email или телефон; дублей не будет.",
     "«Экспорт CSV» скачивает всех клиентов с визитами, тратами и последним визитом."
+   ],
+   "nl": [
+    "Klanten → «Importeren»: upload een CSV met kolommen naam, e-mail, telefoon, notities (elke taal; scheidingsteken ; of ,).",
+    "Elke klant heeft een e-mail of telefoon nodig; bestaande worden niet dubbel aangemaakt.",
+    "«CSV exporteren» downloadt al je klanten met bezoeken, besteding en laatste bezoek."
+   ],
+   "ro": [
+    "Clienți → «Importă»: încarcă un CSV cu coloanele nume, email, telefon, note (orice limbă; separatori ; sau ,).",
+    "Fiecare client are nevoie de email sau telefon; cei existenți nu se dublează.",
+    "«Exportă CSV» descarcă toți clienții cu vizite, sume cheltuite și ultima vizită."
+   ],
+   "pl": [
+    "Klienci → «Importuj»: prześlij CSV z kolumnami imię, e-mail, telefon, notatki (dowolny język; separator ; lub ,).",
+    "Każdy klient potrzebuje e-maila lub telefonu; istniejący nie są dublowani.",
+    "«Eksportuj CSV» pobiera wszystkich klientów z wizytami, wydatkami i ostatnią wizytą."
    ]
   }
  },
@@ -1691,7 +2264,10 @@
    "de": "Schnellantworten",
    "it": "Risposte rapide",
    "pt-BR": "Respostas rápidas",
-   "ru": "Быстрые ответы"
+   "ru": "Быстрые ответы",
+   "nl": "Snelle antwoorden",
+   "ro": "Răspunsuri rapide",
+   "pl": "Szybkie odpowiedzi"
   },
   "keywords": {
    "en": "quick replies templates canned saved answers",
@@ -1700,7 +2276,10 @@
    "de": "schnellantworten vorlagen",
    "it": "risposte rapide modelli",
    "pt-BR": "respostas rápidas modelos",
-   "ru": "быстрые ответы шаблоны"
+   "ru": "быстрые ответы шаблоны",
+   "nl": "snelle antwoorden sjablonen standaard opgeslagen",
+   "ro": "răspunsuri rapide șabloane predefinite salvate",
+   "pl": "szybkie odpowiedzi szablony gotowe zapisane"
   },
   "steps": {
    "en": [
@@ -1737,6 +2316,21 @@
     "Во входящих нажмите ⚡ → «Управлять быстрыми ответами», чтобы сохранить частые ответы.",
     "При ответе нажмите ⚡ и выберите: текст вставится, его можно изменить.",
     "{name} заменяется именем клиента."
+   ],
+   "nl": [
+    "Druk in de inbox op ⚡ (bovenaan de lijst of naast het antwoordvak) → «Snelle antwoorden beheren» om vaak gebruikte antwoorden op te slaan.",
+    "Druk bij het antwoorden op ⚡ en kies er een: hij wordt ingevoegd en je kunt hem aanpassen voor verzenden.",
+    "Schrijf {name} en het wordt de voornaam van de klant."
+   ],
+   "ro": [
+    "În inbox apasă ⚡ (sus în listă sau lângă caseta de răspuns) → «Gestionează răspunsurile rapide» pentru a salva răspunsuri frecvente.",
+    "Când răspunzi, apasă ⚡ și alege unul: se inserează și îl poți edita înainte de trimitere.",
+    "Scrie {name} și devine prenumele clientului."
+   ],
+   "pl": [
+    "W skrzynce naciśnij ⚡ (na górze listy lub przy polu odpowiedzi) → «Zarządzaj szybkimi odpowiedziami», aby zapisać częste odpowiedzi.",
+    "Odpowiadając, naciśnij ⚡ i wybierz jedną: zostanie wstawiona i możesz ją poprawić przed wysłaniem.",
+    "Wpisz {name}, a zamieni się w imię klienta."
    ]
   }
  },
@@ -1754,7 +2348,10 @@
    "de": "Anmeldesicherheit: Fingerabdruck, Gesicht und Codes",
    "it": "Sicurezza di accesso: impronta, volto e codici",
    "pt-BR": "Segurança de acesso: digital, rosto e códigos",
-   "ru": "Безопасность входа: отпечаток, лицо и коды"
+   "ru": "Безопасность входа: отпечаток, лицо и коды",
+   "nl": "Inlogbeveiliging: vingerafdruk, gezicht en codes",
+   "ro": "Securitatea conectării: amprentă, față și coduri",
+   "pl": "Bezpieczeństwo logowania: odcisk, twarz i kody"
   },
   "keywords": {
    "en": "security two step 2fa passkey fingerprint face id touch id authenticator password login",
@@ -1763,7 +2360,10 @@
    "de": "sicherheit zwei schritte passkey fingerabdruck gesicht",
    "it": "sicurezza due passaggi passkey impronta volto",
    "pt-BR": "segurança duas etapas passkey digital rosto",
-   "ru": "безопасность двухэтапный ключ отпечаток лицо"
+   "ru": "безопасность двухэтапный ключ отпечаток лицо",
+   "nl": "beveiliging tweestaps 2fa passkey vingerafdruk face id touch id authenticator wachtwoord inloggen",
+   "ro": "securitate doi pași 2fa cheie acces amprentă face id touch id autentificare parolă conectare",
+   "pl": "bezpieczeństwo dwuetapowa 2fa klucz dostępu odcisk face id touch id uwierzytelnianie hasło logowanie"
   },
   "steps": {
    "en": [
@@ -1814,6 +2414,27 @@
     "Или настройте приложение-аутентификатор и сохраните коды восстановления.",
     "Если включено что-то одно, после пароля AIBA всегда спросит отпечаток/лицо или код.",
     "Биометрия никогда не покидает ваше устройство."
+   ],
+   "nl": [
+    "Open het schildicoon onderaan het zijmenu (Inlogbeveiliging).",
+    "«Vingerafdruk of gezicht op dit apparaat registreren»: je telefoon of computer bewaart een passkey. Daarna kun je op de loginpagina op «Inloggen met vingerafdruk of gezicht» drukken, zonder wachtwoord.",
+    "Of stel een authenticator-app in (scan de QR, typ de code) en bewaar de herstelcodes op een veilige plek.",
+    "Staat een van beide aan, dan vraagt AIBA na je wachtwoord altijd je vingerafdruk/gezicht of de code.",
+    "Je biometrische gegevens verlaten nooit je apparaat: AIBA ontvangt alleen een handtekening."
+   ],
+   "ro": [
+    "Deschide iconița scut din partea de jos a meniului (Securitatea conectării).",
+    "«Înregistrează amprenta sau fața pe acest dispozitiv»: telefonul sau calculatorul salvează o cheie de acces. De atunci poți apăsa «Conectare cu amprentă sau față» pe pagina de conectare, fără parolă.",
+    "Sau configurează o aplicație de autentificare (scanează QR-ul, introdu codul) și păstrează codurile de recuperare în siguranță.",
+    "Cu oricare activă, după parolă AIBA cere mereu amprenta/fața sau codul.",
+    "Datele biometrice nu părăsesc dispozitivul: AIBA primește doar o semnătură."
+   ],
+   "pl": [
+    "Otwórz ikonę tarczy na dole menu bocznego (Bezpieczeństwo logowania).",
+    "«Zarejestruj odcisk palca lub twarz na tym urządzeniu»: telefon lub komputer zapisuje klucz dostępu. Od tej pory możesz nacisnąć «Zaloguj odciskiem palca lub twarzą» na stronie logowania, bez hasła.",
+    "Albo skonfiguruj aplikację uwierzytelniającą (zeskanuj QR, wpisz kod) i przechowuj kody odzyskiwania w bezpiecznym miejscu.",
+    "Gdy jedno z nich jest włączone, po haśle AIBA zawsze prosi o odcisk/twarz lub kod.",
+    "Twoje dane biometryczne nigdy nie opuszczają urządzenia: AIBA dostaje tylko podpis."
    ]
   }
  },
@@ -1833,7 +2454,10 @@
    "de": "AIBA Sensible: so funktioniert's",
    "it": "AIBA Sensibile: come funziona",
    "pt-BR": "AIBA Sensível: como funciona",
-   "ru": "AIBA Sensible: как это работает"
+   "ru": "AIBA Sensible: как это работает",
+   "nl": "AIBA Sensible: zo werkt het",
+   "ro": "AIBA Sensibil: cum funcționează",
+   "pl": "AIBA Sensible: jak to działa"
   },
   "keywords": {
    "en": "sensible verification identity id selfie private sheet travel trips support help safety",
@@ -1842,7 +2466,10 @@
    "de": "sensible verifizierung identität private notizen reisen hilfe sicherheit",
    "it": "sensibile verifica identità scheda privata viaggi aiuto sicurezza",
    "pt-BR": "sensível verificação identidade ficha privada viagens ajuda segurança",
-   "ru": "sensible проверка личность карточка поездки помощь безопасность"
+   "ru": "sensible проверка личность карточка поездки помощь безопасность",
+   "nl": "sensible verificatie identiteit id selfie privékaart reizen support hulp veiligheid",
+   "ro": "sensibil verificare identitate act selfie fișă privată călătorii suport ajutor siguranță",
+   "pl": "sensible weryfikacja tożsamość dowód selfie prywatna karta wyjazdy pomoc bezpieczeństwo"
   },
   "steps": {
    "en": [
@@ -1907,6 +2534,33 @@
     "Ассистент занимается только логистикой; откровенные сообщения до него не доходят.",
     "Режим поездок: добавьте города и даты.",
     "Поддержка — также конфиденциальный канал помощи, его видит только команда безопасности."
+   ],
+   "nl": [
+    "Je pagina werkt alleen via een directe link en verschijnt nooit in de gids of zoekmachines.",
+    "Verifieer één keer je identiteit (identiteitsbewijs + selfie ermee). Tot dan is je pagina niet live. Foto's worden na de controle verwijderd.",
+    "Inloggen kan alleen met je vingerafdruk of gezicht, vanaf je eigen telefoon; elk nieuw apparaat geeft een e-mailmelding. Bekijk apparaten bij Inlogbeveiliging.",
+    "Privékaart: je notities over diensten, tarieven en grenzen; versleuteld, de assistent leest hem nooit.",
+    "De assistent regelt alleen logistiek. Expliciete berichten bereiken hem nooit: ze wachten op jou in de inbox.",
+    "Reismodus: voeg steden en data toe; je pagina en de assistent tonen ze.",
+    "Support (tekstballon onderaan het menu) is ook een vertrouwelijk hulpkanaal dat alleen het AIBA-veiligheidsteam ziet."
+   ],
+   "ro": [
+    "Pagina ta funcționează doar prin link direct și nu apare niciodată în director sau în motoarele de căutare.",
+    "Verifică-ți o dată identitatea (act + selfie cu el). Până atunci pagina nu e activă. Fotografiile se șterg după verificare.",
+    "Conectarea se face doar cu amprenta sau fața, de pe propriul telefon; fiecare dispozitiv nou declanșează o alertă pe email. Verifică dispozitivele în Securitatea conectării.",
+    "Fișa privată: notițele tale despre servicii, tarife și limite; criptată, asistentul nu o citește.",
+    "Asistentul se ocupă doar de logistică. Mesajele explicite nu ajung la el: te așteaptă în inbox.",
+    "Mod călătorie: adaugă orașe și date; pagina și asistentul le afișează.",
+    "Suportul (bula de mesaj din partea de jos a meniului) este și un canal confidențial de ajutor, văzut doar de echipa de siguranță AIBA."
+   ],
+   "pl": [
+    "Twoja strona działa tylko przez bezpośredni link i nigdy nie pojawia się w katalogu ani w wyszukiwarkach.",
+    "Zweryfikuj raz tożsamość (dokument + selfie z nim). Do tego czasu strona nie jest aktywna. Zdjęcia są usuwane po weryfikacji.",
+    "Logowanie tylko odciskiem palca lub twarzą, z własnego telefonu; każde nowe urządzenie wywołuje alert e-mail. Sprawdź urządzenia w Bezpieczeństwie logowania.",
+    "Prywatna karta: twoje notatki o usługach, stawkach i granicach; szyfrowana, asystent jej nie czyta.",
+    "Asystent zajmuje się tylko logistyką. Wiadomości o charakterze jednoznacznym do niego nie trafiają: czekają na ciebie w skrzynce.",
+    "Tryb wyjazdów: dodaj miasta i daty; strona i asystent je pokazują.",
+    "Pomoc (dymek na dole menu) to także poufny kanał pomocy, który widzi tylko zespół bezpieczeństwa AIBA."
    ]
   }
  }
