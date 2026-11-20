@@ -1,5 +1,6 @@
 import "server-only";
 import { createHash, createPublicKey, verify as cryptoVerify, randomBytes } from "node:crypto";
+import type { JsonWebKey as NodeJwk } from "node:crypto";
 import { badRequest } from "./errors";
 
 /**
@@ -132,7 +133,7 @@ export function verifyRegistration(input: { clientDataJSON: string; attestationO
   const cose = decodeCbor(ad.subarray(p)) as Map<unknown, unknown>;
   const { jwk, alg } = coseToJwk(cose);
   // Make sure node can load the key.
-  createPublicKey({ key: jwk, format: "jwk" });
+  createPublicKey({ key: jwk as NodeJwk, format: "jwk" });
   return { credentialId: b64u.enc(credentialId), publicKey: jwk, alg, counter };
 }
 
@@ -146,7 +147,7 @@ export function verifyAssertion(
   const ad = b64u.dec(input.authenticatorData);
   const { counter } = parseAuthData(ad, expected.rpId);
   const data = Buffer.concat([ad, createHash("sha256").update(cdRaw).digest()]);
-  const pub = createPublicKey({ key: key.publicKey, format: "jwk" });
+  const pub = createPublicKey({ key: key.publicKey as NodeJwk, format: "jwk" });
   const ok = cryptoVerify("sha256", data, pub, b64u.dec(input.signature));
   if (!ok) throw badRequest("Signature check failed");
   if (key.counter > 0 && counter > 0 && counter <= key.counter) throw badRequest("This passkey looks cloned. Contact support.");
