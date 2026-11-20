@@ -3,9 +3,10 @@ import Link from "next/link";
 import { replyToThread, reportContent } from "@/actions/community";
 import { SubmitButton } from "@/components/client";
 import { Icon } from "@/components/icons";
-import { Author, LockedCommunity, Prose } from "@/components/community/parts";
+import { Author, LockedCommunity, Prose, ReadOnlyNotice } from "@/components/community/parts";
 import { Badge, Card, Textarea } from "@/components/ui";
 import { canAccessCommunity, getThread, isCommunityModerator } from "@/lib/community";
+import { communityReadOnly } from "@/lib/review-protocol";
 import { currentTenant } from "@/lib/tenant";
 
 function ReportButton({ threadId, postId }: { threadId: string; postId?: string }) {
@@ -26,6 +27,8 @@ export default async function ThreadPage({ params }: { params: Promise<{ id: str
   const t = await getT();
   const tenant = await currentTenant();
   if (!(await canAccessCommunity(tenant))) return <LockedCommunity />;
+  const readOnly = await communityReadOnly(tenant.user);
+  if (readOnly) return <div className="mx-auto max-w-3xl"><Link href="/app/community" className="mb-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg"><Icon name="chevronLeft" size={14} /> {t("Community")}</Link><ReadOnlyNotice until={readOnly.until} reason={readOnly.reason} /></div>;
   const { id } = await params;
   const thread = await getThread(id, { includeHidden: isCommunityModerator(tenant.user) });
   const isAdmin = isCommunityModerator(tenant.user);

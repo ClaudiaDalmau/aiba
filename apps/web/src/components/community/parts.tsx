@@ -73,3 +73,22 @@ export function LockedCommunity() {
     </Card>
   );
 }
+
+/** Review protocol: titles-only community. Says what is limited, until when, why and how to appeal. */
+export function ReadOnlyNotice({ until, reason }: { until: Date; reason: string }) {
+  const t = tSync();
+  const date = new Intl.DateTimeFormat(requestIntlLocale(), { dateStyle: "long" }).format(until);
+  return (
+    <Card className="mb-5 border-warn/40 p-5">
+      <div className="flex items-start gap-3">
+        <Icon name="lock" size={18} className="mt-0.5 shrink-0 text-warn" />
+        <div className="text-[14px]">
+          <div className="font-medium">{t("Limited access until {date}", { date })}</div>
+          <p className="mt-1 text-muted">{t("During this period you can see the topic titles but not their content, and you can't post or reply. Everything else on the platform works as usual.")}</p>
+          {reason && <p className="mt-1 text-muted">{t("Reason")}: {t(reason)}</p>}
+          <p className="mt-1 text-faint">{t("If you think this is a mistake, contact support and a person from the team will review it.")}</p>
+        </div>
+      </div>
+    </Card>
+  );
+}

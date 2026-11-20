@@ -1,9 +1,10 @@
 import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
-import { LockedCommunity, relative } from "@/components/community/parts";
+import { LockedCommunity, ReadOnlyNotice, relative } from "@/components/community/parts";
 import { Badge, Card, Empty, LinkButton, PageHeader } from "@/components/ui";
 import { canAccessCommunity, getCategoryBySlug, listThreads, isCommunityModerator } from "@/lib/community";
+import { communityReadOnly } from "@/lib/review-protocol";
 import { currentTenant } from "@/lib/tenant";
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -13,7 +14,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const { slug } = await params;
   const category = await getCategoryBySlug(slug);
   const threads = await listThreads(category.id);
-  const canPost = !category.adminOnlyPosting || isCommunityModerator(tenant.user);
+  const readOnly = await communityReadOnly(tenant.user);
+  const canPost = !readOnly && (!category.adminOnlyPosting || isCommunityModerator(tenant.user));
   return (
     <>
       <Link href="/app/community" className="mb-3 inline-flex items-center gap-1 text-[13px] text-muted hover:text-fg"><Icon name="chevronLeft" size={14} /> {t("Community")}</Link>
@@ -22,8 +24,15 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
         description={category.description}
         actions={canPost ? <LinkButton href={`/app/community/new?category=${category.slug}`} icon="plus">{t("New discussion")}</LinkButton> : undefined}
       />
+      {readOnly && <ReadOnlyNotice until={readOnly.until} reason={readOnly.reason} />}
       <Card className="divide-y divide-border">
-        {threads.map((th) => (
+        {readOnly && threads.map((th) => (
+          <div key={th.id} className="flex items-center gap-3 px-5 py-4">
+            <Icon name="lock" size={14} className="shrink-0 text-faint" />
+            <span className="font-medium">{th.title}</span>
+          </div>
+        ))}
+        {!readOnly && threads.map((th) => (
           <Link key={th.id} href={`/app/community/t/${th.id}`} className="flex items-start gap-4 px-5 py-4 transition hover:bg-subtle/60">
             <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-2">
@@ -39,7 +48,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
             <div className="flex shrink-0 items-center gap-1 text-[13px] text-muted tabular-nums"><Icon name="chat" size={14} /> {th.replies}</div>
           </Link>
         ))}
-        {!threads.length && <Empty icon="chat" title={t("No discussions yet")}>{t("Start the first one.")}</Empty>}
+        {!threads.length && <Empty icon="chat" title={t("No discussions yet")}>{readOnly ? null : t("Start the first one.")}</Empty>}
       </Card>
     </>
   );

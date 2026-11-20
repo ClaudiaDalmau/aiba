@@ -98,13 +98,15 @@ export async function onboard(_prev: ActionState, f: FormData): Promise<ActionSt
       const { reviewMatch } = await import("@/lib/leads");
       const matched = await reviewMatch({ email: me2?.email ?? "", name: me2?.name ?? "", businessName: name, phone: s(f, "phone"), website: "", links: [], message: s(f, "description") });
       if (matched) {
-        const { emailApplicantWaitlisted, emailTeamReviewMatch } = await import("@/lib/email");
+        // Review protocol: Sensible works normally, the private community is titles-only for the period.
+        const { emailTeamReviewMatch } = await import("@/lib/email");
+        const { startReviewPeriod } = await import("@/lib/review-protocol");
         await audit(business.id, { type: "user", id: user.id }, "sensitive.manual_review", business.id, { matched });
-        await emailApplicantWaitlisted(me2?.email ?? "", me2?.name ?? "", s(f, "language") || "en").catch(() => false);
-        await emailTeamReviewMatch({ what: "New Sensible profile", name: `${me2?.name ?? ""} · ${name}`, email: me2?.email ?? "", phone: s(f, "phone"), matched, href: `/admin/businesses/${business.id}` }).catch(() => false);
+        await startReviewPeriod(user.id, matched, { locale: s(f, "language") || "en" });
+        await emailTeamReviewMatch({ what: "New Sensible profile", name: `${me2?.name ?? ""} · ${name}`, email: me2?.email ?? "", phone: s(f, "phone"), matched, href: `/admin/users/${user.id}` }).catch(() => false);
       }
-      if (me2?.v && !matched) await db.update(schema.businesses).set({ published: true }).where(eq(schema.businesses.id, business.id));
-      else if (!me2?.v) goVerify = true;
+      if (me2?.v) await db.update(schema.businesses).set({ published: true }).where(eq(schema.businesses.id, business.id));
+      else goVerify = true;
       const [pk] = await db.select({ id: schema.passkeys.id }).from(schema.passkeys).where(eq(schema.passkeys.userId, user.id)).limit(1);
       goSecurity = !pk;
     }

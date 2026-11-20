@@ -2,11 +2,11 @@ import { getT } from "@/i18n/server";
 import { and, desc, eq, gt, or } from "drizzle-orm";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { adminSetUserDisabled } from "@/actions/admin";
+import { adminSetReviewPeriod, adminSetUserDisabled } from "@/actions/admin";
 import { addMembership, impersonate, resetUserPassword, revokeUserSessions, setPlatformRole, updateMembership, updateUser, resetTwoStep, setRequirePasskey } from "@/actions/admin-platform";
 import { Table, Td, fmtDate } from "@/components/admin/table";
 import { ConfirmSubmit, SubmitButton } from "@/components/client";
-import { Badge, Button, Card, CardHeader, Field, Input, PageHeader, Select } from "@/components/ui";
+import { Badge, Button, Card, CardHeader, Field, Input, PageHeader, Select, Textarea } from "@/components/ui";
 import { ActionForm } from "@/components/workspace/action-form";
 import { db, schema } from "@/db";
 import { requirePlatform } from "@/lib/auth";
@@ -118,6 +118,32 @@ export default async function AdminUser({ params }: { params: Promise<{ id: stri
                       </form>
                     )}
                   </div>
+                </div>
+                <div className="space-y-2 rounded-lg border border-border p-3 text-[13px]">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-medium">{t("Review period (community titles-only)")}:</span>
+                    {u.communityReadOnlyUntil && u.communityReadOnlyUntil > new Date() ? (
+                      <Badge tone="warn" icon="lock">{t("Until {date}", { date: fmtDate(u.communityReadOnlyUntil) })}</Badge>
+                    ) : (
+                      <Badge>{t("Off")}</Badge>
+                    )}
+                    {u.communityReadOnlyNoticeAt && <span className="text-faint">{t("team warned {date}", { date: fmtDate(u.communityReadOnlyNoticeAt) })}</span>}
+                  </div>
+                  <form action={adminSetReviewPeriod} className="space-y-2">
+                    <input type="hidden" name="userId" value={u.id} />
+                    <Textarea name="reason" rows={2} defaultValue={u.communityReadOnlyReason} placeholder={t("Reason shown to the person")} className="text-[13px]" />
+                    <div className="flex flex-wrap gap-2">
+                      {u.communityReadOnlyUntil && u.communityReadOnlyUntil > new Date() ? (
+                        <>
+                          <button name="op" value="extend" className="h-8 rounded-md border border-border px-3 hover:bg-subtle">{t("Extend")}</button>
+                          <button name="op" value="reason" className="h-8 rounded-md border border-border px-3 hover:bg-subtle">{t("Save reason")}</button>
+                          <button name="op" value="lift" className="h-8 rounded-md border border-border px-3 hover:bg-subtle">{t("Lift now")}</button>
+                        </>
+                      ) : (
+                        <button name="op" value="start" className="h-8 rounded-md border border-border px-3 hover:bg-subtle">{t("Start review period")}</button>
+                      )}
+                    </div>
+                  </form>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <form action={revokeUserSessions}>

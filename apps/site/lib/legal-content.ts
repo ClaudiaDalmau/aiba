@@ -189,7 +189,7 @@ const ES: LocaleLegal = {
     legalLabel: "Legal",
     title: "Términos y Condiciones",
     updatedLabel: "Última actualización",
-    updated: "1 de agosto de 2026",
+    updated: "20 de noviembre de 2026",
     sections: [
       { h: "1. Objeto", paras: [
         "Los presentes Términos y Condiciones regulan el acceso y uso del servicio SaaS AIBA (en adelante, «el Servicio») titularidad de Claudia Dalmau, NIF 45541443V, con domicilio en Barcelona (España).",
@@ -234,6 +234,19 @@ const ES: LocaleLegal = {
       { h: "12. Perfiles múltiples y responsabilidad KYC", paras: [
         "Una misma cuenta puede operar varios perfiles públicos simultáneamente (por ejemplo, para trabajar en distintas ciudades o países). Todos los perfiles están vinculados a una única identidad KYC verificada y a una única suscripción, cuenta bancaria y sistema de facturación.",
         "La persona titular de la cuenta es la única responsable de todos los perfiles creados bajo la misma, incluidas las reservas, los ingresos y las comunicaciones con clientes. No está permitido crear o utilizar perfiles en nombre de terceras personas, ni ceder acceso a la cuenta a otras personas físicas. El incumplimiento de esta obligación podrá suponer la suspensión inmediata de la cuenta y la baja de todos los perfiles asociados.",
+      ]},
+      { h: "13. Derecho de admisión y periodos de revisión", paras: [
+        "El titular se reserva el derecho de admisión al Servicio y, en particular, a la plataforma Sensible y a su comunidad privada. Puede aceptar, revisar de forma manual o rechazar solicitudes de acceso aplicando criterios objetivos, razonables y proporcionados, vinculados a la seguridad de las personas usuarias, la prevención de la explotación y el proxenetismo, la suplantación de identidad, el fraude, la protección de la comunidad o el incumplimiento previo de estos Términos.",
+        "El derecho de admisión nunca se ejercerá por motivos discriminatorios, como el nacimiento, el origen racial o étnico, el sexo, la religión, la convicción u opinión, la edad, la discapacidad, la orientación o identidad sexual, la expresión de género, la enfermedad, la lengua, la situación socioeconómica o cualquier otra condición personal o social, de acuerdo con el artículo 14 de la Constitución Española y la Ley 15/2022, de 12 de julio, integral para la igualdad de trato y la no discriminación.",
+        "Según el caso, el titular podrá adoptar estas medidas:",
+        { list: [
+          "Lista de espera y revisión manual de la solicitud por una persona del equipo.",
+          "Periodo de revisión con acceso limitado: la persona usuaria puede usar la plataforma con normalidad, pero en la comunidad privada solo ve los títulos de los temas, sin acceso a su contenido ni posibilidad de publicar o responder. El periodo dura un máximo de 12 meses desde el registro y solo puede prorrogarse mediante una nueva decisión motivada.",
+          "Suspensión temporal o baja de la cuenta en caso de incumplimiento grave de estos Términos o de la ley.",
+        ]},
+        "Toda medida que limite el acceso se comunicará a la persona afectada, de forma clara y específica, indicando la medida adoptada, su alcance y duración, los motivos y hechos en que se basa y las vías para reclamar, conforme al artículo 17 del Reglamento (UE) 2022/2065 de Servicios Digitales, salvo que la ley lo impida.",
+        "Si no estás de acuerdo con una decisión, puedes reclamar respondiendo al email en que se te comunicó o escribiendo al soporte. Una persona del equipo revisará el caso y te responderá de forma motivada. Esto no limita tu derecho a acudir a los tribunales o a las autoridades competentes.",
+        "Para gestionar la revisión se tratan los datos de contacto facilitados (nombre, email, teléfono y web) sobre la base del interés legítimo en la seguridad del Servicio y la prevención del fraude (artículo 6.1.f del RGPD). Las medidas solo se aplican a personas que el equipo ha incluido de forma individual en la lista de revisión tras una valoración humana, y la persona afectada siempre puede pedir que una persona del equipo revise su caso. Los datos se conservan mientras dure la revisión y, después, durante los plazos legales de prescripción. Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad tal como se indica en la Política de Privacidad.",
       ]},
     ],
     seeAlso: { prefix: "Consulta también nuestro", and: "y" },
@@ -407,7 +420,7 @@ const EN: LocaleLegal = {
     legalLabel: "Legal",
     title: "Terms and Conditions",
     updatedLabel: "Last updated",
-    updated: "August 1, 2026",
+    updated: "November 20, 2026",
     authoritativeNote: NOTE.en,
     sections: [
       { h: "1. Purpose", paras: [
@@ -453,6 +466,19 @@ const EN: LocaleLegal = {
       { h: "12. Multiple profiles and KYC responsibility", paras: [
         "A single account may operate several public profiles simultaneously (for example, to work in different cities or countries). All profiles are linked to a single verified KYC identity and to a single subscription, bank account and billing system.",
         "The account holder is the sole responsible party for every profile created under the account, including bookings, revenue and client communications. Creating or using profiles on behalf of third parties, or granting account access to other individuals, is not permitted. Non-compliance may result in immediate account suspension and termination of every associated profile.",
+      ]},
+      { h: "13. Right of admission and review periods", paras: [
+        "The owner reserves the right of admission to the Service and, in particular, to the Sensible platform and its private community. Access requests may be accepted, reviewed manually or rejected on objective, reasonable and proportionate grounds related to user safety, the prevention of exploitation and pimping, identity impersonation, fraud, community protection or prior breaches of these Terms.",
+        "The right of admission is never exercised on discriminatory grounds such as birth, racial or ethnic origin, sex, religion, belief or opinion, age, disability, sexual orientation or identity, gender expression, illness, language, socioeconomic status or any other personal or social condition, in accordance with Article 14 of the Spanish Constitution and Spanish Law 15/2022 on equal treatment and non-discrimination.",
+        "Depending on the case, the owner may take these measures:",
+        { list: [
+          "Waitlist and manual review of the request by a member of the team.",
+          "Review period with limited access: the user can use the platform normally, but in the private community only sees topic titles, without access to their content and without being able to post or reply. The period lasts at most 12 months from sign-up and can only be extended by a new reasoned decision.",
+          "Temporary suspension or closure of the account in case of serious breach of these Terms or the law.",
+        ]},
+        "Any measure that limits access is communicated to the person concerned clearly and specifically, stating the measure, its scope and duration, the grounds and facts relied on, and how to appeal, in accordance with Article 17 of Regulation (EU) 2022/2065 (Digital Services Act), unless the law prevents it.",
+        "If you disagree with a decision, you can appeal by replying to the email that informed you or by writing to support. A member of the team will review the case and give you a reasoned answer. This does not limit your right to go to the courts or the competent authorities.",
+        "To manage the review, the contact details provided (name, email, phone and website) are processed on the basis of the legitimate interest in the security of the Service and fraud prevention (Article 6(1)(f) GDPR). Measures only apply to people the team has individually placed on the review list after a human assessment, and the person concerned can always ask a member of the team to review their case. Data is kept for the duration of the review and then for the legal limitation periods. You can exercise your rights of access, rectification, erasure, objection, restriction and portability as described in the Privacy Policy.",
       ]},
     ],
     seeAlso: { prefix: "Also see our", and: "and" },

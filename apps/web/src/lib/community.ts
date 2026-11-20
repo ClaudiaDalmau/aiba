@@ -15,6 +15,13 @@ export async function assertCommunityAccess(t: Pick<Tenant, "business" | "user">
   if (!(await canAccessCommunity(t))) throw forbidden("The community is available to VIP businesses");
 }
 
+/** For posting, replying, reporting: members in a review period (titles-only) can't. */
+export async function assertCommunityWrite(t: Pick<Tenant, "business" | "user">) {
+  await assertCommunityAccess(t);
+  const { communityReadOnly } = await import("./review-protocol");
+  if (await communityReadOnly(t.user)) throw forbidden("Your access to the community is read-only for now");
+}
+
 /** Moderators see hidden content, post in staff-only categories and reply in locked threads. */
 export const isCommunityModerator = (u: { platformRole: string | null }) => platformCan(u.platformRole, "community.moderate");
 

@@ -63,6 +63,11 @@ export const users = pgTable(
     requirePasskey: boolean("require_passkey").notNull().default(false),
     /** Identity checked (ID document + selfie with the document) by the platform team. */
     identityVerifiedAt: timestamp("identity_verified_at", { withTimezone: true }),
+    /** Sensible manual-review protocol: until this date the private community is titles-only for this person. */
+    communityReadOnlyUntil: timestamp("community_readonly_until", { withTimezone: true }),
+    communityReadOnlyReason: text("community_readonly_reason").notNull().default(""),
+    /** When the team was warned that the period is about to end. */
+    communityReadOnlyNoticeAt: timestamp("community_readonly_notice_at", { withTimezone: true }),
     createdAt: createdAt(),
   },
   (t) => [uniqueIndex("users_email_uq").on(sql`lower(${t.email})`)],

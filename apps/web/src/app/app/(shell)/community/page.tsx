@@ -1,9 +1,10 @@
 import { getT } from "@/i18n/server";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
-import { LockedCommunity, relative } from "@/components/community/parts";
+import { LockedCommunity, ReadOnlyNotice, relative } from "@/components/community/parts";
 import { Badge, Card, LinkButton, PageHeader } from "@/components/ui";
 import { canAccessCommunity, listCategories } from "@/lib/community";
+import { communityReadOnly } from "@/lib/review-protocol";
 import { currentTenant } from "@/lib/tenant";
 
 export async function generateMetadata() {
@@ -23,14 +24,16 @@ export default async function CommunityPage() {
     );
   }
   const categories = await listCategories();
+  const readOnly = await communityReadOnly(tenant.user);
   return (
     <>
       <PageHeader
         eyebrow={t("Community")}
         title={t("VIP community")}
         description={t("A private, moderated space for verified VIP businesses.")}
-        actions={<LinkButton href="/app/community/new" icon="plus">{t("New discussion")}</LinkButton>}
+        actions={readOnly ? undefined : <LinkButton href="/app/community/new" icon="plus">{t("New discussion")}</LinkButton>}
       />
+      {readOnly && <ReadOnlyNotice until={readOnly.until} reason={readOnly.reason} />}
       <Card className="divide-y divide-border">
         {categories.map((c) => (
           <Link key={c.id} href={`/app/community/c/${c.slug}`} className="flex items-center gap-4 px-5 py-4 transition hover:bg-subtle/60">
