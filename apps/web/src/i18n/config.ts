@@ -1,5 +1,5 @@
 /** Idiomas de la interfaz de AIBA. Los textos fuente del código están en inglés y sirven de clave. */
-export const LOCALES = ["en", "es", "fr", "de", "it", "pt-BR", "ru"] as const;
+export const LOCALES = ["en", "es", "fr", "de", "it", "pt-BR", "ru", "nl", "ro", "pl"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "en";
 export const LOCALE_COOKIE = "aiba_locale";
@@ -11,6 +11,9 @@ export const LOCALE_NAMES: Record<Locale, string> = {
   it: "Italiano",
   "pt-BR": "Português (Brasil)",
   ru: "Русский",
+  nl: "Nederlands",
+  ro: "Română",
+  pl: "Polski",
 };
 
 export function isLocale(v: unknown): v is Locale {
@@ -55,4 +58,7 @@ export const INTL_LOCALE: Record<Locale, string> = {
   it: "it-IT",
   "pt-BR": "pt-BR",
   ru: "ru-RU",
+  nl: "nl-NL",
+  ro: "ro-RO",
+  pl: "pl-PL",
 };

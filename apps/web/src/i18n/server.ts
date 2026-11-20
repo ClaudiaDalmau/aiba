@@ -7,9 +7,12 @@ import fr from "./dictionaries/fr";
 import it from "./dictionaries/it";
 import ptBR from "./dictionaries/pt-BR";
 import ru from "./dictionaries/ru";
+import nl from "./dictionaries/nl";
+import ro from "./dictionaries/ro";
+import pl from "./dictionaries/pl";
 import { requestLocale, setRequestLocale } from "./request-locale";
 
-const DICTIONARIES: Record<Locale, Dictionary> = { en: {}, es, fr, de, it, "pt-BR": ptBR, ru };
+const DICTIONARIES: Record<Locale, Dictionary> = { en: {}, es, fr, de, it, "pt-BR": ptBR, ru, nl, ro, pl };
 
 export function getDictionary(locale: Locale): Dictionary {
   return DICTIONARIES[locale] ?? DICTIONARIES[DEFAULT_LOCALE];
